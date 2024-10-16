@@ -9,16 +9,16 @@ A starter web application using **Laravel**, **Vue.js**, and **BootstrapVue**.
 - **SPA**: Single Page Application architecture.
 
 ## Requirements
-- PHP >= 8.0
+- PHP = 7.4.33
 - Composer >= 2.x
-- Node.js >= 14.x
-- MySQL (or supported database)
+- Node.js = 20.x
+- MySQL 
 
 ## Installation
 1. **Clone the project**:
    ```bash
-   git clone https://github.com/yourusername/your-project.git
-   cd your-project
+   git clone git@github.com:JazuSoft/WhatNow.git
+   cd WhatNow
    ```
 
 2. **Install dependencies**:
@@ -46,7 +46,7 @@ A starter web application using **Laravel**, **Vue.js**, and **BootstrapVue**.
 
 ## Commands
 - Start Laravel server: `php artisan serve`
-- Development build: `npm run dev`
+- Development build: `npm run production`
 - Production build: `npm run build`
 
 ## License
