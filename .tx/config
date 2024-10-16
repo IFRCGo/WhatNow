@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+
+[o:gdpc:p:whatnow-service:r:source]
+file_filter  = resources/lang/<lang>.json
+source_file  = resources/lang/en.json
+source_lang  = en
+type         = KEYVALUEJSON
+minimum_perc = 0
+

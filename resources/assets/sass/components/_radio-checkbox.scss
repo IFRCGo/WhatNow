@@ -1,0 +1,36 @@
+.c-radio-checkbox__label {
+  color: $grey;
+  transition: $global-transition;
+  &:before {
+    content: '';
+    background-color: $selection-colour-unselected;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    display: inline-block;
+    border-radius: 50%;
+    transition: $global-transition;
+    border: 2px solid $selection-colour-unselected;
+    position: relative;
+    top: 6px;
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.c-radio-checkbox__input:checked + .c-radio-checkbox__label {
+  color: $black;
+  &:before {
+    background-color: $selection-colour-selected;
+    border: 2px solid $selection-colour-selected;
+    background-image: url('../../img/check-icon.svg');
+  }
+}
+
+.c-radio-checkbox__input:focus + .c-radio-checkbox__label {
+  &:before {
+    border: 2px solid $grey;
+  }
+}

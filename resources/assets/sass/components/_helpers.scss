@@ -1,0 +1,35 @@
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.underlined-link {
+  text-decoration: underline;
+  color: $black;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &:visited {
+    color: $black;
+  }
+}
+
+.styled-label {
+  font-size: em(12);
+}
+
+.styled-heading {
+  color: #6d6e70;
+  font-size: em(15);
+}

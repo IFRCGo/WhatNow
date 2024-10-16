@@ -1,0 +1,63 @@
+version: "3.5"
+services:
+    db:
+        image: mariadb:latest
+        platform: linux/amd64
+        restart: always
+        env_file:
+            - '.env'
+        ports:
+            - 33060:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: 'root'
+            MYSQL_DATABASE: 'portal'
+        networks:
+            - default
+        volumes:
+            - database-data:/var/lib/mysql
+
+    # The main php application
+    portal:
+        depends_on:
+            - db
+            - redis
+            - mailcatcher
+        networks:
+            - default
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        ports:
+            - 8081:80
+        volumes:
+            - .:/var/www/html
+        user: ${USERID}
+    redis:
+        image: redis:5.0-alpine
+        ports:
+            - "6379:6379"
+        networks:
+            - default
+
+    mailcatcher:
+        image: "jeanberu/mailcatcher"
+        networks:
+            - default
+        ports:
+            - "1025:1025"
+            - "1080:1080"
+    selenium-hub:
+        image: selenium/hub:3.12.0-americium
+        container_name: selenium-hub
+        ports:
+            - "4444:4444"
+    chrome:
+        image: selenium/node-chrome:3.12.0-americium
+        depends_on:
+            - selenium-hub
+        environment:
+            - HUB_HOST=selenium-hub
+            - HUB_PORT=4444
+
+volumes:
+    database-data:

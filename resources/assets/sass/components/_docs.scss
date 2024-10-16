@@ -1,0 +1,25 @@
+.doc-body {
+  > h1 {
+    font-size:em(36);
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  > section {
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 1.5rem;
+    margin-bottom:1.5rem;
+    h2 {
+      font-size:em(24);
+      margin:2rem 0 1.5rem;
+    }
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+}
+
+.doc-contents {
+  @media screen and (max-width:767px) {
+    display: none;
+  }
+}

@@ -1,0 +1,821 @@
+{
+  "ok": "Yego",
+  "go": "Genda",
+  "all": "Byose",
+  "cancel": "Hagarika",
+  "error_alert_title": "Ayii...",
+  "error_alert_text": "Hari ibyagenze nabi! Ongera ugerageze.",
+  "error_permission_alert_text": "Ntufite uruhushya rwo gukora izi mpinduka",
+  "token_expired_alert_title": "Byarengeje igihe!",
+  "token_expired_alert_text": "Ongera winjiremo ubone gukomeza.",
+  "login": "Kwinjiramo",
+  "what_now": "WhatNow",
+  "message_portal": "Ahandikirwa ubutumwa",
+  "register": "Kwiyandikisha",
+  "sign_up": "Kwiyandikisha",
+  "docs": "Inyandiko",
+  "my_apps": "\nPorogaramu zanjye",
+  "number_of_apps": "{0} Porogaramu",
+  "whatnow_content": "Ubutumwa bwa WhatNow",
+  "alerts": "Integuza",
+  "feeds": "Amakuru",
+  "get_started": "Iyandikishe nonaha",
+  "page_not_found": "Ibyo mwasabye ntibibashije kuboneka",
+  "go_home": "Jya Ahabanza",
+  "logout": "Sohoka",
+  "email": "Imeyiri",
+  "register_success": "Urakoze kwiyandikisha",
+  "confirm_email": "Genzura mubutumwa bwawe, niba hari ubutumwa bwemeza konti yawe.",
+  "email_confirmed": "Urakoze kwemeza imeyili yawe. Injiramo",
+  "confirmation_failed": "Aderesi ya imeyili yawe ntiyemejwe, vugisha ababishinzwe wongere ugerageze.",
+  "home_redirect": "Jya ahabanza",
+  "status": "Aho igeze",
+  "remember_me": "Nyibuka",
+  "old_password": "Ijambobanga ririmo:",
+  "password": "Ijambobanga",
+  "forgot_password": "Wibagiwe ijambobanga ryawe?",
+  "confirm_password": "Kwemeza ijambobanga",
+  "incorrect_password": "ijambobanga ntabwo ariryo",
+  "name": "Izina",
+  "first_name": "Izina ribanza",
+  "last_name": "Izina ry'umuryango",
+  "toggle_navigation": "Uko bikoreshwa",
+  "you_are_logged_in": "Umaze kwinjira!",
+  "reset_password": "Guhindura ijambobanga",
+  "set_password": "Shyiramo ijambobanga",
+  "send_password_reset_link": "Ohereza umurongo uhinduriraho ijambobanga",
+  "settings": "Amagenamiterere",
+  "profile": "Umwirondoro wawe",
+  "your_info": "Amakuru yawe",
+  "info_updated": "Umwirondoro wawe wavuguruwe!",
+  "update": "Kuvugurura",
+  "your_password": "ijambobanga",
+  "password_updated": "Ijambobanga ryawe ryahinduwe",
+  "new_password": "Ijambobanga rishya:",
+  "login_with": "Injiramo na",
+  "register_with": "Iyandikishe na",
+  "yes": "Yego",
+  "no": "Oya",
+  "close": "Gufunga",
+  "dashboard": "Aho ukorera",
+  "terms_service": "AMABWIRIZA AGENGA IMIKORESHEREZE",
+  "sign_in_with_google": "Injiramo ukoresheje google",
+  "offline_error": {
+    "title": "Nta huza nzira rya murandasi rihari",
+    "description": "Nyabuna bika impinduka mu gihe cya {time} cyangwa impinduka wakoze zibure"
+  },
+  "breadcrumbs": {
+    "applications": "Porogaramu",
+    "admin_users": "Abakoresha babahagarariye",
+    "users": "Abakoresha",
+    "manage_users": "Genzura abakoresha",
+    "profile": "Umwirondoro wawe",
+    "terms": "Amategeko, n'amabwiriza",
+    "edit": "Guhindura",
+    "create": "Gushyiraho",
+    "content": "Ibikubiyemo",
+    "what_now_content": "Ibikubiyemo bya What Now",
+    "bulk_upload": "Kohereza ibintu byinshi icyarimwe",
+    "audit_log": "Raporo y'igenzura",
+    "api_usage": "Imikoreshereze ya API",
+    "app_detail": "Ibisobanuro bya porogaramu",
+    "all_terms": "Amategeko n'amabwiriza yose"
+  },
+  "documentation": {
+    "heading": "Inyandiko za Kuruwa Ruje",
+    "sidebar": {
+        "introduction": "Intangiriro",
+        "base_url": "URL y'ibanze",
+        "changelog": "Ibyahinduwe",
+        "authentication": "Ukwemeza",
+        "response_codes": "Kode z'ibisubizo",
+        "emergency_alert_feed": "Urujyano rw'integuza y'ibyihutirwa",
+        "cap_alert_document": "Inyandiko y'integuza ya CAP",
+        "what_now": "What Now"
+    },
+    "steps": {
+        "one": {
+            "body": "Red Cross REST API ifasha abakora kugera ku butumwa bwihutirwa n'inkomoko itangwa n'ihuriro ry'imiryango ya Kuruwa Ruje ku isi.",
+            "heading": "Intangiriro",
+            "support_card": {
+                "body": "Ku bibazo bijyanye na API ya Kuruwa Ruje, andikira kuri dev@3sidedcube.com",
+                "title": "Ubufasha n'Ibibazo"
+            }
+        },
+        "two": {
+            "body": "Imbuga zose za murandasi munyandiko za  API v1.0 zifite iyi ntangiriro URL:",
+            "heading": "URL y'ibanze"
+        },
+        "three": {
+          "heading": "Ibyahinduwe",
+          "table": {
+              "headers": {
+                  "detail": "Sohora",
+                  "version": "Verisiyo ya Api",
+                  "release": "Sohora",
+                  "release_date": "Sohora itariki"
+              }
+          }
+        },
+        "four": {
+            "body": "API isaba ububasha bwo kugera ku bubiko ikoresheje urufunguzo rwa API. Kubona urufunguzo rwa API, Ubwambere {0}.\n\nIbisabwa na API byose bigomba kuba bifite umutwe wa HTTP:",
+            "create_app_cta": "Ukarema porogaramu",
+            "heading": "Ukwemeza"
+        },
+        "five": {
+            "heading": "Kode z'ibisubizo",
+            "table": {
+                "descriptions": {
+                    "ok": "Ubusabe bwagenze neza kandi ibyo mwasabye bifite ububiko byasabwemo.",
+                    "found": "Erekana icyerekezo Ikibazo ku kugira ubusabe URI aho ubishaka: Umutwe.",
+                    "not_found": "Ububiko mwasabyemo ntibubasha kuboneka.",
+                    "not_allowed": "Erekana HTTP uburyo bwakoreshejwe ntibwemerewe kuri ubu bubiko.",
+                    "server_error": "Habaye ikibazo kuri seriveri naho byasabwe ntibigoba kugaruka.",
+                    "unavailable": "Serivise usabye ntabwo ibasha kuboneka Ongera uyisabe nanone mumwanya."
+                },
+              "headers": {
+                "code": "Kode",
+                "name": "Izina",
+                "description": "Ubusobanuro"
+              }
+            }
+        },
+        "six": {
+            "card": {
+              "body": "Buri muryango wa Red Cross ushobora gutanga ikimenyetso rusange ukoresheje {0} v1.2.",
+              "cta": "Uburyo busanzwe bwo kumenyekanisha",
+              "title": "Uburyo busanzwe bwo kumenyekanisha"
+            },
+            "endpoint": "Iherezo:",
+            "example": "Muri uru rugero, akarango {0} gashobora gusimbuzwa kode y'igihugu mu itsinda ryatazwe. urugero:",
+            "feed_intro": "Ubutumwa kuri buri tsinda buratangwa, hari urutonde rw'ubutumwa bwibutsa bwatangajwe na sosiyete, byagendeye kuri",
+            "heading": "Urujyano rw'integuza y'ibyihutirwa",
+            "intro": "Ikirango cya CAP dutangwa n'amashyirahamwe yose dutangazwa ukoresheje ibyihutirwa bya RSS. Ibi bishobora kugerwaho hakoreshejwe impere zikurikira:"
+        },
+        "seven": {
+            "endpoint": "Iherezo:",
+            "example_response": "Urugero rw'igisubizo:",
+            "heading": "Inyandiko y'integuza ya CAP",
+            "body": "Inyandiko y'ikirango cya CAP zishobora kugerwaho hakoreshejwe umurongo wihariye usobanurwa muri buri nkuru nshya ya RSS. Akarango k'umurongo wa murandasi  ukoresha izi shusho: "
+        },
+        "eight": {
+            "body": "Amaherezo akurikira atanga amakuru yatangajwe akozwe n'amashyirahamwe ya Red Cross mugufasha mukwitegura ibiza mubihe bitandkanye.\n\nBuri cyinjiye gitanga amakuru kuntambwe esheshatu kugucunga ibiza:",
+            "endpoint": "Iherezo:",
+            "example_response": "Urugero rw'igisubizo:",
+            "heading": "What Now",
+            "note": "Ibisobanuro:",
+            "noteDetails": "{0} Buri gisubizo cyiri mumutungo w'ababyeyi {1}.",
+            "query_params": "Ibibazo ku igenamiterere:",
+            "response_properties": "Ibigize ibisubizo:",
+            "structure": "Ibyubatse ubutumwa bushya:",
+            "stucture_attribution": "Ibigize ibikoresho {0}:",
+            "stucture_attribute_translation": "Igenamiterere kubigabirwa ibintu {0}:",
+            "stucture_translation": "Imiterere y'ikintu {0}:",
+            "table": {
+                "query_params": {
+                    "name": "Izina",
+                    "description": "Isobanuramiterere"
+                },
+                "structure": {
+                    "property": "indangakintu",
+                    "data_type": "Ubwoko bw'amakuru",
+                    "description": "Ubusobanuro"
+                }
+            }
+        }
+    }
+  },
+  "get_started_docs": {
+    "title": "Tangira",
+    "sidebar": {
+        "create_app": "Fungura porogaramu",
+        "get_api_key": "Gira urufunguzo rwa API",
+        "make_request": "Saba",
+        "sign_up": "Kwiyandikisha"
+    },
+    "steps": {
+        "one": {
+            "heading": "Intamwe ya 1 - Iyandikishe",
+            "body": "Tangira ukoresheje amakuru yo mubutumwa bushya bwa API, Uhere ku karango k'ubutumwa bushya.\n\nUshobora gukoresha konti yawe ya facebook & google, cyangwa aderesi y'uutumwa kuri murandasi ufunguza konti.",
+            "create_account_alt": "Funguza konti",
+            "existing_account": "Niba usanzwe ufite konti , {0}.",
+            "login_cta": "Kwinjiramo",
+            "sign_up_cta": "Kwiyandikisha"
+
+        },
+        "two": {
+            "body": "Gukoresha API ugomba gufunguza porogaramu mugace kubutumwa bushya. Tubwire make kubyo uri kubaka.",
+            "create_app_alt": "Kora porogaramu",
+            "heading": "Intambwe ya 2 - Kora porogaramu"
+        },
+        "three": {
+            "body": "Igihe wakoze porogaramu, urufunguzo rwa API ruzahita ruboneka.\n\n{0} Wibuke kubika aka kantu muburyo burinzwe bishoboka kandi urinde gusangiza cyangwa gushyira hanzw urufunguzo rwa API yawe muri porogaramu yawe.",
+            "create_api_key_alt": "Fungura urufunguzo rwa API",
+            "heading": "Intambwe ya 3- Gira urufunguzo rwa API",
+            "important": "Ibyingenzi:"
+        },
+        "four": {
+            "api_docs_cta": "Inyandiko kuri API",
+            "body": "API y'ubutumwa bushya ikoresha HTTP(S) ikanatanga Ikiruhuko kumpera kukubona amakuru watangaje.\n\nBuri gisabwe bigomba gkurikiranwa ukoresheje urufunguzo rwa API rwafunguwe mugice cyashize.",
+            "example_title": "Urugero rw'ibisabwa:",
+            "heading": "Intambwe ya 4 - Kora ubusabe",
+            "moreInfo": "Kumakuru arenze ho ku mpera za API, reba {0}."
+        }
+    }
+  },
+  "home_pods": {
+      "bulk_upload": "Shyiraho.csv  kuburyo ushobora kuvugurura ibiyigize icyarimwe",
+      "audit_log": "Aha niho warebera imirimo yo kwinjiramo",
+      "whatnow_edit": "Aha niho ushobora guhindura ibigize ubutumwa bushya",
+      "whatnow_review": "Aha niho ushobora kurebera ibigize NikiNonaha",
+      "whatnow_publish": "Aha niho ushobora guhindura kandi ugatangaza ibigize ubutumwa bushya",
+      "manage_users": "Aha niho ugenzura abakoyikoresha ( Gufungura, Guhindura no Gukuraho)",
+      "api_usage": "Aha niho warebera urimo akoresha API na porogaramu ziri kuyikoreswamo."
+  },
+  "languages": {
+    "am": "አማርኛ",
+    "ar": "عربى",
+    "bn": "বাংলা",
+    "de": "Deutsch",
+    "en": "Icyongereza",
+    "es": "Ururimi rwa Esipanye",
+    "fr": "Igifaransa",
+    "ht": "Kreyòl",
+    "id": "bahasa Indonesia",
+    "it": "Italiano",
+    "ja": "日本語",
+    "my": "ဗမာ",
+    "ne": "नेपाली",
+    "pt": "Ururimi rwa esipanye",
+    "ru": "\nрусский",
+    "rw": "Ikinyarwanda",
+    "sw": "Kiswahili",
+    "th": "ภาษาไทย",
+    "tr": "Türkçe",
+    "ur": "اردو",
+    "vi": "Tiếng Việt"
+  },
+  "sidebar": {
+      "manage": "Genzura ibigize abakoresha",
+      "content_users": "Ibikubiyemo mubakoresha",
+      "audit_log": "Raporo y'igenzura",
+      "whatnow": "WhatNow",
+      "bulk": "Kohereza ibintu byinshi icyarimwe",
+      "content": "Ibikubiyemo",
+      "api": "Imikoreshereze ya API",
+      "applications": "Porogaramu",
+      "api_stats": "Imiterere ya API",
+      "api_users": "Abakoresha API",
+      "terms_conditions": "Amategeko, n'amabwiriza",
+      "regions": "Uturere"
+  },
+  "common": {
+      "accept": "Emeza",
+      "actions": "Ibikorwa",
+      "create": "Kurema",
+      "edit": "Guhindura",
+      "deactivate": "Hagarika",
+      "activate": "Fungura",
+      "are_you_sure": "Urabizi neza?",
+      "yes": "Yego",
+      "title": "Umutwe",
+      "description": "Ubusobanuro",
+      "unpublished_edits": "Ibyahinduwe bitaratangazwa?",
+      "published": "Ibyatangajwe",
+      "delete": "Siba",
+      "welcome": "Ikaze Kuri",
+      "save_changes": "Emeza impinduka",
+      "auto_saving": "Kubika mu buryo bwikora",
+      "add": "Ongeraho",
+      "my_profile": "Umwirondoro yanjye",
+      "cancel": "Hagarika",
+      "view_changes": "Reba ibyahinduwe",
+      "view_content": "Reba ibikubiyemo",
+      "resend_activation": "Ongera wohereze  butumwa bwemeza",
+      "deactivate_user": "Hagaika umukoresha",
+      "submit_changes": "Ohereza impinduka",
+      "reactivate_user": "Ongera wemeze mukoresha",
+      "send_invite": "Ohereza ubutmire",
+      "invite_and_create": "Tumira unafungurize undi",
+      "loading": "Fungura ibikubiyemo",
+      "publish_new": "Tangaza verisiyo nshya",
+      "greeting": "Muraho",
+      "removed": "Yakuweho",
+      "copy": "Andukura",
+      "copied": "Yandukuwe",
+      "not_empty": "Ntishobora kubera aho",
+      "name": "Izina",
+      "webUrl": "URL",
+      "learn_more": "Menya byinshi",
+      "validations": {
+          "empty": "Ibi ntibishobora kubera aho",
+          "hazardIcon": "Hitamo ishusho ifite munsi ya kb30"
+      },
+      "network_error": "Ikosa ry'ihuza nzira",
+      "network_error_text": "Bisa naho habayemo ikosa mu ihuzanzira Ongera ugerageze mumwanya muto.",
+      "email_sent": "imeyili yoherejwe",
+      "duplicate_lang_error": "Mwihangane, ururimi mwahisemo rusanzwe ruhari",
+      "duplicate_lang_description": "Gerageza uhindure ururimi rusanzwe cyangwa uhitemo ururimi rushya kuva kubiri aha hasi",
+      "estimated_users": "Umubare ugereranije w’abakoresha"
+  },
+  "banners": {
+      "get_started_create": ", Tangira ufungure porogaramu yawe yambere",
+      "create_app": "Fungura porogaramu",
+      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+  },
+  "users": {
+      "user": "Izina ry'ukoresha",
+      "deleted": "Umukoresha yasibwe",
+      "list": {
+          "manage": "Genzura abakoresha",
+          "create": "Shyiraho ukoresha mushya",
+          "download_report": "Kurura raporo",
+          "empty": "Ntubasha kubona umukoresha numwe",
+          "detail": "Imyirondoro y'ukoresha",
+          "clear_filters": "Siba ibyagenderwagaho",
+          "table_header": {
+              "user": "Izina ry'ukoresha",
+              "role": "Umumaro",
+              "society": "Ishyirahamwe",
+              "email": "Imeyiri",
+              "added": "Byongeweho",
+              "last_activity": "Ibikorwa biheruka",
+              "t_and_c": "Verisiyo y'Amategeko n'amabwiriza"
+          },
+          "societies": "Amashyirahamwe"
+      },
+      "status": {
+          "active": "Byafunguwe",
+          "deactivated": "Byafunzwe"
+      },
+      "edit": {
+          "super_admin_all": "Uburenganzira ku mashyirahamwe yose",
+          "user_details": "Ibisobanuro by'ukoresha",
+          "create_user": "Shyiraho ukoresha mushya",
+          "add_society": "Kongeraho ishyirahamwe + ",
+          "societies_heading": "Amashyirahamwe",
+          "roles_heading": "Umumaro n'Impushya",
+          "activity_heading": "Igikorwa",
+          "roles_label": "Hitmo umumaro n'Uruhushya rw'uyu ukoresha",
+          "activity_link": "Reba ibikorwa byose by'ukoresha",
+          "created": "Ukoresha mushya yafunguwe neza",
+          "updated": "Ukoresha yavuguruwe",
+          "email_update": "Vugurura imeyiri yawe, ushyiramo ijambobanga ryawe",
+          "view": "Reba",
+          "more": "ibindi",
+          "less": "Garagaza bike",
+          "user_can_do": "Reba ibyo umukoresha afitiye uburenganzira bwo gukora:",
+          "user_no_permission": "Umukoresha nta ruhushya afite",
+          "soc_already_added": "Uyu mukoresha asanzwe yarashyizwe kuri iyi sosiyete"
+      }
+  },
+  "content": {
+      "content": "Ibikubiyemo",
+      "audit_log": {
+          "audit_log": "Raporo yigenzura",
+          "empty": "Nta makuru y'igenzura ahura n'iri yungurura",
+          "soc_label": "Ishyirahamwe"
+      },
+      "whatnow": {
+          "set_attribution": "Shyiraho amazina y'ishyirahamwe n'ubutumwa bijyanye bwo gutangaza",
+          "whatnow": "WhatNow",
+          "empty": "Nta butumwa bwa WhatNow bwatangajwe kuri iri Shyirahamwe ry'igihugu",
+          "steps": "Intambwe",
+          "publish": "Tangaza",
+          "no_publish": "Ntacyo gutangaza",
+          "published": "Ibyasemuwe byatangajwe",
+          "publishing": "Itangaza",
+          "content_to_publish": "Inyandiko ituzuye yo gutangaza",
+          "whatnow_content": "Ibikubiye muri WhatNow",
+          "choose_hazard": "Hitamo ikiza",
+          "hazard": "Ikiza",
+          "content": "Ibikubiyemo",
+          "create": "Ongeraho Ikiza",
+          "edit_attribtion": "Hindura inshingano",
+          "attribution": "Inshingano",
+          "attribution_url": "URL ku nshingano",
+          "society_name": "Ishyirahamwe ry'igihugu.",
+          "attribution_message": "Ubutumwa ku nshingano",
+          "no_translation": "Ntabikubiyemo byagenwe",
+          "delete_content_translation": "Ibi bizakura ubutumwa bwa WhatNow bwahiswemo mu ndimi burimo.",
+          "messages": "Ubutumwa bwa WhatNow bwa",
+          "add_language": "Ongeraho ururimi rushya",
+          "no_languages": "Shyiraho, cyangwa uhitemo ururimi ubashe gutangira",
+          "no_soc": "Hitamo ishyirahamwe",
+          "no_region": "Hitamo akarere",
+          "add_language_message": "Ongeraho ururimi rushya, ongeraho ibikubiyemo ujyendana nabyo",
+          "add_language_attribution": "Tegura inshingano ubashe gushyiraho ururimi rushya",
+          "select_language": "Hitamo ururimi",
+          "attribution_publish": "Izi nshingano zizahita zibonekera mu itangaza"
+      },
+      "edit_whatnow": {
+          "title": "Umutwe",
+          "description": "Ubusobanuro",
+          "content_piece": "Igice cy'ibikubiyemo",
+          "enter_other_hazard_type": "Shyiramo ubwoko bw'Ikiza",
+          "other_hazard_type_label": "Ubundi bwoko bw'Ikiza",
+          "stepped_content": "Ibice bikigize byarenzweho",
+          "content_title_description": "Umutwe w'ubu butumwa bwa WhatNow",
+          "content_description_description": "Ubusobanuro kubutumwa bwa WhatNow",
+          "content_label": "Shyiramo amakuru yerekeye Ikiza",
+          "content_url": "URL",
+          "content_url_description": "Urubuga ku bindi bisobanuro ku byerekeye ubu butumwa bwa WhatNow. Shyiramo n'imfashanyigisho, urugero http:\/\/ cyangwa https:\/\/",
+          "created": "byashyizweho",
+          "pieces_edited": " Ibice byahinduwe",
+          "delete_item": "Siba ikintu",
+          "add_item": "Ongeraho ikintu +",
+          "content_placeholder": "Andika ubutumwa",
+          "mitigation": "Inyoroshyo",
+          "mitigation_help": "Ibikorwa by'igihe kirekire byo kugabanya ingaruka",
+          "mitigation_extra": "Koroshya ibibazo ni interuro y'igihe kirekire igaragaza ibiza bishobora kubaho. Ibikorwa bikorwa ni isuzuma, igenamikorere n'ingamba zirambye zo kurwanya ibyago bibungabunga umuryang n'ibidukikije.",
+          "seasonalForecast": "Iteganyagihe",
+          "seasonalForecast_help": "Ibikorwa by'ighe gito byo kurwanya ibiza",
+          "seasonalForecast_extra": "Iteganyagihe niryo ridufasha guteganya ibiza bishobora kuba. Ibikorwa byafashe ni ugusuzuma ingaruka zishobora kuba n'ibikorwa biteganyijwe mu kugabanya ibyago no kurinda imiryango.",
+          "watch": "Itegereze",
+          "watch_help": "Itegure guhangana n'ibiza",
+          "watch_extra": "Hashyirwaho indorerezi igihe icyago cy'iyongereye bigaragara, ariko kubaho kwacyo, aho kibera n'igihe bizabera bitazwi neza. Bigamije gutanga igihe gihagije kurinda ibikowa no kwitegura gushaka igisubizo.",
+          "warning": "Iburira",
+          "warning_help": "Itegure guhangana n'ibiza",
+          "warning_extra": "Integuza itangwa igihe ibiza birikuba, cyangwa byegereje cyangwa hari amahirwe menshi ko biba. Bishaka kuvuga igihe bishobora gutwara ubuzima w'umuntu cyangwa ibye. Abantu muri iyi nzira y'ibiza bagomba kugira ibikorwa by'ubwirinzi.",
+          "immediate": "Ako kanya",
+          "immediate_help": "Ibikorwa by'ubutabazi",
+          "immediate_extra": "Ibihe turimo bushobora kugira ingaruka ku buzima n'ibintu by'abantu. Izi ni ingamba z'ubwirinzi zihutirwa zigomba guhita zijya mu bikorwa mu gihe hagiye kuba ibyago. Ibikorwa by'ubutabazi bwo kwirinda no kurinda imiryango birakenewe.",
+          "recover": "Gukira",
+          "recover_help": "Ibikorwa bya nyuma byo kuva mu byago",
+          "recover_extra": "Hari ibikorwa by'ubwirinzi bikorwa mu kugabanya ibyago bikurikira ibiza.",
+          "updated": "ibyavuguruwe",
+          "download_icon": "Agashushondanga ko gukurura",
+          "download_image": "Gukurura nk'ifoto",
+          "download_image_error": "Ikosa mukubika iyi foto, menya neza ko watangaje impinduka zose kandi wongere ugerageze.",
+          "download_instructions": "Emeza n'akantu k'iburyo unemeze \"Bika ifoto nka....\" kubika",
+          "downloaded_image_alt": "Amabwiriza ya WhatNow"
+      },
+      "audit": "Raporo y'igenzura",
+      "export": "Gusohora",
+      "bulk_upload": {
+          "bulk_upload": "Kohereza ibintu byinshi icyarimwe",
+          "template": "Inyandikorugero",
+          "export_template": "Gusohora inyandikorugero",
+          "import_data": "Kuzana amakuru",
+          "import_complete": "Kuzana byarangiye",
+          "import_summary": "Uri kwinjiza Kuri{society} muri {lang}.",
+          "import_banner": {
+              "success": "Byagenze neza",
+              "added": "Yongeweho",
+              "skipped": "Ibyasimbutswe",
+              "denied": "Ibyanzwe",
+              "updated": "Byavuguruwe",
+              "failed": "Byanze",
+              "invalid": "Si byo",
+              "row": "Umurongo"
+          },
+          "upload_csv": "Ohereza dosiye mu miterere ya CSV",
+          "language_instructions": "Hitamo ururimi rw'ubusemuzi buri kuzanwa.",
+          "file_instructions": "Zana dosiye hano cyangwa uyihitemo muri mudasobwa yawe.",
+          "choose": "Hitamo",
+          "submit": "Kuzana ibikubiyemo",
+          "reset": "Kohereza ikindi",
+          "export_template_guide": "Gusohora amabwiriza y'inyandikorugero",
+          "export_template_instructions": "Ku mabwiriza y'uko kohereza inyandikorugero nyinshi icyarimwe bikoreshwa neza, reba aya mabwiriza.",
+          "warnings": {
+              "title": "Kwanga icyazanywe niba ibikubiyemo bisimbura verisiyo za vuba cyane.",
+              "on": "Yego",
+              "off": "Oya"
+          },
+          "overwriting": {
+              "title": "Gusimbura igenamiterere.",
+              "on": "Buri gihe ujye uvugurura iyi verisiyo, isimbure verisiyo zose",
+              "off": "Kuvugurura gusa amoko y'ibikorwa aho ibikubiyemo byazanywe ari bishya"
+          },
+          "errors": {
+              "warning_update_will_overwrite": "Iki gikorwa gisimbura impinduka zakozwe ubwo icyasohowe cyashyirwagaho.",
+              "bad_request": "Amakuru ya dosiye ntabwo akoze neza",
+              "bad_request_error_codes": {
+                  "30001": "Imitwengaruka y'inkingi ntabwo ihura n'inyandikorugero",
+                  "30002": "Amazina bijyanye, ubutumwa cyangwa url ntibihari",
+                  "30003": "Url bijyanye si yo; reba neza niba porotokore ihari, urug.: https:\/\/",
+                  "40001": "Hatanzwe kode y'igihugu itari yo",
+                  "40002": "Ishyirahamwe ryatoranyijwe ntabwo rihura n'ishyirahamwe rya dosiye yatoranyijwe",
+                  "40003": "Itariki dosiye yatoranyijwe yasohoreweho yanditse nabi kandi kuyizana ntibishobora kurangira"
+              }
+          }
+      }
+  },
+  "api_stats": {
+    "page_title": "Imiterere ya API",
+    "download_data": "Manura amakuru",
+    "start_date": "Itariki yo gutangiriraho",
+    "end_date": "Itariki yo Kurangiriraho",
+    "table_select": {
+      "keys": "Imfunguzo za API",
+      "routes": "Inzira za API"
+    },
+    "field_headers": {
+      "application_name": "Application Name",
+      "number_of_hits": "Number of Hits",
+      "estimated_reach": "Estimated Reach",
+      "organisation": "Organisation",
+      "application": "Application"
+    },
+    "cumulative_cards": {
+      "hits": "Izakozweho zose",
+      "accounts": "Konti zose",
+      "est_impacted_users": "Igihe cy’iburasirazuba Abakoresha bagizweho ingaruka"
+    },
+    "empty": "Nta miterere ihari ishingiye ku mataliki yahiswemo"
+  },
+  "api_usage": {
+      "applications": "Porogaramu",
+      "view_user": "Kureba umukoresha",
+      "reactivate": "Ongera umufungure",
+      "app_detail": "Ubusobanuro bya porogaramu",
+      "app_details": "Ibisobanuro bya porogaramu",
+      "activity": "Igikorwa",
+      "view_all_activity": "Reba ibikorwa byose kuri iyi porogaramu",
+      "api_users": "Abakoresha ba API",
+      "terms_conditions": "Amoko y'amategeko n'amabwiriza",
+      "view_prev_terms": "Reba verisiyo zabanje",
+      "current_version": "Verisiyo igezweho",
+      "version": "Verisiyo"
+  },
+  "applications": {
+      "my_apps": "Porogaramu zanjye",
+      "new_tc": "Amahame n'amabwiriza bishya",
+      "build": "Kora porogaramu nshya",
+      "edit": "Hindura app",
+      "building": "Gukora porogaramu",
+      "no_apps": "Nta porogaramu ufite, gira iyo ukora kugira ngo utangire."
+  },
+  "home": {
+      "home": "Ahabanza",
+      "welcome": "Murakaza neza",
+      "admin_intro": "Hano ushobora kugenzura abakoresha, ubahindura no gutangaza ibikubiye muri WhatNow no kureba imikoreshereze ya API.",
+      "ns_admin_intro": "Aha ushobora guhindura no gutangaza ibikubiye muri WhatNow",
+      "ns_editor_intro": "Aha ushobora guhindura ibikubiye muri WhatNow",
+      "api_user_intro": "Aha ushobora kureba porogaramu zawe no kugenzura konti yawe."
+  },
+  "landing": {
+      "strapline": "Serivisi ya WhatNow",
+      "strapline_part_2": "Ubutumwa bw'umutekano wa Global Red Cross \/ Red Crescent",
+      "developer": {
+          "strap_para_one": "Fasha abaturage kwitegura, gusubiza no kuva mu biza hamwe n'ubutumwa bw'ibikorwa by'ibanze.",
+          "strap_para_two": "Koresha intambwe zacu enye zikuyobore mu kukwinjiza mu butumwa bwa WhatNow kuri porogaramu yawe. Iyandikishe unarebe ubutumwa bwose buhari."
+      },
+      "national_society": {
+          "strap_para_one": "Tangaza RCRC yawe n'ubutumwa bw'ingenzi bw'ishyirahamwe Kubitangazamakuru mpuzamahanga, ibyigihugu, nibyo mu gace utuyemo bibashe gutangazwa.",
+          "strap_para_two": "Tuvugishe tumenye byinshi ku gufungra ubutumwa no kwihuza n'abafatanyabikorwa b'itangazamakuru."
+      },
+      "strap_para_one": "Fasha abaturage kwitegura, gusubiza no kuva mu biza hamwe n'ubutumwa bw'ibikorwa by'ibanze.",
+      "strap_para_two": "Koresha intambwe zacu enye zikuyobore mu kukwinjiza mu butumwa bwa WhatNow kuri porogaramu yawe. Iyandikishe unarebe ubutumwa bwose buhari.",
+      "view_data": "Reba amakuru",
+      "view_message_library": "Kureba ubutumwa bwa WhatNow",
+      "what_now": "WhatNow?",
+      "fake_alert_heading": "Imbuzi y'ubukonje bukabije",
+      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+      "fake_alert_time": "HASHIZE ISAHA 1",
+      "fake_alert_time_exact": "05\/02\/18 saa 05:15 CT",
+      "use_cases": {
+          "heading": "Menya ibindi",
+          "first_heading": "Uburyo bikora",
+          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "second_heading": "Koresha ingero",
+          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "third_heading": "Ibikoresho by'ishyirwamubikorwa",
+          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fourth_heading": "Amashusho ya WhatNow",
+          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fifth_heading": "Kunoza porogaramu z'iteganyagihe",
+          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+      },
+      "example_alert": {
+          "heading": "Urugero rw'imiterere y'ubutumwa bwa WhatNow",
+          "alert_preview": "Igaragazambere ry'integuza",
+          "what_now_info": "Igaragazambere rya WhatNow",
+          "example_whatnow_request": "Urugero rw'igisubizo cya WhatNow",
+          "example_alert_request": "Urugero rw'igisubizo cy'integuza",
+          "example_content": "Ubujyanama ku kirere# 3 BWA NYUMA kugeza saa 11 Z'IGITONDO, Mut. 29, 2018\nKu bukonje bukabije\n\nIngaruka z'ubukonje bukabije zaragabanutse. Impinduka ku miterere y'ikirere zagaragaye kuri Nome. Nubwo haza mo imvura cyangwa inkuba, cyane cyane nyuma ya saa sita cyangwa nimugoroba , bishobora kuba byateganyijwe cyane mu burengerazuba.\n\nHamwe n'iri terambere, iyi niyo nama ya nyuma kuri ibi by'ikirere.",
+          "example_content_location_header": "AHIBASIWE",
+          "example_content_location": "Nome, Alaska"
+      },
+      "example_whatnow": {
+          "alert_from": "Integuza yatanzwe na: Kuruwa Ruje ya America",
+          "more_info": "Andi makuru",
+          "heading": "Ubutumwa bw'ibanze ku bukonje bukabije",
+          "copy": "Hari ibyo gukora mu kugabanya ingaruka no kwirinda n'abo mu rugo ubukonje bukabije.",
+          "what_now": "WhatNow",
+          "step_1": "Rinda urugo rwawe. Reba ku matiyo ukoreshe n'ibishyushya witonze.",
+          "step_2": "Koresha amazi ashyushye wirinda umwuma",
+          "step_3": "Irinde ubwawe n'imyenda ishyushya ufubike ahano hose ku mubiri",
+          "step_4": "Witegure kandi witondere urubura igihe cy'urubura, cyane cyane igihe utwaye",
+          "step_5": "Reba abaturanyi, inshuti n'abandi bari mu kaga"
+      },
+      "build": {
+          "heading": "Witeguye kubaka porogaramu yawe?"
+      },
+      "data_preview": {
+          "heading": "Ubutumwa bwa WhatNow",
+          "sub_heading": "Iyandikishe unarebe ubutumwa  bw'amasosiyete ya Kuruwa Ruje\/Kuruwasa Ruje ku isi hose"
+      },
+      "footer": {
+          "terms_conditions": "Amategeko n'amabwiriza",
+          "about": "Byerekeranye",
+          "privacy": "Ubuzima bwite",
+          "getting_started": "Gutangira",
+          "docs": "Inyandiko",
+          "give_feedback": "Gutanga uko wabyakiriye",
+          "gdpc_logo": "Ikirango ku kigo cyo kurwanya ibiza (Global Disaster Preparedness Center)",
+          "ifrc_logo": "Ikirango cy'umuryango mpuzamahanga wa Red Cross na Red Crescent Movement"
+      }
+  },
+  "register_form": {
+      "heading": "Fungura konti y'ubuntu yawe ya serivisi ya WhatNow",
+      "who_are_you": "Uri nde?",
+      "developer": "Uwabikoze",
+      "national_society": "Sosiyete y'igihugu",
+      "sign_up_with": "Iyandikishe ukoresheje:",
+      "sign_up_agreement": "Mu gufungura konti, uraba wemera ",
+      "terms_conditions": "Amategeko n'amabwiriza ",
+      "facebook": "Kwiyandikisha ukoresheje Facebook",
+      "google": "Iyandikishe ukoresheje Google",
+      "email_sign_up": "Cyangwa iyandikishe ukoresheje imeyili:",
+      "location": "Aho uherereye",
+      "organisation": "Umuryango",
+      "industry": "Ubwoko bw'ibikorwa",
+      "create_account": "Fungura Konti",
+      "last_name": "Izina ry'umuryango",
+      "select_country": "Hitamo igihugu",
+      "select_industry": "Hitamo ubwoko bw'ibikorwa",
+      "industries": {
+          "media": "Itangazamakuru",
+          "emergency": "Igenzurwa ry'ibiza",
+          "non_profit": "Umuryango udaharanira inyungu\/utegamiye kuri leta",
+          "humanitarian": "Umuryango wita ku kiremwamuntu",
+          "red_cross": "Kuruwa Ruje\/Kuruwasa Ruje",
+          "education": "Uburezi\/Amashuli",
+          "gov": "Ikigo cya Leta",
+          "other": "Ibindi"
+      },
+      "api_used_in": "Ni hehe iyi API izakoreshwa?",
+      "api_used_in_help": "Tumenyeshe uko wifuza kuyikoresha mu nyuguti ziri munsi ya 255",
+      "welcome": "Ikaze {izina}, uzuza amakuru akurikira ubashe gutangira:",
+      "gdpc_note": "Niba hari ikibazo ufite cyangwa wumva ushaka kumenya byinshi, vugisha: ",
+      "gdpc_ns_note": "Kwiyandikisha, vugisha itsinda rishinzwe serivisi rya WhatNow  ku muryango mpuzamahanga witeguye kurwanya ibiza kuri ",
+      "contact_gdpc": "Vugisha GDPC"
+  },
+  "terms_service_page": {
+    "applicable_law": {
+        "body": "Amategeko y' Akarere ka Columbia ashobora kuyobora uburenganzira n'amahame ku bwumvikane, bidateye ingaruka ku mahame  cyangwa kutumvikana ku mategeko",
+        "heading": "Itegeko rikoreshwa"
+    },
+    "body": "Urasabwa kubika amabanga n'umutekano  w'urufunguzo rwo kwiyandikisha wahawe na Kuruwa Ruje. Ushinzwe kubungabunga ikoreshwa rya API,  nkuko byakomeje kugenda bivugururwa, mu kugira ngo tubashe gukomeza twakira ikigega cy’amakuru. Kuruwa Ruje ishobora gutanga verisiyo ivuguruye ya API n'ikigega cy’amakuru ku ibanga ryawe. Verisiyo nshya ishobora kuba idahura n'ishyirwamubikorwa, kandi uremera gukoresha verisiyo iheruka ivuguruye y'ikigega cy’amakuru igihe cyose.\n\nUremera kudahindura, gusakaza, byasemywe , byaseshwe cyangwa kugarura agace ka API cyangwa porogaramu ya Kuruwa Ruje.\n\nUshobora kudakoresha API cyangwa ikigega cy’amakuru muburyo burenze kandi bwumvikana cyangwa bugizwe  ikoreshwa cyangwa iyonona rikabije, nkuko byagenwe na Kuruwa Ruje kububasha bwabo.\n\nNtushobora gukoresha API cyangwa ikigega cy’amakuru muburyo bumwe butemewe n'amategeko, kwibeshya, gusuzugura, bibi kandi bishobora kugtera gukora ikibi cyangwa kugirira nabi Kuruwa Ruje, itangwa rya serivisi, abatanga ibyabo, cyangwa undimuntu wese nkuko byagaragajwe mububasha bwayo\n\nKuruwa Ruje ishobora kugenzura ikoreshwa rya API n'ikigega cy’amakuru cyayo. Ntushobora gukoresha ubundi buryo ngo utivanga  niryo genzura, na Kuruwa Ruje ishobora gukoresha ubundi buryo igakemura icyo kibazo\n\nIkoresha  ry'Itegurwa, Isubizwa n’Igarurabutumwa bigomba kugaragara gusa kuburyo bushya cyangwa buvuguruye aribwo bukoreshwa mu Imenyesha ry'ibikorwa rijyanye na serivise zihutirwa, uzavugurure Itegurwa, Isubizwa n’Igarurabutumwa buri uko uvuguruye Ikigega cy’amakuru cyangwa Amamenyesha y’Ibikorwa bya Kuruwa Ruje.\n\nItegurwa, Isubizwa n’Igarurabutumwa ukoresha izaba ijyanye n'ibirere bitandukanye bitewe n'aho yatangiwe. Niba Itegurwa, Isubizwa n’Igarurabutumwa rikubiyemo inkomoko nka Kuruwa Ruje y'Amerika, cyangwa nizindi nzego z'igihugu za Kuruwa Ruje cyangwa Kuruwasa Ruje (buri kimwe n' \"inkomoko y'amakuru\"), ushobora gukurikiza ho inkomoko y'amakuru bifitanye isano na buri gice cy' Itegurwa, Isubizwa n’Igarurabutumwa  muburyo bwatanzwe mu Kigega cy’amakuru. Ugomba kudakomeza gukoresha buri nkomoko y'amakuru\n\nNtushobora gusemura Ikigega cy’amakuru, Amamenyesha y’Ibikorwa cyangwa Itegurwa, Isubizwa n’Igarurabutumwa murundi rurimi, ntushobora gukoresha, guhindura cyangwa gusubiramo, Ikigega cy’amakuru, Amamenyesha y’Ibikorwa cyangwa gItegurwa, Isubizwa n’Igarurabutumwa.\n\nUgomba gukora ku buryo Ikigega cy’amakuru, kiguma mu maboko yawe bwite.\n\nNtushobora kwemerera ko Amamenyesha y’Ibikorwa, n' Itegurwa, Isubizwa n’Igarurabutumwa byoherezwa kumukoresha wanyuma mu buryo no kwamamaza cyangwa gusaba inkunga.\n\nNtabwo wemerewe kubika Ikigega cy’amakuru muri rusange cyangwa igice.",
+    "contact": "Vugisha Kuruwa Ruje kuri {0} utange ibibazo byose bijyanye na API.",
+    "disclaimer": "API n'Ikigega cy’amakuru bitangwa KUMPAMVU Y'AMAKURU N'INTEGO Z'UBUREZI GUSA nkuko biri kandi biboneka mubyibanze. Kuruwa Ruje ntihagararira cyangwa ngo itange ikizere kubyo aribyo byose, byaba mu bigaragara cyangwa mu bikekwa. Kuruwa Ruje isheshe ingwaate zose ,zigaragara cyangwa zikekwa , harimo ariko bitagarukiye mugukoresha ingwate zatangwa kumpamvu bwite. Kuruwa Ruje nabakozi bayo, abakorera mubiro, abahagarariye ibihugu byabo nabakorera izindi sosiyete nabishingizi ntibazagenderwaho mugihe hari icyangijwe  mu ikoreshwa rya API, Ikigega cy’amakuru, Amamenyesha y’Ibikorwa, cyangwa Itegurwa, Isubizwa n’Igarurabutumwa burimo ariko bidahagarariye kuri uwo cyangwa undi , impanuka, rihanwa n'ingaruka ry'ibyangijwe.\n\nKuruwa Ruje ntabwo itanga ingwate kubikurikira , nikoreshwa rya API, Ikigega cy’amakuru , Itegurwa, Isubizwa n’Igarurabutumwa kandi ntigomba kugenderwaho muburyo ubwo aribwo bwose cyangwa umukoresha wanyuma, cyangwa undi wese harimo kandi bitarangije  ubukererwe , amakosa  cyangwa kwibeshya  ugendeye kuri API, Ikigega cy’amakuru, Imenyesha ry'ibikorwa cyangwa  Itegurwa, Isubizwa n’Igarurabutumwa bwamaze gutangwa.",
+    "entire_agreement": {
+        "body": "Amambwiriza ya API  agizwe n'amasezerano yuzuye  hagati yawe na Kuruwa Ruje ugendeye kukibazo kirimo kuba bikarenga ibibanje byavuzwe cyangwa byanditswe kandi byumvikana, byatangajwe cyangwa byemeranyijweho, bitarebeye cyane kubirimo hano. Kuruwa Ruje ifite uburenganzira bwo guhindura , ayamasezerano igihe icyo ari cyo cyose.",
+        "heading": "ibyemeranijwe ho byose:"
+    },
+    "heading": "ISOZWA RY'AMASEZERANO K'URUHUSA RWO GUKORESHA API",
+    "intro": "EMERA: MUGKORESHA IYI SERIVISE CYANGWA KUREBA MUGASANDUGU BAGUHAYE, UMUKORESHA YEMERA KUBA AFATANYE NAYA MASEZERANO.\n\nAPI ni igikoresho kigufasha ( Wowe) mukubona no gukoresha amakuru mashya ahari ya Kuruwa Ruje harimo namakuru y'ikirere n'ibiza bimenyeshwa no gukurikira amabwiriza (Amamenyesha y’Ibikorwa) amakuru y'ibikorwa by'ubutumwa bwanditse  kuburyo bwo gutegura kubishobora gutera impanuka, ibyihutirwa ( Itegurwa, Isubizwa n’Igarurabutumwa, byose hamwe n'Amamenyesha y’Ibikorwa,n'Ikigega cy’amakuru). Itegurwa, Isubizwa n'Igarurabutumwa  biteganyijwe guherekeza Amamenyesha y'Ibikorwa cyangwa indi mburira ndetse n'ibyitonderwa bigaragara bifitanye isano n'ibyerekeye ikirere n'ibiza muri porogaramu yawe y'ubusabe. Ikoreshwa ry'ikigega cy'amakuru yawe rigengwa n'amahame ya API.",
+    "license_limitations": {
+        "body": "Ushobora gukoresha ikigega cy'amakuru gusa mu gihe bihuye n'impamvu y'ubusabe bwawe ku mahame ya API, bikanaguha guhama mu bijyanye na API nk'uko byakomeje kugenda bivugururwa. Wizejwe uburenganzira bwo gukura ibyo ushaka ku rubuga, nta guhezwa, kubuzwa cyangwa guhagarikwa, ukabikoresha, ukabibyaza umusaruro ndetse ukabisakaza ku bakoresha porogaramu yawe y'ubusabe (\"Abakoresha porogaramu ba nyuma\") ku Bikorwa by'Imenyesha bifitanye isano n'inyandiko zanditswe zitegura, zigasubiza zikanagarura ubutumwa, bigahura n'igenamiterere ryihuta y'ibikorwa bya muntu biburira bituruka mu makuru, bijyanye n'amahame ya API. Ushobora gukoresha API mu gufasha ku mpamvu zitari iz'ubucuruzi, bijyanye n'amahame ya API. Ntabwo wemerewe gukoresha API mu gufasha mu ikoreshwa ry'ikigega cy'amakuru mu buryo bwo gucuruza, Amamenyesha y'ibikorwa ndetse\/cyangwa Itegurwa, Isubizwa n'Igarurabutumwa, harimo nta rutangira, kongera kugurisha amakuru, gusaba ikiguzi abayakoresha n'abayakwirakwiza cyangwa guca ikiguzi kuri gahunda yo kuyabyaza umusaruro. Kuruwa Ruje n'abatanga uburenganzira babungabunga umutwe wose, ubu nyirubwite, uburenganzira n'inyungu muri no kuri API, Itegurwa, Isubizwa n'Igarurabutumwa, Amamenyesha y'ibikorwa, Ikigega cy'amakuru n'inkomoko y'amakuru (nkuko byasobanuwe hasi). Uburenganzira bwose butagaragajwe burashinganye.",
+        "heading": "Uruhushya n'imbibi:"
+    },
+    "overview": {
+        "body": "Porogaramu y'ubusabe bw'Ikigo mpuzamahanga cyo kwitegura guhangana n'ibiza cya WhatNow ihura na (\"API\") uyigezwaho n'Umuryango utabara imbabare wo muri Amerika (\"Kuruwa Ruje”). API isaba urufunguzo rwo kwiyandikisha.  Mu gihe cyo kwiyandikisha, ugomba kwemera amahame n'amabwiriza akurikira, hamwe n'amahame n'amabwiriza y'urubuga rwo kuri murandasi rwa Kuruwa Ruje, n'ibyo bemeranwaho bihari kuri {0} (Bishyizwe hamwe, \"amahame ya API\"). Amahame ya API azayobora ikoreshwa rya API no kubasha kubika ibikoresho by'ikoranabuhanga biboneka unyuze kuri API. {1}",
+        "cta": "Kanda hano kugirango wiyandikishe."
+    },
+    "privacy_policy": {
+        "body": "Urumva, ukazirikana kandi ukemera ko gukora kwa porogaramu zimwe na zimwe, serivise, ibikoresho, uburyo bwo guhaha, ibikoresho cyangwa amakuru yo muri API bisaba itangwa , ikoreshwa n'ikwirakwizwa ry'amakuru aranga umuntu. Uko ubishatse, igihe wifuje kugera kuri API no kuyikoresha, uzirikana kandi ukanemera ko uko ukoresha API bizakomeza kwemeza amakuru aranga umuntu, ihuza n'ikoreshwa bifite ibanga ribigenga ryatangajwe: {0}",
+        "heading": "Ihame ry'ibanga"
+    },
+    "prohibited_activities": {
+        "body": "Wowe n'umukoresha wawe wa nyuma cyangwa umukozi ntimugomba gukoresha API cyangwa Ikigega cy'amakuru muri izi nzira:",
+        "heading": "Ibikorwa n'imyitwarire bibujijwe:",
+        "prohibited_list": {
+            "one": "Kwivanga no guhungabanya serivise za Kuruwa Ruje cyangwa ububiko bw'amakuru.",
+            "two": "Kuzenguruka cyangwa guhindura urufunguzo urwo ari rwo rwose cyangwa uburyo bw'uburinzi bukoreshwa na Kuruwa Ruje cyangwa API, harimo kandi ntibigarukira ku bindi byerekeye ikoranabuhanga.",
+            "three": "Gusaba, Gukusanya cyangwa gusaba kubona amakuru no kubona ububasha bwo  kubona amazina yo kwinjira, ijambobanga cyangwa ubundi bubasha ku Kuruwa Ruje n'ibindi biguhabwa muri konti yawe.",
+            "four": "Kuvuga cyangwa kugerageza kwerekana ko ufitanye isano, uterwa inkunga cyangwa wemezwa mu buryo ubwari bwo bwose na Kuruwa Ruje cyangwa se n'indi miryango bifitanye isano.",
+            "five": "Kuvuga cyangwa kugerageza kwerekana ko uri nyirubite cyangwa wafunguje API, Ikigega cy'amakuru, Amamenyesha y'ibikorwa n' Itegurwa, Isubizwa no Igarurabutumwa.",
+            "six": "Guhererekanya virusi iyo ariyo yose, ubusembwa bw'iyangirika, Trojan horse cyangwa icyo ari cyo cyose gifite ubusha bwo kwangiza."
+        }
+    },
+    "reserve_rights": "Kuruwa Ruje ifite uburenganzira bwo guhindura, cyangwa kutongera gutanga API n'Ikigega cy'amakuru muri rusange cyangwa mu bice, byaba iby'igihe gito n'ibizahoraho igihe icyo aricyo cyose nta rindi tangazo. Mu kwirinda urujijo, nta kintu kirimo hano gitegeka Umuryango utabara imbabare kugira API yayo cyangwa Ikigega cy'amakuru akugeraho, uremera kandi ukameza ko uburenganzira bwose n'ibindi byihariye biri mu bubasha bwa Kuruwa Ruje.",
+    "severability": {
+        "body": "Kuba inyandiko runaka yaba idafite agaciro, cyangwa ari amahame y'agateganyo ya API ntabwo bihindura agaciro k'izindi nyandiko.",
+        "heading": "Ububi bwabwo n'ibyo ukurirwaho:"
+    },
+    "suspension": {
+      "body": "Kuruwa Ruje ifite uburenganzira bwo guhagarika no kurangiza amasezerano yerekeye bubasha ufite bwo kubona amakuru mu gihe yabigennye, mu mwihariko wayo, mu gihe irimo gukoresha mu buryo butemewe API cyangwa Ikigega cy'amakuru nkuko byavuzwe mu mahame ya API cyangwa urimo gukoresha API cyangwa Ikigega cy'amakuru mu mirimo iyo ariyo yose ibangamira umutekano cyangwa umutuzo by'umuntu wese cyangwa umurongo w'Umuryango utabara imbabare.",
+      "heading": "Isubikwa n'isozwa:"
+    }
+  },
+  "view_data": {
+      "alert_title": "IMENYESHA:",
+      "more_info": "Andi makuru:",
+      "which": "Ni ubuhe butumwa bwa WhatNow ushaka kureba?",
+      "view_data": "Reba amakuru",
+      "alerts": "Amamenyesha",
+      "alert_preview": "Kureba imenyesha",
+      "cap_alerts": "Amamenyesha ya CAP",
+      "onset": "Intangiriro",
+      "severity": "Uburemere",
+      "title": "Umutwe",
+      "date": "Itariki",
+      "headline": "Umutwe",
+      "alert": "Imenyesha",
+      "whatnow_info": "Amakuru ya Whatnow",
+      "alert_detail": "Imenyesha mu buryo burambuye",
+      "more": "Andi makuru",
+      "area_affected": "Agace kagezweho n'ingaruka",
+      "details": "Amakuru arambuye",
+      "cap": {
+          "type": "Ubwoko",
+          "status": "Uko ihagaze",
+          "urgency": "Byihutirwa",
+          "severity": "Uburemere",
+          "certainty": "Nta gushidikanya",
+          "sent": "Byoherejwe",
+          "effective": "Biboneye",
+          "onset": "Intangiriro",
+          "expires": "Byarengeje igihe",
+          "alert_from": "Imenyesha rituruka ku",
+          "feed": "Amakuru",
+          "more": "Andi makuru",
+          "through": "Binyuze",
+          "alert_feed": "Imenyesha ry'amakuru",
+          "fetching_feed": "Gushakisha amakuru",
+          "empty": "Nta mamenyesha ahari kuri ubu."
+      }
+  },
+  "user_agreement": {
+      "title": "Kwemererwa k'umukoresha",
+      "para_one": "Mbere y'uko uhabwa ububasha bwo gukoresha WhatNow, ushobora kubanza ugasoma kandi ukemeza amahame yo kwemera nk'umukoresha ubika inyandiko zikurikira hasi unemeza ahanditse \"Ndemeza\" hasi.",
+      "cta": "Ndabyemeye",
+      "download": "Kanda hano ubone inyandiko yo kwemera y'umukoresha (105KB)"
+  },
+  "hazard_type": {
+      "dropdown": {
+        "select": "Hitamo ubwoko bw'ikiza",
+        "create": "Fungura ubwoko bw'ikiza"
+      },
+      "create": {
+          "title": "Fungura ubwoko bushya bw'ikiza",
+          "request": "Saba ubwoko bushya bw'ikiza",
+          "other": "Ibindi",
+          "email_subject": "Ssaba ubwoko bushya bw'ikiza",
+          "hazard_name": "Izina ry'ikiza",
+          "hazard_name_placeholder": "Injiza izina ry'ikiza",
+          "upload_icon": "Shyiraho agashushondanga",
+          "icon_requirements": "Agashushondanga kagomba kuba muri png kandi hasi ya 30kb",
+          "requestLink": "Vugisha GDPC usaba ubundi bwoko bw'ikiza",
+          "success": "Ubwoko bw'ikiza bwafunguwe.",
+          "error": "Ihangane, hari  ikibazo mu gufungura ubwoko bushya bw'ikiza."
+      }
+  },
+  "regions": {
+    "list": {
+        "manage": "Gena uturere",
+        "create": "Shiraho akarere gashya",
+        "edit": "Hindura akarere",
+        "add": "Shyiraho akarere",
+        "empty": "Ntushoboye kubona uturere twose",
+        "table_header": {
+            "region": "Akarere"
+        }
+    },
+    "select_soc": "Hitamo umuryango wo kureba no kongeraho uturere",
+    "create": "Kora akarere gashya",
+    "form": {
+        "name": "Izina ry’akarere",
+        "name_help": "Ha izina akarere ugiye gutangiriza ubutumwa bugenwe bwa NikiNonaha.",
+        "description": "Ubusobanuro",
+        "description_help": "Tanga amakuru yimbitse yerekeranye na akarere, urugero agace ka Sani Furansisiko beyi."
+    },
+    "edit": "Hindura akarere",
+    "delete": "Ibi biratuma hasibwa akarere ndetse n’andi makuru yari agashamikiyeho"
+  },
+  "table_headers": {
+      "profile_pic": "Ifoto ikuranga",
+      "first_name": "Izina ry'umuryango",
+      "last_name": "Izina_ry'umuryango",
+      "role": "Umurimo",
+      "society": "Ishyirahamwe",
+      "date": "Itariki",
+      "country": "Igihugu",
+      "email": "imeyili",
+      "created_at": "Yafunguriwe_mu",
+      "last_logged_in_at": "Igihe iherukira gukora",
+      "terms_version": "Umwirondoro",
+      "actions": "Ibikorwa",
+      "action": "Igikorwa",
+      "content": "Ibikubiyemo",
+      "country_code": "Aho uherereye",
+      "organisation": "imitegurire",
+      "industry_type": "Ubwoko bw'ibikorwa",
+      "all_roles": "Imirimo yose",
+      "version": "Ubwoko",
+      "user": "Umukoresha",
+      "language_code": "Kode y'ururimi"
+  }
+}

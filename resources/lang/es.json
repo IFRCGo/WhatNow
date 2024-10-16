@@ -1,0 +1,821 @@
+{
+  "ok": "OK",
+  "go": "VAMOS",
+  "all": "Todos",
+  "cancel": "Cancelar",
+  "error_alert_title": "Ups...",
+  "error_alert_text": "¡Algo salió mal! Inténtelo de nuevo.",
+  "error_permission_alert_text": "No tiene permiso para realizar este cambio",
+  "token_expired_alert_title": "¡Sesión caducada!",
+  "token_expired_alert_text": "Por favor, inicie sesión para continuar.",
+  "login": "Iniciar sesión",
+  "what_now": "WhatNow",
+  "message_portal": "Portal de mensajes",
+  "register": "Registrarse",
+  "sign_up": "Registrarse",
+  "docs": "Documentos",
+  "my_apps": "Mis Aplicaciones",
+  "number_of_apps": "{0} Aplicaciones",
+  "whatnow_content": "Mensajes de WhatNow",
+  "alerts": "Alertas",
+  "feeds": "Fuentes",
+  "get_started": "​Suscríbase ahora",
+  "page_not_found": "Pagina no encontrada",
+  "go_home": "Volver a la página de inicio",
+  "logout": "Cerrar sesión",
+  "email": "Correo electrónico",
+  "register_success": "Gracias por registrarse",
+  "confirm_email": "Por favor, compruebe su bandeja de correo electrónico para confirmar.",
+  "email_confirmed": "Gracias por confirmar su dirección de correo electrónico. Por favor, inicie sesión.",
+  "confirmation_failed": "Su correo electrónico no ha podido ser confirmado, póngase en contacto con el administrador para volver a intentarlo.",
+  "home_redirect": "Ir a la página de inicio",
+  "status": "Estado",
+  "remember_me": "Recuérdame",
+  "old_password": "Contraseña actual",
+  "password": "Contraseña",
+  "forgot_password": "¿Olvidaste tu contraseña?",
+  "confirm_password": "Confirmar contraseña",
+  "incorrect_password": "Contraseña incorrecta",
+  "name": "Nombre",
+  "first_name": "Nombre",
+  "last_name": "Apellido",
+  "toggle_navigation": "Cambiar navegación",
+  "you_are_logged_in": "¡Ha iniciado sesión!",
+  "reset_password": "Restablecer la contraseña",
+  "set_password": "Establecer contraseña",
+  "send_password_reset_link": "Enviar enlace para restablecer la contraseña",
+  "settings": "Configuración",
+  "profile": "Perfil",
+  "your_info": "Su información",
+  "info_updated": "¡Su información ha sido actualizada!",
+  "update": "Actualizar",
+  "your_password": "Su contraseña",
+  "password_updated": "Su contraseña ha sido actualizada",
+  "new_password": "Nueva Contraseña",
+  "login_with": "Inicie Sesión con",
+  "register_with": "Regístrese con",
+  "yes": "Sí",
+  "no": "No",
+  "close": "Cerrar",
+  "dashboard": "Panel de control",
+  "terms_service": "Condiciones de servicio",
+  "sign_in_with_google": "Iniciar sesión con Google",
+  "offline_error": {
+    "title": "Sin conexión a Internet",
+    "description": "Guarde los cambios en {time} o se perderá el progreso"
+  },
+  "breadcrumbs": {
+    "applications": "Aplicaciones",
+    "admin_users": "Usuarios Administradores",
+    "users": "Usuarios",
+    "manage_users": "Administrar Usuarios",
+    "profile": "Perfil",
+    "terms": "Términos y Condiciones",
+    "edit": "Editar",
+    "create": "Crear",
+    "content": "Contenido",
+    "what_now_content": "Contenido de What Now",
+    "bulk_upload": "Subida masiva",
+    "audit_log": "Registro de auditorías",
+    "api_usage": "Uso de API",
+    "app_detail": "Información sobre la aplicación",
+    "all_terms": "Todos los Términos y Condiciones"
+  },
+  "documentation": {
+    "heading": "Documentación de API de la Cruz Roja",
+    "sidebar": {
+        "introduction": "Introducción",
+        "base_url": "La URL base",
+        "changelog": "Registro de Cambios",
+        "authentication": "Autenticación",
+        "response_codes": "Códigos de respuesta",
+        "emergency_alert_feed": "Alertas de Emergencia",
+        "cap_alert_document": "Documento de alerta CAP",
+        "what_now": "What Now"
+    },
+    "steps": {
+        "one": {
+            "body": "La API REST de la Cruz Roja permite a los desarrolladores acceder a la información y a los recursos de emergencia emitidos por las Sociedades de la Cruz Roja internacionales.",
+            "heading": "Introducción",
+            "support_card": {
+                "body": "Si requiere más información sobre la API de la Cruz Roja, por favor, contacte con dev@3sidedcube.com",
+                "title": "Soporte y Preguntas"
+            }
+        },
+        "two": {
+            "body": "Todas las URL en la documentación de API v1.0 tienen la siguiente dirección URL de base:",
+            "heading": "La URL base"
+        },
+        "three": {
+          "heading": "Registro de Cambios",
+          "table": {
+              "headers": {
+                  "detail": "Lanzamiento",
+                  "version": "Versión API",
+                  "release": "Lanzamiento",
+                  "release_date": "Fecha de lanzamiento"
+              }
+          }
+        },
+        "four": {
+            "body": "La API requiere autenticación para acceder a todos los recursos mediante una clave de API. Para obtener una clave API, en primer lugar {0}.\n\nTodas las solicitudes de API deben incluir el siguiente encabezado HTTP:",
+            "create_app_cta": "crear una aplicación",
+            "heading": "Autenticación"
+        },
+        "five": {
+            "heading": "Códigos de respuesta",
+            "table": {
+                "descriptions": {
+                    "ok": "La solicitud se realizó correctamente y el cuerpo de respuesta contiene el recurso solicitado",
+                    "found": "Indica una redirección. Emita una solicitud GET al URI del recurso en la Ubicación: encabezado.",
+                    "not_found": "No se encontró el recurso solicitado.",
+                    "not_allowed": "Indica que el método HTTP utilizado no está permitido en este recurso.",
+                    "server_error": "Se produjo un error en el servidor y no se pudo devolver el recurso solicitado.",
+                    "unavailable": "Indica que el servicio no está disponible actualmente. Vuelva a intentar la solicitud en otro momento."
+                },
+              "headers": {
+                "code": "Código",
+                "name": "Nombre",
+                "description": "Descripción"
+              }
+            }
+        },
+        "six": {
+            "card": {
+              "body": "Cada Sociedad de la Cruz Roja puede emitir alertas públicas utilizando {0} v1.2.",
+              "cta": "Protocolo de alerta común",
+              "title": "Protocolo de alerta común"
+            },
+            "endpoint": "Criterios de valoración:",
+            "example": "En este ejemplo, el segmento {0} debe reemplazarse con el código del país de una sociedad determinada. p. ej.",
+            "feed_intro": "También se proporciona una fuente de datos para cada sociedad, que enumera las alertas activas publicadas por una sociedad determinada, identificadas por",
+            "heading": "Alertas de Emergencia",
+            "intro": "Las alertas de CAP emitidas por todas las sociedades se publican mediante una fuente de RSS. Se puede acceder a ellas a través de los siguientes criterios de valoración:"
+        },
+        "seven": {
+            "endpoint": "Criterios de valoración:",
+            "example_response": "Ejemplo de respuesta:",
+            "heading": "Documento de alerta CAP",
+            "body": "Se puede acceder a los documentos de alerta CAP a través del único enlace especificado en cada elemento de la fuente de RSS. El URI de una alerta utiliza el siguiente formato: "
+        },
+        "eight": {
+            "body": "Los siguientes criterios de valoración proporcionan datos estructurados publicados por las sociedades de la Cruz Roja para ayudar con la preparación ante desastres para una variedad de tipos de eventos.\n\nCada entrada proporciona información sobre seis etapas de la gestión de desastres:",
+            "endpoint": "Criterios de valoración:",
+            "example_response": "Ejemplo de respuesta:",
+            "heading": "What Now",
+            "note": "Nota:",
+            "noteDetails": "{0} todas las respuestas están contenidas en una propiedad {1} principal.",
+            "query_params": "Parámetros de consulta:",
+            "response_properties": "Propiedades de respuesta:",
+            "structure": "Estructura de los elementos de What Now:",
+            "stucture_attribution": "Estructura de un {0} objeto:",
+            "stucture_attribute_translation": "Estructura de un objeto de atribución {0}:",
+            "stucture_translation": "Estructura de un {0} objeto:",
+            "table": {
+                "query_params": {
+                    "name": "nombre",
+                    "description": "descripción"
+                },
+                "structure": {
+                    "property": "Propiedad",
+                    "data_type": "Tipo de datos",
+                    "description": "Descripción"
+                }
+            }
+        }
+    }
+  },
+  "get_started_docs": {
+    "title": "Empezar",
+    "sidebar": {
+        "create_app": "Crear una aplicación",
+        "get_api_key": "Obtener una clave API",
+        "make_request": "Hacer una solicitud",
+        "sign_up": "Registrarse"
+    },
+    "steps": {
+        "one": {
+            "heading": "Paso 1 - Registrarse",
+            "body": "Para comenzar a usar datos de la API de WhatNow, primero {0} en el Portal de WhatNow.\n\nPuede usar sus cuentas de Facebook y Google, o una dirección de correo electrónico para crear una cuenta.",
+            "create_account_alt": "crear cuenta",
+            "existing_account": "Si ya tiene una cuenta, por favor {0}.",
+            "login_cta": "iniciar sesión",
+            "sign_up_cta": "registrarse"
+
+        },
+        "two": {
+            "body": "Para utilizar la API, debe crear una aplicación en el Portal WhatNow. Cuéntanos un poco sobre lo que estás construyendo.",
+            "create_app_alt": "crear aplicación",
+            "heading": "Paso 2 - Crear una aplicación"
+        },
+        "three": {
+            "body": "Cuando haya creado su aplicación, se generará automáticamente una clave API.\n\n{0} Asegúrese de guardar esta clave de la manera más segura posible y evite compartir o exponer su clave API dentro de su propia aplicación.",
+            "create_api_key_alt": "Crear clave API",
+            "heading": "Paso 3: Obtener una clave API",
+            "important": "Importante:"
+        },
+        "four": {
+            "api_docs_cta": "Documentación sobre API",
+            "body": "La API de WhatNow utiliza HTTP(S) y proporciona criterios de valoración RESTful para obtener los datos publicados.\n\nCada solicitud debe autenticarse usando la clave API creada en el paso anterior.",
+            "example_title": "Ejemplo de solicitud",
+            "heading": "Paso 4 - Hacer una solicitud",
+            "moreInfo": "Para obtener más información sobre todos los criterios de valoración de la API, consulte {0}."
+        }
+    }
+  },
+  "home_pods": {
+      "bulk_upload": "Cargue archivos .csv para que pueda actualizar grandes cantidades de contenido a la vez",
+      "audit_log": "Aquí puede ver un registro de actividades",
+      "whatnow_edit": "Aquí puede editar el contenido de WhatNow",
+      "whatnow_review": "Aquí puede revisar el contenido del servicio WhatNow",
+      "whatnow_publish": "Aquí puede editar y publicar el contenido de WhatNow",
+      "manage_users": "Aquí se puede administrar los usuarios (Crear, editar y eliminar)",
+      "api_usage": "Aquí puede ver quién está usando la API y qué aplicaciones se están construyendo con ella."
+  },
+  "languages": {
+    "am": "አማርኛ",
+    "ar": "عربى",
+    "bn": "বাংলা",
+    "de": "Deutsch",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ht": "Kreyòl",
+    "id": "bahasa Indonesia",
+    "it": "Italiano",
+    "ja": "日本語",
+    "my": "ဗမာ",
+    "ne": "नेपाली",
+    "pt": "Português (UE)",
+    "ru": "русский",
+    "rw": "Ikinyarwanda",
+    "sw": "Kiswahili",
+    "th": "ภาษาไทย",
+    "tr": "Türkçe",
+    "ur": "اردو",
+    "vi": "Tiếng Việt"
+  },
+  "sidebar": {
+      "manage": "Administrar usuarios de contenido",
+      "content_users": "Usuarios de contenido",
+      "audit_log": "Registro de auditorías",
+      "whatnow": "WhatNow",
+      "bulk": "Subida masiva",
+      "content": "Contenido",
+      "api": "Uso de API",
+      "applications": "Aplicaciones",
+      "api_stats": "Estadísticas de API",
+      "api_users": "Usuarios de API",
+      "terms_conditions": "Términos y Condiciones",
+      "regions": "Regiones"
+  },
+  "common": {
+      "accept": "Aceptar",
+      "actions": "Acciones",
+      "create": "Crear",
+      "edit": "Editar",
+      "deactivate": "Desactivar",
+      "activate": "Activar",
+      "are_you_sure": "¿Está seguro\/a?",
+      "yes": "Sí",
+      "title": "Título",
+      "description": "Descripción",
+      "unpublished_edits": "¿Ediciones no publicadas?",
+      "published": "Publicados",
+      "delete": "Eliminar",
+      "welcome": "Bienvenidos a",
+      "save_changes": "Guardar cambios",
+      "auto_saving": "Guardado automático",
+      "add": "Añadir",
+      "my_profile": "Mi perfil",
+      "cancel": "Cancelar",
+      "view_changes": "Ver cambios",
+      "view_content": "Ver contenido",
+      "resend_activation": "Reenviar correo electrónico de activación",
+      "deactivate_user": "Desactivar usuario",
+      "submit_changes": "Enviar cambios",
+      "reactivate_user": "Reactivar usuario",
+      "send_invite": "Enviar invitación",
+      "invite_and_create": "Invitar y crear otro",
+      "loading": "Cargando el contenido",
+      "publish_new": "Publicar nueva versión",
+      "greeting": "Hola",
+      "removed": "Eliminado",
+      "copy": "Copia",
+      "copied": "Copiado",
+      "not_empty": "No puede quedar vacío",
+      "name": "Nombre",
+      "webUrl": "URL",
+      "learn_more": "Más información",
+      "validations": {
+          "empty": "No puede quedar vacío",
+          "hazardIcon": "Por favor, seleccione una imagen de menos de 30 kb"
+      },
+      "network_error": "Error en la red",
+      "network_error_text": "Parece que ha habido un error de red. Inténtelo de nuevo en unos momentos",
+      "email_sent": "Correo electrónico enviado",
+      "duplicate_lang_error": "Lo sentimos, el idioma elegido ya existe",
+      "duplicate_lang_description": "Edite el idioma existente o seleccione un nuevo idioma en el menú desplegable",
+      "estimated_users": "Número estimado de usuarios"
+  },
+  "banners": {
+      "get_started_create": ", Comience y cree su primera Aplicación",
+      "create_app": "Crear una aplicación",
+      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+  },
+  "users": {
+      "user": "Usuario",
+      "deleted": "Usuario eliminado",
+      "list": {
+          "manage": "Gestionar usuarios",
+          "create": "Crear nuevo usuario",
+          "download_report": "Descargar informe",
+          "empty": "No se pudo encontrar ningún usuario",
+          "detail": "Detalle de usuario",
+          "clear_filters": "Limpiar filtros",
+          "table_header": {
+              "user": "Usuario",
+              "role": "Función",
+              "society": "Sociedad",
+              "email": "Correo electrónico",
+              "added": "Añadido",
+              "last_activity": "Última actividad",
+              "t_and_c": "Versión de T&C"
+          },
+          "societies": "Sociedades"
+      },
+      "status": {
+          "active": "Activado",
+          "deactivated": "Desactivado"
+      },
+      "edit": {
+          "super_admin_all": "Acceso a todas las sociedades",
+          "user_details": "Detalles de usuario",
+          "create_user": "Crear nuevo usuario",
+          "add_society": "Agregar sociedad + ",
+          "societies_heading": "Sociedades",
+          "roles_heading": "Rol & permisos",
+          "activity_heading": "Actividad",
+          "roles_label": "Seleccionar funciones & permisos para este usuario",
+          "activity_link": "Ver todas las acciones por usuario",
+          "created": "Usuario creado correctamente",
+          "updated": "Usuario actualizado con éxito",
+          "email_update": "Para actualizar su correo electrónico, introduzca su contraseña",
+          "view": "Ver",
+          "more": "más",
+          "less": "Mostrar menos",
+          "user_can_do": "Ver lo que el usuario tiene permiso para hacer:",
+          "user_no_permission": "Este usuario no tiene permisos",
+          "soc_already_added": "A este usuario ya se le ha asignado esta sociedad"
+      }
+  },
+  "content": {
+      "content": "Contenido",
+      "audit_log": {
+          "audit_log": "Registro de auditorías",
+          "empty": "No se encontró un historial de auditoría que coincida con este filtro",
+          "soc_label": "Sociedad"
+      },
+      "whatnow": {
+          "set_attribution": "Establecer el nombre de la sociedad y el mensaje de atribución para publicar",
+          "whatnow": "WhatNow",
+          "empty": "No hay mensajes de WhatNow publicados para esta Sociedad Nacional",
+          "steps": "Pasos",
+          "publish": "Publicar",
+          "no_publish": "No hay nada que publicar",
+          "published": "traducciones publicadas",
+          "publishing": "Publicación",
+          "content_to_publish": "Borrador de contenido para publicar",
+          "whatnow_content": "Contenido de WhatNow",
+          "choose_hazard": "Elija Peligro",
+          "hazard": "Peligro",
+          "content": "Contenido",
+          "create": "Agregar Peligro",
+          "edit_attribtion": "Editar atribución",
+          "attribution": "Atribución",
+          "attribution_url": "Atribución URL",
+          "society_name": "Sociedad Nacional",
+          "attribution_message": "Mensaje de atribución",
+          "no_translation": "Sin contenido establecido",
+          "delete_content_translation": "Esto eliminará el contenido de whatnow seleccionado del idioma actual",
+          "messages": "Mensajes de WhatNow del",
+          "add_language": "Agregar un nuevo idioma",
+          "no_languages": "Seleccione o cree un idioma para comenzar",
+          "no_soc": "Seleccione una sociedad",
+          "no_region": "Seleccione una región",
+          "add_language_message": "Para agregar un nuevo idioma, agregue contenido que lo acompañe",
+          "add_language_attribution": "Crear atribución para agregar un nuevo idioma",
+          "select_language": "Por favor, seleccione un idioma",
+          "attribution_publish": "Esta atribución estará disponible inmediatamente después de la publicación"
+      },
+      "edit_whatnow": {
+          "title": "Título",
+          "description": "Descripción",
+          "content_piece": "Pieza de contenido",
+          "enter_other_hazard_type": "Introduzca el nombre del tipo de peligro",
+          "other_hazard_type_label": "Otros tipos de peligro",
+          "stepped_content": "Pieza de Contenido Escalonado",
+          "content_title_description": "Título de estos mensajes de WhatNow",
+          "content_description_description": "Descripción de estos mensajes de WhatNow",
+          "content_label": "Introduzca alguna información del peligro",
+          "content_url": "URL",
+          "content_url_description": "URL para obtener más información sobre estos mensajes de WhatNow. Por favor, incluya el protocolo, es decir, http:\/\/ or https:\/\/",
+          "created": "creado",
+          "pieces_edited": " Piezas editadas",
+          "delete_item": "Eliminar elemento",
+          "add_item": "Añadir elemento +",
+          "content_placeholder": "Por favor, escriba su mensaje",
+          "mitigation": "Mitigación",
+          "mitigation_help": "Acciones a más largo plazo para reducir riesgos",
+          "mitigation_extra": "Una mitigación es una declaración en la que se predice un acontecimiento peligroso a más largo plazo. Las acciones tomadas son la evaluación, la planificación y las medidas de reducción de riesgos a largo plazo para que el hogar y el entorno sean más seguros.",
+          "seasonalForecast": "Pronóstico estacional",
+          "seasonalForecast_help": "Acciones a más corto plazo para reducir riesgos",
+          "seasonalForecast_extra": "Un pronóstico estacional es una declaración de predicción de un evento peligroso. Las medidas adoptadas son evaluar los riesgos potenciales y planificar actividades para reducir el riesgo y proteger al hogar.",
+          "watch": "Atención",
+          "watch_help": "Prepararse para responder",
+          "watch_extra": "Se emite una alerta cuando el riesgo de un evento peligroso ha aumentado significativamente, pero su ocurrencia, ubicación y\/o momento aún son inciertos. Está destinado a proporcionar suficiente tiempo para que se ejecuten acciones de protección y que exista una preparación para la respuesta.",
+          "warning": "Advertencia",
+          "warning_help": "Prepararse para responder",
+          "warning_extra": "Se emite una advertencia cuando está ocurriendo un evento peligroso, es inminente o tiene una probabilidad muy alta de que ocurra. Significa que las condiciones presentan una amenaza para la vida o para la propiedad. Las personas que se encuentran en el camino de este peligro deben tomar medidas de protección.",
+          "immediate": "Inmediato",
+          "immediate_help": "Acciones de respuesta",
+          "immediate_extra": "Actualmente, las condiciones representan una amenaza para la vida y la propiedad. Estas son acciones de protección inmediatas a tomar cuando se está produciendo un evento peligroso. Se necesitan acciones de respuesta para protegerse a sí mismo y al hogar.",
+          "recover": "Recuperar",
+          "recover_help": "Acciones de recuperación",
+          "recover_extra": "Estas son acciones de protección que se deben tomar para reducir el riesgo después de un evento peligroso.",
+          "updated": "actualizado",
+          "download_icon": "Descargar icono",
+          "download_image": "Descargar como imagen",
+          "download_image_error": "Error al descargar la imagen, asegúrese de haber publicado todos los cambios y vuelva a intentarlo.",
+          "download_instructions": "Haga clic derecho y seleccione 'Guardar imagen como...' para guardar",
+          "downloaded_image_alt": "Instrucciones de WhatNow"
+      },
+      "audit": "Registro de auditoría",
+      "export": "Exportar",
+      "bulk_upload": {
+          "bulk_upload": "Subida masiva",
+          "template": "Plantilla",
+          "export_template": "Exportar plantilla",
+          "import_data": "Importar datos",
+          "import_complete": "Importación completa",
+          "import_summary": "Está importando dentro de {society} en {lang}.",
+          "import_banner": {
+              "success": "Éxito",
+              "added": "Agregado",
+              "skipped": "Omitido",
+              "denied": "Denegado",
+              "updated": "Actualizado",
+              "failed": "Fallido",
+              "invalid": "Inválido",
+              "row": "Fila"
+          },
+          "upload_csv": "Cargar un documento en formato CSV",
+          "language_instructions": "Seleccione el idioma de las traducciones que se están importando.",
+          "file_instructions": "Arrastre o seleccione un archivo de su ordenador.",
+          "choose": "Seleccione",
+          "submit": "Importe el contenido",
+          "reset": "Suba otro archivo",
+          "export_template_guide": "Exporte la Guía de Plantillas",
+          "export_template_instructions": "Sobre instrucciones sobre cómo utilizar este conjunto de plantillas para subir archivos de manera efectiva, por favor consulte esta guía.",
+          "warnings": {
+              "title": "Rechace cargar ningún archivo si algún contenido sobrescribe sobre versiones más recientes.",
+              "on": "Sí",
+              "off": "No"
+          },
+          "overwriting": {
+              "title": "Configuración de Sobrescritura.",
+              "on": "Siempre actualizar a esta versión, sobrescribir todas las revisiones",
+              "off": "Solo actualizar los tipos de casos donde el contenido importado sea el más nuevo"
+          },
+          "errors": {
+              "warning_update_will_overwrite": "Esta acción sobreescribirá los cambios que se han producido desde que se creó esta exportación",
+              "bad_request": "Los datos del archivo no se forman correctamente",
+              "bad_request_error_codes": {
+                  "30001": "Los encabezados de las columnas no coinciden con la plantilla",
+                  "30002": "Falta el nombre de atribución, el mensaje o la dirección url",
+                  "30003": "Dirección url asignada incorrecta. Por favor, asegúrese de que el protocolo está presente, por ejemplo, https:\/\/",
+                  "40001": "Código del país proporcionado incorrecto",
+                  "40002": "La sociedad seleccionada no coincide con la sociedad para el archivo seleccionado",
+                  "40003": "La fecha en la que se exportó el archivo seleccionado se ha deformado y la importación no puede completarse"
+              }
+          }
+      }
+  },
+  "api_stats": {
+    "page_title": "Estadísticas de API",
+    "download_data": "Descargar datos",
+    "start_date": "Fecha inicial",
+    "end_date": "Fecha final",
+    "table_select": {
+      "keys": "Claves de API",
+      "routes": "Rutas de API"
+    },
+    "field_headers": {
+      "application_name": "Application Name",
+      "number_of_hits": "Number of Hits",
+      "estimated_reach": "Estimated Reach",
+      "organisation": "Organisation",
+      "application": "Application"
+    },
+    "cumulative_cards": {
+      "hits": "Visitas totales",
+      "accounts": "Cuentas totales",
+      "est_impacted_users": "Est. Usuarios afectados"
+    },
+    "empty": "No se encontraron estadísticas para el periodo indicado"
+  },
+  "api_usage": {
+      "applications": "Aplicaciones",
+      "view_user": "Ver usuario",
+      "reactivate": "Reactivar",
+      "app_detail": "Información sobre la aplicación",
+      "app_details": "Información sobre la aplicación",
+      "activity": "Actividad",
+      "view_all_activity": "Véase toda la actividad de esta aplicación",
+      "api_users": "Usuarios de API",
+      "terms_conditions": "Todas las Versiones de Términos & Condiciones",
+      "view_prev_terms": "Véanse las versiones anteriores",
+      "current_version": "Versión Actual",
+      "version": "Versión"
+  },
+  "applications": {
+      "my_apps": "Mis Aplicaciones",
+      "new_tc": "Nuevos términos y condiciones",
+      "build": "Crear una nueva aplicación",
+      "edit": "Editar aplicación",
+      "building": "Construcción de aplicaciones",
+      "no_apps": "No tiene aplicaciones, construya una para empezar."
+  },
+  "home": {
+      "home": "Hogar",
+      "welcome": "Bienvenido",
+      "admin_intro": "Aquí puede administrar los usuarios, editar y publicar el contenido de WhatNow y ver el uso de API.",
+      "ns_admin_intro": "Aquí puede editar y publicar el contenido de WhatNow",
+      "ns_editor_intro": "Aquí puede editar el contenido de WhatNow",
+      "api_user_intro": "Aquí puede ver sus aplicaciones y administrar su cuenta."
+  },
+  "landing": {
+      "strapline": "Servicio de Whatnow",
+      "strapline_part_2": "Mensajes Clave de Seguridad de la Cruz Roja Global \/ Media Luna Roja",
+      "developer": {
+          "strap_para_one": "Ayude a las comunidades a prepararse, a responder y a recuperarse de los peligros con nuestros mensajes localizados de acción clave.",
+          "strap_para_two": "Utilice nuestra sencilla guía de tan solo cuatro pasos para integrar los mensajes de WhatNow en su aplicación. Regístrese y vea todos los mensajes disponibles."
+      },
+      "national_society": {
+          "strap_para_one": "Publique los mensajes clave de seguridad de su Sociedad Nacional de la Cruz Roja y de la Media Luna Roja para que los medios de comunicación mundiales, nacionales y locales tengan acceso y los difundan.",
+          "strap_para_two": "Póngase en contacto con nosotros para obtener más información sobre cómo crear los mensajes y conectarse con los socios de los medios de comunicación."
+      },
+      "strap_para_one": "Ayude a las comunidades a prepararse, a responder y a recuperarse de los peligros con nuestros mensajes localizados de acción clave.",
+      "strap_para_two": "Utilice nuestra sencilla guía de tan solo cuatro pasos para integrar los mensajes de WhatNow en su aplicación. Regístrese y vea todos los mensajes disponibles.",
+      "view_data": "Ver la información",
+      "view_message_library": "Ver los Mensajes de WhatNow",
+      "what_now": "WhatNow?",
+      "fake_alert_heading": "Alerta de Frío Intenso",
+      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+      "fake_alert_time": "HACE 1 HORA",
+      "fake_alert_time_exact": "05\/02\/18 a las 05:15 (CT)",
+      "use_cases": {
+          "heading": "Para más información",
+          "first_heading": "Cómo funciona",
+          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "second_heading": "Casos de Uso",
+          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "third_heading": "Ejecución de las Herramientas",
+          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fourth_heading": "Video sobre WhatNow",
+          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fifth_heading": "Mejora de las Aplicaciones del Tiempo",
+          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+      },
+      "example_alert": {
+          "heading": "Formato del Mensaje de Muestra de WhatNow",
+          "alert_preview": "Vista previa de la alerta",
+          "what_now_info": "Vista previa de WhatNow",
+          "example_whatnow_request": "Ejemplo de Respuesta de WhatNow",
+          "example_alert_request": "Ejemplo de Respuesta de Alerta",
+          "example_content": "Aviso Meteorológico# 3 FINAL a las 11 AM, enero. 29, 2018\nPor la Cola de un Frente Frío \n\nEl efecto de la Cola de un Frente Frío se ha debilitado. Se experimentará una mejora de las condiciones meteorológicas en Nome. Sin embargo, se pueden esperar lluvias aisladas o tormentas, especialmente durante la tarde o la noche, en estas áreas debido al oeste.\n\nCon este desarrollo, este es el último aviso para este sistema meteorológico.",
+          "example_content_location_header": "UBICACIÓN AFECTADA",
+          "example_content_location": "Nome, Alaska"
+      },
+      "example_whatnow": {
+          "alert_from": "Alerta de Cruz Roja Americana",
+          "more_info": "Más información",
+          "heading": "Mensajes Clave para el Frío Extremo",
+          "copy": "Estas son las medidas que se han de tomar para reducir el riesgo y protegerse a usted y a su hogar del frío extremo.",
+          "what_now": "WhatNow",
+          "step_1": "Proteja su casa. Compruebe las tuberías y utilice las fuentes de calefacción de forma segura.",
+          "step_2": "Manténgase hidratado con líquidos calientes",
+          "step_3": "Protéjase con ropa abrigada y cubra la piel expuesta",
+          "step_4": "Tenga cuidado y sea cauteloso con las condiciones del hielo, especialmente durante la conducción",
+          "step_5": "Compruebe el estado de los vecinos, amigos y personas en riesgo"
+      },
+      "build": {
+          "heading": "¿Listo para construir su aplicación?"
+      },
+      "data_preview": {
+          "heading": "Mensajes de WhatNow",
+          "sub_heading": "Regístrese y vea los mensajes sobre medidas clave de la Cruz Roja y de las Sociedades Nacionales de la Media Luna Roja de todo el mundo"
+      },
+      "footer": {
+          "terms_conditions": "Términos y Condiciones",
+          "about": "Sobre nosotros",
+          "privacy": "Privacidad",
+          "getting_started": "Para empezar",
+          "docs": "Documentación",
+          "give_feedback": "Comentarios",
+          "gdpc_logo": "Logotipo del Centro Global de Preparación para Desastres",
+          "ifrc_logo": "Logotipo del Movimiento Internacional de la Cruz Roja y de la Media Luna Roja"
+      }
+  },
+  "register_form": {
+      "heading": "Cree su cuenta gratuita del Servicio de WhatNow",
+      "who_are_you": "¿Quién eres?",
+      "developer": "Desarrollador",
+      "national_society": "Sociedad Nacional",
+      "sign_up_with": "Regístrese con:",
+      "sign_up_agreement": "Al crear su cuenta, usted acepta nuestros ",
+      "terms_conditions": "Términos y Condiciones ",
+      "facebook": "Regístrese con Facebook",
+      "google": "Regístrese con Google",
+      "email_sign_up": "Regístrese con su correo electrónico:",
+      "location": "Ubicación",
+      "organisation": "Organización",
+      "industry": "Tipo de industria",
+      "create_account": "Crear una cuenta",
+      "last_name": "Apellido",
+      "select_country": "Seleccione un país",
+      "select_industry": "Seleccione un tipo de industria",
+      "industries": {
+          "media": "Medios de comunicación",
+          "emergency": "Gestión de las Situaciones de Emergencias",
+          "non_profit": "Sin fines de lucro \/ ONG",
+          "humanitarian": "Organización Humanitaria",
+          "red_cross": "Cruz Roja\/ Media Luna Roja",
+          "education": "Educación\/Academia",
+          "gov": "Agencia Gubernamental",
+          "other": "Otros"
+      },
+      "api_used_in": "¿Dónde se utilizará esta API?",
+      "api_used_in_help": "Describa ahora cómo pretende utilizar este servicio en menos de 255 caracteres",
+      "welcome": "Bienvenido {nombre}. Por favor, complete la siguiente información para empezar:",
+      "gdpc_note": "Si tiene alguna pregunta o está interesado en tener más información, póngase en contacto con: ",
+      "gdpc_ns_note": "Para inscribirse, rogamos que contacte con el equipo del servicio de WhatNow del Centro Global de Preparación para Desastres en ",
+      "contact_gdpc": "Contacte GDPC"
+  },
+  "terms_service_page": {
+    "applicable_law": {
+        "body": "Las leyes del Distrito de Columbia regirán todos los derechos y obligaciones de este Acuerdo, sin dar efecto a ningún principio de conflicto de leyes.",
+        "heading": "Legislación Aplicable:"
+    },
+    "body": "Usted es responsable de mantener el secreto y la seguridad de la clave de registro proporcionada para Usted por la Cruz Roja. Usted es responsable de mantener la compatibilidad con la API, que se actualiza periódicamente, con el fin de seguir recibiendo las Fuentes de Datos. La Cruz Roja podrá publicar versiones actualizadas de la API y las Fuentes de Datos a su entera discreción. Es posible que las nuevas versiones no sean compatibles con implementaciones anteriores, y Usted acepta utilizar la versión actualizada más reciente de las Fuentes de Datos en todo momento.\n\nUsted se compromete a no modificar, distribuir, descompilar, desmontar o realizar ingeniería inversa en ninguna parte de la API o de cualquier software de la Cruz Roja.\n\nUsted no puede usar la API o las Fuentes de Datos de manera que exceda un volumen de solicitud razonable o constituya un uso excesivo o abusivo, según lo determine la Cruz Roja a su entera discreción.\n\nUsted no puede utilizar la API o las Fuentes de Datos de manera ilegal, engañosa, negligente, maliciosa, con la intención de causar daño, o que perjudique a la Cruz Roja, a sus proveedores de servicios, a sus proveedores de contenido, o a cualquier otra persona, según se determine por la Cruz Roja a su entera discreción.\n\nLa Cruz Roja puede controlar su uso de la API y de las Fuentes de Datos. Usted no puede usar ningún medio técnico para interferir en ese control y la Cruz Roja puede usar medios técnicos para superar tal interferencia.\n\nEl uso de los Mensajes de Preparar, Responder y Recuperar se presentarán solamente de forma actual o actualizados con la configuración de urgencia en ese momento de la Alerta del Acontecimiento correlacionado, y usted deberá actualizar sus Mensajes individuales de Preparar, Responder y Recuperar con cualquier actualización de las Fuentes de Datos y\/o Alertas de Acontecimientos correlacionadas por la Cruz Roja.\n\nLos Mensajes individuales de Preparar, Responder y Recuperar que usted utilice se asociarán sólo con la región geográfica para la que se emite. Si un Mensaje de Preparar, Responder y Recuperar incluye una referencia a una fuente como la Cruz Roja Americana u otra sociedad u organización nacional de la Cruz Roja o de la Media Luna Roja (cada una de ellas una \"Referencia de la Fuente\"), Usted incluirá la Referencia de la Fuente asociada con cada Mensaje de Preparar, Responder, y Recuperar en el formulario proporcionado en las Fuentes de Datos. No hará más uso de ninguna Referencia de la Fuente.\n\nUsted no puede traducir las Fuentes de Datos, las Alertas de Acontecimientos y\/o los Mensajes de Preparar, Responder y Recuperar a ningún otro idioma, ni hacer ningún uso, editar o revisar, o alterar el significado de las Fuentes de Datos, las Alertas de Acontecimientos y\/o los Mensajes de Preparar, Responder y Recuperar.\n\nDebe asegurarse de que las Fuentes de Datos permanecen en su posesión y\/ o control exclusivo.\n\nUsted no puede permitir que las Alertas de Eventos y los Mensajes de Preparar, Responder y Recuperar sean entregados a los usuarios finales para que incorporen publicidad o patrocinio.\n\nUsted no puede elaborar ningún archivo de las Fuentes de Datos en su totalidad o en parte.",
+    "contact": "Póngase en contacto con la Cruz Roja en {0} para cualquier pregunta relacionada con la API.",
+    "disclaimer": "La API y las Fuentes de Datos se proporcionan SOLO CON FINES INFORMATIVOS Y EDUCATIVOS, Y sobre la base \"tal cual\" y \"como están disponibles\". La Cruz Roja no hace representaciones ni garantías de ningún tipo, expresas o implícitas. La Cruz Roja rechaza todas las garantías, expresas o implícitas, incluyendo pero no limitadas a las garantías implícitas de comerciabilidad y adecuación para un propósito particular. La Cruz Roja y sus empleados, funcionarios, gobernadores, agentes y licenciatarios no serán responsables de los daños de cualquier tipo que surjan del uso de la API, de las Fuentes de Datos, de las Alertas de Acontecimientos, y\/ o de los Mensajes para Preparar, Responder y Recuperar, incluyendo pero no limitado, a los daños directos, indirectos, fortuitos, daños punitivos y consecuentes.\n\nLa Cruz Roja no garantiza la secuencia, la exactitud, la autenticidad o la integridad de la API, de las Fuentes de Datos, de las Alertas de Acontecimientos y\/o de los Mensajes para Preparar, Responder, y Recuperar y no se hará responsable, de ninguna manera, a usted o a sus usuarios finales o a terceros, incluyendo pero no limitado, por cualquier retraso, inexactitud, errores u omisiones, con respecto a la API, a las Fuentes de Datos, a las Alertas de Acontecimientos y\/o a los Mensajes para Preparar, Responder y Recuperar proporcionados a continuación.",
+    "entire_agreement": {
+        "body": "Los Términos de la API constituyen un acuerdo completo y exclusivo entre la Cruz Roja y Usted con respecto al tema de este documento y reemplaza todos los entendimientos, comunicaciones o acuerdos orales o escritos anteriores que no se hayan incorporado específicamente en este documento. La Cruz Roja se reserva el derecho de modificar o revocar este acuerdo en cualquier momento.",
+        "heading": "Acuerdo completo:"
+    },
+    "heading": "ACUERDO DE LICENCIA DEL USUARIO FINAL DE API",
+    "intro": "ACUERDO: AL UTILIZAR EL SERVICIO O MARCAR LA CASILLA PROPORCIONADA, EL USUARIO ESTÁ DE ACUERDO Y QUEDA VINCULADO POR ESTE ACUERDO.\n\nLa API es una herramienta que le permite a usted (\"Usted\") recuperar y utilizar las fuentes de datos disponibles por la Cruz Roja, incluyendo una serie de avisos de alerta global sobre los fenómenos climáticos y los desastres (\"Alertas de Acontecimientos\") y una fuente de mensajes procesables y contextualizados sobre cómo prepararse para los peligros locales de acuerdo con el tipo de peligro y la urgencia (\"Mensajes para Preparar, Responder y Recuperar\", junto con las Alertas de Acontecimientos y las \"Fuentes de Datos\"). Los Mensajes para Preparar, Responder y Recuperar están destinados a acompañar a las Alertas de Acontecimientos u otros avisos de advertencia y vigilancia asociados con los fenómenos metereológicos y los desastres en su propia aplicación. El uso de las Fuentes de Datos se rige por los Términos de la API.",
+    "license_limitations": {
+        "body": "Puede utilizar las Fuentes de Datos solo en relación con su propia aplicación sujeta a los Términos de la API, y siempre que mantenga la compatibilidad con la API, actualizada periódicamente. Se le concede un derecho no exclusivo, limitado y revocable para descargar, utilizar, reproducir y distribuir a los usuarios finales de su propia aplicación (\"Usuarios Finales\") Alertas de Acontecimientos y Mensajes para Preparar, Responder y Recuperar en relación con la configuración de urgencia de las Alertas sobre Acontecimientos individuales de las Fuentes de Datos, sujeto a los Términos de la API. Solo puede utilizar la API para facilitar un uso no comercial de los Fuentes de Datos de acuerdo con los Términos de la API. Usted no puede, en ningún caso, utilizar la API para facilitar el uso comercial de las Fuentes de Datos, de las Alertas de Acontecimientos y\/o de los Mensajes para Preparar, Responder y Recuperar, incluyendo sin limitación, el revenderlos, cobrar para acceder a ellos, cobrar para redistribuirlos, o cobrar para crear trabajos derivados basados en ellos. La Cruz Roja y sus licenciatarios mantienen todo el título, la propiedad, los derechos y los intereses de y hacia la API, de los Mensajes para Preparar, Responder y Recuperar, de las Alertas de Acontecimientos, de las Fuentes de Datos y de las Referencias de las Fuentes (como se define a continuación) en el mismo. Se reservan todos los derechos no otorgados expresamente.",
+        "heading": "Licencia y Limitaciones:"
+    },
+    "overview": {
+        "body": "La Interfaz del Programa de la Aplicación del Servicio WhatNow del Centro Global de Preparación para Desastres (la \"API\") se pone a su disposición por La Cruz Roja Americana (\"Cruz Roja\"). La API requiere de una clave para su registro.  Durante el proceso de registro, usted debe aceptar los siguientes términos y condiciones, junto con los términos y condiciones del Acuerdo de los Términos del Servicio del Sitio Web de la Cruz Roja disponible en {0} (de forma colegiada, los \"Términos de la API\"). Los Términos de la API regirán su uso de la API y de los materiales electrónicos descargables disponibles a través de la API. {1}",
+        "cta": "Pulse aquí para registrarse."
+    },
+    "privacy_policy": {
+        "body": "Usted entiende, reconoce y acepta que el funcionamiento de ciertos programas, servicios, herramientas, opciones de compra, materiales o información de la API requiere el envío, uso y difusión de información de identificación personal. En consecuencia, si Usted desea acceder y utilizar la API, Usted reconoce y acepta que Su uso de la API constituirá la aceptación de la recopilación de información de identificación personal y de las prácticas de uso contenidas en la política de privacidad publicada: {0}",
+        "heading": "Política de Privacidad:"
+    },
+    "prohibited_activities": {
+        "body": "Usted y sus Usuarios Finales o agentes no utilizarán la API, ni las Fuentes de Datos de las siguiente manera:",
+        "heading": "Actividades y conductas prohibidas:",
+        "prohibited_list": {
+            "one": "Interferir o interrumpir los servicios o servidores de la Cruz Roja.",
+            "two": "Para eludir o modificar cualquier clave o mecanismo de seguridad empleado por la Cruz Roja o la API, incluyendo pero sin limitarse, a ninguna tecnología de autenticación.",
+            "three": "Para solicitar, recopilar, solicitar u obtener de otro modo acceso a nombres de inicio de sesión, contraseñas u otras credenciales de autenticación para la Cruz Roja distintas de las que se le proporcionan para su propia cuenta.",
+            "four": "Para declarar o implicar afiliación, patrocinio o aprobación por la Cruz Roja o cualquier otra sociedad u organización nacional de la Cruz Roja o de la Media Luna Roja.",
+            "five": "Para indicar o implicar que Usted posee o creó la API, las Fuentes de Datos, las Alertas de Acontecimientos y\/o los Mensajes para Preparar, Responder y Recuperar.",
+            "six": "Para transmitir cualquier virus, virus de gusanos, caballos de Troya, o cualquier elemento de naturaleza destructiva."
+        }
+    },
+    "reserve_rights": "La Cruz Roja se reserva el derecho de alterar y\/o dejar de proporcionar la API y las Fuentes de Datos en su totalidad o en parte, ya sea temporal o permanentemente, en cualquier momento sin previo aviso. Para evitar dudas, nada en este documento obliga a la Cruz Roja a poner su API o Fuentes de Datos a su disposición, y Usted acepta y reconoce que cualquier acceso está dentro de la discreción única y absoluta de la Cruz Roja.",
+    "severability": {
+        "body": "La invalidez de cualquier término o disposición de los Términos de la API no afectará a la validez de cualquier otra disposición.",
+        "heading": "Divisibilidad y Exención:"
+    },
+    "suspension": {
+      "body": "La Cruz Roja se reserva el derecho de suspender o terminar su acceso si la Cruz Roja determina, a su sola discreción, que Usted está involucrado en un uso no autorizado de la API o de las Fuentes de Datos como se describe en los Términos de la API o que está utilizando la API o las Fuentes de Datos en cualquier actividad que amenace o comprometa la seguridad y\/o protección de cualquier persona o de las redes de la Cruz Roja.",
+      "heading": "Suspensión o Terminación:"
+    }
+  },
+  "view_data": {
+      "alert_title": "ALERTA:",
+      "more_info": "más información:",
+      "which": "¿Qué Mensajes de WhatNow desea ver?",
+      "view_data": "Ver los datos",
+      "alerts": "Alertas",
+      "alert_preview": "Vista previa de la alerta",
+      "cap_alerts": "Alertas CAP",
+      "onset": "Inicio",
+      "severity": "Gravedad",
+      "title": "Título",
+      "date": "Fecha",
+      "headline": "Titular",
+      "alert": "Alerta",
+      "whatnow_info": "Información sobre WhatNow",
+      "alert_detail": "Datos de la Alerta",
+      "more": "Más información",
+      "area_affected": "Área afectada",
+      "details": "Detalles",
+      "cap": {
+          "type": "Tipo",
+          "status": "Estado",
+          "urgency": "Urgencia",
+          "severity": "Gravedad",
+          "certainty": "Certeza",
+          "sent": "Enviado",
+          "effective": "Efectivo",
+          "onset": "Inicio",
+          "expires": "Expira",
+          "alert_from": "Alertas de",
+          "feed": "Alimentación",
+          "more": "Más información:",
+          "through": "a través de",
+          "alert_feed": "Alimentación de Alertas",
+          "fetching_feed": "Alimentación de Búsqueda",
+          "empty": "No hay alertas actuales en este momento"
+      }
+  },
+  "user_agreement": {
+      "title": "Acuerdo del usuario",
+      "para_one": "Antes de acceder al Portal WhatNow, le rogamos que lea y acepte los términos del acuerdo del usuario descargando el documento ofrecido más abajo y haciendo clic en el botón 'Acepto' a continuación.",
+      "cta": "Acepto",
+      "download": "Haga clic aquí para ver el documento de acuerdo del usuario (105KB)"
+  },
+  "hazard_type": {
+      "dropdown": {
+        "select": "Seleccione el tipo de peligro",
+        "create": "Cree tipo de peligro"
+      },
+      "create": {
+          "title": "Cree un nuevo tipo de peligro",
+          "request": "solicitar un nuevo tipo de peligro",
+          "other": "Otros",
+          "email_subject": "Solicitud de un nuevo tipo de peligro",
+          "hazard_name": "Nombre del peligro",
+          "hazard_name_placeholder": "Introducir el nombre del peligro",
+          "upload_icon": "Subir un icono",
+          "icon_requirements": "Los iconos deben tener un formato png y no más de 30kb",
+          "requestLink": "Póngase en contacto con el GDPC para solicitar un nuevo tipo de peligro",
+          "success": "Tipo de peligro creado",
+          "error": "Lo sentimos, hubo un problema al crear su nuevo tipo de peligro."
+      }
+  },
+  "regions": {
+    "list": {
+        "manage": "Administrar regiones",
+        "create": "Agregar nueva región",
+        "edit": "Editar región",
+        "add": "Agregar región",
+        "empty": "No se pudo encontrar ninguna región",
+        "table_header": {
+            "region": "Región"
+        }
+    },
+    "select_soc": "Seleccione una sociedad para ver y agregar regiones",
+    "create": "Crear nueva región",
+    "form": {
+        "name": "Nombre de la región",
+        "name_help": "Asigne un nombre a la región para la que desea crear mensajes personalizados de WhatNow.",
+        "description": "Descripción",
+        "description_help": "Brinde más información sobre la región, por ejemplo, Área de la Bahía de San Francisco."
+    },
+    "edit": "Editar región",
+    "delete": "Esto eliminará la región y todo el contenido relacionado a dicha región."
+  },
+  "table_headers": {
+      "profile_pic": "foto de perfil",
+      "first_name": "Apellido",
+      "last_name": "apellido",
+      "role": "función",
+      "society": "sociedad",
+      "date": "Fecha",
+      "country": "País",
+      "email": "email",
+      "created_at": "creado_en",
+      "last_logged_in_at": "Último Activo",
+      "terms_version": "perfil",
+      "actions": "Acciones",
+      "action": "Acción",
+      "content": "Contenido",
+      "country_code": "Ubicación",
+      "organisation": "organización",
+      "industry_type": "tipo de industria",
+      "all_roles": "Todos los roles",
+      "version": "Versión",
+      "user": "Usuario",
+      "language_code": "Código del Idioma"
+  }
+}

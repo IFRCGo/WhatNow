@@ -1,0 +1,280 @@
+// Get the society select box the right height
+// TODO: Refactor to use the component SASS variables instead
+// https://vue-select.org/guide/css.html#overriding-default-styles
+.styled-select.v-select {
+  max-width: 320px;
+  font-size: 0.9375rem;
+
+  .vs__selected {
+    font-weight: 700;
+    height: 100% !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    padding-right: 48px !important;
+  }
+
+  &.vs--open .vs__open-indicator {
+    bottom: auto;
+    margin-top: -3px;
+    &:before {
+      transform: rotate(225deg);
+    }
+  }
+
+  .vs__clear {
+    position: relative;
+    top: -1px;
+  }
+
+  .vs__dropdown-toggle {
+    height: 48px;
+    max-width: 100%;
+    background: white !important;
+    padding-bottom: 0px;
+  }
+
+  .vs__search {
+    color: #495057;
+    line-height: 1.42;
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  .vs__dropdown-option {
+    border-bottom: solid 1px #e5e5e5;
+    padding: 8px 12px;
+  }
+
+  .vs__dropdown-option--highlight,
+  .vs__dropdown-option--selected {
+    background-color: #efefef;
+    color: #000000;
+    font-weight: 700;
+  }
+
+  .dropdown-option {
+    min-height: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    white-space: normal;
+    -webkit-locale: "en"; // this text will always be in english, so must use en locale
+  }
+
+  .dropdown-menu > a {
+    color: #6d6e70;
+  }
+}
+
+.whatnow-language-picker-in-modal {
+  .nav {
+    &.nav-tabs {
+      border-bottom: none;
+      gap: 12px;
+    }
+    .nav-link {
+      height: 100%;
+      line-height: 1;
+      opacity: 0.2;
+      color: black;
+      padding: 0px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.16);
+        border: 1px solid transparent;
+      }
+      &.active {
+        background-color: rgba(255, 255, 255, 0.16);
+        border: 1px solid transparent;
+        opacity: 1;
+        .nav-link-wrapper {
+          border-bottom: 4px solid $light-red;
+        }
+      }
+
+      .nav-link-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 0px;
+      }
+    }
+  }
+}
+
+.whatnow-language-picker {
+  background-image: linear-gradient(90deg, #666666, #969696);
+  min-height: 64px;
+  .nav {
+    &.nav-tabs {
+      border-bottom: none;
+    }
+    .nav-link {
+      height: 100%;
+      line-height: 1;
+      padding: 20px 15px 0 15px;
+      opacity: 0.2;
+      color: white;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.16);
+        border: 1px solid transparent;
+      }
+      &.active {
+        background-color: rgba(255, 255, 255, 0.16);
+        border: 1px solid transparent;
+        opacity: 1;
+        .nav-link-wrapper {
+          border-bottom: 4px solid $light-red;
+        }
+      }
+      .nav-link-wrapper {
+        padding: 0px 15px 15px 15px;
+      }
+    }
+  }
+}
+
+.whatnow-publish-banner {
+  background-image: linear-gradient(90deg, black, #303030);
+}
+
+.whatnow-row {
+  border-radius: 4px;
+  letter-spacing: 0.2px;
+  font-weight: 300;
+  background-color: white;
+  h3 {
+    font-size: em(24);
+  }
+}
+
+.edit-whatnow {
+  .whatnow-instruction-list {
+    &.spooky-list {
+      list-style: none;
+    }
+    .input-group {
+      margin-top: -30px;
+    }
+    .input-group-append {
+      .btn {
+        border-radius: 0 0.125rem 0.125rem 0;
+      }
+    }
+  }
+}
+
+.whatnow-publish-modal {
+  .whatnow-publish-content-wrapper {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  hr {
+    margin-right: -15px;
+  }
+}
+
+.whatnow-collapse-card {
+  background-color: #f2f2f2;
+  header {
+    border-radius: calc(0.7rem - 1px) !important;
+  }
+  .whatnow-collapse-card-body {
+    background-color: #f2f2f2;
+  }
+}
+
+.whatnow-choose {
+  background-image: url("../../img/map.png");
+  background-size: cover;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url("../../img/map@2x.png");
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+    background-image: url("../../img/map@3x.png");
+  }
+  .whatnow-choose-header {
+    font-size: em(45);
+    @media screen and (max-width: 767px) {
+      font-size: em(30);
+    }
+  }
+}
+
+.hazard-instruction-card {
+  border-left: 10px solid $hazard-default;
+  border-radius: 6px;
+  // Instructions
+  &-mitigation {
+    border-color: $mid-term;
+  }
+  &-seasonalForecast {
+    border-color: $seasonalForecast;
+  }
+  &-watch {
+    border-color: $watch;
+  }
+  &-warning {
+    border-color: $warning;
+  }
+  &-immediate {
+    border-color: $immediate;
+  }
+  &-recover {
+    border-color: $recover;
+  }
+  // Alert Severity
+  &-extreme {
+    border-color: $alert-extreme;
+  }
+  &-severe {
+    border-color: $alert-severe;
+  }
+  &-moderate {
+    border-color: $alert-moderate;
+  }
+  &-minor {
+    border-color: $alert-minor;
+  }
+  &-unknown {
+    border-color: $alert-unknown;
+  }
+
+  .hazard-card-download-container {
+    color: $grey;
+    .hazard-card-download-container-icon {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+    .hazard-card-download-container-button {
+      color: $grey;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  h5 {
+    letter-spacing: 1.5px;
+  }
+  ol {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    li {
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+}
+
+.feed-body {
+  background: #fafafa;
+  border-top: 2px solid #e0e0e0;
+}
+
+.ns-logo {
+  border-radius: em(8.4);
+  border: solid 4px rgba(109, 110, 112, 0.3);
+}

@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Classes;
+
+use Illuminate\Support\Collection;
+
+class UserQuery
+{
+    protected $orderBy = 'created_at';
+
+    protected $sort = 'asc';
+
+    protected $publicUsersExcluded = false;
+
+    
+    protected $filters;
+
+    public function __construct()
+    {
+        $this->filters = new Collection();
+    }
+
+    public function addFilter(string $column, $value)
+    {
+        $this->filters->offsetSet($column, $value);
+    }
+
+    
+    public function getOrderBy(): string
+    {
+        return $this->orderBy;
+    }
+
+    
+    public function getSort(): string
+    {
+        return $this->sort;
+    }
+
+    
+    public function getFilters(): Collection
+    {
+        return $this->filters;
+    }
+
+    
+    public function setOrderBy(string $orderBy)
+    {
+        $this->orderBy = $orderBy;
+    }
+
+    
+    public function setSort(string $sort)
+    {
+        $this->sort = $sort;
+    }
+
+    public function excludePublicUsers()
+    {
+        $this->publicUsersExcluded = true;
+    }
+
+    
+    public function hasPublicUsersExcluded()
+    {
+        return $this->publicUsersExcluded;
+    }
+}

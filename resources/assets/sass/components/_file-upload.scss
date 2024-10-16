@@ -1,0 +1,79 @@
+.c-file-upload {
+    position: relative;
+
+    &.is-invalid ~ .invalid-feedback {
+        display: block;
+    }
+
+    &__image {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -30px;
+    }
+
+    .custom-file-input {
+        @include visually-hidden();
+    }
+
+    .custom-file {
+        height: 100%;
+    }
+
+    .custom-file-control {
+        padding: 12px 80px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .custom-file-control[data-choose]::before {
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        color: #000000;
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    .custom-file-label::after,
+    .custom-file-control::after {
+        padding-left: 0;
+        font-size: 12px;
+        font-style: italic;
+        letter-spacing: 0.4px;
+        color: #000000;
+        padding-bottom: 0;
+    }
+
+    .custom-file-label::after,
+    .custom-file-control::after,
+     .custom-file-label,
+     .custom-file-control {
+        position: initial;
+        border: none;
+        top: auto;
+        height: auto;
+        background: transparent;
+        border-radius: 0;
+        display: block;
+    }
+
+    .b-form-file.custom-file .custom-file-input.is-valid.focus~.custom-file-control,
+    .b-form-file.custom-file .custom-file-input.is-valid:focus~.custom-file-control,
+    .was-validated .b-form-file.custom-file .custom-file-input:valid.focus~.custom-file-control,
+    .was-validated .b-form-file.custom-file .custom-file-input:valid:focus~.custom-file-control,
+    .b-form-file.custom-file .custom-file-input.is-invalid.focus~.custom-file-control,
+    .b-form-file.custom-file .custom-file-input.is-invalid:focus~.custom-file-control,
+    .was-validated .b-form-file.custom-file .custom-file-input:invalid.focus~.custom-file-control,
+    .was-validated .b-form-file.custom-file .custom-file-input:invalid:focus~.custom-file-control {
+        border: none;
+        box-shadow: none;
+    }
+
+    .b-form-file.custom-file .custom-file-input.focus~.custom-file-control,
+    .b-form-file.custom-file .custom-file-input:focus~.custom-file-control {
+        background-color: transparent;
+    }
+}

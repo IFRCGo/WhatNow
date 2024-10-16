@@ -1,0 +1,21 @@
+.page-banner {
+  padding: em(20) em(24) em(24);
+  background-image: url('../../img/map.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('../../img/map@2x.png');
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+    background-image: url('../../img/map@3x.png');
+  }
+}
+
+.page-banner-breadcrumbs {
+  min-height: em(30);
+  .breadcrumb-separator {
+    font-size: 1.5em;
+  }
+}

@@ -1,0 +1,15 @@
+.u-text-medium {
+  @include font-size(20px);
+}
+
+.u-text-normal {
+  @include font-size(15px);
+}
+
+.u-text-spaced {
+  letter-spacing: 1.5px;
+}
+
+.u-text-wrap {
+  white-space: pre-wrap;
+}

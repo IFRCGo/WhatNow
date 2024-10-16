@@ -1,0 +1,66 @@
+.terms-modal {
+  max-height: 500px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+  }
+}
+
+.api-dash {
+  .terms-notification {
+    background-image: url('../../img/alerts/tc.png');
+    background-size: cover;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('../../img/alerts/tc@2x.png');
+    }
+    @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+      background-image: url('../../img/alerts/tc@3x.png');
+    }
+  }
+  .api-dash-app-card {
+    hr {
+      margin-left: -23px;
+      margin-right: -23px;
+    }
+    .api-key-panel {
+      height: 86px;
+      border-radius: 5px;
+      word-break: break-all;
+      div {
+        height: 100%;
+        &:first-of-type {
+          flex-basis: 75%;
+          overflow-y: scroll;
+        }
+        small {
+          color: #6d6e70;
+        }
+      }
+    }
+    .app-settings-dropdown {
+      button {
+        background-color: #f2f2f2;
+        border-color: #f2f2f2;
+
+        path {
+          fill: #aaaaaa;
+        }
+
+        &:active {
+          background-color: #f2f2f2;
+        }
+
+        &:first-of-type {
+          border-radius: 8px !important;
+        }
+      }
+    }
+  }
+}

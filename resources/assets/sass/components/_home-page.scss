@@ -1,0 +1,47 @@
+.home-page {
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .home-card {
+    background-size: 40%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    .card-title {
+      font-size:em(30)
+    }
+    .card-text {
+      color: #6d6e70;
+      font-size:em(18)
+    }
+    &.users-card {
+      background-image: url('../../img/home_page/people.png');
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('../../img/home_page/people@2x.png');
+      }
+      @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+        background-image: url('../../img/home_page/people@3x.png');
+      }
+    }
+    &.content-card {
+      background-image: url('../../img/home_page/speech.png');
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('../../img/home_page/speech@2x.png');
+      }
+      @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+        background-image: url('../../img/home_page/speech@3x.png');
+      }
+    }
+    &.api-card {
+      background-image: url('../../img/home_page/computer.png');
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: url('../../img/home_page/computer@2x.png');
+      }
+      @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+        background-image: url('../../img/home_page/computer@3x.png');
+      }
+    }
+  }
+
+}

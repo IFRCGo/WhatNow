@@ -1,0 +1,23 @@
+.site-footer {
+  ul {
+    font-size: em(12);
+    li {
+      margin-bottom:0.75rem;
+    }
+  }
+
+  &__heading {
+    font-size: em(18);
+    min-height: 55px;
+    white-space: nowrap;
+  }
+
+  a {
+    color: $black;
+  }
+
+
+  &__logo {
+    height: 54px;
+  }
+}

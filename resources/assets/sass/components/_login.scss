@@ -1,0 +1,24 @@
+.login-section {
+  height: calc(100vh - 140px);
+  background-image: url('../../img/map.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url('../../img/map@2x.png');
+  }
+  @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
+    background-image: url('../../img/map@3x.png');
+  }
+
+  &.is-mobile-full-height {
+
+    @media screen and (max-width: 768px) {
+      display: block;
+    }
+  }
+}

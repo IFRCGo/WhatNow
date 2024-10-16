@@ -1,0 +1,821 @@
+{
+  "ok": "確認",
+  "go": "前往",
+  "all": "全部",
+  "cancel": "取消",
+  "error_alert_title": "哎呀...",
+  "error_alert_text": "出了點問題！請再試一次。",
+  "error_permission_alert_text": "您沒有權限執行此操作",
+  "token_expired_alert_title": "登入已過期！",
+  "token_expired_alert_text": "請登入以繼續操作。",
+  "login": "登入",
+  "what_now": "WhatNow",
+  "message_portal": "信息窗口",
+  "register": "註冊",
+  "sign_up": "註冊",
+  "docs": "文件",
+  "my_apps": "我的應用程式",
+  "number_of_apps": "{0}應用程式",
+  "whatnow_content": "WhatNow訊息",
+  "alerts": "通知",
+  "feeds": "訊息流",
+  "get_started": "立即註冊",
+  "page_not_found": "找不到頁面",
+  "go_home": "前往首頁",
+  "logout": "登出",
+  "email": "電子郵件",
+  "register_success": "感謝您的註冊",
+  "confirm_email": "請檢查您的電子郵件收件箱以確認您的帳戶。",
+  "email_confirmed": "感謝您確認您的電子郵件地址。請登入。",
+  "confirmation_failed": "無法確認您的電子郵件地址，請聯繫管理員再試一次。",
+  "home_redirect": "前往首頁",
+  "status": "狀態",
+  "remember_me": "記住我",
+  "old_password": "當前密碼",
+  "password": "密碼",
+  "forgot_password": "忘記密碼了嗎？",
+  "confirm_password": "確認密碼",
+  "incorrect_password": "密碼不正確",
+  "name": "姓名",
+  "first_name": "名字",
+  "last_name": "姓氏",
+  "toggle_navigation": "切換導航",
+  "you_are_logged_in": "你已登錄！",
+  "reset_password": "重置密碼",
+  "set_password": "設置密碼",
+  "send_password_reset_link": "發送密碼重置連結",
+  "settings": "設定",
+  "profile": "個人檔案",
+  "your_info": "您的資料",
+  "info_updated": "您的資料已更新！",
+  "update": "更新",
+  "your_password": "您的密碼",
+  "password_updated": "您的密碼已更新",
+  "new_password": "新密碼",
+  "login_with": "登入",
+  "register_with": "註冊",
+  "yes": "有",
+  "no": "沒有",
+  "close": "關閉",
+  "dashboard": "控制台",
+  "terms_service": "服務條款",
+  "sign_in_with_google": "使用Google登入",
+  "offline_error": {
+    "title": "未连接到互联网",
+    "description": "请在{time}中保存更改否则进度将丢失"
+  },
+  "breadcrumbs": {
+    "applications": "應用程式",
+    "admin_users": "管理員用戶",
+    "users": "用戶",
+    "manage_users": "管理用戶",
+    "profile": "個人檔案",
+    "terms": "條款及條件",
+    "edit": "編輯",
+    "create": "創建",
+    "content": "內容",
+    "what_now_content": "What Now內容",
+    "bulk_upload": "批次上傳",
+    "audit_log": "審核日誌",
+    "api_usage": "API使用量",
+    "app_detail": "應用程式詳情",
+    "all_terms": "全部條款及條件"
+  },
+  "documentation": {
+    "heading": "紅十字API文件",
+    "sidebar": {
+        "introduction": "簡介",
+        "base_url": "基本URL",
+        "changelog": "更新日誌",
+        "authentication": "驗證",
+        "response_codes": "回應碼",
+        "emergency_alert_feed": "緊急警報提要",
+        "cap_alert_document": "CAP警報文件",
+        "what_now": "What Now"
+    },
+    "steps": {
+        "one": {
+            "body": "紅十字會REST API使開發人員能夠訪問國際紅十字協會發佈的緊急資訊和資源。",
+            "heading": "簡介",
+            "support_card": {
+                "body": "有關紅十字會API的問題，請聯繫dev@3sidedcube.com",
+                "title": "支持和問題"
+            }
+        },
+        "two": {
+            "body": "API v1.0文檔中的所有URL都有以下基本URL：",
+            "heading": "基本URL"
+        },
+        "three": {
+          "heading": "更新日誌",
+          "table": {
+              "headers": {
+                  "detail": "發佈",
+                  "version": "Api版本",
+                  "release": "發佈",
+                  "release_date": "發佈日期"
+              }
+          }
+        },
+        "four": {
+            "body": "API需要身份驗證才能使用API金鑰訪問所有資源。要獲取API金鑰，請先獲取{0}。所有API請求必須包括以下HTTP頁頭：",
+            "create_app_cta": "創建一個應用程式",
+            "heading": "驗證"
+        },
+        "five": {
+            "heading": "回應碼",
+            "table": {
+                "descriptions": {
+                    "ok": "請求成功，並且回應體包含所請求的資源",
+                    "found": "顯示一個重新導向。在位置中向URI源發出一個GET請求：頁頭。",
+                    "not_found": "找不到所請求的資料。",
+                    "not_allowed": "顯示不允許在此資源上使用HTTP方法。",
+                    "server_error": "發生伺服器錯誤，無法返回所請求的資源。",
+                    "unavailable": "表明該服務當前不可用。請稍後重試此請求。"
+                },
+              "headers": {
+                "code": "代碼",
+                "name": "姓名",
+                "description": "說明"
+              }
+            }
+        },
+        "six": {
+            "card": {
+              "body": "各紅十字社群可使用{0} v1.2發佈公共警報。",
+              "cta": "通用警報協定",
+              "title": "通用警報協定"
+            },
+            "endpoint": "終端：",
+            "example": "在本例中，{0}段應該替換為給定社群的國家代碼，例如：",
+            "feed_intro": "也提供了每個社群的資訊提要，列出了某一給定社群發佈的活躍警報，其標識為",
+            "heading": "緊急警報提要",
+            "intro": "所有社群發佈的CAP警告都是通過RSS提要發佈的。這可以通過以下終端訪問："
+        },
+        "seven": {
+            "endpoint": "終端：",
+            "example_response": "示例回應：",
+            "heading": "CAP警報文件",
+            "body": "CAP警報檔可以通過每個RSS提要專案中指定的絕對連結訪問。警報的URI使用以下格式： "
+        },
+        "eight": {
+            "body": "以下終端 提供了紅十字會社群發佈的結構化資料，以協助各種事件類型的備災工作。每個條目都提供了關於災害管理的六個階段的資訊。",
+            "endpoint": "終端：",
+            "example_response": "示例回應：",
+            "heading": "What Now",
+            "note": "備註：",
+            "noteDetails": "{0}所有的回應都包含在一個父級{1}屬性中。",
+            "query_params": "查詢參數：",
+            "response_properties": "回應屬性：",
+            "structure": "What Now項目研究對象的結構：",
+            "stucture_attribution": "{0}研究對象的結構：",
+            "stucture_attribute_translation": "屬性{0}對象的結構：",
+            "stucture_translation": "{0}研究對象的結構：",
+            "table": {
+                "query_params": {
+                    "name": "名稱",
+                    "description": "說明"
+                },
+                "structure": {
+                    "property": "性質",
+                    "data_type": "數據類型",
+                    "description": "說明"
+                }
+            }
+        }
+    }
+  },
+  "get_started_docs": {
+    "title": "开始",
+    "sidebar": {
+        "create_app": "創建一個應用程式",
+        "get_api_key": "獲取API密鑰",
+        "make_request": "發出請求",
+        "sign_up": "註冊"
+    },
+    "steps": {
+        "one": {
+            "heading": "步驟1 - 註冊",
+            "body": "要開始使用來自WhatNow API的資料，首先從{0}到WhatNow入口網站。您可以使用您的Facebook、Google帳戶，或電子郵件地址創建帳戶。",
+            "create_account_alt": "創建帳戶",
+            "existing_account": "如果您已經有帳戶，請輸入{0}。",
+            "login_cta": "登入",
+            "sign_up_cta": "註冊"
+
+        },
+        "two": {
+            "body": "要使用該API，您必須在WhatNow門戶中創建應用程式。跟我們說說您在構建什麼吧。",
+            "create_app_alt": "創建應用程式",
+            "heading": "步驟2 - 創建應用程式"
+        },
+        "three": {
+            "body": "當您創建了一個應用程式，一個API密鑰將自動生成。{0}請確保盡可能安全地存儲它，並避免在自己的應用程式中共用或以其他方式暴露您的API密鑰。",
+            "create_api_key_alt": "創建API密鑰",
+            "heading": "步驟3 - 獲取API密鑰",
+            "important": "重點："
+        },
+        "four": {
+            "api_docs_cta": "API文件",
+            "body": "WhatNow API使用HTTP（S）並提供RESTful終端來獲取發佈的資料。必須使用前面步驟中創建的API密鑰對每個請求進行身份驗證。",
+            "example_title": "示例請求",
+            "heading": "步驟4 - 發出請求",
+            "moreInfo": "有關所有API终端的更多信息，請参見{0}。"
+        }
+    }
+  },
+  "home_pods": {
+      "bulk_upload": "上傳.csv檔，這樣您就可以一次更新大量的內容",
+      "audit_log": "在這裡您可以查看活動日誌",
+      "whatnow_edit": "這是您可以編輯WhatNow內容的地方",
+      "whatnow_review": "您可以在此查看WhatNow的内容",
+      "whatnow_publish": "這是您可以編輯和發佈WhatNow內容的地方",
+      "manage_users": "這是管理用戶的地方(創建、編輯和刪除)",
+      "api_usage": "在這裡您可以看到誰在使用這個API，以及用它構建了哪些應用程式。"
+  },
+  "languages": {
+    "am": "አማርኛ",
+    "ar": "阿拉伯語",
+    "bn": "বাংলা",
+    "de": "Deutsch",
+    "en": "英文",
+    "es": "西班牙語",
+    "fr": "法語",
+    "ht": "Kreyòl",
+    "id": "印度尼西亞（印尼文）",
+    "it": "Italiano",
+    "ja": "日本語",
+    "my": "ဗမာ",
+    "ne": "नेपाली",
+    "pt": "葡萄牙語",
+    "ru": "俄語",
+    "rw": "Ikinyarwanda",
+    "sw": "Kiswahili",
+    "th": "ภาษาไทย",
+    "tr": "Türkçe",
+    "ur": "烏爾都語",
+    "vi": "Tiếng Việt"
+  },
+  "sidebar": {
+      "manage": "管理內容用戶",
+      "content_users": "內容用戶",
+      "audit_log": "審核日誌",
+      "whatnow": "WhatNow",
+      "bulk": "批次上傳",
+      "content": "內容",
+      "api": "API使用量",
+      "applications": "應用程式",
+      "api_stats": "API统计",
+      "api_users": "API用戶",
+      "terms_conditions": "條款及條件",
+      "regions": "地区"
+  },
+  "common": {
+      "accept": "接受",
+      "actions": "操作",
+      "create": "创建",
+      "edit": "編輯",
+      "deactivate": "禁用",
+      "activate": "啟用",
+      "are_you_sure": "您確定嗎？",
+      "yes": "有",
+      "title": "標題",
+      "description": "說明",
+      "unpublished_edits": "未公佈的編輯？",
+      "published": "已發佈",
+      "delete": "刪除",
+      "welcome": "歡迎來到",
+      "save_changes": "儲存更改",
+      "auto_saving": "自动保存",
+      "add": "新增",
+      "my_profile": "我的檔案",
+      "cancel": "取消",
+      "view_changes": "查看更改",
+      "view_content": "查看內容",
+      "resend_activation": "重新發送啟用郵件",
+      "deactivate_user": "禁用用戶",
+      "submit_changes": "提交更改",
+      "reactivate_user": "重新啟用用户",
+      "send_invite": "發送邀請",
+      "invite_and_create": "邀請并創建另一個",
+      "loading": "内容加載中",
+      "publish_new": "發佈新版本",
+      "greeting": "您好",
+      "removed": "已移除",
+      "copy": "複製",
+      "copied": "已複製",
+      "not_empty": "不能為空",
+      "name": "姓名",
+      "webUrl": "網址",
+      "learn_more": "了解更多",
+      "validations": {
+          "empty": "這裡不能為空",
+          "hazardIcon": "請選擇圖像少於30kb"
+      },
+      "network_error": "網路錯誤",
+      "network_error_text": "看起來好像出現了一個網路錯誤。請稍後再試",
+      "email_sent": "電子郵件已發送",
+      "duplicate_lang_error": "很抱歉，所選擇的語言已經存在",
+      "duplicate_lang_description": "請編輯現有語言或從下拉清單中選擇新的語言",
+      "estimated_users": "预计用户数"
+  },
+  "banners": {
+      "get_started_create": "，開始並創建您的第一個應用程式",
+      "create_app": "創建一個應用程式",
+      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+  },
+  "users": {
+      "user": "用户",
+      "deleted": "已被刪除的用戶",
+      "list": {
+          "manage": "管理用戶",
+          "create": "創建一個新用戶",
+          "download_report": "下載報告",
+          "empty": "無法找到任何用戶",
+          "detail": "用戶資料",
+          "clear_filters": "清除過濾條件",
+          "table_header": {
+              "user": "用户",
+              "role": "角色名稱",
+              "society": "社群",
+              "email": "電子郵件",
+              "added": "新增",
+              "last_activity": "最後活動",
+              "t_and_c": "T&C版本"
+          },
+          "societies": "社群"
+      },
+      "status": {
+          "active": "已啟用",
+          "deactivated": "已停用"
+      },
+      "edit": {
+          "super_admin_all": "進入所有社群",
+          "user_details": "用戶詳情",
+          "create_user": "創建一個新用戶",
+          "add_society": "添加社群+ ",
+          "societies_heading": "社群",
+          "roles_heading": "角色&權限",
+          "activity_heading": "活動",
+          "roles_label": "為此用户選擇角色&權限",
+          "activity_link": "顯示用户所有操作",
+          "created": "用戶成功創建",
+          "updated": "用戶成功更新",
+          "email_update": "要更新您的電子郵件，請輸入您的密碼",
+          "view": "查看",
+          "more": "更多",
+          "less": "顯示部分",
+          "user_can_do": "查看用戶有哪些權限可操作：",
+          "user_no_permission": "用戶沒有獲得任何權限",
+          "soc_already_added": "該用戶已經被分配了這個社群"
+      }
+  },
+  "content": {
+      "content": "內容",
+      "audit_log": {
+          "audit_log": "審核日誌",
+          "empty": "沒有找到與此篩檢程式匹配的審計歷史記錄",
+          "soc_label": "社群"
+      },
+      "whatnow": {
+          "set_attribution": "將社群名稱和歸屬消息設置為發佈",
+          "whatnow": "WhatNow",
+          "empty": "這個國家社群沒有發佈的WhatNow消息",
+          "steps": "步驟",
+          "publish": "發佈",
+          "no_publish": "沒有新發佈",
+          "published": "翻譯已發佈",
+          "publishing": "正在發佈",
+          "content_to_publish": "草案内容將予以發佈",
+          "whatnow_content": "WhatNow內容",
+          "choose_hazard": "選擇災害",
+          "hazard": "危險",
+          "content": "內容",
+          "create": "添加新的災害",
+          "edit_attribtion": "編輯屬性",
+          "attribution": "屬性",
+          "attribution_url": "網址屬性",
+          "society_name": "國家社群",
+          "attribution_message": "資訊屬性",
+          "no_translation": "沒有設置內容",
+          "delete_content_translation": "這將從當前語言中刪除選擇的whatnow內容",
+          "messages": "WhatNow消息的",
+          "add_language": "添加新的語言",
+          "no_languages": "開始前先選擇或創建一種語言",
+          "no_soc": "選擇一個社群",
+          "no_region": "选择地区",
+          "add_language_message": "要添加一門新的語言，請添加一些與之相關的內容",
+          "add_language_attribution": "創建屬性以添加新語言",
+          "select_language": "請選擇一門語言",
+          "attribution_publish": "這一屬性將在發佈時立即生效"
+      },
+      "edit_whatnow": {
+          "title": "标题",
+          "description": "描述",
+          "content_piece": "內容片斷",
+          "enter_other_hazard_type": "輸入危害類型名稱",
+          "other_hazard_type_label": "其他危害類型",
+          "stepped_content": "階梯式的內容片斷",
+          "content_title_description": "WhatNow資訊的標題",
+          "content_description_description": "WhatNow資訊的說明",
+          "content_label": "請輸入一些危險資訊",
+          "content_url": "網址",
+          "content_url_description": "有關這些WhatNow消息的更多資訊，請訪問鏈接。請包括規程，即http:\/\/或https:\/\/",
+          "created": "已創建",
+          "pieces_edited": " 編輯片斷",
+          "delete_item": "刪除項目",
+          "add_item": "添加項目+",
+          "content_placeholder": "請輸入消息",
+          "mitigation": "緩和",
+          "mitigation_help": "減少風險的長期行動",
+          "mitigation_extra": "緩和是對預測到的災害事件的一項長遠聲明。所採取的行動包括評估、規劃和減低長期風險的措施，以使家人和環境更安全。",
+          "seasonalForecast": "季節性預測",
+          "seasonalForecast_help": "減低風險的短期行動",
+          "seasonalForecast_extra": "季節預報是對災害事件的預測聲明。所採取的行動包括評估潛在的風險和計劃活動，為了減低風險和保護家人。",
+          "watch": "關注",
+          "watch_help": "準備好回應",
+          "watch_extra": "當災害事件的風險顯著增加，但其發生、地點和\/或時間仍不確定時，就會發佈警報。其目的是為保護行動和應對準備提供足夠的時間。",
+          "warning": "警告",
+          "warning_help": "準備好回應",
+          "warning_extra": "当災害事件正在发生、即将发生或发生概率很高时，将发出警告。這意味著情況對生命或財產構成威脅。在這災害帶上的人們需要採取保護措施。",
+          "immediate": "立即",
+          "immediate_help": "回應操作",
+          "immediate_extra": "目前的情況對生命和財產構成了威脅。這些是在災害事件發生時要立即採取的保護行動。需要採取應對行動保護自己和家庭。",
+          "recover": "恢復",
+          "recover_help": "恢復操作",
+          "recover_extra": "這些是在災害發生後應採取的減少風險的保護措施。",
+          "updated": "已更新",
+          "download_icon": "下載圖示",
+          "download_image": "以圖像形式下載",
+          "download_image_error": "下載圖像出錯，請確認您已經發佈了所有更改，然後重試。",
+          "download_instructions": "保存按右鍵並選擇'圖片另存為…'",
+          "downloaded_image_alt": "WhatNow使用方法"
+      },
+      "audit": "審核日誌",
+      "export": "匯出",
+      "bulk_upload": {
+          "bulk_upload": "批次上傳",
+          "template": "範本",
+          "export_template": "匯出範本",
+          "import_data": "匯入數據",
+          "import_complete": "導入完成",
+          "import_summary": "您在{lang}之下的{society}导入。",
+          "import_banner": {
+              "success": "完成",
+              "added": "已添加",
+              "skipped": "略過",
+              "denied": "拒絕",
+              "updated": "已更新",
+              "failed": "失敗",
+              "invalid": "無效",
+              "row": "行數"
+          },
+          "upload_csv": "以CSV格式上傳文件",
+          "language_instructions": "選擇要導入的翻譯語言。",
+          "file_instructions": "拖動一個文檔到這裡，或從您的電腦中選擇。",
+          "choose": "選擇",
+          "submit": "導入內容",
+          "reset": "上傳另一個",
+          "export_template_guide": "匯出範本指南",
+          "export_template_instructions": "有關如何有效使用此批量上傳範本的說明，請參閱本指南。",
+          "warnings": {
+              "title": "如果任何內容將覆蓋最新版本，則拒絕導入。",
+              "on": "有",
+              "off": "沒有"
+          },
+          "overwriting": {
+              "title": "覆蓋設置。",
+              "on": "始終更新到該版本，並覆蓋所有的修訂版本",
+              "off": "只更新導入內容較新的事件類型"
+          },
+          "errors": {
+              "warning_update_will_overwrite": "此操作將覆蓋自創建此匯出後所做的更改",
+              "bad_request": "檔案資料的規格錯誤",
+              "bad_request_error_codes": {
+                  "30001": "欄目標題與範本不一致",
+                  "30002": "標題屬性、資訊或網址缺失",
+                  "30003": "無效的網址屬性 - 請確保規程的存在，例如：https:\/\/",
+                  "40001": "提供的國家代碼無效",
+                  "40002": "所選社群與選定檔案的社群不匹配",
+                  "40003": "所選文件匯出的日期格式不正確，導入無法完成"
+              }
+          }
+      }
+  },
+  "api_stats": {
+    "page_title": "API统计",
+    "download_data": "下载数据",
+    "start_date": "起始日",
+    "end_date": "终结日",
+    "table_select": {
+      "keys": "API密钥",
+      "routes": "API路由"
+    },
+    "field_headers": {
+      "application_name": "Application Name",
+      "number_of_hits": "Number of Hits",
+      "estimated_reach": "Estimated Reach",
+      "organisation": "Organisation",
+      "application": "Application"
+    },
+    "cumulative_cards": {
+      "hits": "点击数",
+      "accounts": "所有账号",
+      "est_impacted_users": "估计受影响的用户"
+    },
+    "empty": "未找到制定日期范围内的统计"
+  },
+  "api_usage": {
+      "applications": "應用程式",
+      "view_user": "查看用户",
+      "reactivate": "重新啟用",
+      "app_detail": "應用程式詳情",
+      "app_details": "應用程式詳情",
+      "activity": "活動",
+      "view_all_activity": "查看此應用程式的所有活動",
+      "api_users": "API用戶",
+      "terms_conditions": "所有條款和條件版本",
+      "view_prev_terms": "查看先前版本",
+      "current_version": "目前版本",
+      "version": "版本"
+  },
+  "applications": {
+      "my_apps": "我的應用程式",
+      "new_tc": "新的條款及條件",
+      "build": "建立新的應用程式",
+      "edit": "编辑应用",
+      "building": "建立應用程式",
+      "no_apps": "您沒有應用程式，建一個來開始吧。"
+  },
+  "home": {
+      "home": "主頁",
+      "welcome": "欢迎",
+      "admin_intro": "在這裡，您可以管理用戶，編輯和發佈WhatNow內容，並查看API使用情況。",
+      "ns_admin_intro": "在這裡您可以編輯和發佈WhatNow的內容",
+      "ns_editor_intro": "在這裡，您可以您可以編輯WhatNow的內容",
+      "api_user_intro": "在這裡您可以查看您的應用程式並管理您的帳戶。"
+  },
+  "landing": {
+      "strapline": "WhatNow服務",
+      "strapline_part_2": "全球紅十字或紅新月會關鍵安全資訊",
+      "developer": {
+          "strap_para_one": "通過我們本地化的關鍵行動資訊，説明社區準備、應對和從災害中恢復。",
+          "strap_para_two": "使用我們簡單的四步指南將WhatNow消息集成到您的應用程式中。註冊並查看所有可用的消息。"
+      },
+      "national_society": {
+          "strap_para_one": "發佈您的RCRC國家社群的關鍵安全資訊，供全球、國家和地方媒體訪問和廣播。",
+          "strap_para_two": "聯繫我們以瞭解更多關於如何創建消息和聯繫媒體合作夥伴。"
+      },
+      "strap_para_one": "通過我們本地化的關鍵行動資訊，説明社區準備、應對和從災害中恢復。",
+      "strap_para_two": "使用我們簡單的四步指南將WhatNow消息集成到您的應用程式中。註冊並查看所有可用的消息。",
+      "view_data": "查看數據",
+      "view_message_library": "查看WhatNow消息",
+      "what_now": "WhatNow？",
+      "fake_alert_heading": "極端寒冷警告",
+      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+      "fake_alert_time": "一小時前",
+      "fake_alert_time_exact": "05\/02\/18 05:15美國中部時間",
+      "use_cases": {
+          "heading": "了解更多",
+          "first_heading": "運作方式",
+          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "second_heading": "應用案例",
+          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "third_heading": "實施工具箱",
+          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fourth_heading": "WhatNow視訊",
+          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+          "fifth_heading": "強化天氣預報應用",
+          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+      },
+      "example_alert": {
+          "heading": "WhatNow消息格式樣本",
+          "alert_preview": "警報預覽",
+          "what_now_info": "WhatNow預覽",
+          "example_whatnow_request": "WhatNow回應樣本",
+          "example_alert_request": "警報回應樣本",
+          "example_content": "天氣預報 # 3 截止到 1月 上午11點的最後一次預報。29日,2018年\n為冷鋒的尾部\n\n冷鋒末端的影響已減弱。諾姆上空的天氣狀況將得到改善。然而，由於西部的原因，這些地區應該會有零間驟雨或雷暴，特別是在下午或晚上。隨著這一發展，這是該天氣系統的最終建議。",
+          "example_content_location_header": "受影響的地點",
+          "example_content_location": "諾姆，阿拉斯加"
+      },
+      "example_whatnow": {
+          "alert_from": "警報來自：美國紅十字會",
+          "more_info": "更多資訊",
+          "heading": "極端寒冷的關鍵資訊",
+          "copy": "採取這些行動可以降低風險，保護您和您的家庭免受極端寒冷的影響。",
+          "what_now": "WhatNow",
+          "step_1": "保護您的家。檢查管道，安全使用熱源。",
+          "step_2": "飲用溫水以確保水分充足",
+          "step_3": "穿暖和的衣服保護自己，遮蓋裸露的皮膚",
+          "step_4": "注意和小心結冰的情況，特別是在開車的時候",
+          "step_5": "檢查鄰居、朋友和有風險的人的情況"
+      },
+      "build": {
+          "heading": "準備好建立您的應用程式了嗎？"
+      },
+      "data_preview": {
+          "heading": "WhatNow訊息",
+          "sub_heading": "註冊並查看來自世界各地紅十字會\/紅新月會的關鍵行動資訊"
+      },
+      "footer": {
+          "terms_conditions": "條款 & 條件",
+          "about": "關於",
+          "privacy": "隱私",
+          "getting_started": "入門指南",
+          "docs": "文檔",
+          "give_feedback": "給予意見回饋",
+          "gdpc_logo": "全球備災中心的標誌",
+          "ifrc_logo": "國際紅十字和紅新月運動的標誌"
+      }
+  },
+  "register_form": {
+      "heading": "創建您的免費 WhatNow 服務帳戶",
+      "who_are_you": "你是誰？",
+      "developer": "開發者",
+      "national_society": "國家協會",
+      "sign_up_with": "註冊：",
+      "sign_up_agreement": "創建您的帳戶，即表示您同意我們的 ",
+      "terms_conditions": "條款及條件 ",
+      "facebook": "使用臉書帳戶登錄",
+      "google": "用谷歌账户登錄",
+      "email_sign_up": "或者使用您的電子郵件登錄：",
+      "location": "位置",
+      "organisation": "機構",
+      "industry": "行業類型",
+      "create_account": "建立帳號",
+      "last_name": "姓氏",
+      "select_country": "選擇一個國家",
+      "select_industry": "選擇行業類型",
+      "industries": {
+          "media": "媒體",
+          "emergency": "緊急應變管理",
+          "non_profit": "非牟利機構 （Non Profit）",
+          "humanitarian": "人道主義組織",
+          "red_cross": "紅十字會\/紅新月會",
+          "education": "教育\/學術機構",
+          "gov": "政府委托的代理機構",
+          "other": "其他"
+      },
+      "api_used_in": "此 API 將在哪里使用？",
+      "api_used_in_help": "請用少於255個字告訴我們您打算如何使用此服務\r",
+      "welcome": "歡迎您{姓名}，請在開始前完成以下的訊息：",
+      "gdpc_note": "如果您有任何的問題或有興趣瞭解更多詳情，請聯繫： ",
+      "gdpc_ns_note": "報名請聯繫位於   的the Global Disaster Preparedness Center的WhatNow服務團隊 ",
+      "contact_gdpc": "聯絡GDPC"
+  },
+  "terms_service_page": {
+    "applicable_law": {
+        "body": "本協議項下的所有權利和義務均受哥倫比亞特區法律的管轄，但不適用任何法律衝突原則。",
+        "heading": "適用法律："
+    },
+    "body": "您有責任維護紅十字會提供給您的註冊要鑰的保密性和安全性。你有責任保持與API的相容性，並不時進行更新，以便繼續接收數據源。紅十字會可自主決定發佈API和數據源的更新版本。新版本可能與之前的履行不相容，您同意在任何時候使用數據源的最新更新版本。你同意不對API的任何部分或紅十字會的任何軟體進行修改、分發、反編譯、反彙編或反向工程。你不得以超出合理請求量或構成過度或濫用的方式使用API或資料饋送，情形由紅十字會自主決定。你不得以非法、誤導、疏忽、惡意、意圖造成傷害或傷害紅十字會、其服務供應商、其內容供應商或任何其他人士的方式使用API或数据源，情形由紅十字會自主決定。紅十字會可能會監測你對API和数据源的使用情況。您不得使用任何技術手段干擾這種監察，紅十字會可以使用技術手段攻克任何這種干擾。準備、回應和恢復信息使用應僅以當前或更新到相關事件警報的當前緊急設置為准，並且您應在紅十字會更新任何資料來源和\/或相關事件警報時更新個人準備、回應和恢復信息。您所使用的個人\n準備、回應和恢復信息應只與它所發佈的地理區域相關聯。如果準備、回應和恢復信息包含一個引用來源，如美國紅十字會，或另一個紅十字會，或紅新月會國家社會團體或組織（此為，每一個“資料來源參考” ），您應在資料源所提供的格式中包括每個相關準備、回應和恢復信息相關聯的資料來源參考。您不得再进一步使用任何參考資料來源。您不得將“資料源”、“事件警報”和\/或“準備、回應和恢復信息”翻譯成任何其他語言，不得對 “ 資料源”、“事件警報”和\/或“準備、回應和恢復信息”進行任何使用、編輯或修訂，或改變其含義。您必須確保資料饋送仍由您獨自擁有和\/或控制。您不得允許向用戶端發送的事件警報和準備、回應和恢復信息包含任何廣告或贊助\n\n您不可以對全部或部分資料饋送進行任何存檔。",
+    "contact": "如有任何關於API的問題，請聯繫紅十字會，電話：{0}。",
+    "disclaimer": "API和資料僅供參考和教育用途，並在“現有”和“可用” 的基礎上提供。紅十字會不做任何形式的明示或暗示的陳述或保證。紅十字會不提供任何明示或暗示的保證，包括但不限於有關適銷性和某一特定用途的適用性的暗示保證。紅十字會及其員工、高級職員、理事、代理和許可人不承擔因使用API、資料傳送、事件警報和\/或準備、回應和恢復信息而產生的任何類型（包括但不限於直接、間接、附帶、懲罰性和相應的）損害賠償。紅十字會不保證API、資料來源、事件警報和\/或準備、回應和恢復資訊的順序、準確性、真實性或完整性，並且不以任何方式對您或您的最終用戶或任何協力廠商負責，包括但不限於就 API、資料來源、事件警報和\/或準備、回應和恢復信息提供的任何延誤、不準確、錯誤或遺漏。",
+    "entire_agreement": {
+        "body": "API條款構成紅十字會與您之間關於本協定主題事項的完整和排他性協議，並取代所有先前的口頭或書面諒解、溝通或在此未具體納入的協議。公司保留隨時修改本政策的權利，恕不另行通知。",
+        "heading": "完整協議："
+    },
+    "heading": "API終端使用者授權合約",
+    "intro": "同意：通過使用服務或勾選所提供的方框，使用者同意接受本協議的約束。API是一個工具，允許您（“您”）檢索和使用紅十字會提供的資料源，包括資訊饋送全球天氣和災害事件警告和觀察通知（“事件警報”），以及關於如何按災害類型和緊急程度準備應對當地災害的可操作和背景化資訊 （“準備、回應和恢復信息”，與事件警報合稱“資料源”）。準備、回應和恢復信息是計畫與事件警報和您手機上的其他天氣及災難警示軟體共同工作。您對資料來源的使用會被API條款所約束。",
+    "license_limitations": {
+        "body": "在您遵守不斷更新的API條款的前提下，您僅可以使用資料來源與您自己的受API條款限制的應用進行交互。在API條款的約束下和個人事件警報的資料來源緊急設定下，您被給予非獨享、有限的和可被撤回的權力去下載、使用、複製和傳播給您的應用軟體的終端使用者（“終端使用者”）事件警報和相關的準備、回應和恢復信息。在API條款的約束下，您僅可以以非商業目的使用數據源服務。在任何情況下，您不可以使用數據源、事件警報和\/或準備、回應和恢復信息以服務非商業目的包括但不限於二次出售他們，收費以訪問他們，收費以分發他們或收費以製作基於他們的衍生產品。紅十字會和其許可人保留API、準備、回應和恢復信息、事件警報、數據源和參考源（如上文所定義）中的一切稱謂、所有權、權利和利益。本節未明確授予之權力皆為協會所保留。",
+        "heading": "授權與限制："
+    },
+    "overview": {
+        "body": "全球災難防備中心WhatNow服務的應用項目見面（簡稱API）由美國國家紅十字協會（紅十字會）向您展示。API需要您提供一個註冊密鑰。在註冊過程中，您必須同意以下的條款和要求，以及紅十字會官網{0}處的服務同意協議中的條款和要求（統稱為API條款）。API條款將會管控您對API及通過API所下載的電子材料的使用。{1}",
+        "cta": "點擊此處註冊。"
+    },
+    "privacy_policy": {
+        "body": "您理解、承認並同意一些API中的項目、服務、工具、購買選項、材料或資訊需要提交、使用和傳播多種個人識別信息。相應地，如果您希望訪問並使用API，您承認並同意您對API的使用包含對隱私條款所提及的個人識別信息的採集和使用行為。{0}",
+        "heading": "私隱政策："
+    },
+    "prohibited_activities": {
+        "body": "您和您的終端用戶或代理人不得以以下方式使用API或數據源：",
+        "heading": "被禁止的活動和行為：",
+        "prohibited_list": {
+            "one": "干擾或妨礙紅十字會的服務或服務器。",
+            "two": "繞開或修改紅十字會或API使用的任何密鑰和安全設置，包括但不限於任何認證技術。",
+            "three": "要求、收集、請求或使用其他方式獲取非紅十字會提供給您本人賬戶的用戶名、密碼或其他識別認證信息。",
+            "four": "表明或暗示與美國紅十字會或任何紅十字會或紅新月會組織的從屬關係，資助關係或被資助關係。",
+            "five": "表明或暗示您擁有或創建了API、數據源、事件警報和\/或準備、回應和恢復信息。",
+            "six": "傳播任何病毒、蠕蟲病毒、木馬病毒或任何含破壞性質的項目。"
+        }
+    },
+    "reserve_rights": "紅十字會保留在任何時間無提前通知的情況下暫時或永久改變和\/或停止部分或全部API和數據源服務的權力。為消除疑惑，紅十字會沒有為您提供API和數據源的義務，並且您同意並承認一切訪問均在紅十字會的單獨和絕對審查下進行。",
+    "severability": {
+        "body": "任何API服務中的條款不影響任何其他服務的有效性。",
+        "heading": "效力瑕疵條款及免責聲明："
+    },
+    "suspension": {
+      "body": "紅十字會保留暫停或終止您的訪問權限的權力，如果在其獨立審查中認定您參與了API條款中列舉的未被授權的對API或數據源的使用，或您對API或數據源的任何使用行為威脅到\/削弱了任何人或紅十字會網絡的安全性。",
+      "heading": "暫停或終止服務："
+    }
+  },
+  "view_data": {
+      "alert_title": "警告：",
+      "more_info": "更多資訊：",
+      "which": "您想查看哪個WhatNow資訊？",
+      "view_data": "查看數據",
+      "alerts": "通知",
+      "alert_preview": "警報預覽",
+      "cap_alerts": "CAP警告",
+      "onset": "開始",
+      "severity": "嚴重",
+      "title": "標題",
+      "date": "日期",
+      "headline": "標題",
+      "alert": "警告",
+      "whatnow_info": "Whatnow資訊",
+      "alert_detail": "警告細節",
+      "more": "更多資訊",
+      "area_affected": "受影響區域",
+      "details": "詳情",
+      "cap": {
+          "type": "類型",
+          "status": "狀態",
+          "urgency": "緊急情況",
+          "severity": "嚴重",
+          "certainty": "確定性",
+          "sent": "已傳送",
+          "effective": "有效的",
+          "onset": "開始",
+          "expires": "過期",
+          "alert_from": "警報來自於",
+          "feed": "動態",
+          "more": "更多資訊：",
+          "through": "通過",
+          "alert_feed": "警報信息",
+          "fetching_feed": "正在獲取中",
+          "empty": "當前沒有警報"
+      }
+  },
+  "user_agreement": {
+      "title": "用戶協議",
+      "para_one": "在您可以訪問WhatNow登錄窗口前，請您通過下載以下文件及點擊我同意以閱讀並同意用戶協議條款。",
+      "cta": "我同意",
+      "download": "点击此处以查看用户协议文件（105KB）"
+  },
+  "hazard_type": {
+      "dropdown": {
+        "select": "選擇風險類型",
+        "create": "創建風險類型"
+      },
+      "create": {
+          "title": "創建新的風險類型",
+          "request": "索取新的風險類型",
+          "other": "其他",
+          "email_subject": "索取新的風險類型",
+          "hazard_name": "風險名稱",
+          "hazard_name_placeholder": "輸入風險名稱",
+          "upload_icon": "上傳圖示圖片",
+          "icon_requirements": "圖示圖片必須為30kb以內的png文件",
+          "requestLink": "聯繫GDPC以索取新的風險類型",
+          "success": "風險類型已創建",
+          "error": "抱歉，創建您的新風險類型時發生問題。"
+      }
+  },
+  "regions": {
+    "list": {
+        "manage": "管理地区",
+        "create": "创建新地区",
+        "edit": "编辑地区",
+        "add": "添加地区",
+        "empty": "找不到任何地区",
+        "table_header": {
+            "region": "地区"
+        }
+    },
+    "select_soc": "选择查看一个社团和添加地区",
+    "create": "创造一个新地区",
+    "form": {
+        "name": "地区名称",
+        "name_help": "为您创建的自定义 WhatNow 消息的地区命名。",
+        "description": "描述",
+        "description_help": "提供有关该地区更多的信息，如旧金山湾区。"
+    },
+    "edit": "修改地区",
+    "delete": "这样将会删除该地区以及任何与此地区相关的内容。"
+  },
+  "table_headers": {
+      "profile_pic": "檔案照片",
+      "first_name": "姓氏",
+      "last_name": "姓氏",
+      "role": "角色",
+      "society": "協會",
+      "date": "日期",
+      "country": "國家",
+      "email": "電子郵件",
+      "created_at": "創建於",
+      "last_logged_in_at": "最近一次登錄",
+      "terms_version": "檔案",
+      "actions": "操作",
+      "action": "操作",
+      "content": "內容",
+      "country_code": "位置",
+      "organisation": "機構",
+      "industry_type": "行業",
+      "all_roles": "所有角色",
+      "version": "版本",
+      "user": "用户",
+      "language_code": "語言代碼"
+  }
+}

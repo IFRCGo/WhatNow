@@ -1,0 +1,77 @@
+// // Body
+$body-bg: #f2f2f2;
+
+// base colours
+$white: #ffffff;
+$black: #000000;
+$red: #ed1b2e;
+$grey: #6d6e70;
+$grey2: #DFE2E6;
+$blue : #4267B2;
+$light-red: #ee3224;
+
+// text colours
+$text-color: $black;
+$light-text: $grey;
+
+// core colours
+$primary-colour: $black;
+$secondary-colour: $red;
+
+// Form elements
+$selection-colour-selected: #7ed321;
+$selection-colour-unselected: #d8d8d8;
+
+// Cards
+$card-spacer-x: 0.9375rem;
+$card-spacer-y: 0.625rem;
+$card-cap-bg: #fbfbfb;
+$card-border-color: #e8eced;
+$card-border-radius: 0.7rem;
+
+// Alerts
+$alert-border-radius: 0.7rem;
+$alert-terms-background: #786a65;
+
+// Borders
+$border-radius: .125rem;
+$border-radius-lg: .2rem;
+$border-radius-sm: .15rem;
+
+// Nav Pills
+$nav-pills-border-radius: 0;
+
+// sidebar
+$sidebar-width-open: 13rem;
+$sidebar-collapsed-breakpoint: 1550px;
+
+// buttons
+$facebook-blue: #00447c;
+$google-red: $light-red;
+
+// Font
+$font-size-base: 0.75rem;
+
+// Hazard instrution colours
+$hazard-default: #857d7a;
+$mid-term: #006a72;
+$seasonalForecast: #00bcd6;
+$watch: #c5d86d;
+$warning: #ffc200;
+$immediate: #ee3224;
+$recover: #5c3160;
+
+// Alert severity
+$alert-extreme: #ee3224;
+$alert-severe: #786a65;
+$alert-moderate: #ff5113;
+$alert-minor: #009ddb;
+$alert-unknown: $hazard-default;
+
+
+// Font size
+$global-font-size: 14px;
+$global-baseline: 6px;
+
+// Transitions
+$global-transition: all 300ms ease-in-out;

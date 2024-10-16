@@ -1,0 +1,49 @@
+.c-api-stats-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  border: 2px solid $grey2;
+  border-radius: 6px;
+  max-width: 390px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  &__upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 37px;
+    flex: 0 0 37px;
+    background-color: $white;
+    border: 2px solid $body-bg;
+    border-radius: 50%;
+    margin-right: 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #878E95;
+    margin: 0;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0.22px;
+    color: #222529;
+    margin: auto 0 0;
+  }
+}

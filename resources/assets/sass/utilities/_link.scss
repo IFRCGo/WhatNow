@@ -1,0 +1,19 @@
+.u-link {
+  &--white {
+    color: $white;
+    &:hover, &:focus {
+      color: $white;
+    }
+  }
+
+    &--black {
+      color: $black;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $black;
+        text-decoration: none;
+      }
+    }
+}

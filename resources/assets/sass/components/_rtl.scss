@@ -1,0 +1,305 @@
+/*
+* RTL
+* This file contains all styling overrides for rtl languages
+* As this project uses a lot of helper classes, the !important rule is needed to override them.
+* There are also a lot of highly specific selectors below, this is to override overly specific selectors used elsewhere in the project.
+*/
+
+.is-rtl {
+    direction: rtl;
+    text-align: initial;
+
+    // rtl helpers
+    .rtl-float-left {
+        float: left !important;
+    }
+
+    .rtl-mr-auto {
+        margin-left: 0 !important;
+        margin-right: auto;
+    }
+
+    .rtl-ml-auto {
+        margin-right: 0 !important;
+        margin-left: auto;
+    }
+
+    .rtl-ml-2 {
+        margin-left: 0.5rem;
+        margin-right: 0 !important;
+    }
+
+    .rtl-mr-2 {
+        margin-right: 0.5rem;
+        margin-left: 0 !important;
+    }
+
+    .rtl-mr-1 {
+        margin-left: 0 !important;
+        margin-right: 0.25rem;
+    }
+
+    .rtl-ml-1 {
+        margin-right: 0 !important;
+        margin-left: 0.25rem;
+    }
+
+    .rtl-ml-3 {
+        margin-left: 1rem;
+        margin-right: 0 !important;
+    }
+
+    .rtl-pr-3 {
+        padding-right: 1rem !important;
+    }
+
+    // specific styling overrides
+    .c-file-upload__image {
+        left: auto;
+        right: 0;
+    }
+
+    .fa-chevron-left {
+        transform: rotate(180deg);
+    }
+
+    .whatnow-publish-banner {
+        background-image: linear-gradient(90deg, #303030, black);
+    }
+
+    .header-logged-in {
+        .dropdown-item {
+            text-align: initial;
+        }
+    }
+
+    .header__logo {
+        @media screen and (max-width: 992px) {
+            margin-left: auto;
+            margin-right: 0 !important;
+        }
+    }
+
+    .header-main-links {
+        &.is-logged-in {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+            @media screen and (max-width: 992px) {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .cap-preview .cap-data-item {
+        border-left: none;
+        border-right: 4px solid hsla(0, 0%, 90%, .6);
+    }
+
+    .illustrated-row {
+        background-size: 80%;
+        background-position: -40% 40%;
+        background-image: url('../../img/landing_page/illustration-rtl.png');
+
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            background-image: url('../../img/landing_page/illustration-rtl@2x.png');
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 3),
+        (min-resolution: 400dpi) {
+            background-image: url('../../img/landing_page/illustration-rtl@3x.png');
+        }
+
+        @media screen and (max-width: 768px) {
+        background-image: none;
+        }
+
+        h2, h3, p {
+            text-align: initial;
+        }
+
+        .btn-lg {
+            &.mr-2 {
+                margin-right: 0 !important;
+                margin-left: .5rem !important;
+            }
+        }
+    }
+
+    .custom-select {
+        background-position: left 0.75rem center;
+    }
+
+    .card-body {
+        .card-title,
+        h2, h3, p {
+            text-align: initial;
+        }
+    }
+
+    .google-button {
+        flex-direction: row-reverse;
+    }
+
+    .styled-label {
+        float: right;
+    }
+
+    .sidebar {
+        border-left: 1px solid #eee;
+        border-right: none;
+
+        .flex-column {
+            padding-right: 0;
+        }
+
+        .nav-item {
+          padding-right: 24px;
+          padding-left: 0 !important;
+
+          &.nav-toggle {
+            padding-right: 0;
+          }
+        }
+
+        .nav-link {
+            border-left: none;
+            border-right: 2px solid transparent;
+
+            &:active,
+            &:hover,
+            &:focus {
+                border-right-color: #ed1b2e;
+            }
+        }
+
+        .nav-item,
+        .collapse {
+            text-align: initial;
+        }
+    }
+
+    .doc-contents {
+        .nav-item {
+            padding-right: 0;
+        }
+    }
+
+    .table-responsive,
+    .styled-navbar li.nav-item a.nav-link {
+        text-align: initial;
+    }
+
+    .styled-navbar li.nav-item a.nav-link.dropdown-toggle {
+        @media screen and (max-width: 992px) {
+            margin-right: 12px;
+            padding-right: 6px;
+            padding-left: 20px;
+        }
+        &:after {
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    .styled-navbar li.nav-item .dropdown-menu {
+        @media screen and (max-width: 992px) {
+            width: calc(100% - 24px);
+            margin: 0 12px 0 12px;
+        }
+    }
+
+    th,
+    .table th {
+        text-align: initial;
+    }
+
+    table.b-table>thead>tr>th.sorting::after,
+    table.b-table>tfoot>tr>th.sorting::after {
+        margin-right: 0;
+        margin-right: 5px;
+    }
+
+    .fake-alert__timestamp {
+        left: 10px;
+        right: auto;
+    }
+
+    .modal-content {
+        .close {
+            float: left;
+            margin-left: 0;
+        }
+
+        .modal-footer> :not(:first-child) {
+            margin-right: .25rem;
+        }
+
+        .modal-footer> :not(:last-child) {
+            margin-left: .25rem;
+        }
+    }
+
+    .home-page .home-card {
+        background-position: left top;
+
+        &.users-card {
+            background-image: url('../../img/home_page/people-rtl.png');
+
+            @media (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                background-image: url('../../img/home_page/people-rtl@2x.png');
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 3),
+            (min-resolution: 400dpi) {
+                background-image: url('../../img/home_page/people-rtl@3x.png');
+            }
+        }
+
+        &.content-card {
+            background-image: url('../../img/home_page/speech-rtl.png');
+
+            @media (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                background-image: url('../../img/home_page/speech-rtl@2x.png');
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 3),
+            (min-resolution: 400dpi) {
+                background-image: url('../../img/home_page/speech-rtl@3x.png');
+            }
+        }
+
+        &.api-card {
+            background-image: url('../../img/home_page/computer-rtl.png');
+
+            @media (-webkit-min-device-pixel-ratio: 2),
+            (min-resolution: 192dpi) {
+                background-image: url('../../img/home_page/computer-rtl@2x.png');
+            }
+
+            @media (-webkit-min-device-pixel-ratio: 3),
+            (min-resolution: 400dpi) {
+                background-image: url('../../img/home_page/computer-rtl@3x.png');
+            }
+        }
+    }
+
+    .styled-select .vs__selected {
+        padding-right: 3px !important;
+        padding-left: 48px;
+    }
+
+    .styled-navbar li.nav-item a.nav-link.dropdown-toggle {
+        padding-right: 6px;
+        padding-left: 20px;
+    }
+
+    .site-footer {
+        .list-unstyled {
+          padding-left: 40px;
+          padding-right: 0;
+        }
+    }
+}

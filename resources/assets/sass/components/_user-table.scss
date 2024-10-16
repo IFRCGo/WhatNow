@@ -1,0 +1,16 @@
+.users-list-table-view {
+  .table td, .table th {
+  }
+  .table {
+    td.break-all {
+      word-break: break-all;
+    }
+    th {
+      min-width: 113px;
+      padding: 0.3rem;
+      &.small-cell {
+        min-width: 80px;
+      }
+    }
+  }
+}

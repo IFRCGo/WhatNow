@@ -1,0 +1,16 @@
+.c-import-changes-list-empty-state {
+  &__title, &__subtitle {
+    color: #959595;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+  }
+}

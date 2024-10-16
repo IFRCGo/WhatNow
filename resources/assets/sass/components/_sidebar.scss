@@ -1,0 +1,107 @@
+.sidebar {
+  margin-left: 0;
+  z-index: 1000;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  z-index: 999; /* Fix for hidden dropdown from the navbar above (z-index: 1000) */
+  transition: width 0.3s ease-in;
+  background-image: linear-gradient(193deg, rgba(0, 0, 0, 0.5), #000000), linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
+  width: 200px;
+  position: sticky;
+  top: 0;
+  min-height: calc(100vh - 6rem);
+  max-height: 100vh;
+  .nav {
+    transition: margin 0.3s ease-in;
+    li {
+      font-size:em(10);
+    }
+    > li {
+      font-size:em(12);
+    }
+    a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &.collapsed {
+    margin-left: -25%;
+    + main {
+      margin-left: 0;
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  @media screen and (max-width: $sidebar-collapsed-breakpoint) {
+    width: 150px;
+    .nav {
+      margin-left: -10px;
+    }
+  }
+  + main {
+    transition: margin-left 0.3s ease-in, max-width 0.3s ease-in;
+    margin-left: 0;
+    max-width: calc(100% - 200px);
+    flex-basis: calc(100% - 200px);
+    @media screen and (max-width: $sidebar-collapsed-breakpoint) {
+      flex-basis: calc(100% - 150px);
+      max-width: calc(100% - 150px);
+    }
+  }
+
+  .nav-item:not(.nav-toggle):hover .nav-link {
+    border-left-color: $secondary-colour;
+    opacity: 1;
+  }
+  .nav-link {
+    color: $white;
+    border-left: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+    opacity: 0.6;
+    &.active,
+    &:hover,
+    &:focus {
+      font-weight: bold;
+      opacity: 1;
+      border-left-color: $secondary-colour;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .nav-toggle {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.collapsed {
+      font-weight: normal;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    flex-shrink: 0;
+
+    svg {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}
+
+.sidebar .nav-item.collapsed .sidebar__icon {
+  opacity: 0.6;
+}

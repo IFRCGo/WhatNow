@@ -1,0 +1,216 @@
+.btn {
+  border-radius: 60px;
+  transition: border-color 0.3s ease-out, background-color 0.3s ease-out, color 0.3s ease-out;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &-small-radius {
+    border-radius: 0.125rem;
+  }
+
+  &-primary {
+    background-color:$primary-colour;
+    border-color:$primary-colour;
+    &:not([disabled]):not(.disabled):active,
+    &:not([disabled]):not(.disabled).active {
+      background-color:$primary-colour;
+      border-color:$primary-colour
+    }
+    &:hover,
+    &:focus {
+      background-color: $secondary-colour;
+      border-color: $secondary-colour;
+      color: $white;
+    }
+  }
+
+  &-lg {
+    font-size: 1.25em;
+    letter-spacing: 1.4px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:15px 25px;
+    font-weight: 500;
+  }
+
+  &-dark {
+    background-color: $primary-colour;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-colour;
+      border-color: $secondary-colour;
+      color: $white;
+    }
+  }
+
+  &-light {
+    background-color: $white;
+	  border: solid 1px $white;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: $white;
+      color: $white;
+    }
+  }
+
+  &-terms {
+    background-color: #786a65;
+    border-color: #ffffff;
+    color: #ffffff;
+    min-width: 80px;
+    &.btn-lg {
+      border: 2px solid;
+      min-width: 240px;
+      min-height: 60px;
+      font-size: 16px;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($alert-terms-background, 5%);
+      }
+    }
+  }
+
+  &-facebook {
+    background-color: $facebook-blue;
+    border-color: $facebook-blue;
+    padding: 13px 20px;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: $facebook-blue;
+      color: $facebook-blue;
+    }
+  }
+
+  &-google {
+    background-color: $google-red;
+    border-color: $google-red;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: $google-red;
+      color: $google-red;
+    }
+  }
+
+  &-breadcrumb-link {
+    border: none;
+    background-color: transparent;
+  	font-weight: bold;
+    letter-spacing: 0.4px;
+    color: black;
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: transparent;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+  }
+
+  &-link-no-underline {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+}
+
+.alert {
+  &-terms {
+    color: #ffffff;
+    background-color: $alert-terms-background;
+    border: none;
+    padding: 36px 24px;
+  }
+}
+
+.pre-scrollable {
+    max-height: 190px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(153, 153, 153, 0.1) !important;
+}
+
+.bg-grey {
+  background-color: #f2f2f2;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card.is-scrollable {
+  height: 50vh;
+  overflow: scroll;
+
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
+}
+
+.badge-success {
+  background-color: darkgreen;
+}
+
+.badge-danger {
+  background-color: darkgoldenrod;
+}
+
+.badge-secondary {
+  background-color: $blue;
+}
+
+.badge-danger {
+  background-color: $red;
+}
+
+.page-link {
+  color:$primary-colour;
+}
+
+.page-item.active {
+  .page-link {
+    background-color:$primary-colour;
+    border-color:$primary-colour;
+  }
+}
+
+.custom-file-control {
+  @extend .custom-file-label !optional
+}
+
+.v-select {
+  min-width: 160px;
+  &.bg-white {
+    border-radius: 4px;
+  }
+
+  input[type=search],
+  input[type=search]:focus {
+    -webkit-locale: "en"; // this text will always be in english, so must use en locale
+  }
+}
+
+.c-language-picker {
+  height: 48px !important;
+  border-radius: 4px;
+  border: 1px solid rgba(60, 60, 60, .26);
+}

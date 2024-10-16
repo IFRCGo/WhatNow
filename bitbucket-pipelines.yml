@@ -1,0 +1,192 @@
+
+
+image: 3sidedcube/php:7.4
+
+pipelines:
+    default:
+        - parallel:
+              - step:
+                    name: Install PHP dependencies
+                    caches:
+                        - composer
+                    artifacts:
+                        - vendor/**
+                    script:
+                        - composer self-update --1
+                        - composer install --no-interaction --prefer-dist --no-suggest --no-progress
+
+              - step:
+                    name: Install JS dependencies & build
+                    image: node:14.16.0
+                    size: 2x
+                    caches:
+                        - node
+                    artifacts:
+                        - node_modules/**
+                        - public/js/*
+                        - public/css/*
+                        - public/images/*
+                        - public/pdf/*
+                        - public/mix-manifest.json
+                    script:
+                        - yarn install
+                        - yarn lint
+                        - yarn production
+        - step:
+            name: Run PHP Tests
+            script:
+                - cp .env.pipelines .env
+                - php artisan migrate --seed
+                - php artisan serve &
+                - sleep 5
+                - vendor/bin/phpunit --log-junit ./test-reports/junit.xml --exclude=skipPipeline
+            services:
+                - mysql
+                - mailcatcher
+            #   Temporarily commenting out the browser tests step as they're broken,
+            #   they were previously using a package which has since been abandoned
+            #     - step:
+            #         name: Run Browser Tests
+            #         image: chilio/laravel-dusk-ci:stable
+            #         script:
+            #             - cp .env.dusk.testing .env
+            #             - chmod -R 775 ./vendor/laravel/dusk/bin
+            #             - php artisan migrate --seed
+            #             - php artisan serve --port=80 &
+            #             - sleep 5
+            #             - php artisan dusk --log-junit ./test-reports/junit.xml
+            #         services:
+            #             - mysql
+
+    custom:
+        deploy-to-test:
+            - step:
+                  name: Install PHP dependencies
+                  image: 3sidedcube/php:7.4
+                  caches:
+                      - composer
+                  artifacts:
+                      - vendor/**
+                  script:
+                      - composer install --no-interaction --no-progress --prefer-dist --no-suggest --optimize-autoloader
+
+            - step:
+                  name: Install JS dependencies & build
+                  image: node:14.16.0
+                  caches:
+                      - node
+                  artifacts:
+                      - node_modules/**
+                      - public/js/*
+                      - public/css/*
+                      - public/images/*
+                      - public/pdf/*
+                      - public/mix-manifest.json
+                  script:
+                      - yarn install
+                      - yarn lint
+                      - yarn production
+
+            - step:
+                  name: Deploy
+                  image: atlassian/default-image:2
+                  script:
+                      - ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
+                      - cat deploy_known_hosts >> ~/.ssh/known_hosts
+                      - (umask 077; echo $DEPLOY_SSH_KEY | base64 -d > ~/.ssh/id_rsa)
+                      - tar -czf ~/release.tar.gz .
+                      - scp ~/release.tar.gz rcnapi@rcnapi-admin-staging.3sidedcube.com:/home/rcnapi
+                      - ssh -T rcnapi@rcnapi-admin-staging.3sidedcube.com "bash -s" < deploy.sh "test"
+
+        deploy-to-staging:
+            - step:
+                  name: Install PHP dependencies
+                  image: 3sidedcube/php:7.4
+                  caches:
+                      - composer
+                  artifacts:
+                      - vendor/**
+                  script:
+                      - composer install --no-interaction --prefer-dist --no-suggest --optimize-autoloader
+
+            - step:
+                  name: Install JS dependencies & build
+                  image: node:14.16.0
+                  caches:
+                      - node
+                  artifacts:
+                      - node_modules/**
+                      - public/js/*
+                      - public/css/*
+                      - public/images/*
+                      - public/pdf/*
+                      - public/mix-manifest.json
+                  script:
+                      - yarn install
+                      - yarn lint
+                      - yarn production
+
+            - step:
+                  name: Deploy
+                  image: atlassian/default-image:2
+                  script:
+                      - ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
+                      - cat deploy_known_hosts >> ~/.ssh/known_hosts
+                      - (umask 077; echo $DEPLOY_SSH_KEY | base64 -d > ~/.ssh/id_rsa)
+                      - tar -czf ~/release.tar.gz .
+                      - scp ~/release.tar.gz rcnapi@rcnapi-admin-staging.3sidedcube.com:/home/rcnapi
+                      - ssh -T rcnapi@rcnapi-admin-staging.3sidedcube.com "bash -s" < deploy.sh "staging"
+
+        deploy-to-production:
+            - step:
+                  name: Install PHP dependencies
+                  image: 3sidedcube/php:7.4
+                  caches:
+                      - composer
+                  artifacts:
+                      - vendor/**
+                  script:
+                      - composer install --no-interaction --no-progress --prefer-dist --no-suggest --optimize-autoloader
+
+            - step:
+                  name: Install JS dependencies & build
+                  image: node:14.16.0
+                  caches:
+                      - node
+                  artifacts:
+                      - node_modules/**
+                      - public/js/*
+                      - public/css/*
+                      - public/images/*
+                      - public/pdf/*
+                      - public/mix-manifest.json
+                  script:
+                      - yarn install
+                      - yarn lint
+                      - yarn production
+
+            - step:
+                  name: Deploy
+                  image: atlassian/default-image:2
+                  script:
+                      - ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
+                      - cat deploy_known_hosts >> ~/.ssh/known_hosts
+                      - (umask 077; echo $DEPLOY_SSH_KEY | base64 -d > ~/.ssh/id_rsa)
+                      - tar -czf ~/release.tar.gz .
+                      - scp ~/release.tar.gz rcnapi@rcnapi-admin-production.3sidedcube.com:/home/rcnapi
+                      - ssh -T rcnapi@rcnapi-admin-production.3sidedcube.com "bash -s" < deploy-production.sh
+
+definitions:
+    caches:
+        composer: vendor
+    services:
+        mysql:
+            image: mysql:5.7.21
+            environment:
+                MYSQL_DATABASE: 'homestead'
+                MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+                MYSQL_USER: 'homestead'
+                MYSQL_PASSWORD: 'secret'
+        mailcatcher:
+            image: "jeanberu/mailcatcher"
+            memory: 512

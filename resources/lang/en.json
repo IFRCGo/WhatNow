@@ -1,0 +1,820 @@
+{
+  "ok": "OK",
+  "go": "GO",
+  "all": "All",
+  "cancel": "Cancel",
+  "error_alert_title": "Oops...",
+  "error_alert_text": "Something went wrong! Please try again.",
+  "error_permission_alert_text": "You do not have permission to make this change",
+  "token_expired_alert_title": "Session Expired!",
+  "token_expired_alert_text": "Please log in again to continue.",
+  "login": "Log In",
+  "what_now": "WhatNow",
+  "message_portal": "Message Portal",
+  "register": "Register",
+  "sign_up": "Sign up",
+  "docs": "Docs",
+  "my_apps": "My apps",
+  "number_of_apps": "{0} Apps",
+  "whatnow_content": "WhatNow Messages",
+  "alerts": "Alerts",
+  "feeds": "Feeds",
+  "get_started": "Sign up now",
+  "page_not_found": "Page Not Found",
+  "go_home": "Go Home",
+  "logout": "Logout",
+  "email": "Email",
+  "register_success": "Thank you for registering",
+  "confirm_email": "Please check your inbox for an email to confirm your account.",
+  "email_confirmed": "Thank you for confirming your email address. Please log in.",
+  "confirmation_failed": "Your email address could not be confirmed, please contact your administrator to try again.",
+  "home_redirect": "Go to home page",
+  "status": "Status",
+  "remember_me": "Remember Me",
+  "old_password": "Current Password",
+  "password": "Password",
+  "forgot_password": "Forgot Your Password?",
+  "confirm_password": "Confirm Password",
+  "incorrect_password": "Incorrect Password",
+  "name": "Name",
+  "first_name": "First name",
+  "last_name": "Last name",
+  "toggle_navigation": "Toggle navigation",
+  "you_are_logged_in": "You are logged in!",
+  "reset_password": "Reset Password",
+  "set_password": "Set Password",
+  "send_password_reset_link": "Send Password Reset Link",
+  "settings": "Settings",
+  "profile": "Profile",
+  "your_info": "Your Info",
+  "info_updated": "Your info has been updated!",
+  "update": "Update",
+  "your_password": "Your Password",
+  "password_updated": "Your password has been updated",
+  "new_password": "New Password",
+  "login_with": "Login with",
+  "register_with": "Register with",
+  "yes": "Yes",
+  "no": "No",
+  "close": "Close",
+  "dashboard": "Dashboard",
+  "terms_service": "Terms of Service",
+  "sign_in_with_google": "Sign In with Google",
+  "offline_error": {
+    "title": "No Internet Connection",
+    "description": "Please save changes within {time} or progress will be lost"
+  },
+  "breadcrumbs": {
+    "applications": "Applications",
+    "admin_users": "Admin Users",
+    "users": "Users",
+    "manage_users": "Manage Users",
+    "profile": "Profile",
+    "terms": "Terms and Conditions",
+    "edit": "Edit",
+    "create": "Create",
+    "content": "Content",
+    "what_now_content": "What Now Content",
+    "bulk_upload": "Bulk Upload",
+    "audit_log": "Audit Log",
+    "api_usage": "API Usage",
+    "app_detail": "App Detail",
+    "all_terms": "All Terms and Conditions"
+  },
+  "documentation": {
+    "heading": "Red Cross API Documentation",
+    "sidebar": {
+      "introduction": "Introduction",
+      "base_url": "Base URL",
+      "changelog": "Changelog",
+      "authentication": "Authentication",
+      "response_codes": "Response codes",
+      "emergency_alert_feed": "Emergency Alert Feed",
+      "cap_alert_document": "CAP Alert Document",
+      "what_now": "What Now"
+    },
+    "steps": {
+      "one": {
+        "body": "The Red Cross REST API enables developers to access to emergency information and resources issued by international Red Cross Societies.",
+        "heading": "Introduction",
+        "support_card": {
+          "body": "For questions about the Red Cross API please contact dev@3sidedcube.com",
+          "title": "Support & Questions"
+        }
+      },
+      "two": {
+        "body": "All URLs in the API v1.0 documentation have the following base URL:",
+        "heading": "Base URL"
+      },
+      "three": {
+        "heading": "Changelog",
+        "table": {
+          "headers": {
+            "detail": "Release",
+            "version": "Api Version",
+            "release": "Release",
+            "release_date": "Release Date"
+          }
+        }
+      },
+      "four": {
+        "body": "The API requires authentication to access all resources using an API key. To obtain an API key, firstly {0}.\n\nAll API requests must include the following HTTP header:",
+        "create_app_cta": "create an application",
+        "heading": "Authentication"
+      },
+      "five": {
+        "heading": "Response codes",
+        "table": {
+          "descriptions": {
+            "ok": "The request was successful and the response body contains the requested resource",
+            "found": "Indicates a redirect. Issue a GET request to the resource URI in the Location: header.",
+            "not_found": "The requested resource was not found.",
+            "not_allowed": "Indicates the HTTP method used is not permitted on this resource.",
+            "server_error": "A server error occurred and the requested resource could not be returned.",
+            "unavailable": "Indicates the service is not currently available. Try the request again at a later time."
+          },
+          "headers": {
+            "code": "Code",
+            "name": "Name",
+            "description": "Description"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "Each Red Cross Society may issue public alerts using the {0} v1.2.",
+          "cta": "Common Alerting Protocol",
+          "title": "Common Alerting Protocol"
+        },
+        "endpoint": "Endpoint:",
+        "example": "In this example, the {0} segment should be replaced with the country code of a given society. e.g.",
+        "feed_intro": "A feed for each society is also provided, listing active alerts published by a given society, identified by",
+        "heading": "Emergency Alert Feed",
+        "intro": "CAP alerts issued by all societies are published using an RSS feed. This may be accessed via the following endpoint:"
+      },
+      "seven": {
+        "endpoint": "Endpoint:",
+        "example_response": "Example Response:",
+        "heading": "CAP Alert Document",
+        "body": "CAP alert documents may be accessed via the absolute link specified in each RSS feed item. The URI of an alert uses the following format: "
+      },
+      "eight": {
+        "body": "The following endpoints provide structured data published by Red Cross societies to assist with disaster preparedness for a variety of event types.\n\nEach entry provides information on six stages of disaster management:",
+        "endpoint": "Endpoint:",
+        "example_response": "Example Response:",
+        "heading": "What Now",
+        "note": "Note:",
+        "noteDetails": "{0} all responses are contained within in a parent {1} property.",
+        "query_params": "Query Parameters:",
+        "response_properties": "Response Properties:",
+        "structure": "Structure of What Now Item Objects:",
+        "stucture_attribution": "Structure of an {0} object:",
+        "stucture_attribute_translation": "Structure of an attribution {0} object:",
+        "stucture_translation": "Structure of a {0} object:",
+        "table": {
+          "query_params": {
+            "name": "name",
+            "description": "description"
+          },
+          "structure": {
+            "property": "Property",
+            "data_type": "Data type",
+            "description": "Description"
+          }
+        }
+      }
+    }
+  },
+  "get_started_docs": {
+    "title": "Get Started",
+    "sidebar": {
+      "create_app": "Create an app",
+      "get_api_key": "Get an API key",
+      "make_request": "Make a request",
+      "sign_up": "Sign up"
+    },
+    "steps": {
+      "one": {
+        "heading": "Step 1 - Sign up",
+        "body": "To get started using data from the WhatNow API, firstly {0} to the WhatNow Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
+        "create_account_alt": "create account",
+        "existing_account": "If you already have an account, please {0}.",
+        "login_cta": "log in",
+        "sign_up_cta": "sign up"
+      },
+      "two": {
+        "body": "To use the API you must create an application in the WhatNow Portal. Tell us a little about what you're building.",
+        "create_app_alt": "create app",
+        "heading": "Step 2 - Create an app"
+      },
+      "three": {
+        "body": "When you have created an app, an API Key will be automatically generated.\n\n{0} Be sure to store this as securely as possible and avoid sharing or otherwise exposing your API key within your own application.",
+        "create_api_key_alt": "Create API key",
+        "heading": "Step 3 - Get an API key",
+        "important": "Important:"
+      },
+      "four": {
+        "api_docs_cta": "API documentation",
+        "body": "The WhatNow API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
+        "example_title": "Example Request",
+        "heading": "Step 4 - Make a request",
+        "moreInfo": "For more information on all API endpoints, see the {0}."
+      }
+    }
+  },
+  "home_pods": {
+    "bulk_upload": "Upload .csv files so that you can update large amounts of content at once",
+    "audit_log": "Here is where you can view a log of activities",
+    "whatnow_edit": "This is where you can edit WhatNow content",
+    "whatnow_review": "This is where you can review WhatNow content",
+    "whatnow_publish": "This is where you can edit and publish WhatNow content",
+    "manage_users": "This is where to manage the users (Create, edit and remove)",
+    "api_usage": "This is where you can see who is using the API and what applications are being built with it."
+  },
+  "languages": {
+    "am": "አማርኛ",
+    "ar": "عربى",
+    "bn": "বাংলা",
+    "de": "Deutsche",
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "ht": "Kreyòl",
+    "id": "bahasa Indonesia",
+    "it": "Italiano",
+    "ja": "日本",
+    "my": "ဗမာ",
+    "ne": "नेपाली",
+    "pt": "Português",
+    "ru": "русский",
+    "rw": "Kinyarwanda",
+    "sw": "Kiswahili",
+    "th": "ไทย",
+    "tr": "Türk",
+    "ur": "اردو",
+    "vi": "Tiếng Việt"
+  },
+  "sidebar": {
+    "manage": "Manage Content Users",
+    "content_users": "Content Users",
+    "audit_log": "Audit Log",
+    "whatnow": "WhatNow",
+    "bulk": "Bulk Upload",
+    "content": "Content",
+    "api": "API Usage",
+    "applications": "Applications",
+    "api_stats": "API Stats",
+    "api_users": "API Users",
+    "terms_conditions": "Terms and Conditions",
+    "regions": "Regions"
+  },
+  "common": {
+    "accept": "Accept",
+    "actions": "Actions",
+    "create": "Create",
+    "edit": "Edit",
+    "deactivate": "Deactivate",
+    "activate": "Activate",
+    "are_you_sure": "Are you sure?",
+    "yes": "Yes",
+    "title": "Title",
+    "description": "Description",
+    "unpublished_edits": "Unpublished edits?",
+    "published": "Published",
+    "delete": "Delete",
+    "welcome": "Welcome to the",
+    "save_changes": "Save changes",
+    "auto_saving": "Autosaving",
+    "add": "Add",
+    "my_profile": "My Profile",
+    "cancel": "Cancel",
+    "view_changes": "View changes",
+    "view_content": "View content",
+    "resend_activation": "Resend activation email",
+    "deactivate_user": "Deactivate user",
+    "submit_changes": "Submit Changes",
+    "reactivate_user": "Reactivate user",
+    "send_invite": "Send invite",
+    "invite_and_create": "Invite and create another",
+    "loading": "Loading content",
+    "publish_new": "Publish New Version",
+    "greeting": "Hi",
+    "removed": "Removed",
+    "copy": "Copy",
+    "copied": "Copied",
+    "not_empty": "Cannot be empty",
+    "name": "Name",
+    "webUrl": "URL",
+    "learn_more": "Learn more",
+    "validations": {
+      "empty": "This cannot be empty",
+      "hazardIcon": "Please select an image that is less than 30kb"
+    },
+    "network_error": "Network error",
+    "network_error_text": "Looks like there has been a network error. Please try again in a few moments",
+    "email_sent": "Email sent",
+    "duplicate_lang_error": "Sorry, the chosen language already exists",
+    "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
+    "estimated_users": "Number of estimated users"
+  },
+  "banners": {
+    "get_started_create": ", Get Started and Create Your First App",
+    "create_app": "Create an app",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+  },
+  "users": {
+    "user": "User",
+    "deleted": "Deleted user",
+    "list": {
+      "manage": "Manage users",
+      "create": "Create new user",
+      "download_report": "Download report",
+      "empty": "Couldn't find any users",
+      "detail": "User detail",
+      "clear_filters": "Clear filters",
+      "table_header": {
+        "user": "User",
+        "role": "Role",
+        "society": "Society",
+        "email": "Email",
+        "added": "Added",
+        "last_activity": "Last Acitivity",
+        "t_and_c": "T&C Version"
+      },
+      "societies": "Societies"
+    },
+    "status": {
+      "active": "Activated",
+      "deactivated": "Deactivated"
+    },
+    "edit": {
+      "super_admin_all": "Access to all societies",
+      "user_details": "User details",
+      "create_user": "Create new user",
+      "add_society": "Add society + ",
+      "societies_heading": "Societies",
+      "roles_heading": "Role & permissions",
+      "activity_heading": "Activity",
+      "roles_label": "Select roles & permissions for this user",
+      "activity_link": "View all actions by user",
+      "created": "User successfully created",
+      "updated": "User successfully updated",
+      "email_update": "To update your email, please enter your password",
+      "view": "View",
+      "more": "more",
+      "less": "Show less",
+      "user_can_do": "View what user has permission to do:",
+      "user_no_permission": "User has not got any permissions",
+      "soc_already_added": "This user has already been assigned this society"
+    }
+  },
+  "content": {
+    "content": "Content",
+    "audit_log": {
+      "audit_log": "Audit Log",
+      "empty": "No audit history found which matches this filter",
+      "soc_label": "Society"
+    },
+    "whatnow": {
+      "set_attribution": "Set society name and attribution message to publish",
+      "whatnow": "WhatNow",
+      "empty": "There are no published WhatNow messages for this National Society",
+      "steps": "Steps",
+      "publish": "Publish",
+      "no_publish": "Nothing to publish",
+      "published": "translations published",
+      "publishing": "Publishing",
+      "content_to_publish": "Draft Content to be Published",
+      "whatnow_content": "WhatNow content",
+      "choose_hazard": "Choose Hazard",
+      "hazard": "Hazard",
+      "content": "Content",
+      "create": "Add Hazard",
+      "edit_attribtion": "Edit attribution",
+      "attribution": "Attribution",
+      "attribution_url": "Attribution URL",
+      "society_name": "National Society",
+      "attribution_message": "Attribution message",
+      "no_translation": "No content set",
+      "delete_content_translation": "This will remove the selected whatnow content from the current language",
+      "messages": "WhatNow messages of the",
+      "add_language": "Add new language",
+      "no_languages": "Select or create a language to get started",
+      "no_soc": "Select a society",
+      "no_region": "Select a region",
+      "add_language_message": "To add a new language, please add some content to go along with it",
+      "add_language_attribution": "Create attribution to add a new language",
+      "select_language": "Please select a language",
+      "attribution_publish": "This attribution will be immediately available on publish"
+    },
+    "edit_whatnow": {
+      "title": "Title",
+      "description": "Description",
+      "content_piece": "Content piece",
+      "enter_other_hazard_type": "Enter Hazard Type Name",
+      "other_hazard_type_label": "Other Hazard Type",
+      "stepped_content": "Stepped Content Piece",
+      "content_title_description": "Title for these WhatNow Messages",
+      "content_description_description": "Description of these WhatNow Messages",
+      "content_label": "Please enter some hazard information",
+      "content_url": "URL",
+      "content_url_description": "URL for more information about these WhatNow messages. Please include the protocol, i.e. http:// or https://",
+      "created": "created",
+      "pieces_edited": " Pieces Edited",
+      "delete_item": "Delete Item",
+      "add_item": "Add item +",
+      "content_placeholder": "Please enter a message",
+      "mitigation": "Mitigation",
+      "mitigation_help": "Longer term actions to reduce risks",
+      "mitigation_extra": "A mitigation is a longer-term statement of prediction of a hazardous event. Actions taken are assessment, planning, and longer-term risk reduction measures to make the household and environment safer.",
+      "seasonalForecast": "Seasonal Forecast",
+      "seasonalForecast_help": "Shorter term actions to reduce risks",
+      "seasonalForecast_extra": "A seasonal forecast is a statement of prediction of a hazardous event. Actions taken are to assess potential risks and plan activities to reduce risk and protect the household.",
+      "watch": "Watch",
+      "watch_help": "Prepare to respond",
+      "watch_extra": "A watch is issued when the risk of a hazardous event has increased significantly, but its occurrence, location, and/or timing are still uncertain. It is intended to provide enough time for protective actions and preparation to respond.",
+      "warning": "Warning",
+      "warning_help": "Prepare to respond",
+      "warning_extra": "A warning is issued when a hazardous event is occurring, is imminent, or has a very high probability of occurring. It means conditions pose a threat to life or property. People in the path of this hazard need to take protective actions.",
+      "immediate": "Immediate",
+      "immediate_help": "Response actions",
+      "immediate_extra": "Conditions currently pose a threat to life and property. These are immediate protective actions to take when a hazardous event is occurring. Response actions to protect self and household are needed.",
+      "recover": "Recover",
+      "recover_help": "Recovery actions",
+      "recover_extra": "These are protective actions to take to reduce risk following a hazardous event.",
+      "updated": "updated",
+      "download_icon": "Download Icon",
+      "download_image": "Download as an Image",
+      "download_image_error": "Error downloading image, please make sure you have published all changes and try again.",
+      "download_instructions": "Right click and select 'Save image as…' to save",
+      "downloaded_image_alt": "WhatNow Instructions"
+    },
+    "audit": "Audit log",
+    "export": "Export",
+    "bulk_upload": {
+      "bulk_upload": "Bulk Upload",
+      "template": "Template",
+      "export_template": "Export Template",
+      "import_data": "Import Data",
+      "import_complete": "Import Complete",
+      "import_summary": "You are importing under {society} in {lang}.",
+      "import_banner": {
+        "success": "Success",
+        "added": "Added",
+        "skipped": "Skipped",
+        "denied": "Denied",
+        "updated": "Updated",
+        "failed": "Failed",
+        "invalid": "Invalid",
+        "row": "Row"
+      },
+      "upload_csv": "Upload a document in CSV format",
+      "language_instructions": "Select the language of the translations that are being imported.",
+      "file_instructions": "Drag a file here, or choose from your computer.",
+      "choose": "Choose",
+      "submit": "Import Content",
+      "reset": "Upload Another",
+      "export_template_guide": "Export Template Guide",
+      "export_template_instructions": "For instructions on how to use this bulk upload template effectively, please view this guide.",
+      "warnings": {
+        "title": "Reject import if any content will overwrite more recent versions.",
+        "on": "Yes",
+        "off": "No"
+      },
+      "overwriting": {
+        "title": "Overwrite Setting.",
+        "on": "Always update to this version, overwrite all revisions",
+        "off": "Only update event types where the imported content is newer"
+      },
+      "errors": {
+        "warning_update_will_overwrite": "This action will overwrite changes which have been made since this export was created",
+        "bad_request": "File data is not correctly formed",
+        "bad_request_error_codes": {
+          "30001": "Column headings do not match the template",
+          "30002": "Attribution name, message or url are missing",
+          "30003": "Invalid attribution url - please ensure the protocol is present, eg. https://",
+          "40001": "Invalid country code provided",
+          "40002": "Society selected does not match society for the file selected",
+          "40003": "The date the selected file was exported has been malformed and the import cannot complete"
+        }
+      }
+    }
+  },
+  "api_stats": {
+    "page_title": "API Stats",
+    "download_data": "Download Data",
+    "start_date": "Start Date",
+    "end_date": "End Date",
+    "table_select": {
+      "keys": "API Keys",
+      "routes": "API Routes"
+    },
+    "field_headers": {
+      "application_name": "Application Name",
+      "number_of_hits": "Number of Hits",
+      "estimated_reach": "Estimated Reach",
+      "organisation": "Organisation",
+      "application": "Application"
+    },
+    "cumulative_cards": {
+      "hits": "Total Hits",
+      "accounts": "Total Accounts",
+      "est_impacted_users": "Est. Impacted Users"
+    },
+    "empty": "No stats found for the given date range"
+  },
+  "api_usage": {
+    "applications": "Applications",
+    "view_user": "View user",
+    "reactivate": "Reactivate",
+    "app_detail": "App Detail",
+    "app_details": "App Details",
+    "activity": "Activity",
+    "view_all_activity": "View all activity for this app",
+    "api_users": "API Users",
+    "terms_conditions": "All Terms & Conditions Versions",
+    "view_prev_terms": "View previous versions",
+    "current_version": "Current Version",
+    "version": "Version"
+  },
+  "applications": {
+    "my_apps": "My Apps",
+    "new_tc": "New terms and conditions",
+    "build": "Build new app",
+    "edit": "Edit app",
+    "building": "Building app",
+    "no_apps": "You have no apps, build one to get started."
+  },
+  "home": {
+    "home": "Home",
+    "welcome": "Welcome",
+    "admin_intro": "Here you can manage users, edit and publish WhatNow content and view API usage.",
+    "ns_admin_intro": "Here you can edit and publish WhatNow content",
+    "ns_editor_intro": "Here you can edit WhatNow content",
+    "api_user_intro": "Here you view your apps and manage your account."
+  },
+  "landing": {
+    "strapline": "WhatNow Service",
+    "strapline_part_2": "Global Red Cross / Red Crescent Key Safety Messages",
+    "developer": {
+      "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages."
+    },
+    "national_society": {
+      "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",
+      "strap_para_two": "Contact us to learn more about how to create the messages and connect with media partners."
+    },
+    "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+    "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+    "view_data": "View the data",
+    "view_message_library": "View WhatNow Messages",
+    "what_now": "WhatNow?",
+    "fake_alert_heading": "Extreme Cold Warning",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "1HR AGO",
+    "fake_alert_time_exact": "05/02/18 at 05:15 CT",
+    "use_cases": {
+      "heading": "Learn More",
+      "first_heading": "How it Works",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "Use Cases",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "Implementation Toolkit",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "WhatNow Video",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "Enhance Weather Apps",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "Sample WhatNow Message Format",
+      "alert_preview": "Alert preview",
+      "what_now_info": "WhatNow Preview",
+      "example_whatnow_request": "Sample WhatNow Response",
+      "example_alert_request": "Sample Alert Response",
+      "example_content": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",
+      "example_content_location_header": "AFFECTED LOCATION",
+      "example_content_location": "Nome, Alaska"
+    },
+    "example_whatnow": {
+      "alert_from": "Alert from: American Red Cross",
+      "more_info": "More Info",
+      "heading": "Key Messages for Extreme Cold",
+      "copy": "These are actions to take to reduce risk and protect you and your household from extreme cold.",
+      "what_now": "WhatNow",
+      "step_1": "Protect your home. Check on pipes and use heating sources safely.",
+      "step_2": "Stay hydrated with warm fluids",
+      "step_3": "Protect yourself with warm clothing and cover exposed skin",
+      "step_4": "Be aware and cautious of icy conditions, especially while driving",
+      "step_5": "Check on neighbors, friends, and those at risk"
+    },
+    "build": {
+      "heading": "Ready to build your app?"
+    },
+    "data_preview": {
+      "heading": "WhatNow Messages",
+      "sub_heading": "Sign up and view the key action messages from Red Cross / Red Crescent National Societies around the world"
+    },
+    "footer": {
+      "terms_conditions": "Terms & Conditions",
+      "about": "About",
+      "privacy": "Privacy",
+      "getting_started": "Getting Started",
+      "docs": "Documentation",
+      "give_feedback": "Give Feedback",
+      "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
+      "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement"
+    }
+  },
+  "register_form": {
+    "heading": "Create your free WhatNow Service account",
+    "who_are_you": "Who are you?",
+    "developer": "Developer",
+    "national_society": "National society",
+    "sign_up_with": "Sign up with:",
+    "sign_up_agreement": "By creating your account, you agree to our ",
+    "terms_conditions": "Terms and Conditions ",
+    "facebook": "Sign Up With Facebook",
+    "google": "Sign Up With Google",
+    "email_sign_up": "Or sign up with your email:",
+    "location": "Location",
+    "organisation": "Organisation",
+    "industry": "Industry type",
+    "create_account": "Create Account",
+    "last_name": "Last name",
+    "select_country": "Select a country",
+    "select_industry": "Select industry type",
+    "industries": {
+      "media": "Media",
+      "emergency": "Emergency Management",
+      "non_profit": "Non-Profit/NGO",
+      "humanitarian": "Humanitarian Organization",
+      "red_cross": "Red Cross/Red Crescent",
+      "education": "Education/Academia",
+      "gov": "Government Agency",
+      "other": "Other"
+    },
+    "api_used_in": "Where will this API be used?",
+    "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
+    "welcome": "Welcome {name}, please complete the following information to get started:",
+    "gdpc_note": "If you have any questions or are interested in learning more, please contact: ",
+    "gdpc_ns_note": "To sign up, please contact the WhatNow Service team at the Global Disaster Preparedness Center at ",
+    "contact_gdpc": "Contact GDPC"
+  },
+  "terms_service_page": {
+    "applicable_law": {
+      "body": "The laws of the District of Columbia shall govern all rights and obligations under this Agreement, without giving effect to any principles of conflicts of laws.",
+      "heading": "Applicable Law:"
+    },
+    "body": "You are responsible for maintaining the secrecy and security of the registration key provided by Red Cross to You. You are responsible for maintaining compatibility with the API, as updated from time to time, in order to continue to receive the Data Feeds. Red Cross may release updated versions of the API and Data Feeds at its sole discretion. New versions may not be compatible with previous implementations, and You agree to use the most recently updated version of the Data Feeds at all times.\n\nYou agree not to modify, distribute, decompile, disassemble, or reverse engineer any portion of the API or any software of Red Cross.\n\nYou may not use the API or Data Feeds in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage, as determined by Red Cross at its sole discretion.\n\nYou may not use the API or Data Feeds in a manner that is unlawful, misleading, negligent, malicious, intending to cause harm, or that harms Red Cross, its service providers, its content providers, or any other person, as determined by Red Cross at its sole discretion.\n\nRed Cross may monitor your use of the API and Data Feeds. You may not use any technical means to interfere with such monitoring, and Red Cross may use technical means to overcome any such interference.\n\nUse of Prepare, Respond, and Recover Messages shall be presented only as current or updated to the then-current urgency setting of the correlated Event Alert, and you shall update individual Prepare, Respond, and Recover Messages upon any update of the Data Feeds and/or correlated Event Alerts by Red Cross.\n\nIndividual Prepare, Respond, and Recover Messages You use shall be associated only with the geographic region for which it is issued. If a Prepare, Respond, and Recover Messages includes a reference to a source such as American Red Cross or another Red Cross or Red Crescent national society or organization (each a “Source Reference”), You shall include the Source Reference associated with each Prepare, Respond, and Recover Messages in the form provided in the Data Feeds. You shall make   no further use of any Source Reference.\n\nYou may not translate the Data Feeds, Event Alerts, and/or Prepare, Respond, and Recover Messages into any other language, make any use, edits or revisions, or alter(s) the meaning of the Data Feed, Event Alerts and/or Prepare, Respond, and Recover Messages.\n\nYou must ensure that the Data Feeds, remain in your sole possession and/or control.\n\nYou may not permit Event Alerts and Prepare, Respond, and Recover Messages delivered to End Users to incorporate any advertising or sponsorship.\n\nYou may not make any archive of the Data Feeds in whole or in part.",
+    "contact": "Please contact Red Cross at {0} with any questions regarding the API.",
+    "disclaimer": "The API and Data Feeds are provided FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY, AND on an 'as is ' and ' as available ' basis. Red Cross makes no representations or warranties of any kind, express or implied. Red Cross disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose. Red Cross and its employees, officers, governors and agents and licensors will not be liable for damages of any kind arising from the use of the API, Data Feeds, Event Alerts, and/or Prepare, Respond, and Recover Messages including but not limited to direct, indirect, incidental, punitive and consequential damages.\n\nRed Cross does not guarantee the sequence, accuracy, authenticity or completeness of the API, Data Feed, Event Alert and/or Prepare, Respond, and Recover Messages and shall not be held liable in any way to You or your End Users or any third party, including without limitation, for any delays, inaccuracies, errors or omissions, in respect of the API, Data FeedS, Event Alert and/or Prepare, Respond, and Recover Messages provided hereunder.",
+    "entire_agreement": {
+      "body": "The API Terms constitutes the complete and exclusive agreement between Red Cross and You with respect to the subject matter hereof and supersedes all prior oral or written understandings, communications, or agreements not specifically incorporated herein. Red Cross reserves the right to modify or revoke this agreement at any time.",
+      "heading": "Entire Agreement:"
+    },
+    "heading": "API END USER LICENSING AGREEMENT",
+    "intro": "AGREE: BY USING THE SERVICE OR CHECKING THE BOX PROVIDED, USER IS AGREEING TO BE BOUND BY THIS AGREEMENT.\n\nThe API is a tool that allows you(“You”) to retrieve and use data feeds made available by Red Cross including a feed of global weather and disaster event warning and watch notices(“Event Alerts”) and a feed of actionable and contextualized messages on how to prepare to local hazards by hazard type and urgency (“Prepare, Respond, and Recover Messages”, and collectively with the Event Alerts, the“ Data Feeds”). Prepare, Respond, and Recover Messages are intended to accompany Event Alerts or other warning and watch notices associated with weather and disaster event in your own application.Your use of the Data Feeds is governed by the API Terms.",
+    "license_limitations": {
+      "body": "You may use the Data Feeds only in association with your own application subject to the API Terms, and provided You maintain compatibility with the API, as updated from time to time. You are granted a non-exclusive, limited and revocable right to download, use, reproduce and distribute to end users of your own application (“End Users”) Event Alerts and relevant contextualized Prepare, Respond, and Recover Messages in association with the urgency setting of individual Event Alerts from the Data Feeds, subject to the API Terms. You may only use the API to facilitate non-commercial uses of the Data Feeds in accordance with the API Terms. You may not in any event use the API to facilitate commercial uses of the Data Feeds, Event Alerts and/or Prepare, Respond, and Recover Messages, including without limitation, reselling them, charging to access them, charging to redistribute them, or charging to create derivative works based on them. Red Cross and its licensors maintain all title, ownership, rights and interest in and to the API, Prepare, Respond, and Recover Messages, Event Alerts, Data Feeds and Source References (as defined below) therein. All rights not expressly granted are reserved.",
+      "heading": "License and Limitations:"
+    },
+    "overview": {
+      "body": "The Global Disaster Preparedness Center WhatNow Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
+      "cta": "Click here to register."
+    },
+    "privacy_policy": {
+      "body": "You understand, acknowledge, and agree that the operation of certain programs, services, tools, purchase options, materials, or information in the API requires the submission, use and dissemination of various personal identifying information. Accordingly, if You wish to access and use the API, You acknowledge and agree that Your use of the API will constitute acceptance of the personal identifying information collection and use practices contained in the privacy policy posted: {0}",
+      "heading": "Privacy Policy:"
+    },
+    "prohibited_activities": {
+      "body": "You and your End Users or agents shall not use the API or Data Feeds in the following ways:",
+      "heading": "Prohibited Activities and Conduct:",
+      "prohibited_list": {
+        "one": "To interfere with or disrupt Red Cross services or servers.",
+        "two": "To circumvent or modify any keys or security mechanisms employed by Red Cross or the API, including without limitation any authentication technologies.",
+        "three": "To request, collect, solicit or otherwise obtain access to sign-in names, passwords or other authentication credentials for Red Cross other than what is provided to You for your own account.",
+        "four": "To state or imply affiliation, sponsorship or endorsement by Red Cross or any other Red Cross or Red Crescent national society or organization.",
+        "five": "To state or imply that You own or created the API, Data Feeds, Event Alerts and/or Prepare, Respond, and Recover Messages.",
+        "six": "To transmit any viruses, worms defects, Trojan horses, or any items of a destructive nature."
+      }
+    },
+    "reserve_rights": "Red Cross reserves the right to alter and/or no longer provide the API and Data Feeds in whole or in part, either temporarily or permanently, at any time without prior notice. For avoidance of doubt, nothing herein obligates Red Cross to make its API or Data Feeds available to You, and You agrees and acknowledges that any access to is within the sole and absolute discretion of Red Cross.",
+    "severability": {
+      "body": "The invalidity of any term or provision of the API Terms will not affect the validity of any other provision.",
+      "heading": "Severability and Waiver:"
+    },
+    "suspension": {
+      "body": "Red Cross reserves the right to suspend or terminate your access if Red Cross determines, in its sole discretion, that You are engaged in unauthorized use of the API or Data Feed as outlined in the API Terms or that You are using the API or Data Feed in any activity that threatens/compromises the safety and/or security of any person or the Red Cross networks.",
+      "heading": "Suspension or Termination:"
+    }
+  },
+  "view_data": {
+    "alert_title": "ALERT:",
+    "more_info": "more info:",
+    "which": "Which WhatNow Messages do you want to view?",
+    "view_data": "View Data",
+    "alerts": "Alerts",
+    "alert_preview": "Alert preview",
+    "cap_alerts": "CAP Alerts",
+    "onset": "Onset",
+    "severity": "Severity",
+    "title": "Title",
+    "date": "Date",
+    "headline": "Headline",
+    "alert": "Alert",
+    "whatnow_info": "Whatnow info",
+    "alert_detail": "Alert Detail",
+    "more": "More info",
+    "area_affected": "Area Affected",
+    "details": "Details",
+    "cap": {
+      "type": "Type",
+      "status": "Status",
+      "urgency": "Urgency",
+      "severity": "Severity",
+      "certainty": "Certainty",
+      "sent": "Sent",
+      "effective": "Effective",
+      "onset": "Onset",
+      "expires": "Expires",
+      "alert_from": "Alert from the",
+      "feed": "Feed",
+      "more": "More info:",
+      "through": "through",
+      "alert_feed": "Alert Feed",
+      "fetching_feed": "Fetching feed",
+      "empty": "There are no current alerts right now"
+    }
+  },
+  "user_agreement": {
+    "title": "User agreement",
+    "para_one": "Before you can access the WhatNow Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
+    "cta": "I accept",
+    "download": "Click here to view the user agreement document (105KB)"
+  },
+  "hazard_type": {
+    "dropdown": {
+      "select": "Select hazard type",
+      "create": "Create hazard type"
+    },
+    "create": {
+      "title": "Create new hazard type",
+      "request": "request new hazard type",
+      "other": "Other",
+      "email_subject": "Request for new hazard type",
+      "hazard_name": "Hazard name",
+      "hazard_name_placeholder": "Enter hazard name",
+      "upload_icon": "Upload an icon",
+      "icon_requirements": "Icons must be a png and below 30kb",
+      "requestLink": "Contact GDPC to request new hazard type",
+      "success": "Hazard type created",
+      "error": "Sorry, there was an issue creating your new hazard type."
+    }
+  },
+  "regions": {
+    "list": {
+      "manage": "Manage Regions",
+      "create": "Create new region",
+      "edit": "Edit Region",
+      "add": "Add Region",
+      "empty": "Couldn't find any regions",
+      "table_header": {
+        "region": "Region"
+      }
+    },
+    "select_soc": "Select a society to view and add regions",
+    "create": "Create a new Region",
+    "form": {
+      "name": "Region Name",
+      "name_help": "Name the region you want to create custom WhatNow messaging for.",
+      "description": "Description",
+      "description_help": "Provide more information about the region, i.e. San Francisco Bay Area."
+    },
+    "edit": "Edit Region",
+    "delete": "This will delete the region and any content associated with that region."
+  },
+  "table_headers": {
+    "profile_pic": "profile pic",
+    "first_name": "Last name",
+    "last_name": "last_name",
+    "role": "role",
+    "society": "society",
+    "date": "Date",
+    "country": "Country",
+    "email": "email",
+    "created_at": "created_at",
+    "last_logged_in_at": "Last Active",
+    "terms_version": "profile",
+    "actions": "Actions",
+    "action": "Action",
+    "content": "Content",
+    "country_code": "Location",
+    "organisation": "organisation",
+    "industry_type": "industry type",
+    "all_roles": "All roles",
+    "version": "Version",
+    "user": "User",
+    "language_code": "Language Code"
+  }
+}

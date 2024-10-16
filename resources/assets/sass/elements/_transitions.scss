@@ -1,0 +1,61 @@
+.page-enter-active,
+.page-leave-active {
+  transition: opacity .2s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .15s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all .5s ease-in;
+}
+
+.fade-slide-enter,
+.fade-slide-leave-to {
+  opacity: 0;
+}
+
+.fade-slide-enter {
+  transform: translateY(100%);
+}
+
+.fade-slide-leave-to {
+  transform: translateY(-100%);
+}
+
+.shake-enter-active {
+  animation: shake .5s;
+}
+.shake-leave-active {
+  transition: opacity .15s;
+  opacity: 0;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

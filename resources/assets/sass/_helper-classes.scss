@@ -1,0 +1,25 @@
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-grey {
+  background-color: #f2f2f2!important;
+}
+
+.bg-dark-grey {
+  background-color: #e5e5e5;
+}
+
+.vh-min-100 {
+  min-height: 100vh !important;
+}
+
+.box-shadow {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.has-semi-opacity {
+  .col {
+    opacity: 0.5;
+  }
+}
