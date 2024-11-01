@@ -226,7 +226,7 @@ export default {
     },
     async acceptTerms () {
       const changes = {
-        terms_version: this.latestTerms.version
+        accepted_agreement: true
       }
 
       await this.$store.dispatch('auth/patchUser', { id: this.user.data.id, changes })
