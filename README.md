@@ -1,3 +1,4 @@
+
 # WhatNow
 
 WhatNow is a web application built with Laravel 5.8 and Vue.js, designed to provide a disaster preparedness guide. This document includes steps to install and configure the project in your development environment.
@@ -73,6 +74,11 @@ Ensure the following tools are installed on your system:
     php artisan migrate
     ```
 
+   *Optional:* If you would like to populate the database with initial sample data, you can run the database seeder command:
+    ```bash
+    php artisan db:seed
+    ```
+
 7. **Compile Frontend Assets**
     - For development:
       ```bash
@@ -96,6 +102,7 @@ Ensure the following tools are installed on your system:
 | `npm run hot`                | Compiles assets and hot-reloads changes          |
 | `npm run production`         | Compiles assets for production                   |
 | `php artisan migrate`        | Runs database migrations                         |
+| `php artisan db:seed`        | Seeds the database with sample data              |
 | `php artisan make:model`     | Creates a new Eloquent model                     |
 | `php artisan make:controller`| Creates a new controller                         |
 
@@ -111,12 +118,14 @@ Ensure the following tools are installed on your system:
 1. **Verify Dependencies:** Ensure all dependencies are properly installed.
 2. **Environment File:** Check that the `.env` file is correctly set up.
 3. **Dependency Conflicts:** If issues arise, run `composer update` and `npm install` to resolve them.
-
-
+4. **Database Connection:** Verify that the database credentials in the `.env` file are correct.
+5. **Migrations:** If migrations fail, check the database connection and run `php artisan migrate:refresh`.
+6. **Frontend Assets:** If assets are not compiling, run `npm run production` or `npm run hot` to recompile them.
+7. **Development Server:** If the server fails to start, check the port and run `php artisan serve` again.
 
 ## Testing
 
 Run tests using `phpunit`. *(Note: Tests may require review and adjustments to function properly.)*
 ```bash
 ./vendor/bin/phpunit
-
+```
