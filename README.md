@@ -104,6 +104,7 @@ Ensure the following tools are installed on your system:
 - [Laravel 5.8 Documentation](https://laravel.com/docs/5.8)
 - [Vue.js Documentation](https://vuejs.org/v2/guide/)
 - [Bootstrap 4 Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+- [BootstrapVue Docs](https://bootstrap-vue.org/docs)
 
 ## Troubleshooting
 
