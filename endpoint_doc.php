@@ -5,50 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Endpoints</title>
     <style>
-        /* Dark theme styles */
+        /* Modern Dark Theme */
         body {
-            background-color: #1f2937;
-            color: #f3f4f6;
-            font-family: Arial, sans-serif;
+            background-color: #1e293b;
+            color: #f1f5f9;
+            font-family: 'Roboto', Arial, sans-serif;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .card {
-            background-color: #374151;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            background-color: #334155;
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
 
         .card-header {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
         }
 
         .search-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .search-input {
             width: 100%;
-            max-width: 400px;
-            padding: 0.5rem 1rem;
+            max-width: 500px;
+            padding: 0.75rem 1.25rem;
             border: none;
-            border-radius: 0.25rem;
-            background-color: #4b5563;
-            color: #f3f4f6;
+            border-radius: 0.375rem;
+            background-color: #475569;
+            color: #f1f5f9;
+            font-size: 1rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         }
 
         .search-input::placeholder {
-            color: #9ca3af;
+            color: #94a3b8;
         }
 
         .endpoint-list {
@@ -57,8 +60,8 @@
         }
 
         .endpoint-item {
-            border-bottom: 1px solid #4b5563;
-            padding: 1rem 0;
+            border-bottom: 1px solid #475569;
+            padding: 1.25rem 0;
         }
 
         .endpoint-item:last-child {
@@ -72,9 +75,9 @@
         }
 
         .endpoint-method {
-            font-weight: bold;
-            padding: 0.25rem 0.75rem;
-            border-radius: 0.25rem;
+            font-weight: 500;
+            padding: 0.375rem 1rem;
+            border-radius: 0.375rem;
         }
 
         .endpoint-method.post {
@@ -90,13 +93,13 @@
         }
 
         .endpoint-url {
-            font-size: 1.1rem;
-            color: #9ca3af;
+            font-size: 1.125rem;
+            color: #94a3b8;
         }
 
         .endpoint-description {
-            margin-top: 0.5rem;
-            color: #d1d5db;
+            margin-top: 0.75rem;
+            color: #e2e8f0;
         }
     </style>
 </head>
