@@ -1,3 +1,4 @@
+# Laravel-Vue-Bootstrap Project
 
 # WhatNow
 
@@ -112,6 +113,11 @@ Ensure the following tools are installed on your system:
 - [Vue.js Documentation](https://vuejs.org/v2/guide/)
 - [Bootstrap 4 Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 - [BootstrapVue Docs](https://bootstrap-vue.org/docs)
+
+## API Endpoints Documentation
+
+The API endpoints documentation can be found at the `/endpoints` route.
+
 
 ## Troubleshooting
 
