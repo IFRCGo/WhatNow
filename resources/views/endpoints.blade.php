@@ -77,6 +77,7 @@
     .put { background-color: #ff9800; }
     .delete { background-color: #f44336; }
 
+
     /* URL and description styles */
     .endpoint-url {
       font-weight: bold;
