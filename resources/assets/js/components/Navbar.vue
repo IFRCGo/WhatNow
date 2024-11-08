@@ -2,8 +2,7 @@
   <header class="bg-white header pt-2 pb-2">
     <b-navbar toggleable="lg" sticky class="navbar styled-navbar navbar-expand-lg navbar-light">
         <router-link :to="{ name: 'welcome' }" class="header__logo has-no-underline navbar-brand d-inline-flex mr-auto">
-          <img class="site-footer__logo d-block" :src="src('headerLogo')" :srcSet="srcSet('headerLogo')">
-
+       <img class="site-footer__logo d-block" :src="src('headerLogo')" :srcSet="srcSet('headerLogo')" alt="Header Logo">
           <h1 class="visually-hidden">
             {{ $t('what_now') }} {{ $t('message_portal') }}
           </h1>
@@ -19,11 +18,11 @@
               </router-link>
             </li>
 
-              <li v-if="user && cannot(user, permissions.VIEW_BACKEND)" class="nav-item">
-                <router-link :to="{ name: 'applications.dash', params: { } }" class="nav-link text-uppercase">
-                  {{ $t('my_apps') }}
-                </router-link>
-              </li>
+            <li v-if="user" class="nav-item">
+              <router-link :to="{ name: 'applications.dash', params: { } }" class="nav-link text-uppercase">
+                {{ $t('my_apps') }}
+              </router-link>
+            </li>
               <li class="nav-item">
                 <router-link :to="{ name: 'docs' }" class="nav-link text-uppercase">
                   {{ $t('docs') }}
@@ -75,7 +74,7 @@
           <!-- Authenticated -->
           <b-nav-item-dropdown v-if="user" right class="has-no-underline">
             <span slot="button-content" class="text-dark py-0">
-              <img v-if="user.data.user_profile.photo_url" :src="user.data.user_profile.photo_url" class="rounded-circle profile-photo mr-1 rtl-ml-1">
+             <img v-if="user.data.user_profile.photo_url" :src="user.data.user_profile.photo_url" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="User Profile Photo">
               <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="32" :username="user.data.user_profile.first_name + ' ' + user.data.user_profile.last_name" :customStyle="{'display': 'inline-block'}"></avatar>
               {{ user.data.user_profile.first_name }}
             </span>
