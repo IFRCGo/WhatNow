@@ -627,8 +627,13 @@
     }
   },
   "register_form": {
-    "heading": "Create your free WhatNow Service account",
+    "heading_1": "Create your free ",
+    "heading_2": "WhatNow ",
+    "heading_3": "Service account",
     "who_are_you": "Who are you?",
+    "what_is_your_role": "What is your role?",
+    "developer_description": "Help communities prepare, respond, and recover from hazards with our localized key action messages.\nUse our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+    "national_society_description": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.\nContact us to learn more about how to create the messages and connect with media partners.",
     "developer": "Developer",
     "national_society": "National society",
     "sign_up_with": "Sign up with:",
@@ -637,6 +642,7 @@
     "facebook": "Sign Up With Facebook",
     "google": "Sign Up With Google",
     "email_sign_up": "Or sign up with your email:",
+    "email_gdpc": "gdpc@redcross.org",
     "location": "Location",
     "organisation": "Organisation",
     "industry": "Industry type",
@@ -658,7 +664,7 @@
     "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
     "welcome": "Welcome {name}, please complete the following information to get started:",
     "gdpc_note": "If you have any questions or are interested in learning more, please contact: ",
-    "gdpc_ns_note": "To sign up, please contact the WhatNow Service team at the Global Disaster Preparedness Center at ",
+    "gdpc_ns_note": "To sign up, please contact the WhatNow Service team at the Global Disaster Preparedness Center at: ",
     "contact_gdpc": "Contact GDPC"
   },
   "terms_service_page": {

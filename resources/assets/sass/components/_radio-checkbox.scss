@@ -1,3 +1,39 @@
+.c-default-radio-checkbox__label {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  font-size: em(30);
+  color: #A8A8A8;
+  transition: $global-transition;
+
+  &:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    border-radius: 50%;
+    transition: $global-transition;
+    position: relative;
+    background-image: url('../../img/no-checked-icon.svg');
+    top: -2px;
+  }
+}
+
+.c-default-radio-checkbox__input:checked + .c-default-radio-checkbox__label {
+  color: #F6333F;
+  &:before {
+    background-color: transparent;
+    border: none;
+    background-image: url('../../img/checked-icon.svg');
+    background-size: cover;
+    outline: none;
+  }
+}
+
+//old
 .c-radio-checkbox__label {
   color: $grey;
   transition: $global-transition;

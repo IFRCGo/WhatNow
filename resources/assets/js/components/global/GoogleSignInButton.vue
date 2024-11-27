@@ -42,34 +42,25 @@
     {{ $t('sign_in_with_google') }}
   </button>
 </template>
+<script>
+</script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-
+@import '../../../sass/variables';
 .google-button {
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
-  border: none;
+  background-color: $text-white;
+  border: $border-primary-3;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 291px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-primary;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  color: rgba(0, 0, 0, .54);
-  text-align: center;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 2px;
-  min-width: 200px;
-  height: 48px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
-  cursor: pointer;
-  padding: 0 11px 0 0;
-  svg {
-    position: relative;
-    left: 5px;
-  }
-  &:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
-  }
+  justify-content: flex-start;
+  gap: 9px;
+  letter-spacing: normal;
+
   &:focus {
     background-color: rgb(238, 238, 238);
   }
