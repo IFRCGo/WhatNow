@@ -4,7 +4,6 @@
     v-model="selectedSoc"
     class="w-100 styled-select"
     :options="listOfSocieties"
-    :clearable="true"
     label="name" :disabled="listOfSocieties.length === 0"
     :placeholder="$t('content.whatnow.no_soc')">
     <template slot="option" slot-scope="option">
@@ -85,7 +84,7 @@ export default {
         return this.selected
       },
       set (value) {
-        if(!value){
+        if (!value) {
           this.clearLocalStorage()
         }
         this.$emit('update:selected', value)
