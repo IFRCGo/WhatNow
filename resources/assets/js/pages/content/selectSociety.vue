@@ -73,6 +73,9 @@ export default {
     },
     setLocalStorage () {
       localStorage.setItem('soc', this.selectedSoc.countryCode)
+    },
+    clearLocalStorage () {
+      localStorage.removeItem('soc')
     }
   },
   computed: {
@@ -81,6 +84,9 @@ export default {
         return this.selected
       },
       set (value) {
+        if (!value) {
+          this.clearLocalStorage()
+        }
         this.$emit('update:selected', value)
       }
     },
