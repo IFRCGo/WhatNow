@@ -1,27 +1,61 @@
 .styled-input {
-  border-radius: 12px;
   outline: none;
-  border-color: #e5e5e5;
-  box-shadow: 0 0 0px 4px transparent;
-  transition: box-shadow 0.3s ease-out;
+  align-items: center;
+  border: none!important;
+  border-bottom: 1px solid transparent;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+  height: 50px;
+  border-bottom: 1pt solid transparent;
+  box-shadow: none;
 
   &:focus {
     outline: none;
-    border-color: #e5e5e5;
-    box-shadow: 0 0 0px 3px #e5e5e5;
+    border: none!important;
+    border-bottom: 1px solid #f6333f!important;
+    box-shadow: none;
+    background-color: #e9e9e9;
   }
+}
+
+.styled-input.is-invalid {
+  &:focus {
+    box-shadow: none!important;
+  } 
 }
 
 textarea {
   &.styled-input {
-    min-height: 100px;
+    min-height: 201px;
   }
 }
 
 .styled-label {
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.8px;
   color: #000000;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 6px;
+  line-height: 1.7;
+  letter-spacing: normal;
+  text-align: left;
+  position: relative;
+
+  .is-required {
+    width: 10px;
+    height: 10px;
+
+    &::before {
+      content: "*";
+      color: #f6333f;
+      font-size: 20px;
+      position: absolute;
+      top: -6px;
+      right: -12px;
+    }
+  }
+
+
 }
+

@@ -1,168 +1,217 @@
 <template>
   <div class="container-fluid register-form-container pb-5 h-100">
     <div class="row">
-      <div class="col-lg-12 m-auto">
-        <h1 class="text-center mt-3 mb-5">
-          {{ $t('register_form.heading') }}
+      <div class="col-lg-12 register-card my-4">
+        <h1 class="text-center mt-3 mb-5 register_form_heading">
+          {{ $t('register_form.heading_1') }}
+          <span class="register_form_heading--active">{{$t('register_form.heading_2')}}</span>
+          {{$t('register_form.heading_3')}}
         </h1>
-      </div>
-    </div>
 
-    <div class="row m-auto">
-      <card class="col-md-8 col-xl-6 m-auto bg-grey pb-2">
-        <div class="row">
-          <div class="col-lg-11 m-auto">
-            <card class="mt-4 mb-4 p-sm-2 p-md-3">
-              <h2 class="u-text-medium text-uppercase">
-                {{ $t('register_form.who_are_you') }}
-              </h2>
-              <hr />
-              <div class="d-lg-flex justify-content-around">
-                <div>
-                  <input class="c-radio-checkbox__input visually-hidden"
-                         type="radio"
-                         :id="registerTypes.DEVELOPER"
-                         name="type"
-                         :value="registerTypes.DEVELOPER"
-                         v-model="registerType" />
-                  <label :for="registerTypes.DEVELOPER"
-                          class="text-uppercase font-weight-bold c-radio-checkbox__label u-text-normal u-text-spaced">
-                    {{ $t('register_form.developer') }}
-                  </label>
-                </div>
-                <div>
-                  <input class="c-radio-checkbox__input visually-hidden"
-                         type="radio"
-                         :id="registerTypes.NATIONAL_SOCIETY"
-                         name="type"
-                         :value="registerTypes.NATIONAL_SOCIETY"
-                         v-model="registerType" />
-                  <label :for="registerTypes.NATIONAL_SOCIETY"
-                          class="text-uppercase font-weight-bold c-radio-checkbox__label u-text-normal u-text-spaced">
-                    {{ $t('register_form.national_society') }}
-                  </label>
-                </div>
-              </div>
-            </card>
+        <h2 class="register_form_heading-2">
+          {{$t('register_form.what_is_your_role')}}
+        </h2>
+
+        <div class="d-flex flex-lg-row flex-md-row flex-column justify-content-center align-items-center">
+          <div class="mx-5">
+            <input class="c-default-radio-checkbox__input visually-hidden fs-xsm-4 fs-sm-4"
+                   type="radio"
+                   :id="registerTypes.DEVELOPER"
+                   name="type"
+                   :value="registerTypes.DEVELOPER"
+                   v-model="registerType"/>
+            <label :for="registerTypes.DEVELOPER"
+                   class="c-default-radio-checkbox__label">
+              {{ $t('register_form.developer') }}
+            </label>
+          </div>
+          <div>
+            <input class="c-default-radio-checkbox__input visually-hidden fs-xsm-4 fs-sm-4"
+                   type="radio"
+                   :id="registerTypes.NATIONAL_SOCIETY"
+                   name="type"
+                   :value="registerTypes.NATIONAL_SOCIETY"
+                   v-model="registerType"/>
+            <label :for="registerTypes.NATIONAL_SOCIETY"
+                   class="c-default-radio-checkbox__label">
+              {{ $t('register_form.national_society') }}
+            </label>
           </div>
         </div>
 
-        <div class="row test-register" v-if="registerType === registerTypes.DEVELOPER">
-          <div class="col-lg-11 m-auto">
-            <h4 class="text-center mb-3 u-text-medium">
-              {{ $t('register_form.sign_up_with') }}
-            </h4>
-            <p class="text-center u-text-normal">
-              {{ $t('register_form.sign_up_agreement') }}
+        <div class="what-is-your-role">
+          <p v-if="registerType === registerTypes.DEVELOPER">
+            {{$t('register_form.developer_description')}}
+          </p>
 
-              <span v-b-modal.termsModal @click="showTerms = true" class="underlined-link">
-                {{ $t('register_form.terms_conditions') }}
-              </span>
-            </p>
+          <p v-if="registerType === registerTypes.NATIONAL_SOCIETY">
+            {{$t('register_form.national_society_description')}}
+          </p>
+        </div>
+      </div>
 
-            <div class="d-flex flex-wrap align-items-center justify-content-center">
-              <!-- todo: update to use social login as part of another story -->
-              <b-button size="lg" @click="fbLogin" variant="secondary" class="btn-facebook m-2">
-                {{ $t('register_form.facebook') }}
-              </b-button>
+      <div class="col-lg-12 register-card my-4" v-if="registerType === registerTypes.DEVELOPER">
+        <h3 class="mb-5">{{ $t('register_form.sign_up_with') }}</h3>
 
-              <google-sign-in-button @click.native="googleLogin" class="m-2"></google-sign-in-button>
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <google-sign-in-button @click.native="googleLogin" class="m-2"></google-sign-in-button>
+
+          <!-- todo: update to use social login as part of another story -->
+          <button @click="fbLogin" class="facebook-button m-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="#334e87" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/>
+            </svg>
+            {{ $t('register_form.facebook') }}
+          </button>
+        </div>
+      </div>
+
+      <div class="col-12 register-card my-4 register-card--form">
+        <div v-if="registerType === registerTypes.DEVELOPER">
+          <h3 class="mb-5">{{ $t('register_form.email_sign_up') }}</h3>
+          <form @submit.prevent="register" @keydown="form.onKeydown($event)">
+            <div class="row justify-content-between">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Name -->
+                <div class="form-group register-input-container pr-lg-4 pr-md-4">
+                  <label class="styled-label" for="name">
+                    {{ $t('first_name') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <input v-model="form.first_name" type="text" name="name" class="form-control styled-input" id="name"
+                        :class="{ 'is-invalid': form.errors.has('first_name') }" >
+                  <has-error :form="form" field="first_name" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- last name -->
+                <div class="form-group register-input-container pl-lg-4 pl-md-4">
+                  <label class="styled-label" for="last_name">
+                    {{ $t('register_form.last_name') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <input v-model="form.last_name" type="text" name="last_name" class="form-control styled-input"
+                        id="last_name"
+                        :class="{ 'is-invalid': form.errors.has('last_name') }">
+                  <has-error :form="form" field="last_name" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <!-- Email -->
+                  <div class="form-group register-input-container">
+                    <label class="styled-label" for="email">
+                      {{ $t('email') }}
+                      <span class="is-required"></span>
+                  </label>
+                  <input autocomplete="email" v-model="form.email" id="email" type="email" name="email"
+                        class="form-control styled-input"
+                        :class="{ 'is-invalid': form.errors.has('email') }">
+                  <has-error :form="form" field="email" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Password -->
+                <div class="form-group register-input-container pr-lg-4 pr-md-4">
+                  <label class="styled-label" for="password">
+                    {{ $t('password') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <input autocomplete="new-password" v-model="form.password" type="password" id="password" name="password"
+                        class="form-control styled-input"
+                        :class="{ 'is-invalid': form.errors.has('password') }">
+                  <has-error :form="form" field="password" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Password Confirmation -->
+                <div class="form-group register-input-container pl-lg-4 pl-md-4">
+                  <label class="styled-label" for="password_confirmation">
+                    {{ $t('confirm_password') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <input autocomplete="new-password" v-model="form.password_confirmation" id="password_confirmation"
+                        type="password" name="password_confirmation" class="form-control styled-input"
+                        :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
+                  <has-error :form="form" field="password_confirmation" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Location -->
+                <div class="form-group register-input-container pr-lg-4 pr-md-4">
+                  <label class="styled-label" for="country_code">
+                    {{ $t('register_form.location') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <b-form-select id="country_code" name="country_code" v-model="form.country_code"
+                                :options="locationOptions" text-field="name" value-field="code" class="styled-input custom-select"
+                                :class="{ 'is-invalid': form.errors.has('country_code'), 'is-placeholder': form.country_code == null }">
+                    <template slot="first">
+                      <option :value="null" disabled>{{ $t('register_form.select_country') }}</option>
+                    </template>
+                  </b-form-select>
+                  <has-error :form="form" field="country_code" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Organisation -->
+                <div class="form-group register-input-container pl-lg-4 pl-md-4">
+                  <label class="styled-label" for="organisation">
+                    {{ $t('register_form.organisation') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <input v-model="form.organisation" type="text" name="organisation" id="organisation"
+                        class="form-control styled-input"
+                        :class="{ 'is-invalid': form.errors.has('organisation') }">
+                  <has-error :form="form" field="organisation" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Industry type -->
+                <div class="form-group register-input-container pr-lg-4 pr-md-4">
+                  <label class="styled-label" for="industry_type">
+                    {{ $t('register_form.industry') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <b-form-select id="industry_type" name="industry_type" v-model="form.industry_type"
+                                :options="industryOptions" class="styled-input custom-select"
+                                :class="{ 'is-invalid': form.errors.has('industry_type'), 'is-placeholder': form.select_industry == null }">
+                    <template slot="first">
+                      <option :value="null" disabled>{{ $t('register_form.select_industry') }}</option>
+                    </template>
+                  </b-form-select>
+                  <has-error :form="form" field="industry_type" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
+
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Api used in -->
+                <div class="form-group register-input-container pl-lg-4 pl-md-4">
+                  <label class="styled-label" for="api_used_in">
+                    {{ $t('register_form.api_used_in') }}
+                    <span class="is-required"></span>
+                  </label>
+                  <textarea v-model="form.api_used_in" name="api_used_in" id="api_used_in"
+                            class="form-control styled-input"
+                            :class="{ 'is-invalid': form.errors.has('api_used_in') }"></textarea>
+                  <has-error :form="form" field="api_used_in" class="pl-2 font-italic"></has-error>
+                </div>
+              </div>
             </div>
-
-            <hr />
-
-            <h4 class="text-center mb-5 mt-2 u-text-medium">
-              {{ $t('register_form.email_sign_up') }}
-            </h4>
-
-            <form @submit.prevent="register" @keydown="form.onKeydown($event)">
-              <!-- Name -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="name">{{ $t('first_name') }}</label>
-                <input v-model="form.first_name" type="text" name="name" class="form-control styled-input" id="name"
-                  :class="{ 'is-invalid': form.errors.has('first_name') }" v-bind:placeholder="$t('first_name')">
-                <has-error :form="form" field="first_name" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- last name -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="last_name">{{ $t('register_form.last_name') }}</label>
-                <input v-model="form.last_name" type="text" name="last_name" class="form-control styled-input" id="last_name"
-                :class="{ 'is-invalid': form.errors.has('last_name') }" v-bind:placeholder="$t('register_form.last_name')">
-                <has-error :form="form" field="last_name" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Location -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="country_code">{{ $t('register_form.location') }}</label>
-                <b-form-select id="country_code" name="country_code" v-model="form.country_code" :options="locationOptions" text-field="name" value-field="code" class="styled-input"
-                :class="{ 'is-invalid': form.errors.has('country_code'), 'is-placeholder': form.country_code == null }">
-                  <template slot="first">
-                    <option :value="null" disabled>{{ $t('register_form.select_country') }}</option>
-                  </template>
-                </b-form-select>
-                <has-error :form="form" field="country_code" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Organisation -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="organisation">{{ $t('register_form.organisation') }}</label>
-                <input v-model="form.organisation" type="text" name="organisation" id="organisation" class="form-control styled-input"
-                :class="{ 'is-invalid': form.errors.has('organisation') }" v-bind:placeholder="$t('register_form.organisation')">
-                <has-error :form="form" field="organisation" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Industry type -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="industry_type">{{ $t('register_form.industry') }}</label>
-                <b-form-select id="industry_type" name="industry_type" v-model="form.industry_type" :options="industryOptions" class="styled-input"
-                :class="{ 'is-invalid': form.errors.has('industry_type'), 'is-placeholder': form.select_industry == null }">
-                  <template slot="first">
-                    <option :value="null" disabled>{{ $t('register_form.select_industry') }}</option>
-                  </template>
-                </b-form-select>
-                <has-error :form="form" field="industry_type" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Email -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="email">{{ $t('email') }}</label>
-                <input autocomplete="email" v-model="form.email" id="email" type="email" name="email" class="form-control styled-input"
-                  :class="{ 'is-invalid': form.errors.has('email') }" v-bind:placeholder="$t('email')">
-                <has-error :form="form" field="email" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Api used in -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="api_used_in">{{ $t('register_form.api_used_in') }}</label>
-                <textarea v-model="form.api_used_in" name="api_used_in" id="api_used_in" class="form-control styled-input"
-                :class="{ 'is-invalid': form.errors.has('api_used_in') }" v-bind:placeholder="$t('register_form.api_used_in_help')" />
-                <has-error :form="form" field="api_used_in" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Password -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="password">{{ $t('password') }}</label>
-                <input autocomplete="new-password" v-model="form.password" type="password" id="password" name="password" class="form-control styled-input"
-                  :class="{ 'is-invalid': form.errors.has('password') }" v-bind:placeholder="$t('password')">
-                <has-error :form="form" field="password" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <!-- Password Confirmation -->
-              <div class="form-group mb-4">
-                <label class="text-uppercase font-weight-bold styled-label" for="password_confirmation">{{ $t('confirm_password') }}</label>
-                <input autocomplete="new-password" v-model="form.password_confirmation" id="password_confirmation" type="password" name="password_confirmation" class="form-control styled-input"
-                  :class="{ 'is-invalid': form.errors.has('password_confirmation') }" v-bind:placeholder="$t('confirm_password')">
-                <has-error :form="form" field="password_confirmation" class="pl-2 font-italic"></has-error>
-              </div>
-
-              <p class="text-center u-text-normal">
+            <div class="register_form-bottom">
+              <p class="text-center u-text-normal mt-5">
                 {{ $t('register_form.sign_up_agreement') }}
 
                 <span v-b-modal.termsModal @click="showTerms = true" class="underlined-link">
                   {{ $t('register_form.terms_conditions') }}
                 </span>
-
                 <b-modal v-model="showTerms" id="termsModal" size="lg" ok-variant="dark">
                   <latest-terms class="text-left"></latest-terms>
                   <div slot="modal-footer" class="w-100">
@@ -172,29 +221,39 @@
                   </div>
                 </b-modal>
               </p>
-
               <div class="form-group mb-5">
-                  <!-- Submit Button -->
-                  <v-button :loading="form.busy" class="btn-dark btn-lg w-100">
-                    {{ $t('register_form.create_account') }}
-                  </v-button>
+                <!-- Submit Button -->
+                <v-button :loading="form.busy" class="btn-primary btn btn-lg w-100">
+                  {{ $t('register_form.create_account') }}
+                </v-button>
               </div>
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
         <div class="text-center" v-else>
+          <p class="text-center u-text-normal mb-4">
+            {{ $t('register_form.gdpc_ns_note') }}	
+            {{ $t('register_form.email_gdpc') }}
+          </p>
           <b-link href="mailto:gdpc@redcross.org?Subject=WhatNow%20Service%20Inquiry"
-            class="btn m-2 btn-dark btn-lg font-weight-bold register-form__contact-gdpc">
+                  class="btn m-2 btn-primary btn-lg font-weight-bold register-form__contact-gdpc">
             {{ $t('register_form.contact_gdpc') }}
           </b-link>
         </div>
-      </card>
+      </div>
     </div>
+
+
+
     <div class="row mt-3">
       <div class="col-sm-5 m-auto">
-        <p class="text-center u-text-medium">
-          {{registerType === registerTypes.DEVELOPER ? $t('register_form.gdpc_note') : $t('register_form.gdpc_ns_note') }}
-           <b-link class="underlined-link" href="mailto:gdpc@redcross.org?Subject=WhatNow%20Portal%20Access">gdpc@redcross.org</b-link>
+        <p class="text-center">
+          {{
+            $t('register_form.gdpc_note')
+          }}
+          <b-link class="underlined-link" href="mailto:gdpc@redcross.org?Subject=WhatNow%20Portal%20Access">
+            {{ $t('register_form.email_gdpc') }}
+          </b-link>
         </p>
       </div>
     </div>
@@ -321,3 +380,150 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '../../../sass/variables.scss';
+
+.register-card {
+  width: 90%;
+  max-width: 1381px;
+  padding: 62px 55px 56px 55px;
+  border-radius: 20px;
+  background-image: $card-gradient-bg;
+  margin: 0 auto;
+}
+
+.register-card--form form {
+  width: 90%;
+  max-width: 1090px;
+  margin: 0 auto;
+}
+
+.register-card--form .register-input-container {
+  margin-bottom: 33px;
+}
+
+.register_form_heading {
+  font-size: 55px;
+  font-weight: 600;
+  color: $text-dark;
+}
+
+.register_form_heading--active {
+  color: $text-primary;
+}
+
+.register_form-bottom {
+  width: 100%;
+  max-width: 652px;
+  margin: 0 auto;
+}
+
+.register_form-bottom button {
+  margin-top: 33px;
+}
+
+.what-is-your-role {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.what-is-your-role p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: normal;
+  text-align: center;
+  color: $text-black;
+  white-space: pre-line;
+}
+
+.facebook-button {
+  background-color: $text-white;
+  border: $border-primary-3;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 315px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-primary;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 23px;
+  letter-spacing: normal;
+  height: 46px;
+  &:focus {
+    background-color: rgb(238, 238, 238);
+  }
+
+  svg {
+    width: 23px;
+    height: 23px;
+    margin-left: 10px;
+  }
+}
+
+.register-form-container {
+  background: $text-white;
+  font-family: Poppins, sans-serif;
+}
+
+.register-form-container p {
+  font-size: 20px;
+}
+
+.register-form-container hr {
+  border-top: 1px solid $body-bg;
+}
+
+.register-form-container h1 {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: -0.55px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.register-form-container h3 {
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: -0.45px;
+  text-align: center;
+  color: $text-dark;
+}
+
+@media screen and (max-width: 767px) {
+  .register-form-container h1 {
+    font-size: 24px;
+  }
+}
+
+.register-form-container h2 {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 2.29;
+  letter-spacing: -0.35px;
+  text-align: center;
+  color: $text-dark;
+}
+
+@media screen and (min-width: 992px) {
+  .register-form-container .col-lg-6 {
+    max-width: 550px;
+  }
+}
+
+.register-form-container .styled-input {
+  padding: 13px;
+  letter-spacing: 0.4px;
+  height: 45px;
+}
+
+.register-form__contact-gdpc {
+  max-width: 285px;
+  width: 100%;
+}
+</style>

@@ -4,14 +4,19 @@ $body-bg: #f2f2f2;
 // base colours
 $white: #ffffff;
 $black: #000000;
-$red: #ed1b2e;
+$red: #f6333f;
 $grey: #6d6e70;
 $grey2: #DFE2E6;
 $blue : #4267B2;
 $light-red: #ee3224;
+$dark: #1e1e1e;
 
 // text colours
 $text-color: $black;
+$text-primary: $red;
+$text-dark: $dark;
+$text-white: $white;
+$text-black: $black;
 $light-text: $grey;
 
 // core colours
@@ -26,8 +31,10 @@ $selection-colour-unselected: #d8d8d8;
 $card-spacer-x: 0.9375rem;
 $card-spacer-y: 0.625rem;
 $card-cap-bg: #fbfbfb;
+$card-cap-2-bg: #dcd9d95c;
 $card-border-color: #e8eced;
 $card-border-radius: 0.7rem;
+$card-gradient-bg: linear-gradient(80deg, $card-cap-bg 28%, $card-cap-2-bg 111%);
 
 // Alerts
 $alert-border-radius: 0.7rem;
@@ -37,6 +44,10 @@ $alert-terms-background: #786a65;
 $border-radius: .125rem;
 $border-radius-lg: .2rem;
 $border-radius-sm: .15rem;
+$border-primary-1: solid 1px $red;
+$border-primary-2: solid 2px $red;
+$border-primary-3: solid 3px $red;
+
 
 // Nav Pills
 $nav-pills-border-radius: 0;
@@ -75,3 +86,4 @@ $global-baseline: 6px;
 
 // Transitions
 $global-transition: all 300ms ease-in-out;
+
