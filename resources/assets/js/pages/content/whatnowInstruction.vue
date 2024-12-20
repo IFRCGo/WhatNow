@@ -50,6 +50,7 @@
         :instructionId="instructionId"
         :langCode="langCode"
         :instructionName="instructionName"
+        :revision="true"
         />
     </b-card>
   </b-col>
