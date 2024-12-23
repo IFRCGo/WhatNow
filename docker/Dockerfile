@@ -27,5 +27,5 @@ RUN docker-php-ext-install \
     gd && \
     a2enmod rewrite
 
-COPY ./docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+COPY vhost.conf /etc/apache2/sites-available/000-default.conf
 COPY --from=composer /usr/bin/composer /usr/local/bin/composer
