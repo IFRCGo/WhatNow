@@ -27,20 +27,20 @@ use Illuminate\Support\Collection;
 
 final class InstructionController extends ApiController
 {
-    
+
     private $client;
 
-    
+
     private $image;
 
-    
+
     public function __construct(RcnApiClient $client, ImageService $image)
     {
         $this->client = $client->whatnow();
         $this->image = $image;
     }
 
-    
+
     public function listByCountryCode(string $countryCode)
     {
         try {
@@ -87,7 +87,7 @@ final class InstructionController extends ApiController
 
             $instructions->each(function (Instruction $instruction) use (&$rows) {
                 foreach ($instruction->getTranslations() as $translation) {
-                    
+
                     foreach ($translation->getStages() as $stage => $stageContent) {
                         $rows[] = [
                             $instruction->getId(),
@@ -125,7 +125,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function listLatestDraftsByCountryCode(string $countryCode)
     {
         $this->authorize('listDrafts', Instruction::class);
@@ -135,7 +135,7 @@ final class InstructionController extends ApiController
 
             $resource = InstructionResource::collection($instructions);
 
-                        
+
             $availableLanguages = new Collection();
             $instructions->each(function (Instruction $instruction) use ($availableLanguages) {
                 foreach ($instruction->getAvailableLanguages() as $language) {
@@ -157,7 +157,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function view(int $id)
     {
         try {
@@ -176,7 +176,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function viewLatestDraft(int $id)
     {
         $this->authorize('viewDrafts', Instruction::class);
@@ -197,7 +197,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function create(Request $request)
     {
         $this->validate($request, [
@@ -228,7 +228,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function update(Request $request, int $id)
     {
         $this->validate($request, [
@@ -259,7 +259,7 @@ final class InstructionController extends ApiController
         }
     }
 
-    
+
     public function delete(int $id)
     {
         try {
@@ -328,7 +328,7 @@ final class InstructionController extends ApiController
         }
 
         $lang = null;
-        
+
         foreach ($instruction->getTranslations() as $translation) {
             if ($translationId === $translation->getId()) {
                 $lang = $translation->getLang();
@@ -404,10 +404,12 @@ final class InstructionController extends ApiController
     public function renderImage(Request $request, $instructionId, $translationCode, $stageRef)
     {
         try {
+            $revision = $request->query('revision') == 'true';
             $image = $this->image->createFromArray([
                 'instructionId' => $instructionId,
                 'translationCode' => $translationCode,
                 'stageRef' => $stageRef,
+                'revision' => $revision
             ]);
         } catch (ImageServiceException $e) {
             return $this->respondWithNotFound($e, $e->getMessage());
