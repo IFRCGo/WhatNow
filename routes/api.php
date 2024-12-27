@@ -88,3 +88,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 });
 
 Route::get('translations/{locale}', 'TranslationController@show');
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']); // Or a more detailed status
+});
