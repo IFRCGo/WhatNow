@@ -19,7 +19,7 @@ spec:
                   image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
                   imagePullPolicy: {{ .Values.image.pullPolicy }}
                   ports:
-                      - containerPort: 80
+                      - containerPort: {{ .Values.service.port }}
                   env:
                     {{- range $key, $value := .Values.env }}
                       - name: {{ $key }}
@@ -36,7 +36,7 @@ spec:
                   livenessProbe: # Checks if the container is running
                       httpGet:
                           path: /health # Or another appropriate endpoint
-                          port: 80
+                          port: {{ .Values.service.port }}
                       initialDelaySeconds: 15 # Wait 15 seconds after container starts
                       periodSeconds: 10      # Check every 10 seconds
                       timeoutSeconds: 5      # Timeout after 5 seconds
@@ -44,7 +44,7 @@ spec:
                   readinessProbe: # Checks if the container is ready to accept traffic
                       httpGet:
                           path: /health # Same endpoint as liveness probe
-                          port: 80
+                          port: {{ .Values.service.port }}
                       initialDelaySeconds: 5
                       periodSeconds: 5
                       timeoutSeconds: 3
