@@ -9,7 +9,7 @@ replicaCount: 1
 # Kubernetes service configuration
 service:
     type: LoadBalancer
-    port: 80
+    port: 8080
     targetPort: 80
 # Environment variables
 env:
@@ -52,15 +52,15 @@ env:
 secrets:
     dbSecretName: backoffice-credentials
     variables:
-      DB_HOST: DB_HOST
-      DB_DATABASE: DB_DATABASE
-      DB_USERNAME: DB_USERNAME
-      DB_PASSWORD: DB_PASSWORD
-      APP_KEY: APP_KEY
-      JWT_SECRET: JWT_SECRET
-      RCN_API_URL: RCN_API_URL
-      RCN_API_USER: RCN_API_USER
-      RCN_API_PASSWORD: RCN_API_PASSWORD
+      DB_HOST: BACKOFFICE_DB_HOST
+      DB_DATABASE: BACKOFFICE_DB_DATABASE
+      DB_USERNAME: BACKOFFICE_DB_USERNAME
+      DB_PASSWORD: BACKOFFICE_DB_PASSWORD
+      APP_KEY: BACKOFFICE_APP_KEY
+      JWT_SECRET: BACKOFFICE_JWT_SECRET
+      RCN_API_URL: BACKOFFICE_RCN_API_URL
+      RCN_API_USER: BACKOFFICE_RCN_API_USER
+      RCN_API_PASSWORD: BACKOFFICE_RCN_API_PASSWORD
 
 # Ingress (if using)
 ingress:
