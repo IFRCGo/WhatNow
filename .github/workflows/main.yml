@@ -34,7 +34,7 @@ jobs:
 
        - name: 'Deploy to AKS with Helm'
          run: |
-             helm upgrade --install whatnow ./helm-chart \
+             helm upgrade --install whatnow ./helm-chart-backoffice \
                --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE }} \
                --create-namespace
 
