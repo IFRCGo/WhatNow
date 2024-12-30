@@ -1,5 +1,5 @@
 apiVersion: v2
-name: helm-chart
+name: helm-chart-backoffice
 namespace: whatnow-cluster
 description: Helm chart to deploy Laravel API
 version: 0.1.0
