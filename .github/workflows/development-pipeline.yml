@@ -1,5 +1,12 @@
-on: [push]
-name: Linux_Container_Workflow
+name: development-pipeline
+
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - 'develop'
+
 jobs:
    build-and-deploy:
        runs-on: ubuntu-latest
