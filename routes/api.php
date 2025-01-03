@@ -109,3 +109,7 @@ Route::group(['middleware' => 'guest:api'], function () {
 
 // Translation route - accessible to all
 Route::get('translations/{locale}', 'TranslationController@show'); // Get translations for locale
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']); // Or a more detailed status
+});

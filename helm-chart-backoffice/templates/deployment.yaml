@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: {{ .Release.Name }}
+    labels:
+        app: {{ .Chart.Name }}
+spec:
+    replicas: {{ .Values.replicaCount }}
+    selector:
+        matchLabels:
+            app: {{ .Chart.Name }}
+    template:
+        metadata:
+            labels:
+                app: {{ .Chart.Name }}
+        spec:
+            containers:
+                - name: backoffice
+                  image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+                  imagePullPolicy: {{ .Values.image.pullPolicy }}
+                  ports:
+                      - containerPort: {{ .Values.service.targetPort }}
+                  env:
+                    {{- range $key, $value := .Values.env }}
+                      - name: {{ $key }}
+                        value: "{{ $value }}"
+                    {{- end }}
+                    {{- range $key, $value := .Values.secrets.variables }}
+                      - name: {{ $key }}
+                        valueFrom:
+                            secretKeyRef:
+                                name: {{ $.Values.secrets.dbSecretName }}
+                                key: "{{ $value }}"
+                    {{- end }}
+
+                  livenessProbe: # Checks if the container is running
+                      httpGet:
+                          path: /health # Or another appropriate endpoint
+                          port: {{ .Values.service.targetPort }}
+                      initialDelaySeconds: 15 # Wait 15 seconds after container starts
+                      periodSeconds: 10      # Check every 10 seconds
+                      timeoutSeconds: 5      # Timeout after 5 seconds
+                      failureThreshold: 3    # Mark as unhealthy after 3 consecutive failures
+                  readinessProbe: # Checks if the container is ready to accept traffic
+                      httpGet:
+                          path: /health # Same endpoint as liveness probe
+                          port: {{ .Values.service.targetPort }}
+                      initialDelaySeconds: 5
+                      periodSeconds: 5
+                      timeoutSeconds: 3
+                      failureThreshold: 3
+            imagePullSecrets:
+                - name: {{ .Values.secrets.dbSecretName }}

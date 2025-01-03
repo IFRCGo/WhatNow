@@ -1,0 +1,40 @@
+on: [push]
+name: Linux_Container_Workflow
+jobs:
+   build-and-deploy:
+       runs-on: ubuntu-latest
+       steps:
+       - name: 'Checkout GitHub Action'
+         uses: actions/checkout@main
+
+       - name: 'Login via Azure CLI'
+         uses: azure/login@v1
+         with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+       - name: 'Set up Kubernetes'
+         uses: azure/aks-set-context@v2
+         with:
+           creds: ${{ secrets.AZURE_CREDENTIALS }}
+           cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
+           resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
+
+       - name: 'Build and push image'
+         uses: azure/docker-login@v1
+         with:
+           login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+           username: ${{ secrets.REGISTRY_USERNAME }}
+           password: ${{ secrets.REGISTRY_PASSWORD }}
+       - run: |
+             docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
+             docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
+
+             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
+             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
+
+       - name: 'Deploy to AKS with Helm'
+         run: |
+             helm upgrade --install whatnow-backoffice ./helm-chart-backoffice \
+               --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE }} \
+               --create-namespace
+
