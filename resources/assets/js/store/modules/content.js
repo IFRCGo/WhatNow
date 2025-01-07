@@ -6,7 +6,7 @@ import { ContentTranslation } from '../models/contentTranslation'
 export const state = {
   societies: [],
   currentContent: [],
-  currentLanguages: [],
+  currentLanguages: ['en'],
   attr: null,
   hazardsList: [],
   errors: [],
@@ -54,7 +54,9 @@ export const getters = {
 export const mutations = {
   [types.FETCH_CONTENT_SUCCESS] (state, { content }) {
     state.currentContent = content.data
-    state.currentLanguages = content.meta.availableLanguages
+    if (content.meta.availableLanguages.lenght > 0) {
+      state.currentLanguages = content.meta.availableLanguages
+    }
   },
   [types.FETCH_REGIONS_SUCCESS] (state, { content }) {
     state.regions = content

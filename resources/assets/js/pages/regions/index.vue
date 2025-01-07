@@ -173,7 +173,7 @@ export default {
           this.selectedLanguage = val[0]
         }
       }
-    }
+    },
   },
   mounted () {
     this.fetchOrganisations()
@@ -191,6 +191,7 @@ export default {
     },
     async fetchOrganisations () {
       await this.$store.dispatch('content/fetchOrganisations')
+      this.selectedSoc = this.currentOrganisation
     },
     resetModal() {
       this.names = {}
@@ -312,7 +313,8 @@ export default {
       societies: 'content/organisations',
       regions: 'content/regionsArray',
       currentLanguages: 'content/currentLanguages',
-      cmsLocale: 'lang/locale'
+      cmsLocale: 'lang/locale',
+      currentOrganisation: 'content/currentOrganisation',
     })
   }
 }

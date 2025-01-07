@@ -15,12 +15,12 @@ use App\Classes\Renderer\Entities\Language;
 
 class ImageService
 {
-    
+
     protected $client;
-    
+
     protected $image;
 
-    
+
     public function __construct(RcnApiClient $client, ImageClientInterface $image)
     {
         $this->client = $client->whatnow();
@@ -36,7 +36,11 @@ class ImageService
         }
 
         try {
-                        $instruction = $this->client->getLatestInstructionRevision($params['instructionId']);
+            if ($params['revision']) {
+                $instruction = $this->client->getLatestInstructionRevision($params['instructionId']);
+            } else {
+                $instruction = $this->client->getInstruction($params['instructionId']);
+            }
         } catch (RcnApiRequestException $e) {
             throw ImageServiceException::missingInstruction($params['instructionId']);
         }
@@ -70,7 +74,7 @@ class ImageService
         );
     }
 
-    
+
     public function render(ImageInterface $image, ImageFileInterface $file): string
     {
         $markup = $image->getMarkup();

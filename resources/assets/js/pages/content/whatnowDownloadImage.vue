@@ -22,7 +22,24 @@ import axios from 'axios'
 import { mapGetters } from 'vuex'
 
 export default {
-  props: ['instructionId', 'langCode', 'instructionName'],
+  props: {
+    instructionId: {
+      type: String,
+      required: true
+    },
+    langCode: {
+      type: String,
+      required: true
+    },
+    instructionName: {
+      type: String,
+      required: true
+    },
+    revision: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       downloadingImage: false,
@@ -33,7 +50,10 @@ export default {
   methods: {
     async downloadImage () {
       this.downloadingImage = true
-      const url = `/api/instructions/${this.instructionId}/${this.langCode}/${this.instructionName}/download`
+      const params = new URLSearchParams({
+        revision: this.revision
+      })
+      const url = `/api/instructions/${this.instructionId}/${this.langCode}/${this.instructionName}/download?${params.toString()}`
       try {
         const response = await axios.get(url, { responseType: 'blob' })
         if (response.status === 200) {
