@@ -70,7 +70,7 @@ Ensure the following tools are installed on your system:
     DB_PASSWORD=your_password
     ```
 
-6. **Run Database Migrations**
+6. **Run Database  Migrations**
     ```bash
     php artisan migrate
     ```
