@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b44c41b14582fd5004a1c4a0b66dd18c",
+    "content-hash": "3a0a53fd6b99862ecbca0db8a9f0b659",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -907,50 +907,6 @@
                 }
             ],
             "time": "2022-06-20T21:43:03+00:00"
-        },
-        {
-            "name": "h4cc/wkhtmltoimage-amd64",
-            "version": "0.12.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/h4cc/wkhtmltoimage-amd64.git",
-                "reference": "c4e33f635207af89a704205b8902fb5715ca88be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/h4cc/wkhtmltoimage-amd64/zipball/c4e33f635207af89a704205b8902fb5715ca88be",
-                "reference": "c4e33f635207af89a704205b8902fb5715ca88be",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/wkhtmltoimage-amd64"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL Version 3"
-            ],
-            "authors": [
-                {
-                    "name": "Julius Beckmann",
-                    "email": "github@h4cc.de"
-                }
-            ],
-            "description": "Convert html to image using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
-            "homepage": "http://wkhtmltopdf.org/",
-            "keywords": [
-                "binary",
-                "convert",
-                "image",
-                "snapshot",
-                "thumbnail",
-                "wkhtmltoimage"
-            ],
-            "support": {
-                "issues": "https://github.com/h4cc/wkhtmltoimage-amd64/issues",
-                "source": "https://github.com/h4cc/wkhtmltoimage-amd64/tree/master"
-            },
-            "time": "2018-01-15T07:23:40+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2887,6 +2843,52 @@
                 }
             ],
             "time": "2022-12-19T21:55:10+00:00"
+        },
+        {
+            "name": "silvertipsoftware/wkhtmltoimage-amd64",
+            "version": "0.12.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SilvertipSoftware/wkhtmltoimage-amd64.git",
+                "reference": "cc62a944175b07084dc64762bc302ced832c6946"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SilvertipSoftware/wkhtmltoimage-amd64/zipball/cc62a944175b07084dc64762bc302ced832c6946",
+                "reference": "cc62a944175b07084dc64762bc302ced832c6946",
+                "shasum": ""
+            },
+            "replace": {
+                "h4cc/wkhtmltoimage-amd64": "0.12.4"
+            },
+            "bin": [
+                "bin/wkhtmltoimage-amd64"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Andre Sonnichsen",
+                    "email": "andre@silvertipsoftware.com"
+                }
+            ],
+            "description": "Convert html to image using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
+            "homepage": "http://wkhtmltopdf.org/",
+            "keywords": [
+                "binary",
+                "convert",
+                "image",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltoimage"
+            ],
+            "support": {
+                "source": "https://github.com/SilvertipSoftware/wkhtmltoimage-amd64/tree/0.12.5"
+            },
+            "time": "2019-10-24T16:51:41+00:00"
         },
         {
             "name": "spatie/laravel-cors",
@@ -8759,5 +8761,5 @@
         "php": ">=7.0.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
