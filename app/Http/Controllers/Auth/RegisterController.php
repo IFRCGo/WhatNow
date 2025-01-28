@@ -49,7 +49,7 @@ class RegisterController extends Controller
             'country_code' => 'required|string|max:3',
             'organisation' => 'required|string|max:191',
             'industry_type' => 'required|string|max:191',
-            'api_used_in' => 'required|string|max:255',
+            'api_used_in' => 'nullable|string|max:255',
         ]);
     }
 

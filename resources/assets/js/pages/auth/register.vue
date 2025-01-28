@@ -190,20 +190,6 @@
                   <has-error :form="form" field="industry_type" class="pl-2 font-italic"></has-error>
                 </div>
               </div>
-
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <!-- Api used in -->
-                <div class="form-group register-input-container pl-lg-4 pl-md-4">
-                  <label class="styled-label" for="api_used_in">
-                    {{ $t('register_form.api_used_in') }}
-                    <span class="is-required"></span>
-                  </label>
-                  <textarea v-model="form.api_used_in" name="api_used_in" id="api_used_in"
-                            class="form-control styled-input"
-                            :class="{ 'is-invalid': form.errors.has('api_used_in') }"></textarea>
-                  <has-error :form="form" field="api_used_in" class="pl-2 font-italic"></has-error>
-                </div>
-              </div>
             </div>
             <div class="register_form-bottom">
               <p class="text-center u-text-normal mt-5">
