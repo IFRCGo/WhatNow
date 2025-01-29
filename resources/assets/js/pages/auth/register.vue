@@ -72,8 +72,13 @@
                         class="form-control styled-input"
                         :class="{ 'is-invalid': form.errors.has('password') }">
                     </input>
-                    <div class="input-group-append" v-on:click="onTogglePassword">
-                      <i id="togglePassword" class="fas fa-eye-slash" style="cursor: pointer;"></i>
+                    <div class="input-group-append showpassword" @click="showPassword = !showPassword">
+                      <div v-if="showPassword" :key="1">
+                        <i class="fas fa-eye"></i>
+                      </div>
+                      <div  v-else :key="2">
+                        <i class="fas fa-eye-slash"></i>
+                      </div>
                     </div>
                   </div>
 
@@ -92,8 +97,13 @@
                     <input autocomplete="new-password" v-model="form.password_confirmation" id="password_confirmation"
                         :type="showConfirmPassword ? 'text' : 'password'" name="password_confirmation" class="form-control styled-input"
                         :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
-                    <div class="input-group-append" v-on:click="onToggleConfirmPassword">
-                      <i id="togglePassword" class="fas fa-eye-slash" style="cursor: pointer;"></i>
+                    <div class="input-group-append showpassword" @click="showConfirmPassword = !showConfirmPassword">
+                      <div v-if="showConfirmPassword" :key="1">
+                        <i class="fas fa-eye"></i>
+                      </div>
+                      <div  v-else :key="2">
+                        <i class="fas fa-eye-slash"></i>
+                      </div>
                     </div>
                   </div>
 
@@ -238,7 +248,7 @@ export default {
   metaInfo () {
     return { title: this.$t('register') }
   },
-  data () {
+  data() {
     return {
       registerType: this.userType ? this.userType : registerTypes.DEVELOPER,
       registerTypes,
@@ -323,12 +333,6 @@ export default {
         this.$router.push({ name: 'home' })
       }
     },
-    onTogglePassword: function () {
-      this.showPassword = !this.showPassword;
-    },
-    onToggleConfirmPassword: function () {
-      this.showConfirmPassword = !this.showConfirmPassword;
-    }
   },
   created () {
     const countries = require('country-list')()
@@ -489,6 +493,11 @@ export default {
   font-size: 14px;
   color: $icon-not-active;
 }
+
+.input-group-append.showpassword {
+  cursor: pointer;
+}
+
 
 @media screen and (min-width: 992px) {
   .register-form-container .col-lg-6 {
