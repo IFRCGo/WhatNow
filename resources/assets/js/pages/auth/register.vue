@@ -489,7 +489,7 @@ export default {
 .input-group-append {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 12.5px;
   font-size: 14px;
   color: $icon-not-active;
 }
