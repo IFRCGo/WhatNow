@@ -822,5 +822,9 @@
     "version": "Version",
     "user": "User",
     "language_code": "Language Code"
+  },
+  "terms_conditions": {
+    "title": "Terms and Conditions",
+    "accept": "Accept"
   }
 }
