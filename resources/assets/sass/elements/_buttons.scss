@@ -1,7 +1,15 @@
 .btn {
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 20px;
   border: none;
+  padding: 7px 25px;
+  font-size: 20px;
+  font-weight: 600;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 
   &.is-circle {
     height: 20px;
@@ -38,7 +46,7 @@
 }
 
 .btn-lg {
-  padding: 7px;
+  padding: 7px 25px;
   border-radius: 25px;
   min-height: 48px;
   font-size: 20px;

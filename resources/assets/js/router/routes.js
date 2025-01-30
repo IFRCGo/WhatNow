@@ -177,7 +177,8 @@ export default [
       props: (route) => ({ token: route.params.token, isReset: true }) },
     { path: '/password/set/:token', name: 'password.set', component: require('~/pages/auth/password/reset').default,
       props: (route) => ({ token: route.params.token, isReset: false }) },
-    { path: '/get-started', name: 'get_started', component: require('~/pages/get_started/index').default }
+    { path: '/get-started', name: 'get_started', component: require('~/pages/get_started/index').default },
+    { path: '/legal/terms', name: 'legal_.terms', component: require('~/pages/legal_terms/index').default }
   ]),
 
   { path: '*', component: require('~/pages/errors/404.vue').default }
