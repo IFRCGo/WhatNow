@@ -42,7 +42,7 @@
 }
 
 .btn-primary {
-  background-color: #f6333f;
+  background-color: $bg-primary;
 }
 
 .btn-lg {
@@ -54,7 +54,7 @@
   font-weight: 600;
 
   &:hover {
-    background-color: #f6333f;
+    background-color: $bg-primary;
   }
 
   &:disabled {
