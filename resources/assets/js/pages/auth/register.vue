@@ -9,8 +9,8 @@
         </h1>
 
         <div class="what-is-your-role">
-          <p >
-            {{$t('register_form.developer_description')}}
+          <p>
+            {{$t('register_form.description')}}
           </p>
         </div>
       </div>
@@ -182,10 +182,10 @@
               <div class="col-7 m-auto">
                 <p class="text-center mb-0 font-weight-light">
                   {{
-                    $t('register_form.gdpc_note')
+                    $t('register_form.ifrc_note')
                   }}
-                  <b-link class="underlined-link font-weight-normal" href="mailto:gdpc@redcross.org?Subject=WhatNow%20Portal%20Access">
-                    {{ $t('register_form.email_gdpc') }}
+                  <b-link class="underlined-link font-weight-normal" href="">
+                    {{ $t('register_form.email_ifrc') }}
                   </b-link>
                 </p>
               </div>
@@ -231,11 +231,6 @@ import { mapGetters } from 'vuex'
 import LatestTerms from '~/components/LatestTerms'
 import GoogleSignInButton from '~/components/global/GoogleSignInButton'
 
-const registerTypes = {
-  DEVELOPER: 'developer',
-  NATIONAL_SOCIETY: 'nationalSociety'
-}
-
 export default {
   components: {
     Terms,
@@ -250,8 +245,6 @@ export default {
   },
   data() {
     return {
-      registerType: this.userType ? this.userType : registerTypes.DEVELOPER,
-      registerTypes,
       showTerms: false,
       sawTerms: false,
       locationSelected: null,
@@ -509,10 +502,5 @@ export default {
   padding: 13px;
   letter-spacing: 0.4px;
   height: 45px;
-}
-
-.register-form__contact-gdpc {
-  max-width: 285px;
-  width: 100%;
 }
 </style>
