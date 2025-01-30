@@ -13,7 +13,8 @@ class RoleResource extends Resource
             'id' => $this->id,
             'name' => $this->name,
             'super' => (bool) $this->all,
-            'permissions' => PermissionResource::collection($this->whenLoaded('permissions'))
+            'permissions' => PermissionResource::collection($this->whenLoaded('permissions')),
+            'updated_at' => ($this->updated_at) ? $this->updated_at->format('c') : null,
         ];
     }
 }
