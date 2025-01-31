@@ -1,6 +1,8 @@
 /* Base */
-
-body, body *:not(html):not(style):not(br):not(tr):not(code) {
+* {
+    box-sizing: border-box;
+}
+body, body *:not(html):not(style):not(br):not(tr):not(code), button {
     font-family: Avenir, Helvetica, sans-serif;
     box-sizing: border-box;
 }

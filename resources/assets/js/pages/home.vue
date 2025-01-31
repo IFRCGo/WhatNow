@@ -168,6 +168,13 @@
         </div>
       </b-col>
     </b-row>
+
+    <b-modal id="role-changed" centered :title="'Your role was changed'" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary">
+      <p>
+        You have been assigned a new role. Please refresh the page to see the changes.
+      </p>
+      
+    </b-modal>
   </b-container>
 </template>
 
@@ -184,6 +191,11 @@ export default {
       this.$router.push({ name: 'applications.dash' })
     }
   },
+  mounted () {
+    this.showRoleChangedModal()
+    //display modal
+    
+  },
   metaInfo () {
     return { title: this.$t('home.home') }
   },
@@ -191,6 +203,16 @@ export default {
     title: window.config.appName,
     permissions: permissionsList
   }),
+  methods: {
+    showRoleChangedModal() {
+      console.log('User Home page:', this.user.data.last_logged_in_at, this.user.data.role.updated_at);
+      const lastLoggedInAt = new Date(this.user.data.last_logged_in_at);
+      const roleUpdatedAt = new Date(this.user.data.role.updated_at);
+      if (lastLoggedInAt < roleUpdatedAt) {
+        this.$refs.roleChangedModal.show()
+      }
+    },
+  },
   computed: {
     firstSocietyCode () {
       if (this.user) {
