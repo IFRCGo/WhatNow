@@ -20,13 +20,14 @@ class User extends Authenticatable implements JWTSubject
     
     
     protected $fillable = [
-        'email', 'password', 'confirmation_code',
+        'email', 'password', 'confirmation_code', 'confirmed_role'
     ];
 
     
     protected $casts = [
         'activated' => 'boolean',
-        'confirmed' => 'boolean'
+        'confirmed' => 'boolean',
+        'confirmed_role' => 'boolean',
     ];
 
     

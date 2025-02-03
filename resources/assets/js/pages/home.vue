@@ -169,10 +169,15 @@
       </b-col>
     </b-row>
 
-    <b-modal id="role-changed" centered :title="'Your role was changed'" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary">
+    <b-modal id="role-changed" centered :title="'Your role was changed'" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary" @ok="confirmRole">
       <p>
-        You have been assigned a new role. Please refresh the page to see the changes.
+        You have been assigned the "<span v-if="user.data.role.name">{{ user.data.role.name }}</span>" role. Your permissions are as follows:
       </p>
+      <ul class="row" v-if="user.data.role.permissions">
+        <li class="col col-6" v-for="item in user.data.role.permissions">
+          {{ item.display_name }}
+        </li>
+      </ul>
       
     </b-modal>
   </b-container>
@@ -205,13 +210,17 @@ export default {
   }),
   methods: {
     showRoleChangedModal() {
-      console.log('User Home page:', this.user.data.last_logged_in_at, this.user.data.role.updated_at);
-      const lastLoggedInAt = new Date(this.user.data.last_logged_in_at);
-      const roleUpdatedAt = new Date(this.user.data.role.updated_at);
-      if (lastLoggedInAt < roleUpdatedAt) {
+      const isConfirmed = this.user.data.confirmed_role;
+      if (!isConfirmed) {
         this.$refs.roleChangedModal.show()
       }
     },
+    async confirmRole() {
+      const changes = {
+        confirmed_role: true
+      }
+      await this.$store.dispatch('auth/patchUser', { id: this.user.data.id, changes })
+    }
   },
   computed: {
     firstSocietyCode () {
