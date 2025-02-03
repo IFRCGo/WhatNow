@@ -169,9 +169,12 @@
       </b-col>
     </b-row>
 
-    <b-modal id="role-changed" centered :title="'Your role was changed'" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary" @ok="confirmRole">
+    <b-modal id="role-changed" centered :title="$t('home.role_changed_title')" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary" @ok="confirmRole" :ok-title="$t('home.role_changed_confirm')" :cancel-title="$t('home.role_changed_dismiss')">
       <p>
-        You have been assigned the "<span v-if="user.data.role.name">{{ user.data.role.name }}</span>" role. Your permissions are as follows:
+        {{ $t('home.role_changed_p') }} "<span v-if="user.data.role.name">{{ user.data.role.name }}</span>".
+      </p>
+      <p>
+        {{ $t('home.role_changed_p2') }}
       </p>
       <ul class="row" v-if="user.data.role.permissions">
         <li class="col col-6" v-for="item in user.data.role.permissions">
