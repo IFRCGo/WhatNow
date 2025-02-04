@@ -9,9 +9,9 @@
         <p>{{ $t('home_pods.wellcome_description') }}</p>
         <div v-if="can(user, permissions.USERS_LIST)">
           <b-row>
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card users-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card users-card">
+                <div>
                   <h4 class="card-title mb-3">
                     {{ $t('sidebar.content_users') }}
                   </h4>
@@ -19,9 +19,9 @@
                     {{ $t('home_pods.manage_users') }}
                   </p>
                 </div>
-                <div class="pt-5 button-container">
+                <div class="button-container">
                   <img class="img-bottom" src="../..//img/home_page/people.png" alt="people">
-                  <b-button :to="{ name: 'users.list', params: {} }" variant="danger" class="pl-4 pr-4 button-go">{{
+                  <b-button :to="{ name: 'users.list', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
                   </b-button>
@@ -29,10 +29,10 @@
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2" v-if="firstSocietyCode">
-              <b-card class="h-100 p-3 home-card content-card pt-5">
-                <div class="mt-5">
-                  <h4 class="card-title">{{ $t('sidebar.content') }}</h4>
+            <b-col sm class="mb-5" v-if="firstSocietyCode">
+              <b-card class="h-100 home-card content-card">
+                <div>
+                  <h4 class="card-title mb-3">{{ $t('sidebar.content') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.whatnow_publish') }}
                   </p>
@@ -40,15 +40,15 @@
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
-                            variant="danger" class="pl-4 pr-4 button-go">{{ $t('go') }}
+                            variant="danger" class="button-go">{{ $t('go') }}
                   </b-button>
                 </div>
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card api-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card api-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.api') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.api_usage') }}
@@ -56,7 +56,8 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'api-usage.api-users', params: {} }" variant="danger" class="pl-4 pr-4 button-go">
+                  <b-button :to="{ name: 'api-usage.api-users', params: {} }" variant="danger"
+                            class="button-go">
                     {{ $t('go') }}
                   </b-button>
                 </div>
@@ -71,9 +72,9 @@
           </p>
 
           <b-row>
-            <b-col sm class="mb-2" v-if="firstSocietyCode">
-              <b-card class="h-100 p-3 home-card content-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5" v-if="firstSocietyCode">
+              <b-card class="h-100 home-card content-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.content') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.whatnow_publish') }}
@@ -81,16 +82,17 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
-                            class="pl-4 pr-4">{{ $t('go') }}
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
+                            variant="danger"
+                            class="button-go">{{ $t('go') }}
                   </b-button>
                 </div>
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card api-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card api-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.audit_log') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.audit_log') }}
@@ -98,7 +100,7 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="pl-4 pr-4">{{
+                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
                   </b-button>
@@ -106,9 +108,9 @@
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card content-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card content-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.bulk') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.bulk_upload') }}
@@ -116,7 +118,7 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="pl-4 pr-4">
+                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
                 </div>
@@ -131,9 +133,9 @@
           </p>
 
           <b-row>
-            <b-col sm class="mb-2" v-if="firstSocietyCode">
-              <b-card class="h-100 p-3 home-card content-card pt-5" v-if="firstSocietyCode">
-                <div class="mt-5">
+            <b-col sm class="mb-5" v-if="firstSocietyCode">
+              <b-card class="h-100 home-card content-card" v-if="firstSocietyCode">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.content') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.whatnow_edit') }}
@@ -141,16 +143,17 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
-                            class="pl-4 pr-4">{{ $t('go') }}
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
+                            variant="danger"
+                            class="button-go">{{ $t('go') }}
                   </b-button>
                 </div>
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card api-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card api-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.audit_log') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.audit_log') }}
@@ -158,7 +161,7 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="pl-4 pr-4">{{
+                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
                   </b-button>
@@ -166,9 +169,9 @@
               </b-card>
             </b-col>
 
-            <b-col sm class="mb-2">
-              <b-card class="h-100 p-3 home-card content-card pt-5">
-                <div class="mt-5">
+            <b-col sm class="mb-5">
+              <b-card class="h-100 home-card content-card">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.bulk') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.bulk_upload') }}
@@ -176,7 +179,7 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="pl-4 pr-4">
+                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
                 </div>
@@ -187,9 +190,9 @@
 
         <div v-else-if="can(user, permissions.CONTENT_VIEW) && cannot(user, permissions.CONTENT_CREATE)">
           <b-row>
-            <b-col sm class="mb-2" v-if="firstSocietyCode">
-              <b-card class="h-100 p-3 home-card content-card pt-5" v-if="firstSocietyCode">
-                <div class="mt-5">
+            <b-col sm class="mb-5" v-if="firstSocietyCode">
+              <b-card class="h-100 home-card content-card" v-if="firstSocietyCode">
+                <div>
                   <h4 class="card-title">{{ $t('sidebar.content') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.whatnow_review') }}
@@ -197,8 +200,9 @@
                 </div>
                 <div class="pt-5 button-container">
                   <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
-                            class="pl-4 pr-4">{{ $t('go') }}
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
+                            variant="danger"
+                            class="button-go">{{ $t('go') }}
                   </b-button>
                 </div>
               </b-card>
@@ -255,9 +259,20 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: -2rem;
 }
 
 .img-bottom {
-  width: 26%;
+  width: 18%;
+}
+
+.button-go {
+  padding: 0.6rem 2rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card-body {
+  padding-bottom: 0;
 }
 </style>
