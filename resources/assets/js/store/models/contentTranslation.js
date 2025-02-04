@@ -20,11 +20,12 @@ export class ContentTranslation {
 
 const createStages = (stages) => {
   return {
-    seasonalForecast: stages.seasonalForecast || [],
     immediate: stages.immediate || [],
-    mitigation: stages.mitigation || [],
-    recover: stages.recover || [],
     warning: stages.warning || [],
-    watch: stages.watch || []
+    anticipated: stages.seasonalForecast || [],
+    assess_and_plan: [],
+    mitigate_risks: stages.mitigation || [],
+    prepare_to_respond: stages.watch || [],
+    recover: stages.recover || []
   }
 }

@@ -206,17 +206,20 @@
   border-left: 10px solid $hazard-default;
   border-radius: 6px;
   // Instructions
-  &-mitigation {
+  &-anticipated {
     border-color: $mid-term;
   }
-  &-seasonalForecast {
+  &-assess_and_plan {
     border-color: $seasonalForecast;
   }
-  &-watch {
+  &-mitigate_risks {
     border-color: $watch;
   }
   &-warning {
     border-color: $warning;
+  }
+  &-prepare_to_respond {
+    border-color: $alert-severe;
   }
   &-immediate {
     border-color: $immediate;
