@@ -229,7 +229,9 @@
     "whatnow_review": "This is where you can review WhatNow content",
     "whatnow_publish": "This is where you can edit and publish WhatNow content",
     "manage_users": "This is where to manage the users (Create, edit and remove)",
-    "api_usage": "This is where you can see who is using the API and what applications are being built with it."
+    "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
+    "wellcome": "Welcome",
+    "wellcome_description": "Here you can edit and publish WhatNow content."
   },
   "languages": {
     "am": "አማርኛ",

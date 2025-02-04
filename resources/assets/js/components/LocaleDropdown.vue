@@ -1,8 +1,9 @@
 <template>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button"
+    <a class="nav-link dd-text dropdown-toggle" href="#" role="button"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         {{$t(`languages.${locale}`)}}
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
     </a>
     <div class="dropdown-menu">
       <a v-for="(value, key) in locales" class="dropdown-item dropdown-item--lang" href="#"
@@ -29,3 +30,22 @@ export default {
   }
 }
 </script>
+<style>
+
+.dropdown-toggle {
+  border-bottom: none!important;
+}
+
+.dd-text {
+  font-size: 14px!important;
+}
+
+.styled-navbar li.nav-item a.nav-link.dropdown-toggle:after {
+  display: none;
+}
+
+.fa-chevron-down {
+  margin-left: 3rem;
+}
+
+</style>

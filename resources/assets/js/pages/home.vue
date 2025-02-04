@@ -2,19 +2,29 @@
   <b-container fluid class="home-page">
     <b-row class="p-4" v-if="user">
       <b-col cols="12">
-        <h2 class="mb-3">{{ $t('home.welcome') }} {{ user.data.user_profile.first_name }}</h2>
+        <h2 class="mb-3">
+          {{ $t('home_pods.wellcome') }}
+          {{ user.data.user_profile.first_name }}!
+        </h2>
+        <p>{{ $t('home_pods.wellcome_description') }}</p>
         <div v-if="can(user, permissions.USERS_LIST)">
           <b-row>
             <b-col sm class="mb-2">
               <b-card class="h-100 p-3 home-card users-card pt-5">
                 <div class="mt-5">
-                  <h4 class="card-title mb-3">{{ $t('sidebar.content_users') }}</h4>
+                  <h4 class="card-title mb-3">
+                    {{ $t('sidebar.content_users') }}
+                  </h4>
                   <p class="card-text">
                     {{ $t('home_pods.manage_users') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'users.list', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/people.png" alt="people">
+                  <b-button :to="{ name: 'users.list', params: {} }" variant="danger" class="pl-4 pr-4 button-go">{{
+                      $t('go')
+                    }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -27,8 +37,11 @@
                     {{ $t('home_pods.whatnow_publish') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
+                            variant="danger" class="pl-4 pr-4 button-go">{{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -41,8 +54,11 @@
                     {{ $t('home_pods.api_usage') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'api-usage.api-users', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'api-usage.api-users', params: {} }" variant="danger" class="pl-4 pr-4 button-go">
+                    {{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -63,8 +79,11 @@
                     {{ $t('home_pods.whatnow_publish') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
+                            class="pl-4 pr-4">{{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -77,8 +96,12 @@
                     {{ $t('home_pods.audit_log') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="pl-4 pr-4">{{
+                      $t('go')
+                    }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -91,8 +114,11 @@
                     {{ $t('home_pods.bulk_upload') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="pl-4 pr-4">
+                    {{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -113,8 +139,11 @@
                     {{ $t('home_pods.whatnow_edit') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
+                            class="pl-4 pr-4">{{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -127,8 +156,12 @@
                     {{ $t('home_pods.audit_log') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="pl-4 pr-4">{{
+                      $t('go')
+                    }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -141,8 +174,11 @@
                     {{ $t('home_pods.bulk_upload') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="pl-4 pr-4">
+                    {{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -159,8 +195,11 @@
                     {{ $t('home_pods.whatnow_review') }}
                   </p>
                 </div>
-                <div class="pt-5">
-                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="dark" class="pl-5 pr-5">{{ $t('go') }}</b-button>
+                <div class="pt-5 button-container">
+                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" variant="danger"
+                            class="pl-4 pr-4">{{ $t('go') }}
+                  </b-button>
                 </div>
               </b-card>
             </b-col>
@@ -172,27 +211,27 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import {mapGetters} from 'vuex'
 import * as permissionsList from '../store/permissions'
 import methods from '../methods'
 
 export default {
-  beforeCreate () {
+  beforeCreate() {
     // Redirect user if they are an API user to the application dash
     const user = this.$store.getters['auth/user']
     if (methods.cannot(user, permissionsList.VIEW_BACKEND)) {
-      this.$router.push({ name: 'applications.dash' })
+      this.$router.push({name: 'applications.dash'})
     }
   },
-  metaInfo () {
-    return { title: this.$t('home.home') }
+  metaInfo() {
+    return {title: this.$t('home.home')}
   },
   data: () => ({
     title: window.config.appName,
     permissions: permissionsList
   }),
   computed: {
-    firstSocietyCode () {
+    firstSocietyCode() {
       if (this.user) {
         if (this.can(this.user, permissionsList.ALL_ORGANISATIONS)) {
           return 'USA'
@@ -211,3 +250,14 @@ export default {
   }
 }
 </script>
+<style>
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-bottom {
+  width: 26%;
+}
+</style>
