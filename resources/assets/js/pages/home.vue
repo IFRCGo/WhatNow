@@ -81,7 +81,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
@@ -99,7 +99,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/clock.png" alt="clock">
                   <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -117,7 +117,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/upload.png" alt="upload">
                   <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
@@ -142,7 +142,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
@@ -160,7 +160,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/clock.png" alt="clock">
                   <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -178,7 +178,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/upload.png" alt="upload">
                   <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
@@ -199,7 +199,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
