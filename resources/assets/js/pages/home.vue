@@ -193,7 +193,6 @@ export default {
   },
   mounted () {
     this.showRoleChangedModal()
-    //display modal
     
   },
   metaInfo () {
@@ -205,7 +204,6 @@ export default {
   }),
   methods: {
     showRoleChangedModal() {
-      console.log('User Home page:', this.user.data.last_logged_in_at, this.user.data.role.updated_at);
       const lastLoggedInAt = new Date(this.user.data.last_logged_in_at);
       const roleUpdatedAt = new Date(this.user.data.role.updated_at);
       if (lastLoggedInAt < roleUpdatedAt) {
