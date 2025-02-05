@@ -18,7 +18,8 @@ class UserResource extends Resource
             'confirmed' => $this->confirmed,
             'last_logged_in_at' => ($this->last_logged_in_at) ? $this->last_logged_in_at->format('c') : null,
             'created_at' => $this->created_at->format('c'),
-            'user_profile' => UserProfileResource::make($this->userProfile)
+            'user_profile' => UserProfileResource::make($this->userProfile),
+            'confirmed_role' => $this->confirmed_role,
         ];
 
         $roles = $this->whenLoaded('roles');

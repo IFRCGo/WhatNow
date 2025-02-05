@@ -10,266 +10,266 @@
             <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" :translationCode="selectedLanguage"></selectRegion>
           </div>
         </b-col>
-      </page-banner>
+</page-banner>
 
-      <b-row :class="`pb-0 pl-4 pr-4 whatnow-language-picker text-light ${selectingLanguage ? 'pt-2 pb-2':'pb-0'}`" v-if="selectedSoc">
-        <b-col>
-          <b-input-group v-if="selectingLanguage">
-            <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
-            <div class="input-group-append">
-              <b-button class="h-100 btn-small-radius" variant="dark" @click="addNewLanguage"><fa :icon="['fas', 'plus']" /></b-button>
-              <b-button class="h-100 btn-small-radius" variant="outline-danger" @click="selectingLanguage = false"><fa :icon="['fas', 'times']" /></b-button>
-            </div>
-          </b-input-group>
-          <b-nav tabs v-else>
-            <b-nav-item
-              v-for="lang in currentLanguages"
-              :key="lang"
-              @click="selectedLanguage = lang"
-              :active="selectedLanguage === lang">
-              <div class="nav-link-wrapper text-center h-100">
-                {{ lang | uppercase }} <br />
-                <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
-              </div>
-            </b-nav-item>
-            <b-nav-item v-b-tooltip.hover :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true" v-if="can(user, permissions.CONTENT_CREATE)">
-              <fa class="mt-2" :icon="['fas', 'plus']"/>
-            </b-nav-item>
-          </b-nav>
-        </b-col>
-      </b-row>
+<b-row :class="`pb-0 pl-4 pr-4 whatnow-language-picker text-light ${selectingLanguage ? 'pt-2 pb-2':'pb-0'}`" v-if="selectedSoc">
+  <b-col>
+  <b-input-group v-if="selectingLanguage">
+  <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
+  <div class="input-group-append">
+  <b-button class="h-100 btn-small-radius" variant="dark" @click="addNewLanguage"><fa :icon="['fas', 'plus']" /></b-button>
+<b-button class="h-100 btn-small-radius" variant="outline-danger" @click="selectingLanguage = false"><fa :icon="['fas', 'times']" /></b-button>
+</div>
+</b-input-group>
+<b-nav tabs v-else>
+  <b-nav-item
+    v-for="lang in currentLanguages"
+  :key="lang"
+  @click="selectedLanguage = lang"
+  :active="selectedLanguage === lang">
+  <div class="nav-link-wrapper text-center h-100">
+    {{ lang | uppercase }} <br />
+    <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
+  </div>
+</b-nav-item>
+<b-nav-item v-b-tooltip.hover :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true" v-if="can(user, permissions.CONTENT_CREATE)">
+  <fa class="mt-2" :icon="['fas', 'plus']"/>
+  </b-nav-item>
+</b-nav>
+</b-col>
+</b-row>
 
-      <b-row class="pl-4 pr-4 pb-3 pt-3 whatnow-publish-banner text-light" v-if="selectedSoc">
-        <b-col>
-          <p>{{ selectedSoc.label }}</p>
-        </b-col>
-        <b-col cols="auto">
-          <b-button size="lg" variant="primary" class="float-right pl-5 pr-5" v-if="can(user, permissions.CONTENT_PUBLISH)"
-            v-b-modal.publish-modal
-            :disabled="toPublish.length === 0 || !attributionSet">
-            <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
-            <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
-            <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
-            <span v-else-if="publishing">{{ $t('content.whatnow.publishing') }} <fa class="ml-2" spin :icon="['fas', 'spinner']"/></span>
-          </b-button>
-        </b-col>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="selectedLanguage && selectedSoc">
-        <b-col>
-          {{ $t('content.whatnow.attribution') }}
-          <b-button size="sm" variant="primary" class="float-right rtl-float-left" @click="showEditAttributionModal" v-if="canEditAttribution">{{ $t('common.edit') }}</b-button>
-          <b-modal
-            v-model="showEditAttribution" centered
-            :title="addingNewLanguage ? $t('content.whatnow.add_language') : $t('content.whatnow.edit_attribtion')"
-            v-if="attributionTranslation !== null && canEditAttribution"
-            no-close-on-backdrop
-            no-close-on-esc
-            hide-header-close
-            @cancel="cancelEditAttribution()">
-            <p v-if="addingNewLanguage">
-              {{ $t('content.whatnow.add_language_attribution') }}
-            </p>
-            <b-form-group :label="$t('content.whatnow.attribution_url')" label-for="url">
-              <b-form-input
-                type="url" id="url"
-                name="url" maxlength="255"
-                v-model="attributionToEdit.url"
-                :state="updateErrors.errors.url ? false : null"
-                placeholder="https://" />
-              <b-form-invalid-feedback id="urlFeedback">
-                <!-- This will only be shown if the preceeding input has an invalid state -->
-                <p v-for="error in updateErrors.errors.url">
-                  {{ error }}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-            <b-form-group :label="$t('content.whatnow.society_name')" label-for="socName">
-              <b-form-input
-                type="text"
-                id="socName"
-                name="socName"
-                maxlength="255"
-                v-model="attributionEditTranslation.name"
-                :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
-                v-if="attributionEditTranslation"
-                />
-              <b-form-invalid-feedback id="socNameFeedback">
-                <p>
-                  {{ $t('common.not_empty')}}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-            <b-form-group :label="$t('content.whatnow.attribution_message')" label-for="message">
-              <textarea
-                :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid': ''}`"
-                id="message"
-                name="message"
-                maxlength="2048"
-                rows="5"
-                v-model="attributionEditTranslation.attributionMessage"
-                v-if="attributionEditTranslation"></textarea>
-            </b-form-group>
-            <div slot="modal-footer" class="w-100">
+<b-row class="pl-4 pr-4 pb-3 pt-3 whatnow-publish-banner text-light" v-if="selectedSoc">
+  <b-col>
+    <p>{{ selectedSoc.label }}</p>
+  </b-col>
+  <b-col cols="auto">
+    <b-button size="lg" variant="primary" class="float-right pl-5 pr-5" v-if="can(user, permissions.CONTENT_PUBLISH)"
+              v-b-modal.publish-modal
+    :disabled="toPublish.length === 0 || !attributionSet">
+    <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
+    <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
+    <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
+    <span v-else-if="publishing">{{ $t('content.whatnow.publishing') }} <fa class="ml-2" spin :icon="['fas', 'spinner']"/></span>
+  </b-button>
+</b-col>
+</b-row>
+<b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="selectedLanguage && selectedSoc">
+  <b-col>
+    {{ $t('content.whatnow.attribution') }}
+    <b-button size="sm" variant="primary" class="float-right rtl-float-left" @click="showEditAttributionModal" v-if="canEditAttribution">{{ $t('common.edit') }}</b-button>
+  <b-modal
+    v-model="showEditAttribution" centered
+  :title="addingNewLanguage ? $t('content.whatnow.add_language') : $t('content.whatnow.edit_attribtion')"
+  v-if="attributionTranslation !== null && canEditAttribution"
+  no-close-on-backdrop
+  no-close-on-esc
+  hide-header-close
+  @cancel="cancelEditAttribution()">
+  <p v-if="addingNewLanguage">
+    {{ $t('content.whatnow.add_language_attribution') }}
+  </p>
+  <b-form-group :label="$t('content.whatnow.attribution_url')" label-for="url">
+  <b-form-input
+    type="url" id="url"
+    name="url" maxlength="255"
+    v-model="attributionToEdit.url"
+  :state="updateErrors.errors.url ? false : null"
+  placeholder="https://" />
+  <b-form-invalid-feedback id="urlFeedback">
+    <!-- This will only be shown if the preceeding input has an invalid state -->
+    <p v-for="error in updateErrors.errors.url">
+      {{ error }}
+    </p>
+  </b-form-invalid-feedback>
+</b-form-group>
+<b-form-group :label="$t('content.whatnow.society_name')" label-for="socName">
+  <b-form-input
+  type="text"
+id="socName"
+name="socName"
+maxlength="255"
+v-model="attributionEditTranslation.name"
+:state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
+v-if="attributionEditTranslation"
+  />
+  <b-form-invalid-feedback id="socNameFeedback">
+  <p>
+  {{ $t('common.not_empty')}}
+</p>
+</b-form-invalid-feedback>
+</b-form-group>
+<b-form-group :label="$t('content.whatnow.attribution_message')" label-for="message">
+  <textarea
+  :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid': ''}`"
+id="message"
+name="message"
+maxlength="2048"
+rows="5"
+v-model="attributionEditTranslation.attributionMessage"
+v-if="attributionEditTranslation"></textarea>
+  </b-form-group>
+<div slot="modal-footer" class="w-100">
               <span v-if="attributionEditTranslation && attributionEditTranslation.published">
                 {{ $t('content.whatnow.attribution_publish') }}
               </span>
-              <b-btn size="sm" class="float-right ml-1" variant="secondary" @click="cancelEditAttribution">
-                {{ $t('cancel') }}
-              </b-btn>
-              <b-btn size="sm" class="float-right" variant="primary" @click="publishAttribution(true)">
-                <span v-if="attributionPublishing">
-                  <fa spin :icon="['fas', 'spinner']"/>
-                </span>
-                <span v-if="attributionEditTranslation && attributionEditTranslation.published">{{ $t('content.whatnow.publish') }}</span>
-                <span v-else>{{ $t('common.save_changes') }}</span>
+  <b-btn size="sm" class="float-right ml-1" variant="secondary" @click="cancelEditAttribution">
+  {{ $t('cancel') }}
+</b-btn>
+<b-btn size="sm" class="float-right" variant="primary" @click="publishAttribution(true)">
+  <span v-if="attributionPublishing">
+  <fa spin :icon="['fas', 'spinner']"/>
+  </span>
+<span v-if="attributionEditTranslation && attributionEditTranslation.published">{{ $t('content.whatnow.publish') }}</span>
+<span v-else>{{ $t('common.save_changes') }}</span>
 
-              </b-btn>
-           </div>
-          </b-modal>
-          <hr />
-          <b-row>
-            <b-col>
-              <b>{{ $t('content.whatnow.attribution_url') }}</b>
-            </b-col>
-            <b-col>
-              <b>{{ $t('content.whatnow.society_name') }}</b>
-            </b-col>
-            <b-col>
-              <b>{{ $t('content.whatnow.attribution_message') }}</b>
-            </b-col>
-          </b-row>
-          <transition name="fade">
-            <b-row class="whatnow-row mt-2 border border-secondary" v-if="attribution !== null && !loadingContent">
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+</b-btn>
+</div>
+</b-modal>
+<hr />
+<b-row>
+  <b-col>
+    <b>{{ $t('content.whatnow.attribution_url') }}</b>
+  </b-col>
+  <b-col>
+    <b>{{ $t('content.whatnow.society_name') }}</b>
+  </b-col>
+  <b-col>
+    <b>{{ $t('content.whatnow.attribution_message') }}</b>
+  </b-col>
+</b-row>
+<transition name="fade">
+  <b-row class="whatnow-row mt-2 border border-secondary" v-if="attribution !== null && !loadingContent">
+    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
                 <span v-if="attribution.url">
                   <a :href="attribution.url" rel="noreferrer" target="_blank">{{ truncate(attribution.url, 20) }}</a>
-                </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+    </span>
+    <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
+  </b-col>
+  <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
                 <span v-if="attributionTranslation && attributionTranslation.name">
                   {{ attribution.name }} <br />
                   <small><i>{{ truncate(attributionTranslation.name, 90) }}</i></small>
                 </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+    <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
+  </b-col>
+  <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
                 <span v-if="attributionTranslation && attributionTranslation.attributionMessage">
                   {{ truncate(attributionTranslation.attributionMessage, 90) }}
                 </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
-              </b-col>
-            </b-row>
-          </transition>
-          <transition name="fade">
-            <b-row class="whatnow-row mt-2 border border-secondary" v-if="loadingContent">
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-                <spooky width="100%" height="10px" class="mt-2"></spooky>
-                <spooky width="100%" height="10px" class="mt-1"></spooky>
-              </b-col>
-            </b-row>
-          </transition>
-        </b-col>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedLanguage && selectedSoc">
-        <h3>{{ $t('content.whatnow.no_languages') }}</h3>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedSoc">
-        <h3>{{ $t('content.whatnow.no_soc') }}</h3>
-      </b-row>
-      <whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage" v-if="selectedLanguage && selectedSoc"></whatnow-list>
-      <!-- Publish Modal -->
-      <b-modal
-        id="publish-modal" size="lg"
-        centered
+    <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation')}}</span>
+  </b-col>
+</b-row>
+</transition>
+<transition name="fade">
+  <b-row class="whatnow-row mt-2 border border-secondary" v-if="loadingContent">
+    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+      <spooky width="75%" height="20px"></spooky>
+    </b-col>
+    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+      <spooky width="75%" height="20px"></spooky>
+    </b-col>
+    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+      <spooky width="75%" height="20px"></spooky>
+      <spooky width="100%" height="10px" class="mt-2"></spooky>
+      <spooky width="100%" height="10px" class="mt-1"></spooky>
+    </b-col>
+  </b-row>
+</transition>
+</b-col>
+</b-row>
+<b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedLanguage && selectedSoc">
+  <h3>{{ $t('content.whatnow.no_languages') }}</h3>
+</b-row>
+<b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedSoc">
+  <h3>{{ $t('content.whatnow.no_soc') }}</h3>
+</b-row>
+<whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage" v-if="selectedLanguage && selectedSoc"></whatnow-list>
+  <!-- Publish Modal -->
+  <b-modal
+    id="publish-modal" size="lg"
+    centered
         :ok-title="$t('content.whatnow.publish')"
-        ok-variant="dark"
-        cancel-variant="outline-danger"
-        hide-header
-        @ok="publish"
-        v-if="attribution !== null && selectedLanguage && selectedSoc">
-        <div class="px-3">
-          <h3>{{ $t('content.whatnow.content_to_publish')}}</h3>
-          <p v-if="attributionTranslation">
-              {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
-          </p>
-          <b-card class="border whatnow-publish-modal">
-            <div v-if="attributionTranslation && !attributionTranslation.published">
-              <b-row>
-                <b-col>
-                  <h4>Attribution</h4>
-                  <hr />
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.attribution_url') }}</b>
-                </b-col>
-                <b-col md="9">
-                  {{ attribution.url }}
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.society_name') }}</b>
-                </b-col>
-                <b-col md="9" v-if="attributionTranslation">
-                  {{ attributionTranslation.name }}
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.attribution_message') }}</b>
-                </b-col>
-                <b-col md="9" v-if="attributionTranslation">
-                  {{ attributionTranslation.attributionMessage }}
-                </b-col>
-              </b-row>
-              <hr />
-            </div>
-            <h4>{{ $t('content.whatnow.whatnow_content') }}</h4>
-            <hr />
-            <div class="whatnow-publish-content-wrapper">
-              <div v-for="content in toPublish" :key="content.eventType" class="mb-3" v-if="content.translations[selectedLanguage]">
-                <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
+ok-variant="dark"
+cancel-variant="outline-danger"
+hide-header
+@ok="publish"
+v-if="attribution !== null && selectedLanguage && selectedSoc">
+  <div class="px-3">
+  <h3>{{ $t('content.whatnow.content_to_publish')}}</h3>
+<p v-if="attributionTranslation">
+  {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
+</p>
+<b-card class="border whatnow-publish-modal">
+  <div v-if="attributionTranslation && !attributionTranslation.published">
+    <b-row>
+      <b-col>
+        <h4>Attribution</h4>
+        <hr />
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="3">
+        <b>{{ $t('content.whatnow.attribution_url') }}</b>
+      </b-col>
+      <b-col md="9">
+        {{ attribution.url }}
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="3">
+        <b>{{ $t('content.whatnow.society_name') }}</b>
+      </b-col>
+      <b-col md="9" v-if="attributionTranslation">
+        {{ attributionTranslation.name }}
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col md="3">
+        <b>{{ $t('content.whatnow.attribution_message') }}</b>
+      </b-col>
+      <b-col md="9" v-if="attributionTranslation">
+        {{ attributionTranslation.attributionMessage }}
+      </b-col>
+    </b-row>
+    <hr />
+  </div>
+  <h4>{{ $t('content.whatnow.whatnow_content') }}</h4>
+  <hr />
+  <div class="whatnow-publish-content-wrapper">
+    <div v-for="content in toPublish" :key="content.eventType" class="mb-3" v-if="content.translations[selectedLanguage]">
+    <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
 
-                <b-card class="bg-grey mb-1 hazard-instruction-card" v-for="key in ['title', 'description', 'webUrl']" :key="key" v-if="attributionExists(key)">
-                  <b-row>
-                    <b-col md="3">
-                      {{ $t(`common.${key}`) }}
-                    </b-col>
-                    <b-col md="9">
-                      {{ truncate(content.translations[selectedLanguage][key], 60) }}
-                    </b-col>
-                  </b-row>
-                </b-card>
+    <b-card class="bg-grey mb-1 hazard-instruction-card" v-for="key in ['title', 'description', 'webUrl']" :key="key" v-if="attributionExists(key)">
+    <b-row>
+      <b-col md="3">
+        {{ $t(`common.${key}`) }}
+      </b-col>
+      <b-col md="9">
+        {{ truncate(content.translations[selectedLanguage][key], 60) }}
+      </b-col>
+    </b-row>
+</b-card>
 
-                <b-card :class="`bg-grey mb-1 hazard-instruction-card hazard-instruction-card-${stageName}`"
-                  v-for="(instruction, stageName) in content.translations[selectedLanguage].stages"
-                  v-if="instruction" :key="stageName">
-                  <b-row>
-                    <b-col md="3">
-                      {{ $t(`content.edit_whatnow.${stageName}`) }}
-                    </b-col>
-                    <b-col md="9">
-                      {{ instruction.length }} {{ $t('content.whatnow.steps') }}
-                    </b-col>
-                  </b-row>
-                </b-card>
-              </div>
-            </div>
-          </b-card>
-        </div>
-      </b-modal>
-    </b-container>
-  </template>
+<b-card :class="`bg-grey mb-1 hazard-instruction-card hazard-instruction-card-${stageName}`"
+v-for="(instruction, stageName) in content.translations[selectedLanguage].stages"
+v-if="instruction" :key="stageName">
+<b-row>
+  <b-col md="3">
+    {{ $t(`content.edit_whatnow.${stageName}`) }}
+  </b-col>
+  <b-col md="9">
+    {{ instruction.length }} {{ $t('content.whatnow.steps') }}
+  </b-col>
+</b-row>
+</b-card>
+</div>
+</div>
+</b-card>
+</div>
+</b-modal>
+</b-container>
+</template>
 
 <script>
 import swal from 'sweetalert2'

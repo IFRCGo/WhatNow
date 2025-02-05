@@ -7,6 +7,7 @@ export default [
   { path: '/docs', name: 'docs', component: require('~/pages/docs/index').default },
   { path: '/terms-and-conditions', name: 'terms', component: require('~/pages/terms/index').default },
   { path: '/terms-of-service', name: 'terms-service', component: require('~/pages/termsService').default },
+ // { path: '/apiquery', name: 'apiquery', component: require('~/pages/docs/apiquery').default },
   // Authenticated routes.
   ...middleware('auth', [
     {

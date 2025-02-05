@@ -258,11 +258,12 @@ export default {
         description: false
       },
       instructionNames: [
-        'mitigation',
-        'seasonalForecast',
-        'watch',
-        'warning',
         'immediate',
+        'warning',
+        'anticipated',
+        'assess_and_plan',
+        'mitigate_risks',
+        'prepare_to_respond',
         'recover'
       ],
       changedItems: []
