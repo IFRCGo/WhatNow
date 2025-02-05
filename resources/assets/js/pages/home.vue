@@ -201,7 +201,6 @@ export default {
   },
   mounted () {
     this.showRoleChangedModal()
-    //display modal
     
   },
   metaInfo () {
