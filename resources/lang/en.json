@@ -551,7 +551,12 @@
     "admin_intro": "Here you can manage users, edit and publish WhatNow content and view API usage.",
     "ns_admin_intro": "Here you can edit and publish WhatNow content",
     "ns_editor_intro": "Here you can edit WhatNow content",
-    "api_user_intro": "Here you view your apps and manage your account."
+    "api_user_intro": "Here you view your apps and manage your account.",
+    "role_changed_title": "Your role was changed",
+    "role_changed_p": "You have been assigned the following role:",
+    "role_changed_p2": "Your permissions are as follows:",
+    "role_changed_confirm": "Confirm",
+    "role_changed_dismiss": "Close"
   },
   "landing": {
     "strapline": "WhatNow Service",
@@ -821,5 +826,9 @@
     "version": "Version",
     "user": "User",
     "language_code": "Language Code"
+  },
+  "terms_conditions": {
+    "title": "Terms and Conditions",
+    "accept": "Accept"
   }
 }

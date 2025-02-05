@@ -147,7 +147,7 @@ trait UserAccess
             $role = $role['id'];
         }
 
-        $this->roles()->attach($role, ['updated_at' => now()]);
+        $this->roles()->attach($role);
     }
 
     

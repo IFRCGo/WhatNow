@@ -166,6 +166,7 @@ class UserController extends Controller
             'role_id' => 'exists:roles,id',
             'organisations' => 'array',
             'organisations.*' => 'string|distinct|min:3|max:3',
+            'confirmed_role' => 'nullable|boolean',
         ]);
 
         
@@ -183,6 +184,7 @@ class UserController extends Controller
             
             $currentRole = $user->roles->first();
             $this->checkRoleCanBeAssigned($adminRole, $role, $currentRole);
+            $user->confirmed_role = false;
         }
 
         if ($request->get('email') && ! Hash::check($request->get('password'), $user->password)) {
@@ -193,6 +195,10 @@ class UserController extends Controller
             $termsVersion = $this->terms->getLatestTermsVersion();
         }
 
+        if ($request->confirmed_role) {
+            $user->confirmed_role = true;
+        }
+
         $input = array_merge($request->except('password'), [
             'terms_version' => $termsVersion ?? null,
         ]);
@@ -201,7 +207,6 @@ class UserController extends Controller
         $user->load('organisations');
 
         event(new UserUpdated($user));
-
 
 
         return UserResource::make($user);
