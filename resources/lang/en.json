@@ -378,6 +378,7 @@
       "soc_label": "Society"
     },
     "whatnow": {
+      "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
       "whatnow": "WhatNow",
       "empty": "There are no published WhatNow messages for this National Society",

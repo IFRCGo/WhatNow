@@ -8,59 +8,57 @@
         </div>
       </b-col>
     </b-row>
-    <b-row class="pl-4 pr-4 pb-1 pt-3 bg-black align-items-center" v-show="selectedSoc">
-      <b-col>
-        <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true" class="mt-1"></selectSociety>
-        <p>{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
-      </b-col>
-    </b-row>
-
-    <b-row class="pb-0 pl-4 pr-4 whatnow-language-picker text-light" v-if="selectedSoc">
-      <b-col>
-        <b-nav tabs>
-          <b-nav-item
-            v-for="lang in currentLanguages"
-            :key="lang"
-            @click="selectedLanguage = lang"
-            :active="selectedLanguage === lang">
-            <div class="nav-link-wrapper text-center h-100" v-if="lang">
-              {{ lang | uppercase }} <br />
-              <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
-            </div>
-          </b-nav-item>
-        </b-nav>
-      </b-col>
-    </b-row>
 
     <page-banner v-show="selectedSoc" v-if="attributionTranslation && attributionTranslation.published">
       <b-col cols="auto" v-if="attribution && attribution.imageUrl">
         <b-img :src="attribution.imageUrl" width="128" height="128" class="ns-logo"></b-img>
       </b-col>
       <b-col v-if="!loadingContent && attribution !== null">
-        <h1 class="font-weight-bold" v-if="attributionTranslation.name">{{ $t('content.whatnow.messages') }}<br />{{ attributionTranslation.name }}</h1>
-        <p v-if="attributionTranslation.attributionMessage">
-          <b>
-            {{ truncate(attributionTranslation.attributionMessage, 90) }}
-            <span class="ml-4">
-              {{ $t('view_data.cap.more') }} <a :href="attribution.url" rel="noreferrer" target="_blank">{{ truncate(attribution.url, 20) }}</a>
-            </span>
-          </b>
-        </p>
+        <h1 class="font-weight-bold" v-if="attributionTranslation.name">{{ $t('content.whatnow.title') }}</h1>
       </b-col>
     </page-banner>
 
-    <b-row class="pl-4 pr-4 mt-3 mb-3" v-if="hazardsList">
-      <b-col>
-        <v-select :dir="isLangRTL(locale) ? 'rtl' : 'ltr'" label="eventType" class="float-right bg-white" :options="hazardsList" :placeholder="$t('content.whatnow.choose_hazard')" v-model="selectedHazard" :disabled="hazardsList.length === 0"></v-select>
+    <b-row class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
+      <b-col cols="auto" class="d-flex align-items-center">
+        <customSelectSociety class="select-society-custom"> :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></customSelectSociety>
+        <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
+      </b-col>
+      <b-col cols="auto" v-if="hazardsList" class="d-flex align-items-center">
+        <v-select
+          :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
+          label="eventType"
+          class="v-select-custom"
+          :options="hazardsList"
+          :placeholder="$t('content.whatnow.choose_hazard')"
+          v-model="selectedHazard"
+          :disabled="hazardsList.length === 0">
+        </v-select>
       </b-col>
     </b-row>
-
+    <b-row class="m-3">
+      <b-col>
+        <b-nav tabs>
+          <b-nav-item
+            v-for="lang in currentLanguages"
+            :key="lang"
+            class="wn-item"
+            @click="selectedLanguage = lang"
+            :active="selectedLanguage === lang">
+            <div class="nav-link-wrapper text-center h-100" v-if="lang">
+              {{ lang | uppercase }} -
+              <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
+            </div>
+          </b-nav-item>
+        </b-nav>
+      </b-col>
+    </b-row>
     <whatnow-list :selectedSoc="selectedSoc" :selectedLanguage="selectedLanguage" :isPromo="true" class="whatnow-list-promo" v-show="selectedSoc" :selectedHazard="selectedHazard"></whatnow-list>
   </b-container>
 </template>
 
 <script>
 import SelectSociety from '~/pages/content/selectSociety'
+import CustomSelectSociety from '~/pages/content/customSelectSociety'
 import WhatnowList from '~/pages/content/whatnowList'
 import { mapGetters } from 'vuex'
 import Spooky from '~/components/global/Spooky'
@@ -79,7 +77,8 @@ export default {
     SelectSociety,
     Spooky,
     WhatnowList,
-    PageBanner
+    PageBanner,
+    CustomSelectSociety
   },
   data () {
     return {
@@ -182,3 +181,35 @@ export default {
   }
 }
 </script>
+<style>
+.selects-container {
+  background: #F7F7F7;
+  border-radius: 10px;
+}
+
+.v-select-custom {
+  font-family: Poppins!important;
+  div {
+    background: #E9E9E9;
+    font-family: Poppins!important;
+    border: none;
+    border-radius: 10px;
+    padding: 2px;
+  }
+}
+.v-select {
+  min-width: 192px;
+}
+
+.page-banner {
+  background-image: none;
+}
+
+.nav-link-wrapper {
+  color: red;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #dee2e6;
+}
+</style>
