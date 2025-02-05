@@ -51,31 +51,15 @@
   gap: 8px;
 }
 
-// .modal-footer .btn {
-//     padding: 10px 16px;
-//     font-size: 14px;
-//     border-radius: 8px;
-//     font-weight: bold;
-// }
-
-
 .modal-footer {
   .btn {
     padding: 8px 20px;
     font-size: 14px;
     border-radius: 20px;
     font-weight: bold;
-    // background-color: $bg-primary;
-    // color: $text-white;
   }
 
   .btn-outline-primary {
     padding: 5px 20px;
   }
 }
-
-// .modal-footer .btn-secondary {
-//     background-color: transparent;
-//     border: 1px solid #ff0000;
-//     color: #ff0000;
-// }
