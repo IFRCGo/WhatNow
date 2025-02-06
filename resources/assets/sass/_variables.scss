@@ -35,6 +35,7 @@ $card-cap-2-bg: #dcd9d95c;
 $card-border-color: #e8eced;
 $card-border-radius: 0.7rem;
 $card-gradient-bg: linear-gradient(80deg, $card-cap-bg 28%, $card-cap-2-bg 111%);
+$card-solid-bg: #f7f7f7;
 
 // Alerts
 $alert-border-radius: 0.7rem;
@@ -59,6 +60,8 @@ $sidebar-collapsed-breakpoint: 1550px;
 // buttons
 $facebook-blue: #00447c;
 $google-red: $light-red;
+$bg-primary: $red;
+$bg-disabled: #e9e9e9;
 
 // Font
 $font-size-base: 0.75rem;
@@ -86,4 +89,8 @@ $global-baseline: 6px;
 
 // Transitions
 $global-transition: all 300ms ease-in-out;
+
+//icons
+$icon-not-active: #a8a8a8;
+$icon-active: #f6333f;
 

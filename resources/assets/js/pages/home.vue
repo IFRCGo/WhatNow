@@ -211,6 +211,21 @@
         </div>
       </b-col>
     </b-row>
+
+    <b-modal id="role-changed" centered :title="$t('home.role_changed_title')" ref="roleChangedModal" ok-variant="primary" cancel-variant="outline-primary" @ok="confirmRole" :ok-title="$t('home.role_changed_confirm')" :cancel-title="$t('home.role_changed_dismiss')">
+      <p>
+        {{ $t('home.role_changed_p') }} "<span v-if="user.data.role.name">{{ user.data.role.name }}</span>".
+      </p>
+      <p>
+        {{ $t('home.role_changed_p2') }}
+      </p>
+      <ul class="row" v-if="user.data.role.permissions">
+        <li class="col col-6" v-for="item in user.data.role.permissions">
+          {{ item.display_name }}
+        </li>
+      </ul>
+
+    </b-modal>
   </b-container>
 </template>
 
@@ -227,6 +242,10 @@ export default {
       this.$router.push({name: 'applications.dash'})
     }
   },
+  mounted () {
+    this.showRoleChangedModal()
+
+  },
   metaInfo() {
     return {title: this.$t('home.home')}
   },
@@ -234,6 +253,20 @@ export default {
     title: window.config.appName,
     permissions: permissionsList
   }),
+  methods: {
+    showRoleChangedModal() {
+      const isConfirmed = this.user.data.confirmed_role;
+      if (!isConfirmed) {
+        this.$refs.roleChangedModal.show()
+      }
+    },
+    async confirmRole() {
+      const changes = {
+        confirmed_role: true
+      }
+      await this.$store.dispatch('auth/patchUser', { id: this.user.data.id, changes })
+    }
+  },
   computed: {
     firstSocietyCode() {
       if (this.user) {

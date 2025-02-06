@@ -83,7 +83,7 @@ final class InstructionController extends ApiController
             $now = now();
             $fileName = 'WhatNow_message_report_'.$now->format('Y-m-d').'_'.$now->format('h-i').'.csv';
             $rows = [];
-            $columnNames = ['Alert ID', 'Language', 'Stage', 'HZ type', 'National society', 'Published date'];
+            $columnNames = ['Alert ID', 'Language', 'Urgency', 'HZ type', 'National society', 'Published date'];
 
             $instructions->each(function (Instruction $instruction) use (&$rows) {
                 foreach ($instruction->getTranslations() as $translation) {
@@ -92,7 +92,7 @@ final class InstructionController extends ApiController
                         $rows[] = [
                             $instruction->getId(),
                             $translation->getLang(),
-                            $stage,
+                            $translation->getUrgencyId(),
                             $instruction->getEventType(),
                             $instruction->getAttribution()->getName(),
                             $translation->getPublished(),
@@ -208,6 +208,7 @@ final class InstructionController extends ApiController
             'translations.*.title' => 'required|string',
             'translations.*.description' => 'required|string',
             'translations.*.webUrl' => 'nullable|url',
+            'translations.*.urgency_id' => 'required|integer|exists:urgencies,id',
         ]);
 
         $data = $request->all();

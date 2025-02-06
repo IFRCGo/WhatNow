@@ -561,7 +561,12 @@
     "admin_intro": "Here you can manage users, edit and publish WhatNow content and view API usage.",
     "ns_admin_intro": "Here you can edit and publish WhatNow content",
     "ns_editor_intro": "Here you can edit WhatNow content",
-    "api_user_intro": "Here you view your apps and manage your account."
+    "api_user_intro": "Here you view your apps and manage your account.",
+    "role_changed_title": "Your role was changed",
+    "role_changed_p": "You have been assigned the following role:",
+    "role_changed_p2": "Your permissions are as follows:",
+    "role_changed_confirm": "Confirm",
+    "role_changed_dismiss": "Close"
   },
   "landing": {
     "strapline": "WhatNow Service",
@@ -642,7 +647,7 @@
     "heading_3": "Service account",
     "who_are_you": "Who are you?",
     "what_is_your_role": "What is your role?",
-    "developer_description": "Help communities prepare, respond, and recover from hazards with our localized key action messages.\nUse our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+    "description": "COPY PENDING",
     "national_society_description": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.\nContact us to learn more about how to create the messages and connect with media partners.",
     "developer": "Developer",
     "national_society": "National society",
@@ -652,7 +657,7 @@
     "facebook": "Sign Up With Facebook",
     "google": "Sign Up With Google",
     "email_sign_up": "Or sign up with your email:",
-    "email_gdpc": "gdpc@redcross.org",
+    "email_ifrc": "IFRC MAIL PENDING",
     "location": "Location",
     "organisation": "Organisation",
     "industry": "Industry type",
@@ -673,8 +678,7 @@
     "api_used_in": "Where will this API be used?",
     "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
     "welcome": "Welcome {name}, please complete the following information to get started:",
-    "gdpc_note": "If you have any questions or are interested in learning more, please contact: ",
-    "gdpc_ns_note": "To sign up, please contact the WhatNow Service team at the Global Disaster Preparedness Center at: ",
+    "ifrc_note": "If you have any questions or are interested in learning more, please contact: ",
     "contact_gdpc": "Contact GDPC"
   },
   "terms_service_page": {
@@ -832,5 +836,9 @@
     "version": "Version",
     "user": "User",
     "language_code": "Language Code"
+  },
+  "terms_conditions": {
+    "title": "Terms and Conditions",
+    "accept": "Accept"
   }
 }

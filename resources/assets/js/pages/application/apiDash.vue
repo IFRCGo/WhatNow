@@ -8,7 +8,7 @@
         <b-collapse visible id="terms" v-if="latestTerms && user.data.user_profile.terms_version !== latestTerms.version">
           <b-alert variant="terms" show class="mb-4 terms-notification">
             <h4 class="alert-heading text-uppercase">{{ $t('applications.new_tc') }}</h4>
-            <b-btn v-b-modal.terms variant="terms" class="text-uppercase mr-2 rtl-ml-2 mt-2 pl-4 pr-4">{{ $t('View') }}</b-btn>
+            <b-btn variant="terms" :to="{ name: 'legal_.terms', params: {} }" class="text-uppercase mr-2 rtl-ml-2 mt-2 pl-4 pr-4">{{ $t('View') }}</b-btn>
             <b-button variant="terms" class="text-uppercase mt-2" @click="acceptTerms" v-b-toggle.terms>
               {{ $t('common.accept') }}
             </b-button>
@@ -102,14 +102,6 @@
           :state="newAppValidations.validated ? newAppValidations.estimatedUsers : null">
         <b-form-input type="number" min="0" id="new-users-count" :state="newAppValidations.validated ? newAppValidations.estimatedUsers : null" v-model.trim="newApp.estimatedUsers"></b-form-input>
       </b-form-group>
-    </b-modal>
-    <b-modal size="lg" centered id="terms" ref="modal">
-      <latest-terms></latest-terms>
-      <div slot="modal-footer" class="w-100">
-        <b-btn size="sm" class="float-right" variant="primary" @click="$refs.modal.hide()">
-          {{ $t('close') }}
-        </b-btn>
-      </div>
     </b-modal>
   </b-container>
 </template>

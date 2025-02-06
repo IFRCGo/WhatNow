@@ -2,79 +2,28 @@
   <div class="container-fluid register-form-container pb-5 h-100">
     <div class="row">
       <div class="col-lg-12 register-card my-4">
-        <h1 class="text-center mt-3 mb-5 register_form_heading">
+        <h1 class="text-center mt-3 register_form_heading">
           {{ $t('register_form.heading_1') }}
           <span class="register_form_heading--active">{{$t('register_form.heading_2')}}</span>
           {{$t('register_form.heading_3')}}
         </h1>
 
-        <h2 class="register_form_heading-2">
-          {{$t('register_form.what_is_your_role')}}
-        </h2>
-
-        <div class="d-flex flex-lg-row flex-md-row flex-column justify-content-center align-items-center">
-          <div class="mx-5">
-            <input class="c-default-radio-checkbox__input visually-hidden fs-xsm-4 fs-sm-4"
-                   type="radio"
-                   :id="registerTypes.DEVELOPER"
-                   name="type"
-                   :value="registerTypes.DEVELOPER"
-                   v-model="registerType"/>
-            <label :for="registerTypes.DEVELOPER"
-                   class="c-default-radio-checkbox__label">
-              {{ $t('register_form.developer') }}
-            </label>
-          </div>
-          <div>
-            <input class="c-default-radio-checkbox__input visually-hidden fs-xsm-4 fs-sm-4"
-                   type="radio"
-                   :id="registerTypes.NATIONAL_SOCIETY"
-                   name="type"
-                   :value="registerTypes.NATIONAL_SOCIETY"
-                   v-model="registerType"/>
-            <label :for="registerTypes.NATIONAL_SOCIETY"
-                   class="c-default-radio-checkbox__label">
-              {{ $t('register_form.national_society') }}
-            </label>
-          </div>
-        </div>
-
         <div class="what-is-your-role">
-          <p v-if="registerType === registerTypes.DEVELOPER">
-            {{$t('register_form.developer_description')}}
+          <p>
+            {{$t('register_form.description')}}
           </p>
-
-          <p v-if="registerType === registerTypes.NATIONAL_SOCIETY">
-            {{$t('register_form.national_society_description')}}
-          </p>
-        </div>
-      </div>
-
-      <div class="col-lg-12 register-card my-4" v-if="registerType === registerTypes.DEVELOPER">
-        <h3 class="mb-5">{{ $t('register_form.sign_up_with') }}</h3>
-
-        <div class="d-flex flex-wrap align-items-center justify-content-center">
-          <google-sign-in-button @click.native="googleLogin" class="m-2"></google-sign-in-button>
-
-          <!-- todo: update to use social login as part of another story -->
-          <button @click="fbLogin" class="facebook-button m-2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path fill="#334e87" d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/>
-            </svg>
-            {{ $t('register_form.facebook') }}
-          </button>
         </div>
       </div>
 
       <div class="col-12 register-card my-4 register-card--form">
-        <div v-if="registerType === registerTypes.DEVELOPER">
+        <div>
           <h3 class="mb-5">{{ $t('register_form.email_sign_up') }}</h3>
           <form @submit.prevent="register" @keydown="form.onKeydown($event)">
             <div class="row justify-content-between">
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Name -->
                 <div class="form-group register-input-container pr-lg-4 pr-md-4">
-                  <label class="styled-label" for="name">
+                  <label class="styled-label-signup styled-label" for="name">
                     {{ $t('first_name') }}
                     <span class="is-required"></span>
                   </label>
@@ -86,7 +35,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- last name -->
                 <div class="form-group register-input-container pl-lg-4 pl-md-4">
-                  <label class="styled-label" for="last_name">
+                  <label class="styled-label-signup styled-label" for="last_name">
                     {{ $t('register_form.last_name') }}
                     <span class="is-required"></span>
                   </label>
@@ -100,7 +49,7 @@
               <div class="col-12">
                 <!-- Email -->
                   <div class="form-group register-input-container">
-                    <label class="styled-label" for="email">
+                    <label class="styled-label-signup styled-label" for="email">
                       {{ $t('email') }}
                       <span class="is-required"></span>
                   </label>
@@ -114,13 +63,25 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Password -->
                 <div class="form-group register-input-container pr-lg-4 pr-md-4">
-                  <label class="styled-label" for="password">
+                  <label class="styled-label-signup styled-label" for="password">
                     {{ $t('password') }}
                     <span class="is-required"></span>
                   </label>
-                  <input autocomplete="new-password" v-model="form.password" type="password" id="password" name="password"
+                  <div class="input-group-password">
+                    <input autocomplete="new-password" v-model="form.password" :type="showPassword ? 'text' : 'password'" id="password" name="password"
                         class="form-control styled-input"
                         :class="{ 'is-invalid': form.errors.has('password') }">
+                    </input>
+                    <div class="input-group-append showpassword" @click="showPassword = !showPassword">
+                      <div v-if="showPassword" :key="1">
+                        <i class="fas fa-eye"></i>
+                      </div>
+                      <div  v-else :key="2">
+                        <i class="fas fa-eye-slash"></i>
+                      </div>
+                    </div>
+                  </div>
+
                   <has-error :form="form" field="password" class="pl-2 font-italic"></has-error>
                 </div>
               </div>
@@ -128,13 +89,24 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Password Confirmation -->
                 <div class="form-group register-input-container pl-lg-4 pl-md-4">
-                  <label class="styled-label" for="password_confirmation">
+                  <label class="styled-label-signup styled-label" for="password_confirmation">
                     {{ $t('confirm_password') }}
                     <span class="is-required"></span>
                   </label>
-                  <input autocomplete="new-password" v-model="form.password_confirmation" id="password_confirmation"
-                        type="password" name="password_confirmation" class="form-control styled-input"
+                  <div class="input-group-password">
+                    <input autocomplete="new-password" v-model="form.password_confirmation" id="password_confirmation"
+                        :type="showConfirmPassword ? 'text' : 'password'" name="password_confirmation" class="form-control styled-input"
                         :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
+                    <div class="input-group-append showpassword" @click="showConfirmPassword = !showConfirmPassword">
+                      <div v-if="showConfirmPassword" :key="1">
+                        <i class="fas fa-eye"></i>
+                      </div>
+                      <div  v-else :key="2">
+                        <i class="fas fa-eye-slash"></i>
+                      </div>
+                    </div>
+                  </div>
+
                   <has-error :form="form" field="password_confirmation" class="pl-2 font-italic"></has-error>
                 </div>
               </div>
@@ -142,7 +114,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Location -->
                 <div class="form-group register-input-container pr-lg-4 pr-md-4">
-                  <label class="styled-label" for="country_code">
+                  <label class="styled-label-signup styled-label" for="country_code">
                     {{ $t('register_form.location') }}
                     <span class="is-required"></span>
                   </label>
@@ -162,7 +134,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Organisation -->
                 <div class="form-group register-input-container pl-lg-4 pl-md-4">
-                  <label class="styled-label" for="organisation">
+                  <label class="styled-label-signup styled-label" for="organisation">
                     {{ $t('register_form.organisation') }}
                     <span class="is-required"></span>
                   </label>
@@ -176,7 +148,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Industry type -->
                 <div class="form-group register-input-container pr-lg-4 pr-md-4">
-                  <label class="styled-label" for="industry_type">
+                  <label class="styled-label-signup styled-label" for="industry_type">
                     {{ $t('register_form.industry') }}
                     <span class="is-required"></span>
                   </label>
@@ -190,71 +162,38 @@
                   <has-error :form="form" field="industry_type" class="pl-2 font-italic"></has-error>
                 </div>
               </div>
+            </div>
 
-              <div class="col-lg-6 col-md-6 col-sm-12">
-                <!-- Api used in -->
-                <div class="form-group register-input-container pl-lg-4 pl-md-4">
-                  <label class="styled-label" for="api_used_in">
-                    {{ $t('register_form.api_used_in') }}
-                    <span class="is-required"></span>
-                  </label>
-                  <textarea v-model="form.api_used_in" name="api_used_in" id="api_used_in"
-                            class="form-control styled-input"
-                            :class="{ 'is-invalid': form.errors.has('api_used_in') }"></textarea>
-                  <has-error :form="form" field="api_used_in" class="pl-2 font-italic"></has-error>
-                </div>
+            <div class="row mt-3">
+              <div class="col-7 m-auto">
+                <p class="text-center mb-0 font-weight-light">
+                  {{
+                    $t('register_form.ifrc_note')
+                  }}
+                  <b-link class="underlined-link font-weight-normal" href="">
+                    {{ $t('register_form.email_ifrc') }}
+                  </b-link>
+                </p>
               </div>
             </div>
+            
             <div class="register_form-bottom">
-              <p class="text-center u-text-normal mt-5">
+              <p class="text-center u-text-normal mt-5 mb-0 font-weight-light">
                 {{ $t('register_form.sign_up_agreement') }}
-
-                <span v-b-modal.termsModal @click="showTerms = true" class="underlined-link">
+                <b-link @click="sawTerms = true" :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
                   {{ $t('register_form.terms_conditions') }}
-                </span>
-                <b-modal v-model="showTerms" id="termsModal" size="lg" ok-variant="dark">
-                  <latest-terms class="text-left"></latest-terms>
-                  <div slot="modal-footer" class="w-100">
-                    <b-btn size="sm" class="float-right" variant="primary" @click="showTerms = false">
-                      {{ $t('close') }}
-                    </b-btn>
-                  </div>
-                </b-modal>
+                </b-link>
               </p>
               <div class="form-group mb-5">
                 <!-- Submit Button -->
-                <v-button :loading="form.busy" class="btn-primary btn btn-lg w-100">
+                <v-button :loading="form.busy" :disabled="!sawTerms"  class="btn-primary btn btn-lg w-100">
                   {{ $t('register_form.create_account') }}
                 </v-button>
               </div>
             </div>
           </form>
         </div>
-        <div class="text-center" v-else>
-          <p class="text-center u-text-normal mb-4">
-            {{ $t('register_form.gdpc_ns_note') }}	
-            {{ $t('register_form.email_gdpc') }}
-          </p>
-          <b-link href="mailto:gdpc@redcross.org?Subject=WhatNow%20Service%20Inquiry"
-                  class="btn m-2 btn-primary btn-lg font-weight-bold register-form__contact-gdpc">
-            {{ $t('register_form.contact_gdpc') }}
-          </b-link>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="row mt-3">
-      <div class="col-sm-5 m-auto">
-        <p class="text-center">
-          {{
-            $t('register_form.gdpc_note')
-          }}
-          <b-link class="underlined-link" href="mailto:gdpc@redcross.org?Subject=WhatNow%20Portal%20Access">
-            {{ $t('register_form.email_gdpc') }}
-          </b-link>
-        </p>
+        
       </div>
     </div>
   </div>
@@ -269,11 +208,6 @@ import { mapGetters } from 'vuex'
 import LatestTerms from '~/components/LatestTerms'
 import GoogleSignInButton from '~/components/global/GoogleSignInButton'
 
-const registerTypes = {
-  DEVELOPER: 'developer',
-  NATIONAL_SOCIETY: 'nationalSociety'
-}
-
 export default {
   components: {
     Terms,
@@ -286,11 +220,9 @@ export default {
   metaInfo () {
     return { title: this.$t('register') }
   },
-  data () {
+  data() {
     return {
-      registerType: this.userType ? this.userType : registerTypes.DEVELOPER,
-      registerTypes,
-      showTerms: false,
+      sawTerms: false,
       locationSelected: null,
       locationOptions: null,
       industrySelected: null,
@@ -314,7 +246,9 @@ export default {
         password: '',
         password_confirmation: '',
         api_used_in: ''
-      })
+      }),
+      showPassword: false,
+      showConfirmPassword: false
     }
   },
 
@@ -367,7 +301,7 @@ export default {
       } else {
         this.$router.push({ name: 'home' })
       }
-    }
+    },
   },
   created () {
     const countries = require('country-list')()
@@ -389,7 +323,7 @@ export default {
   max-width: 1381px;
   padding: 62px 55px 56px 55px;
   border-radius: 20px;
-  background-image: $card-gradient-bg;
+  background: $card-solid-bg;
   margin: 0 auto;
 }
 
@@ -425,7 +359,7 @@ export default {
 
 .what-is-your-role {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 52px;
 }
 
 .what-is-your-role p {
@@ -495,6 +429,12 @@ export default {
   color: $text-dark;
 }
 
+.styled-label-signup {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
 @media screen and (max-width: 767px) {
   .register-form-container h1 {
     font-size: 24px;
@@ -510,6 +450,24 @@ export default {
   color: $text-dark;
 }
 
+//hide show password
+.input-group-password {
+  position: relative;
+}
+
+.input-group-append {
+  position: absolute;
+  right: 20px;
+  top: 12.5px;
+  font-size: 14px;
+  color: $icon-not-active;
+}
+
+.input-group-append.showpassword {
+  cursor: pointer;
+}
+
+
 @media screen and (min-width: 992px) {
   .register-form-container .col-lg-6 {
     max-width: 550px;
@@ -520,10 +478,5 @@ export default {
   padding: 13px;
   letter-spacing: 0.4px;
   height: 45px;
-}
-
-.register-form__contact-gdpc {
-  max-width: 285px;
-  width: 100%;
 }
 </style>
