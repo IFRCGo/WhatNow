@@ -408,7 +408,14 @@
       "add_language_message": "To add a new language, please add some content to go along with it",
       "add_language_attribution": "Create attribution to add a new language",
       "select_language": "Please select a language",
-      "attribution_publish": "This attribution will be immediately available on publish"
+      "attribution_publish": "This attribution will be immediately available on publish",
+      "date_added": "Date Added",
+      "url": "URL",
+      "hazard_type": "Hazard Type",
+      "show_more": "Show more",
+      "early": "Early Warning",
+      "disaster": "Disaster Risk Reduction",
+      "recovery": "Recovery"
     },
     "edit_whatnow": {
       "title": "Title",

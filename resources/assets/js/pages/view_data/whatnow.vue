@@ -14,7 +14,7 @@
         <b-img :src="attribution.imageUrl" width="128" height="128" class="ns-logo"></b-img>
       </b-col>
       <b-col v-if="!loadingContent && attribution !== null">
-        <h1 class="font-weight-bold" v-if="attributionTranslation.name">{{ $t('content.whatnow.title') }}</h1>
+        <h1 class="font-weight-bold title" v-if="attributionTranslation.name">{{ $t('content.whatnow.title') }}</h1>
       </b-col>
     </page-banner>
 
@@ -211,5 +211,9 @@ export default {
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
+}
+
+.title {
+  font-size: 55px;
 }
 </style>
