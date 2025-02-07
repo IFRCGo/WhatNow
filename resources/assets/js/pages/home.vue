@@ -20,7 +20,7 @@
                   </p>
                 </div>
                 <div class="button-container">
-                  <img class="img-bottom" src="../..//img/home_page/people.png" alt="people">
+                 <img class="img-bottom" src="../..//img/home_page/people.png" alt="people">
                   <b-button :to="{ name: 'users.list', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -99,7 +99,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/clock.png" alt="clock">
+                  <i class="fas fa-history font-icon"></i>
                   <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -117,7 +117,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/upload.png" alt="upload">
+                  <i class="fa fa-upload font-icon"></i>
                   <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
@@ -160,7 +160,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/clock.png" alt="clock">
+                  <i class="fas fa-history font-icon"></i>
                   <b-button :to="{ name: 'content.audit_log', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -178,7 +178,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/upload.png" alt="upload">
+                  <i class="fa fa-upload font-icon"></i>
                   <b-button :to="{ name: 'content.bulk_upload', params: {} }" variant="danger" class="button-go">
                     {{ $t('go') }}
                   </b-button>
@@ -293,6 +293,12 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top: -2rem;
+}
+
+.font-icon {
+  font-size: 5rem;
+  margin-left: 1rem;
+  color: #B6B6B6;
 }
 
 .img-bottom {
