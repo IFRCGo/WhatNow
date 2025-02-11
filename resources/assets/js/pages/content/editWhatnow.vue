@@ -134,15 +134,43 @@
                 </b-form-invalid-feedback>
               </b-col>
             </b-row>
-            <b-row class="pb-0 pl-4 pr-4 pt-4 pb-4 bg-white" v-for="name in instructionNames" :key="name">
-              <whatnow-instructions
-                :disabled="isCreateHazardMode"
-                :instructions="content.translations[langCode].stages[name] || []"
-                :instructionName="name"
-                :instructionId="whatnowId"
-                :langCode="langCode"
-                class="mb-4"
-                v-on:instructionUpdate="instructionUpdate" />
+            <b-row class="bg-white">
+              <b-col>
+                
+                  <div class="urgency-card mb-5" v-for="(urgency, i) in urgencyLevels" :key="'urgency-' + i">
+                    <div class="urgency-card-header">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                          <h4 class="urgency-title">
+                            {{ urgency.text }}
+                          </h4>
+                          <p class="urgency-description">
+                            {{ urgency.description }}
+                          </p>
+                        </div>
+                        <b-button class="btn-collapse" variant="light" :key="urgency.value + 'collapse'" v-b-toggle="'urgency-collapse-' + i" @click="toggleCollapse(i)">
+                          <i :class="collapseStates[i] ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+                        </b-button>
+                      </div>
+                      
+                    </div>
+                    <b-collapse :visible="true" :id="'urgency-collapse-' + i">
+                      <div v-for="name in instructionNames" :key="name">
+                        <whatnow-instructions
+                          v-if="urgency.stages.includes(name)"
+                          :disabled="isCreateHazardMode"
+                          :instructions="content.translations[langCode].stages[name] || []"
+                          :instructionName="name"
+                          :instructionId="whatnowId"
+                          :langCode="langCode"
+                          class="mb-4"
+                          v-on:instructionUpdate="instructionUpdate" />
+                      </div>
+                    </b-collapse>
+                    
+                  </div>
+
+              </b-col>
             </b-row>
           </div>
         </div>
@@ -182,7 +210,7 @@
               <spooky width="30%" height="24px" class="mb-3"></spooky>
 
               <b-card>
-                <ul class="pt-4 spooky-list whatnow-instruction-list">
+                <ul class="spooky-list whatnow-instruction-list">
                   <li v-for="n in 5" class="mb-4" :key="n">
                     <spooky width="100%" height="38px"></spooky>
                   </li>
@@ -266,7 +294,28 @@ export default {
         'prepare_to_respond',
         'recover'
       ],
-      changedItems: []
+      changedItems: [],
+      urgencyLevels: [
+        {
+          value: 'early_warning',
+          text: this.$t('content.edit_whatnow.early_warning'),
+          stages: ['immediate', 'warning', 'anticipated'],
+          description: this.$t('content.edit_whatnow.early_warning_description')
+        },
+        {
+          value: 'disaster_risk_reduction',
+          text: this.$t('content.edit_whatnow.disaster_risk_reduction'),
+          stages: ['assess_and_plan', 'mitigate_risks', 'prepare_to_respond'],
+          description: this.$t('content.edit_whatnow.disaster_risk_reduction_description')
+        },
+        {
+          value: 'recovery',
+          text: this.$t('content.edit_whatnow.recovery'),
+          stages: ['recover'],
+          description: this.$t('content.edit_whatnow.recovery_description')
+        },
+      ],
+      collapseStates: [],
     }
   },
   mounted () {
@@ -278,6 +327,7 @@ export default {
       })
     }
     this.fetchContent()
+    this.collapseStates = this.urgencyLevels.map(() => true)
   },
   watch: {
     filteredHazardsList () {
@@ -506,7 +556,10 @@ export default {
 
       this.savingContent = false
       this.isAutoSavingContent = false
-    }
+    },
+    toggleCollapse(index) {
+      this.$set(this.collapseStates, index, !this.collapseStates[index])
+    },
   },
   metaInfo () {
     return { title: this.$t('content.whatnow.whatnow') }
@@ -547,3 +600,47 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+@import '../../../sass/variables.scss';
+  .urgency-card {
+    padding: 20px 30px 56px 30px;
+    border-radius: 10px;
+    border: solid 1px #e6e6e6;
+    position: relative;
+
+    .urgency-card-header {
+      width: 100%;
+      margin-bottom: 30px;
+
+      h4.urgency-title {
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.4px;
+        color: #1e1e1e;
+      }
+
+      p.urgency-description {
+        font-size: 18px;
+        font-weight: normal;
+        color: #000;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #cecece;
+        margin-top: 20px;
+      }
+    }
+
+    .btn-collapse {
+      font-size: 30px;
+      border: none;
+      background-color: transparent;
+      color: $grey;
+    }
+  }
+</style>
