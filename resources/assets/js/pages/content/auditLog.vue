@@ -13,11 +13,11 @@
 
      <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
+          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_hazard') }}</p>
           <SelectHazardType class="bg-white" v-model="hazardTypeFilter" :hazardTypeList="filteredHazardsList"></SelectHazardType>
         </b-col>
         <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
+          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_language') }}</p>
           <v-select
             :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
             v-model="languageFilter"
@@ -38,7 +38,7 @@
           </v-select>
         </b-col>
         <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
+          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_soc') }}</p>
           <selectSociety
             :selected.sync="selectedSoc"
             :staynull="true" />
