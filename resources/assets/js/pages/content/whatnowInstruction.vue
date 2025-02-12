@@ -13,13 +13,6 @@
             </span>
           </div>
         </div>
-
-        <!-- <p class="text-secondary">
-          <i>{{ $t(`content.edit_whatnow.${instructionName}_help`) }}</i>
-          <span variant="link" v-b-tooltip.hover :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
-            <fa :icon="['fas', 'info-circle']" />
-          </span>
-        </p> -->
         <b-collapse id="more">
           <p>
             {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
@@ -27,7 +20,7 @@
         </b-collapse>
       </div>
       <div v-if="!this.disabled && canEdit">
-        <b-button size="sm" variant="outline-primary" @click="addItem" class="btn mb-2">
+        <b-button size="sm" variant="outline-primary" @click="addKeyMessage" class="btn mb-2">
           {{ $t('content.edit_whatnow.add_key_message') }}
         </b-button>
       </div>
@@ -37,18 +30,25 @@
       <!-- We have to use n in x here as you cannot directly mutate an object in a v-model -->
       <transition-group v-for="(message, index) in keyMessages" :key="`message-${index}`" name="fade-slide" tag="ol" class="pt-4 whatnow-instruction-list">
         <div class="mb-5" :key="`title-${index}`">
-          <div class="d-flex align-items-center mb-3">
-            <label class="key-message-label" :for="`${instructionName}-title-${index}`">Key message title</label>
-            <div class="mx-5">
-              <span variant="link" class="more-info-icon" v-b-tooltip.hover
-                :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
-                <fa :icon="['fas', 'info-circle']" />
-              </span>
+          <div class="mb-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <label class="key-message-label" :for="`${instructionName}-title-${index}`">Key message title</label>
+              <div class="mx-5">
+                <span variant="link" class="more-info-icon" v-b-tooltip.hover
+                  :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
+                  <fa :icon="['fas', 'info-circle']" />
+                </span>
+              </div>
+            </div>
+            <div>
+              <b-button class="btn-delete-key-message" variant="light" @click="deleteKeyMessage(message.key)">
+                <i class="fas fa-trash"></i>
+              </b-button>
             </div>
           </div>
           <b-form-input class="key-message-input" type="text" :id="`${instructionName}-title-${index}`"
             :name="`${instructionName}-title-${index}`" v-model="message.title" :placeholder="'Title of key message'"
-            :disabled="!canEdit" />
+            :disabled="!canEdit" @change="instructionChange" />
         </div>
         <div class="d-flex justify-content-between mb-3" :key="`add-supporting-message-${index}`">
           <div class="d-flex justify-content-start mb-3">
@@ -67,7 +67,7 @@
             <b-form-input class="supporting-message-input" type="text" :id="`${instructionName}-${n}`" :name="`${instructionName}-${n}`"
               v-model="instruction.message" :placeholder="$t('content.edit_whatnow.content_placeholder')"
               @change="instructionChange" :disabled="!canEdit" />
-              <b-button class="btn-delete-item" variant="light" @click="deleteItem(index, supportIndex)">
+              <b-button class="btn-delete-item" variant="light" @click="deleteSupportingMessage(instruction.key, message.key)">
                 <i class="fas fa-trash"></i>
               </b-button>
           </b-input-group>
@@ -79,7 +79,6 @@
   </b-col>
 </template>
 <script>
-import axios from 'axios'
 import WhatnowDownloadImage from './whatnowDownloadImage'
 import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
@@ -97,14 +96,6 @@ export default {
     }
   },
   mounted() {
-    // We need some random key for the for loop so vue doesn't get confused with what component is what.
-    // this.instructionsCopy = this.instructions.map(instruction => {
-    //   return {
-    //     message: instruction,
-    //     key: Math.random().toString(36).substr(2, 10)
-    //   }
-    // })
-
     this.keyMessages = this.instructions.map(instruction => {
       const { content = [], title } = instruction;
       const supportingMessages = content.map((message) => {
@@ -116,48 +107,49 @@ export default {
       return {
         title,
         supportingMessages,
+        key: Math.random().toString(36).substr(2, 10)
       }
     })
-
-    if (this.instructions.length === 0) {
-      this.addItem()
-    }
   },
   methods: {
-    addItem() {
-      // this.instructionsCopy.push(
-      //   {
-      //     message: '',
-      //     key: Math.random().toString(36).substr(2, 10)
-      //   }
-      // )
-      // this.instructionChange()
+    addKeyMessage() {
       this.keyMessages.push({
         title: '',
-        supportingMessages: [{
-          message: '',
-          key: Math.random().toString(36).substr(2, 10)
-        }]
-      })
+        supportingMessages: [],
+        key: Math.random().toString(36).substr(2, 10)
+      });
+      instructionChange();
     },
     addSupportingMessage(index) {
       this.keyMessages[index].supportingMessages.push({
         message: '',
         key: Math.random().toString(36).substr(2, 10)
       })
-    },
-    deleteItem(indexKeyMessage, supportIndex) {
-      // this.instructionsCopy.splice(index, 1)
-      this.keyMessages[indexKeyMessage].supportingMessages.splice(supportIndex, 1)
-
-      // this.instructionChange()
+      instructionChange();
     },
     instructionChange() {
+      console.log('this.keyMessages', this.keyMessages);
       this.$emit('instructionUpdate', {
         instructionName: this.instructionName,
-        instructions: this.instructionsCopy.map(instruction => instruction.message)
+        instructions: this.keyMessages.map((keyMessage) => ({
+          title: keyMessage.title,
+          content: keyMessage.supportingMessages.map((supportingMessage) => supportingMessage.message)
+        })),
       })
-    }
+    },
+    deleteKeyMessage(key) {
+      this.keyMessages = this.keyMessages.filter(message => message.key !== key);
+      this.instructionChange();
+    },
+    deleteSupportingMessage(key, messageKey) {
+      const currentMessage = this.keyMessages.find(message => message.key === messageKey);
+      currentMessage.supportingMessages = currentMessage.supportingMessages.filter(supportingMessage => supportingMessage.key !== key);
+      this.keyMessages = [
+        ...this.keyMessages.filter(message => message.key !== messageKey),
+        currentMessage
+      ]
+      this.instructionChange();
+    },
   },
   computed: {
     canEdit() {
@@ -206,14 +198,26 @@ export default {
   position: relative;
 
   .btn-delete-item {
+    width: 30px;
+    height: 30px;
     position: absolute;
-    right: 20px;
-    top: 8px;
+    right: 4px;
+    top: 2px;
     padding: 0;
     border: none;
     background-color: transparent;
     color: $grey;
+    z-index: 1;
   }
+}
+
+.btn-delete-key-message {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $grey;
 }
 
 .supporting-message-label {
@@ -232,6 +236,7 @@ export default {
 }
 
 .key-message-card {
+  min-height: 45px;
   border-left: 30px solid $hazard-default;
   border-radius: 10px;
   background-color: #f6f6f6;

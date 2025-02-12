@@ -148,13 +148,19 @@
                             {{ urgency.description }}
                           </p>
                         </div>
-                        <b-button class="btn-collapse" variant="light" :key="urgency.value + 'collapse'" v-b-toggle="'urgency-collapse-' + i" @click="toggleCollapse(i)">
-                          <i :class="collapseStates[i] ? 'fas fa-chevron-down' : 'fas fa-chevron-up'"></i>
+                        <b-button class="btn-collapse" variant="light" :key="urgency.value + 'collapse'" @click="toggleUrgencyCollapse(urgency.value)">
+                          <div v-if="urgencyCollapses[urgency.value]" :key="1">
+                            <i  class="fas fa-chevron-up"></i>
+                          </div>
+                          <div v-else :key="2">
+                            <i class="fas fa-chevron-down"></i>
+                          </div>
+                          
                         </b-button>
                       </div>
                       
                     </div>
-                    <b-collapse :visible="true" :id="'urgency-collapse-' + i">
+                    <b-collapse :visible="urgencyCollapses[urgency.value]" :id="'urgency-collapse-' + i">
                       <div v-for="name in instructionNames" :key="name">
                         <whatnow-instructions
                           v-if="urgency.stages.includes(name)"
@@ -315,7 +321,11 @@ export default {
           description: this.$t('content.edit_whatnow.recovery_description')
         },
       ],
-      collapseStates: [],
+      urgencyCollapses: {
+        early_warning: true,
+        disaster_risk_reduction: true,
+        recovery: true
+      },
     }
   },
   mounted () {
@@ -327,7 +337,6 @@ export default {
       })
     }
     this.fetchContent()
-    this.collapseStates = this.urgencyLevels.map(() => true)
   },
   watch: {
     filteredHazardsList () {
@@ -557,8 +566,8 @@ export default {
       this.savingContent = false
       this.isAutoSavingContent = false
     },
-    toggleCollapse(index) {
-      this.$set(this.collapseStates, index, !this.collapseStates[index])
+    toggleUrgencyCollapse(urgency) {
+      this.urgencyCollapses[urgency] = !this.urgencyCollapses[urgency]
     },
   },
   metaInfo () {
@@ -604,7 +613,7 @@ export default {
 <style scoped lang="scss">
 @import '../../../sass/variables.scss';
   .urgency-card {
-    padding: 20px 30px 56px 30px;
+    padding: 20px 30px 20px 30px;
     border-radius: 10px;
     border: solid 1px #e6e6e6;
     position: relative;
