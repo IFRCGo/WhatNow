@@ -188,10 +188,10 @@ export default {
 }
 
 .v-select-custom {
-  font-family: Poppins!important;
+  font-family: Poppins;
   div {
     background: #E9E9E9;
-    font-family: Poppins!important;
+    font-family: Poppins;
     border: none;
     border-radius: 10px;
     padding: 2px;

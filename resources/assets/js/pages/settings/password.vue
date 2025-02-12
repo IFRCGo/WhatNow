@@ -1,44 +1,52 @@
 <template>
-  <card :title="$t('your_password')">
-    <form @submit.prevent="update" @keydown="form.onKeydown($event)">
-      <!-- Old Password -->
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-md-right">{{ $t('old_password') }}</label>
-        <div class="col-md-7">
-          <input v-model="form.current_password" type="password" name="password" class="form-control"
-                 :class="{ 'is-invalid': form.errors.has('current_password') }">
+  <form @submit.prevent="update" @keydown="form.onKeydown($event)">
+    <!-- Old Password -->
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label class="col-form-label">{{ $t('old_password') }}</label>
+          <input v-model="form.current_password" type="password" name="password"
+                 :type="showPassword.current ? 'text' : 'password'"class="form-control inputs-form"
+                 :class="{ 'is-invalid': form.errors.has('current_password') }
+                 ">
+          <span @click="togglePassword('current')">
+              <i class="eye-icon fas fa-eye" :class="showPassword.current ? ' fa-eye' : ' fa-eye-slash'"></i>
+          </span>
           <has-error :form="form" field="current_password"></has-error>
         </div>
       </div>
-
-      <!-- Password -->
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-md-right">{{ $t('new_password') }}</label>
-        <div class="col-md-7">
-          <input v-model="form.password" type="password" name="password" class="form-control"
-            :class="{ 'is-invalid': form.errors.has('password') }">
+      <div class="col-4">
+        <div class="form-group">
+          <label class="col-form-label">{{ $t('new_password') }}</label>
+          <input v-model="form.password" type="password" name="password"
+                 :type="showPassword.new ? 'text' : 'password'" class="form-control inputs-form"
+                 :class="{ 'is-invalid': form.errors.has('password') }">
           <has-error :form="form" field="password"></has-error>
+          <span @click="togglePassword('new')">
+              <i class="eye-icon fas" :class="showPassword.new ? 'fa-eye' : 'fa-eye-slash'"></i>
+          </span>
         </div>
       </div>
-
-      <!-- Password Confirmation -->
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-md-right">{{ $t('confirm_password') }}</label>
-        <div class="col-md-7">
-          <input v-model="form.password_confirmation" type="password" name="password_confirmation" class="form-control"
-            :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
+      <div class="col-4">
+        <div class="form-group">
+          <label class="col-form-label">{{ $t('confirm_password') }}</label>
+          <input v-model="form.password_confirmation" type="password" name="password_confirmation"
+                 :type="showPassword.confirm ? 'text' : 'password'"class="form-control inputs-form"
+                 :class="{ 'is-invalid': form.errors.has('password_confirmation') }">
+          <span @click="togglePassword('confirm')">
+              <i class="eye-icon fas" :class="showPassword.confirm ? 'fa-eye' : 'fa-eye-slash'"></i>
+          </span>
           <has-error :form="form" field="password_confirmation"></has-error>
         </div>
       </div>
-
-      <!-- Submit Button -->
-      <div class="form-group row">
-        <div class="col-md-9 ml-md-auto">
-          <v-button :loading="form.busy">{{ $t('update') }}</v-button>
-        </div>
+    </div>
+    <!-- Submit Button -->
+    <div class="form-group row">
+      <div class="col-md-9 ml-md-auto update-btn">
+        <v-button :loading="form.busy">{{ $t('update') }}</v-button>
       </div>
-    </form>
-  </card>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -51,13 +59,20 @@ export default {
     return { title: this.$t('settings') }
   },
 
-  data: () => ({
-    form: new Form({
-      current_password: '',
-      password: '',
-      password_confirmation: ''
-    })
-  }),
+  data () {
+    return {
+      form: new Form({
+        current_password: '',
+        password: '',
+        password_confirmation: ''
+      }),
+      showPassword: {
+        current: false,
+        new: false,
+        confirm: false
+      }
+    }
+  },
 
   methods: {
     async update () {
@@ -66,7 +81,7 @@ export default {
         // Save the token.
         if (response.status === 200) {
           this.$store.dispatch('auth/saveToken', {
-              token: response.data.token
+            token: response.data.token
           })
           this.$noty.success(this.$t('password_updated'))
           // Fetch the user.
@@ -82,7 +97,33 @@ export default {
           this.$noty.error(this.$t('error_alert_text'))
         }
       }
+    },
+    togglePassword (field) {
+      this.showPassword[field] = !this.showPassword[field]
+    },
+    triggerSave () {
+      this.update()
     }
+
   }
 }
 </script>
+<style>
+.update-btn {
+  display: none;
+}
+.inputs-form {
+  background: #E9E9E9!important;
+  border: none;
+  border-radius: 10px;
+}
+.eye-icon {
+  position: absolute;
+  right: 25px;
+  top: 60%;
+  transform: translateY(-50%); /* 🔥 Centra el icono verticalmente */
+  cursor: pointer;
+  color: #A8A8A8;
+  font-size: 18px;
+}
+</style>

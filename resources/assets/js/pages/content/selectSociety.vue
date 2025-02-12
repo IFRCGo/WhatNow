@@ -2,7 +2,7 @@
   <v-select
     :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
     v-model="selectedSoc"
-    class="w-100 styled-select"
+    class="w-100 v-select-custom"
     :options="listOfSocieties"
     label="name" :disabled="listOfSocieties.length === 0"
     :placeholder="$t('content.whatnow.no_soc')">
@@ -116,3 +116,16 @@ export default {
   }
 }
 </script>
+<style>
+.vs--disabled {
+  .vs__dropdown-toggle,
+  .vs__clear,
+  .vs__search,
+  .vs__selected,
+  .vs__open-indicator {
+    cursor: $disabled-cursor;
+    background-color: #E9E9E9!important;
+  }
+}
+</style>
+

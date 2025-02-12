@@ -329,6 +329,11 @@
     "deleted": "Deleted user",
     "list": {
       "manage": "Manage users",
+      "select_status": "Select status",
+      "select_role": "Select a role",
+      "select_country": "Select a country",
+      "select_terms": "Select a terms version",
+      "select_society": "Select a nacional society",
       "create": "Create new user",
       "download_report": "Download report",
       "empty": "Couldn't find any users",
@@ -374,8 +379,12 @@
     "content": "Content",
     "audit_log": {
       "audit_log": "Audit Log",
+      "my_audit_log": "My Audit Log",
       "empty": "No audit history found which matches this filter",
-      "soc_label": "Society"
+      "soc_label": "Society",
+      "select_hazard": "Select hazard type",
+      "select_language": "Select a language",
+      "select_soc": "Select a nacional society"
     },
     "whatnow": {
       "title": "Messages",

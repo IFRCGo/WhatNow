@@ -2,10 +2,10 @@
   <b-container fluid>
     <page-banner>
       <b-col>
-        <h1>{{ $t('content.audit_log.audit_log') }}</h1>
+        <h1>{{ $t('content.audit_log.my_audit_log') }}</h1>
       </b-col>
       <b-col>
-        <b-button size="lg" variant="dark" class="float-right rtl-float-left mr-2 rtl-ml-2" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
+        <b-button class="float-right rtl-float-left mr-2 rtl-ml-2 new-btn" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
           {{ $t('users.list.download_report') }}
         </b-button>
       </b-col>
@@ -13,13 +13,15 @@
 
      <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col cols="3">
+          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
           <SelectHazardType class="bg-white" v-model="hazardTypeFilter" :hazardTypeList="filteredHazardsList"></SelectHazardType>
         </b-col>
         <b-col cols="3">
+          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
           <v-select
             :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
             v-model="languageFilter"
-            class="w-100 styled-select"
+            class="w-100 v-select-custom"
             :options="filteredLanguages"
             label="text" :disabled="filteredLanguages.length === 0"
             :placeholder="$t('content.whatnow.select_language')">
@@ -36,12 +38,13 @@
           </v-select>
         </b-col>
         <b-col cols="3">
+          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
           <selectSociety
             :selected.sync="selectedSoc"
             :staynull="true" />
         </b-col>
         <b-col cols="3">
-          <b-button size="sm" variant="dark" @click="clearFilters" :disabled="noFilters" class="float-right rtl-float-left">
+          <b-button @click="clearFilters" :disabled="noFilters" class="float-right rtl-float-left new-btn">
             {{ $t('users.list.clear_filters') }}
           </b-button>
         </b-col>
@@ -76,7 +79,7 @@
             {{ data.item.created_at | moment("MM/DD/YY HH:mm:ss") }}
           </template>
           <template #cell(actions)="data">
-             <b-button v-if="data.item.entity_id" variant="primary" size="sm" class="mb-1" @click="viewChanges(data.item)" :to="{ name: '', params: {} }"> {{ $t('common.view_content') }} </b-button>
+             <b-button v-if="data.item.entity_id" class="mb-1 new-btn" @click="viewChanges(data.item)" :to="{ name: '', params: {} }"> {{ $t('common.view_content') }} </b-button>
           </template>
         </b-table>
         <b-pagination
@@ -303,3 +306,26 @@ export default {
 
 }
 </script>
+<style>
+.v-select-custom {
+  font-family: Poppins;
+  div {
+    background: #E9E9E9;
+    font-family: Poppins;
+    border: none;
+    border-radius: 10px;
+    padding: 2px;
+  }
+}
+td {
+  div {
+    div {
+      background: #F6333F!important;
+      color: white!important;
+    }
+  }
+}
+.select-header {
+  font-size: 1rem;
+}
+</style>
