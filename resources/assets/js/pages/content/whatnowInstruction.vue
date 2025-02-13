@@ -32,7 +32,9 @@
         <div class="mb-5" :key="`title-${index}`">
           <div class="mb-3 d-flex align-items-center justify-content-between">
             <div class="d-flex align-items-center">
-              <label class="key-message-label" :for="`${instructionName}-title-${index}`">Key message title</label>
+              <label class="key-message-label" :for="`${instructionName}-title-${index}`">
+                {{ $t('content.edit_whatnow.key_message_label') }}
+              </label>
               <div class="mx-5">
                 <span variant="link" class="more-info-icon" v-b-tooltip.hover
                   :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
@@ -52,7 +54,9 @@
         </div>
         <div class="d-flex justify-content-between mb-3" :key="`add-supporting-message-${index}`">
           <div class="d-flex justify-content-start mb-3">
-            <label class="supporting-message-label">Supporting message</label>
+            <label class="supporting-message-label">
+              {{ $t('content.edit_whatnow.supporting_message_label') }}
+            </label>
           </div>
           <div>
             <b-button size="sm" variant="outline-primary" @click="addSupportingMessage(index)" class="btn mb-2">
@@ -128,7 +132,6 @@ export default {
       instructionChange();
     },
     instructionChange() {
-      console.log('this.keyMessages', this.keyMessages);
       this.$emit('instructionUpdate', {
         instructionName: this.instructionName,
         instructions: this.keyMessages.map((keyMessage) => ({
@@ -168,13 +171,13 @@ export default {
 .key-message-title {
   font-size: 25px;
   font-weight: 600;
-  color: #1e1e1e;
+  color: $text-dark;
   margin-bottom: 4px;
 }
 
 .more-info-icon {
   font-size: 15px;
-  color: #000;
+  color: $text-color;
 }
 
 .key-message-label {
@@ -182,12 +185,12 @@ export default {
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
-  color: #1e1e1e;
+  color: $text-dark;
 }
 
 .key-message-input {
   border-radius: 8px;
-  background-color: #e6e6e6;
+  background-color: $bg-input-light;
   height: 45px;
   font-size: 14px;
   border: none;
@@ -223,13 +226,13 @@ export default {
 .supporting-message-label {
   font-size: 16px;
   font-weight: 500;
-  color: #1e1e1e;
+  color: $text-dark;
 }
 
 .supporting-message-input {
   height: 35px;
   border-radius: 8px;
-  background-color: #e6e6e6;
+  background-color: $bg-input-light;
   font-size: 12px;
   border: none;
   outline: none;
@@ -239,7 +242,7 @@ export default {
   min-height: 45px;
   border-left: 30px solid $hazard-default;
   border-radius: 10px;
-  background-color: #f6f6f6;
+  background-color: $cad-solid-bg-2;
   padding: 22px 16px 29px 26px;
   // Instructions
   &-immediate {
@@ -297,7 +300,7 @@ export default {
     margin: 0;
     padding: 0;
     li {
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: $border-separator;
     }
   }
 }

@@ -225,7 +225,6 @@ import WhatnowInstructions from '~/pages/content/whatnowInstruction'
 import Spooky from '~/components/global/Spooky'
 import SelectHazardType from '~/pages/content/simpleHazardTypePicker'
 import { ContentTranslation } from '../../store/models/contentTranslation'
-import ActionBanner from '~/components/ActionBanner'
 import PageBreadcrumb from '../../components/PageBreadcrumb.vue'
 
 const newContent = (langCode, countryCode) => {
@@ -244,7 +243,6 @@ export default {
     WhatnowInstructions,
     SelectHazardType,
     Spooky,
-    ActionBanner,
     PageBreadcrumb
   },
   data() {

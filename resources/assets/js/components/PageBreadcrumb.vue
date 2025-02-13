@@ -21,17 +21,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import '../../sass/variables.scss';
 
 .page-breadcrumbs {
   .breadcrumb-separator {
     font-size: 10px;
-    color: #000;
+    color: $text-color;
     margin-right: 4px;
   }
   .breadcrumb-link {
     font-size: 14px;
-    color: #000;
+    color: $text-color;
     text-transform: capitalize;
     text-decoration: none;
   }

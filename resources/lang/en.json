@@ -460,7 +460,9 @@
       "recovery_description": "Key safety for recovery actions",
       "hazard_type": "Hazard Type",
       "content_edit_title": "Content Edit",
-      "content_add_hazard_title": "Add Hazard"
+      "content_add_hazard_title": "Add Hazard",
+      "key_message_label": "Key message title",
+      "supporting_message_label": "Supporting message"
     },
     "audit": "Audit log",
     "export": "Export",

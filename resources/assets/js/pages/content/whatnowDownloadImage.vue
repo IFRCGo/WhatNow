@@ -81,8 +81,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+@import '../../../sass/_variables.scss';
 .download-image-btn {
-  color: #000;
+  color: $text-color;
 }
 </style>
