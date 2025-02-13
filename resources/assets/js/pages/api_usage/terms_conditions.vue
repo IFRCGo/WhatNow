@@ -36,9 +36,6 @@
                 {{ $t('common.published') }} {{ terms.createdAt | moment('MMM DD YYYY, HH:mm') }}
               </p>
               <hr>
-              <!--<router-link :to="{ name: 'api-usage.prev_terms_conditions', params: {} }" class="underlined-link">
-                {{ $t('api_usage.view_prev_terms') }}
-              </router-link> -->
             </b-col>
 
             <b-col cols="12" class="mt-4">

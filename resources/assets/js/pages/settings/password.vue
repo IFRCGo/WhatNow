@@ -121,7 +121,7 @@ export default {
   position: absolute;
   right: 25px;
   top: 60%;
-  transform: translateY(-50%); /* 🔥 Centra el icono verticalmente */
+  transform: translateY(-50%);
   cursor: pointer;
   color: #A8A8A8;
   font-size: 18px;

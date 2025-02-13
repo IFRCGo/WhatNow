@@ -4,9 +4,6 @@
         <b-col>
           <h1 class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
         </b-col>
-       <!-- <b-col>
-        <selectSociety class="ml-auto rtl-mr-auto" v-model="selectedSoc" v-on:languageChange="languageChange" :societyList="filteredSocieties"></selectSociety>
-        </b-col> -->
       </page-banner>
       <b-row class="pl-4 pr-4 pb-4 bg-white">
           <b-col cols="7">

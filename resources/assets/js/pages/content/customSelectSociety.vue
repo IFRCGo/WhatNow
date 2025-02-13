@@ -50,7 +50,7 @@ export default {
       try {
         await this.$store.dispatch('content/fetchOrganisations')
       } catch (e) {
-        console.log(e)
+        this.$noty.error(this.$t('error_alert_text'))
       }
     },
     getLocalStorage () {
