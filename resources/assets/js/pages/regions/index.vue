@@ -5,16 +5,18 @@
           <h1 class="sec-title">{{ $t('regions.list.manage') }}</h1>
         </b-col>
         <b-col cols="12">
-          <selectSociety
-            class="float-right"
-            :selected.sync="selectedSoc"
-            :staynull="true"
-          />
+          <div class="input-section">
+                <selectSociety
+                  class="float-right s-soc"
+                  :selected.sync="selectedSoc"
+                  :staynull="true"
+                />
+          </div>
         </b-col>
       </page-banner>
       <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col>
-          <b-button v-if="selectedSoc" size="sm" variant="dark" class="float-right" v-b-modal.modal-create>
+          <b-button v-if="selectedSoc" class="float-right new-btn" v-b-modal.modal-create>
             {{ $t('regions.list.add') }}
             <fa :icon="['fas', 'plus']" />
           </b-button>
@@ -39,8 +41,8 @@
                 </span>
               </template>
               <template #cell(actions)="data">
-                <b-button variant="dark" size="sm" class="mb-1" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
-                <b-button variant="dark" size="sm" class="mb-1" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
+                <b-button class="mb-1 new-btn" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
+                <b-button class="mb-1 new-btn" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
               </template>
             </b-table>
           </div>
@@ -53,28 +55,11 @@
         id="modal-create"
         size="lg"
         centered
-        hide-header
         hide-footer
         ref="modal"
+        :title="$t(isEdit ? 'regions.list.edit' : 'regions.list.create')"
       >
         <form ref="form" @submit.prevent="handleSubmit" class="px-3">
-          <h2 class="h3">{{ $t(isEdit ? 'regions.list.edit' : 'regions.list.create') }}</h2>
-          <b-row class="whatnow-language-picker-in-modal mb-4">
-            <b-col>
-              <b-nav tabs>
-                <b-nav-item
-                  v-for="lang in currentLanguages"
-                  :key="lang"
-                  @click="selectedLanguage = lang"
-                  :active="selectedLanguage === lang">
-                  <div class="nav-link-wrapper text-center h-100">
-                    {{ lang | uppercase }} <br />
-                    <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
-                  </div>
-                </b-nav-item>
-              </b-nav>
-            </b-col>
-          </b-row>
           <b-form-group
             :label="$t('regions.form.name')"
             label-for="name-input"
@@ -103,7 +88,7 @@
           </b-form-group>
           <div class="modal-footer pb-0 px-0">
             <b-button type="button" variant="outline-danger" class="btn btn-outline-danger" @click.prevent="resetModal">{{ $t('common.cancel') }}</b-button>
-            <b-button type="submit" :disabled="fetchingRegions" variant="dark" class="btn btn-dark">
+            <b-button type="submit" :disabled="fetchingRegions" class="btn new-btn">
               <fa :icon="['fas', 'spinner']" spin v-show="fetchingRegions"/>
               {{ $t(isEdit ? 'update' : 'common.create') }}
             </b-button>
@@ -319,3 +304,19 @@ export default {
   }
 }
 </script>
+  <style scoped>
+  .input-section {
+    background: #F7F7F7;
+    border-radius: 10px;
+    padding: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .s-soc {
+    width: 25%!important;
+  }
+  .modal-header {
+    border-bottom: 1px solid #ddd; /* Línea divisoria */
+    padding-bottom: 10px;
+  }
+  </style>
