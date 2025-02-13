@@ -457,8 +457,10 @@
       "disaster_risk_reduction": "Disaster Risk Reduction",
       "disaster_risk_reduction_description": "Key safety messaging from PAPE",
       "recovery": "Recovery",
-      "recovery_description": "Key safety for recovery actions"
-
+      "recovery_description": "Key safety for recovery actions",
+      "hazard_type": "Hazard Type",
+      "content_edit_title": "Content Edit",
+      "content_add_hazard_title": "Add Hazard"
     },
     "audit": "Audit log",
     "export": "Export",

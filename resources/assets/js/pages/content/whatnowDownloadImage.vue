@@ -3,10 +3,11 @@
     <img v-if="!downloadingImage" :src="src('downloadIcon')" :srcSet="srcSet('downloadIcon')" alt="" class="hazard-card-download-container-icon"/>
     <fa  v-else class="" spin :icon="['fas', 'spinner']"/>
     <span class="ml-1 rtl-mr-1">
-      <button
+      <b-link
         @click="downloadImage"
         :disabled="downloadingImage"
-        class="btn-link underlined-link hazard-card-download-container-button">{{ $t('content.edit_whatnow.download_image')}}</button> (.jpg)
+        class="download-image-btn"
+        >{{ $t('content.edit_whatnow.download_image')}}</b-link> (.jpg)
     </span>
     <b-modal ref="save-hazard-card-modal" hide-footer size="lg" :title="$t('content.edit_whatnow.download_image')">
       <img class="w-100 mb-2 rounded box-shadow" v-if="imageData" :src="imageData" :alt="$t('content.edit_whatnow.downloaded_image_alt')"/>
@@ -78,3 +79,10 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+
+.download-image-btn {
+  color: #000;
+}
+</style>

@@ -72,9 +72,9 @@
               </b-button>
           </b-input-group>
         </li>
+        <WhatnowDownloadImage v-if="message.supportingMessages.length > 0" :instructionId="instructionId" :langCode="langCode"
+          :instructionName="instructionName" :revision="true" :key="message.key"/>
       </transition-group>
-      <WhatnowDownloadImage v-if="instructionsCopy.length > 0" :instructionId="instructionId" :langCode="langCode"
-        :instructionName="instructionName" :revision="true" />
     </b-card>
   </b-col>
 </template>
