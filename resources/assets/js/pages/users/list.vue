@@ -2,7 +2,7 @@
     <b-container fluid>
       <page-banner>
         <b-col sm>
-          <h1 class="users-title">{{ $t('users.list.manage') }}</h1>
+          <h1 class="sec-title">{{ $t('users.list.manage') }}</h1>
         </b-col>
         <b-col sm>
           <b-button  class="float-right rtl-float-left new-btn" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
@@ -444,17 +444,6 @@ export default {
 }
 </script>
   <style>
-  .users-title {
-    font-family: Poppins;
-    font-size: 55px;
-    font-weight: 600;
-    line-height: 80px;
-    letter-spacing: -0.01em;
-    text-align: left;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-  }
-
   .v-form-select-custom {
     background: #E9E9E9;
     font-family: Poppins;

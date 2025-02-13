@@ -2,7 +2,7 @@
   <b-container fluid>
     <page-banner>
       <b-col cols="6">
-        <h1 class="terms-title">{{ $t('sidebar.terms_conditions') }}</h1>
+        <h1 class="sec-title">{{ $t('sidebar.terms_conditions') }}</h1>
       </b-col>
       <b-col cols="6">
         <b-button class="float-right rtl-float-left mr-2 new-btn" :disabled="updatingTerms" @click="saveTerms">
@@ -79,11 +79,6 @@
         display: none;
       }
     }
-  }
-
-  .terms-title {
-    font-size: 2.8rem;
-    font-weight: 600;
   }
 
   .input-section {
