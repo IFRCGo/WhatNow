@@ -320,7 +320,7 @@
     }
   }
   </script>
-  <style>
+  <style scoped>
     .collapse-content {
       padding: 3rem;
       margin-top: -2rem;
@@ -350,12 +350,6 @@
       align-items: center;
     }
 
-    .button-go {
-      padding: 0.4rem 1.6rem;
-      font-size: 20px;
-      font-weight: 600;
-    }
-
     .subtitle {
       font-weight: 500;
       font-size: 28px
@@ -380,9 +374,5 @@
     .card-text {
       font-weight: 400;
       font-size: 20px;
-    }
-
-    body {
-      font-family: Poppins!important;
     }
   </style>

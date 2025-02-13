@@ -113,7 +113,7 @@ export default {
   display: none;
 }
 .inputs-form {
-  background: #E9E9E9!important;
+  background: #E9E9E9;
   border: none;
   border-radius: 10px;
 }

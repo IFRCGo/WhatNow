@@ -1,10 +1,10 @@
   <template>
     <b-container fluid>
       <page-banner>
-        <b-col sm>
-          <h1>{{ $t('regions.list.manage') }}</h1>
+        <b-col cols="12">
+          <h1 class="sec-title">{{ $t('regions.list.manage') }}</h1>
         </b-col>
-        <b-col sm>
+        <b-col cols="12">
           <selectSociety
             class="float-right"
             :selected.sync="selectedSoc"

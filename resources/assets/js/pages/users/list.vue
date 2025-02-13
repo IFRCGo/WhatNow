@@ -446,24 +446,10 @@ export default {
   <style>
   .v-form-select-custom {
     background: #E9E9E9;
-    font-family: Poppins;
     border: none;
     border-radius: 10px;
     padding: 8px 8px;
-    font-family: Poppins;
     font-size: 18px;
-    height: 48px;
-  }
-  .v-select-custom {
-    input {
-      font-family: Poppins;
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 34px;
-      text-align: left;
-      text-underline-position: from-font;
-      text-decoration-skip-ink: none;
-    }
   }
  th {
    border-right: none !important;

@@ -186,17 +186,6 @@ export default {
   background: #F7F7F7;
   border-radius: 10px;
 }
-
-.v-select-custom {
-  font-family: Poppins;
-  div {
-    background: #E9E9E9;
-    font-family: Poppins;
-    border: none;
-    border-radius: 10px;
-    padding: 2px;
-  }
-}
 .v-select {
   min-width: 192px;
 }

@@ -21,7 +21,7 @@
 .styled-input.is-invalid {
   &:focus {
     box-shadow: none!important;
-  } 
+  }
 }
 
 textarea {
@@ -33,7 +33,6 @@ textarea {
 .styled-label {
   color: #000000;
   text-transform: capitalize;
-  font-family: Poppins;
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 6px;
@@ -59,3 +58,10 @@ textarea {
 
 }
 
+.v-select-custom > div {
+  background: #E9E9E9;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+
+}

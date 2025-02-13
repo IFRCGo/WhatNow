@@ -50,15 +50,3 @@ export default {
   }),
 }
 </script>
-<style>
-.v-select-custom {
-  font-family: Poppins;
-  div {
-    background: #E9E9E9;
-    font-family: Poppins;
-    border: none;
-    border-radius: 10px;
-    padding: 2px;
-  }
-}
-</style>

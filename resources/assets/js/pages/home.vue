@@ -305,12 +305,6 @@ export default {
   width: 18%;
 }
 
-.button-go {
-  padding: 0.6rem 2rem;
-  font-size: 20px;
-  font-weight: 600;
-}
-
 .card-body {
   padding-bottom: 0;
 }

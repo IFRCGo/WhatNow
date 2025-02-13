@@ -116,16 +116,3 @@ export default {
   }
 }
 </script>
-<style>
-.vs--disabled {
-  .vs__dropdown-toggle,
-  .vs__clear,
-  .vs__search,
-  .vs__selected,
-  .vs__open-indicator {
-    cursor: $disabled-cursor;
-    background-color: #E9E9E9!important;
-  }
-}
-</style>
-

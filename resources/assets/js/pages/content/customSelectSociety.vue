@@ -118,20 +118,19 @@ export default {
 </script>
 <style scoped>
 /deep/ .vs__dropdown-toggle {
-  font-family: Poppins!important;
-  background-color: #E9E9E9 !important;  /* Color de fondo */
-  border-radius: 10px !important;
-  border: none !important;
-  padding: 5px !important; /* Ajusta el padding */
-  margin: 10px !important; /* Ajusta el margen */
+  background-color: #E9E9E9;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  margin: 10px;
 }
 
 /deep/ .vs__selected {
-  color: #333 !important;
+  color: #333;
 }
 
 /deep/ .vs__search {
-  padding: 0 !important; /* Elimina padding interno */
+  padding: 0;
 }
 .v-select {
   min-width: 192px;

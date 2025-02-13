@@ -672,7 +672,6 @@ body {
 }
 
 .steps {
-  font-family: Poppins;
   font-weight: 400;
   font-size: 36px;
   line-height: 34px;
