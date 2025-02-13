@@ -131,8 +131,8 @@ export default {
 }
 
 .font-light {
-  font-weight: 500!important;
-  font-size: 20px!important;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .bottom-grey {
