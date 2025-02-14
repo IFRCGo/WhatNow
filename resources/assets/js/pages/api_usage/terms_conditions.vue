@@ -5,7 +5,7 @@
         <h1 class="sec-title">{{ $t('sidebar.terms_conditions') }}</h1>
       </b-col>
       <b-col cols="6">
-        <b-button class="float-right rtl-float-left mr-2 new-btn" :disabled="updatingTerms" @click="saveTerms">
+        <b-button class="float-right rtl-float-left mr-2 btn-outline-primary" :disabled="updatingTerms" @click="saveTerms">
           <fa spin :icon="['fas', 'spinner']" v-if="updatingTerms"/>
           <span v-if="updatingTerms">{{ $t('content.whatnow.publishing') }}</span>
           <span v-else>{{ $t('common.publish_new') }}</span>

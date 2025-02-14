@@ -29,7 +29,7 @@
                     </template>
                </v-select>
           </span>
-            <b-button class="mr-2 mb-2 new-btn dw-btn" prop='link' @click="downloadBlankTemplate">
+            <b-button class="mr-2 mb-2 btn-outline-primary dw-btn" prop='link' @click="downloadBlankTemplate">
               <span>
                 <i class="fas fa-download"></i>
               </span>

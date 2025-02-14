@@ -16,7 +16,7 @@
       </page-banner>
       <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col>
-          <b-button v-if="selectedSoc" class="float-right new-btn" v-b-modal.modal-create>
+          <b-button v-if="selectedSoc" class="float-right btn-outline-primary" v-b-modal.modal-create>
             {{ $t('regions.list.add') }}
             <fa :icon="['fas', 'plus']" />
           </b-button>
@@ -41,8 +41,8 @@
                 </span>
               </template>
               <template #cell(actions)="data">
-                <b-button class="mb-1 new-btn" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
-                <b-button class="mb-1 new-btn" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
+                <b-button class="mb-1 btn-outline-primary" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
+                <b-button class="mb-1 btn-outline-primary" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
               </template>
             </b-table>
           </div>
@@ -63,10 +63,12 @@
           <b-form-group
             :label="$t('regions.form.name')"
             label-for="name-input"
+            class="add-region-label"
           >
             <b-form-input
               id="name-input"
               v-model="names[selectedLanguage]"
+              class="new-region-input"
               required
               aria-describedby="name-input-help"
             ></b-form-input>
@@ -76,10 +78,12 @@
           <b-form-group
             :label="$t('regions.form.description')"
             label-for="description-input"
+            class="add-region-label"
           >
             <b-form-input
               id="description-input"
               v-model="descriptions[selectedLanguage]"
+              class="new-region-input"
               required
               aria-describedby="description-input-help"
             ></b-form-input>
@@ -87,10 +91,14 @@
 
           </b-form-group>
           <div class="modal-footer pb-0 px-0">
-            <b-button type="button" variant="outline-danger" class="btn btn-outline-danger" @click.prevent="resetModal">{{ $t('common.cancel') }}</b-button>
-            <b-button type="submit" :disabled="fetchingRegions" class="btn new-btn">
+            <b-button type="submit" :disabled="fetchingRegions" class="btn btn-outline-primary ">
               <fa :icon="['fas', 'spinner']" spin v-show="fetchingRegions"/>
+              <i class="fas fa-check"></i>
               {{ $t(isEdit ? 'update' : 'common.create') }}
+            </b-button>
+            <b-button type="button" class="btn btn-primary " @click.prevent="resetModal">
+              <i class="fas fa-times"></i>
+              {{ $t('common.cancel') }}
             </b-button>
           </div>
         </form>
@@ -315,8 +323,19 @@ export default {
   .s-soc {
     width: 25%!important;
   }
-  .modal-header {
-    border-bottom: 1px solid #ddd; /* Línea divisoria */
-    padding-bottom: 10px;
+  .line-head {
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+  }
+  .new-region-input{
+    background: #F7F7F7;
+    line-height: 1rem;
+    border: none;
+  }
+  .add-region-label {
+    font-size: 1rem;
   }
   </style>
