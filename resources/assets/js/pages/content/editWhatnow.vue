@@ -670,7 +670,7 @@ export default {
 .urgency-card {
   padding: 16px 24px;
   border-radius: 8px;
-  border: solid 0.8px #e6e6e6;
+  border: solid 0.8px $urgency-card-border;
   position: relative;
   box-shadow: 0px 1.6px 6.4px rgba(0, 0, 0, 0.1);
 
@@ -682,13 +682,13 @@ export default {
       font-size: 24px;
       font-weight: 600;
       letter-spacing: -0.32px;
-      color: #1e1e1e;
+      color: $text-dark;
     }
 
     p.urgency-description {
       font-size: 14px;
       font-weight: normal;
-      color: #000;
+      color: $text-black;
     }
 
     &::after {
@@ -696,7 +696,7 @@ export default {
       display: block;
       width: 100%;
       height: 1px;
-      background-color: #cecece;
+      background-color: $cad-solid-bg-3;
       margin-top: 16px;
     }
   }
