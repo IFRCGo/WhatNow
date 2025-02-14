@@ -36,6 +36,7 @@ $card-border-color: #e8eced;
 $card-border-radius: 0.7rem;
 $card-gradient-bg: linear-gradient(80deg, $card-cap-bg 28%, $card-cap-2-bg 111%);
 $card-solid-bg: #f7f7f7;
+$cad-solid-bg-2: #f6f6f6;
 
 // Alerts
 $alert-border-radius: 0.7rem;
@@ -48,6 +49,7 @@ $border-radius-sm: .15rem;
 $border-primary-1: solid 1px $red;
 $border-primary-2: solid 2px $red;
 $border-primary-3: solid 3px $red;
+$border-separator: solid 1px #e5e5e5;
 
 
 // Nav Pills
@@ -68,12 +70,13 @@ $font-size-base: 0.75rem;
 
 // Hazard instrution colours
 $hazard-default: #857d7a;
-$mid-term: #006a72;
-$seasonalForecast: #00bcd6;
-$watch: #c5d86d;
-$warning: #ffc200;
-$immediate: #ee3224;
-$recover: #5c3160;
+$immediate: #ff6b6b;
+$warning: #ffa07a;
+$anticipated: #f9d57f;
+$assess_and_plan: #77d79d;
+$mitigate_risks: #5bafe9;
+$prepare_to_respond: #c6a0cf;
+$recover: #989898F5;
 
 // Alert severity
 $alert-extreme: #ee3224;
@@ -94,3 +97,6 @@ $global-transition: all 300ms ease-in-out;
 $icon-not-active: #a8a8a8;
 $icon-active: #f6333f;
 
+
+//backgrounds
+$bg-input-light: #e6e6e6;

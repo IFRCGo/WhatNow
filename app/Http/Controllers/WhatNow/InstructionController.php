@@ -208,7 +208,6 @@ final class InstructionController extends ApiController
             'translations.*.title' => 'required|string',
             'translations.*.description' => 'required|string',
             'translations.*.webUrl' => 'nullable|url',
-            'translations.*.urgency_id' => 'required|integer|exists:urgencies,id',
         ]);
 
         $data = $request->all();

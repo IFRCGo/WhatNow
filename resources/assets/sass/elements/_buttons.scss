@@ -3,7 +3,7 @@
   border-radius: 20px;
   border: none;
   padding: 7px 25px;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
 
   &:focus {
@@ -61,7 +61,7 @@
 
 .btn-outline-primary {
   background-color: $white;
-  border: 3px solid $bg-primary;
+  border: 2px solid $bg-primary;
   color: $bg-primary;
 
   &:hover {
