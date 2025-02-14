@@ -155,7 +155,7 @@
               <b-col cols="6">
               </b-col>
               <b-col cols="6">
-                <b-button type="submit" size="lg" class="float-right rtl-float-left mr-2 new-btn" @click="update = true">
+                <b-button type="submit" size="lg" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
                   <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
                   {{ $t('common.save_changes') }}
                 </b-button>
@@ -169,7 +169,7 @@
                   {{ $t('common.cancel') }}
                 </b-button>
 
-                <b-button type="submit" class="float-right rtl-float-left mr-2 new-btn" v-if="(!newUser && can(authUser, permissions.USERS_EDIT)) || isMe" @click="update = true">
+                <b-button type="submit" class="float-right rtl-float-left mr-2 btn-outline-primary" v-if="(!newUser && can(authUser, permissions.USERS_EDIT)) || isMe" @click="update = true">
                   <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
                   {{ $t('common.save_changes') }}
                 </b-button>
@@ -235,12 +235,12 @@
                <b-card class="bg-grey">
                  <b-row>
                    <b-col>
-                     <b-button variant="link" class="float-right new-btn" @click="societies.showAll = true"
+                     <b-button variant="link" class="float-right btn-outline-primary" @click="societies.showAll = true"
                         v-if="!societies.showAll && userSocieties.length > societies.limitNumber">
                         <u>{{ $t('users.edit.view')}} {{ userSocieties.length - societies.limitNumber }} {{ $t('users.edit.more')}}
                         <fa icon="chevron-down" fixed-width/></u>
                      </b-button>
-                     <b-button variant="link" class="float-right new-btn" @click="societies.showAll = false"
+                     <b-button variant="link" class="float-right btn-outline-primary" @click="societies.showAll = false"
                         v-if="societies.showAll && userSocieties.length > societies.limitNumber">
                         <u>{{ $t('users.edit.less')}}
                         <fa icon="chevron-up" fixed-width/></u>
@@ -267,13 +267,13 @@
 
                   <b-row v-if="can(authUser, permissions.USERS_EDIT)">
                      <b-col md="12" xl="12" class="mb-3" v-if="!userHasPermission(permissions.ALL_ORGANISATIONS)">
-                        <b-button size="sm" class="new-btn" @click="societies.isAddSocVisible = true" v-if="!societies.isAddSocVisible">
+                        <b-button size="sm" class="btn-outline-primary" @click="societies.isAddSocVisible = true" v-if="!societies.isAddSocVisible">
                            {{ $t('users.edit.add_society')}}
                         </b-button>
                         <div v-if="societies.isAddSocVisible && can(authUser, permissions.USERS_EDIT)" class="d-flex align-items-center">
                              <selectSociety :selected.sync="societies.selectedSoc" class="mr-3"></selectSociety>
                            <div>
-                              <b-button size="sm" class="mr-3 new-btn" @click="addSociety(societies.selectedSoc)">
+                              <b-button size="sm" class="mr-3 btn-outline-primary" @click="addSociety(societies.selectedSoc)">
                                 {{ $t('common.add') }}
                               </b-button>
                               <b-button class="cancel-btn" variant="light" @click="societies.isAddSocVisible = false">

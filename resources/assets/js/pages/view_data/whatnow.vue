@@ -20,7 +20,7 @@
 
     <b-row class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
       <b-col cols="auto" class="d-flex align-items-center">
-        <customSelectSociety class="select-society-custom"> :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></customSelectSociety>
+        <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></selectSociety>
         <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
       </b-col>
       <b-col cols="auto" v-if="hazardsList" class="d-flex align-items-center">
@@ -58,7 +58,6 @@
 
 <script>
 import SelectSociety from '~/pages/content/selectSociety'
-import CustomSelectSociety from '~/pages/content/customSelectSociety'
 import WhatnowList from '~/pages/content/whatnowList'
 import { mapGetters } from 'vuex'
 import Spooky from '~/components/global/Spooky'
@@ -77,8 +76,7 @@ export default {
     SelectSociety,
     Spooky,
     WhatnowList,
-    PageBanner,
-    CustomSelectSociety
+    PageBanner
   },
   data () {
     return {

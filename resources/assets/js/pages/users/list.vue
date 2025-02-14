@@ -5,7 +5,7 @@
           <h1 class="sec-title">{{ $t('users.list.manage') }}</h1>
         </b-col>
         <b-col sm>
-          <b-button  class="float-right rtl-float-left new-btn" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
+          <b-button  class="float-right rtl-float-left btn-outline-primary" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
             {{ $t('users.list.create') }}
           </b-button>
         </b-col>
@@ -68,7 +68,7 @@
             v-if="!apiUsers"/>
         </b-col>
         <b-col cols="2" xl="1">
-          <b-button @click="clearFilters" :disabled="noFilters" class="float-right new-btn">
+          <b-button @click="clearFilters" :disabled="noFilters" class="float-right btn-outline-primary">
             {{ $t('users.list.clear_filters') }}
           </b-button>
         </b-col>
@@ -126,8 +126,8 @@
               </div>
             </template>
             <template #cell(actions)="data">
-              <b-button class="mb-1 new-btn" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)"> {{ $t('common.edit') }} </b-button>
-              <b-button class="mb-1 new-btn" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"> {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }} </b-button>
+              <b-button class="mb-1 btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)"> {{ $t('common.edit') }} </b-button>
+              <b-button class="mb-1 btn-outline-primary" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"> {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }} </b-button>
             </template>
           </b-table>
           </div>
