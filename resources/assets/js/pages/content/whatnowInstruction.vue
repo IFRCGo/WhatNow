@@ -165,23 +165,23 @@ export default {
 }
 </script>
 
-
 <style scoped lang="scss">
 @import '../../../sass/variables.scss';
+
 .key-message-title {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   color: $text-dark;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .more-info-icon {
-  font-size: 15px;
+  font-size: 12px;
   color: $text-color;
 }
 
 .key-message-label {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -189,10 +189,10 @@ export default {
 }
 
 .key-message-input {
-  border-radius: 8px;
+  border-radius: 6px;
   background-color: $bg-input-light;
-  height: 45px;
-  font-size: 14px;
+  height: 36px;
+  font-size: 11px;
   border: none;
   outline: none;
 }
@@ -201,10 +201,10 @@ export default {
   position: relative;
 
   .btn-delete-item {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     position: absolute;
-    right: 4px;
+    right: 3px;
     top: 2px;
     padding: 0;
     border: none;
@@ -215,8 +215,8 @@ export default {
 }
 
 .btn-delete-key-message {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: none;
   background-color: transparent;
@@ -224,27 +224,27 @@ export default {
 }
 
 .supporting-message-label {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
   color: $text-dark;
 }
 
 .supporting-message-input {
-  height: 35px;
-  border-radius: 8px;
+  height: 28px;
+  border-radius: 6px;
   background-color: $bg-input-light;
-  font-size: 12px;
+  font-size: 9px;
   border: none;
   outline: none;
 }
 
 .key-message-card {
-  min-height: 45px;
-  border-left: 30px solid $hazard-default;
-  border-radius: 10px;
+  min-height: 36px;
+  border-left: 24px solid $hazard-default;
+  border-radius: 8px;
   background-color: $cad-solid-bg-2;
-  padding: 22px 16px 29px 26px;
-  // Instructions
+  padding: 18px 13px 23px 21px;
+
   &-immediate {
     border-color: $immediate;
   }
@@ -265,10 +265,6 @@ export default {
     border-color: $assess_and_plan;
   }
 
-  &-mitigate_risks {
-    border-color: $mitigate_risks;
-  }
-
   &-prepare_to_respond {
     border-color: $prepare_to_respond;
   }
@@ -279,9 +275,10 @@ export default {
 
   .hazard-card-download-container {
     color: $grey;
+
     .hazard-card-download-container-icon {
-      width: 16px;
-      height: 16px;
+      width: 13px;
+      height: 13px;
       object-fit: contain;
     }
 
@@ -293,12 +290,14 @@ export default {
   }
 
   h5 {
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
   }
+
   ol {
     list-style-position: inside;
     margin: 0;
     padding: 0;
+
     li {
       border-bottom: $border-separator;
     }
