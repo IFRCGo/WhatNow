@@ -64,7 +64,7 @@
         </p>
 
         <p>
-          <b>{{ $t('terms_service_page.privacy_policy.heading') }}</b> 
+          <b>{{ $t('terms_service_page.privacy_policy.heading') }}</b>
           <i18n path="terms_service_page.privacy_policy.body" tag="span">
             <b-link href="https://www.preparecenter.org/content/privacy-policy" target="_blank" rel="noreferrer noopener">https://www.preparecenter.org/content/privacy-policy</b-link>
           </i18n>

@@ -2,17 +2,17 @@
   <v-select
     :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
     v-model="selectedSoc"
-    class="w-100 v-select-custom"
+    class="w-100 select-custom"
     :options="listOfSocieties"
     label="name" :disabled="listOfSocieties.length === 0"
     :placeholder="$t('content.whatnow.no_soc')">
     <template slot="option" slot-scope="option">
-      <div class="ml-2 rtl-mr-2 dropdown-option">
+      <div class="ml-1 rtl-mr- dropdown-option">
         {{ option.name }}
       </div>
     </template>
     <template slot="selected-option" slot-scope="option">
-      <div class="ml-2 rtl-mr-2 dropdown-option">
+      <div class="ml-1 rtl-mr-1 dropdown-option">
         {{ option.name }}
       </div>
     </template>
@@ -50,7 +50,7 @@ export default {
       try {
         await this.$store.dispatch('content/fetchOrganisations')
       } catch (e) {
-        console.log(e)
+        this.$noty.error(this.$t('error_alert_text'))
       }
     },
     getLocalStorage () {
@@ -116,3 +116,25 @@ export default {
   }
 }
 </script>
+<style scoped>
+/deep/ .vs__dropdown-toggle {
+  background-color: #E9E9E9;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+  margin: 10px;
+}
+
+/deep/ .vs__selected {
+  color: #333;
+}
+
+/deep/ .vs__search {
+  padding: 0;
+}
+.v-select {
+  min-width: 192px;
+}
+</style>
+
+

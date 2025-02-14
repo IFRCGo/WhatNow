@@ -49,6 +49,12 @@
   }
 }
 
+.button-go {
+  padding: 0.2rem 1.2rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .btn-primary {
   background-color: $bg-primary;
 }
@@ -57,7 +63,7 @@
   background-color: $white;
   border: 3px solid $bg-primary;
   color: $bg-primary;
-  
+
   &:hover {
     background-color: $bg-primary;
     color: $white;
@@ -78,6 +84,40 @@
 
   &:disabled {
     background-color: $bg-disabled;
+  }
+}
+
+.new-btn {
+  border: 3px solid #F6333F;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.9rem;
+  background: white;
+  color: #F6333F;
+}
+.new-btn:hover {
+  border: 3px solid #F6333F;
+  background: white;
+  color: #F6333F;
+}
+
+.new-btn:active {
+  border: 3px solid #F6333F;
+  background: #F6333F;
+  color: white;
+}
+.new-btn:focus {
+  border: 3px solid #F6333F;
+  background: #F6333F;
+  color: white;
+}
+
+.vs--disabled {
+  .vs__dropdown-toggle,
+  .vs__clear,
+  .vs__search,
+  .vs__selected,
+  .vs__open-indicator {
+    background-color: #E9E9E9!important;
   }
 }
 

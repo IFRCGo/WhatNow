@@ -2,33 +2,49 @@
     <b-container fluid>
       <page-banner>
         <b-col>
-          <h1>{{ $t('content.bulk_upload.bulk_upload') }}</h1>
-        </b-col>
-        <b-col>
-        <selectSociety class="ml-auto rtl-mr-auto" v-model="selectedSoc" v-on:languageChange="languageChange" :societyList="filteredSocieties"></selectSociety>
+          <h1 class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
         </b-col>
       </page-banner>
-      <b-row class="pl-4 pr-4 pb-4 pt-4 bg-white">
+      <b-row class="pl-4 pr-4 pb-4 bg-white">
           <b-col cols="7">
-          <h1>{{ $t('content.bulk_upload.export_template') }}</h1>
-          <b-button class="mr-2 mb-2" prop='link' @click="downloadBlankTemplate">
-              {{ $t('content.bulk_upload.template') }}
-          </b-button>
+          <h1 class="mb-4">{{ $t('content.bulk_upload.export_template') }}</h1>
           <span v-if="isFetchingLangs"><fa class="ml-2" spin :icon="['fas', 'spinner']"/></span>
           <span v-else>
-              <b-button class="mr-2 mb-2" v-for="lang in currentLanguages" prop='link' @click="downloadTemplate(lang)" :key="lang">
-                  {{ languages[lang].name }} ({{languages[lang].native}} - {{lang}})
-              </b-button>
+               <v-select
+                 :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
+                 v-model="languageFilter"
+                 class="w-100 v-select-custom bulk-select mr-4"
+                 :options="filteredLanguages"
+                 label="text" :disabled="filteredLanguages.length === 0"
+                 :placeholder="$t('content.audit_log.select_language')">
+                    <template slot="option" slot-scope="option">
+                     <div class="ml-2 rtl-mr-2 dropdown-option">
+                    {{ option.text }}
+                     </div>
+                    </template>
+                    <template slot="selected-option" slot-scope="option">
+                    <div class="ml-2 rtl-mr-2 dropdown-option">
+                     {{ option.text }}
+                    </div>
+                    </template>
+               </v-select>
           </span>
-          <p>
-            {{ $t('content.bulk_upload.export_template_instructions') }}
+            <b-button class="mr-2 mb-2 new-btn dw-btn" prop='link' @click="downloadBlankTemplate">
+              <span>
+                <i class="fas fa-download"></i>
+              </span>
+              {{ $t('content.bulk_upload.template') }}
+            </b-button>
+          <p class="mt-4 bulk-text">
+            {{ $t('content.bulk_upload.refer') }}
             <a :href="pdf" target="_blank" rel="noopener noreferrer" class="underlined-link" @click="$fireGTEvent($gtagEvents.DownloadExportTemplateGuide)">{{ $t('content.bulk_upload.export_template_guide') }}</a>
+            {{ $t('content.bulk_upload.detail') }}
           </p>
           </b-col>
       </b-row>
-
+      <hr>
       <b-form @submit="uploadCsv" v-if="can(user, permissionsList.CONTENT_EDIT)">
-          <b-row class="pl-4 pr-4 mb-1 pt-4">
+          <b-row class="pl-4 pr-4 pt-4">
             <b-col cols="6" v-if="!uploadResults">
               <h1>{{ $t('content.bulk_upload.import_data') }}</h1>
             </b-col>
@@ -42,22 +58,51 @@
 
 
           <b-card class="pb-4 pt-4 pl-4 pr-4" v-if="!uploadResults">
+            <b-row>
+              <b-col cols="8">
              <b-alert show variant="warning" v-if="uploadWarning">{{ uploadWarning }}</b-alert>
              <b-alert show variant="danger" v-if="uploadError">{{ uploadError }}</b-alert>
              <b-row>
-                <b-col sm="12" xl="6">
+                <b-col cols="12" xl="6">
                     <div class="mt-4">
-                        <p>{{ $t('content.bulk_upload.file_instructions') }}</p>
-                        <b-form-file ref="fileinput" accept=".csv" :choose-label="$t('content.bulk_upload.choose')" id="file_input1" v-model="file"></b-form-file>
+                        <p class="bulk-text">{{ $t('content.bulk_upload.file_instructions') }}</p>
+                        <b-form-file class="file-inp" ref="fileinput" accept=".csv" :choose-label="$t('content.bulk_upload.choose')" id="file_input1" v-model="file"></b-form-file>
                     </div>
-                    <!--<div v-if="file !== null" class="mt-4 bg-grey pt-4 pb-4 pl-4 pr-4">-->
-                        <!--Selected file: {{file && file.name}}-->
-                        <!--<b-button @click="clearFiles">Reset</b-button>-->
-                    <!--</div>-->
+                  <hr>
                     <div class="mt-4">
-                        <p>{{ $t('content.bulk_upload.language_instructions') }}</p>
-                        <b-form-select v-model="selectedLanguage" class="w-100" :options="filteredLanguages" label="name"></b-form-select>
+                      <p class="bulk-text"> {{ $t('content.bulk_upload.choose_file') }} </p>
+                      <div>
+                        <label class="custom-radio">
+                          <input type="radio" v-model="selectedFileType" value="XLS" name="fileType" /> XLS
+                        </label>
+                        <label class="ml-4 custom-radio">
+                          <input type="radio" v-model="selectedFileType" value="CSV" name="fileType" /> CSV
+                        </label>
+                      </div>
                     </div>
+                  <hr>
+                    <div class="mt-4">
+                        <p class="bulk-text">{{ $t('content.bulk_upload.language_instructions') }}</p>
+                      <v-select
+                        :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
+                        v-model="languageFilter"
+                        class="w-100 v-select-custom bulk-select-2 mr-4"
+                        :options="filteredLanguages"
+                        label="text" :disabled="filteredLanguages.length === 0"
+                        :placeholder="$t('content.audit_log.select_language')">
+                        <template slot="option" slot-scope="option">
+                          <div class="ml-2 rtl-mr-2 dropdown-option">
+                            {{ option.text }}
+                          </div>
+                        </template>
+                        <template slot="selected-option" slot-scope="option">
+                          <div class="ml-2 rtl-mr-2 dropdown-option">
+                            {{ option.text }}
+                          </div>
+                        </template>
+                      </v-select>
+                    </div>
+                  <hr v-if="file">
                     <div class="mt-4" v-if="file">
                         <!-- Submit Button -->
                         <v-button :loading="isUploading" class="btn-dark w-100 mt-4">
@@ -67,15 +112,38 @@
                 </b-col>
               <b-col sm="12" xl="6">
                     <div class="mt-4">
-                      <p>{{ $t('content.bulk_upload.warnings.title') }}</p>
-                      <b-form-select v-model="warnings" :options="warningOptions"></b-form-select>
+                      <p class="bulk-text">{{ $t('content.bulk_upload.warnings.title') }}</p>
+                      <div class="btns-container">
+                        <v-button class="new-btn btn-yes">Yes</v-button>
+                        <v-button class="btn-no">No</v-button>
+                      </div>
                     </div>
-                    <div class="mt-4" v-if="!warnings">
-                      <p>{{ $t('content.bulk_upload.overwriting.title') }}</p>
-                      <b-form-select v-model="overwrite" :options="overwriteOptions"></b-form-select>
+                <hr>
+                    <div class="mt-4" v-if="warnings">
+                      <p class="bulk-text">{{ $t('content.bulk_upload.overwriting.title') }}</p>
+                      <v-select
+                        v-model="overwrite"
+                        class="w-100 v-select-custom bulk-select-3 mr-4"
+                        :options="overwriteOptions"
+                        label="text" :disabled="overwriteOptions[0].text === ''"
+                        :placeholder="$t('content.audit_log.select_overwrite')">
+                        >
+                        <template slot="option" slot-scope="option">
+                          <div class="ml-2 rtl-mr-2 dropdown-option">
+                            {{ option.text }}
+                          </div>
+                        </template>
+                        <template slot="selected-option" slot-scope="option">
+                          <div class="ml-2 rtl-mr-2 dropdown-option">
+                            {{ option.text }}
+                          </div>
+                        </template>
+                      </v-select>
                     </div>
               </b-col>
              </b-row>
+              </b-col>
+            </b-row>
           </b-card>
        </b-form>
 
@@ -118,7 +186,7 @@ export default {
       selectedSoc: null,
       selectedLanguage: false,
       warnings: true,
-      overwrite: false,
+      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off')},
       languages,
       pdf: pdfFile,
       permissionsList: permissionsList,
@@ -333,3 +401,61 @@ export default {
   }
 }
 </script>
+  <style>
+  .dw-btn {
+    padding: 7px 25px;
+  }
+  .custom-file-label {
+    background: #F7F7F7;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: none;
+  }
+  .bulk-select {
+    width: 26%!important;
+    display: inline-block;
+    input {
+      line-height: 0;
+      margin-top: 0rem;
+    }
+  }
+  .bulk-select-2 {
+    width: 45%!important;
+    display: inline-block;
+    input {
+      line-height: 0;
+      margin-top: 0rem;
+    }
+  }
+  .bulk-select-3 {
+    display: inline-block;
+    input {
+      line-height: 0;
+      margin-top: 0rem;
+    }
+  }
+  .custom-radio input:checked + span {
+    background-color: red;
+    border-color: red;
+  }
+  .btn-yes {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 5px 20px;
+  }
+  .btn-no {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 8px 23px;
+    margin-left: 1rem;
+  }
+  .btns-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+  }
+  .bulk-text {
+    font-size: 0.8rem;
+  }
+  </style>

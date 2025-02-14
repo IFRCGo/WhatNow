@@ -2,19 +2,21 @@
     <b-container fluid>
       <page-banner>
         <b-col sm>
-          <h1>{{ $t('users.list.manage') }}</h1>
+          <h1 class="sec-title">{{ $t('users.list.manage') }}</h1>
         </b-col>
         <b-col sm>
-          <b-button size="lg" variant="dark" class="float-right rtl-float-left" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
+          <b-button  class="float-right rtl-float-left new-btn" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
             {{ $t('users.list.create') }}
           </b-button>
         </b-col>
       </page-banner>
       <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col cols="3" xl="2">
+          <p class="select-header"> {{ $t('users.list.select_status') }}</p>
           <b-form-select
             v-model="activatedFilter"
             value-field="value"
+            class="v-form-select-custom"
             text-field="name"
             :options="[
             {
@@ -31,27 +33,34 @@
             }]" />
         </b-col>
         <b-col cols="3" xl="2" v-if="!apiUsers">
+          <p class="select-header"> {{ $t('users.list.select_role') }}</p>
           <b-form-select
             v-model="roleFilter"
             value-field="id"
+            class="v-form-select-custom"
             text-field="name"
             :options="roleOptions"/>
         </b-col>
         <b-col cols="3" xl="2" v-if="apiUsers">
+          <p class="select-header"> {{ $t('users.list.select_country') }}</p>
           <b-form-select
             v-model="countryFilter"
+            class="v-form-select-custom"
             value-field="code"
             text-field="name"
             :options="countryList"/>
         </b-col>
         <b-col cols="3" xl="2" v-if="apiUsers">
+          <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
           <b-form-select
             v-model="termsFilter"
+            class="v-form-select-custom"
             value-field="version"
             text-field="version"
             :options="termsList"/>
         </b-col>
         <b-col>
+          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
           <selectSociety
             class="float-right"
             :selected.sync="selectedSoc"
@@ -59,7 +68,7 @@
             v-if="!apiUsers"/>
         </b-col>
         <b-col cols="2" xl="1">
-          <b-button size="sm" variant="dark" @click="clearFilters" :disabled="noFilters" class="float-right">
+          <b-button @click="clearFilters" :disabled="noFilters" class="float-right new-btn">
             {{ $t('users.list.clear_filters') }}
           </b-button>
         </b-col>
@@ -117,8 +126,8 @@
               </div>
             </template>
             <template #cell(actions)="data">
-              <b-button variant="dark" size="sm" class="mb-1" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)"> {{ $t('common.edit') }} </b-button>
-              <b-button variant="dark" size="sm" class="mb-1" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"> {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }} </b-button>
+              <b-button class="mb-1 new-btn" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)"> {{ $t('common.edit') }} </b-button>
+              <b-button class="mb-1 new-btn" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"> {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }} </b-button>
             </template>
           </b-table>
           </div>
@@ -434,3 +443,26 @@ export default {
   }
 }
 </script>
+  <style>
+  .v-form-select-custom {
+    background: #E9E9E9;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 8px;
+    font-size: 18px;
+  }
+ th {
+   border-right: none !important;
+ }
+ td {
+   div {
+     div {
+     background: #F6333F!important;
+       color: white!important;
+     }
+   }
+ }
+  .select-header {
+    font-size: 1rem;
+  }
+  </style>
