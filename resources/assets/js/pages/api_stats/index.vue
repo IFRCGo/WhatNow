@@ -126,7 +126,6 @@ export default {
       this.fetchCumulativeUsageStats()
     },
     selectedRegion () {
-      console.log(this.selectedRegion)
       this.fetchCumulativeUsageStats()
     },
     selectedLanguage () {
