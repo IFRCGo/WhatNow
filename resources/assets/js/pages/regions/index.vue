@@ -1,20 +1,22 @@
   <template>
     <b-container fluid>
       <page-banner>
-        <b-col sm>
-          <h1>{{ $t('regions.list.manage') }}</h1>
+        <b-col cols="12">
+          <h1 class="sec-title">{{ $t('regions.list.manage') }}</h1>
         </b-col>
-        <b-col sm>
-          <selectSociety
-            class="float-right"
-            :selected.sync="selectedSoc"
-            :staynull="true"
-          />
+        <b-col cols="12">
+          <div class="input-section">
+                <selectSociety
+                  class="float-right s-soc"
+                  :selected.sync="selectedSoc"
+                  :staynull="true"
+                />
+          </div>
         </b-col>
       </page-banner>
       <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col>
-          <b-button v-if="selectedSoc" size="sm" variant="dark" class="float-right" v-b-modal.modal-create>
+          <b-button v-if="selectedSoc" class="float-right btn-outline-primary" v-b-modal.modal-create>
             {{ $t('regions.list.add') }}
             <fa :icon="['fas', 'plus']" />
           </b-button>
@@ -39,8 +41,8 @@
                 </span>
               </template>
               <template #cell(actions)="data">
-                <b-button variant="dark" size="sm" class="mb-1" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
-                <b-button variant="dark" size="sm" class="mb-1" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
+                <b-button class="mb-1 btn-outline-primary" @click="() => editRegion(data.item)">{{ $t('common.edit') }}</b-button>
+                <b-button class="mb-1 btn-outline-primary" @click="() => deleteRegion(data.item.id)">{{ data.item.activated ? $t('common.deactivate') : $t('common.delete') }}</b-button>
               </template>
             </b-table>
           </div>
@@ -53,35 +55,20 @@
         id="modal-create"
         size="lg"
         centered
-        hide-header
         hide-footer
         ref="modal"
+        :title="$t(isEdit ? 'regions.list.edit' : 'regions.list.create')"
       >
         <form ref="form" @submit.prevent="handleSubmit" class="px-3">
-          <h2 class="h3">{{ $t(isEdit ? 'regions.list.edit' : 'regions.list.create') }}</h2>
-          <b-row class="whatnow-language-picker-in-modal mb-4">
-            <b-col>
-              <b-nav tabs>
-                <b-nav-item
-                  v-for="lang in currentLanguages"
-                  :key="lang"
-                  @click="selectedLanguage = lang"
-                  :active="selectedLanguage === lang">
-                  <div class="nav-link-wrapper text-center h-100">
-                    {{ lang | uppercase }} <br />
-                    <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
-                  </div>
-                </b-nav-item>
-              </b-nav>
-            </b-col>
-          </b-row>
           <b-form-group
             :label="$t('regions.form.name')"
             label-for="name-input"
+            class="add-region-label"
           >
             <b-form-input
               id="name-input"
               v-model="names[selectedLanguage]"
+              class="new-region-input"
               required
               aria-describedby="name-input-help"
             ></b-form-input>
@@ -91,10 +78,12 @@
           <b-form-group
             :label="$t('regions.form.description')"
             label-for="description-input"
+            class="add-region-label"
           >
             <b-form-input
               id="description-input"
               v-model="descriptions[selectedLanguage]"
+              class="new-region-input"
               required
               aria-describedby="description-input-help"
             ></b-form-input>
@@ -102,10 +91,14 @@
 
           </b-form-group>
           <div class="modal-footer pb-0 px-0">
-            <b-button type="button" variant="outline-danger" class="btn btn-outline-danger" @click.prevent="resetModal">{{ $t('common.cancel') }}</b-button>
-            <b-button type="submit" :disabled="fetchingRegions" variant="dark" class="btn btn-dark">
+            <b-button type="submit" :disabled="fetchingRegions" class="btn btn-outline-primary ">
               <fa :icon="['fas', 'spinner']" spin v-show="fetchingRegions"/>
+              <i class="fas fa-check"></i>
               {{ $t(isEdit ? 'update' : 'common.create') }}
+            </b-button>
+            <b-button type="button" class="btn btn-primary " @click.prevent="resetModal">
+              <i class="fas fa-times"></i>
+              {{ $t('common.cancel') }}
             </b-button>
           </div>
         </form>
@@ -319,3 +312,30 @@ export default {
   }
 }
 </script>
+  <style scoped>
+  .input-section {
+    background: #F7F7F7;
+    border-radius: 10px;
+    padding: 1.4rem;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .s-soc {
+    width: 25%!important;
+  }
+  .line-head {
+    width: 100%;
+    height: 1px;
+    background: black;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+  }
+  .new-region-input{
+    background: #F7F7F7;
+    line-height: 1rem;
+    border: none;
+  }
+  .add-region-label {
+    font-size: 1rem;
+  }
+  </style>

@@ -4,7 +4,7 @@
       <h2 class="tc-page-title">{{ $t('terms_conditions.title') }}</h2>
       <div v-if="latestTerm && user && user?.data?.user_profile?.terms_version !== latestTerm.version">
         <b-button :disabled="disabled" class="btn-primary btn btn-lg" @click="acceptTerms">
-          {{ $t('terms_conditions.accept') }}	
+          {{ $t('terms_conditions.accept') }}
         </b-button>
       </div>
     </div>

@@ -229,7 +229,9 @@
     "whatnow_review": "This is where you can review WhatNow content",
     "whatnow_publish": "This is where you can edit and publish WhatNow content",
     "manage_users": "This is where to manage the users (Create, edit and remove)",
-    "api_usage": "This is where you can see who is using the API and what applications are being built with it."
+    "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
+    "wellcome": "Welcome",
+    "wellcome_description": "Here you can edit and publish WhatNow content."
   },
   "languages": {
     "am": "አማርኛ",
@@ -327,6 +329,11 @@
     "deleted": "Deleted user",
     "list": {
       "manage": "Manage users",
+      "select_status": "Select status",
+      "select_role": "Select a role",
+      "select_country": "Select a country",
+      "select_terms": "Select a terms version",
+      "select_society": "Select a nacional society",
       "create": "Create new user",
       "download_report": "Download report",
       "empty": "Couldn't find any users",
@@ -372,10 +379,17 @@
     "content": "Content",
     "audit_log": {
       "audit_log": "Audit Log",
+      "my_audit_log": "My Audit Log",
       "empty": "No audit history found which matches this filter",
-      "soc_label": "Society"
+      "soc_label": "Society",
+      "select_hazard": "Select hazard type",
+      "select_language": "Select a language",
+      "select_overwrite": "Select overwrite oprion",
+      "choose_file": "Choose file type",
+      "select_soc": "Select a nacional society"
     },
     "whatnow": {
+      "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
       "whatnow": "WhatNow",
       "empty": "There are no published WhatNow messages for this National Society",
@@ -405,7 +419,14 @@
       "add_language_message": "To add a new language, please add some content to go along with it",
       "add_language_attribution": "Create attribution to add a new language",
       "select_language": "Please select a language",
-      "attribution_publish": "This attribution will be immediately available on publish"
+      "attribution_publish": "This attribution will be immediately available on publish",
+      "date_added": "Date Added",
+      "url": "URL",
+      "hazard_type": "Hazard Type",
+      "show_more": "Show more",
+      "early": "Early Warning",
+      "disaster": "Disaster Risk Reduction",
+      "recovery": "Recovery"
     },
     "edit_whatnow": {
       "title": "Title",
@@ -470,12 +491,14 @@
       },
       "upload_csv": "Upload a document in CSV format",
       "language_instructions": "Select the language of the translations that are being imported.",
-      "file_instructions": "Drag a file here, or choose from your computer.",
+      "file_instructions": "Drag a file or choose from your device.",
       "choose": "Choose",
       "submit": "Import Content",
       "reset": "Upload Another",
       "export_template_guide": "Export Template Guide",
       "export_template_instructions": "For instructions on how to use this bulk upload template effectively, please view this guide.",
+      "refer": "Refer to",
+      "detail": "for detail instructions",
       "warnings": {
         "title": "Reject import if any content will overwrite more recent versions.",
         "on": "Yes",

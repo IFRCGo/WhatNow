@@ -49,15 +49,23 @@
   }
 }
 
+.button-go {
+  padding: 0.2rem 1.2rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .btn-primary {
   background-color: $bg-primary;
+  color: $white;
 }
 
 .btn-outline-primary {
   background-color: $white;
   border: 3px solid $bg-primary;
   color: $bg-primary;
-  
+  padding: 0px 20px;
+
   &:hover {
     background-color: $bg-primary;
     color: $white;
@@ -78,6 +86,15 @@
 
   &:disabled {
     background-color: $bg-disabled;
+  }
+}
+.vs--disabled {
+  .vs__dropdown-toggle,
+  .vs__clear,
+  .vs__search,
+  .vs__selected,
+  .vs__open-indicator {
+    background-color: #E9E9E9;
   }
 }
 
