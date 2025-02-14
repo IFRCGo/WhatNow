@@ -601,6 +601,119 @@ export default {
 
 .content-editor-header {
   position: relative;
+  padding: 26px 0;
+  &::after {
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1px;
+    background-color: $cad-solid-bg-3;
+    margin: 24px auto 0 auto;
+  }
+
+  .content-editor-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-dark;
+  }
+
+  .content-editor-description {
+    font-size: 11px;
+    color: $text-black;
+  }
+}
+
+.hazard-form {
+  .hazard-form-input-container {
+    margin-bottom: 16px;
+
+    .hazard-form-label {
+      font-size: 20px;
+      font-weight: 500;
+      color: $text-dark;
+      width: max-content;
+      position: relative;
+    }
+
+    .hazard-form-label.required {
+      &::after {
+        content: '*';
+        color: $red;
+        font-size: 20px;
+        font-weight: 600;
+        position: absolute;
+        right: -12px;
+        top: 0;
+      }
+    }
+
+    .hazard-form-input {
+      border-radius: 6px;
+      background-color: $card-solid-bg;
+      height: 48px;
+      font-size: 11px;
+      border: none;
+      outline: none;
+      color: #000;
+    }
+
+    .hazard-form-input.is-invalid {
+      border: solid 1.2px $red;
+    }
+
+    textarea.hazard-form-input {
+      height: 80px;
+    }
+  }
+}
+
+.urgency-card {
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: solid 0.8px #e6e6e6;
+  position: relative;
+  box-shadow: 0px 1.6px 6.4px rgba(0, 0, 0, 0.1);
+
+  .urgency-card-header {
+    width: 100%;
+    margin-bottom: 24px;
+
+    h4.urgency-title {
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.32px;
+      color: #1e1e1e;
+    }
+
+    p.urgency-description {
+      font-size: 14px;
+      font-weight: normal;
+      color: #000;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #cecece;
+      margin-top: 16px;
+    }
+  }
+
+  .btn-collapse {
+    font-size: 24px;
+    border: none;
+    background-color: transparent;
+    color: $grey;
+  }
+}
+</style>
+
+@import '../../../sass/variables.scss';
+
+.content-editor-header {
+  position: relative;
   padding: 33px 0;
   &::after {
     content: '';
@@ -708,4 +821,4 @@ export default {
     color: $grey;
   }
 }
-</style>
+</style> -->
