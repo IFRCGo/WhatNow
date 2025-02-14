@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WhatNow;
 use App\Classes\RcnApi\Entities\Instruction;
 use App\Classes\RcnApi\Exceptions\RcnApiException;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
+use App\Classes\RcnApi\Importer\BulkUploadTemplateExport;
 use App\Classes\RcnApi\Importer\Exceptions\RcnExportException;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportInvalidFileException;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportException;
@@ -25,16 +26,16 @@ use League\Csv\Reader;
 
 final class WhatNowImportController extends ApiController
 {
-    
+
     private $client;
 
-    
+
     public function __construct(RcnApiClient $client)
     {
         $this->client = $client->whatnow();
     }
 
-    
+
     public function import(Request $request, string $countryCode, string $languageCode)
     {
         try{
@@ -78,22 +79,23 @@ final class WhatNowImportController extends ApiController
         return new JsonResponse($importer->getReport(), JsonResponse::HTTP_OK);
     }
 
-    
-    public function exportBlank(string $countryCode)
+
+    public function exportBlank(Request $request,string $countryCode)
     {
+        $extension = $request->query('extension', 'csv');
+        $exporter = new RcnExporter($this->client);
         if (strlen($countryCode) !== 3) {
             return new JsonResponse(['message' => 'Invalid country code'], JsonResponse::HTTP_BAD_REQUEST);
         }
 
         try {
-            $csv = RcnExporter::buildCsvTemplate($countryCode);
+            return $exporter->buildTemplate($countryCode,$extension);
         } catch (CannotInsertRecord $e) {
             return $this->respondWithError($e, $e->getMessage());
         }
-        $csv->output();
     }
 
-    
+
     public function export(string $countryCode, string $languageCode)
     {
         if (strlen($countryCode) !== 3) {

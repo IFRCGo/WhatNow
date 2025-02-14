@@ -2,26 +2,26 @@
 
 namespace App\Classes\RcnApi\Importer;
 
-use App\Classes\RcnApi\Entities\Instruction;
 use App\Classes\RcnApi\Entities\InstructionTranslation;
 use App\Classes\RcnApi\Importer\Exceptions\RcnExportException;
 use App\Classes\RcnApi\Resources\WhatNowResourceInterface;
 use App\Models\EventType;
 use Illuminate\Support\Collection;
 use League\Csv\Writer;
-
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Excel as ExcelFormat;
 class RcnExporter
 {
-    
+
     private $client;
 
-    
+
     public function __construct(WhatNowResourceInterface $client)
     {
         $this->client = $client;
     }
 
-    
+
     public function buildInstructionRows(string $countryCode, string $languageCode)
     {
         $instructions = $this->client->getLatestInstructionsByCountryCode($countryCode);
@@ -43,7 +43,7 @@ class RcnExporter
                 throw new RcnExportException('The current data for this translation is malformed');
             }
 
-            
+
             $translation = array_first($matchingTranslations);
 
             $row = [
@@ -110,7 +110,7 @@ class RcnExporter
         return $keys;
     }
 
-    
+
     public static function buildCsvTemplate(
         $countryCode,
         Collection $instructionRows = null,
@@ -142,7 +142,22 @@ class RcnExporter
         return $csv;
     }
 
-    
+
+    public function buildTemplate(
+        string $countryCode,
+        string $format = 'xlsx'
+    )
+    {
+        $organisation = $this->client->getOrganisationByCountryCode($countryCode);
+        $fileName = "template.$format";
+        $data = [
+            ['Test Title 1', 'Description 1', 'https://example.com', 'Cyclone', 'High', 'Key Message 1', 'Support 1', 'Support 2', 'Support 3'],
+        ];
+
+        return Excel::download(new BulkUploadTemplateExport($organisation->getName(),'',$data ), $fileName, $format == "csv" ? ExcelFormat::CSV : ExcelFormat::XLSX);
+    }
+
+
     public static function createAttributionHeader()
     {
         return [
@@ -152,7 +167,7 @@ class RcnExporter
         ];
     }
 
-    
+
     public static function createInstructionsHeader()
     {
         return array_merge([
@@ -167,7 +182,7 @@ class RcnExporter
         }, InstructionTranslation::EVENT_STAGES));
     }
 
-    
+
     public function buildAttributionRow(string $countryCode, string $languageCode)
     {
         $organisation = $this->client->getOrganisationByCountryCode($countryCode);
