@@ -25,36 +25,25 @@
     }
   }
   .api-dash-app-card {
-    hr {
-      margin-left: -23px;
-      margin-right: -23px;
-    }
+    background: #F7F7F7;
+
     .api-key-panel {
       height: 86px;
       border-radius: 5px;
       word-break: break-all;
       div {
         height: 100%;
-        &:first-of-type {
-          flex-basis: 75%;
-          overflow-y: scroll;
-        }
-        small {
-          color: #6d6e70;
-        }
       }
     }
     .app-settings-dropdown {
       button {
-        background-color: #f2f2f2;
+        background-color: #E9E9E9;
         border-color: #f2f2f2;
-
         path {
-          fill: #aaaaaa;
+          fill: #AAAAAA;
         }
-
         &:active {
-          background-color: #f2f2f2;
+          background-color: #AAAAAA;
         }
 
         &:first-of-type {

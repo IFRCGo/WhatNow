@@ -67,7 +67,7 @@
             :staynull="true"
             v-if="!apiUsers"/>
         </b-col>
-        <b-col cols="2" xl="1">
+        <b-col cols="2">
           <b-button @click="clearFilters" :disabled="noFilters" class="float-right btn-outline-primary">
             {{ $t('users.list.clear_filters') }}
           </b-button>
