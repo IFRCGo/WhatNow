@@ -32,7 +32,7 @@
                     :customStyle="{ 'border-radius': '13px', 'font-size': '36px', 'display': 'inline-block' }"></avatar>
                     <b-dropdown class="float-right rtl-float-left app-settings-dropdown" :no-caret="true">
                       <template slot="button-content" class="rounded">
-                        <fa :icon="['fas', 'ellipsis-v']" class="custom-icon" />
+                        <fa :icon="['fas', 'ellipsis-v']"/>
                       </template>
                       <b-dropdown-item @click="deleteApp(app.id)">{{ $t('common.delete') }}</b-dropdown-item>
                       <b-dropdown-item @click="editApp(app)">{{ $t('common.edit') }}</b-dropdown-item>
