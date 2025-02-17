@@ -135,9 +135,16 @@ final class UsageController extends ApiController
     }
 
     
-    public function getTotals(): JsonResponse
+    public function getTotals(Request $request): JsonResponse
     {
-        $response = $this->client->getTotals();
+        $this->validate($request, [
+            'society' => 'sometimes|string',
+            'region' => 'sometimes|int',
+            'hazard' => 'sometimes|string',
+            'date' => 'sometimes|date',
+            'language' => 'sometimes|string',
+        ]);
+        $response = $this->client->getTotals($request);
 
         return new JsonResponse($response, 200);
     }

@@ -5,8 +5,11 @@
         <span v-if="option.translations[selectLang]?.title">
           {{ option.translations[selectLang].title }}
         </span>
-        <span v-else>
+        <span v-else-if="Object.keys(option.translations)>0">
           {{ option.translations[Object.keys(option.translations)[0]]?.title }}
+        </span>
+        <span v-else>
+          {{ option.title }}
         </span>
       </div>
     </template>
@@ -15,8 +18,11 @@
         <span v-if="option.translations[selectLang]?.title">
           {{ option.translations[selectLang].title }}
         </span>
-        <span v-else>
+        <span v-else-if="Object.keys(option.translations)>0">
           {{ option.translations[Object.keys(option.translations)[0]]?.title }}
+        </span>
+        <span v-else>
+          {{ option.title }}
         </span>
       </div>
     </template>
@@ -38,8 +44,10 @@ export default {
   methods: {
     async fetch () {
       this.fetching = true
-      await this.$store.dispatch('content/fetchRegions', this.socCode)
-      this.fetching = false
+      if (this.socCode) {
+        await this.$store.dispatch('content/fetchRegions', this.socCode)
+        this.fetching = false
+      }
     }
   },
   watch: {
