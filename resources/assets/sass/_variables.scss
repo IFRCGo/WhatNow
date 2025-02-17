@@ -1,5 +1,5 @@
 // // Body
-$body-bg: #f2f2f2;
+$body-bg: #ffffff;
 
 // base colours
 $white: #ffffff;
@@ -36,6 +36,9 @@ $card-border-color: #e8eced;
 $card-border-radius: 0.7rem;
 $card-gradient-bg: linear-gradient(80deg, $card-cap-bg 28%, $card-cap-2-bg 111%);
 $card-solid-bg: #f7f7f7;
+$cad-solid-bg-2: #f6f6f6;
+$cad-solid-bg-3: #cecece;
+
 
 // Alerts
 $alert-border-radius: 0.7rem;
@@ -48,7 +51,8 @@ $border-radius-sm: .15rem;
 $border-primary-1: solid 1px $red;
 $border-primary-2: solid 2px $red;
 $border-primary-3: solid 3px $red;
-
+$border-separator: solid 1px #e5e5e5;
+$urgency-card-border: solid 1px #e6e6e6;
 
 // Nav Pills
 $nav-pills-border-radius: 0;
@@ -60,12 +64,21 @@ $sidebar-collapsed-breakpoint: 1550px;
 // buttons
 $facebook-blue: #00447c;
 $google-red: $light-red;
+$bg-primary: $red;
+$bg-disabled: #e9e9e9;
 
 // Font
 $font-size-base: 0.75rem;
 
 // Hazard instrution colours
 $hazard-default: #857d7a;
+$immediate: #ff6b6b;
+$warning: #ffa07a;
+$anticipated: #f9d57f;
+$assess_and_plan: #77d79d;
+$mitigate_risks: #5bafe9;
+$prepare_to_respond: #c6a0cf;
+$recover: #989898F5;
 $mid-term: #006a72;
 $seasonalForecast: #1c6300;
 $watch: #c5d86d;
@@ -92,3 +105,6 @@ $global-transition: all 300ms ease-in-out;
 $icon-not-active: #a8a8a8;
 $icon-active: #f6333f;
 
+
+//backgrounds
+$bg-input-light: #e6e6e6;

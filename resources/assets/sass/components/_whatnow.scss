@@ -29,7 +29,7 @@
   .vs__dropdown-toggle {
     height: 48px;
     max-width: 100%;
-    background: white !important;
+    background: white;
     padding-bottom: 0px;
   }
 
@@ -181,7 +181,7 @@
     border-radius: calc(0.7rem - 1px) !important;
   }
   .whatnow-collapse-card-body {
-    background-color: #f2f2f2;
+    background-color: transparent;
   }
 }
 

@@ -44,5 +44,4 @@ jobs:
              helm upgrade --install whatnow-backoffice ./helm-chart-backoffice \
                --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE }} \
                --create-namespace
-             kubectl rollout restart deployment whatnow-backoffice -n ${{ secrets.AKS_CLUSTER_NAMESPACE }}
 

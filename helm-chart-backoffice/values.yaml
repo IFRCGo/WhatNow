@@ -63,20 +63,20 @@ secrets:
       RCN_API_PASSWORD: BACKOFFICE_RCN_API_PASSWORD
 
 
-    ingress:
-        enabled: true
-        annotations:
-            kubernetes.io/ingress.class: nginx
-            nginx.ingress.kubernetes.io/ssl-redirect: "true"
-            nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-            nginx.ingress.kubernetes.io/ingress.allow-http: "true"
-            nginx.ingress.kubernetes.io/use-regex: "true"
-        hosts:
-            -   host: "whatnow.jazusoft.com"
-                paths:
-                    -   path: /
-                        pathType: Prefix
-        tls:
-            -   hosts:
-                    - "whatnow.jazusoft.com"
-                secretName: "your-tls-secret"
+ingress:
+    enabled: true
+    annotations:
+        kubernetes.io/ingress.class: nginx
+        nginx.ingress.kubernetes.io/ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/ingress.allow-http: "true"
+        nginx.ingress.kubernetes.io/use-regex: "true"
+    hosts:
+        -   host: "whatnow.jazusoft.com"
+            paths:
+                -   path: /
+                    pathType: Prefix
+    tls:
+        -   hosts:
+                - "whatnow.jazusoft.com"
+            secretName: "your-tls-secret"

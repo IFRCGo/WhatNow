@@ -11,6 +11,8 @@ spec:
             app: {{ .Chart.Name }}
     template:
         metadata:
+            annotations:
+                releaseTime: {{ now | date "2006-01-02 15:04:05Z07:00" | quote }}
             labels:
                 app: {{ .Chart.Name }}
         spec:

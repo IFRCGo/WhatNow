@@ -180,18 +180,9 @@
             <div class="register_form-bottom">
               <p class="text-center u-text-normal mt-5 mb-0 font-weight-light">
                 {{ $t('register_form.sign_up_agreement') }}
-
-                <span v-b-modal.termsModal @click="showTerms = true;  sawTerms = true" class="underlined-link font-weight-normal">
+                <b-link @click="sawTerms = true" :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
                   {{ $t('register_form.terms_conditions') }}
-                </span>
-                <b-modal v-model="showTerms" id="termsModal" size="lg" ok-variant="dark">
-                  <latest-terms class="text-left"></latest-terms>
-                  <div slot="modal-footer" class="w-100">
-                    <b-btn size="sm" class="float-right" variant="primary" @click="showTerms = false;">
-                      {{ $t('close') }}
-                    </b-btn>
-                  </div>
-                </b-modal>
+                </b-link>
               </p>
               <div class="form-group mb-5">
                 <!-- Submit Button -->
@@ -231,7 +222,6 @@ export default {
   },
   data() {
     return {
-      showTerms: false,
       sawTerms: false,
       locationSelected: null,
       locationOptions: null,

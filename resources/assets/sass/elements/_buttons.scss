@@ -1,7 +1,23 @@
 .btn {
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 20px;
   border: none;
+  padding: 7px 25px;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  &:hover {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+  }
+
 
   &.is-circle {
     height: 20px;
@@ -33,12 +49,50 @@
   }
 }
 
-.btn-primary {
-  background-color: #f6333f;
+.button-go {
+  padding: 0.2rem 1.2rem;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn-primary,.btn-primary > button {
+  background-color: $bg-primary;
+  color: $white;
+}
+
+.btn-outline-primary{
+  background-color: $white;
+  border: 2px solid $bg-primary;
+  color: $bg-primary;
+  padding: 0px 20px;
+
+  &:hover {
+    background-color: $bg-primary;
+    color: $white;
+  }
+}
+.btn-outline-primary.dw-btn{
+  background-color: transparent;
+  border: none;
+  color: $bg-primary;
+  width:auto;
+  padding: 0;
+  & > button {
+    padding: 7px 25px;
+    background-color: $white;
+    border: 2px solid $bg-primary;
+    color: $bg-primary;
+    width: 100%;
+
+    &:hover {
+      background-color: $bg-primary;
+      color: $white;
+    }
+  }
 }
 
 .btn-lg {
-  padding: 7px;
+  padding: 7px 25px;
   border-radius: 25px;
   min-height: 48px;
   font-size: 20px;
@@ -46,11 +100,20 @@
   font-weight: 600;
 
   &:hover {
-    background-color: #f6333f;
+    background-color: $bg-primary;
   }
 
   &:disabled {
-    background-color: #e9e9e9;
+    background-color: $bg-disabled;
+  }
+}
+.vs--disabled {
+  .vs__dropdown-toggle,
+  .vs__clear,
+  .vs__search,
+  .vs__selected,
+  .vs__open-indicator {
+    background-color: #E9E9E9;
   }
 }
 

@@ -22,10 +22,10 @@ const createStages = (stages) => {
   return {
     immediate: stages.immediate || [],
     warning: stages.warning || [],
-    anticipated: stages.seasonalForecast || [],
-    assess_and_plan: [],
-    mitigate_risks: stages.mitigation || [],
-    prepare_to_respond: stages.watch || [],
+    anticipated: stages.anticipated || [],
+    assess_and_plan: stages.assess_and_plan || [],
+    mitigate_risks: stages.mitigate_risks || [],
+    prepare_to_respond: stages.prepare_to_respond || [],
     recover: stages.recover || []
   }
 }

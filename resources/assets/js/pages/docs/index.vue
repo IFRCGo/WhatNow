@@ -18,7 +18,7 @@
     <div class="doc-body bg-white col-12 col-md-9 col-xl-10 p-3 p-md-5">
       <h1>{{ $t('documentation.heading') }}</h1>
       <section>
-        <h2 id="introduction">{{ $t('documentation.steps.one.heading') }}</h2>
+        <h2 class="steps" id="introduction">{{ $t('documentation.steps.one.heading') }}</h2>
 
         <p class="lead">{{ $t('documentation.steps.one.body') }}</p>
 
@@ -26,14 +26,14 @@
           <p class="card-text">{{ $t('documentation.steps.one.support_card.body') }}</p>
         </b-card>
 
-        <h2 id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
+        <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
 
         <p>{{ $t('documentation.steps.two.body') }}</p>
 
         <pre>https://api.preparecenter.org/v1</pre>
       </section>
       <section>
-        <h2 id="changelog">{{ $t('documentation.steps.three.heading') }}</h2>
+        <h2 class="steps" id="changelog">{{ $t('documentation.steps.three.heading') }}</h2>
         <div class="table-responsive">
         <table class="table">
           <thead>
@@ -69,7 +69,7 @@
       </section>
 
       <section>
-        <h2 id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
+        <h2 class="steps" id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
 
         <i18n path="documentation.steps.four.body" tag="p" class="u-text-wrap">
           <router-link :to="{ path: 'applications' }">{{ $t('documentation.steps.four.create_app_cta') }}</router-link>
@@ -79,7 +79,7 @@
       </section>
 
       <section>
-        <h2 id="response-codes">{{ $t('documentation.steps.five.heading') }}</h2>
+        <h2 class="steps" id="response-codes">{{ $t('documentation.steps.five.heading') }}</h2>
         <div class="table-responsive">
         <table>
           <thead>
@@ -126,7 +126,7 @@
       </section>
 
       <section>
-        <h2 id="emergency-alert-feed">{{ $t('documentation.steps.six.heading') }}</h2>
+        <h2 class="steps" id="emergency-alert-feed">{{ $t('documentation.steps.six.heading') }}</h2>
 
         <b-card :title="$t('documentation.steps.six.card.title')" bg-variant="light">
           <i18n path="documentation.steps.six.card.body" tag="p" class="card-text">
@@ -156,7 +156,7 @@
       </section>
 
       <section>
-        <h2 id="cap-alert-document">{{ $t('documentation.steps.seven.heading') }}</h2>
+        <h2 class="steps" id="cap-alert-document">{{ $t('documentation.steps.seven.heading') }}</h2>
 
         <p>{{ $t('documentation.steps.seven.body') }}</p>
 
@@ -294,7 +294,7 @@
       </section>
 
       <section>
-        <h2 id="what-now">{{ $t('documentation.steps.eight.heading') }}</h2>
+        <h2 class="steps" id="what-now">{{ $t('documentation.steps.eight.heading') }}</h2>
 
         <p class="u-text-wrap">{{ $t('documentation.steps.eight.body') }}</p>
 
@@ -669,6 +669,13 @@
 <style lang="scss" scoped>
 body {
 	position: relative;
+}
+
+.steps {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 34px;
+  font: #000000;
 }
 </style>
 

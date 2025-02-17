@@ -2,10 +2,10 @@
   <b-container fluid>
     <page-banner>
       <b-col cols="6">
-        <h1>{{ $t('sidebar.terms_conditions') }}</h1>
+        <h1 class="sec-title">{{ $t('sidebar.terms_conditions') }}</h1>
       </b-col>
       <b-col cols="6">
-        <b-button size="lg" variant="primary" class="float-right rtl-float-left mr-2" :disabled="updatingTerms" @click="saveTerms">
+        <b-button class="float-right rtl-float-left mr-2 btn-outline-primary" :disabled="updatingTerms" @click="saveTerms">
           <fa spin :icon="['fas', 'spinner']" v-if="updatingTerms"/>
           <span v-if="updatingTerms">{{ $t('content.whatnow.publishing') }}</span>
           <span v-else>{{ $t('common.publish_new') }}</span>
@@ -17,24 +17,28 @@
         <b-card>
           <b-row class="mb-3" v-if="can(user, permissions.TERMS_UPDATE)">
             <b-col cols="12">
+              <div class="input-section">
+                <div class="input-container">
+                  <label for="termsVersion" class="text-uppercase text-secondary ml-2"><b>{{ $t('api_usage.version') }}</b></label>
+                  <b-form-input
+                    v-if="terms"
+                    id="termsVersion"
+                    type="number"
+                    v-model="terms.version"
+                    class="mb-2 ml-2"
+                    :state="updateErrors.errors.version ? false : null">
+                  </b-form-input>
+                </div>
+              </div>
+            </b-col>
+            <b-col class="mt-4" cols="12">
               <p v-if="terms">
                 {{ $t('common.published') }} {{ terms.createdAt | moment('MMM DD YYYY, HH:mm') }}
               </p>
-              <router-link :to="{ name: 'api-usage.prev_terms_conditions', params: {} }" class="underlined-link">
-                {{ $t('api_usage.view_prev_terms') }}
-              </router-link>
+              <hr>
             </b-col>
 
             <b-col cols="12" class="mt-4">
-              <label for="termsVersion" class="text-uppercase text-secondary"><b>{{ $t('api_usage.version') }}</b></label>
-              <b-form-input
-                v-if="terms"
-                id="termsVersion"
-                type="number"
-                v-model="terms.version"
-                class="mb-2"
-                :state="updateErrors.errors.version ? false : null">
-              </b-form-input>
               <b-form-invalid-feedback id="termsVersionFeedback">
                 <!-- This will only be shown if the preceeding input has an invalid state -->
                 <p v-for="error in updateErrors.errors.version">
@@ -73,6 +77,36 @@
       }
     }
   }
+
+  .input-section {
+    background: #F7F7F7;
+    border-radius: 10px;
+    padding: 1.4rem;
+  }
+
+  .input-container {
+    background: #E9E9E9;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0.4rem;
+    padding-bottom: 0.2rem;
+    border-radius: 10px;
+    width: 10%;
+    input {
+      background: transparent;
+      border: none;
+    }
+    input:focus {
+      background: transparent;
+      border: none;
+    }
+  }
+
+  .CodeMirror {
+    border: none;
+  }
+
 </style>
 
 <script>

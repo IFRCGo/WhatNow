@@ -14,7 +14,6 @@ class RoleResource extends Resource
             'name' => $this->name,
             'super' => (bool) $this->all,
             'permissions' => PermissionResource::collection($this->whenLoaded('permissions')),
-            'updated_at' => ($this->updated_at) ? $this->updated_at->format('c') : null,
         ];
     }
 }

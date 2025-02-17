@@ -6,10 +6,6 @@
           <h1>{{ $t('common.my_profile') }}</h1>
         </b-col>
         <b-col cols="6">
-          <b-button type="submit" size="lg" variant="dark" class="float-right rtl-float-left mr-2" @click="update = true">
-            <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
-            {{ $t('common.save_changes') }}
-          </b-button>
         </b-col>
       </page-banner>
       <page-banner v-else :breadcrumbs="[{ name: isApiUser ? 'api-usage.api-users' : 'users.list', params: {}, text: $t('users.list.manage') }]">
@@ -18,14 +14,6 @@
           <h1 v-else>{{ $t('users.list.detail') }}</h1>
         </b-col>
         <b-col cols="6">
-          <b-button size="lg" variant="light" class="float-right rtl-float-left" @click="goToUserList" v-if="!isMe">
-            {{ $t('common.cancel') }}
-          </b-button>
-
-          <b-button type="submit" size="lg" variant="dark" class="float-right rtl-float-left mr-2" v-if="(!newUser && can(authUser, permissions.USERS_EDIT)) || isMe" @click="update = true">
-            <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
-            {{ $t('common.save_changes') }}
-          </b-button>
         </b-col>
       </page-banner>
 
@@ -46,14 +34,14 @@
               <b-col cols="10" xl="11">
                 <b-row>
                   <b-col>
-                    <label for="first-name" class="visually-hidden">{{ $t('first_name') }}</label>
+                    <label for="first-name">{{ $t('first_name') }}</label>
                     <b-form-input
                       v-model="user.first_name"
                       type="text" id="first-name"
                       name="first-name"
                       :placeholder="$t('first_name')"
                       required
-                      class="mb-1"/>
+                      class="mb-1 inputs-form"/>
 
                       <transition name="shake">
                         <div v-if="formErrors.first_name">
@@ -63,12 +51,13 @@
                   </b-col>
 
                   <b-col sm>
-                    <label for="last-name" class="visually-hidden">{{ $t('last_name') }}</label>
+                    <label for="last-name">{{ $t('last_name') }}</label>
                     <b-form-input
                       v-model="user.last_name"
                       type="text" id="last-name"
                       name="last-name"
                       :placeholder="$t('last_name')"
+                      class="mb-1 inputs-form"
                       required/>
 
                       <transition name="shake">
@@ -77,73 +66,72 @@
                         </div>
                       </transition>
                   </b-col>
+                  <b-col>
+                    <label for="email">{{ $t('email') }}</label>
+                    <b-input-group class="mb-2">
+                      <b-form-input
+                        type="email"
+                        v-model="user.email"
+                        id="email"
+                        name="email"
+                        class="mb-1 inputs-form"
+                        :placeholder="$t('email')"
+                        :disabled="emailDisabled && !newUser"
+                        required/>
+                      <b-button v-if="isMe" slot="right" variant="dark" v-b-toggle.email-update @click="emailDisabled = !emailDisabled" class="ml-2 rtl-mr-2">{{ $t('common.edit') }}</b-button>
+                    </b-input-group>
+                    <transition name="shake">
+                      <div v-if="formErrors.email">
+                        <i class="text-danger" v-for="error in formErrors.email" :key="error">{{ error }} <br /></i>
+                      </div>
+                    </transition>
+                    <b-collapse id="email-update">
+                      <i>{{ $t('users.edit.email_update') }}</i>
+                      <b-form-input type="password" v-model="userPassword"></b-form-input>
+                      <transition name="shake">
+                        <div v-if="formErrors.password">
+                          <i class="text-danger" v-for="error in formErrors.password" :key="error">{{ error }} <br /></i>
+                        </div>
+                      </transition>
+                    </b-collapse>
+                  </b-col>
                 </b-row>
               </b-col>
             </b-row>
-
-            <hr />
-
             <b-row class="mb-3">
               <b-col cols="2" xl="1" class="pr-0 rtl-pr-3">
-                <label for="email">{{ $t('email') }}</label>
               </b-col>
-              <b-col cols="10" xl="11">
-                  <b-input-group class="mb-2">
-                    <b-form-input
-                      type="email"
-                      v-model="user.email"
-                      id="email"
-                      name="email"
-                      :placeholder="$t('email')"
-                      :disabled="emailDisabled && !newUser"
-                      required/>
-                    <b-button v-if="isMe" slot="right" variant="dark" v-b-toggle.email-update @click="emailDisabled = !emailDisabled" class="ml-2 rtl-mr-2">{{ $t('common.edit') }}</b-button>
-                  </b-input-group>
-                  <transition name="shake">
-                    <div v-if="formErrors.email">
-                      <i class="text-danger" v-for="error in formErrors.email" :key="error">{{ error }} <br /></i>
-                    </div>
-                  </transition>
-                  <b-collapse id="email-update">
-                    <i>{{ $t('users.edit.email_update') }}</i>
-                    <b-form-input type="password" v-model="userPassword"></b-form-input>
-                    <transition name="shake">
-                      <div v-if="formErrors.password">
-                        <i class="text-danger" v-for="error in formErrors.password" :key="error">{{ error }} <br /></i>
-                      </div>
-                    </transition>
-                  </b-collapse>
+              <b-col cols="10" xl="11"  v-if="isMe">
+                    <update-password ref="uploadPasswordRef"></update-password>
               </b-col>
             </b-row>
-
-            <hr v-if="!newUser && user.role_id === 1"/>
-
             <b-row class="mb-3" v-if="!newUser && user.role_id === 1">
               <b-col cols="2" xl="1" class="pr-0">
-                <label for="api_used_in">{{ $t('register_form.api_used_in') }}</label>
               </b-col>
               <b-col cols="10" xl="11">
-                  <b-input-group class="mb-2">
-                    <b-form-textarea
+                <b-row>
+                  <b-col cols="4">
+                    <label for="api_used_in">{{ $t('register_form.api_used_in') }} <span style="color:red">*</span></label>
+                    <b-input-group class="mb-1">
+                      <b-form-textarea
                       type="api_used_in"
                       v-model="user.api_used_in"
                       id="api_used_in"
                       name="api_used_in"
-                      :placeholder="$t('register_form.api_used_in')"
+                      class="mb-1 inputs-form"
                       required
                       :disabled="!isMe"
                       />
-                  </b-input-group>
-                  <transition name="shake">
-                    <div v-if="formErrors.api_used_in">
-                      <i class="text-danger" v-for="error in formErrors.api_used_in" :key="error">{{ error }} <br /></i>
-                    </div>
-                  </transition>
+                    </b-input-group>
+                    <transition name="shake">
+                      <div v-if="formErrors.api_used_in">
+                        <i class="text-danger" v-for="error in formErrors.api_used_in" :key="error">{{ error }} <br /></i>
+                      </div>
+                    </transition>
+                  </b-col>
+                </b-row>
               </b-col>
             </b-row>
-
-
-            <hr v-if="!newUser && !isMe && can(authUser, permissions.USERS_EDIT)"/>
 
             <b-row class="mb-3" v-if="!newUser && !isMe && can(authUser, permissions.USERS_EDIT)">
               <b-col cols="2" xl="1" class="pr-0">
@@ -163,13 +151,31 @@
                 </b-button>
               </b-col>
             </b-row>
-          </b-card>
-        </b-col>
-      </b-row>
+            <b-row class="mb-4" v-if="profile || cannot(authUser, permissions.USERS_EDIT)">
+              <b-col cols="6">
+              </b-col>
+              <b-col cols="6">
+                <b-button type="submit" size="lg" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
+                  <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
+                  {{ $t('common.save_changes') }}
+                </b-button>
+              </b-col>
+            </b-row>
+            <b-row class="mb-4" v-else :breadcrumbs="[{ name: isApiUser ? 'api-usage.api-users' : 'users.list', params: {}, text: $t('users.list.manage') }]">
+              <b-col cols="6">
+              </b-col>
+              <b-col cols="6">
+                <b-button size="lg" variant="light" class="float-right rtl-float-left" @click="goToUserList" v-if="!isMe">
+                  {{ $t('common.cancel') }}
+                </b-button>
 
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="isMe">
-        <b-col>
-          <update-password></update-password>
+                <b-button type="submit" class="float-right rtl-float-left mr-2 btn-outline-primary" v-if="(!newUser && can(authUser, permissions.USERS_EDIT)) || isMe" @click="update = true">
+                  <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
+                  {{ $t('common.save_changes') }}
+                </b-button>
+              </b-col>
+            </b-row>
+          </b-card>
         </b-col>
       </b-row>
 
@@ -220,7 +226,7 @@
           </b-card>
         </b-col>
          </b-row>
-
+      <hr>
          <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="can(authUser, permissions.CONTENT_EDIT)">
             <b-col>
               <h3 class="styled-heading text-uppercase">
@@ -229,17 +235,12 @@
                <b-card class="bg-grey">
                  <b-row>
                    <b-col>
-                     <p class="font-weight-bold" v-if="can(authUser, permissions.USERS_EDIT) && user.id != null">
-                       {{ $t('users.edit.super_admin_all') }}
-                     </p>
-                   </b-col>
-                   <b-col>
-                     <b-button variant="link" class="text-dark float-right" @click="societies.showAll = true"
+                     <b-button variant="link" class="float-right btn-outline-primary" @click="societies.showAll = true"
                         v-if="!societies.showAll && userSocieties.length > societies.limitNumber">
                         <u>{{ $t('users.edit.view')}} {{ userSocieties.length - societies.limitNumber }} {{ $t('users.edit.more')}}
                         <fa icon="chevron-down" fixed-width/></u>
                      </b-button>
-                     <b-button variant="link" class="text-dark float-right" @click="societies.showAll = false"
+                     <b-button variant="link" class="float-right btn-outline-primary" @click="societies.showAll = false"
                         v-if="societies.showAll && userSocieties.length > societies.limitNumber">
                         <u>{{ $t('users.edit.less')}}
                         <fa icon="chevron-up" fixed-width/></u>
@@ -247,35 +248,35 @@
                    </b-col>
                  </b-row>
 
-                 <div class="bg-dark-grey pl-3 pr-3 pt-3 mb-4" v-if="userHasPermission(permissions.ALL_ORGANISATIONS) || userSocieties.length > 0">
+                 <div class="times-container mb-4" v-if="userHasPermission(permissions.ALL_ORGANISATIONS) || userSocieties.length > 0">
                     <transition-group name="fade-slide" tag="b-row">
                       <b-col
                         cols="auto" class="mb-3" v-for="(n, index) in societies.showAll ? userSocieties.length : societies.limitNumber"
                         :key="userSocieties[index].countryCode" v-if="userSocieties[index]">
-                         <b-card>
+                        <div class="times-card">
                            <div class="d-flex justify-content-between align-items-center">
                              <span class="mr-2">{{ userSocieties[index].name }}</span>
-                             <b-button size="sm" variant="danger" @click="removeSociety(index)" v-if="can(authUser, permissions.USERS_EDIT)">
+                             <b-button size="sm" class="times-btn" @click="removeSociety(index)" v-if="can(authUser, permissions.USERS_EDIT)">
                                <fa icon="times"/>
                              </b-button>
                            </div>
-                         </b-card>
+                        </div>
                       </b-col>
                     </transition-group>
                   </div>
 
                   <b-row v-if="can(authUser, permissions.USERS_EDIT)">
                      <b-col md="12" xl="12" class="mb-3" v-if="!userHasPermission(permissions.ALL_ORGANISATIONS)">
-                        <b-button size="sm" variant="dark" @click="societies.isAddSocVisible = true" v-if="!societies.isAddSocVisible">
+                        <b-button size="sm" class="btn-outline-primary" @click="societies.isAddSocVisible = true" v-if="!societies.isAddSocVisible">
                            {{ $t('users.edit.add_society')}}
                         </b-button>
                         <div v-if="societies.isAddSocVisible && can(authUser, permissions.USERS_EDIT)" class="d-flex align-items-center">
                              <selectSociety :selected.sync="societies.selectedSoc" class="mr-3"></selectSociety>
                            <div>
-                              <b-button size="sm" variant="dark" @click="addSociety(societies.selectedSoc)" class="mr-3">
+                              <b-button size="sm" class="mr-3 btn-outline-primary" @click="addSociety(societies.selectedSoc)">
                                 {{ $t('common.add') }}
                               </b-button>
-                              <b-button size="sm" variant="light" @click="societies.isAddSocVisible = false">
+                              <b-button class="cancel-btn" variant="light" @click="societies.isAddSocVisible = false">
                                 {{ $t('common.cancel') }}
                               </b-button>
                            </div>
@@ -286,8 +287,9 @@
             </b-col>
          </b-row>
 
-        <audit-log v-bind:user-id="user.id" v-if="user.id != null && can(authUser, permissions.CONTENT_CREATE)"></audit-log>
+      <hr>
 
+        <audit-log v-bind:user-id="user.id" v-if="user.id != null && can(authUser, permissions.CONTENT_CREATE)"></audit-log>
          <b-row>
            <b-col>
              <b-button size="lg" :variant="user.activated ? 'danger' : 'success'" class="float-right mr-2 mb-4 mt-4" v-if="(!newUser && !isMe) && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))" @click="toggleDeactivate(user)">
@@ -496,6 +498,9 @@ export default {
           changes.password = this.userPassword
           changes.email = this.user.email
         }
+        if (this.$refs.uploadPasswordRef) {
+          this.$refs.uploadPasswordRef.triggerSave()
+        }
         await this.$store.dispatch('users/patchUser', { id: this.userId, changes })
 
         if (this.formErrorsCheck) {
@@ -638,3 +643,38 @@ export default {
   }
 }
 </script>
+<style>
+.inputs-form {
+  background: #E9E9E9;
+  border: none;
+  border-radius: 10px;
+}
+
+.times-btn {
+  border: none;
+  background: transparent;
+  color: #E9E9E9;
+  color: dimgrey;
+  font-size: 1rem;
+  padding: 0;
+}
+.times-btn:hover {
+  background: transparent;
+  color: dimgrey;
+}
+.cancel-btn {
+  border: 3px solid black;
+  padding: 0.2rem 0.3rem;
+  font-size: 1rem;
+}
+
+.times-container {
+  background: transparent;
+}
+
+.times-card {
+  padding: 1rem;
+  border-radius: 10px;
+  background: #E9E9E9;
+}
+</style>
