@@ -116,21 +116,11 @@ export default {
     this.fetchData()
   },
   watch: {
-    selectedSoc () {
-      this.fetchCumulativeUsageStats()
-    },
-    selectedHazard () {
-      this.fetchCumulativeUsageStats()
-    },
-    selectedDate () {
-      this.fetchCumulativeUsageStats()
-    },
-    selectedRegion () {
-      this.fetchCumulativeUsageStats()
-    },
-    selectedLanguage () {
-      this.fetchCumulativeUsageStats()
-    }
+    selectedSoc: "fetchCumulativeUsageStats",
+    selectedHazard: "fetchCumulativeUsageStats",
+    selectedDate: "fetchCumulativeUsageStats",
+    selectedRegion: "fetchCumulativeUsageStats",
+    selectedLanguage: "fetchCumulativeUsageStats"
   },
   methods: {
     fetchData () {
