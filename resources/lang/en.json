@@ -579,9 +579,12 @@
     "my_apps": "My Apps",
     "new_tc": "New terms and conditions",
     "build": "Build new app",
+    "build_key": "Build new API key",
     "edit": "Edit app",
     "building": "Building app",
-    "no_apps": "You have no apps, build one to get started."
+    "building_key": "Building API key",
+    "no_apps": "You have no apps, build one to get started.",
+    "api_keys": "API Keys"
   },
   "home": {
     "home": "Home",
