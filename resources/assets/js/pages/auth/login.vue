@@ -100,24 +100,14 @@ export default {
 
 <style scoped>
 .login-container {
-  width: 769px;
+  width: 100%;
+  max-width: 769px;
   height: auto;
-  flex-grow: 0;
   margin: 10px auto;
-  padding: 57px 98px 82px 96px;
+  padding: 20px;
   border-radius: 20px;
   background-color: #f7f7f7;
 }
-
-.input-field {
-  width: 100%;
-  height: 50px;
-  flex-grow: 0;
-  margin: 6px 0 39px 0;
-  border-radius: 10px;
-  background-color: #e9e9e9;
-}
-
 .container-fluid {
   background-color: #ffffff;
   min-height: 100vh;
@@ -162,5 +152,11 @@ export default {
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #d3d3d3 inset;
   -webkit-text-fill-color: #000;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    padding: 57px 98px 82px 96px;
+  }
 }
 </style>
