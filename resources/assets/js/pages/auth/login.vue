@@ -1,46 +1,58 @@
 <template>
-  <div class="container-fluid login-section">
+  <div class="container-fluid">
     <div class="row w-100">
-      <div class="col-lg-6 m-auto">
-        <card>
-          <form @submit.prevent="login" @keydown="form.onKeydown($event)">
+      <card class="login-container">
+        <form @submit.prevent="login" @keydown="form.onKeydown($event)">
 
-            <img class="mx-auto d-block mb-5 img-fluid" :src="src('logoLarge')" :srcSet="srcSet('logoLarge')">
+          <h1 class="text-center mb-5">{{ $t('login') }}</h1>
 
-            <b-alert show variant="success" v-if="confirmed">{{ $t('email_confirmed')}}</b-alert>
-            <b-alert show variant="warning" v-if="confirmFailed">{{ $t('confirmation_failed')}}</b-alert>
+          <b-alert show variant="success" v-if="confirmed">{{ $t('email_confirmed')}}</b-alert>
+          <b-alert show variant="warning" v-if="confirmFailed">{{ $t('confirmation_failed')}}</b-alert>
 
-            <!-- Email -->
-            <div class="form-group">
-              <label class="text-uppercase font-weight-bold styled-label">{{ $t('email') }}</label>
-              <input v-model="form.email" type="email" name="email" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('email') }">
-              <has-error :form="form" field="email" class="pl-2 font-italic"></has-error>
+          <div class="form-group">
+            <label class="styled-label-signup styled-label" for="email">
+              {{ $t('email') }}
+              <span class="is-required"></span>
+            </label>
+            <input v-model="form.email" type="email" name="email" class="form-control styled-input"
+                   :class="{ 'is-invalid': form.errors.has('email') }">
+            <has-error :form="form" field="email" class="pl-2 font-italic"></has-error>
+          </div>
+
+          <div class="form-group">
+            <label class="styled-label-signup styled-label" for="password">
+              {{ $t('password') }}
+              <span class="is-required"></span>
+            </label>
+            <div class="input-group-password">
+              <input v-model="form.password" :type="showPassword ? 'text' : 'password'" name="password" class="form-control styled-input"
+                     :class="{ 'is-invalid': form.errors.has('password') }">
+              <div class="input-group-append showpassword" @click="showPassword = !showPassword">
+                <div v-if="showPassword" :key="1">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <div v-else :key="2">
+                  <i class="fas fa-eye-slash"></i>
+                </div>
+              </div>
             </div>
+            <has-error :form="form" field="password" class="pl-2 font-italic"></has-error>
+          </div>
 
-            <!-- Password -->
-            <div class="form-group">
-              <label class="text-uppercase font-weight-bold styled-label">{{ $t('password') }}</label>
-              <input v-model="form.password" type="password" name="password" class="form-control"
-                :class="{ 'is-invalid': form.errors.has('password') }">
-              <has-error :form="form" field="password" class="pl-2 font-italic"></has-error>
-            </div>
+          <div class="form-group text-right">
+            <router-link class="underlined-link" :to="{ name: 'password.request' }">
+              {{ $t('forgot_password') }}
+            </router-link>
+          </div>
 
-            <div class="form-group mt-5 mb-5">
-              <!-- Submit Button -->
-              <v-button :loading="form.busy" class="btn-dark w-100">
-                {{ $t('login') }}
-              </v-button>
-            </div>
+          <div class="form-group mt-5 mb-5">
+            <v-button :loading="form.busy" class="btn-dark w-50 mx-auto d-block">
+              {{ $t('login') }}
+            </v-button>
+          </div>
 
-            <div class="form-group text-center">
-              <router-link class="underlined-link" :to="{ name: 'password.request' }">
-                {{ $t('forgot_password') }}
-              </router-link>
-            </div>
-          </form>
-        </card>
-      </div>
+        </form>
+      </card>
     </div>
   </div>
 </template>
@@ -59,33 +71,96 @@ export default {
     form: new Form({
       email: '',
       password: ''
-    })
+    }),
+    showPassword: false
   }),
 
   methods: {
     async login () {
-      // Submit the form.
       const { data } = await this.form.post('/api/login')
 
-      // Save the token.
       this.$store.dispatch('auth/saveToken', {
         token: data.token
       })
 
-      // Fetch the user.
       await this.$store.dispatch('auth/fetchUser')
 
-      // Reset Selections
       localStorage.removeItem('soc')
       localStorage.removeItem('lang')
 
       if (PreviousRoute.hasRoute) {
         this.$router.push(PreviousRoute.route)
       } else {
-        // Redirect home.
         this.$router.push({ name: 'home' })
       }
     }
   }
 }
 </script>
+
+<style scoped>
+.login-container {
+  width: 769px;
+  height: auto;
+  flex-grow: 0;
+  margin: 10px auto;
+  padding: 57px 98px 82px 96px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.input-field {
+  width: 100%;
+  height: 50px;
+  flex-grow: 0;
+  margin: 6px 0 39px 0;
+  border-radius: 10px;
+  background-color: #e9e9e9;
+}
+
+.container-fluid {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.styled-label-signup {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.styled-input {
+  padding: 13px;
+  letter-spacing: 0.4px;
+  height: 45px;
+}
+
+.is-required {
+  color: red;
+  margin-left: 5px;
+}
+
+.input-group-password {
+  position: relative;
+}
+
+.input-group-append {
+  position: absolute;
+  right: 20px;
+  top: 12.5px;
+  font-size: 14px;
+  color: #999;
+}
+
+.input-group-append.showpassword {
+  cursor: pointer;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #d3d3d3 inset;
+  -webkit-text-fill-color: #000;
+}
+</style>
