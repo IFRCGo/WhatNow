@@ -130,8 +130,6 @@ import * as permissionsList from '../../store/permissions'
 import Avatar from 'vue-avatar'
 import SelectSociety from '~/pages/content/selectSociety'
 import SelectHazardType from '~/pages/content/simpleHazardTypePicker'
-
-
 const fetchHandler = {
   handler (val, oldVal) {
     if (val !== oldVal) {
@@ -206,15 +204,15 @@ export default {
   },
   methods: {
     clearFilters () {
-      this.selectedSoc = null
-      this.hazardTypeFilter = null
-      this.languageFilter = null
+      this.selectedSoc = null;
+      this.hazardTypeFilter = null;
+      this.languageFilter = null;
     },
     async fetchAllHazardTypes () {
       try {
-        await this.$store.dispatch('content/fetchHazardTypes')
+        await this.$store.dispatch('content/fetchHazardTypes');
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'))
+        this.$noty.error(this.$t('error_alert_text'));
       }
     },
     async fetchAudits() {
@@ -238,31 +236,28 @@ export default {
         }
       } catch (e) {
         this.$noty.error(this.$t('error_alert_text'));
-      } finally {
-        this.fetchingAudits = false;
       }
-      this.fetchingAudits = false
+      this.fetchingAudits = false;
     },
-
     async fetchOrganisations () {
       try {
-        await this.$store.dispatch('content/fetchOrganisations')
+        await this.$store.dispatch('content/fetchOrganisations');
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'))
+        this.$noty.error(this.$t('error_alert_text'));
       }
     },
     async viewChanges (item) {
-      localStorage.setItem('soc', item.country_code)
+      localStorage.setItem('soc', item.country_code);
       if (item.language_code) {
-        localStorage.setItem('lang', item.language_code)
-        this.$router.push({ name: 'content.editWhatnow', params: { whatnowId: item.entity_id, langCode: item.language_code }})
+        localStorage.setItem('lang', item.language_code);
+        this.$router.push({ name: 'content.editWhatnow', params: { whatnowId: item.entity_id, langCode: item.language_code }});
       } else {
-        this.$router.push({ name: 'content.whatnow', params: { countryCode: item.country_code }})
+        this.$router.push({ name: 'content.whatnow', params: { countryCode: item.country_code }});
       }
     },
     getSocietyByCode (code) {
-      const soc = this.societies.find(soc => soc.countryCode === code)
-      return soc ? soc.name : code
+      const soc = this.societies.find(soc => soc.countryCode === code);
+      return soc ? soc.name : code;
     },
     onSortChanged(ctx) {
       if (ctx.sortBy === 'action') {
@@ -276,13 +271,12 @@ export default {
     },
     setLocalStorage () {
       if (this.selectedSoc) {
-        localStorage.setItem('soc', this.selectedSoc.countryCode)
+        localStorage.setItem('soc', this.selectedSoc.countryCode);
       } else {
-        localStorage.removeItem('soc')
+        localStorage.removeItem('soc');
       }
     }
   },
-
   computed: {
     filteredHazardsList () {
       const alphabeticalHazardList = [...this.hazardsList].sort((a, b) => a.name.localeCompare(b.name))
@@ -327,7 +321,6 @@ export default {
   width: 100%;
   height: 30px;
   border-radius: 15px;
-  font: 500 16px/30px 'Poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
