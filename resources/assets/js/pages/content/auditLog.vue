@@ -216,58 +216,58 @@ export default {
       }
     },
     async fetchAudits() {
-      this.fetchingAudits = true;
+      this.fetchingAudits = true
       const filters = {
         content: this.hazardTypeFilter,
         country_code: this.selectedSoc ? this.selectedSoc.countryCode : null,
         language_code: this.languageFilter
-      };
+      }
       const params = {
         page: this.currentPage,
         filters,
         orderBy: this.orderBy,
         sort: this.sortDesc ? 'desc' : 'asc'
-      };
+      }
       try {
         if (this.userId) {
-          await this.$store.dispatch('audit/fetchUserAudits', { ...params, userId: this.userId });
+          await this.$store.dispatch('audit/fetchUserAudits', { ...params, userId: this.userId })
         } else {
-          await this.$store.dispatch('audit/fetchAudits', params);
+          await this.$store.dispatch('audit/fetchAudits', params)
         }
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'));
+        this.$noty.error(this.$t('error_alert_text'))
       }
-      this.fetchingAudits = false;
+      this.fetchingAudits = false
     },
     async fetchOrganisations () {
       try {
-        await this.$store.dispatch('content/fetchOrganisations');
+        await this.$store.dispatch('content/fetchOrganisations')
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'));
+        this.$noty.error(this.$t('error_alert_text'))
       }
     },
     async viewChanges (item) {
-      localStorage.setItem('soc', item.country_code);
+      localStorage.setItem('soc', item.country_code)
       if (item.language_code) {
-        localStorage.setItem('lang', item.language_code);
-        this.$router.push({ name: 'content.editWhatnow', params: { whatnowId: item.entity_id, langCode: item.language_code }});
+        localStorage.setItem('lang', item.language_code)
+        this.$router.push({ name: 'content.editWhatnow', params: { whatnowId: item.entity_id, langCode: item.language_code }})
       } else {
-        this.$router.push({ name: 'content.whatnow', params: { countryCode: item.country_code }});
+        this.$router.push({ name: 'content.whatnow', params: { countryCode: item.country_code }})
       }
     },
     getSocietyByCode (code) {
-      const soc = this.societies.find(soc => soc.countryCode === code);
-      return soc ? soc.name : code;
+      const soc = this.societies.find(soc => soc.countryCode === code)
+      return soc ? soc.name : code
     },
     onSortChanged(ctx) {
       if (ctx.sortBy === 'action') {
-        this.orderBy = 'created_at';
-        this.sortDesc = ctx.sortDesc;
+        this.orderBy = 'created_at'
+        this.sortDesc = ctx.sortDesc
       } else {
-        this.orderBy = ctx.sortBy;
-        this.sortDesc = ctx.sortDesc;
+        this.orderBy = ctx.sortBy
+        this.sortDesc = ctx.sortDesc
       }
-      this.fetchAudits();
+      this.fetchAudits()
     },
     setLocalStorage () {
       if (this.selectedSoc) {
