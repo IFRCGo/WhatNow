@@ -101,7 +101,7 @@ export default {
 <style scoped>
 .login-container {
   width: 100%;
-  max-width: 769px;
+  max-width: 760px;
   height: auto;
   margin: 10px auto;
   padding: 20px;
@@ -154,9 +154,9 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #000;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 760px) {
   .login-container {
-    padding: 57px 98px 82px 96px;
+    padding: 60px 90px;
   }
 }
 </style>
