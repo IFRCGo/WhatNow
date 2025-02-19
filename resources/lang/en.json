@@ -871,5 +871,11 @@
   "terms_conditions": {
     "title": "Terms and Conditions",
     "accept": "Accept"
+  },
+  "badges": {
+    "hazardCreate": "Hazard Created",
+    "published": "Published",
+    "draft": "Draft",
+    "bulkUploadDraft": "Bulk Upload Draft"
   }
 }
