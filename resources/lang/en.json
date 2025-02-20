@@ -275,6 +275,7 @@
     "actions": "Actions",
     "create": "Create",
     "edit": "Edit",
+    "save": "Save",
     "deactivate": "Deactivate",
     "activate": "Activate",
     "are_you_sure": "Are you sure?",
@@ -484,6 +485,13 @@
       "content_add_hazard_title": "Add Hazard",
       "key_message_label": "Key message title",
       "supporting_message_label": "Supporting message"
+    },
+    "message_editor": {
+      "title": "Message Editor",
+      "society_name_label": "National society name",
+      "attribution_url_label": "Attribution URL",
+      "attribution_message_label": "Attribution Message",
+      "create_btn": "Add hazard"
     },
     "audit": "Audit log",
     "export": "Export",

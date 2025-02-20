@@ -102,6 +102,9 @@ export const mutations = {
   },
   [types.CONTENT_FAILURE] (state, { error }) {
     state.errors.push(error)
+  },
+  [types.SET_CURRENT_LANGUAGES] (state, languages) {
+    state.currentLanguages = languages
   }
 }
 // actions
@@ -223,5 +226,8 @@ export const actions = {
       commit(`generic/${types.NETWORK_FAILURE}`, { error }, { root: true })
       throw error
     }
+  },
+  setCurrentLanguages ({ commit }, languages) {
+    commit(types.SET_CURRENT_LANGUAGES, languages)
   }
 }
