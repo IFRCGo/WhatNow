@@ -144,9 +144,11 @@ class RcnExporter
 
 
     public function buildTemplate(
+        array $items,
         string $countryCode,
         string $format = 'xlsx'
-    )
+
+    ): \Symfony\Component\HttpFoundation\BinaryFileResponse
     {
         $organisation = $this->client->getOrganisationByCountryCode($countryCode);
         $fileName = "template.$format";

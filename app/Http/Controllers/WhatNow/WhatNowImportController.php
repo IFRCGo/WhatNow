@@ -96,8 +96,9 @@ final class WhatNowImportController extends ApiController
     }
 
 
-    public function export(string $countryCode, string $languageCode)
+    public function export(Request $request,string $countryCode, string $languageCode)
     {
+        $extension = $request->query('extension', 'csv');
         if (strlen($countryCode) !== 3) {
             return new JsonResponse(['message' => 'Invalid country code'], JsonResponse::HTTP_BAD_REQUEST);
         }
@@ -112,7 +113,7 @@ final class WhatNowImportController extends ApiController
 
         try {
             $instructionRows = $exporter->buildInstructionRows($countryCode, $languageCode);
-            $attributionRow = $exporter->buildAttributionRow($countryCode, $languageCode);
+            return $exporter->buildTemplate($instructionRows->all(),$countryCode,$extension);
         } catch (RcnApiResourceNotFoundException $e) {
             return $this->respondWithNotFound($e);
         } catch (RcnApiException $e) {
@@ -121,12 +122,24 @@ final class WhatNowImportController extends ApiController
             return $this->respondWithError($e, $e->getMessage());
         }
 
-        try {
-            $csv = $exporter::buildCsvTemplate($countryCode, $instructionRows, $attributionRow);
-        } catch (CannotInsertRecord $e) {
-            return $this->respondWithError($e, $e->getMessage());
-        }
 
-        $csv->output();
+//        try {
+//            $instructionRows = $exporter->buildInstructionRows($countryCode, $languageCode);
+//            $attributionRow = $exporter->buildAttributionRow($countryCode, $languageCode);
+//        } catch (RcnApiResourceNotFoundException $e) {
+//            return $this->respondWithNotFound($e);
+//        } catch (RcnApiException $e) {
+//            return $this->respondWithError($e);
+//        } catch (RcnExportException $e) {
+//            return $this->respondWithError($e, $e->getMessage());
+//        }
+//
+//        try {
+//            $csv = $exporter::buildCsvTemplate($countryCode, $instructionRows, $attributionRow);
+//        } catch (CannotInsertRecord $e) {
+//            return $this->respondWithError($e, $e->getMessage());
+//        }
+//
+//        $csv->output();
     }
 }

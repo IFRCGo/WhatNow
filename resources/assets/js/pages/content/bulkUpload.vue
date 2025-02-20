@@ -17,7 +17,7 @@
                  :options="filteredLanguages"
                  label="text" :disabled="filteredLanguages.length === 0"
                  :placeholder="$t('content.audit_log.select_language')"
-                 @input="handleSelection">
+                 @input="handleExportLangSelection">
                     <template slot="option" slot-scope="option">
                      <div class="ml-2 rtl-mr-2 dropdown-option">
                     {{ option.text }}
@@ -31,8 +31,8 @@
                </v-select>
           </span>
             <b-dropdown :text="$t('content.bulk_upload.template')" class="mr-2 mb-2 btn-outline-primary dw-btn">
-              <b-dropdown-item @click="downloadBlankTemplate('csv')">CSV</b-dropdown-item>
-              <b-dropdown-item @click="downloadBlankTemplate('xlsx')">XLSX</b-dropdown-item>
+              <b-dropdown-item @click="downloadTemplate('csv')">CSV</b-dropdown-item>
+              <b-dropdown-item @click="downloadTemplate('xlsx')">XLSX</b-dropdown-item>
             </b-dropdown>
           <p class="mt-4 bulk-text">
             {{ $t('content.bulk_upload.refer') }}
@@ -185,7 +185,7 @@ export default {
       selectedLanguage: false,
       selectedExportLang: null,
       warnings: true,
-      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off')},
+      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off') },
       languages,
       pdf: pdfFile,
       permissionsList: permissionsList,
@@ -229,9 +229,8 @@ export default {
       await this.fetchContent()
       this.loadingContent = false
     },
-    setExportLang (lang) {
-      console.log(lang)
-      this.selectedExportLang = lang
+    handleExportLangSelection (lang) {
+      this.selectedExportLang = lang.value
     },
     async fetchOrganisations () {
       this.isFetchingLangs = true
@@ -280,7 +279,7 @@ export default {
               break
             default:
               this.uploadError = this.$t('error_alert_text')
-              console.error(e)
+              console.error(error)
               break
           }
         })
@@ -293,8 +292,11 @@ export default {
       this.warnings = true
       this.overwrite = false
     },
-    downloadBlankTemplate (extension = 'csv') {
-      axios.get(`/api/template/${this.selectedSoc.countryCode}?extension=${extension}`, {
+    downloadTemplate (extension = 'csv') {
+      const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
+      console.log(langEndpoint)
+      debugger
+      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?extension=${extension}`, {
         responseType: 'blob'
       })
         .then((response) => {
@@ -315,36 +317,36 @@ export default {
           console.error(error)
         })
 
-      this.$fireGTEvent(this.$gtagEvents.DownloadBulkTemplate)
+      this.$fireGTEvent(this.selectedExportLang ? this.$gtagEvents.ExportLanguageData(this.selectedExportLang) : this.$gtagEvents.DownloadBulkTemplate)
     },
-    downloadTemplate (lang) {
-      axios.get(`/api/template/${this.selectedSoc.countryCode}/${lang}`)
-        .then((response) => {
-          var headers = response.headers
-          var blob = new Blob([response.data], { type: headers['content-type'] })
-
-          if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
-            window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.csv')
-          } else {
-            var link = document.createElement('a')
-            link.href = window.URL.createObjectURL(blob)
-            link.download = this.selectedSoc.countryCode + '.csv'
-            link.click()
-          }
-        })
-        .catch((error) => {
-          this.$noty.error(this.$t('error_alert_text'))
-          console.error(error)
-        })
-
-      this.$fireGTEvent(this.$gtagEvents.ExportLanguageData(lang))
-    },
+    // downloadTemplate (lang) {
+    //   axios.get(`/api/template/${this.selectedSoc.countryCode}/${lang}`)
+    //     .then((response) => {
+    //       var headers = response.headers
+    //       var blob = new Blob([response.data], { type: headers['content-type'] })
+    //
+    //       if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+    //         window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.csv')
+    //       } else {
+    //         var link = document.createElement('a')
+    //         link.href = window.URL.createObjectURL(blob)
+    //         link.download = this.selectedSoc.countryCode + '.csv'
+    //         link.click()
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       this.$noty.error(this.$t('error_alert_text'))
+    //       console.error(error)
+    //     })
+    //
+    //   this.$fireGTEvent(this.$gtagEvents.ExportLanguageData(lang))
+    // },
     clearFiles () {
       this.$refs.fileinput.reset()
     },
     getLocalStorage () {
       let soc = localStorage.getItem('soc')
-      let lang = localStorage.getItem('lang')
+      const lang = localStorage.getItem('lang')
 
       if (!soc || !lang) {
         soc = this.filteredSocieties[0].countryCode
