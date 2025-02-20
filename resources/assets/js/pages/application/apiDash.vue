@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="api-dash">
     <b-col class="mt-4 mb-2 pl-4 pr-4">
-      <h1>{{ $t('applications.my_apps') }}</h1>
+      <h1>{{ $t('applications.api_keys') }}</h1>
     </b-col>
     <b-row class="pl-4 pr-4 pb-4 pt-4">
       <b-col>
@@ -16,20 +16,12 @@
         </b-collapse>
         <b-row class="align-items-baseline">
           <b-col>
-            <i18n path="number_of_apps" tag="small" class="text-uppercase">
-              <span>{{ this.apps.length }}</span>
-            </i18n>
           </b-col>
           <b-col>
-            <b-button class="text-uppercase float-right rtl-float-left pl-4 pr-4" variant="dark" v-b-modal.create-app :disabled="creatingApp">
+            <b-button class="text-uppercase float-right rtl-float-left pl-4 pr-4 btn-outline-primary"v-b-modal.create-app :disabled="creatingApp">
               <span v-if="!creatingApp">{{ $t('applications.build') }} <fa class="ml-2 rtl-mr-2" :icon="['fas', 'plus']"/></span>
               <span v-else>{{ $t('applications.building') }}</span>
             </b-button>
-          </b-col>
-        </b-row>
-        <b-row class="mb-2">
-          <b-col>
-            <hr />
           </b-col>
         </b-row>
           <transition-group name="fade-slide" tag="b-row">
@@ -53,7 +45,7 @@
                 </div>
                 <div>
                   <hr />
-                  <div class="d-flex justify-content-between api-key-panel bg-grey align-items-center p-3">
+                  <div class="d-flex justify-content-between api-key-panel align-items-center p-3">
                     <div :ref="app.id">
                       <small>{{ app.key }}</small>
                     </div>
@@ -76,8 +68,16 @@
     </b-row>
 
     <!-- Create app modal -->
-    <b-modal id="create-app" centered :title="isEdit ? $t('applications.edit') : $t('applications.build')"
-    ref="createModal" @ok="createApp" @shown="clearApp" ok-variant="dark">
+    <b-modal  id="create-app"
+              centered
+              :title="isEdit ? $t('applications.edit') : $t('applications.build_key')"
+              ref="createModal"
+              @ok="createApp"
+              @shown="clearApp"
+              ok-title="OK"
+              cancel-title="Cancel"
+              ok-variant="outline-primary"
+              cancel-variant="outline-primary">
       <b-form-group
           id="fieldset-name"
           :label="$t('common.name')"
@@ -253,3 +253,4 @@ export default {
   })
 }
 </script>
+

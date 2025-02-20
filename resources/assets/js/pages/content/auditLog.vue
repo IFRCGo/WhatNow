@@ -2,65 +2,63 @@
   <b-container fluid>
     <page-banner>
       <b-col>
-        <h1 class="sec-title">{{ $t('content.audit_log.my_audit_log') }}</h1>
+        <h1>{{ $t('content.audit_log.audit_log') }}</h1>
       </b-col>
       <b-col>
-        <b-button class="float-right rtl-float-left mr-2 rtl-ml-2 btn-outline-primary" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
+        <b-button size="lg" variant="dark" class="float-right rtl-float-left mr-2 rtl-ml-2" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
           {{ $t('users.list.download_report') }}
         </b-button>
       </b-col>
     </page-banner>
 
-     <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
-        <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_hazard') }}</p>
-          <SelectHazardType class="bg-white" v-model="hazardTypeFilter" :hazardTypeList="filteredHazardsList"></SelectHazardType>
-        </b-col>
-        <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_language') }}</p>
-          <v-select
-            :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
-            v-model="languageFilter"
-            class="w-100 v-select-custom"
-            :options="filteredLanguages"
-            label="text" :disabled="filteredLanguages.length === 0"
-            :placeholder="$t('content.whatnow.select_language')">
-            <template slot="option" slot-scope="option">
-              <div class="ml-2 rtl-mr-2 dropdown-option">
-                {{ option.text }}
-              </div>
-            </template>
-            <template slot="selected-option" slot-scope="option">
-              <div class="ml-2 rtl-mr-2 dropdown-option">
-                {{ option.text }}
-              </div>
-            </template>
-          </v-select>
-        </b-col>
-        <b-col cols="3">
-          <p class="select-header" v-if="!apiUsers"> {{ $t('content.audit_log.select_soc') }}</p>
-          <selectSociety
-            :selected.sync="selectedSoc"
-            :staynull="true" />
-        </b-col>
-        <b-col cols="3">
-          <b-button @click="clearFilters" :disabled="noFilters" class="float-right rtl-float-left btn-outline-primary">
-            {{ $t('users.list.clear_filters') }}
-          </b-button>
-        </b-col>
-      </b-row>
+    <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
+      <b-col cols="3">
+        <SelectHazardType class="bg-white" v-model="hazardTypeFilter" :hazardTypeList="filteredHazardsList"></SelectHazardType>
+      </b-col>
+      <b-col cols="3">
+        <v-select
+          :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
+          v-model="languageFilter"
+          class="w-100 styled-select"
+          :options="filteredLanguages"
+          label="text" :disabled="filteredLanguages.length === 0"
+          :placeholder="$t('content.whatnow.select_language')">
+          <template slot="option" slot-scope="option">
+            <div class="ml-2 rtl-mr-2 dropdown-option">
+              {{ option.text }}
+            </div>
+          </template>
+          <template slot="selected-option" slot-scope="option">
+            <div class="ml-2 rtl-mr-2 dropdown-option">
+              {{ option.text }}
+            </div>
+          </template>
+        </v-select>
+      </b-col>
+      <b-col cols="3">
+        <selectSociety
+          :selected.sync="selectedSoc"
+          :staynull="true" />
+      </b-col>
+      <b-col cols="3">
+        <b-button size="sm" variant="dark" @click="clearFilters" :disabled="noFilters" class="float-right rtl-float-left">
+          {{ $t('users.list.clear_filters') }}
+        </b-button>
+      </b-col>
+    </b-row>
 
     <b-row class="pl-4 pr-4 pb-4 pt-4 bg-white">
       <b-col v-if="auditsAvailable">
         <table-loading :loading="fetchingAudits"></table-loading>
         <b-table hover
-          :items="audits.data"
-          :fields="fields"
-          :perPage="audits.meta.per_page"
-          :show-empty="false"
-          no-local-sorting
-          :sort-by.sync="orderBy"
-          :sort-desc.sync="sortDesc">
+                 :items="audits.data"
+                 :fields="fields"
+                 :perPage="audits.meta.per_page"
+                 :show-empty="false"
+                 no-local-sorting
+                 :sort-by.sync="orderBy"
+                 :sort-desc.sync="sortDesc"
+                 @sort-changed="onSortChanged">
           <template #cell(user)="data">
             <div v-if="data.item.user">
               <b-img v-if="data.item.user.user_profile.photo_url" :src="data.item.user.user_profile.photo_url" width="20" height="20" rounded="circle" alt="" role="presentation"></b-img>
@@ -75,15 +73,36 @@
           <template #cell(country_code)="data">
             {{ getSocietyByCode(data.item.country_code) }}
           </template>
-          <template #cell(created_at)="data">
-            {{ data.item.created_at | moment("MM/DD/YY HH:mm:ss") }}
+          <template #cell(language_code)="data">
+            {{ data.item.language_code }}
           </template>
-          <template #cell(actions)="data">
-             <b-button v-if="data.item.entity_id" class="mb-1 new-btn" @click="viewChanges(data.item)" :to="{ name: '', params: {} }"> {{ $t('common.view_content') }} </b-button>
+          <template #cell(content)="data">
+            {{ data.item.content }}
+          </template>
+          <template #cell(action)="data">
+            <div class="d-flex justify-content-between align-items-center">
+              <b-badge v-if="data.item.action === 'Created content'" class="custom-badge custom-badge-hazard-create">
+                <span>{{ $t('badges.hazardCreate') }}</span>
+                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+              </b-badge>
+              <b-badge v-else-if="data.item.action === 'Published a content translation'" class="custom-badge custom-badge-published">
+                <span>{{ $t('badges.published') }}</span>
+                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+              </b-badge>
+              <b-badge v-else-if="data.item.action === 'Updated content'" class="custom-badge custom-badge-draft">
+                <span>{{ $t('badges.draft') }}</span>
+                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+              </b-badge>
+              <b-badge v-else-if="data.item.action === 'Bulk upload draft'" class="custom-badge custom-badge-bulk-upload-draft">
+                <span>{{ $t('badges.bulkUploadDraft') }}</span>
+                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+              </b-badge>
+              <span v-else>{{ data.item.action }}</span>
+            </div>
+            <span class="d-none">{{ data.item.created_at }}</span>
           </template>
         </b-table>
         <b-pagination
-
           v-if="audits.meta.total > audits.meta.per_page"
           size="md"
           :total-rows="audits.meta.total"
@@ -97,7 +116,6 @@
       </b-col>
       <b-col v-else>
         {{ $t('common.loading')}}
-        <!-- Throw in a spooky boi here -->
       </b-col>
     </b-row>
   </b-container>
@@ -112,7 +130,6 @@ import * as permissionsList from '../../store/permissions'
 import Avatar from 'vue-avatar'
 import SelectSociety from '~/pages/content/selectSociety'
 import SelectHazardType from '~/pages/content/simpleHazardTypePicker'
-
 const fetchHandler = {
   handler (val, oldVal) {
     if (val !== oldVal) {
@@ -135,15 +152,13 @@ export default {
   data () {
     return {
       permissions: permissionsList,
-      test: 'sgdfg',
       fields: [
-                { key: 'user', sortable: true, tdClass: 'align-middle' },
-                { key: 'action', sortable: true },
-                { key: 'content', sortable: true },
-                { key: 'language_code', sortable: true },
-                { key: 'country_code', sortable: true, label: this.$t('content.audit_log.soc_label') },
-                { key: 'created_at', sortable: true },
-                { key: 'actions', sortable: false }
+        { key: 'user', sortable: true, tdClass: 'align-middle' },
+        { key: 'country_code', sortable: true, label: this.$t('content.audit_log.soc_label') },
+        { key: 'language_code', sortable: true },
+        { key: 'content', sortable: true },
+        { key: 'action', sortable: true },
+
       ],
       currentPage: 1,
       fetchingAudits: false,
@@ -189,52 +204,38 @@ export default {
   },
   methods: {
     clearFilters () {
-      this.selectedSoc = null
-      this.hazardTypeFilter = null
-      this.languageFilter = null
+      this.selectedSoc = null;
+      this.hazardTypeFilter = null;
+      this.languageFilter = null;
     },
     async fetchAllHazardTypes () {
       try {
-        await this.$store.dispatch('content/fetchHazardTypes')
+        await this.$store.dispatch('content/fetchHazardTypes');
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'))
+        this.$noty.error(this.$t('error_alert_text'));
       }
     },
-    async fetchAudits () {
+    async fetchAudits() {
       this.fetchingAudits = true
-      if (this.userId) {
-        try {
-          await this.$store.dispatch('audit/fetchUserAudits',
-            {
-              page: this.currentPage,
-              filters: {
-                content: this.hazardTypeFilter,
-                country_code: this.selectedSoc ? this.selectedSoc.countryCode : null,
-                language_code: this.languageFilter
-              },
-              orderBy: this.orderBy,
-              sort: this.sortDesc ? 'desc' : 'asc',
-              userId: this.userId
-            })
-        } catch (e) {
-          this.$noty.error(this.$t('error_alert_text'))
+      const filters = {
+        content: this.hazardTypeFilter,
+        country_code: this.selectedSoc ? this.selectedSoc.countryCode : null,
+        language_code: this.languageFilter
+      }
+      const params = {
+        page: this.currentPage,
+        filters,
+        orderBy: this.orderBy,
+        sort: this.sortDesc ? 'desc' : 'asc'
+      }
+      try {
+        if (this.userId) {
+          await this.$store.dispatch('audit/fetchUserAudits', { ...params, userId: this.userId })
+        } else {
+          await this.$store.dispatch('audit/fetchAudits', params)
         }
-      } else {
-        try {
-          await this.$store.dispatch('audit/fetchAudits',
-            {
-              page: this.currentPage,
-              filters: {
-                content: this.hazardTypeFilter,
-                country_code: this.selectedSoc ? this.selectedSoc.countryCode : null,
-                language_code: this.languageFilter
-              },
-              orderBy: this.orderBy,
-              sort: this.sortDesc ? 'desc' : 'asc'
-            })
-        } catch (e) {
-          this.$noty.error(this.$t('error_alert_text'))
-        }
+      } catch (e) {
+        this.$noty.error(this.$t('error_alert_text'))
       }
       this.fetchingAudits = false
     },
@@ -258,11 +259,21 @@ export default {
       const soc = this.societies.find(soc => soc.countryCode === code)
       return soc ? soc.name : code
     },
+    onSortChanged(ctx) {
+      if (ctx.sortBy === 'action') {
+        this.orderBy = 'created_at'
+        this.sortDesc = ctx.sortDesc
+      } else {
+        this.orderBy = ctx.sortBy
+        this.sortDesc = ctx.sortDesc
+      }
+      this.fetchAudits()
+    },
     setLocalStorage () {
       if (this.selectedSoc) {
-        localStorage.setItem('soc', this.selectedSoc.countryCode)
+        localStorage.setItem('soc', this.selectedSoc.countryCode);
       } else {
-        localStorage.removeItem('soc')
+        localStorage.removeItem('soc');
       }
     }
   },
@@ -303,19 +314,41 @@ export default {
       societies: 'content/organisations'
     })
   }
-
 }
 </script>
-<style>
-td {
-  div {
-    div {
-      background: #F6333F;
-      color: white;
-    }
-  }
+<style scoped>
+.custom-badge {
+  width: 100%;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  border: 2px solid;
 }
-.select-header {
-  font-size: 1rem;
+
+.custom-badge-published {
+  background: #E6FEDF;
+  border-color: #21A656;
+  color: #21A656;
+}
+
+.custom-badge-hazard-create {
+  background: #FEDEEC;
+  border-color: #F6333F;
+  color: #F6333F;
+}
+
+.custom-badge-bulk-upload-draft {
+  background: #C8E4F7;
+  border: 3px solid #4288B8;
+  color: #4288B8;
+}
+
+.custom-badge-draft {
+  background: #FFF8CA;
+  border-color: #E56A2D;
+  color: #E56A2D;
 }
 </style>
