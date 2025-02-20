@@ -306,7 +306,7 @@ export default {
 
 }
 </script>
-<style>
+<style scoped>
 td {
   div {
     div {

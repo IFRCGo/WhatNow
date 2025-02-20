@@ -122,26 +122,24 @@
             <template #cell(profile_pic)="data">
               <div>
                 <b-img v-if="data.item.user_profile?.photo_url" :src="data.item.user_profile.photo_url" width="42" height="42" rounded="circle" alt="" role="presentation"></b-img>
-                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name " />
+                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name" :size="42" class="custom-avatar" />
               </div>
             </template>
             <template #cell(actions)="data">
-              <b-button class="btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
-                <i class="fas fa-pen-square fa-lg"></i>
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-between mb-1">
+                <b-button class="btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
+                  <i class="fas fa-pen-square fa-lg"></i>
+                </b-button>
+                <b-button class="btn-outline-primary small-text" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)">
+                  {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }}
+                </b-button>
+              </div>
+              <b-button class="btn-outline-primary small-text" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
+                Reset Password
               </b-button>
-              <b-form-checkbox
-                class="mb-1"
-                switch
-                size="lg"
-                v-model="data.item.activated"
-                @change="toggleDeactivate(data.item)"
-                v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"
-              >
-              </b-form-checkbox>
-              <b-button class="btn-outline-warning" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
-                <i class="fas fa-envelope fa-lg"></i>
-              </b-button>
-            </template>
+            </div>
+          </template>
           </b-table>
         </div>
         <b-pagination
@@ -163,7 +161,6 @@
     </b-row>
   </b-container>
 </template>
-
 <script>
 import swal from 'sweetalert2'
 import axios from 'axios'
@@ -211,7 +208,7 @@ const fetchHandler = {
   deep: true
 }
 
-let termsDefault = 'Terms and Conditions';
+let termsDefault = 'Terms and Conditions'
 
 export default {
   components: {
@@ -338,7 +335,7 @@ export default {
             sort: this.sortDesc ? 'desc' : 'asc'
           })
       } catch (e) {
-         this.$noty.error(this.$t('error_alert_text'))
+        this.$noty.error(this.$t('error_alert_text'))
       }
 
       this.fetchingUsers = false
@@ -358,13 +355,18 @@ export default {
     },
     async sendResetPasswordEmail(email) {
       try {
-        const form = new Form({
-          email: email
-        });
-        await form.post('/api/password/email');
-        this.$noty.success(this.$t('password_reset_email_sent'));
+        const { data } = await axios.post('/api/admin/password/email', { email })
+        swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: data.status
+        })
       } catch (error) {
-        this.$noty.error(this.$t('error_alert_text'));
+        swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response.data.message || 'An error occurred'
+        })
       }
     }
   },
@@ -466,26 +468,24 @@ export default {
   }
 }
 </script>
-  <style>
+<style>
   .v-form-select-custom {
     background: #E9E9E9;
     border: none;
     border-radius: 10px;
     padding: 8px 8px;
     font-size: 18px;
+
   }
- th {
-   border-right: none !important;
- }
- td {
-   div {
-     div {
-     background: #F6333F!important;
-       color: white!important;
-     }
-   }
- }
   .select-header {
     font-size: 1rem;
   }
-  </style>
+  .small-text {
+    font-size: 0.8rem;
+  }
+  .custom-avatar {
+    background-color: #F6333F !important;
+    color: #FFFFFF !important;
+  }
+
+</style>
