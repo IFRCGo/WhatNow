@@ -1,31 +1,31 @@
 <template>
     <b-row class="pl-4 pr-4 pb-4 pt-3">
       <b-col>
-        <span v-if="!isPromo">{{ $t('content.whatnow.content') }}</span>
-        <b-button
-          size="sm"
-          variant="primary"
-          class="float-right rtl-float-left"
-          v-if="user && can(user, permissions.CONTENT_CREATE) && selectedSoc && !isPromo"
-          :to="{ name: 'content.create', params: { organisation: selectedSoc.countryCode, langCode: this.selectedLanguage, regionSlug: this.selectedRegion?.title } }">
-          {{ $t('content.whatnow.create') }}
-          <fa :icon="['fas', 'plus']" />
-        </b-button>
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="whatnow-list-title" v-if="!isPromo">{{ $t('content.whatnow.content') }}</h4>
+          <b-button
+            size="sm"
+            variant="outline-primary"
+            v-if="user && can(user, permissions.CONTENT_CREATE) && selectedSoc && !isPromo"
+            :to="{ name: 'content.create', params: { organisation: selectedSoc.countryCode, langCode: this.selectedLanguage, regionSlug: this.selectedRegion?.title } }">
+            {{ $t('content.message_editor.create_btn') }}
+          </b-button>
+        </div>
         <hr v-if="!isPromo"/>
         <b-row v-if="!isPromo && translationsExist">
-          <b-col>
-            <b>{{ $t('content.whatnow.hazard') }}</b>
+          <b-col lg="2">
+            <b class="whatnow-list-th">{{ $t('content.whatnow.hazard') }}</b>
           </b-col>
-          <b-col>
+          <b-col lg="3" class="whatnow-list-th">
             <b>{{ $t('common.title') }}</b>
           </b-col>
-          <b-col>
+          <b-col lg="3" class="whatnow-list-th">
             <b>{{ $t('common.description') }}</b>
           </b-col>
-          <b-col>
+          <b-col lg="2" class="whatnow-list-th">
             <b>{{ $t('common.unpublished_edits') }}</b>
           </b-col>
-          <b-col v-if="user">
+          <b-col lg="2" class="whatnow-list-th" v-if="user">
             <b>{{ $t('common.actions') }}</b>
           </b-col>
         </b-row>
@@ -234,3 +234,17 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+@import '../../../sass/variables.scss';
+h4.whatnow-list-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: $text-dark;
+}
+
+.whatnow-list-th {
+  font-size: 14px;
+  font-weight: 600;
+  color: $black;
+}
+</style>

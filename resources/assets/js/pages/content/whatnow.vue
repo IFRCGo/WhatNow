@@ -1,243 +1,218 @@
-  <template>
-    <b-container fluid>
-      <page-banner>
-        <b-col sm="auto" md="4">
-          <h1>{{ $t('content.whatnow.whatnow') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
-        </b-col>
-        <b-col sm="auto" md="8">
-          <div class="d-flex justify-content-end u-gap-24 flex-wrap">
-            <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
-            </selectSociety>
-            <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode"
-              :translationCode="selectedLanguage"></selectRegion>
-          </div>
-        </b-col>
-      </page-banner>
-
-      <b-row :class="`pb-0 pl-4 pr-4 whatnow-language-picker text-light ${selectingLanguage ? 'pt-2 pb-2' : 'pb-0'}`"
-        v-if="selectedSoc">
-        <b-col>
-          <b-input-group v-if="selectingLanguage">
-            <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
-            <div class="input-group-append">
-              <b-button class="h-100 btn-small-radius" variant="dark" @click="addNewLanguage">
-                <fa :icon="['fas', 'plus']" />
-              </b-button>
-              <b-button class="h-100 btn-small-radius" variant="outline-danger" @click="selectingLanguage = false">
-                <fa :icon="['fas', 'times']" />
-              </b-button>
+<template>
+  <b-container fluid class="h-100">
+    <b-row>
+      <b-col>
+        <div class="whatnow-message-editor-header">
+          <h1>{{ $t('content.message_editor.title') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
+        </div>
+      </b-col>
+    </b-row>
+    <b-row class="pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start m-auto"
+      v-show="selectedSoc">
+      <b-col class="d-flex align-items-center">
+        <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
+        </selectSociety>
+        <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" :translationCode="selectedLanguage">
+        </selectRegion>
+      </b-col>
+    </b-row>
+    <b-row class="m-3">
+      <b-col>
+        <b-nav tabs class="whatnow-message-editor-tabs">
+          <b-nav-item v-for="lang in currentLanguages" :key="lang" class="wn-item" @click="selectedLanguage = lang"
+            :active="selectedLanguage === lang">
+            <div class="nav-link-wrapper text-center h-100" v-if="lang">
+              {{ lang | uppercase }} -
+              <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
             </div>
-          </b-input-group>
-          <b-nav tabs v-else>
-            <b-nav-item v-for="lang in currentLanguages" :key="lang" @click="selectedLanguage = lang"
-              :active="selectedLanguage === lang">
-              <div class="nav-link-wrapper text-center h-100">
-                {{ lang | uppercase }} <br />
-                <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
-              </div>
-            </b-nav-item>
-            <b-nav-item v-b-tooltip.hover :title="selectingLanguage ? null : $t('content.whatnow.add_language')"
-              @click="selectingLanguage = true" v-if="can(user, permissions.CONTENT_CREATE)">
-              <fa class="mt-2" :icon="['fas', 'plus']" />
-            </b-nav-item>
-          </b-nav>
-        </b-col>
-      </b-row>
+          </b-nav-item>
+          <b-nav-item class="add-lang-btn ml-2" v-b-tooltip.hover
+            :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true"
+            v-if="can(user, permissions.CONTENT_CREATE)">
+            <fa :icon="['fas', 'plus']" />
+          </b-nav-item>
+        </b-nav>
+      </b-col>
+    </b-row>
+    <b-row class="whatnow-message-editor-ns-title" v-if="selectedSoc">
+      <b-col>
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>
+            {{ selectedSoc.name }}
+          </h4>
 
-      <b-row class="pl-4 pr-4 pb-3 pt-3 whatnow-publish-banner text-light" v-if="selectedSoc">
-        <b-col>
-          <p>{{ selectedSoc.label }}</p>
-        </b-col>
-        <b-col cols="auto">
-          <b-button size="lg" variant="primary" class="float-right pl-5 pr-5"
-            v-if="can(user, permissions.CONTENT_PUBLISH)" v-b-modal.publish-modal
-            :disabled="toPublish.length === 0 || !attributionSet">
-            <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
-            <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
-            <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
-            <span v-else-if="publishing">{{ $t('content.whatnow.publishing') }}
-              <fa class="ml-2" spin :icon="['fas', 'spinner']" />
-            </span>
-          </b-button>
-        </b-col>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="selectedLanguage && selectedSoc">
-        <b-col>
-          {{ $t('content.whatnow.attribution') }}
-          <b-button size="sm" variant="primary" class="float-right rtl-float-left" @click="showEditAttributionModal"
-            v-if="canEditAttribution">{{ $t('common.edit') }}</b-button>
-          <b-modal v-model="showEditAttribution" centered
-            :title="addingNewLanguage ? $t('content.whatnow.add_language') : $t('content.whatnow.edit_attribtion')"
-            v-if="attributionTranslation !== null && canEditAttribution" no-close-on-backdrop no-close-on-esc
-            hide-header-close @cancel="cancelEditAttribution()">
-            <p v-if="addingNewLanguage">
-              {{ $t('content.whatnow.add_language_attribution') }}
-            </p>
-            <b-form-group :label="$t('content.whatnow.attribution_url')" label-for="url">
-              <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
-                :state="updateErrors.errors.url ? false : null" placeholder="https://" />
-              <b-form-invalid-feedback id="urlFeedback">
-                <!-- This will only be shown if the preceeding input has an invalid state -->
-                <p v-for="error in updateErrors.errors.url">
-                  {{ error }}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-            <b-form-group :label="$t('content.whatnow.society_name')" label-for="socName">
-              <b-form-input type="text" id="socName" name="socName" maxlength="255"
-                v-model="attributionEditTranslation.name"
-                :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
-                v-if="attributionEditTranslation" />
-              <b-form-invalid-feedback id="socNameFeedback">
-                <p>
-                  {{ $t('common.not_empty') }}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-            <b-form-group :label="$t('content.whatnow.attribution_message')" label-for="message">
-              <textarea
-                :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid' : ''}`"
-                id="message" name="message" maxlength="2048" rows="5"
-                v-model="attributionEditTranslation.attributionMessage" v-if="attributionEditTranslation"></textarea>
-            </b-form-group>
-            <div slot="modal-footer" class="w-100">
-              <span v-if="attributionEditTranslation && attributionEditTranslation.published">
-                {{ $t('content.whatnow.attribution_publish') }}
-              </span>
-              <b-btn size="sm" class="float-right ml-1" variant="secondary" @click="cancelEditAttribution">
-                {{ $t('cancel') }}
-              </b-btn>
-              <b-btn size="sm" class="float-right" variant="primary" @click="publishAttribution(true)">
-                <span v-if="attributionPublishing">
-                  <fa spin :icon="['fas', 'spinner']" />
-                </span>
-                <span v-if="attributionEditTranslation && attributionEditTranslation.published">{{
-                  $t('content.whatnow.publish') }}</span>
-                <span v-else>{{ $t('common.save_changes') }}</span>
-
-              </b-btn>
-            </div>
-          </b-modal>
-          <hr />
-          <b-row>
-            <b-col>
-              <b>{{ $t('content.whatnow.attribution_url') }}</b>
-            </b-col>
-            <b-col>
-              <b>{{ $t('content.whatnow.society_name') }}</b>
-            </b-col>
-            <b-col>
-              <b>{{ $t('content.whatnow.attribution_message') }}</b>
-            </b-col>
-          </b-row>
-          <transition name="fade">
-            <b-row class="whatnow-row mt-2 border border-secondary" v-if="attribution !== null && !loadingContent">
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <span v-if="attribution.url">
-                  <a :href="attribution.url" rel="noreferrer" target="_blank">{{ truncate(attribution.url, 20) }}</a>
-                </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{
-                  $t('content.whatnow.no_translation') }}</span>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <span v-if="attributionTranslation && attributionTranslation.name">
-                  {{ attribution.name }} <br />
-                  <small><i>{{ truncate(attributionTranslation.name, 90) }}</i></small>
-                </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{
-                  $t('content.whatnow.no_translation') }}</span>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <span v-if="attributionTranslation && attributionTranslation.attributionMessage">
-                  {{ truncate(attributionTranslation.attributionMessage, 90) }}
-                </span>
-                <span class="border border-warning p-1 rounded bg-warning" v-else>{{
-                  $t('content.whatnow.no_translation') }}</span>
-              </b-col>
-            </b-row>
-          </transition>
-          <transition name="fade">
-            <b-row class="whatnow-row mt-2 border border-secondary" v-if="loadingContent">
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-              </b-col>
-              <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
-                <spooky width="75%" height="20px"></spooky>
-                <spooky width="100%" height="10px" class="mt-2"></spooky>
-                <spooky width="100%" height="10px" class="mt-1"></spooky>
-              </b-col>
-            </b-row>
-          </transition>
-        </b-col>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedLanguage && selectedSoc">
-        <h3>{{ $t('content.whatnow.no_languages') }}</h3>
-      </b-row>
-      <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-else-if="!selectedSoc">
-        <h3>{{ $t('content.whatnow.no_soc') }}</h3>
-      </b-row>
-      <whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage"
-        v-if="selectedLanguage && selectedSoc"></whatnow-list>
-      <!-- Publish Modal -->
-      <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="dark"
-        cancel-variant="outline-danger" hide-header @ok="publish"
-        v-if="attribution !== null && selectedLanguage && selectedSoc">
-        <div class="px-3">
-          <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
-          <p v-if="attributionTranslation">
-            {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
-          </p>
-          <b-card class="border whatnow-publish-modal">
-            <div v-if="attributionTranslation && !attributionTranslation.published">
-              <b-row>
-                <b-col>
-                  <h4>Attribution</h4>
-                  <hr />
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.attribution_url') }}</b>
-                </b-col>
-                <b-col md="9">
-                  {{ attribution.url }}
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.society_name') }}</b>
-                </b-col>
-                <b-col md="9" v-if="attributionTranslation">
-                  {{ attributionTranslation.name }}
-                </b-col>
-              </b-row>
-              <b-row>
-                <b-col md="3">
-                  <b>{{ $t('content.whatnow.attribution_message') }}</b>
-                </b-col>
-                <b-col md="9" v-if="attributionTranslation">
-                  {{ attributionTranslation.attributionMessage }}
-                </b-col>
-              </b-row>
-              <hr />
-            </div>
-          </b-card>
-
-          <div class="whatnow-publish-content-wrapper">
-            <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
-              v-if="content.translations[selectedLanguage]">
-              <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
-
-              <whatnow-resumen :translation="content.translations[selectedLanguage]"></whatnow-resumen>
-            </div>
+          <div class="d-flex align-items-center">
+            <b-button variant="outline-primary" size="sm" class="mr-2"
+              v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
+              :disabled="!canEditAttribution" :key="'edit'">
+              <font-awesome-icon :icon="['fas', 'pen']" />
+              {{ $t('common.edit') }}
+            </b-button>
+            <b-button variant="primary" size="sm" class="mr-2" v-if="canEditAttribution && (languageToAdd || editing)"
+              :disabled="!canEditAttribution" @click="publishAttribution(true)" :key="'save'">
+              <font-awesome-icon :icon="['fas', 'check']" />
+              {{ $t('common.save') }}
+            </b-button>
+            <b-button variant="outline-primary" size="sm" class="mr-2" v-if="canEditAttribution && editing"
+              :disabled="!canEditAttribution" :key="'add'" @click="addContributor">
+              {{ $t('common.add') + ' ' + $t('content.message_editor.contributor_single') }}
+            </b-button>
+            <b-button variant="outline-primary" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
+              @click="discard" :disabled="!canEditAttribution" :key="'cancel'">
+              <font-awesome-icon :icon="['fas', 'xmark']" />
+              {{ $t('common.cancel') }}
+            </b-button>
           </div>
         </div>
-      </b-modal>
-    </b-container>
-  </template>
+      </b-col>
+    </b-row>
+    <!-- FORM ORG -->
+    <b-row align-v="stretch"
+      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start mb-3 mr-3 ml-auto mr-auto">
+
+      <b-col lg="5">
+        <div class="d-flex justify-content-start align-items-start">
+          <div slot="button-content" class="text-dark py-0 mr-3">
+            <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
+            <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+          </div>
+          <b-row>
+            <b-col lg="12">
+              <b-form-group :label="$t('content.message_editor.society_name_label')" label-for="socName">
+                <b-form-input type="text" id="socName" name="socName" maxlength="255"
+                  v-model="attributionEditTranslation.name"
+                  :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
+                  v-if="attributionEditTranslation" :disabled="isFormDisabled" />
+                <b-form-invalid-feedback id="socNameFeedback">
+                  <p>
+                    {{ $t('common.not_empty') }}
+                  </p>
+                </b-form-invalid-feedback>
+              </b-form-group>
+            </b-col>
+            <b-col lg="12">
+              <b-form-group :label="$t('content.message_editor.attribution_url_label')" label-for="url">
+                <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
+                  :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
+                <b-form-invalid-feedback id="urlFeedback">
+                  <!-- This will only be shown if the preceeding input has an invalid state -->
+                  <p v-for="error in updateErrors.errors.url">
+                    {{ error }}
+                  </p>
+                </b-form-invalid-feedback>
+              </b-form-group>
+            </b-col>
+          </b-row>
+        </div>
+
+      </b-col>
+
+      <b-col lg="7">
+        <b-form-group :label="$t('content.message_editor.attribution_message_label')" label-for="message">
+          <textarea
+            :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid' : ''}`"
+            id="message" name="message" maxlength="2048" rows="5"
+            v-model="attributionEditTranslation.attributionMessage" v-if="attributionEditTranslation"
+            :disabled="isFormDisabled"></textarea>
+        </b-form-group>
+      </b-col>
+    </b-row>
+
+    <b-row v-if="contributors.length > 0" align-v="stretch"
+      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start m-auto mb-3 mr-3 ml-auto mr-auto">
+      <b-col lg="12">
+        <div v-for="(contributor, index) in attributionEditTranslation.contributors" :key="index">
+          <div class="d-flex justify-content-start align-items-start">
+            <div slot="button-content" class="text-dark py-0 mr-3">
+              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
+              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+            </div>
+            <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
+              :label-for="'contributorName' + index">
+              <b-form-input type="text" :id="'contributorName' + index" :name="'contributorName' + index"
+                v-model="contributor.name" maxlength="100"
+                :state="updateErrors.errors[`contributors.${index}.name`] ? false : null" />
+              <b-form-invalid-feedback v-if="updateErrors.errors[`contributors.${index}.name`]">
+                {{ $t('common.not_empty') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </div>
+        </div>
+      </b-col>
+    </b-row>
+
+    <!-- END FORM ORG -->
+    <b-row>
+      <b-col>
+        <whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage"
+          v-if="selectedLanguage && selectedSoc"></whatnow-list>
+      </b-col>
+    </b-row>
+
+    <!-- Publish Modal -->
+    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="dark"
+      cancel-variant="outline-danger" hide-header @ok="publish"
+      v-if="attribution !== null && selectedLanguage && selectedSoc">
+      <div class="px-3">
+        <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
+        <p v-if="attributionTranslation">
+          {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
+        </p>
+        <b-card class="border whatnow-publish-modal">
+          <div v-if="attributionTranslation && !attributionTranslation.published">
+            <b-row>
+              <b-col>
+                <h4>Attribution</h4>
+                <hr />
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.attribution_url') }}</b>
+              </b-col>
+              <b-col md="9">
+                {{ attribution.url }}
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.society_name') }}</b>
+              </b-col>
+              <b-col md="9" v-if="attributionTranslation">
+                {{ attributionTranslation.name }}
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.attribution_message') }}</b>
+              </b-col>
+              <b-col md="9" v-if="attributionTranslation">
+                {{ attributionTranslation.attributionMessage }}
+              </b-col>
+            </b-row>
+            <hr />
+          </div>
+        </b-card>
+
+        <div class="whatnow-publish-content-wrapper">
+          <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
+            v-if="content.translations[selectedLanguage]">
+            <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
+
+            <whatnow-resumen :translation="content.translations[selectedLanguage]"></whatnow-resumen>
+          </div>
+        </div>
+      </div>
+    </b-modal>
+
+    <b-modal v-model="selectingLanguage" id="role-changed" centered :title="'Add new language'" ref="selectLangModal"
+      ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
+      :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
+      <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
+    </b-modal>
+  </b-container>
+
+</template>
 
 <script>
 import swal from 'sweetalert2'
@@ -245,13 +220,14 @@ import SelectSociety from '~/pages/content/simpleSocietyPicker'
 import SelectRegion from '~/pages/content/regionPicker'
 import WhatnowList from '~/pages/content/whatnowList'
 import PageBanner from '~/components/PageBanner'
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
 import WhatnowResumen from './whatnowResumen.vue'
 
+import Avatar from 'vue-avatar'
 export default {
   components: {
     SelectSociety,
@@ -259,7 +235,8 @@ export default {
     Spooky,
     WhatnowList,
     PageBanner,
-    WhatnowResumen
+    WhatnowResumen,
+    Avatar
   },
   props: ['countryCode', 'regionSlug'],
   data() {
@@ -282,12 +259,15 @@ export default {
         countryCode: '',
         url: '',
         name: '',
-        translations: []
+        translations: [],
+        contributors: []
       },
       attributionEditTranslation: null,
       updateErrors: {
         errors: {}
-      }
+      },
+      editing: false,
+      contributors: []
     }
   },
   watch: {
@@ -342,11 +322,17 @@ export default {
   },
   mounted() {
     this.getLocalStorage()
-    this.$store.dispatch('content/fetchOrganisations').then(() => {
-      this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
-    })
+    this.getData()
   },
   methods: {
+    ...mapActions({
+      setCurrentLanguages: 'content/setCurrentLanguages'
+    }),
+    async getData() {
+      this.$store.dispatch('content/fetchOrganisations').then(() => {
+        this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
+      })
+    },
     async publish() {
       if (this.toPublish.length > 0) {
         this.loadingContent = true
@@ -441,6 +427,9 @@ export default {
         this.showEditAttribution = true
         this.selectingLanguage = false
       }
+
+      this.currentLanguages.push(this.languageToAdd)
+      this.selectingLanguage = false
     },
     async publishAttribution(fireEvent = false) {
       if (fireEvent) {
@@ -448,7 +437,14 @@ export default {
       }
 
       this.attributionPublishing = true
-      this.updateErrors = { errors: {} }
+
+      const valid = this.validateForm()
+      if (!valid) {
+        this.attributionPublishing = false
+        return
+      }
+
+
       try {
         await this.$store.dispatch('content/updateAttribution', { countryCode: this.selectedSoc.countryCode, data: this.attributionToEdit })
         await this.$store.dispatch('content/fetchOrganisationSingle', this.selectedSoc.countryCode)
@@ -462,20 +458,24 @@ export default {
       }
     },
     setAttributionToEdit() {
+      console.log('this.attribution', this.attribution)
       if (this.attribution) {
         this.attributionToEdit = JSON.parse(JSON.stringify(this.attribution))
         const attributionTranslation = this.attributionToEdit.translations.find(translation => translation.languageCode === this.selectedLanguage)
+        console.log('attributionTranslation', attributionTranslation)
         if (!attributionTranslation) {
           const newTranslation = {
             attributionMessage: '',
             languageCode: this.selectedLanguage,
             name: '',
-            published: false
+            published: false,
+            contributors: []
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
         } else {
           this.attributionEditTranslation = attributionTranslation
+          this.contributors = this.attributionEditTranslation.contributors
         }
       }
     },
@@ -489,12 +489,55 @@ export default {
         this.addingNewLanguage = false
       }
       this.showEditAttribution = false
+    },
+    openSelectLangModal() {
+      this.$refs.selectLangModal.show()
+    },
+    discard() {
+      const filteredLangs = this.currentLanguages.filter(lang => lang !== this.languageToAdd)
+      this.setCurrentLanguages(filteredLangs)
+      this.languageToAdd = null
+      this.addingNewLanguage = false
+      this.editing = false
+      this.contributors = []
+      this.getData()
+    },
+    addContributor() {
+      this.attributionEditTranslation.contributors.push({ name: '', logo: '' })
+    },
+    validateForm() {
+      this.updateErrors = { errors: {} }
+
+      if (!this.attributionEditTranslation.name) {
+        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.name`] = true;
+      }
+      if (!this.attributionEditTranslation.attributionMessage) {
+        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.attributionMessage`] = true;
+      }
+      if (!this.attributionToEdit.url) {
+        this.updateErrors.errors.url = ["URL no puede estar vacía"];
+      }
+
+      this.attributionEditTranslation.contributors.forEach((contributor, index) => {
+        if (!contributor.name.trim()) {
+          this.updateErrors.errors[`contributors.${index}.name`] = true;
+        }
+
+        if (Object.keys(this.updateErrors).length > 0) {
+          return false;
+        }
+
+        return true;
+      });
     }
   },
   metaInfo() {
     return { title: this.$t('content.whatnow.whatnow') }
   },
   computed: {
+    isFormDisabled() {
+      return !this.editing && !this.addingNewLanguage
+    },
     filteredLanguages() {
       const languages = [{ value: null, text: this.$t('content.whatnow.select_language') }]
       for (const key in this.languages) {
@@ -564,14 +607,127 @@ export default {
       societies: 'content/organisations',
       lastError: 'generic/lastError',
       regions: 'content/regionsArray'
-    })
+    }),
   }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import '../../../sass/variables.scss';
+
 .whatnow-publish-content-wrapper {
   max-height: 60vh;
   overflow-y: scroll;
+}
+
+.whatnow-message-editor-tabs.nav-tabs {
+  border-bottom: none;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #dee2e6;
+    z-index: -1;
+  }
+
+  .nav-item {
+
+    .nav-link,
+    .nav-link-wrapper,
+    .nav-link.active {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      margin-right: 2px;
+    }
+  }
+
+  .nav-item.add-lang-btn {
+    margin-top: 4px;
+
+    .nav-link,
+    .nav-link-wrapper,
+    .nav-link.active {
+      border: none;
+    }
+
+    background-color: #f3f3f3;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    svg {
+      color: $red;
+      font-size: 11px;
+    }
+  }
+}
+
+.whatnow-message-editor-ns-title {
+  margin: 18px 0;
+
+  .btn-outline-primary {
+    padding: 0px 12px
+  }
+
+  .btn-primary {
+    padding: 2px 12px
+  }
+
+
+
+  h4 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1e1e1e;
+  }
+}
+
+.whatnow-message-editor-header {
+  h1 {
+    font-size: 38px;
+    font-weight: 600;
+    color: #1e1e1e;
+  }
+}
+
+.whatnow-message-editor-form-card {
+  background: #F7F7F7;
+  border-radius: 10px;
+
+  label {
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    color: $text-dark;
+  }
+
+  input,
+  textarea {
+    border-radius: 6px;
+    background-color: $bg-input-light;
+    height: 36px;
+    font-size: 11px;
+    border: none;
+    outline: none;
+  }
+
+  textarea {
+    min-height: 115px;
+  }
 }
 </style>
