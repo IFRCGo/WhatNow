@@ -117,18 +117,7 @@
           </b-collapse>
         </b-card-header>
       </b-card>
-      <b-modal size="xl" ref="keyMessageVisualizer" id="pre-image" centered :title="$t('home.role_changed_title')" ok-variant="outline-primary" :ok-title="'Descargar'">
-        <!-- <p>
-          {{ $t('home.role_changed_p') }} "<span>AAAAAAAAAA</span>".
-        </p>
-        <p>
-          {{ $t('home.role_changed_p2') }}
-        </p>
-        <ul class="row">
-          <li class="col col-6" >
-            AAAAAAAAAAAA
-          </li>
-        </ul> -->
+      <b-modal size="xl"  ref="keyMessageVisualizer" :hide-header="true" id="pre-image" centered ok-variant="outline-primary" :ok-title="'Descargar'">
         <whatnowPrevisualizer :keyMessage="openedKeyMessage"></whatnowPrevisualizer>
       </b-modal>
     </b-col>
