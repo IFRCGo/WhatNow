@@ -491,7 +491,9 @@
       "society_name_label": "National society name",
       "attribution_url_label": "Attribution URL",
       "attribution_message_label": "Attribution Message",
-      "create_btn": "Add hazard"
+      "create_btn": "Add hazard",
+      "contributor_name_label": "Contributor Name",
+      "contributor_single": "Contributor"
     },
     "audit": "Audit log",
     "export": "Export",

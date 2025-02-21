@@ -42,7 +42,8 @@
           </h4>
 
           <div class="d-flex align-items-center">
-            <b-button variant="outline-primary" size="sm" class="mr-2" v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
+            <b-button variant="outline-primary" size="sm" class="mr-2"
+              v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
               :disabled="!canEditAttribution" :key="'edit'">
               <font-awesome-icon :icon="['fas', 'pen']" />
               {{ $t('common.edit') }}
@@ -52,12 +53,12 @@
               <font-awesome-icon :icon="['fas', 'check']" />
               {{ $t('common.save') }}
             </b-button>
-            <b-button variant="outline-primary" size="sm" class="mr-2" v-if="canEditAttribution && editing" :disabled="!canEditAttribution" :key="'add'">
-              Add contributor
+            <b-button variant="outline-primary" size="sm" class="mr-2" v-if="canEditAttribution && editing"
+              :disabled="!canEditAttribution" :key="'add'" @click="addContributor">
+              {{ $t('common.add') + ' ' + $t('content.message_editor.contributor_single') }}
             </b-button>
-            <b-button variant="outline-primary" size="sm" 
-              v-if="canEditAttribution && (languageToAdd || editing)" @click="discard" :disabled="!canEditAttribution"
-              :key="'cancel'">
+            <b-button variant="outline-primary" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
+              @click="discard" :disabled="!canEditAttribution" :key="'cancel'">
               <font-awesome-icon :icon="['fas', 'xmark']" />
               {{ $t('common.cancel') }}
             </b-button>
@@ -67,44 +68,46 @@
     </b-row>
     <!-- FORM ORG -->
     <b-row align-v="stretch"
-      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start m-auto">
-      <b-col lg="1">
-        <div slot="button-content" class="text-dark py-0">
-          <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-          <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
-        </div>
-      </b-col>
+      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start mb-3 mr-3 ml-auto mr-auto">
+
       <b-col lg="5">
-        <b-row>
-          <b-col lg="12">
-            <b-form-group :label="$t('content.message_editor.society_name_label')" label-for="socName">
-              <b-form-input type="text" id="socName" name="socName" maxlength="255"
-                v-model="attributionEditTranslation.name"
-                :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
-                v-if="attributionEditTranslation" :disabled="isFormDisabled" />
-              <b-form-invalid-feedback id="socNameFeedback">
-                <p>
-                  {{ $t('common.not_empty') }}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-          <b-col lg="12">
-            <b-form-group :label="$t('content.message_editor.attribution_url_label')" label-for="url">
-              <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
-                :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
-              <b-form-invalid-feedback id="urlFeedback">
-                <!-- This will only be shown if the preceeding input has an invalid state -->
-                <p v-for="error in updateErrors.errors.url">
-                  {{ error }}
-                </p>
-              </b-form-invalid-feedback>
-            </b-form-group>
-          </b-col>
-        </b-row>
+        <div class="d-flex justify-content-start align-items-start">
+          <div slot="button-content" class="text-dark py-0 mr-3">
+            <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
+            <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+          </div>
+          <b-row>
+            <b-col lg="12">
+              <b-form-group :label="$t('content.message_editor.society_name_label')" label-for="socName">
+                <b-form-input type="text" id="socName" name="socName" maxlength="255"
+                  v-model="attributionEditTranslation.name"
+                  :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
+                  v-if="attributionEditTranslation" :disabled="isFormDisabled" />
+                <b-form-invalid-feedback id="socNameFeedback">
+                  <p>
+                    {{ $t('common.not_empty') }}
+                  </p>
+                </b-form-invalid-feedback>
+              </b-form-group>
+            </b-col>
+            <b-col lg="12">
+              <b-form-group :label="$t('content.message_editor.attribution_url_label')" label-for="url">
+                <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
+                  :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
+                <b-form-invalid-feedback id="urlFeedback">
+                  <!-- This will only be shown if the preceeding input has an invalid state -->
+                  <p v-for="error in updateErrors.errors.url">
+                    {{ error }}
+                  </p>
+                </b-form-invalid-feedback>
+              </b-form-group>
+            </b-col>
+          </b-row>
+        </div>
+
       </b-col>
 
-      <b-col lg="6">
+      <b-col lg="7">
         <b-form-group :label="$t('content.message_editor.attribution_message_label')" label-for="message">
           <textarea
             :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid' : ''}`"
@@ -114,6 +117,29 @@
         </b-form-group>
       </b-col>
     </b-row>
+
+    <b-row v-if="contributors.length > 0" align-v="stretch"
+      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start m-auto mb-3 mr-3 ml-auto mr-auto">
+      <b-col lg="12">
+        <div v-for="(contributor, index) in attributionEditTranslation.contributors" :key="index">
+          <div class="d-flex justify-content-start align-items-start">
+            <div slot="button-content" class="text-dark py-0 mr-3">
+              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
+              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+            </div>
+            <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
+              :label-for="'contributorName' + index">
+              <b-form-input type="text" :id="'contributorName' + index" :name="'contributorName' + index"
+                v-model="contributor.name" maxlength="100" :state="updateErrors.errors[`contributors.${index}.name`] ? false : null"/>
+              <b-form-invalid-feedback v-if="updateErrors.errors[`contributors.${index}.name`]">
+                {{ $t('common.not_empty') }}
+              </b-form-invalid-feedback>
+            </b-form-group>
+          </div>
+        </div>
+      </b-col>
+    </b-row>
+
     <!-- END FORM ORG -->
     <b-row>
       <b-col>
@@ -174,13 +200,15 @@ export default {
         countryCode: '',
         url: '',
         name: '',
-        translations: []
+        translations: [],
+        contributors: []
       },
       attributionEditTranslation: null,
       updateErrors: {
         errors: {}
       },
-      editing: false
+      editing: false,
+      contributors: []
     }
   },
   watch: {
@@ -243,8 +271,8 @@ export default {
     }),
     async getData() {
       this.$store.dispatch('content/fetchOrganisations').then(() => {
-      this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
-    })
+        this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
+      })
     },
     async publish() {
       if (this.toPublish.length > 0) {
@@ -342,7 +370,7 @@ export default {
       }
 
       this.currentLanguages.push(this.languageToAdd)
-      this.selectingLanguage = false 
+      this.selectingLanguage = false
     },
     async publishAttribution(fireEvent = false) {
       if (fireEvent) {
@@ -350,7 +378,14 @@ export default {
       }
 
       this.attributionPublishing = true
-      this.updateErrors = { errors: {} }
+
+      const valid = this.validateForm()
+      if (!valid) {
+        this.attributionPublishing = false
+        return
+      }
+
+
       try {
         await this.$store.dispatch('content/updateAttribution', { countryCode: this.selectedSoc.countryCode, data: this.attributionToEdit })
         await this.$store.dispatch('content/fetchOrganisationSingle', this.selectedSoc.countryCode)
@@ -364,20 +399,24 @@ export default {
       }
     },
     setAttributionToEdit() {
+      console.log('this.attribution', this.attribution)
       if (this.attribution) {
         this.attributionToEdit = JSON.parse(JSON.stringify(this.attribution))
         const attributionTranslation = this.attributionToEdit.translations.find(translation => translation.languageCode === this.selectedLanguage)
+        console.log('attributionTranslation', attributionTranslation)
         if (!attributionTranslation) {
           const newTranslation = {
             attributionMessage: '',
             languageCode: this.selectedLanguage,
             name: '',
-            published: false
+            published: false,
+            contributors: []
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
         } else {
           this.attributionEditTranslation = attributionTranslation
+          this.contributors = this.attributionEditTranslation.contributors
         }
       }
     },
@@ -401,7 +440,36 @@ export default {
       this.languageToAdd = null
       this.addingNewLanguage = false
       this.editing = false
+      this.contributors = []
       this.getData()
+    },
+    addContributor() {
+      this.attributionEditTranslation.contributors.push({ name: '', logo: '' })
+    },
+    validateForm() {
+      this.updateErrors = { errors: {} }
+
+      if (!this.attributionEditTranslation.name) {
+        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.name`] = true;
+      }
+      if (!this.attributionEditTranslation.attributionMessage) {
+        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.attributionMessage`] = true;
+      }
+      if (!this.attributionToEdit.url) {
+        this.updateErrors.errors.url = ["URL no puede estar vacía"];
+      }
+
+      this.attributionEditTranslation.contributors.forEach((contributor, index) => {
+        if (!contributor.name.trim()) {
+          this.updateErrors.errors[`contributors.${index}.name`] = true;
+        }
+
+        if (Object.keys(this.updateErrors).length > 0) {
+          return false;
+        }
+
+        return true;
+      });
     }
   },
   metaInfo() {
