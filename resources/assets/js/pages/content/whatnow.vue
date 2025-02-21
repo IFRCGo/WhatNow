@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="h-100">
+  <b-container fluid class="h-100 whatnow-message-editor-container">
     <b-row>
       <b-col>
         <div class="whatnow-message-editor-header">
@@ -149,48 +149,53 @@
       </b-col>
     </b-row>
 
+    <!-- PUBLISH BUTTON -->
+    <div class="publish-bottom-container d-flex justify-content-end" v-if="selectedSoc">
+      <b-button size="md" variant="outline-primary" v-if="can(user, permissions.CONTENT_PUBLISH)"
+        v-b-modal.publish-modal :disabled="toPublish.length === 0 || !attributionSet" class="align-self-center">
+        <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
+        <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
+        <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
+        <span v-else-if="publishing">{{ $t('content.whatnow.publishing') }}
+          <fa class="ml-2" spin :icon="['fas', 'spinner']" />
+        </span>
+      </b-button>
+    </div>
+
     <!-- Publish Modal -->
-    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="dark"
-      cancel-variant="outline-danger" hide-header @ok="publish"
+    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="primary" cancel-variant="outline-primary" hide-header @ok="publish"
       v-if="attribution !== null && selectedLanguage && selectedSoc">
       <div class="px-3">
         <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
         <p v-if="attributionTranslation">
           {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
         </p>
-        <b-card class="border whatnow-publish-modal">
-          <div v-if="attributionTranslation && !attributionTranslation.published">
-            <b-row>
-              <b-col>
-                <h4>Attribution</h4>
-                <hr />
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.attribution_url') }}</b>
-              </b-col>
-              <b-col md="9">
-                {{ attribution.url }}
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.society_name') }}</b>
-              </b-col>
-              <b-col md="9" v-if="attributionTranslation">
-                {{ attributionTranslation.name }}
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.attribution_message') }}</b>
-              </b-col>
-              <b-col md="9" v-if="attributionTranslation">
-                {{ attributionTranslation.attributionMessage }}
-              </b-col>
-            </b-row>
-            <hr />
+        <b-card class="whatnow-org-publish-modal">
+          <div class="whatnow-publish-header">
+            <h4>Attribution</h4>
+          </div>
+
+          <div class="d-flex justify-content-start align-items-start">
+            <div class="mr-3">
+              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
+              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+            </div>
+            <div class="whatnow-org-publish-modal-content">
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>National Society</h5>
+                <p>{{ attributionTranslation.name }}</p>	
+              </div>
+
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>Attribution URL</h5>
+                <p>{{ attributionTranslation.url }}</p>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>Attribution Message</h5>
+                <p>{{ attributionTranslation.attributionMessage }}</p>
+              </div>
+            </div>
           </div>
         </b-card>
 
@@ -615,9 +620,67 @@ export default {
 <style scoped lang="scss">
 @import '../../../sass/variables.scss';
 
+.whatnow-message-editor-container {
+  position: relative;
+  
+  .publish-bottom-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    background-color: $white;
+
+    button {
+      margin-right: 50px;
+      font-size: 18px;
+    }
+  }
+}
+
 .whatnow-publish-content-wrapper {
   max-height: 60vh;
   overflow-y: scroll;
+}
+
+.whatnow-org-publish-modal {
+  border-radius: 7px;
+  background-color: #f7f7f7;
+  border: none;
+  margin-bottom: 25px;
+
+  .whatnow-publish-header {
+    margin-bottom: 10px;
+    h4 {
+      color: #1e1e1e;
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #dee2e6;
+      margin-top: 10px;
+    }
+  }
+
+  .whatnow-org-publish-modal-content {
+    .whatnow-org-publish-modal-content-item {
+      font-size: 14px;
+      margin-bottom: 8px;
+      h5 {
+        font-weight: 500;
+        color: #1e1e1e;
+        margin-right: 70px;
+        min-width: 165px;
+      }
+      h5, p {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .whatnow-message-editor-tabs.nav-tabs {

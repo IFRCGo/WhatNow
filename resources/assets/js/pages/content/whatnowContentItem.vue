@@ -327,7 +327,6 @@ export default {
   margin-top: -2rem;
 }
 
-.card-tit {}
 
 .hazard-instruction-card {
   border: none
