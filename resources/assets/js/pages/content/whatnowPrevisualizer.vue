@@ -39,10 +39,6 @@ export default {
   padding: 56px 68px;
 }
 
-.modal-lg {
-  max-width: auto !important;
-}
-
 .previsualizer-key-message {
   min-width: 1100px;
 
