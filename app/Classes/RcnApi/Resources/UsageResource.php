@@ -146,12 +146,16 @@ class UsageResource extends AbstractResource
         return $csv->toString();
     }
 
-    
-    public function getTotals(): Collection
-    {
-        return $this->handleApiCall(function () {
-            $response = $this->http->get('usage/totals');
 
+    public function getTotals($request): Collection
+    {
+        $arrRequest = explode('?', $request->fullUrl());
+        $queryString = "";
+        if (count($arrRequest) > 1) {
+            $queryString = '?'.$arrRequest[1];
+        }
+        return $this->handleApiCall(function () use ($queryString) {
+            $response = $this->http->get('usage/totals'.$queryString);
             $contents = json_decode($response->getBody()->getContents(), true);
 
             return new Collection($contents['data']);

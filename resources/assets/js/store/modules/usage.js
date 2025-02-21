@@ -69,9 +69,11 @@ export const actions = {
       throw error
     }
   },
-  async fetchCumulativeUsage ({ commit }) {
+  async fetchCumulativeUsage ({ commit }, parameters) {
     try {
-      const { data } = await axios.get('/api/usage/totals')
+      const pars = Object.fromEntries(Object.entries(parameters).filter(([_, v]) => v !== null))
+      const query = Object.keys(pars).length > 0 ? querystring.stringify(pars) : ''
+      const { data } = await axios.get('/api/usage/totals?' + query)
       commit(types.FETCH_CUMULATIVE_USAGE_SUCCESS, { content: data })
     } catch (error) {
       commit(`generic/${types.NETWORK_FAILURE}`, { error }, { root: true })
