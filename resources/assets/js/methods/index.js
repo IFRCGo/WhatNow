@@ -80,8 +80,6 @@ export const methods = {
     return `${icons[val].x1} 1x, ${icons[val].x2} 2x, ${icons[val].x3} 3x`
   },
   src (val) {
-    console.log(require('../../img/landing_page/ifrc-logo.png'))
-    console.log(require('../../img/landing_page/header-logo.png'))
     return `${icons[val].x1}`
   },
   can (user, permission) {
