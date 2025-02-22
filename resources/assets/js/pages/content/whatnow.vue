@@ -74,12 +74,14 @@
         <div class="d-flex justify-content-start align-items-start">
           <!-- NS IMG -->
           <div slot="button-content" class="text-dark py-0 mr-3">
-            <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-            <div v-else class="upload-img-button">
-              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)"
+            <div class="upload-img-button">
+              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled"
                 class="p-0 d-flex flex-column align-items-center justify-content-center">
-                <fa :icon="['fas', 'plus']" />
-                <span>Add a logo</span>
+                <img  :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" />
+                <div class="upload-img-button-controls">
+                  <fa :icon="['fas', 'plus']" />
+                  <span>Add a logo</span>
+                </div>
               </b-button>
             </div>
           </div>
@@ -132,12 +134,14 @@
           <div class="d-flex justify-content-start align-items-start">
             <!-- CONTRIBUTOR IMG -->
             <div slot="button-content" class="text-dark py-0 mr-3">
-              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-              <div v-else class="upload-img-button">
-                <b-button :variant="'link'"@click="openUploadModal(logoType.CONTRIBUTOR, index)"
+              <div class="upload-img-button">
+                <b-button :variant="'link'" @click="openUploadModal(logoType.CONTRIBUTOR, index)" :disabled="isFormDisabled"
                   class="p-0 d-flex flex-column align-items-center justify-content-center">
-                  <fa :icon="['fas', 'plus']" />
-                  <span>Add a logo</span>
+                  <img  :src="contributor.logo" v-if="contributor.logo" />
+                  <div class="upload-img-button-controls">
+                    <fa :icon="['fas', 'plus']" />
+                    <span>Add a logo</span>
+                  </div>
                 </b-button>
               </div>
             </div>
@@ -150,6 +154,10 @@
                 {{ $t('common.not_empty') }}
               </b-form-invalid-feedback>
             </b-form-group>
+            <b-button variant="link" class="align-self-center ml-1 contributor-delete-btn" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
+              @click="deleteContributor(index)" :disabled="!canEditAttribution" :key="'cancel'">
+              <font-awesome-icon :icon="['fas', 'trash']" />
+            </b-button>
           </div>
         </div>
       </b-col>
@@ -262,7 +270,7 @@
       <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
     </b-modal>
 
-    <upload-modal ref="uploadModal" @modalReset="handleUploadModalReset" @fileUploaded="handleFileUploaded" @fileUploadFailed="fileUploadFailed" :showModal="showUploadImage"></upload-modal>
+    <upload-modal ref="uploadModal" :fileName="logoFileName" @modalReset="handleUploadModalReset" @fileUploaded="handleFileUploaded" :showModal="showUploadImage"></upload-modal>
   </b-container>
 
 </template>
@@ -310,6 +318,7 @@ export default {
         countryCode: '',
         url: '',
         name: '',
+        imageUrl: '',
         translations: [],
         contributors: []
       },
@@ -325,7 +334,7 @@ export default {
         CONTRIBUTOR: 'CONTRIBUTOR'
       },
       logoTypeSelected: null,
-      logoFileUrl: null,
+      logoFileName: null,
       contributorIndex: null
     }
   },
@@ -504,6 +513,21 @@ export default {
         return
       }
 
+      //parse path img
+      if (this.attributionToEdit.imageUrl) {
+        const path = this.attributionToEdit.imageUrl.split("/").pop();
+        this.attributionToEdit.imageUrl = path;
+      }
+      if (this.attributionEditTranslation.contributors.length > 0) {
+        const { contributors } = this.attributionEditTranslation
+        this.attributionEditTranslation.contributors = contributors.map(contributor => {
+          if (contributor.logo) {
+            const path = contributor.logo.split("/").pop();
+            return { ...contributor, logo: path }
+          }
+          return contributor
+        })
+      }
 
       try {
         await this.$store.dispatch('content/updateAttribution', { countryCode: this.selectedSoc.countryCode, data: this.attributionToEdit })
@@ -519,18 +543,18 @@ export default {
       }
     },
     setAttributionToEdit() {
-      console.log('this.attribution', this.attribution)
       if (this.attribution) {
         this.attributionToEdit = JSON.parse(JSON.stringify(this.attribution))
         const attributionTranslation = this.attributionToEdit.translations.find(translation => translation.languageCode === this.selectedLanguage)
-        console.log('attributionTranslation', attributionTranslation)
         if (!attributionTranslation) {
           const newTranslation = {
             attributionMessage: '',
             languageCode: this.selectedLanguage,
             name: '',
             published: false,
-            contributors: []
+            contributors: [],
+            imageUrl: '',
+            
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
@@ -596,17 +620,32 @@ export default {
       this.logoTypeSelected = type
       this.showUploadImage = true
       this.contributorIndex = contributorIndex
+
+      if (type === this.logoType.NS) {
+        this.logoFileName = this.selectedSoc.countryCode + '_logo'
+      } else {
+        const name = this.selectedSoc.countryCode + '_contributor_logo'
+        this.logoFileName = name + contributorIndex;
+      }
     },
     handleUploadModalReset() {
       this.showUploadImage = false
       this.logoTypeSelected = null
-      this.logoFileUrl = null
+      this.logoFileName = null
       this.contributorIndex = null
     },
-    handleFileUploaded(event) {
-      console.log('event upload file', event)
-      // this.attributionEditTranslation.logo = file
+    handleFileUploaded({ path }) {
+      if (this.logoTypeSelected === this.logoType.NS) {
+        this.attributionToEdit.imageUrl = path
+      } else {
+        this.attributionEditTranslation.contributors[this.contributorIndex].logo = path
+      }
+      this.publishAttribution(true)
+      this.handleUploadModalReset()
     },
+    deleteContributor(index) {
+      this.attributionEditTranslation.contributors.splice(index, 1)
+    }
   },
   metaInfo() {
     return { title: this.$t('content.whatnow.whatnow') }
@@ -677,6 +716,14 @@ export default {
 
       return this.selectedRegion.translations[0]?.title || ""
     },
+    async isValidImage(url) {
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok && response.headers.get("content-type")?.startsWith("image/");
+      } catch (error) {
+        return false;
+      }
+    },
     ...mapGetters({
       user: 'auth/user',
       currentContent: 'content/currentContent',
@@ -715,6 +762,7 @@ export default {
   }
 
   .upload-img-button {
+    
     .btn {
       font-size: 8px;
       color: #838383;
@@ -722,10 +770,39 @@ export default {
       height: 60px;
       width: 60px;
       border-radius: 50%;
+      position: relative;
+      overflow: hidden;
 
-      .fa-plus {
-        font-size: 12px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
       }
+
+      .upload-img-button-controls {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-size: 8px;
+          color: #838383;
+        }
+
+        .fa-plus {
+          font-size: 12px;
+        }
+      }
+
+
     }
   }
 }
@@ -838,6 +915,12 @@ export default {
 
   textarea {
     min-height: 115px;
+  }
+
+  .contributor-delete-btn {
+    svg {
+      color: $red;
+    }	
   }
 }
 </style>

@@ -25,7 +25,7 @@ import axios from 'axios'
 import { BToast } from 'bootstrap-vue'
 
 export default {
-  props: ['disabled', 'showModal'],
+  props: ['disabled', 'showModal', 'fileName'],
   data() {
     return {
       file: null,
@@ -41,7 +41,12 @@ export default {
       this.$refs.fileInput.click()
     },
     handleFileUpload(event) {
-      this.file = event.target.files[0]
+      const file = event.target.files[0];
+      const fileExtension = file.name.split('.').pop()
+
+      const renamedFile = new File([file], this.fileName + '.' + fileExtension, { type: file.type });
+      
+      this.file = renamedFile;
 
       if (!this.file) return
 
