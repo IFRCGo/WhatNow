@@ -4,7 +4,7 @@
     <b-container fluid>
       <b-row class="position-relative">
         <transition name="page" mode="out-in">
-          <sidebar v-if="hasSidebar" class="sidebar bg-light pt-4 pb-2" :class="[{ collapsed: collapseSidebar }]"></sidebar>
+          <sidebar v-if="hasSidebar" class="sidebar pt-4 pb-2" :class="[{ collapsed: collapseSidebar }]"></sidebar>
         </transition>
         <main :class="`col-sm-12 pl-0 pr-0 ${ hasSidebar ? '' : 'vh-min-100' }`">
           <router-view></router-view>
