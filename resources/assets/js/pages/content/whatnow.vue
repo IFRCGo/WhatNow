@@ -472,8 +472,8 @@ export default {
 
       this.attributionPublishing = true
 
-      debugger;
       const valid = this.validateForm()
+
       if (!valid) {
         this.attributionPublishing = false
         return
@@ -559,13 +559,13 @@ export default {
         if (!contributor.name.trim()) {
           this.updateErrors.errors[`contributors.${index}.name`] = true;
         }
-
-        if (Object.keys(this.updateErrors).length > 0) {
-          return false;
-        }
-
-        return true;
       });
+
+      if (Object.keys(this.updateErrors.errors).length > 0) {
+        return false;
+      }
+
+      return true;
     }
   },
   metaInfo() {
