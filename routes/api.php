@@ -18,6 +18,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('instructions/{id}/{translation}/{stage}/download', 'WhatNow\InstructionController@renderImage'); // Download instruction image
     Route::get('event-types/', 'WhatNow\EventTypeController@list'); // List all event types
     Route::post('event-types/', 'WhatNow\EventTypeController@create'); // Create new event type
+
 });
 
 // Protected routes - requires API authentication
@@ -91,6 +92,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('regions', 'WhatNow\RegionController@createRegion'); // Create region
     Route::put('regions/region/{regionId}', 'WhatNow\RegionController@updateRegion'); // Update region
     Route::delete('regions/region/{regionId}', 'WhatNow\RegionController@deleteRegion'); // Delete region
+
+    //file upload
+    Route::post('upload-file', 'FileController@uploadFile');
+
 });
 
 // Guest routes - for unauthenticated users
