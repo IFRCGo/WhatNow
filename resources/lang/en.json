@@ -375,6 +375,52 @@
       "soc_already_added": "This user has already been assigned this society"
     }
   },
+  "new_welcome": {
+    "title_1": "Welcome to",
+    "red_title": "IFRC",
+    "title_2": "Safety",
+    "title_3": "Message Database",
+    "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
+    "text_header_2": "Follow the #-step guide below..",
+    "bottom_subtitle": "Contact IFRC",
+    "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
+    "bottom_btn": "Contact IFRC",
+    "slider_1": {
+      "btn": "Create an API key",
+      "step_1": {
+        "header": "Step 1: Create an app",
+        "text": "Create an API key to use the API in the database. Tell us about what you're building."
+      },
+      "step_2": {
+        "header": "Step 2: Receive an API key",
+        "text": "When you have create an API key, it will be automatically generated.",
+        "text_2": "Important: Store your API key as securely as possible. Avoid sharing or otherwise exposing your API key within your own application."
+      },
+      "step_3": {
+        "header": "Step 3: Make a request",
+        "text": "The database API uses HTTP(S) and provides RESTful endpoints to obtain published data. Each request must be authenticated using the API key created in the previous step. For more information on all API endpoints, see the API documentation"
+      },
+      "step_4": {
+        "header": "Step 4: Share the messages",
+        "text": "Share the Red Cross Red Crescent safety messages with the public when there is a hazard threat. You can contact the IFRC team if you have any feedback on the messages: im@ifrc.org"
+      }
+    },
+    "slider_2": {
+      "btn": "WhatNow Messages",
+      "step_1": {
+        "header": "Step 1: View the messages",
+        "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
+      },
+      "step_2": {
+        "header": "Step 2: Select the message set",
+        "text": "Select the National Society you want to view. Then choose a hazard type from the available list."
+      },
+      "step_3": {
+        "header": "Step 3: Share the messages",
+        "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
+      }
+    }
+  },
   "content": {
     "content": "Content",
     "audit_log": {

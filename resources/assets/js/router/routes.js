@@ -49,6 +49,11 @@ export default [
       component: require('~/pages/home').default
     },
     {
+      path: '/new-welcome',
+      name: 'new-welcome',
+      component: require('~/pages/new-welcome').default
+    },
+    {
       path: '/user-agreement',
       name: 'user-agreement',
       component: require('~/pages/user_agreement').default
