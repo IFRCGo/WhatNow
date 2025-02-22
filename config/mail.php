@@ -4,9 +4,10 @@ return [
 
     
 
-    'driver' => env('MAIL_DRIVER', 'ses'),
 
-    
+    'driver' => env('MAIL_DRIVER', 'smtp'),
+
+
 
     'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
@@ -42,6 +43,7 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
+            'timeout' => 80,
         ],
     ],
 

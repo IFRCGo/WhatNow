@@ -2,10 +2,10 @@
   <b-container fluid>
     <page-banner>
       <b-col>
-        <h1>{{ $t('content.audit_log.audit_log') }}</h1>
+        <h1 class="sec-title">{{ $t('content.audit_log.my_audit_log') }}</h1>
       </b-col>
       <b-col>
-        <b-button size="lg" variant="dark" class="float-right rtl-float-left mr-2 rtl-ml-2" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
+        <b-button class="float-right rtl-float-left mr-2 rtl-ml-2 btn-outline-primary" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
           {{ $t('users.list.download_report') }}
         </b-button>
       </b-col>
@@ -314,6 +314,7 @@ export default {
       societies: 'content/organisations'
     })
   }
+
 }
 </script>
 <style scoped>

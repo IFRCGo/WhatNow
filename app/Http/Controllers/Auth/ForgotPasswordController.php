@@ -14,16 +14,16 @@ class ForgotPasswordController extends Controller
 
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest')->except('sendResetLinkEmail');
     }
 
-    
+
     protected function sendResetLinkResponse(Request $request, $response)
     {
         return ['status' => __($response)];
     }
 
-    
+
     protected function sendResetLinkFailedResponse(Request $request, $response)
     {
                 if ($response === Password::INVALID_USER) {
@@ -32,4 +32,5 @@ class ForgotPasswordController extends Controller
 
         return response()->json(['email' => __($response)], Response::HTTP_BAD_REQUEST);
     }
+
 }
