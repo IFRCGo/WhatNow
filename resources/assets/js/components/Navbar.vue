@@ -2,8 +2,7 @@
   <header class="bg-white header pt-2 pb-2">
     <b-navbar toggleable="lg" sticky class="navbar styled-navbar navbar-expand-lg navbar-light">
       <router-link :to="{ name: 'welcome' }" class="header__logo has-no-underline navbar-brand d-inline-flex mr-auto">
-        <img class="site-footer__logo d-block" :src="src('headerLogo')" :srcSet="srcSet('headerLogo')">
-
+        <img class="site-footer__logo d-block ml-4" :src="src('ifrcLogo')">
         <h1 class="visually-hidden">
           {{ $t('what_now') }} {{ $t('message_portal') }}
         </h1>
@@ -12,40 +11,46 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-        <b-navbar-nav class="mt-2 mt-lg-0 header-main-links rtl-mr-auto" v-bind:class="{'ml-auto': !user, 'mr-auto': user, 'is-logged-in': user}">
+        <b-navbar-nav class="mt-2 mt-lg-0 header-main-links rtl-mr-auto" v-bind:class="{'ml-auto': true, 'is-logged-in': user}">
+          <li>
+            <LocaleDropdown />
+          </li>
+          <div class="div-bar"></div>
           <li v-if="user && cannot(user, permissions.VIEW_BACKEND)" class="nav-item">
-            <router-link :to="{ name: 'applications.dash', params: { } }" class="nav-link text-uppercase">
-              {{ $t('my_apps') }}
+            <router-link :to="{ name: 'applications.dash', params: { } }" class="nav-link">
+              {{ $t('create_key') }}
             </router-link>
           </li>
+          <div v-if="user && cannot(user, permissions.VIEW_BACKEND)" class="div-bar"></div>
           <li v-if="user" class="nav-item right-aligned">
-            <router-link :to="{ name: 'view-whatnow' }" class="nav-link text-uppercase">
+            <router-link :to="{ name: 'view-whatnow' }" class="nav-link">
               {{ $t('whatnow_content') }}
             </router-link>
           </li>
+          <div v-if="user" class="div-bar"></div>
           <li v-if="user && can(user, permissions.VIEW_BACKEND)" class="nav-item">
-            <router-link :to="{ name: 'home' }" class="nav-link text-uppercase">
+            <router-link :to="{ name: 'home' }" class="nav-link">
               {{ $t('dashboard') }}
             </router-link>
           </li>
           <li v-if="!user" class="nav-item">
-            <router-link :to="{ name: 'register' }" class="nav-link text-uppercase">
+            <router-link :to="{ name: 'register' }" class="nav-link">
               {{ $t('sign_up') }}
             </router-link>
           </li>
+          <div v-if="!user" class="div-bar"></div>
           <li v-if="!user" class="nav-item">
-            <router-link :to="{ name: 'login' }" class="nav-link text-uppercase">
+            <router-link :to="{ name: 'login' }" class="nav-link">
               {{ $t('login') }}
             </router-link>
           </li>
-
-          <LocaleDropdown />
 
           <li class="nav-item d-lg-none" v-if="user">
             <router-link :to="{ name: 'settings.profile', params: { id: user.data.id, profile: true } }" class="nav-link text-uppercase">
               {{ $t('common.my_profile') }}
             </router-link>
           </li>
+          <div  v-if="user" class="div-bar"></div>
           <li class="nav-item d-lg-none" v-if="user">
             <a href="#" @click.prevent="logout" class="nav-link text-uppercase">
               {{ $t('logout') }}
@@ -136,5 +141,18 @@ export default {
 
 .header-main-links {
   display: flex;
+  align-items: center;
+}
+
+.div-bar {
+  padding: 0;
+  margin: 0;
+  height: 1.5rem;
+  width: 2px;
+  background: #BDBEC0;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
 }
 </style>
