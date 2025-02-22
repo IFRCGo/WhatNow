@@ -518,15 +518,19 @@ export default {
         const path = this.attributionToEdit.imageUrl.split("/").pop();
         this.attributionToEdit.imageUrl = path;
       }
-      if (this.attributionEditTranslation.contributors.length > 0) {
-        const { contributors } = this.attributionEditTranslation
-        this.attributionEditTranslation.contributors = contributors.map(contributor => {
-          if (contributor.logo) {
-            const path = contributor.logo.split("/").pop();
-            return { ...contributor, logo: path }
+
+      if (this.attributionToEdit.translations?.length > 0) {
+        for (const translation of this.attributionToEdit.translations) {
+          if (translation.contributors.length > 0) {
+            translation.contributors = translation.contributors.map(contributor => {
+              if (contributor.logo) {
+                const path = contributor.logo.split("/").pop();
+                return { ...contributor, logo: path }
+              }
+              return contributor
+            })
           }
-          return contributor
-        })
+        }
       }
 
       try {
@@ -624,7 +628,7 @@ export default {
       if (type === this.logoType.NS) {
         this.logoFileName = this.selectedSoc.countryCode + '_logo'
       } else {
-        const name = this.selectedSoc.countryCode + '_contributor_logo'
+        const name = this.selectedSoc.countryCode + '_' + this.selectedLanguage + '_contributor_logo'
         this.logoFileName = name + contributorIndex;
       }
     },
@@ -638,7 +642,7 @@ export default {
       if (this.logoTypeSelected === this.logoType.NS) {
         this.attributionToEdit.imageUrl = path
       } else {
-        this.attributionEditTranslation.contributors[this.contributorIndex].logo = path
+        this.contributors[this.contributorIndex].logo = path
       }
       this.publishAttribution(true)
       this.handleUploadModalReset()
@@ -765,8 +769,8 @@ export default {
     
     .btn {
       font-size: 8px;
-      color: #838383;
-      background-color: #fff;
+      color: $bg-upload-button;
+      background-color: $white;
       height: 60px;
       width: 60px;
       border-radius: 50%;
@@ -777,11 +781,10 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        object-fit: contain;
+        object-fit: cover;
       }
 
       .upload-img-button-controls {
-        background-color: rgba(0, 0, 0, 0.2);
         position: absolute;
         width: 100%;
         height: 100%;
@@ -794,7 +797,6 @@ export default {
 
         span {
           font-size: 8px;
-          color: #838383;
         }
 
         .fa-plus {
@@ -818,7 +820,7 @@ export default {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #dee2e6;
+    background-color: $border-tabs;
     z-index: -1;
   }
 
@@ -842,7 +844,7 @@ export default {
       border: none;
     }
 
-    background-color: #f3f3f3;
+    background-color: $bg-add-lang;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -879,7 +881,7 @@ export default {
   h4 {
     font-size: 24px;
     font-weight: 500;
-    color: #1e1e1e;
+    color: $text-dark;
   }
 }
 
@@ -887,12 +889,12 @@ export default {
   h1 {
     font-size: 38px;
     font-weight: 600;
-    color: #1e1e1e;
+    color: $text-dark;
   }
 }
 
 .whatnow-message-editor-form-card {
-  background: #F7F7F7;
+  background: $card-solid-bg;
   border-radius: 10px;
 
   label {
