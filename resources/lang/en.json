@@ -669,7 +669,19 @@
       "docs": "Documentation",
       "give_feedback": "Give Feedback",
       "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
-      "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement"
+      "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement",
+      "subtitle_1": "About IFRC Key Safety Database",
+      "text_1": "The IFRC Key Safety Database provides access to",
+      "text_2": "Red Cross Red Crescent messages on how people",
+      "text_3": "can safely act in the face of hazards",
+      "subtitle_2": "Find Out More",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "Policies",
+      "terms": "Terms and Conditions",
+      "subtitle_4": "Helpful Links",
+      "api_doc": "API Documentation",
+      "faq": "FAQ (link to be provided)"
     }
   },
   "register_form": {

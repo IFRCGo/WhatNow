@@ -7,43 +7,51 @@
         <component v-if="layout" :is="layout"></component>
       </transition>
 
-      <footer v-if="layout" class="site-footer bg-white container-fluid pt-5 pb-5">
-        <div class="container">
-          <b-row align-h="between">
-            <b-col>
-              <div class="mb-3">
-                <img class="site-footer__logo" :src="src('footerImage')" :srcSet="srcSet('footerImage')" :alt="$t('landing.footer.gdpc_logo')" />
-                <img class="site-footer__logo" src="../../img/landing_page/footer-logo-ifrc.svg" :alt="$t('landing.footer.ifrc_logo')" />
-              </div>
-
-              <ul class="list-unstyled">
-                <li>
-                  <router-link :to="{ name: 'terms-service' }">
-                    {{ $t('terms_service') }}
-                  </router-link>
-                </li>
-                <li>
-                  <b-link href="https://www.preparecenter.org/content/privacy-policy" target="_blank" rel="noreferrer noopener" @click="$fireGTEvent($gtagEvents.PrivacyLink)">{{ $t('landing.footer.privacy') }}</b-link>
-                </li>
-              </ul>
-            </b-col>
-
-            <b-col class="text-right">
-              <ul class="list-unstyled d-flex flex-wrap justify-content-around">
-                <li>
-                  <router-link class="site-footer__heading u-text-normal m-1" :to="{name: 'get_started'}">{{ $t('landing.footer.getting_started') }}</router-link>
-                </li>
-                <li>
-                  <router-link class="site-footer__heading u-text-normal m-1" :to="{name: 'docs'}">{{ $t('landing.footer.docs') }}</router-link>
-                </li>
-                <li>
-                  <a class="site-footer__heading u-text-normal m-1" href="https://docs.google.com/forms/d/1ZgPYoInWaKbMrbhKBb2daPAbxXPq1NrHVNy7O3MAceU/" target="_blank" rel="noreferrer nofollow" @click="$fireGTEvent($gtagEvents.FeedbackLink)">
-                    {{ $t('landing.footer.give_feedback') }}
-                  </a>
-                </li>
-              </ul>
-            </b-col>
-          </b-row>
+      <footer v-if="layout" class="site-footer">
+        <div class="new-footer">
+          <div>
+            <h2>
+              {{ $t('landing.footer.subtitle_1') }}
+            </h2>
+            <p>
+              {{ $t('landing.footer.text_1') }}
+            </p>
+            <p>
+              {{ $t('landing.footer.text_2') }}
+            </p>
+            <p>
+              {{ $t('landing.footer.text_3') }}
+            </p>
+          </div>
+          <div>
+            <h2>
+              {{ $t('landing.footer.subtitle_2') }}
+            </h2>
+            <b-link :href="`mailto:${$t('landing.footer.email_ifrc')}?Subject=GDPC%20Admin%20Portal`">
+              {{ $t('landing.footer.email_ifrc') }}
+            </b-link>
+            <br>
+            <a class="footer-link" href="https://ifrc.org" target="_blank" rel="noopener noreferrer">
+              {{ $t('landing.footer.web_ifrc') }}
+            </a>
+          </div>
+          <div>
+            <h2>
+              {{ $t('landing.footer.subtitle_3') }}
+            </h2>
+              <router-link class="footer-link" :to="{ name: 'terms-service' }">
+                {{ $t('landing.footer.terms') }}
+              </router-link>
+          </div>
+          <div>
+            <h2>
+              {{ $t('landing.footer.subtitle_4') }}
+            </h2>
+            <router-link class="mb-2" :to="{name: 'docs'}">{{ $t('landing.footer.api_doc') }}</router-link>
+            <p>
+              {{ $t('landing.footer.faq') }}
+            </p>
+          </div>
         </div>
       </footer>
     </div>
@@ -132,4 +140,24 @@ export default {
 
 <style>
   @import 'vue-select/dist/vue-select.css';
+
+  .new-footer {
+    width: 100%;
+    background: #323232;
+    padding-top: 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1;
+    }
+    a {
+      font-size: 1rem;
+    }
+  }
 </style>
