@@ -375,6 +375,52 @@
       "soc_already_added": "This user has already been assigned this society"
     }
   },
+  "new_welcome": {
+    "title_1": "Welcome to",
+    "red_title": "IFRC",
+    "title_2": "Safety",
+    "title_3": "Message Database",
+    "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
+    "text_header_2": "Follow the #-step guide below..",
+    "bottom_subtitle": "Contact IFRC",
+    "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
+    "bottom_btn": "Contact IFRC",
+    "slider_1": {
+      "btn": "Create an API key",
+      "step_1": {
+        "header": "Step 1: Create an app",
+        "text": "Create an API key to use the API in the database. Tell us about what you're building."
+      },
+      "step_2": {
+        "header": "Step 2: Receive an API key",
+        "text": "When you have create an API key, it will be automatically generated.",
+        "text_2": "Important: Store your API key as securely as possible. Avoid sharing or otherwise exposing your API key within your own application."
+      },
+      "step_3": {
+        "header": "Step 3: Make a request",
+        "text": "The database API uses HTTP(S) and provides RESTful endpoints to obtain published data. Each request must be authenticated using the API key created in the previous step. For more information on all API endpoints, see the API documentation"
+      },
+      "step_4": {
+        "header": "Step 4: Share the messages",
+        "text": "Share the Red Cross Red Crescent safety messages with the public when there is a hazard threat. You can contact the IFRC team if you have any feedback on the messages: im@ifrc.org"
+      }
+    },
+    "slider_2": {
+      "btn": "WhatNow Messages",
+      "step_1": {
+        "header": "Step 1: View the messages",
+        "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
+      },
+      "step_2": {
+        "header": "Step 2: Select the message set",
+        "text": "Select the National Society you want to view. Then choose a hazard type from the available list."
+      },
+      "step_3": {
+        "header": "Step 3: Share the messages",
+        "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
+      }
+    }
+  },
   "content": {
     "content": "Content",
     "audit_log": {
@@ -579,9 +625,12 @@
     "my_apps": "My Apps",
     "new_tc": "New terms and conditions",
     "build": "Build new app",
+    "build_key": "Build new API key",
     "edit": "Edit app",
     "building": "Building app",
-    "no_apps": "You have no apps, build one to get started."
+    "building_key": "Building API key",
+    "no_apps": "You have no apps, build one to get started.",
+    "api_keys": "API Keys"
   },
   "home": {
     "home": "Home",
@@ -671,8 +720,11 @@
   },
   "register_form": {
     "heading_1": "Create your free ",
-    "heading_2": "WhatNow ",
-    "heading_3": "Service account",
+    "heading_2": "IFRC ",
+    "heading_3": "Safety Message Database",
+    "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
+    "subtitle_2": "If you want to access with the API, sign up and share the messages with the #-step guide.",
+    "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
     "who_are_you": "Who are you?",
     "what_is_your_role": "What is your role?",
     "description": "COPY PENDING",
@@ -684,10 +736,11 @@
     "terms_conditions": "Terms and Conditions ",
     "facebook": "Sign Up With Facebook",
     "google": "Sign Up With Google",
-    "email_sign_up": "Or sign up with your email:",
-    "email_ifrc": "IFRC MAIL PENDING",
-    "location": "Location",
-    "organisation": "Organisation",
+    "email_sign_up": "Sign up with your email:",
+    "mail": "mail",
+    "email_ifrc": "im@ifrc.org",
+    "location": "Country",
+    "organisation": "Organization",
     "industry": "Industry type",
     "create_account": "Create Account",
     "last_name": "Last name",
@@ -706,7 +759,7 @@
     "api_used_in": "Where will this API be used?",
     "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
     "welcome": "Welcome {name}, please complete the following information to get started:",
-    "ifrc_note": "If you have any questions or are interested in learning more, please contact: ",
+    "ifrc_note": "For questions or more information, please contact: ",
     "contact_gdpc": "Contact GDPC"
   },
   "terms_service_page": {
@@ -868,5 +921,11 @@
   "terms_conditions": {
     "title": "Terms and Conditions",
     "accept": "Accept"
+  },
+  "badges": {
+    "hazardCreate": "Hazard Created",
+    "published": "Published",
+    "draft": "Draft",
+    "bulkUploadDraft": "Bulk Upload Draft"
   }
 }
