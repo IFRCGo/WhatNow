@@ -318,7 +318,8 @@
     "email_sent": "Email sent",
     "duplicate_lang_error": "Sorry, the chosen language already exists",
     "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
-    "estimated_users": "Number of estimated users"
+    "estimated_users": "Number of estimated users",
+    "upploading": "Uploading"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -421,6 +422,10 @@
         "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
       }
     }
+  },
+  "upload_modal": {
+    "drag_button_text": "Click or drag file to this area to upload",
+    "button_text": "Upload"
   },
   "content": {
     "content": "Content",

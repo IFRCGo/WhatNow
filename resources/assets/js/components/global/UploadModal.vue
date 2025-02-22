@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- Modal -->
-    <b-modal v-model="showModal" title="Upload File" @hide="resetModal">
+    <b-modal v-model="showModal" title="Upload File" @hide="resetModal" hide-footer>
       <div class="upload-area" @click="triggerFileInput" v-if="!file">
         <input type="file" ref="fileInput" @change="handleFileUpload" class="file-input" />
-        <p>Click or drag file to this area to upload</p>
+        <p>{{ $t('upload_modal.drag_button_text') }}</p>
       </div>
 
       <div v-if="file" class="file-preview">
@@ -12,10 +12,10 @@
         <b-button variant="danger" size="sm" class="thin-x" @click="removeFile">X</b-button>
       </div>
 
-      <b-button v-if="file && !uploading" @click="uploadFile" class="global-button-style">Upload</b-button>
+      <b-button v-if="file && !uploading" @click="uploadFile" class="global-button-style">{{$t('upload_modal.button_text')}}</b-button>
 
       <b-progress v-if="uploading" :max="100" :value="progress" class="mb-3" :variant="uploadFailed ? 'danger' : 'success'"></b-progress>
-      <p v-if="uploading">Uploading... {{ progress }}%</p>
+      <p v-if="uploading">{{$t('common.upploading')}}... {{ progress }}%</p>
     </b-modal>
   </div>
 </template>
