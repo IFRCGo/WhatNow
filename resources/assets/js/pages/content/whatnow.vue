@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="h-100">
+  <b-container fluid class="h-100 whatnow-message-editor-container">
     <b-row>
       <b-col>
         <div class="whatnow-message-editor-header">
@@ -130,7 +130,8 @@
             <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
               :label-for="'contributorName' + index">
               <b-form-input type="text" :id="'contributorName' + index" :name="'contributorName' + index"
-                v-model="contributor.name" maxlength="100" :state="updateErrors.errors[`contributors.${index}.name`] ? false : null"/>
+                v-model="contributor.name" maxlength="100"
+                :state="updateErrors.errors[`contributors.${index}.name`] ? false : null" />
               <b-form-invalid-feedback v-if="updateErrors.errors[`contributors.${index}.name`]">
                 {{ $t('common.not_empty') }}
               </b-form-invalid-feedback>
@@ -148,6 +149,98 @@
       </b-col>
     </b-row>
 
+    <!-- PUBLISH BUTTON -->
+    <div class="publish-bottom-container d-flex justify-content-end" v-if="selectedSoc">
+      <b-button size="md" variant="outline-primary" v-if="can(user, permissions.CONTENT_PUBLISH)"
+        v-b-modal.publish-modal :disabled="toPublish.length === 0 || !attributionSet" class="align-self-center">
+        <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
+        <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
+        <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
+        <span v-else-if="publishing">{{ $t('content.whatnow.publishing') }}
+          <fa class="ml-2" spin :icon="['fas', 'spinner']" />
+        </span>
+      </b-button>
+    </div>
+
+    <!-- Publish Modal -->
+    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="dark"
+      cancel-variant="outline-danger" hide-header @ok="publish"
+      v-if="attribution !== null && selectedLanguage && selectedSoc">
+      <div class="px-3">
+        <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
+        <p v-if="attributionTranslation">
+          {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
+        </p>
+        <b-card class="border whatnow-publish-modal">
+          <div v-if="attributionTranslation && !attributionTranslation.published">
+            <b-row>
+              <b-col>
+                <h4>Attribution</h4>
+                <hr />
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.attribution_url') }}</b>
+              </b-col>
+              <b-col md="9">
+                {{ attribution.url }}
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.society_name') }}</b>
+              </b-col>
+              <b-col md="9" v-if="attributionTranslation">
+                {{ attributionTranslation.name }}
+              </b-col>
+            </b-row>
+            <b-row>
+              <b-col md="3">
+                <b>{{ $t('content.whatnow.attribution_message') }}</b>
+              </b-col>
+              <b-col md="9" v-if="attributionTranslation">
+                {{ attributionTranslation.attributionMessage }}
+              </b-col>
+            </b-row>
+            <hr />
+          </div>
+          <h4>{{ $t('content.whatnow.whatnow_content') }}</h4>
+          <hr />
+          <div class="whatnow-publish-content-wrapper">
+            <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
+              v-if="content.translations[selectedLanguage]">
+              <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
+
+              <b-card class="bg-grey mb-1 hazard-instruction-card" v-for="key in ['title', 'description', 'webUrl']"
+                :key="key" v-if="attributionExists(key)">
+                <b-row>
+                  <b-col md="3">
+                    {{ $t(`common.${key}`) }}
+                  </b-col>
+                  <b-col md="9">
+                    {{ truncate(content.translations[selectedLanguage][key], 60) }}
+                  </b-col>
+                </b-row>
+              </b-card>
+
+              <b-card :class="`bg-grey mb-1 hazard-instruction-card hazard-instruction-card-${stageName}`"
+                v-for="(instruction, stageName) in content.translations[selectedLanguage].stages" v-if="instruction"
+                :key="stageName">
+                <b-row>
+                  <b-col md="3">
+                    {{ $t(`content.edit_whatnow.${stageName}`) }}
+                  </b-col>
+                  <b-col md="9">
+                    {{ instruction.length }} {{ $t('content.whatnow.steps') }}
+                  </b-col>
+                </b-row>
+              </b-card>
+            </div>
+          </div>
+        </b-card>
+      </div>
+    </b-modal>
 
     <b-modal v-model="selectingLanguage" id="role-changed" centered :title="'Add new language'" ref="selectLangModal"
       ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
@@ -379,6 +472,7 @@ export default {
 
       this.attributionPublishing = true
 
+      debugger;
       const valid = this.validateForm()
       if (!valid) {
         this.attributionPublishing = false
@@ -392,6 +486,7 @@ export default {
         this.showEditAttribution = false
         this.attributionPublishing = false
         this.addingNewLanguage = false
+        this.editing = false
       } catch (e) {
         // Find index of translation we've just edited so we can find it in the response from the server
         this.updateErrors.indexError = this.attributionToEdit.translations.findIndex(translation => translation.languageCode === this.selectedLanguage)
@@ -439,6 +534,7 @@ export default {
       this.setCurrentLanguages(filteredLangs)
       this.languageToAdd = null
       this.addingNewLanguage = false
+      this.selectedLanguage = this.previousLanguage
       this.editing = false
       this.contributors = []
       this.getData()
@@ -555,6 +651,29 @@ export default {
 
 <style scoped lang="scss">
 @import '../../../sass/variables.scss';
+
+.whatnow-message-editor-container {
+  position: relative;
+
+  .publish-bottom-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    background-color: $white;
+
+    button {
+      margin-right: 50px;
+      font-size: 18px;
+      
+      &:focus {
+        box-shadow: none;
+        border-color: $red;
+      }
+    }
+  }
+}
 
 .whatnow-message-editor-tabs.nav-tabs {
   border-bottom: none;
