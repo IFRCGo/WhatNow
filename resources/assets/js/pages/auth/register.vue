@@ -3,14 +3,21 @@
     <div class="row">
       <div class="col-lg-12 register-card my-4">
         <h1 class="text-center mt-3 register_form_heading">
-          {{ $t('register_form.heading_1') }}
           <span class="register_form_heading--active">{{$t('register_form.heading_2')}}</span>
           {{$t('register_form.heading_3')}}
         </h1>
 
         <div class="what-is-your-role">
+          <p class="bottom-line">
+            {{$t('register_form.subtitle_1')}}
+          </p>
+          <hr>
+          <p class="bottom-line">
+            {{$t('register_form.subtitle_2')}}
+          </p>
+          <hr>
           <p>
-            {{$t('register_form.description')}}
+            {{$t('register_form.subtitle_3')}}
           </p>
         </div>
       </div>
@@ -50,7 +57,7 @@
                 <!-- Email -->
                   <div class="form-group register-input-container">
                     <label class="styled-label-signup styled-label" for="email">
-                      {{ $t('email') }}
+                      {{ $t('register_form.mail') }}
                       <span class="is-required"></span>
                   </label>
                   <input autocomplete="email" v-model="form.email" id="email" type="email" name="email"
@@ -111,6 +118,8 @@
                 </div>
               </div>
 
+              <div class="bottom-line mb-3"></div>
+
               <div class="col-lg-6 col-md-6 col-sm-12">
                 <!-- Location -->
                 <div class="form-group register-input-container pr-lg-4 pr-md-4">
@@ -165,20 +174,20 @@
             </div>
 
             <div class="row mt-3">
-              <div class="col-7 m-auto">
-                <p class="text-center mb-0 font-weight-light">
+              <div class="col-9 m-auto ">
+                <p class="text-center mb-0 bottom-text">
                   {{
                     $t('register_form.ifrc_note')
                   }}
-                  <b-link class="underlined-link font-weight-normal" href="">
+                  <b-link class="underlined-link" href="mailto:im@ifrc.org">
                     {{ $t('register_form.email_ifrc') }}
                   </b-link>
                 </p>
               </div>
             </div>
-            
+
             <div class="register_form-bottom">
-              <p class="text-center u-text-normal mt-5 mb-0 font-weight-light">
+              <p class="text-center mt-5 mb-0 bottom-text">
                 {{ $t('register_form.sign_up_agreement') }}
                 <b-link @click="sawTerms = true" :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
                   {{ $t('register_form.terms_conditions') }}
@@ -193,7 +202,7 @@
             </div>
           </form>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -363,13 +372,10 @@ export default {
 }
 
 .what-is-your-role p {
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.7;
-  letter-spacing: normal;
   text-align: center;
   color: $text-black;
-  white-space: pre-line;
+  font-size: 20px;
+  padding-bottom: 2rem;
 }
 
 .facebook-button {
@@ -401,10 +407,6 @@ export default {
 .register-form-container {
   background: $text-white;
   font-family: Poppins, sans-serif;
-}
-
-.register-form-container p {
-  font-size: 20px;
 }
 
 .register-form-container hr {
@@ -465,6 +467,15 @@ export default {
 
 .input-group-append.showpassword {
   cursor: pointer;
+}
+
+.bottom-line {
+  width: 100%;
+  border-bottom: 1px solid #CECECE;
+}
+
+.bottom-text {
+  font-size: 18px;
 }
 
 
