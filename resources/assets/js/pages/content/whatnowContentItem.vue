@@ -82,11 +82,11 @@
                   <b-col cols="12">
                     <h4 class="subtitle-card">{{ urgency.text }}</h4>
                   </b-col>
-                  <b-col 
-                    class="hazard-card" 
-                    cols="4" 
-                    v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages)" 
-                    :key="'stage'+index" 
+                  <b-col
+                    class="hazard-card"
+                    cols="4"
+                    v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages)"
+                    :key="'stage'+index"
                     v-if="urgency.stages.includes(stageKey)"
                   >
                     <b-card class="h-100 key-message-card" v-if="content.currentTranslation.stages[stageKey]">
@@ -117,7 +117,7 @@
           </b-collapse>
         </b-card-header>
       </b-card>
-      <b-modal size="xl"  ref="keyMessageVisualizer" :hide-header="true" id="pre-image" centered ok-variant="outline-primary" :ok-title="'Descargar'">
+      <b-modal size="xl"  ref="keyMessageVisualizer" :hide-footer="true" id="pre-image" centered>
         <whatnowPrevisualizer :keyMessage="openedKeyMessage"></whatnowPrevisualizer>
       </b-modal>
     </b-col>

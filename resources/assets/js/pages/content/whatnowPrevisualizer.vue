@@ -1,5 +1,6 @@
 <template>
-   <div class="modal-content">
+  <div>
+    <div class="modal-content" ref="modalContent"> <!-- Agregar ref aquí -->
       <!-- Header -->
       <div class="modal-header">
         <div class="logo-section">
@@ -16,9 +17,9 @@
           </div>
           <h4>Coastal Flood Safety Messages</h4>
         </div>
-
+        <hr>
         <h3>WATCH</h3>
-
+        <hr>
         <div v-for="(message, index) in safetyMessages" :key="index" class="safety-message">
           <p><strong>{{ message.title }}</strong></p>
           <ul v-if="message.support && message.support.length">
@@ -27,18 +28,55 @@
         </div>
       </div>
     </div>
+    <div class="button-container">
+      <b-dropdown id="download-dropdown" text="Download" class="primary">
+        <b-dropdown-item @click="downloadAsPNG">Download as PNG</b-dropdown-item>
+        <b-dropdown-item @click="downloadAsPDF">Download as PDF</b-dropdown-item>
+      </b-dropdown>
+  </div>
+  </div>
 </template>
 
 <script>
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
+
 export default {
   data() {
     return {
       safetyMessages: [
-        { title: "Safety message 1", support: ["Support message 1", "Support message 2", "Support message 3"] },
-        { title: "Safety message 2", support: ["Support message 1"] },
-        { title: "Safety message 3", support: [] },
-        { title: "Safety message 4", support: ["Support message 1", "Support message 2"] }
+        { title: 'Safety message 1', support: ['Support message 1', 'Support message 2', 'Support message 3'] },
+        { title: 'Safety message 2', support: ['Support message 1'] },
+        { title: 'Safety message 3', support: [] },
+        { title: 'Safety message 4', support: ['Support message 1', 'Support message 2'] }
       ]
+    }
+  },
+  methods: {
+    async downloadAsPNG() {
+      const element = this.$refs.modalContent
+      const canvas = await html2canvas(element)
+      const link = document.createElement('a')
+      link.href = canvas.toDataURL('image/png')
+      link.download = 'modal-content.png'
+      link.click()
+    },
+    async downloadAsPDF() {
+      const element = this.$refs.modalContent
+      const canvas = await html2canvas(element)
+      const imgData = canvas.toDataURL('image/png')
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4'
+      })
+
+      const pageWidth = 265
+      const pageHeight = 245
+      pdf.setFontSize(12)
+
+      pdf.addImage(imgData, 'PNG', 0, 0, pageWidth, pageHeight)
+      pdf.save('modal-content.pdf')
     }
   }
 }
@@ -53,7 +91,6 @@ export default {
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 
 .modal-header {
   display: flex;
@@ -72,7 +109,7 @@ export default {
 }
 
 .modal-body {
-  padding: 15px 0;
+  padding: 30px;
 }
 
 .title-section {
@@ -94,10 +131,11 @@ export default {
 .safety-message:last-child {
   border-bottom: none;
 }
-
-
-.modal-footer {
-  margin-top: 20px;
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 </style>
