@@ -1,10 +1,5 @@
 <template>
   <div>
-    <!-- Button to open the modal -->
-    <b-button @click="showModal = true" class="global-button-style">
-      Upload File
-    </b-button>
-
     <!-- Modal -->
     <b-modal v-model="showModal" title="Upload File" @hide="resetModal">
       <div class="upload-area" @click="triggerFileInput" v-if="!file">
@@ -30,9 +25,9 @@ import axios from 'axios'
 import { BToast } from 'bootstrap-vue'
 
 export default {
+  props: ['disabled', 'showModal'],
   data() {
     return {
-      showModal: false,
       file: null,
       uploading: false,
       progress: 0,
@@ -97,6 +92,8 @@ export default {
           this.uploadFailed = true
           this.showNotification("Upload failed. Please try again.", "danger")
         }
+
+        this.$emit('fileUploaded', response.data)
       } catch (error) {
         this.uploadFailed = true
         this.showNotification("An error occurred during upload.", "danger")
@@ -115,6 +112,7 @@ export default {
       this.uploadFailed = false
       this.uploadSuccess = false
       this.errorMessage = ""
+      this.$emit('modalReset')
     },
     showNotification(message, variant) {
       this.$bvToast.toast(message, {

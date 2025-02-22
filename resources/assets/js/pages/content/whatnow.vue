@@ -72,9 +72,16 @@
 
       <b-col lg="5">
         <div class="d-flex justify-content-start align-items-start">
+          <!-- NS IMG -->
           <div slot="button-content" class="text-dark py-0 mr-3">
             <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-            <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+            <div v-else class="upload-img-button">
+              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)"
+                class="p-0 d-flex flex-column align-items-center justify-content-center">
+                <fa :icon="['fas', 'plus']" />
+                <span>Add a logo</span>
+              </b-button>
+            </div>
           </div>
           <b-row>
             <b-col lg="12">
@@ -123,9 +130,16 @@
       <b-col lg="12">
         <div v-for="(contributor, index) in attributionEditTranslation.contributors" :key="index">
           <div class="d-flex justify-content-start align-items-start">
+            <!-- CONTRIBUTOR IMG -->
             <div slot="button-content" class="text-dark py-0 mr-3">
               <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+              <div v-else class="upload-img-button">
+                <b-button :variant="'link'"@click="openUploadModal(logoType.CONTRIBUTOR, index)"
+                  class="p-0 d-flex flex-column align-items-center justify-content-center">
+                  <fa :icon="['fas', 'plus']" />
+                  <span>Add a logo</span>
+                </b-button>
+              </div>
             </div>
             <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
               :label-for="'contributorName' + index">
@@ -247,6 +261,8 @@
       :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
       <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
     </b-modal>
+
+    <upload-modal ref="uploadModal" @modalReset="handleUploadModalReset" @fileUploaded="handleFileUploaded" @fileUploadFailed="fileUploadFailed" :showModal="showUploadImage"></upload-modal>
   </b-container>
 
 </template>
@@ -262,7 +278,8 @@ import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
-import Avatar from 'vue-avatar'
+import UploadModal from '~/components/global/UploadModal'
+
 export default {
   components: {
     SelectSociety,
@@ -270,7 +287,7 @@ export default {
     Spooky,
     WhatnowList,
     PageBanner,
-    Avatar
+    UploadModal
   },
   props: ['countryCode', 'regionSlug'],
   data() {
@@ -301,7 +318,15 @@ export default {
         errors: {}
       },
       editing: false,
-      contributors: []
+      contributors: [],
+      showUploadImage: false,
+      logoType: {
+        NS: 'NS',
+        CONTRIBUTOR: 'CONTRIBUTOR'
+      },
+      logoTypeSelected: null,
+      logoFileUrl: null,
+      contributorIndex: null
     }
   },
   watch: {
@@ -566,7 +591,22 @@ export default {
       }
 
       return true;
-    }
+    },
+    openUploadModal(type, contributorIndex = null) {
+      this.logoTypeSelected = type
+      this.showUploadImage = true
+      this.contributorIndex = contributorIndex
+    },
+    handleUploadModalReset() {
+      this.showUploadImage = false
+      this.logoTypeSelected = null
+      this.logoFileUrl = null
+      this.contributorIndex = null
+    },
+    handleFileUploaded(event) {
+      console.log('event upload file', event)
+      // this.attributionEditTranslation.logo = file
+    },
   },
   metaInfo() {
     return { title: this.$t('content.whatnow.whatnow') }
@@ -666,10 +706,25 @@ export default {
     button {
       margin-right: 50px;
       font-size: 18px;
-      
+
       &:focus {
         box-shadow: none;
         border-color: $red;
+      }
+    }
+  }
+
+  .upload-img-button {
+    .btn {
+      font-size: 8px;
+      color: #838383;
+      background-color: #fff;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+
+      .fa-plus {
+        font-size: 12px;
       }
     }
   }
