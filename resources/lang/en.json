@@ -427,6 +427,15 @@
     "drag_button_text": "Click or drag file to this area to upload",
     "button_text": "Upload"
   },
+  "stages": {
+    "immediate": "Immediate",
+    "warning": "Warning",
+    "anticipated": "Anticipated",
+    "assess_and_plan":"Assess and Plan",
+    "mitigate_risks":"Mitigate Risks",
+    "prepare_to_respond":"Prepare to Respond",
+    "recover": "Recover"
+  },
   "content": {
     "content": "Content",
     "audit_log": {

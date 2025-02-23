@@ -4,8 +4,8 @@
       <!-- Header -->
       <div class="modal-header">
         <div class="logo-section">
-          <img src="https://whatnowimages.blob.core.windows.net/images/American-Red-Cross_Logo_1200x630.jpg" alt="American Red Cross" class="logo" />
-          <span>American Red Cross</span>
+          <img v-if="selectedSoc.imageUrl" :src="selectedSoc.imageUrl" alt="American Red Cross" class="logo" />
+          <span>{{selectedSoc.name}}</span>
         </div>
       </div>
 
@@ -13,17 +13,17 @@
       <div class="modal-body">
         <div class="title-section">
           <div class="previsualizer-key-message-icon small-icon icon-spacing">
-            <b-img :src="hazardIcon('Animal')" class="rounded-circle" width="40" height="40"></b-img>
+            <b-img :src="hazardIcon(eventType)" class="rounded-circle" width="40" height="40"></b-img>
           </div>
-          <h4>Coastal Flood Safety Messages</h4>
+          <h4>{{title}}</h4>
         </div>
         <hr>
-        <h3>WATCH</h3>
+        <h3>{{ $t('stages.'+stageName) }}</h3>
         <hr>
-        <div v-for="(message, index) in safetyMessages" :key="index" class="safety-message">
+        <div v-for="(message, index) in keyMessage" :key="index" class="safety-message">
           <p><strong>{{ message.title }}</strong></p>
-          <ul v-if="message.support && message.support.length">
-            <li v-for="(item, i) in message.support" :key="i">{{ item }}</li>
+          <ul v-if="message.content && message.content?.length">
+            <li v-for="(item, i) in message.content" :key="i">{{ item }}</li>
           </ul>
         </div>
       </div>
@@ -42,16 +42,7 @@ import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
 
 export default {
-  data() {
-    return {
-      safetyMessages: [
-        { title: 'Safety message 1', support: ['Support message 1', 'Support message 2', 'Support message 3'] },
-        { title: 'Safety message 2', support: ['Support message 1'] },
-        { title: 'Safety message 3', support: [] },
-        { title: 'Safety message 4', support: ['Support message 1', 'Support message 2'] }
-      ]
-    }
-  },
+  props: ['eventType', 'keyMessage', 'stageName', 'title', 'description', 'selectedSoc'],
   methods: {
     async downloadAsPNG() {
       const element = this.$refs.modalContent

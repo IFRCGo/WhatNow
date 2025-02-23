@@ -94,37 +94,19 @@
                     :key="'stage'+index"
                     v-if="urgency.stages.includes(stageKey)"
                   >
-                    <b-card class="h-100 key-message-card" v-if="content.currentTranslation.stages[stageKey]">
-                      <div class="mb-2">
-                        <h4 class="card-title mb-3">
-                          {{ $t('content.edit_whatnow.'+stageKey) }}
-                        </h4>
-                        <div class="key-message-item" v-for="(keyMessage, index) in content.currentTranslation.stages[stageKey]" :key="'instruction'+index">
-                          <h5 class="card-text key-message-item-title">
-                            {{ keyMessage.title  }}
-                          </h5>
-                          <ul class="key-message-item-list">
-                            <li class="text-card" v-for="(supportingMessage, index) in keyMessage.content" :key="'supportingMessage'+index">
-                              {{ supportingMessage }}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="button-container mt-4 mb-4 key-message-item-btn">
-                        <b-button variant="danger" class="button-go" @click="openKeyMessageVisualizer(content.currentTranslation.stages[stageKey], content.eventType)">
-                          {{ $t('content.whatnow.show_more') }}
-                        </b-button>
-                      </div>
-                    </b-card>
+                    <whatnow-message-card v-if="content.currentTranslation.stages[stageKey]"
+                      :stage="content.currentTranslation.stages[stageKey]"
+                      :stageName="stageKey" :eventType="content.eventType"
+                      :title="content.currentTranslation.title"
+                      :description="content.currentTranslation.description"
+                      :selectedSoc="selectedSoc"
+                    />
                   </b-col>
                 </b-row>
               </b-card-body>
           </b-collapse>
         </b-card-header>
       </b-card>
-      <b-modal size="xl"  ref="keyMessageVisualizer" :hide-footer="true" id="pre-image" centered>
-        <whatnowPrevisualizer :keyMessage="openedKeyMessage"></whatnowPrevisualizer>
-      </b-modal>
     </b-col>
   </b-row>
 </template>
@@ -133,13 +115,15 @@ import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 import swal from 'sweetalert2'
 import WhatnowDownloadImage from './whatnowDownloadImage'
-import whatnowPrevisualizer from './whatnowPrevisualizer.vue'
+import whatnowPrevisualizer from './whatnowPrevisualizer'
+import WhatnowMessageCard from './whatnowMessageCard'
 
 export default {
-  props: ['selectedLanguage', 'content', 'isPromo', 'regionSlug', 'forceCreate'],
+  props: ['selectedLanguage', 'content', 'isPromo', 'regionSlug', 'forceCreate', 'selectedSoc'],
   components: {
     WhatnowDownloadImage,
-    whatnowPrevisualizer
+    whatnowPrevisualizer,
+    WhatnowMessageCard,
   },
   data() {
     return {
@@ -166,7 +150,6 @@ export default {
           description: this.$t('content.edit_whatnow.recovery_description')
         },
       ],
-      openedKeyMessage: null
     }
   },
   methods: {
@@ -198,10 +181,6 @@ export default {
         }
       }
       return false
-    },
-    openKeyMessageVisualizer(keyMessage) {
-      this.openedKeyMessage = keyMessage
-      this.$refs.keyMessageVisualizer.show()
     },
   },
   computed: {
@@ -270,31 +249,6 @@ export default {
   }
 }
 
-.key-message-item {
-  margin-bottom: 11px;
-  &::after {
-    content: '';
-    display: block;
-    width: 90%;
-    height: 0.7px;
-    background-color: $cad-solid-bg-3;
-    margin: 24px auto;
-  }
-
-  .key-message-item-title {
-    font-size: 16.8px;
-    font-weight: 500;
-    color: #000;
-  }
-
-  ul.key-message-item-list {
-    li {
-      font-size: 14px;
-      color: #1e1e1e;
-    }
-  }
-}
-
 .hazard-card {
   .key-message-item-btn {
     position: absolute;
@@ -344,11 +298,6 @@ export default {
 .card-text {
   font-weight: 400;
   font-size: 14px;
-}
-
-.key-message-card {
-  background: #E9E9E9;
-  padding-bottom: 40px;
 }
 
 .content-info {
