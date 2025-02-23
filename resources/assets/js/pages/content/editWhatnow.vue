@@ -152,8 +152,8 @@
 
               </b-col>
             </b-row>
-
-            <div v-if="canEdit" class="bg-white d-flex justify-content-end align-items-center mt-4">
+            <!-- save controls -->
+            <div v-if="canEdit" class="save-controls-container bg-white d-flex justify-content-end align-items-center mt-4">
               <b-button size="sm" variant="outline-primary" class="mr-3" :disabled="savingContent"
                 :to="{ name: 'content.whatnow', params: { countryCode: this.content.countryCode } }">
                 {{ $t('common.cancel') }}
@@ -598,6 +598,20 @@ export default {
 
 <style scoped lang="scss">
 @import '../../../sass/variables.scss';
+
+.edit-whatnow {
+  position: relative;
+  .save-controls-container {
+    padding: 16px 24px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+    background-color: $white;
+    z-index: 100;
+  }
+}
 
 .content-editor-header {
   position: relative;
