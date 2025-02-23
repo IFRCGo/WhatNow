@@ -1,36 +1,41 @@
 <template>
-  <b-row class="whatnow-row mt-2 border border-secondary" v-if="!isPromo">
-    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+  <!-- WN MESSAGE EDITOR -->
+  <b-row class="whatnow-row whatnow-row--message_editor mt-2" v-if="!isPromo">
+    <b-col lg="2" class="whatnow-col-item--message_editor">
       {{ content.eventType }}
     </b-col>
-    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+    <b-col lg="3" class="whatnow-col-item--message_editor">
       <span v-if="contentExists('title', content)">{{ truncate(content.currentTranslation.title, 90) }}</span>
       <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation') }}</span>
     </b-col>
-    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+    <b-col lg="3" class="whatnow-col-item--message_editor">
       <span v-if="contentExists('description', content)">{{ truncate(content.currentTranslation.description, 90)
         }}</span>
       <span class="border border-warning p-1 rounded bg-warning" v-else>{{ $t('content.whatnow.no_translation') }}</span>
     </b-col>
-    <b-col class="border border-top-0 border-bottom-0 border-left-0 pt-5 pb-5">
+    <b-col lg="2" class="whatnow-col-item--message_editor">
       <span v-if="contentExists('published', content)">{{ content.currentTranslation.published ? $t('no') : $t('yes')
         }}</span>
       <span v-else>-</span>
     </b-col>
-    <b-col class="pt-5 pb-5">
-      <b-button variant="primary" size="sm" class="mb-1" :to="editLink"
+    <b-col lg="2" class="whatnow-col-item--message_editor">
+      <b-button variant="outline-primary" size="sm" class="mb-1 mr-1" :to="editLink"
         v-if="(can(user, permissions.CONTENT_EDIT) || can(user, permissions.CONTENT_VIEW))"
         :disabled="deletingContentTranslation === content.id">
+        <font-awesome-icon :icon="['fas', 'pen']" />
         {{ can(user, permissions.CONTENT_EDIT) ? $t('common.edit') : $t('common.view_content') }}
       </b-button>
-      <b-button variant="danger" size="sm" class="mb-1" v-if="can(user, permissions.CONTENT_DELETE) && !forceCreate"
+      <b-button variant="outline-primary" size="sm" class="mb-1" v-if="can(user, permissions.CONTENT_DELETE) && !forceCreate"
         :disabled="deletingContentTranslation === content.id" @click="deleteContentTranslation(content.id)">
-        <fa :icon="['fas', 'spinner']" spin v-show="deletingContentTranslation === content.id" />
+        <font-awesome-icon :icon="['fas', 'spinner']" spin v-show="deletingContentTranslation === content.id" />
+        <font-awesome-icon :icon="['fas', 'trash']" />
         {{ $t('common.delete') }}
       </b-button>
     </b-col>
   </b-row>
-  <!-- Whatnow promo -->
+  <!--END WN MESSAGE EDITOR -->
+
+  <!-- WN MESSAGE -->
   <b-row v-else>
     <b-col v-if="content.translations[selectedLanguage]">
       <b-card no-body class="whatnow-collapse-card">
@@ -225,8 +230,44 @@ export default {
 @import '../../../sass/variables.scss';
 
 .collapse-content {
-  padding: 2.1rem;
-  margin-top: -1.4rem;
+  padding: 2rem;
+  margin-top: -1.5rem;
+}
+
+.hazard-cards-container {
+  background: #E1E1E1;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* MESSAGE EDITOR */
+.whatnow-row--message_editor {
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  font-size: 12.5px;
+  color: #000;
+  height: 100px;
+
+  .whatnow-col-item--message_editor {
+    border-right: 3px solid #fff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &:last-of-type {
+      border: none;
+    }
+
+    .btn {
+      padding: 0 14px;
+    }
+  }
 }
 
 .key-message-item {
@@ -281,23 +322,23 @@ export default {
 
 .subtitle {
   font-weight: 500;
-  font-size: 19.6px;
+  font-size: 20px;
 }
 
 .subtitle-in {
   font-weight: 500;
-  font-size: 18.2px;
+  font-size: 18px;
 }
 
 .subtitle-card {
   font-weight: 600;
-  font-size: 18.2px;
-  color: red;
+  font-size: 18px;
+  color: $red;
 }
 
 .card-title {
   font-weight: 500;
-  font-size: 24.5px;
+  font-size: 24px;
 }
 
 .card-text {

@@ -275,6 +275,7 @@
     "actions": "Actions",
     "create": "Create",
     "edit": "Edit",
+    "save": "Save",
     "deactivate": "Deactivate",
     "activate": "Activate",
     "are_you_sure": "Are you sure?",
@@ -317,7 +318,8 @@
     "email_sent": "Email sent",
     "duplicate_lang_error": "Sorry, the chosen language already exists",
     "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
-    "estimated_users": "Number of estimated users"
+    "estimated_users": "Number of estimated users",
+    "upploading": "Uploading"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -420,6 +422,10 @@
         "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
       }
     }
+  },
+  "upload_modal": {
+    "drag_button_text": "Click or drag file to this area to upload",
+    "button_text": "Upload"
   },
   "content": {
     "content": "Content",
@@ -530,6 +536,15 @@
       "content_add_hazard_title": "Add Hazard",
       "key_message_label": "Key message title",
       "supporting_message_label": "Supporting message"
+    },
+    "message_editor": {
+      "title": "Message Editor",
+      "society_name_label": "National society name",
+      "attribution_url_label": "Attribution URL",
+      "attribution_message_label": "Attribution Message",
+      "create_btn": "Add hazard",
+      "contributor_name_label": "Contributor Name",
+      "contributor_single": "Contributor"
     },
     "audit": "Audit log",
     "export": "Export",
