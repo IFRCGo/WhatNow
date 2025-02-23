@@ -1,12 +1,10 @@
 <template>
   <b-container fluid class="h-100 whatnow-message-editor-container">
-    <b-row>
-      <b-col>
-        <div class="whatnow-message-editor-header">
-          <h1>{{ $t('content.message_editor.title') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
-        </div>
+    <page-banner >
+      <b-col class="whatnow-message-editor-header">
+        <h1>{{ $t('content.message_editor.title') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
       </b-col>
-    </b-row>
+    </page-banner>
     <b-row class="pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start m-auto"
       v-show="selectedSoc">
       <b-col class="d-flex align-items-center">
@@ -194,27 +192,27 @@
         </p>
         <b-card class="whatnow-org-publish-modal">
           <div class="whatnow-publish-header">
-            <h4>Attribution</h4>
+            <h4>{{ attributionTranslation.publish_resumen_title }}</h4>
           </div>
 
           <div class="d-flex justify-content-start align-items-start">
             <div class="mr-3">
-              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+              <img v-if="attributionToEdit.imageUrl" :src="attributionToEdit.imageUrl" class="whatnow-org-publish-modal-ns-logo" alt="NS Profile Photo">
+              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'NS'" :initials="'NS'" ></avatar>
             </div>
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>National Society</h5>
+                <h5>{{ $t('content.whatnow.publish_resumen_ns') }}</h5>
                 <p>{{ attributionTranslation.name }}</p>	
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>Attribution URL</h5>
+                <h5>{{ $t('content.whatnow.publish_resumen_url') }}</h5>
                 <p>{{ attributionTranslation.url }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>Attribution Message</h5>
+                <h5>{{ $t('content.whatnow.publish_resumen_message') }}</h5>
                 <p>{{ attributionTranslation.attributionMessage }}</p>
               </div>
             </div>
@@ -792,6 +790,13 @@ export default {
   border: none;
   margin-bottom: 25px;
 
+  .whatnow-org-publish-modal-ns-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   .whatnow-publish-header {
     margin-bottom: 10px;
     h4 {
@@ -905,7 +910,7 @@ export default {
 
 .whatnow-message-editor-header {
   h1 {
-    font-size: 38px;
+    font-size: 55px;
     font-weight: 600;
     color: $text-dark;
   }

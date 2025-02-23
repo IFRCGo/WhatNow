@@ -612,7 +612,7 @@ export default {
   }
 
   .content-editor-title {
-    font-size: 24px;
+    font-size: 55px;
     font-weight: 600;
     color: $text-dark;
   }

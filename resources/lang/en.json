@@ -478,7 +478,11 @@
       "show_more": "Show more",
       "early": "Early Warning",
       "disaster": "Disaster Risk Reduction",
-      "recovery": "Recovery"
+      "recovery": "Recovery",
+      "publish_resumen_title": "Attribution",
+      "publish_resumen_ns": "National Society",
+      "publish_resumen_url": "Attribution URL",
+      "publish_resumen_message": "Attribution Message"
     },
     "edit_whatnow": {
       "title": "Title",
