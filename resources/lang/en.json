@@ -275,6 +275,7 @@
     "actions": "Actions",
     "create": "Create",
     "edit": "Edit",
+    "save": "Save",
     "deactivate": "Deactivate",
     "activate": "Activate",
     "are_you_sure": "Are you sure?",
@@ -317,7 +318,8 @@
     "email_sent": "Email sent",
     "duplicate_lang_error": "Sorry, the chosen language already exists",
     "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
-    "estimated_users": "Number of estimated users"
+    "estimated_users": "Number of estimated users",
+    "upploading": "Uploading"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -420,6 +422,10 @@
         "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
       }
     }
+  },
+  "upload_modal": {
+    "drag_button_text": "Click or drag file to this area to upload",
+    "button_text": "Upload"
   },
   "content": {
     "content": "Content",
@@ -530,6 +536,15 @@
       "content_add_hazard_title": "Add Hazard",
       "key_message_label": "Key message title",
       "supporting_message_label": "Supporting message"
+    },
+    "message_editor": {
+      "title": "Message Editor",
+      "society_name_label": "National society name",
+      "attribution_url_label": "Attribution URL",
+      "attribution_message_label": "Attribution Message",
+      "create_btn": "Add hazard",
+      "contributor_name_label": "Contributor Name",
+      "contributor_single": "Contributor"
     },
     "audit": "Audit log",
     "export": "Export",
@@ -715,7 +730,19 @@
       "docs": "Documentation",
       "give_feedback": "Give Feedback",
       "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
-      "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement"
+      "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement",
+      "subtitle_1": "About IFRC Key Safety Database",
+      "text_1": "The IFRC Key Safety Database provides access to",
+      "text_2": "Red Cross Red Crescent messages on how people",
+      "text_3": "can safely act in the face of hazards",
+      "subtitle_2": "Find Out More",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "Policies",
+      "terms": "Terms and Conditions",
+      "subtitle_4": "Helpful Links",
+      "api_doc": "API Documentation",
+      "faq": "FAQ (link to be provided)"
     }
   },
   "register_form": {

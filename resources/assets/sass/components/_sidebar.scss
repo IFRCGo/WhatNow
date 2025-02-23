@@ -5,7 +5,6 @@
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   z-index: 999; /* Fix for hidden dropdown from the navbar above (z-index: 1000) */
   transition: width 0.3s ease-in;
-  background-image: linear-gradient(193deg, rgba(0, 0, 0, 0.5), #000000), linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   width: 200px;
   position: sticky;
   top: 0;
@@ -14,10 +13,10 @@
   .nav {
     transition: margin 0.3s ease-in;
     li {
-      font-size:em(10);
+      font-size:0.8rem;
     }
     > li {
-      font-size:em(12);
+      font-size:0.9rem;
     }
     a {
       overflow: hidden;
@@ -51,18 +50,15 @@
 
   .nav-item:not(.nav-toggle):hover .nav-link {
     border-left-color: $secondary-colour;
-    opacity: 1;
   }
   .nav-link {
-    color: $white;
+    color: $black;
     border-left: 2px solid transparent;
     transition: border-color 0.3s ease-in-out;
-    opacity: 0.6;
     &.active,
     &:hover,
     &:focus {
       font-weight: bold;
-      opacity: 1;
       border-left-color: $secondary-colour;
     }
 
@@ -83,13 +79,13 @@
   &__icon {
     display: inline-block;
     position: relative;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     border-radius: 20px;
-    background-color: #ffffff;
+    background-color: red;
     border: solid 2px rgba(255, 255, 255, 0.2);
-    opacity: 1;
     flex-shrink: 0;
+    color: $white;
 
     svg {
       position: absolute;
@@ -100,8 +96,4 @@
       transform: translateX(-50%) translateY(-50%);
     }
   }
-}
-
-.sidebar .nav-item.collapsed .sidebar__icon {
-  opacity: 0.6;
 }
