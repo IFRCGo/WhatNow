@@ -1,90 +1,90 @@
-  <template>
-    <b-container fluid>
-      <page-banner>
-        <b-col sm>
-          <h1 class="sec-title">{{ $t('users.list.manage') }}</h1>
-        </b-col>
-        <b-col sm>
-          <b-button  class="float-right rtl-float-left btn-outline-primary" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
-            {{ $t('users.list.create') }}
-          </b-button>
-        </b-col>
-      </page-banner>
-      <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
-        <b-col cols="3" xl="2">
-          <p class="select-header"> {{ $t('users.list.select_status') }}</p>
-          <b-form-select
-            v-model="activatedFilter"
-            value-field="value"
-            class="v-form-select-custom"
-            text-field="name"
-            :options="[
-            {
-              name: 'Status',
-              value: null
-            },
-            {
-              name: 'Activated',
-              value: 1
-            },
-            {
-              name: 'Deactivated',
-              value: 0
-            }]" />
-        </b-col>
-        <b-col cols="3" xl="2" v-if="!apiUsers">
-          <p class="select-header"> {{ $t('users.list.select_role') }}</p>
-          <b-form-select
-            v-model="roleFilter"
-            value-field="id"
-            class="v-form-select-custom"
-            text-field="name"
-            :options="roleOptions"/>
-        </b-col>
-        <b-col cols="3" xl="2" v-if="apiUsers">
-          <p class="select-header"> {{ $t('users.list.select_country') }}</p>
-          <b-form-select
-            v-model="countryFilter"
-            class="v-form-select-custom"
-            value-field="code"
-            text-field="name"
-            :options="countryList"/>
-        </b-col>
-        <b-col cols="3" xl="2" v-if="apiUsers">
-          <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
-          <b-form-select
-            v-model="termsFilter"
-            class="v-form-select-custom"
-            value-field="version"
-            text-field="version"
-            :options="termsList"/>
-        </b-col>
-        <b-col>
-          <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
-          <selectSociety
-            class="float-right"
-            :selected.sync="selectedSoc"
-            :staynull="true"
-            v-if="!apiUsers"/>
-        </b-col>
-        <b-col cols="2">
-          <b-button @click="clearFilters" :disabled="noFilters" class="float-right btn-outline-primary">
-            {{ $t('users.list.clear_filters') }}
-          </b-button>
-        </b-col>
-      </b-row>
-      <b-row class="pb-4 pt-3 bg-white">
-        <b-col v-if="usersAvailable" class="pl-0 pr-0">
-          <table-loading :loading="fetchingUsers"></table-loading>
-          <div class="table-responsive users-list-table-view">
+<template>
+  <b-container fluid>
+    <page-banner>
+      <b-col sm>
+        <h1 class="sec-title">{{ $t('users.list.manage') }}</h1>
+      </b-col>
+      <b-col sm>
+        <b-button class="float-right rtl-float-left btn-outline-primary" :to="{ name:'users.new' }" v-if="can(user, permissions.USERS_CREATE) && !apiUsers">
+          {{ $t('users.list.create') }}
+        </b-button>
+      </b-col>
+    </page-banner>
+    <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
+      <b-col cols="3" xl="2">
+        <p class="select-header"> {{ $t('users.list.select_status') }}</p>
+        <b-form-select
+          v-model="activatedFilter"
+          value-field="value"
+          class="v-form-select-custom"
+          text-field="name"
+          :options="[
+          {
+            name: 'Status',
+            value: null
+          },
+          {
+            name: 'Activated',
+            value: 1
+          },
+          {
+            name: 'Deactivated',
+            value: 0
+          }]" />
+      </b-col>
+      <b-col cols="3" xl="2" v-if="!apiUsers">
+        <p class="select-header"> {{ $t('users.list.select_role') }}</p>
+        <b-form-select
+          v-model="roleFilter"
+          value-field="id"
+          class="v-form-select-custom"
+          text-field="name"
+          :options="roleOptions"/>
+      </b-col>
+      <b-col cols="3" xl="2" v-if="apiUsers">
+        <p class="select-header"> {{ $t('users.list.select_country') }}</p>
+        <b-form-select
+          v-model="countryFilter"
+          class="v-form-select-custom"
+          value-field="code"
+          text-field="name"
+          :options="countryList"/>
+      </b-col>
+      <b-col cols="3" xl="2" v-if="apiUsers">
+        <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
+        <b-form-select
+          v-model="termsFilter"
+          class="v-form-select-custom"
+          value-field="version"
+          text-field="version"
+          :options="termsList"/>
+      </b-col>
+      <b-col>
+        <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
+        <selectSociety
+          class="float-right"
+          :selected.sync="selectedSoc"
+          :staynull="true"
+          v-if="!apiUsers"/>
+      </b-col>
+      <b-col cols="2" xl="1">
+        <b-button @click="clearFilters" :disabled="noFilters" class="float-right btn-outline-primary">
+          {{ $t('users.list.clear_filters') }}
+        </b-button>
+      </b-col>
+    </b-row>
+    <b-row class="pb-4 pt-3 bg-white">
+      <b-col v-if="usersAvailable" class="pl-0 pr-0">
+        <table-loading :loading="fetchingUsers"></table-loading>
+        <div class="table-responsive users-list-table-view">
           <b-table hover
-            :items="users.data"
-            :fields="fields"
-            :perPage="users.meta.per_page"
-            :show-empty="false"
-            no-local-sorting
-            :sort-by.sync="orderBy"
-            :sort-desc.sync="sortDesc">
+                   :items="users.data"
+                   :fields="fields"
+                   :perPage="users.meta.per_page"
+                   :show-empty="false"
+                   no-local-sorting
+                   :sort-by.sync="orderBy"
+                   :sort-desc.sync="sortDesc">
             <!-- A virtual column -->
             <template #cell(first_name)="data">
               {{ data.item.user_profile?.first_name }}
@@ -105,10 +105,10 @@
               {{ data.item.last_logged_in_at | moment("MM/DD/YY") }}
             </template>
             <template #cell(society)="data">
-                <span v-if="data.item.organisations.length === 1 ">{{ getSocietyByCode(data.item.organisations[0]) }}</span>
-                <span v-else-if="data.item.organisations.length > 1">{{ data.item.organisations.length }} {{ $t('users.list.societies')}}</span>
-                <span v-else-if="data.item.role && data.item.role.super">{{ $t('all')}} {{ $t('users.list.societies')}}</span>
-                <span v-else-if="data.item.role && data.item.role.permissions.find(perm => perm.name === permissions.ALL_ORGANISATIONS)">{{ $t('all')}} {{ $t('users.list.societies')}}</span>
+              <span v-if="data.item.organisations.length === 1 ">{{ getSocietyByCode(data.item.organisations[0]) }}</span>
+              <span v-else-if="data.item.organisations.length > 1">{{ data.item.organisations.length }} {{ $t('users.list.societies')}}</span>
+              <span v-else-if="data.item.role && data.item.role.super">{{ $t('all')}} {{ $t('users.list.societies')}}</span>
+              <span v-else-if="data.item.role && data.item.role.permissions.find(perm => perm.name === permissions.ALL_ORGANISATIONS)">{{ $t('all')}} {{ $t('users.list.societies')}}</span>
             </template>
             <template #cell(organisation)="data">
               {{ data.item.user_profile?.organisation }}
@@ -122,36 +122,45 @@
             <template #cell(profile_pic)="data">
               <div>
                 <b-img v-if="data.item.user_profile?.photo_url" :src="data.item.user_profile.photo_url" width="42" height="42" rounded="circle" alt="" role="presentation"></b-img>
-                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name " />
+                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name" :size="42" class="custom-avatar" />
               </div>
             </template>
             <template #cell(actions)="data">
-              <b-button class="mb-1 btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)"> {{ $t('common.edit') }} </b-button>
-              <b-button class="mb-1 btn-outline-primary" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)"> {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }} </b-button>
-            </template>
+            <div class="d-flex flex-column">
+              <div class="d-flex justify-content-between mb-1">
+                <b-button class="btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
+                  <i class="fas fa-pen-square fa-lg"></i>
+                </b-button>
+                <b-button class="btn-outline-primary small-text" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)">
+                  {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }}
+                </b-button>
+              </div>
+              <b-button class="btn-outline-primary small-text" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
+                Reset Password
+              </b-button>
+            </div>
+          </template>
           </b-table>
-          </div>
-          <b-pagination
-
-            v-if="users.meta.total > users.meta.per_page"
-            size="md"
-            :total-rows="users.meta.total"
-            v-model="currentPage"
-            :per-page="users.meta.per_page"
-            :limit="10"
-            align="center"></b-pagination>
-          <p v-if="users.data.length === 0">
-            {{ $t('users.list.empty') }}
-          </p>
-        </b-col>
-        <b-col v-else>
-          {{ $t('common.loading')}}
-          <!-- Throw in a spooky boi here -->
-        </b-col>
-      </b-row>
-    </b-container>
-  </template>
-
+        </div>
+        <b-pagination
+          v-if="users.meta.total > users.meta.per_page"
+          size="md"
+          :total-rows="users.meta.total"
+          v-model="currentPage"
+          :per-page="users.meta.per_page"
+          :limit="10"
+          align="center"></b-pagination>
+        <p v-if="users.data.length === 0">
+          {{ $t('users.list.empty') }}
+        </p>
+      </b-col>
+      <b-col v-else>
+        {{ $t('common.loading')}}
+        <!-- Throw in a spooky boi here -->
+      </b-col>
+    </b-row>
+  </b-container>
+</template>
 <script>
 import swal from 'sweetalert2'
 import axios from 'axios'
@@ -199,7 +208,7 @@ const fetchHandler = {
   deep: true
 }
 
-let termsDefault = 'Terms and Conditions';
+let termsDefault = 'Terms and Conditions'
 
 export default {
   components: {
@@ -326,7 +335,7 @@ export default {
             sort: this.sortDesc ? 'desc' : 'asc'
           })
       } catch (e) {
-         this.$noty.error(this.$t('error_alert_text'))
+        this.$noty.error(this.$t('error_alert_text'))
       }
 
       this.fetchingUsers = false
@@ -342,6 +351,22 @@ export default {
         this.$store.dispatch('terms/fetchAllTerms')
       } catch (e) {
         this.$noty.error(this.$t('error_alert_text'))
+      }
+    },
+    async sendResetPasswordEmail(email) {
+      try {
+        const { data } = await axios.post('/api/admin/password/email', { email })
+        swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: data.status
+        })
+      } catch (error) {
+        swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: error.response.data.message || 'An error occurred'
+        })
       }
     }
   },
@@ -443,26 +468,24 @@ export default {
   }
 }
 </script>
-  <style>
+<style>
   .v-form-select-custom {
     background: #E9E9E9;
     border: none;
     border-radius: 10px;
     padding: 8px 8px;
     font-size: 18px;
+
   }
- th {
-   border-right: none !important;
- }
- td {
-   div {
-     div {
-     background: #F6333F!important;
-       color: white!important;
-     }
-   }
- }
   .select-header {
     font-size: 1rem;
   }
-  </style>
+  .small-text {
+    font-size: 0.8rem;
+  }
+  .custom-avatar {
+    background-color: #F6333F !important;
+    color: #FFFFFF !important;
+  }
+
+</style>

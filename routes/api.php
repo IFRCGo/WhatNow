@@ -18,6 +18,7 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('instructions/{id}/{translation}/{stage}/download', 'WhatNow\InstructionController@renderImage'); // Download instruction image
     Route::get('event-types/', 'WhatNow\EventTypeController@list'); // List all event types
     Route::post('event-types/', 'WhatNow\EventTypeController@create'); // Create new event type
+    Route::post('admin/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 });
 
 // Protected routes - requires API authentication
@@ -91,6 +92,10 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('regions', 'WhatNow\RegionController@createRegion'); // Create region
     Route::put('regions/region/{regionId}', 'WhatNow\RegionController@updateRegion'); // Update region
     Route::delete('regions/region/{regionId}', 'WhatNow\RegionController@deleteRegion'); // Delete region
+
+    //file upload
+    Route::post('upload-file', 'FileController@uploadFile');
+
 });
 
 // Guest routes - for unauthenticated users
@@ -101,7 +106,6 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('register', 'Auth\RegisterController@register'); // Register new user
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'); // Send password reset email
     Route::post('password/reset', 'Auth\ResetPasswordController@reset'); // Reset password
-
     // User confirmation
     Route::get('confirm/{token}', 'Auth\UserConfirmationController@confirm'); // Confirm user email
     Route::post('confirm/password/set', 'Auth\UserConfirmationController@storePassword'); // Set initial password

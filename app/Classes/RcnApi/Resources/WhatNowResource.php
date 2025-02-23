@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 
 class WhatNowResource extends AbstractResource implements WhatNowResourceInterface
 {
-    
+
     public function getOrganisationByCountryCode(string $countryCode)
     {
         return $this->handleApiCall(function () use ($countryCode) {
@@ -22,7 +22,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getOrganisations()
     {
         return $this->handleApiCall(function () {
@@ -36,7 +36,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function updateOrganisationByCountryCode(Organisation $organisation)
     {
         return $this->handleApiCall(function () use ($organisation) {
@@ -50,7 +50,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getPublishedInstructionsByCountryCode(string $countryCode): Collection
     {
         return $this->handleApiCall(function () use ($countryCode) {
@@ -64,7 +64,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getLatestInstructionsByCountryCode(string $countryCode): Collection
     {
         return $this->handleApiCall(function () use ($countryCode) {
@@ -78,7 +78,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getAllInstructions(): Collection
     {
         return $this->handleApiCall(function () {
@@ -92,7 +92,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getInstruction(int $id): Instruction
     {
         return $this->handleApiCall(function () use ($id) {
@@ -103,7 +103,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function getLatestInstructionRevision(int $id): Instruction
     {
         return $this->handleApiCall(function () use ($id) {
@@ -114,7 +114,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function createInstruction(Instruction $instruction): Instruction
     {
         return $this->handleApiCall(function () use ($instruction) {
@@ -128,7 +128,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function updateInstruction(Instruction $instruction): Instruction
     {
         if (! $instruction->getId()) {
@@ -150,7 +150,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function createTranslation($id, InstructionTranslation $translation): Instruction
     {
         return $this->handleApiCall(function () use ($id, $translation) {
@@ -164,7 +164,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function patchTranslation($id, $translationId, $patch)
     {
         return $this->handleApiCall(function () use ($id, $translationId, $patch) {
@@ -178,7 +178,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function publishTranslations($ids)
     {
         $this->handleApiCall(function () use ($ids) {
@@ -188,7 +188,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         });
     }
 
-    
+
     public function deleteInstruction(int $id): void
     {
         $this->handleApiCall(function () use ($id) {
@@ -237,5 +237,24 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
         $this->handleApiCall(function () use ($regionId) {
             $response = $this->http->delete("regions/region/$regionId");
         });
+    }
+    public function uploadFile($filePath, $fileName)
+    {
+        try {
+            $response = $this->http->post('upload', [
+                'multipart' => [
+                    [
+                        'name'     => 'file',
+                        'contents' => fopen($filePath, 'r'),
+                        'filename' => $fileName
+                    ]
+                ]
+            ]);
+
+            return json_decode($response->getBody(), true);
+        } catch (\Exception $e) {
+            $this->logger->error('File upload failed: ' . $e->getMessage());
+            throw $e;
+        }
     }
 }

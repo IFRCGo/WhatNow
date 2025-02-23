@@ -18,6 +18,8 @@ class Organisation implements \JsonSerializable, Arrayable
     
     protected $translations = [];
 
+    protected $imageUrl;
+
     
     public static function createFromArray(array $array)
     {
@@ -25,6 +27,7 @@ class Organisation implements \JsonSerializable, Arrayable
         $attribution->name = $array['name'];
         $attribution->countryCode = $array['countryCode'];
         $attribution->url = $array['url'];
+        $attribution->imageUrl = $array['imageUrl'];
 
         if (is_array($array['translations'])) {
             foreach ($array['translations'] as $translationArray) {
@@ -65,6 +68,11 @@ class Organisation implements \JsonSerializable, Arrayable
         return $this->translations;
     }
 
+    public function getLogo(): ?string
+    {
+        return $this->imageUrl;
+    }
+
     
     public function getTranslationsByLanguage(string $languageCode): ?OrganisationTranslation
     {
@@ -99,6 +107,7 @@ class Organisation implements \JsonSerializable, Arrayable
             'countryCode' => $this->countryCode,
             'name' => $this->name,
             'url' => $this->url,
+            'imageUrl' => $this->imageUrl,
             'translations' => array_values(array_map(function (OrganisationTranslation $translation) {
                 return $translation->toArray();
             }, $this->translations))
@@ -111,6 +120,7 @@ class Organisation implements \JsonSerializable, Arrayable
         return [
             'name' => $this->name,
             'url' => $this->url,
+            'imageUrl' => $this->imageUrl,
             'translations' => $this->translations
         ];
     }

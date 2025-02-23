@@ -72,9 +72,18 @@
 
       <b-col lg="5">
         <div class="d-flex justify-content-start align-items-start">
+          <!-- NS IMG -->
           <div slot="button-content" class="text-dark py-0 mr-3">
-            <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-            <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+            <div class="upload-img-button">
+              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled"
+                class="p-0 d-flex flex-column align-items-center justify-content-center">
+                <img  :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" />
+                <div class="upload-img-button-controls">
+                  <fa :icon="['fas', 'plus']" />
+                  <span>Add a logo</span>
+                </div>
+              </b-button>
+            </div>
           </div>
           <b-row>
             <b-col lg="12">
@@ -123,9 +132,18 @@
       <b-col lg="12">
         <div v-for="(contributor, index) in attributionEditTranslation.contributors" :key="index">
           <div class="d-flex justify-content-start align-items-start">
+            <!-- CONTRIBUTOR IMG -->
             <div slot="button-content" class="text-dark py-0 mr-3">
-              <img v-if="false" :src="''" class="rounded-circle profile-photo mr-1 rtl-ml-1" alt="NS Profile Photo">
-              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'A'"></avatar>
+              <div class="upload-img-button">
+                <b-button :variant="'link'" @click="openUploadModal(logoType.CONTRIBUTOR, index)" :disabled="isFormDisabled"
+                  class="p-0 d-flex flex-column align-items-center justify-content-center">
+                  <img  :src="contributor.logo" v-if="contributor.logo" />
+                  <div class="upload-img-button-controls">
+                    <fa :icon="['fas', 'plus']" />
+                    <span>Add a logo</span>
+                  </div>
+                </b-button>
+              </div>
             </div>
             <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
               :label-for="'contributorName' + index">
@@ -136,6 +154,10 @@
                 {{ $t('common.not_empty') }}
               </b-form-invalid-feedback>
             </b-form-group>
+            <b-button variant="link" class="align-self-center ml-1 contributor-delete-btn" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
+              @click="deleteContributor(index)" :disabled="!canEditAttribution" :key="'cancel'">
+              <font-awesome-icon :icon="['fas', 'trash']" />
+            </b-button>
           </div>
         </div>
       </b-col>
@@ -215,6 +237,8 @@
       :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
       <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
     </b-modal>
+
+    <upload-modal ref="uploadModal" :fileName="logoFileName" @modalReset="handleUploadModalReset" @fileUploaded="handleFileUploaded" :showModal="showUploadImage"></upload-modal>
   </b-container>
 
 </template>
@@ -231,8 +255,9 @@ import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
 import WhatnowResumen from './whatnowResumen.vue'
-
 import Avatar from 'vue-avatar'
+import UploadModal from '~/components/global/UploadModal'
+
 export default {
   components: {
     SelectSociety,
@@ -241,7 +266,8 @@ export default {
     WhatnowList,
     PageBanner,
     WhatnowResumen,
-    Avatar
+    Avatar,
+    UploadModal
   },
   props: ['countryCode', 'regionSlug'],
   data() {
@@ -264,6 +290,7 @@ export default {
         countryCode: '',
         url: '',
         name: '',
+        imageUrl: '',
         translations: [],
         contributors: []
       },
@@ -272,7 +299,15 @@ export default {
         errors: {}
       },
       editing: false,
-      contributors: []
+      contributors: [],
+      showUploadImage: false,
+      logoType: {
+        NS: 'NS',
+        CONTRIBUTOR: 'CONTRIBUTOR'
+      },
+      logoTypeSelected: null,
+      logoFileName: null,
+      contributorIndex: null
     }
   },
   watch: {
@@ -444,11 +479,31 @@ export default {
       this.attributionPublishing = true
 
       const valid = this.validateForm()
+
       if (!valid) {
         this.attributionPublishing = false
         return
       }
 
+      //parse path img
+      if (this.attributionToEdit.imageUrl) {
+        const path = this.attributionToEdit.imageUrl.split("/").pop();
+        this.attributionToEdit.imageUrl = path;
+      }
+
+      if (this.attributionToEdit.translations?.length > 0) {
+        for (const translation of this.attributionToEdit.translations) {
+          if (translation.contributors.length > 0) {
+            translation.contributors = translation.contributors.map(contributor => {
+              if (contributor.logo) {
+                const path = contributor.logo.split("/").pop();
+                return { ...contributor, logo: path }
+              }
+              return contributor
+            })
+          }
+        }
+      }
 
       try {
         await this.$store.dispatch('content/updateAttribution', { countryCode: this.selectedSoc.countryCode, data: this.attributionToEdit })
@@ -456,6 +511,7 @@ export default {
         this.showEditAttribution = false
         this.attributionPublishing = false
         this.addingNewLanguage = false
+        this.editing = false
       } catch (e) {
         // Find index of translation we've just edited so we can find it in the response from the server
         this.updateErrors.indexError = this.attributionToEdit.translations.findIndex(translation => translation.languageCode === this.selectedLanguage)
@@ -463,18 +519,18 @@ export default {
       }
     },
     setAttributionToEdit() {
-      console.log('this.attribution', this.attribution)
       if (this.attribution) {
         this.attributionToEdit = JSON.parse(JSON.stringify(this.attribution))
         const attributionTranslation = this.attributionToEdit.translations.find(translation => translation.languageCode === this.selectedLanguage)
-        console.log('attributionTranslation', attributionTranslation)
         if (!attributionTranslation) {
           const newTranslation = {
             attributionMessage: '',
             languageCode: this.selectedLanguage,
             name: '',
             published: false,
-            contributors: []
+            contributors: [],
+            imageUrl: '',
+            
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
@@ -503,6 +559,7 @@ export default {
       this.setCurrentLanguages(filteredLangs)
       this.languageToAdd = null
       this.addingNewLanguage = false
+      this.selectedLanguage = this.previousLanguage
       this.editing = false
       this.contributors = []
       this.getData()
@@ -527,13 +584,43 @@ export default {
         if (!contributor.name.trim()) {
           this.updateErrors.errors[`contributors.${index}.name`] = true;
         }
-
-        if (Object.keys(this.updateErrors).length > 0) {
-          return false;
-        }
-
-        return true;
       });
+
+      if (Object.keys(this.updateErrors.errors).length > 0) {
+        return false;
+      }
+
+      return true;
+    },
+    openUploadModal(type, contributorIndex = null) {
+      this.logoTypeSelected = type
+      this.showUploadImage = true
+      this.contributorIndex = contributorIndex
+
+      if (type === this.logoType.NS) {
+        this.logoFileName = this.selectedSoc.countryCode + '_logo'
+      } else {
+        const name = this.selectedSoc.countryCode + '_' + this.selectedLanguage + '_contributor_logo'
+        this.logoFileName = name + contributorIndex;
+      }
+    },
+    handleUploadModalReset() {
+      this.showUploadImage = false
+      this.logoTypeSelected = null
+      this.logoFileName = null
+      this.contributorIndex = null
+    },
+    handleFileUploaded({ path }) {
+      if (this.logoTypeSelected === this.logoType.NS) {
+        this.attributionToEdit.imageUrl = path
+      } else {
+        this.contributors[this.contributorIndex].logo = path
+      }
+      this.publishAttribution(true)
+      this.handleUploadModalReset()
+    },
+    deleteContributor(index) {
+      this.attributionEditTranslation.contributors.splice(index, 1)
     }
   },
   metaInfo() {
@@ -605,6 +692,14 @@ export default {
 
       return this.selectedRegion.translations[0]?.title || ""
     },
+    async isValidImage(url) {
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok && response.headers.get("content-type")?.startsWith("image/");
+      } catch (error) {
+        return false;
+      }
+    },
     ...mapGetters({
       user: 'auth/user',
       currentContent: 'content/currentContent',
@@ -622,7 +717,7 @@ export default {
 
 .whatnow-message-editor-container {
   position: relative;
-  
+
   .publish-bottom-container {
     position: fixed;
     bottom: 0;
@@ -634,6 +729,54 @@ export default {
     button {
       margin-right: 50px;
       font-size: 18px;
+
+      &:focus {
+        box-shadow: none;
+        border-color: $red;
+      }
+    }
+  }
+  
+  .upload-img-button {
+    
+    .btn {
+      font-size: 8px;
+      color: $bg-upload-button;
+      background-color: $white;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .upload-img-button-controls {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-size: 8px;
+        }
+
+        .fa-plus {
+          font-size: 12px;
+        }
+      }
+
+
     }
   }
 }
@@ -683,6 +826,7 @@ export default {
   }
 }
 
+
 .whatnow-message-editor-tabs.nav-tabs {
   border-bottom: none;
   position: relative;
@@ -694,7 +838,7 @@ export default {
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #dee2e6;
+    background-color: $border-tabs;
     z-index: -1;
   }
 
@@ -718,7 +862,7 @@ export default {
       border: none;
     }
 
-    background-color: #f3f3f3;
+    background-color: $bg-add-lang;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -755,7 +899,7 @@ export default {
   h4 {
     font-size: 24px;
     font-weight: 500;
-    color: #1e1e1e;
+    color: $text-dark;
   }
 }
 
@@ -763,12 +907,12 @@ export default {
   h1 {
     font-size: 38px;
     font-weight: 600;
-    color: #1e1e1e;
+    color: $text-dark;
   }
 }
 
 .whatnow-message-editor-form-card {
-  background: #F7F7F7;
+  background: $card-solid-bg;
   border-radius: 10px;
 
   label {
@@ -791,6 +935,12 @@ export default {
 
   textarea {
     min-height: 115px;
+  }
+
+  .contributor-delete-btn {
+    svg {
+      color: $red;
+    }	
   }
 }
 </style>
