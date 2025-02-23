@@ -100,6 +100,7 @@
                       :title="content.currentTranslation.title"
                       :description="content.currentTranslation.description"
                       :selectedSoc="selectedSoc"
+                      :selectedLanguage="selectedLanguage"
                     />
                   </b-col>
                 </b-row>

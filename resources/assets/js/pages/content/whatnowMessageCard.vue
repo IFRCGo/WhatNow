@@ -22,7 +22,7 @@
         </b-button>
       </div>
     </b-card>
-    <b-modal size="xl"  ref="keyMessageVisualizer" :hide-footer="true" id="pre-image" centered>
+    <b-modal size="xl"  ref="keyMessageVisualizer" :hide-footer="true" id="pre-image" centered :hide-header="true">
       <whatnowPrevisualizer
         :keyMessage="stage"
         :eventType="eventType"
@@ -30,6 +30,7 @@
         :title="title"
         :description="description"
         :selectedSoc="selectedSoc"
+        :selectedLanguage="selectedLanguage"
       />
     </b-modal>
   </div>
@@ -38,7 +39,7 @@
 import whatnowPrevisualizer from './whatnowPrevisualizer.vue'
 
 export default {
-  props: ['stage', 'stageName', 'eventType', 'stageName', 'title', 'description', 'selectedSoc'],
+  props: ['stage', 'stageName', 'eventType', 'stageName', 'title', 'description', 'selectedSoc', 'selectedLanguage'],
   components: {
     whatnowPrevisualizer
   },
