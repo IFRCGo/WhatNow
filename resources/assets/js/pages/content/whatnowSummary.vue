@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="resumen-urgency-card mb-5" v-for="(urgency, i) in urgencyLevels" :key="'resume-' + i" v-if="hasSomeValue(urgency.stages)">
+    <div class="summary-urgency-card mb-5" v-for="(urgency, i) in urgencyLevels" :key="'resume-' + i" v-if="hasSomeValue(urgency.stages)">
       <div class="urgency-card-header">
         <div class="d-flex justify-content-between align-items-center">
           <div>
@@ -12,7 +12,7 @@
       </div>
       <div>
         <div v-for="stage in stages" :key="'resume-urgency-' + stage">
-          <whatnow-resumen-item v-if="urgency.stages.includes(stage) && translation.stages[stage]" :instructions="translation.stages[stage]"
+          <whatnow-summary-item v-if="urgency.stages.includes(stage) && translation.stages[stage]" :instructions="translation.stages[stage]"
             :instructionName="stage" :instructionId="translation.id" :langCode="translation.lang" class="mb-4"
             :disabled="true" />
         </div>
@@ -22,12 +22,12 @@
 </template>
 
 <script>
-import WhatnowResumenItem from './whatnowResumenItem';
+import WhatnowSummaryItem from './whatnowSummaryItem';
 
 export default {
   props: ['translation'],
   components: {
-    WhatnowResumenItem
+    WhatnowSummaryItem
   },
   data() {
     return {
@@ -81,7 +81,7 @@ export default {
 @import '../../../sass/variables.scss';
 
 
-.resumen-urgency-card{
+.summary-urgency-card{
   padding: 25px 27px;
   border-radius: 8px;
   border: solid 0.8px $urgency-card-border;

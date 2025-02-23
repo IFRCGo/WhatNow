@@ -192,7 +192,7 @@
         </p>
         <b-card class="whatnow-org-publish-modal">
           <div class="whatnow-publish-header">
-            <h4>{{ attributionTranslation.publish_resumen_title }}</h4>
+            <h4>{{ attributionTranslation.publish_summary_title }}</h4>
           </div>
 
           <div class="d-flex justify-content-start align-items-start">
@@ -202,17 +202,17 @@
             </div>
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>{{ $t('content.whatnow.publish_resumen_ns') }}</h5>
+                <h5>{{ $t('content.whatnow.publish_summary_ns') }}</h5>
                 <p>{{ attributionTranslation.name }}</p>	
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>{{ $t('content.whatnow.publish_resumen_url') }}</h5>
+                <h5>{{ $t('content.whatnow.publish_summary_url') }}</h5>
                 <p>{{ attributionTranslation.url }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
-                <h5>{{ $t('content.whatnow.publish_resumen_message') }}</h5>
+                <h5>{{ $t('content.whatnow.publish_summary_message') }}</h5>
                 <p>{{ attributionTranslation.attributionMessage }}</p>
               </div>
             </div>
@@ -224,7 +224,7 @@
             v-if="content.translations[selectedLanguage]">
             <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
 
-            <whatnow-resumen :translation="content.translations[selectedLanguage]"></whatnow-resumen>
+            <whatnow-summary :translation="content.translations[selectedLanguage]"></whatnow-summary>
           </div>
         </div>
       </div>
@@ -252,7 +252,7 @@ import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
-import WhatnowResumen from './whatnowResumen.vue'
+import WhatnowSummary from './whatnowSummary'
 import Avatar from 'vue-avatar'
 import UploadModal from '~/components/global/UploadModal'
 
@@ -263,7 +263,7 @@ export default {
     Spooky,
     WhatnowList,
     PageBanner,
-    WhatnowResumen,
+    WhatnowSummary,
     Avatar,
     UploadModal
   },

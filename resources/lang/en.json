@@ -479,10 +479,10 @@
       "early": "Early Warning",
       "disaster": "Disaster Risk Reduction",
       "recovery": "Recovery",
-      "publish_resumen_title": "Attribution",
-      "publish_resumen_ns": "National Society",
-      "publish_resumen_url": "Attribution URL",
-      "publish_resumen_message": "Attribution Message"
+      "publish_summary_title": "Attribution",
+      "publish_summary_ns": "National Society",
+      "publish_summary_url": "Attribution URL",
+      "publish_summary_message": "Attribution Message"
     },
     "edit_whatnow": {
       "title": "Title",

@@ -15,7 +15,7 @@
       </div>
     </div>
     <b-card 
-      :class="`mb-5 resumen-key-message-card resumen-key-message-card-${instructionName} bg-grey`">
+      :class="`mb-5 summary-key-message-card summary-key-message-card-${instructionName} bg-grey`">
       <div v-for="(message, index) in keyMessages" :key="`message-${index}`" class="whatnow-instruction-list mb-3">
         <div class="mb-3" :key="`title-${index}`">
           <h5>{{ message.title }}</h5>
@@ -186,7 +186,7 @@ export default {
   outline: none;
 }
 
-.resumen-key-message-card {
+.summary-key-message-card {
   min-height: 36px;
   border-left: 24px solid $hazard-default;
   border-radius: 8px;
@@ -197,7 +197,7 @@ export default {
     background-color: #f0f0f0;
   }
 
-  h5.resumen-key-message-titel {
+  h5 {
     font-size: 15px;
     font-weight: 500;
     color: #000;
