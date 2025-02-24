@@ -565,6 +565,7 @@
     "audit": "Audit log",
     "export": "Export",
     "bulk_upload": {
+      "empty_template": "Empty template",
       "bulk_upload": "Bulk Upload",
       "template": "Template",
       "export_template": "Export Template",

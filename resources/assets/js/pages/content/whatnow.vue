@@ -203,7 +203,7 @@
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
                 <h5>{{ $t('content.whatnow.publish_summary_ns') }}</h5>
-                <p>{{ attributionTranslation.name }}</p>	
+                <p>{{ attributionTranslation.name }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
@@ -224,21 +224,35 @@
             v-if="content.translations[selectedLanguage]">
             <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
 
-            <whatnow-summary :translation="content.translations[selectedLanguage]"></whatnow-summary>
-          </div>
-        </div>
-      </div>
-    </b-modal>
+    <b-card class="bg-grey mb-1 hazard-instruction-card" v-for="key in ['title', 'description', 'webUrl']" :key="key" v-if="attributionExists(key)">
+    <b-row>
+      <b-col md="3">
+        {{ $t(`common.${key}`) }}
+      </b-col>
+      <b-col md="9">
+        {{ truncate(content.translations[selectedLanguage][key], 60) }}
+      </b-col>
+    </b-row>
+</b-card>
 
-    <b-modal v-model="selectingLanguage" id="role-changed" centered :title="'Add new language'" ref="selectLangModal"
-      ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
-      :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
-      <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
-    </b-modal>
-
-    <upload-modal ref="uploadModal" :fileName="logoFileName" @modalReset="handleUploadModalReset" @fileUploaded="handleFileUploaded" :showModal="showUploadImage"></upload-modal>
-  </b-container>
-
+<b-card :class="`bg-grey mb-1 hazard-instruction-card hazard-instruction-card-${stageName}`"
+v-for="(instruction, stageName) in content.translations[selectedLanguage].stages"
+v-if="instruction" :key="stageName">
+<b-row>
+  <b-col md="3">
+    {{ $t(`content.edit_whatnow.${stageName}`) }}
+  </b-col>
+  <b-col md="9">
+    {{ instruction.length }} {{ $t('content.whatnow.steps') }}
+  </b-col>
+</b-row>
+</b-card>
+</div>
+</div>
+</b-card>
+</div>
+</b-modal>
+</b-container>
 </template>
 
 <script>
@@ -247,14 +261,11 @@ import SelectSociety from '~/pages/content/simpleSocietyPicker'
 import SelectRegion from '~/pages/content/regionPicker'
 import WhatnowList from '~/pages/content/whatnowList'
 import PageBanner from '~/components/PageBanner'
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
-import WhatnowSummary from './whatnowSummary'
-import Avatar from 'vue-avatar'
-import UploadModal from '~/components/global/UploadModal'
 
 export default {
   components: {
@@ -262,13 +273,10 @@ export default {
     SelectRegion,
     Spooky,
     WhatnowList,
-    PageBanner,
-    WhatnowSummary,
-    Avatar,
-    UploadModal
+    PageBanner
   },
   props: ['countryCode', 'regionSlug'],
-  data() {
+  data () {
     return {
       selectedSoc: null,
       selectedRegion: null,
@@ -288,44 +296,32 @@ export default {
         countryCode: '',
         url: '',
         name: '',
-        imageUrl: '',
-        translations: [],
-        contributors: []
+        translations: []
       },
       attributionEditTranslation: null,
       updateErrors: {
         errors: {}
-      },
-      editing: false,
-      contributors: [],
-      showUploadImage: false,
-      logoType: {
-        NS: 'NS',
-        CONTRIBUTOR: 'CONTRIBUTOR'
-      },
-      logoTypeSelected: null,
-      logoFileName: null,
-      contributorIndex: null
+      }
     }
   },
   watch: {
-    regions() {
+    regions () {
       if (this.regions.length && this.regionSlug) {
         this.selectedRegion = this.regions.find(region => region.title === this.regionSlug) || null
       }
     },
-    selectedSoc() {
+    selectedSoc () {
       if (this.countryCode !== this.selectedSoc.countryCode) {
-        this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title } })
+        this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title }})
       }
     },
-    selectedRegion() {
+    selectedRegion () {
       if (this.regionSlug !== this.selectedRegion?.title) {
-        this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title } })
+        this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title }})
       }
     },
     selectedLanguage: {
-      handler(val, oldVal) {
+      handler (val, oldVal) {
         if (val !== oldVal) {
           this.contentChange()
           this.setLocalStorage()
@@ -335,43 +331,37 @@ export default {
       deep: true
     },
     currentContent: {
-      async handler(val, oldVal) {
+      async handler (val, oldVal) {
         if (this.selectedSoc) {
           await this.$store.dispatch('content/fetchOrganisationSingle', this.selectedSoc.countryCode)
         }
         this.contentChange()
       }
     },
-    currentLanguages() {
+    currentLanguages () {
       if (this.currentLanguages && this.currentLanguages.find && !this.currentLanguages.find(lang => this.selectedLanguage === lang)) {
         if (this.currentLanguages.length > 0) {
           this.selectedLanguage = this.currentLanguages[0]
         }
       }
     },
-    lastError() {
+    lastError () {
       if (this.lastError.response) {
         this.updateErrors = this.lastError.response.data
       }
     },
-    attribution() {
+    attribution () {
       this.setAttributionToEdit()
     }
   },
-  mounted() {
+  mounted () {
     this.getLocalStorage()
-    this.getData()
+    this.$store.dispatch('content/fetchOrganisations').then(() => {
+      this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
+    })
   },
   methods: {
-    ...mapActions({
-      setCurrentLanguages: 'content/setCurrentLanguages'
-    }),
-    async getData() {
-      this.$store.dispatch('content/fetchOrganisations').then(() => {
-        this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
-      })
-    },
-    async publish() {
+    async publish () {
       if (this.toPublish.length > 0) {
         this.loadingContent = true
         this.publishing = true
@@ -400,14 +390,14 @@ export default {
         this.loadingContent = false
       }
     },
-    setLocalStorage() {
+    setLocalStorage () {
       localStorage.setItem('lang', this.selectedLanguage)
     },
-    attributionExists(key) {
+    attributionExists (key) {
       const attributionTranslation = this.attribution.translations.find(translation => translation.languageCode === this.selectedLanguage)
       return attributionTranslation && attributionTranslation[key]
     },
-    getLocalStorage() {
+    getLocalStorage () {
       let lang = localStorage.getItem('lang')
 
       if (!lang) {
@@ -416,7 +406,7 @@ export default {
 
       this.selectedLanguage = lang
     },
-    contentChange() {
+    contentChange () {
       if (this.selectedSoc) {
         this.currentTranslations = this.currentContent.map((content) => {
           const flattened = JSON.parse(JSON.stringify(content))
@@ -427,7 +417,7 @@ export default {
         })
       }
     },
-    getPublishPayload() {
+    getPublishPayload () {
       if (this.currentTranslations) {
         return this.currentTranslations.reduce((filtered, translation) => {
           if (translation.currentTranslation && translation.currentTranslation.published === false) {
@@ -442,7 +432,7 @@ export default {
       }
       return []
     },
-    addNewLanguage() {
+    addNewLanguage () {
       // Does it exist already?
       let found = false
       for (const key in this.currentLanguages) {
@@ -465,58 +455,27 @@ export default {
         this.showEditAttribution = true
         this.selectingLanguage = false
       }
-
-      this.currentLanguages.push(this.languageToAdd)
-      this.selectingLanguage = false
     },
-    async publishAttribution(fireEvent = false) {
+    async publishAttribution (fireEvent = false) {
       if (fireEvent) {
         this.$fireGTEvent(this.$gtagEvents.EditAttribution)
       }
 
       this.attributionPublishing = true
-
-      const valid = this.validateForm()
-
-      if (!valid) {
-        this.attributionPublishing = false
-        return
-      }
-
-      //parse path img
-      if (this.attributionToEdit.imageUrl) {
-        const path = this.attributionToEdit.imageUrl.split("/").pop();
-        this.attributionToEdit.imageUrl = path;
-      }
-
-      if (this.attributionToEdit.translations?.length > 0) {
-        for (const translation of this.attributionToEdit.translations) {
-          if (translation.contributors.length > 0) {
-            translation.contributors = translation.contributors.map(contributor => {
-              if (contributor.logo) {
-                const path = contributor.logo.split("/").pop();
-                return { ...contributor, logo: path }
-              }
-              return contributor
-            })
-          }
-        }
-      }
-
+      this.updateErrors = { errors: {}}
       try {
         await this.$store.dispatch('content/updateAttribution', { countryCode: this.selectedSoc.countryCode, data: this.attributionToEdit })
         await this.$store.dispatch('content/fetchOrganisationSingle', this.selectedSoc.countryCode)
         this.showEditAttribution = false
         this.attributionPublishing = false
         this.addingNewLanguage = false
-        this.editing = false
       } catch (e) {
         // Find index of translation we've just edited so we can find it in the response from the server
         this.updateErrors.indexError = this.attributionToEdit.translations.findIndex(translation => translation.languageCode === this.selectedLanguage)
         this.attributionPublishing = false
       }
     },
-    setAttributionToEdit() {
+    setAttributionToEdit () {
       if (this.attribution) {
         this.attributionToEdit = JSON.parse(JSON.stringify(this.attribution))
         const attributionTranslation = this.attributionToEdit.translations.find(translation => translation.languageCode === this.selectedLanguage)
@@ -525,110 +484,32 @@ export default {
             attributionMessage: '',
             languageCode: this.selectedLanguage,
             name: '',
-            published: false,
-            contributors: [],
-            imageUrl: '',
-            
+            published: false
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
         } else {
           this.attributionEditTranslation = attributionTranslation
-          this.contributors = this.attributionEditTranslation.contributors
         }
       }
     },
-    showEditAttributionModal() {
+    showEditAttributionModal () {
       this.showEditAttribution = true
       this.addingNewLanguage = false
     },
-    cancelEditAttribution() {
+    cancelEditAttribution () {
       if (this.addingNewLanguage) {
         this.selectedLanguage = this.previousLanguage
         this.addingNewLanguage = false
       }
       this.showEditAttribution = false
-    },
-    openSelectLangModal() {
-      this.$refs.selectLangModal.show()
-    },
-    discard() {
-      const filteredLangs = this.currentLanguages.filter(lang => lang !== this.languageToAdd)
-      this.setCurrentLanguages(filteredLangs)
-      this.languageToAdd = null
-      this.addingNewLanguage = false
-      this.selectedLanguage = this.previousLanguage
-      this.editing = false
-      this.contributors = []
-      this.getData()
-    },
-    addContributor() {
-      this.attributionEditTranslation.contributors.push({ name: '', logo: '' })
-    },
-    validateForm() {
-      this.updateErrors = { errors: {} }
-
-      if (!this.attributionEditTranslation.name) {
-        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.name`] = true;
-      }
-      if (!this.attributionEditTranslation.attributionMessage) {
-        this.updateErrors.errors[`translations.${this.updateErrors.indexError}.attributionMessage`] = true;
-      }
-      if (!this.attributionToEdit.url) {
-        this.updateErrors.errors.url = ["URL no puede estar vacía"];
-      }
-
-      this.attributionEditTranslation.contributors.forEach((contributor, index) => {
-        if (!contributor.name.trim()) {
-          this.updateErrors.errors[`contributors.${index}.name`] = true;
-        }
-      });
-
-      if (Object.keys(this.updateErrors.errors).length > 0) {
-        return false;
-      }
-
-      return true;
-    },
-    openUploadModal(type, contributorIndex = null) {
-      this.logoTypeSelected = type
-      this.showUploadImage = true
-      this.contributorIndex = contributorIndex
-
-      if (type === this.logoType.NS) {
-        this.logoFileName = this.selectedSoc.countryCode + '_logo'
-      } else {
-        const name = this.selectedSoc.countryCode + '_' + this.selectedLanguage + '_contributor_logo'
-        this.logoFileName = name + contributorIndex;
-      }
-    },
-    handleUploadModalReset() {
-      this.showUploadImage = false
-      this.logoTypeSelected = null
-      this.logoFileName = null
-      this.contributorIndex = null
-    },
-    handleFileUploaded({ path }) {
-      if (this.logoTypeSelected === this.logoType.NS) {
-        this.attributionToEdit.imageUrl = path
-      } else {
-        this.contributors[this.contributorIndex].logo = path
-      }
-      this.publishAttribution(true)
-      this.handleUploadModalReset()
-    },
-    deleteContributor(index) {
-      this.attributionEditTranslation.contributors.splice(index, 1)
     }
   },
-  metaInfo() {
+  metaInfo () {
     return { title: this.$t('content.whatnow.whatnow') }
   },
   computed: {
-    isFormDisabled() {
-      return !this.editing && !this.addingNewLanguage
-    },
-    filteredLanguages() {
+    filteredLanguages () {
       const languages = [{ value: null, text: this.$t('content.whatnow.select_language') }]
       for (const key in this.languages) {
         if (this.languages.hasOwnProperty(key)) {
@@ -640,7 +521,7 @@ export default {
       }
       return languages
     },
-    toPublish() {
+    toPublish () {
       if (this.currentTranslations) {
         const toPublish = this.currentTranslations.filter(translation => translation.currentTranslation && translation.currentTranslation.published === false)
         if (toPublish.length) {
@@ -649,7 +530,7 @@ export default {
       }
       return []
     },
-    filteredSocieties() {
+    filteredSocieties () {
       if (this.user) {
         if (this.can(this.user, permissionsList.ALL_ORGANISATIONS)) {
           return this.societies
@@ -658,28 +539,28 @@ export default {
       }
       return this.societies
     },
-    attribution() {
+    attribution () {
       if (this.selectedSoc) {
         return this.societies.find(soc => soc.countryCode === this.selectedSoc.countryCode)
       }
       return null
     },
-    attributionTranslation() {
+    attributionTranslation () {
       if (this.attribution) {
         return this.attribution.translations.find(translation => translation.languageCode === this.selectedLanguage)
       }
       return null
     },
-    canEditAttribution() {
+    canEditAttribution () {
       if ((this.attributionTranslation && !this.attributionTranslation.published) || !this.attributionTranslation) {
         return this.can(this.user, permissionsList.CONTENT_CREATE) && !this.selectedRegion
       }
       return this.can(this.user, permissionsList.CONTENT_PUBLISH) && !this.selectedRegion
     },
-    attributionSet() {
+    attributionSet () {
       return this.attributionTranslation && this.attributionTranslation.name && this.attributionTranslation.attributionMessage
     },
-    currentRegionName() {
+    currentRegionName () {
       if (!this.selectedRegion) {
         return ""
       }
@@ -690,14 +571,6 @@ export default {
 
       return this.selectedRegion.translations[0]?.title || ""
     },
-    async isValidImage(url) {
-      try {
-        const response = await fetch(url, { method: 'HEAD' });
-        return response.ok && response.headers.get("content-type")?.startsWith("image/");
-      } catch (error) {
-        return false;
-      }
-    },
     ...mapGetters({
       user: 'auth/user',
       currentContent: 'content/currentContent',
@@ -705,247 +578,7 @@ export default {
       societies: 'content/organisations',
       lastError: 'generic/lastError',
       regions: 'content/regionsArray'
-    }),
+    })
   }
 }
 </script>
-
-<style scoped lang="scss">
-@import '../../../sass/variables.scss';
-
-.whatnow-message-editor-container {
-  position: relative;
-
-  .publish-bottom-container {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    height: 70px;
-    width: 100%;
-    background-color: $white;
-
-    button {
-      margin-right: 50px;
-      font-size: 18px;
-
-      &:focus {
-        box-shadow: none;
-        border-color: $red;
-      }
-    }
-  }
-  
-  .upload-img-button {
-    
-    .btn {
-      font-size: 8px;
-      color: $bg-upload-button;
-      background-color: $white;
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .upload-img-button-controls {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        span {
-          font-size: 8px;
-        }
-
-        .fa-plus {
-          font-size: 12px;
-        }
-      }
-
-
-    }
-  }
-}
-
-.whatnow-publish-content-wrapper {
-  max-height: 60vh;
-  overflow-y: scroll;
-}
-
-.whatnow-org-publish-modal {
-  border-radius: 7px;
-  background-color: #f7f7f7;
-  border: none;
-  margin-bottom: 25px;
-
-  .whatnow-org-publish-modal-ns-logo {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .whatnow-publish-header {
-    margin-bottom: 10px;
-    h4 {
-      color: #1e1e1e;
-      font-size: 18px;
-    }
-
-    &::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: #dee2e6;
-      margin-top: 10px;
-    }
-  }
-
-  .whatnow-org-publish-modal-content {
-    .whatnow-org-publish-modal-content-item {
-      font-size: 14px;
-      margin-bottom: 8px;
-      h5 {
-        font-weight: 500;
-        color: #1e1e1e;
-        margin-right: 70px;
-        min-width: 165px;
-      }
-      h5, p {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-
-.whatnow-message-editor-tabs.nav-tabs {
-  border-bottom: none;
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: $border-tabs;
-    z-index: -1;
-  }
-
-  .nav-item {
-
-    .nav-link,
-    .nav-link-wrapper,
-    .nav-link.active {
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
-      margin-right: 2px;
-    }
-  }
-
-  .nav-item.add-lang-btn {
-    margin-top: 4px;
-
-    .nav-link,
-    .nav-link-wrapper,
-    .nav-link.active {
-      border: none;
-    }
-
-    background-color: $bg-add-lang;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    outline: none;
-
-    &:focus {
-      box-shadow: none;
-    }
-
-    svg {
-      color: $red;
-      font-size: 11px;
-    }
-  }
-}
-
-.whatnow-message-editor-ns-title {
-  margin: 18px 0;
-
-  .btn-outline-primary {
-    padding: 0px 12px
-  }
-
-  .btn-primary {
-    padding: 2px 12px
-  }
-
-
-
-  h4 {
-    font-size: 24px;
-    font-weight: 500;
-    color: $text-dark;
-  }
-}
-
-.whatnow-message-editor-header {
-  h1 {
-    font-size: 55px;
-    font-weight: 600;
-    color: $text-dark;
-  }
-}
-
-.whatnow-message-editor-form-card {
-  background: $card-solid-bg;
-  border-radius: 10px;
-
-  label {
-    font-size: 16px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    color: $text-dark;
-  }
-
-  input,
-  textarea {
-    border-radius: 6px;
-    background-color: $bg-input-light;
-    height: 36px;
-    font-size: 11px;
-    border: none;
-    outline: none;
-  }
-
-  textarea {
-    min-height: 115px;
-  }
-
-  .contributor-delete-btn {
-    svg {
-      color: $red;
-    }	
-  }
-}
-</style>
