@@ -1,12 +1,10 @@
 <template>
   <b-container fluid class="h-100 whatnow-message-editor-container">
-    <b-row>
-      <b-col>
-        <div class="whatnow-message-editor-header">
-          <h1>{{ $t('content.message_editor.title') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
-        </div>
+    <page-banner >
+      <b-col class="whatnow-message-editor-header">
+        <h1>{{ $t('content.message_editor.title') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
       </b-col>
-    </b-row>
+    </page-banner>
     <b-row class="pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start m-auto"
       v-show="selectedSoc">
       <b-col class="d-flex align-items-center">
@@ -185,82 +183,50 @@
     </div>
 
     <!-- Publish Modal -->
-    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="dark"
-      cancel-variant="outline-danger" hide-header @ok="publish"
+    <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="primary" cancel-variant="outline-primary" hide-header @ok="publish"
       v-if="attribution !== null && selectedLanguage && selectedSoc">
       <div class="px-3">
         <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
         <p v-if="attributionTranslation">
           {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
         </p>
-        <b-card class="border whatnow-publish-modal">
-          <div v-if="attributionTranslation && !attributionTranslation.published">
-            <b-row>
-              <b-col>
-                <h4>Attribution</h4>
-                <hr />
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.attribution_url') }}</b>
-              </b-col>
-              <b-col md="9">
-                {{ attribution.url }}
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.society_name') }}</b>
-              </b-col>
-              <b-col md="9" v-if="attributionTranslation">
-                {{ attributionTranslation.name }}
-              </b-col>
-            </b-row>
-            <b-row>
-              <b-col md="3">
-                <b>{{ $t('content.whatnow.attribution_message') }}</b>
-              </b-col>
-              <b-col md="9" v-if="attributionTranslation">
-                {{ attributionTranslation.attributionMessage }}
-              </b-col>
-            </b-row>
-            <hr />
+        <b-card class="whatnow-org-publish-modal">
+          <div class="whatnow-publish-header">
+            <h4>{{ attributionTranslation.publish_summary_title }}</h4>
           </div>
-          <h4>{{ $t('content.whatnow.whatnow_content') }}</h4>
-          <hr />
-          <div class="whatnow-publish-content-wrapper">
-            <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
-              v-if="content.translations[selectedLanguage]">
-              <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
 
-              <b-card class="bg-grey mb-1 hazard-instruction-card" v-for="key in ['title', 'description', 'webUrl']"
-                :key="key" v-if="attributionExists(key)">
-                <b-row>
-                  <b-col md="3">
-                    {{ $t(`common.${key}`) }}
-                  </b-col>
-                  <b-col md="9">
-                    {{ truncate(content.translations[selectedLanguage][key], 60) }}
-                  </b-col>
-                </b-row>
-              </b-card>
+          <div class="d-flex justify-content-start align-items-start">
+            <div class="mr-3">
+              <img v-if="attributionToEdit.imageUrl" :src="attributionToEdit.imageUrl" class="whatnow-org-publish-modal-ns-logo" alt="NS Profile Photo">
+              <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="50" :username="'NS'" :initials="'NS'" ></avatar>
+            </div>
+            <div class="whatnow-org-publish-modal-content">
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>{{ $t('content.whatnow.publish_summary_ns') }}</h5>
+                <p>{{ attributionTranslation.name }}</p>	
+              </div>
 
-              <b-card :class="`bg-grey mb-1 hazard-instruction-card hazard-instruction-card-${stageName}`"
-                v-for="(instruction, stageName) in content.translations[selectedLanguage].stages" v-if="instruction"
-                :key="stageName">
-                <b-row>
-                  <b-col md="3">
-                    {{ $t(`content.edit_whatnow.${stageName}`) }}
-                  </b-col>
-                  <b-col md="9">
-                    {{ instruction.length }} {{ $t('content.whatnow.steps') }}
-                  </b-col>
-                </b-row>
-              </b-card>
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>{{ $t('content.whatnow.publish_summary_url') }}</h5>
+                <p>{{ attributionTranslation.url }}</p>
+              </div>
+
+              <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
+                <h5>{{ $t('content.whatnow.publish_summary_message') }}</h5>
+                <p>{{ attributionTranslation.attributionMessage }}</p>
+              </div>
             </div>
           </div>
         </b-card>
+
+        <div class="whatnow-publish-content-wrapper">
+          <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
+            v-if="content.translations[selectedLanguage]">
+            <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
+
+            <whatnow-summary :translation="content.translations[selectedLanguage]"></whatnow-summary>
+          </div>
+        </div>
       </div>
     </b-modal>
 
@@ -286,6 +252,8 @@ import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import { languages } from 'countries-list'
+import WhatnowSummary from './whatnowSummary'
+import Avatar from 'vue-avatar'
 import UploadModal from '~/components/global/UploadModal'
 
 export default {
@@ -295,6 +263,8 @@ export default {
     Spooky,
     WhatnowList,
     PageBanner,
+    WhatnowSummary,
+    Avatar,
     UploadModal
   },
   props: ['countryCode', 'regionSlug'],
@@ -764,7 +734,7 @@ export default {
       }
     }
   }
-
+  
   .upload-img-button {
     
     .btn {
@@ -808,6 +778,59 @@ export default {
     }
   }
 }
+
+.whatnow-publish-content-wrapper {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+
+.whatnow-org-publish-modal {
+  border-radius: 7px;
+  background-color: #f7f7f7;
+  border: none;
+  margin-bottom: 25px;
+
+  .whatnow-org-publish-modal-ns-logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .whatnow-publish-header {
+    margin-bottom: 10px;
+    h4 {
+      color: #1e1e1e;
+      font-size: 18px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #dee2e6;
+      margin-top: 10px;
+    }
+  }
+
+  .whatnow-org-publish-modal-content {
+    .whatnow-org-publish-modal-content-item {
+      font-size: 14px;
+      margin-bottom: 8px;
+      h5 {
+        font-weight: 500;
+        color: #1e1e1e;
+        margin-right: 70px;
+        min-width: 165px;
+      }
+      h5, p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 
 .whatnow-message-editor-tabs.nav-tabs {
   border-bottom: none;
@@ -887,7 +910,7 @@ export default {
 
 .whatnow-message-editor-header {
   h1 {
-    font-size: 38px;
+    font-size: 55px;
     font-weight: 600;
     color: $text-dark;
   }
