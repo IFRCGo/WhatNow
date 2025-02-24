@@ -319,7 +319,10 @@
     "duplicate_lang_error": "Sorry, the chosen language already exists",
     "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
     "estimated_users": "Number of estimated users",
-    "upploading": "Uploading"
+    "upploading": "Uploading",
+    "download": "Download",
+    "download_as_image": "Download as an image",
+    "download_as_pdf": "Download as a PDF"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -426,6 +429,15 @@
   "upload_modal": {
     "drag_button_text": "Click or drag file to this area to upload",
     "button_text": "Upload"
+  },
+  "stages": {
+    "immediate": "Immediate",
+    "warning": "Warning",
+    "anticipated": "Anticipated",
+    "assess_and_plan":"Assess and Plan",
+    "mitigate_risks":"Mitigate Risks",
+    "prepare_to_respond":"Prepare to Respond",
+    "recover": "Recover"
   },
   "content": {
     "content": "Content",
