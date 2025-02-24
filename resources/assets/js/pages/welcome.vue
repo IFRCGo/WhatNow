@@ -19,7 +19,7 @@
               <p class="bottom-head-text">
                 and respond to hazards.
               </p>
-              <b-button class="btn-primary mt-4">
+              <b-button class="btn-primary mt-4" @click="$router.push('/register')">
                 Sign Up
               </b-button>
             </div>
@@ -239,7 +239,7 @@
       </b-col>
     </b-row>
     <div class="btn-bottom-container">
-      <b-button class="btn-primary btn-bottom">Sign up today</b-button>
+      <b-button class="btn-primary btn-bottom" @click="$router.push('/register')">Sign up today</b-button>
     </div>
   </div>
 </template>
