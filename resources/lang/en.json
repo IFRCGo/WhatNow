@@ -319,7 +319,10 @@
     "duplicate_lang_error": "Sorry, the chosen language already exists",
     "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
     "estimated_users": "Number of estimated users",
-    "upploading": "Uploading"
+    "upploading": "Uploading",
+    "download": "Download",
+    "download_as_image": "Download as an image",
+    "download_as_pdf": "Download as a PDF"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -427,6 +430,15 @@
     "drag_button_text": "Click or drag file to this area to upload",
     "button_text": "Upload"
   },
+  "stages": {
+    "immediate": "Immediate",
+    "warning": "Warning",
+    "anticipated": "Anticipated",
+    "assess_and_plan":"Assess and Plan",
+    "mitigate_risks":"Mitigate Risks",
+    "prepare_to_respond":"Prepare to Respond",
+    "recover": "Recover"
+  },
   "content": {
     "content": "Content",
     "audit_log": {
@@ -450,7 +462,7 @@
       "no_publish": "Nothing to publish",
       "published": "translations published",
       "publishing": "Publishing",
-      "content_to_publish": "Draft Content to be Published",
+      "content_to_publish": "WHAT WILL BE PUBLISHED",
       "whatnow_content": "WhatNow content",
       "choose_hazard": "Choose Hazard",
       "hazard": "Hazard",
@@ -478,7 +490,11 @@
       "show_more": "Show more",
       "early": "Early Warning",
       "disaster": "Disaster Risk Reduction",
-      "recovery": "Recovery"
+      "recovery": "Recovery",
+      "publish_summary_title": "Attribution",
+      "publish_summary_ns": "National Society",
+      "publish_summary_url": "Attribution URL",
+      "publish_summary_message": "Attribution Message"
     },
     "edit_whatnow": {
       "title": "Title",
@@ -674,7 +690,11 @@
     "strapline_part_2": "Global Red Cross / Red Crescent Key Safety Messages",
     "developer": {
       "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
-      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages."
+      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+      "head_1": "IFRC Safety",
+      "head_2": "Message Database",
+      "head_text_1": "Safety messages based on IFRC Public Awareness and",
+      "head_text_2": "Public Education (PAPE) resource"
     },
     "national_society": {
       "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",

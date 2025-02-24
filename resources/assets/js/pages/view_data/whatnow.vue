@@ -10,9 +10,6 @@
     </b-row>
 
     <page-banner v-show="selectedSoc" v-if="attributionTranslation && attributionTranslation.published">
-      <b-col cols="auto" v-if="attribution && attribution.imageUrl">
-        <b-img :src="attribution.imageUrl" width="128" height="128" class="ns-logo"></b-img>
-      </b-col>
       <b-col v-if="!loadingContent && attribution !== null">
         <h1 class="font-weight-bold title" v-if="attributionTranslation.name">{{ $t('content.whatnow.title') }}</h1>
       </b-col>

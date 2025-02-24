@@ -50,11 +50,11 @@
     }
 
     a.nav-link {
-      color: $light-text;
+      color: $black;
       border-bottom: 2px solid transparent;
       transition: border-color 0.3s ease-in-out;
       font-size:em(16);
-      font-weight: 600;
+      font-weight: 400;
       letter-spacing: 0.8px;
       margin:0 0.75rem;
 
@@ -71,7 +71,6 @@
       }
 
       &.dropdown-toggle {
-        border-bottom: 2px solid black;
         font-size: 10px;
         letter-spacing: 0.7px;
         color: #000000;

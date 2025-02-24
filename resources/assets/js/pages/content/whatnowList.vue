@@ -43,7 +43,8 @@
             :content="content"
             :isPromo="isPromo"
             v-on:languageChange="languageChange"
-            :regionSlug="selectedRegion?.title">
+            :regionSlug="selectedRegion?.title"
+            :selectedSoc="selectedSoc">
           </whatnow-content-item>
           <whatnow-content-item
             v-for="content in uncreatedTranslations"
@@ -54,7 +55,8 @@
             :isPromo="isPromo"
             v-on:languageChange="languageChange"
             :regionSlug="selectedRegion?.title"
-            :forceCreate="true">
+            :forceCreate="true"
+            :selectedSoc="selectedSoc">
           </whatnow-content-item>
         </transition-group>
 
