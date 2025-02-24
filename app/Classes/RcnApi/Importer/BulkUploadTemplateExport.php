@@ -7,6 +7,9 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
 use PhpOffice\PhpSpreadsheet\Cell\DataValidation;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use PhpOffice\PhpSpreadsheet\Style\Fill;
+use PhpOffice\PhpSpreadsheet\Style\Alignment;
 
 class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
 {
@@ -51,7 +54,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 [$this->nationalSociety, $this->region], // Row 1-2
                 $this->headings // Row 3
             ],
-            $this->data // Insert dynamic data starting from Row 4
+            $this->data
         );
     }
 
@@ -64,7 +67,6 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
             AfterSheet::class => function (AfterSheet $event) {
                 $sheet = $event->sheet->getDelegate();
 
-                // 🔹 Dropdown for Urgency Level in E4
                 $validationUrgency = $sheet->getCell('E4')->getDataValidation();
                 $validationUrgency->setType(DataValidation::TYPE_LIST);
                 $validationUrgency->setErrorStyle(DataValidation::STYLE_STOP);
@@ -75,7 +77,6 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $validationUrgency->setFormula1($this->urgencyLevels);
                 $sheet->getCell('E4')->setDataValidation(clone $validationUrgency);
 
-                // 🔹 Dropdown for Event Types in D4
                 $validationEvent = $sheet->getCell('D4')->getDataValidation();
                 $validationEvent->setType(DataValidation::TYPE_LIST);
                 $validationEvent->setErrorStyle(DataValidation::STYLE_STOP);
@@ -85,6 +86,38 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $validationEvent->setShowDropDown(true);
                 $validationEvent->setFormula1($this->eventTypesDropdown);
                 $sheet->getCell('D4')->setDataValidation(clone $validationEvent);
+
+                // -----------------------------------------------------------
+                // Apply styles to row 1 and row 3 separately
+                // -----------------------------------------------------------
+
+                // For row 1: as defined in the array() method, row 1 has 2 columns.
+                $maxColumnRow1 = Coordinate::stringFromColumnIndex(2);
+                $row1Range = 'A1:' . $maxColumnRow1 . '1';
+
+                // For row 3: use the number of headings to determine the range.
+                $maxColumnRow3 = Coordinate::stringFromColumnIndex(count($this->headings));
+                $row3Range = 'A3:' . $maxColumnRow3 . '3';
+
+                // Define the style array with the desired formatting.
+                $headerStyle = [
+                    'font' => [
+                        'bold' => true,
+                        'color' => ['argb' => 'FFFFFFFF'], // White font color.
+                    ],
+                    'fill' => [
+                        'fillType' => Fill::FILL_SOLID,
+                        'startColor' => ['argb' => 'ff6b6b'], // Blue background.
+                    ],
+                    'alignment' => [
+                        'horizontal' => Alignment::HORIZONTAL_CENTER,
+                        'vertical' => Alignment::VERTICAL_CENTER,
+                    ],
+                ];
+
+                // Apply the style to each range individually.
+                $sheet->getStyle($row1Range)->applyFromArray($headerStyle);
+                $sheet->getStyle($row3Range)->applyFromArray($headerStyle);
             }
         ];
     }
