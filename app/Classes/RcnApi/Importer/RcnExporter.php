@@ -217,7 +217,7 @@ class RcnExporter
 
         // Generate and return the Excel file
         return Excel::download(
-            new BulkUploadTemplateExport($organisation->getName(), $regionName, $data,$safetyMessageMaxCount),
+            new BulkUploadTemplateExport($organisation->getName(), $regionName, $data,$maxSupportingMessages),
             $fileName,
             $format === "csv" ? ExcelFormat::CSV : ExcelFormat::XLSX
         );
