@@ -87,27 +87,21 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $validationEvent->setFormula1($this->eventTypesDropdown);
                 $sheet->getCell('D4')->setDataValidation(clone $validationEvent);
 
-                // -----------------------------------------------------------
-                // Apply styles to row 1 and row 3 separately
-                // -----------------------------------------------------------
 
-                // For row 1: as defined in the array() method, row 1 has 2 columns.
                 $maxColumnRow1 = Coordinate::stringFromColumnIndex(2);
                 $row1Range = 'A1:' . $maxColumnRow1 . '1';
 
-                // For row 3: use the number of headings to determine the range.
                 $maxColumnRow3 = Coordinate::stringFromColumnIndex(count($this->headings));
                 $row3Range = 'A3:' . $maxColumnRow3 . '3';
 
-                // Define the style array with the desired formatting.
                 $headerStyle = [
                     'font' => [
                         'bold' => true,
-                        'color' => ['argb' => 'FFFFFFFF'], // White font color.
+                        'color' => ['argb' => 'FFFFFFFF'],
                     ],
                     'fill' => [
                         'fillType' => Fill::FILL_SOLID,
-                        'startColor' => ['argb' => 'ff6b6b'], // Blue background.
+                        'startColor' => ['argb' => 'ff6b6b'],
                     ],
                     'alignment' => [
                         'horizontal' => Alignment::HORIZONTAL_CENTER,
@@ -115,7 +109,6 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                     ],
                 ];
 
-                // Apply the style to each range individually.
                 $sheet->getStyle($row1Range)->applyFromArray($headerStyle);
                 $sheet->getStyle($row3Range)->applyFromArray($headerStyle);
             }
