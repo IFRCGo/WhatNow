@@ -162,7 +162,7 @@ class RcnExporter
         $data = [];
         $hazardAdded = []; // Main array to collect all the information
         $hazard = '';
-        $safetyMessageMaxCount = 0;
+        $maxSupportingMessages = 0;
         foreach ($items as $row) {
             // Extract Title, Description, URL, and Hazard from row
             $rowToInsert = [$row[3] ?? '', $row[4]?? '', $row[5] ?? '', $row[0] ?? ''];
@@ -198,7 +198,7 @@ class RcnExporter
                 $rowToInsertFormatted[] = $row[$i]['title'] ?? '';
 
                 // Append safety messages
-                $safetyMessageMaxCount = count($row[$i]['content']) > $safetyMessageMaxCount ? count($row[$i]['content']) : $safetyMessageMaxCount;
+                $maxSupportingMessages = max(count($row[$i]['content']), $maxSupportingMessages);
                 foreach ($row[$i]['content'] as $safetyMessage) {
                     $rowToInsertFormatted[] = $safetyMessage;
                 }

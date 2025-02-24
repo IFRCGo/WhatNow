@@ -16,7 +16,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
     private $nationalSociety;
     private $region;
     private $headings = [
-        'Title', 'Description', 'URL', 'Hazard', 'Urgency Level', 'Key Message'
+        'Title', 'Description', 'URL', 'Hazard', 'Urgency Level', 'Safety Message'
     ];
     private $urgencyLevels = '"Immediate,Warning,Anticipated,Assess and Plan,Mitigate Risks,Prepare to Respond,Recover"';
 
@@ -24,7 +24,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
 
     private $data;
 
-    public function __construct(string $nationalSociety, string $region,array $data, int $maxSafetyMessages)
+    public function __construct(string $nationalSociety, string $region,array $data, int $maxSupportingMessages)
     {
         $eventTypes = EventType::whereNotIn('code', ['other'])->get()->toArray();
         $this->nationalSociety = $nationalSociety;
@@ -33,8 +33,8 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
             }, $eventTypes)) . '"';
         $this->region = $region;
         $this->data = $data;
-        for($i = 0; $i< $maxSafetyMessages; $i++){
-            $this->headings[] = 'Safety Message ' . ($i + 1);
+        for($i = 0; $i< $maxSupportingMessages; $i++){
+            $this->headings[] = 'Supporting Message ' . ($i + 1);
         }
 
     }
