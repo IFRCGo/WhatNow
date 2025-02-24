@@ -20,6 +20,12 @@ import * as Integrations from '@sentry/integrations'
 import '~/plugins'
 import '~/components'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPencil, faPen, faSpinner, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faPencil, faSpinner, faPen, faTrash, faXmark)
+
 Sentry.init({
   dsn: window.config.sentry_dsn,
   integrations: [new Integrations.Vue({ Vue, attachProps: true })]
@@ -28,6 +34,7 @@ Sentry.init({
 Vue.use(BootstrapVue)
 Vue.component('v-select', vSelect)
 Vue.component('v-gravatar', Gravatar)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.use(VueNoty, {
   theme: 'sunset'
 })

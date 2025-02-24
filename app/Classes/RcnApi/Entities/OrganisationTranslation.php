@@ -18,6 +18,8 @@ class OrganisationTranslation implements \JsonSerializable, Arrayable
     
     protected $isPublished;
 
+    protected $contributors = [];
+
     
     public static function createFromResponse(array $array)
     {
@@ -26,6 +28,7 @@ class OrganisationTranslation implements \JsonSerializable, Arrayable
         $translation->attributionMessage = $array['attributionMessage'];
         $translation->languageCode = $array['languageCode'];
         $translation->isPublished = $array['published'];
+        $translation->contributors = $array['contributors'];
         return $translation;
     }
 
@@ -53,6 +56,11 @@ class OrganisationTranslation implements \JsonSerializable, Arrayable
         return $this->isPublished;
     }
 
+    public function getContributors(): array
+    {
+        return $this->contributors;
+    }
+
     
     public function toArray()
     {
@@ -60,7 +68,8 @@ class OrganisationTranslation implements \JsonSerializable, Arrayable
             'languageCode' => $this->languageCode,
             'name' => $this->name,
             'attributionMessage' => $this->attributionMessage,
-            'published' => $this->isPublished
+            'published' => $this->isPublished,
+            'contributors' => $this->contributors
         ];
     }
 
@@ -71,7 +80,8 @@ class OrganisationTranslation implements \JsonSerializable, Arrayable
             'languageCode' => $this->languageCode,
             'name' => $this->name,
             'attributionMessage' => $this->attributionMessage,
-            'published' => $this->isPublished
+            'published' => $this->isPublished,
+            'contributors' => $this->contributors
         ];
     }
 }
