@@ -54,7 +54,6 @@ export default {
       }
     },
     getLocalStorage () {
-
       let soc = this.countryCode
       if (!soc) {
         soc = localStorage.getItem('soc')

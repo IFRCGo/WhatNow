@@ -1,16 +1,16 @@
   <template>
     <b-container fluid>
       <page-banner>
-        <b-col sm="auto" md="4">
-          <h1>{{ $t('content.whatnow.whatnow') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
-        </b-col>
-        <b-col sm="auto" md="8">
-          <div class="d-flex justify-content-end u-gap-24 flex-wrap">
-            <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode"></selectSociety>
-            <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" :translationCode="selectedLanguage"></selectRegion>
-          </div>
-        </b-col>
-</page-banner>
+          <b-col sm="auto" md="4">
+            <h1>{{ $t('content.whatnow.whatnow') }} {{ currentRegionName && `- ${currentRegionName}` }}</h1>
+          </b-col>
+          <b-col sm="auto" md="8">
+            <div class="d-flex justify-content-end u-gap-24 flex-wrap">
+              <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode"></selectSociety>
+              <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" :translationCode="selectedLanguage"></selectRegion>
+            </div>
+          </b-col>
+      </page-banner>
 
 <b-row :class="`pb-0 pl-4 pr-4 whatnow-language-picker text-light ${selectingLanguage ? 'pt-2 pb-2':'pb-0'}`" v-if="selectedSoc">
   <b-col>

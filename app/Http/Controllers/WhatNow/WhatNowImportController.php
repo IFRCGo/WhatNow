@@ -16,6 +16,7 @@ use App\Classes\RcnApi\Importer\RcnImporter;
 use App\Classes\RcnApi\Resources\WhatNowResource;
 use App\Http\Controllers\ApiController;
 use App\Rules\CsvEventTypeValidation;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -84,21 +85,26 @@ final class WhatNowImportController extends ApiController
     {
         $extension = $request->query('extension', 'csv');
         $exporter = new RcnExporter($this->client);
+        $region = $request->query('region', 'National');
         if (strlen($countryCode) !== 3) {
             return new JsonResponse(['message' => 'Invalid country code'], JsonResponse::HTTP_BAD_REQUEST);
         }
 
         try {
-            return $exporter->buildTemplate($countryCode,$extension);
+            return $exporter->buildTemplate([],$countryCode,$extension,$region);
         } catch (CannotInsertRecord $e) {
             return $this->respondWithError($e, $e->getMessage());
         }
     }
 
 
-    public function export(Request $request,string $countryCode, string $languageCode)
+    /**
+     * @throws AuthorizationException
+     */
+    public function export(Request $request, string $countryCode, string $languageCode)
     {
-        $extension = $request->query('extension', 'csv');
+        $extension = $request->query('extension', 'xlsx');
+        $region = $request->query('region', 'National');
         if (strlen($countryCode) !== 3) {
             return new JsonResponse(['message' => 'Invalid country code'], JsonResponse::HTTP_BAD_REQUEST);
         }
@@ -112,8 +118,8 @@ final class WhatNowImportController extends ApiController
         $exporter = new RcnExporter($this->client);
 
         try {
-            $instructionRows = $exporter->buildInstructionRows($countryCode, $languageCode);
-            return $exporter->buildTemplate($instructionRows->all(),$countryCode,$extension);
+            $instructionRows = $exporter->buildInstructionRows($countryCode, $languageCode,$region);
+            return $exporter->buildTemplate($instructionRows->toArray(),$countryCode,$extension,$region);
         } catch (RcnApiResourceNotFoundException $e) {
             return $this->respondWithNotFound($e);
         } catch (RcnApiException $e) {
@@ -122,24 +128,5 @@ final class WhatNowImportController extends ApiController
             return $this->respondWithError($e, $e->getMessage());
         }
 
-
-//        try {
-//            $instructionRows = $exporter->buildInstructionRows($countryCode, $languageCode);
-//            $attributionRow = $exporter->buildAttributionRow($countryCode, $languageCode);
-//        } catch (RcnApiResourceNotFoundException $e) {
-//            return $this->respondWithNotFound($e);
-//        } catch (RcnApiException $e) {
-//            return $this->respondWithError($e);
-//        } catch (RcnExportException $e) {
-//            return $this->respondWithError($e, $e->getMessage());
-//        }
-//
-//        try {
-//            $csv = $exporter::buildCsvTemplate($countryCode, $instructionRows, $attributionRow);
-//        } catch (CannotInsertRecord $e) {
-//            return $this->respondWithError($e, $e->getMessage());
-//        }
-//
-//        $csv->output();
     }
 }

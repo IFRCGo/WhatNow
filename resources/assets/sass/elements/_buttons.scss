@@ -55,41 +55,17 @@
   font-weight: 600;
 }
 
-.btn-primary,.btn-primary > button {
+.btn-primary {
   background-color: $bg-primary;
   color: $white;
 }
 
-.btn-outline-primary{
+.btn-outline-primary {
   background-color: $white;
   border: 2px solid $bg-primary;
   color: $bg-primary;
-  padding: 0px 20px;
-
-  &:hover {
-    background-color: $bg-primary;
-    color: $white;
-  }
 }
-.btn-outline-primary.dw-btn{
-  background-color: transparent;
-  border: none;
-  color: $bg-primary;
-  width:auto;
-  padding: 0;
-  & > button {
-    padding: 7px 25px;
-    background-color: $white;
-    border: 2px solid $bg-primary;
-    color: $bg-primary;
-    width: 100%;
 
-    &:hover {
-      background-color: $bg-primary;
-      color: $white;
-    }
-  }
-}
 
 .btn-lg {
   padding: 7px 25px;

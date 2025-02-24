@@ -1,10 +1,19 @@
   <template>
     <b-container fluid>
       <page-banner>
-        <b-col>
-          <h1 class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
+        <b-col sm="auto" md="4">
+          <h1  class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
+        </b-col>
+        <b-col sm="auto" md="8">
+          <div class="d-flex justify-content-end u-gap-24 flex-wrap">
+            <selectSociety :selected.sync="selectedSoc"
+                           :staynull="true"></selectSociety>
+            <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" ></selectRegion>
+
+          </div>
         </b-col>
       </page-banner>
+
       <b-row class="pl-4 pr-4 pb-4 bg-white">
           <b-col cols="7">
           <h1 class="mb-4">{{ $t('content.bulk_upload.export_template') }}</h1>
@@ -30,10 +39,12 @@
                     </template>
                </v-select>
           </span>
-            <b-dropdown :text="$t('content.bulk_upload.template')" class="mr-2 mb-2 btn-outline-primary dw-btn">
-              <b-dropdown-item @click="downloadTemplate('csv')">CSV</b-dropdown-item>
-              <b-dropdown-item @click="downloadTemplate('xlsx')">XLSX</b-dropdown-item>
-            </b-dropdown>
+            <b-button class="mr-2 mb-2 btn-outline-primary dw-btn" prop='link' @click="downloadTemplate('xlsx')">
+              <span>
+                <i class="fas fa-download"></i>
+              </span>
+              {{ $t('content.bulk_upload.template') }}
+            </b-button>
           <p class="mt-4 bulk-text">
             {{ $t('content.bulk_upload.refer') }}
             <a :href="pdf" target="_blank" rel="noopener noreferrer" class="underlined-link" @click="$fireGTEvent($gtagEvents.DownloadExportTemplateGuide)">{{ $t('content.bulk_upload.export_template_guide') }}</a>
@@ -158,9 +169,10 @@
   </template>
 
 <script>
-import SelectSociety from '~/pages/content/simpleSocietyPicker'
+import SelectSociety from '~/pages/content/selectSociety'
 import { mapGetters } from 'vuex'
 import { languages } from 'countries-list'
+import SelectRegion from '~/pages/content/regionPicker'
 import axios from 'axios'
 import PageBanner from '~/components/PageBanner'
 import ImportChangesList from '~/components/ImportChanges/ImportChangesList'
@@ -170,9 +182,11 @@ import pdfFile from '../../../pdf/what-now-csv-guide.pdf'
 export default {
   components: {
     SelectSociety,
+    SelectRegion,
     PageBanner,
     ImportChangesList
   },
+
   data () {
     return {
       uploadWarning: null,
@@ -182,6 +196,7 @@ export default {
       isUploading: false,
       file: null,
       selectedSoc: null,
+      selectedRegion: null,
       selectedLanguage: false,
       selectedExportLang: null,
       warnings: true,
@@ -292,11 +307,10 @@ export default {
       this.warnings = true
       this.overwrite = false
     },
-    downloadTemplate (extension = 'csv') {
+    downloadTemplate (extension = 'xlsx') {
       const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
-      console.log(langEndpoint)
-      debugger
-      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?extension=${extension}`, {
+      const regionParam = this.selectedRegion ? `&region=${this.selectedRegion.title}` : ''
+      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?extension=${extension}${regionParam}`, {
         responseType: 'blob'
       })
         .then((response) => {
@@ -319,28 +333,6 @@ export default {
 
       this.$fireGTEvent(this.selectedExportLang ? this.$gtagEvents.ExportLanguageData(this.selectedExportLang) : this.$gtagEvents.DownloadBulkTemplate)
     },
-    // downloadTemplate (lang) {
-    //   axios.get(`/api/template/${this.selectedSoc.countryCode}/${lang}`)
-    //     .then((response) => {
-    //       var headers = response.headers
-    //       var blob = new Blob([response.data], { type: headers['content-type'] })
-    //
-    //       if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
-    //         window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.csv')
-    //       } else {
-    //         var link = document.createElement('a')
-    //         link.href = window.URL.createObjectURL(blob)
-    //         link.download = this.selectedSoc.countryCode + '.csv'
-    //         link.click()
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       this.$noty.error(this.$t('error_alert_text'))
-    //       console.error(error)
-    //     })
-    //
-    //   this.$fireGTEvent(this.$gtagEvents.ExportLanguageData(lang))
-    // },
     clearFiles () {
       this.$refs.fileinput.reset()
     },
@@ -376,16 +368,24 @@ export default {
   },
   computed: {
     filteredLanguages () {
-      const languages = [{ value: null, text: this.$t('content.whatnow.select_language') }]
-
-      for (const key in this.languages) {
-        if (this.languages.hasOwnProperty(key)) {
+      const languages = [{ value: null, text: this.$t('content.bulk_upload.empty_template') }]
+      if (this.selectedRegion) {
+        for (const key in this.selectedRegion.translations) {
           languages.push({
             value: key,
             text: `${this.languages[key].name}  (${this.languages[key].native} - ${key})`
           })
         }
+      } else if (this.selectedSoc) {
+        this.selectedSoc.translations.forEach((translation) => {
+          const { languageCode } = translation
+          languages.push({
+            value: languageCode,
+            text: `${this.languages[languageCode].name}  (${this.languages[languageCode].native} - ${languageCode})`
+          })
+        })
       }
+
       return languages
     },
     filteredSocieties () {
