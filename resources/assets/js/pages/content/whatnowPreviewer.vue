@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="button-container">
-      <b-dropdown id="download-dropdown" :text="loading ? $t('common.loading_image') : $t('common.download')" class="primary" variant="outline-primary" :loading="true">
+      <b-dropdown id="download-dropdown" :text="loading ? $t('common.loading_image') : $t('common.download')" class="primary" variant="outline-primary" :disabled="loading">
         <b-dropdown-item @click="downloadAsPNG"> {{ $t('common.download_as_image') }} </b-dropdown-item>
         <b-dropdown-item @click="downloadAsPDF">{{ $t('common.download_as_pdf') }}</b-dropdown-item>
       </b-dropdown>
@@ -62,12 +62,25 @@ export default {
       try {
         const element = this.$refs.modalContent;
         const scaleFactor = 5;
-        const canvas = await html2canvas(element, {
+        const fixedWidth = 1200;  
+        const fixedHeight = 'auto';
+
+        //the clone is hidden in the background layer
+        const clone = element.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.left = '-9999px';
+        clone.style.width = `${fixedWidth}px`;
+        clone.style.height = `${fixedHeight}px`;
+        document.body.appendChild(clone);
+
+        const canvas = await html2canvas(clone, {
           scale: scaleFactor,
-          useCORS: true, 
+          useCORS: true,
           allowTaint: true,
-          backgroundColor: null,
+          backgroundColor: null
         });
+        //destroy clone
+        document.body.removeChild(clone);
 
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png', 1.0);
@@ -89,12 +102,26 @@ export default {
       try {
         const element = this.$refs.modalContent;
         const scaleFactor = 5;
+        const fixedWidth = 1200;  
+        const fixedHeight = 'auto';
 
-        const canvas = await html2canvas(element, {
+        //the clone is hidden in the background layer
+        const clone = element.cloneNode(true);
+        clone.style.position = 'absolute';
+        clone.style.left = '-9999px';
+        clone.style.width = `${fixedWidth}px`;
+        clone.style.height = `${fixedHeight}px`;
+        document.body.appendChild(clone);
+
+
+        const canvas = await html2canvas(clone, {
           scale: scaleFactor,
           useCORS: true,
           backgroundColor: null,
         });
+
+        //destroy clone
+        document.body.removeChild(clone);
 
         const imgData = canvas.toDataURL("image/png", 1.0);
         const pdf = new jsPDF({
