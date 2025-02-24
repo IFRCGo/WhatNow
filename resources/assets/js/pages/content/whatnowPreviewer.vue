@@ -46,7 +46,6 @@
 import html2canvas from 'html2canvas'
 import Loading from '../../components/Loading'
 import jsPDF from 'jspdf'
-
 export default {
   props: ['eventType', 'keyMessage', 'stageName', 'title', 'description', 'selectedSoc', 'selectedLanguage', 'contributors'],
   components: {
@@ -54,7 +53,6 @@ export default {
   },
   data() {
     return {
-      contributors: [],
       loading: false,
     }
   },
@@ -77,7 +75,11 @@ export default {
         link.download = fileName;
         link.click();
       } catch (error) {
-        //TODO handle error
+        this.$bvToast.toast(this.$t('content.previewer.download_image_error'), {
+          title: 'Notification',
+          variant: 'danger',
+          solid: true
+        })
       } finally {
         this.loading = false;
       }
@@ -120,7 +122,11 @@ export default {
         const fileName = `${this.selectedSoc.name}_${this.stageName}_${this.eventType}_${this.title}.pdf`;
         pdf.save(fileName);
       } catch (error) {
-        //TODO handle error
+        this.$bvToast.toast(this.$t('content.previewer.download_pdf_error'), {
+          title: 'Notification',
+          variant: 'danger',
+          solid: true
+        })
       } finally {
         this.loading = false;
       }

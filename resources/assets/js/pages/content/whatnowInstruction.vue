@@ -79,7 +79,7 @@
       </transition-group>
     </b-card>
 
-    <b-button :key="'download'+index" variant="outline-primary" size="sm" @click="openKeyMessagePreviewer" class="btn-download btn mb-2">
+    <b-button variant="outline-primary" size="sm" @click="openKeyMessagePreviewer" class="btn-download btn mb-2">
     {{ $t('common.download') }}
       <font-awesome-icon class="ml-2" :icon="['fas', 'download']" />
     </b-button>

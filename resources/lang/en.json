@@ -565,6 +565,10 @@
       "contributor_name_label": "Contributor Name",
       "contributor_single": "Contributor"
     },
+    "previewer": {
+      "download_image_error": "Error downloading image, please try again.",
+      "download_pdf_error": "Error downloading PDF, please try again."
+    },
     "audit": "Audit log",
     "export": "Export",
     "bulk_upload": {
