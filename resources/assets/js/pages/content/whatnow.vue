@@ -75,10 +75,10 @@
             <div class="upload-img-button">
               <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled"
                 class="p-0 d-flex flex-column align-items-center justify-content-center">
-                <img  :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" />
-                <div class="upload-img-button-controls">
+                <img :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" :class="{ 'editing-image': editing }" />
+                <div class="upload-img-button-controls" v-if="editing">
                   <fa :icon="['fas', 'plus']" />
-                  <span>Add a logo</span>
+                  <span>{{ attributionToEdit.imageUrl ? $t('common.edit_logo') : $t('common.add_logo') }}</span>
                 </div>
               </b-button>
             </div>
@@ -135,10 +135,10 @@
               <div class="upload-img-button">
                 <b-button :variant="'link'" @click="openUploadModal(logoType.CONTRIBUTOR, index)" :disabled="isFormDisabled"
                   class="p-0 d-flex flex-column align-items-center justify-content-center">
-                  <img  :src="contributor.logo" v-if="contributor.logo" />
-                  <div class="upload-img-button-controls">
+                  <img  :src="contributor.logo" v-if="contributor.logo" :class="{ 'editing-image': editing }" />
+                  <div class="upload-img-button-controls" v-if="editing">
                     <fa :icon="['fas', 'plus']" />
-                    <span>Add a logo</span>
+                    <span> {{  contributor.logo ? $t('common.edit_logo') : $t('common.add_logo')  }} </span>
                   </div>
                 </b-button>
               </div>
@@ -751,7 +751,11 @@ export default {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        object-fit: cover;
+        object-fit: contain;
+      }
+
+      img.editing-image {
+        opacity: .3;
       }
 
       .upload-img-button-controls {
@@ -764,7 +768,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        
         span {
           font-size: 8px;
         }

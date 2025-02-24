@@ -23,7 +23,7 @@
       </div>
     </b-card>
     <b-modal size="xl"  ref="keyMessageVisualizer" :hide-footer="true" id="pre-image" centered :hide-header="true">
-      <whatnowPrevisualizer
+      <WhatnowPreviewer
         :keyMessage="stage"
         :eventType="eventType"
         :stageName="stageName"
@@ -31,17 +31,31 @@
         :description="description"
         :selectedSoc="selectedSoc"
         :selectedLanguage="selectedLanguage"
+        :contributors="contributors"
       />
     </b-modal>
   </div>
 </template>
 <script>
-import whatnowPrevisualizer from './whatnowPrevisualizer.vue'
+import WhatnowPreviewer from './whatnowPreviewer.vue'
 
 export default {
   props: ['stage', 'stageName', 'eventType', 'stageName', 'title', 'description', 'selectedSoc', 'selectedLanguage'],
+  data() {
+    return {
+      contributors: [],
+    }
+  },
+  mounted() {
+    if (this.selectedSoc.translations) {
+      const translation = this.selectedSoc.translations.filter((translation) => translation.languageCode === this.selectedLanguage);
+      if (translation.length) {
+        this.contributors = translation[0].contributors;
+      }
+    }
+  },
   components: {
-    whatnowPrevisualizer
+    WhatnowPreviewer
   },
   methods: {
     openKeyMessageVisualizer() {
@@ -51,8 +65,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+@import '../../../sass/variables.scss';
 .key-message-card {
   background: #E9E9E9;
   padding-bottom: 40px;

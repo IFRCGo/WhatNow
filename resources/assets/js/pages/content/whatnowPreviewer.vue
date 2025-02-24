@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="button-container">
-      <b-dropdown id="download-dropdown" :text="$t('common.download')" class="primary" variant="outline-primary">
+      <b-dropdown id="download-dropdown" :text="loading ? $t('common.loading_image') : $t('common.download')" class="primary" variant="outline-primary" :loading="true">
         <b-dropdown-item @click="downloadAsPNG"> {{ $t('common.download_as_image') }} </b-dropdown-item>
         <b-dropdown-item @click="downloadAsPDF">{{ $t('common.download_as_pdf') }}</b-dropdown-item>
       </b-dropdown>
@@ -44,54 +44,88 @@
 
 <script>
 import html2canvas from 'html2canvas'
+import Loading from '../../components/Loading'
 import jsPDF from 'jspdf'
 
 export default {
-  props: ['eventType', 'keyMessage', 'stageName', 'title', 'description', 'contributors', 'selectedSoc', 'selectedLanguage'],
+  props: ['eventType', 'keyMessage', 'stageName', 'title', 'description', 'selectedSoc', 'selectedLanguage', 'contributors'],
+  components: {
+    Loading
+  },
   data() {
     return {
       contributors: [],
-    }
-  },
-  mounted() {
-    if (this.selectedSoc.translations) {
-      const translation = this.selectedSoc.translations.filter((translation) => translation.languageCode === this.selectedLanguage);
-      if (translation.length) {
-        this.contributors = translation[0].contributors;
-      }
+      loading: false,
     }
   },
   methods: {
     async downloadAsPNG() {
-      const element = this.$refs.modalContent
-      const canvas = await html2canvas(element, { allowTaint: true, useCORS: true, logging: true })
-      const link = document.createElement('a')
-      link.href = canvas.toDataURL('image/png')
-      const fileName = this.selectedSoc.name+'_'+this.stageName+'_'+this.eventType+'_'+this.title+".png";
-      link.download = fileName
-      link.click()
+      this.loading = true;
+      try {
+        const element = this.$refs.modalContent;
+        const scaleFactor = 5;
+        const canvas = await html2canvas(element, {
+          scale: scaleFactor,
+          useCORS: true, 
+          allowTaint: true,
+          backgroundColor: null,
+        });
+
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png', 1.0);
+        const fileName = `${this.selectedSoc.name}_${this.stageName}_${this.eventType}_${this.title}.png`;
+        link.download = fileName;
+        link.click();
+      } catch (error) {
+        //TODO handle error
+      } finally {
+        this.loading = false;
+      }
     },
     async downloadAsPDF() {
-      const element = this.$refs.modalContent;
+      this.loading = true;
+      try {
+        const element = this.$refs.modalContent;
+        const scaleFactor = 5;
 
-      const canvas = await html2canvas(element, {
-        scale: window.devicePixelRatio,
-        useCORS: true
-      });
+        const canvas = await html2canvas(element, {
+          scale: scaleFactor,
+          useCORS: true,
+          backgroundColor: null,
+        });
 
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4"
-      });
+        const imgData = canvas.toDataURL("image/png", 1.0);
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: "a4"
+        });
 
-      const imgWidth = 210;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      const fileName = this.selectedSoc.name+'_'+this.stageName+'_'+this.eventType+'_'+this.title+".pdf";
-      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-      pdf.save(fileName);
+        const imgWidth = 210;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        if (imgHeight > 297) {
+          const pageHeight = 297;
+          let yPos = 0;
+
+          while (yPos < imgHeight) {
+            pdf.addImage(imgData, "PNG", 0, yPos * -1, imgWidth, imgHeight);
+            yPos += pageHeight;
+            if (yPos < imgHeight) pdf.addPage();
+          }
+        } else {
+          pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        }
+
+        const fileName = `${this.selectedSoc.name}_${this.stageName}_${this.eventType}_${this.title}.pdf`;
+        pdf.save(fileName);
+      } catch (error) {
+        //TODO handle error
+      } finally {
+        this.loading = false;
+      }
     }
+
   }
 }
 </script>
@@ -105,6 +139,7 @@ export default {
   border-radius: 8px;
   border-radius: 10px;
   border: solid 1.5px #e6e6e6;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 
