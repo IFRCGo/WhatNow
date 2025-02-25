@@ -118,7 +118,8 @@ class RcnExporter
         Collection $instructionRows = null,
         array $attributionRow = [],
         \DateTimeImmutable $exportedDate = null
-    ) {
+    ): Writer
+    {
         if ($exportedDate === null) {
             $exportedDate = new \DateTimeImmutable('now');
         }
@@ -225,7 +226,7 @@ class RcnExporter
 
 
 
-    public static function createAttributionHeader()
+    public static function createAttributionHeader(): array
     {
         return [
             trans('csvTemplate.attribution_columns.name'),
@@ -235,7 +236,7 @@ class RcnExporter
     }
 
 
-    public static function createInstructionsHeader()
+    public static function createInstructionsHeader(): array
     {
         return array_merge([
             trans('csvTemplate.instruction_columns.eventType'),
@@ -250,7 +251,7 @@ class RcnExporter
     }
 
 
-    public function buildAttributionRow(string $countryCode, string $languageCode)
+    public function buildAttributionRow(string $countryCode, string $languageCode): array
     {
         $organisation = $this->client->getOrganisationByCountryCode($countryCode);
         $attribution = $organisation->getTranslationsByLanguage($languageCode);
