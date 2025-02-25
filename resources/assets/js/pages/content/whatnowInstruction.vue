@@ -6,11 +6,17 @@
           <h4 class="key-message-title">
             {{ $t(`content.edit_whatnow.${instructionName}`) }}
           </h4>
-          <div class="mx-5">
-            <span variant="link" class="more-info-icon" v-b-tooltip.hover
-              :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
+          <div class="mx-5 tooltip-container">
+            <span
+              class="more-info-icon"
+              @mouseover="showTooltip = true"
+              @mouseleave="showTooltip = false"
+              >
               <fa :icon="['fas', 'info-circle']" />
             </span>
+            <div v-if="showTooltip" class="custom-tooltip">
+              {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            </div>
           </div>
         </div>
         <b-collapse id="more">
@@ -25,7 +31,7 @@
         </b-button>
       </div>
     </div>
-    <b-card 
+    <b-card
       :class="`mb-5 key-message-card key-message-card-${instructionName} bg-grey`">
       <!-- We have to use n in x here as you cannot directly mutate an object in a v-model -->
       <transition-group v-for="(message, index) in keyMessages" :key="`message-${index}`" name="fade-slide" tag="ol" class="pt-4 whatnow-instruction-list">
@@ -97,6 +103,7 @@ export default {
       instructionsCopy: [],
       permissions: permissionsList,
       keyMessages: [],
+      showTooltip: false
     }
   },
   mounted() {
@@ -303,4 +310,39 @@ export default {
     }
   }
 }
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  width: 10rem;
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 120%; /* Posición arriba del icono */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #E6E6E6;
+  color: black;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+
+  /* Ajustes para el tamaño y los saltos de línea */
+  width: 10rem; /* Fijar el ancho */
+  max-width: 10rem; /* Evitar que crezca más */
+  white-space: normal; /* Permitir saltos de línea */
+  word-wrap: break-word; /* Romper palabras largas si es necesario */
+}
+
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
 </style>

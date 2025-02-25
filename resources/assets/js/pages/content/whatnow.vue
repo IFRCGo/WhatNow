@@ -7,8 +7,8 @@
     </page-banner>
     <b-row class="pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start m-auto"
       v-show="selectedSoc">
-      <b-col class="d-flex align-items-center">
-        <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
+      <b-col cols="6" class="d-flex align-items-center">
+        <selectSociety class="mr-3" v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
         </selectSociety>
         <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" :translationCode="selectedLanguage">
         </selectRegion>
@@ -203,7 +203,7 @@
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
                 <h5>{{ $t('content.whatnow.publish_summary_ns') }}</h5>
-                <p>{{ attributionTranslation.name }}</p>	
+                <p>{{ attributionTranslation.name }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
@@ -243,7 +243,7 @@
 
 <script>
 import swal from 'sweetalert2'
-import SelectSociety from '~/pages/content/simpleSocietyPicker'
+import SelectSociety from '~/pages/content/selectSociety'
 import SelectRegion from '~/pages/content/regionPicker'
 import WhatnowList from '~/pages/content/whatnowList'
 import PageBanner from '~/components/PageBanner'
@@ -528,7 +528,7 @@ export default {
             published: false,
             contributors: [],
             imageUrl: '',
-            
+
           }
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
@@ -734,9 +734,9 @@ export default {
       }
     }
   }
-  
+
   .upload-img-button {
-    
+
     .btn {
       font-size: 8px;
       color: $bg-upload-button;
@@ -945,7 +945,8 @@ export default {
   .contributor-delete-btn {
     svg {
       color: $red;
-    }	
+    }
   }
 }
+
 </style>
