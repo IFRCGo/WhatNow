@@ -169,10 +169,10 @@
   </template>
 
 <script>
-import SelectSociety from '~/pages/content/selectSociety'
+import swal from 'sweetalert2'
+import SelectSociety from '~/pages/content/simpleSocietyPicker'
 import { mapGetters } from 'vuex'
 import { languages } from 'countries-list'
-import SelectRegion from '~/pages/content/regionPicker'
 import axios from 'axios'
 import PageBanner from '~/components/PageBanner'
 import ImportChangesList from '~/components/ImportChanges/ImportChangesList'
@@ -182,11 +182,9 @@ import pdfFile from '../../../pdf/what-now-csv-guide.pdf'
 export default {
   components: {
     SelectSociety,
-    SelectRegion,
     PageBanner,
     ImportChangesList
   },
-
   data () {
     return {
       uploadWarning: null,
@@ -196,11 +194,9 @@ export default {
       isUploading: false,
       file: null,
       selectedSoc: null,
-      selectedRegion: null,
       selectedLanguage: false,
-      selectedExportLang: null,
       warnings: true,
-      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off') },
+      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off')},
       languages,
       pdf: pdfFile,
       permissionsList: permissionsList,
@@ -243,9 +239,6 @@ export default {
       this.getLocalStorage()
       await this.fetchContent()
       this.loadingContent = false
-    },
-    handleExportLangSelection (lang) {
-      this.selectedExportLang = lang.value
     },
     async fetchOrganisations () {
       this.isFetchingLangs = true
@@ -294,7 +287,7 @@ export default {
               break
             default:
               this.uploadError = this.$t('error_alert_text')
-              console.error(error)
+              console.error(e)
               break
           }
         })
@@ -307,10 +300,8 @@ export default {
       this.warnings = true
       this.overwrite = false
     },
-    downloadTemplate (extension = 'xlsx') {
-      const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
-      const regionParam = this.selectedRegion ? `&region=${this.selectedRegion.title}` : ''
-      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?extension=${extension}${regionParam}`, {
+    downloadBlankTemplate () {
+      axios.get(`/api/template/${this.selectedSoc.countryCode}`, {
         responseType: 'blob'
       })
         .then((response) => {
@@ -318,11 +309,11 @@ export default {
           var blob = new Blob([response.data], { type: headers['content-type'] })
 
           if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
-            window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.' + extension)
+            window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.csv')
           } else {
             var link = document.createElement('a')
             link.href = window.URL.createObjectURL(blob)
-            link.download = this.selectedSoc.countryCode + '.' + extension
+            link.download = this.selectedSoc.countryCode + '.csv'
             link.click()
           }
         })
@@ -331,14 +322,36 @@ export default {
           console.error(error)
         })
 
-      this.$fireGTEvent(this.selectedExportLang ? this.$gtagEvents.ExportLanguageData(this.selectedExportLang) : this.$gtagEvents.DownloadBulkTemplate)
+      this.$fireGTEvent(this.$gtagEvents.DownloadBulkTemplate)
+    },
+    downloadTemplate (lang) {
+      axios.get(`/api/template/${this.selectedSoc.countryCode}/${lang}`)
+        .then((response) => {
+          var headers = response.headers
+          var blob = new Blob([response.data], { type: headers['content-type'] })
+
+          if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
+            window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.csv')
+          } else {
+            var link = document.createElement('a')
+            link.href = window.URL.createObjectURL(blob)
+            link.download = this.selectedSoc.countryCode + '.csv'
+            link.click()
+          }
+        })
+        .catch((error) => {
+          this.$noty.error(this.$t('error_alert_text'))
+          console.error(error)
+        })
+
+      this.$fireGTEvent(this.$gtagEvents.ExportLanguageData(lang))
     },
     clearFiles () {
       this.$refs.fileinput.reset()
     },
     getLocalStorage () {
       let soc = localStorage.getItem('soc')
-      const lang = localStorage.getItem('lang')
+      let lang = localStorage.getItem('lang')
 
       if (!soc || !lang) {
         soc = this.filteredSocieties[0].countryCode
@@ -368,24 +381,16 @@ export default {
   },
   computed: {
     filteredLanguages () {
-      const languages = [{ value: null, text: this.$t('content.bulk_upload.empty_template') }]
-      if (this.selectedRegion) {
-        for (const key in this.selectedRegion.translations) {
+      const languages = [{ value: null, text: this.$t('content.whatnow.select_language') }]
+
+      for (const key in this.languages) {
+        if (this.languages.hasOwnProperty(key)) {
           languages.push({
             value: key,
             text: `${this.languages[key].name}  (${this.languages[key].native} - ${key})`
           })
         }
-      } else if (this.selectedSoc) {
-        this.selectedSoc.translations.forEach((translation) => {
-          const { languageCode } = translation
-          languages.push({
-            value: languageCode,
-            text: `${this.languages[languageCode].name}  (${this.languages[languageCode].native} - ${languageCode})`
-          })
-        })
       }
-
       return languages
     },
     filteredSocieties () {
@@ -407,7 +412,9 @@ export default {
 }
 </script>
   <style>
-
+  .dw-btn {
+    padding: 7px 25px;
+  }
   .custom-file-label {
     background: #F7F7F7;
     border-radius: 10px;
