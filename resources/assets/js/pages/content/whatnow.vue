@@ -1,3 +1,4 @@
+
 <template>
   <b-container fluid class="h-100 whatnow-message-editor-container">
     <page-banner >
@@ -6,7 +7,7 @@
       </b-col>
     </page-banner>
     <b-row class="pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start m-auto"
-      v-show="selectedSoc">
+           v-show="selectedSoc">
       <b-col class="d-flex align-items-center">
         <selectSociety v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
         </selectSociety>
@@ -18,15 +19,15 @@
       <b-col>
         <b-nav tabs class="whatnow-message-editor-tabs">
           <b-nav-item v-for="lang in currentLanguages" :key="lang" class="wn-item" @click="selectedLanguage = lang"
-            :active="selectedLanguage === lang">
+                      :active="selectedLanguage === lang">
             <div class="nav-link-wrapper text-center h-100" v-if="lang">
               {{ lang | uppercase }} -
               <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
             </div>
           </b-nav-item>
           <b-nav-item class="add-lang-btn ml-2" v-b-tooltip.hover
-            :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true"
-            v-if="can(user, permissions.CONTENT_CREATE)">
+                      :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true"
+                      v-if="can(user, permissions.CONTENT_CREATE)">
             <fa :icon="['fas', 'plus']" />
           </b-nav-item>
         </b-nav>
@@ -41,22 +42,22 @@
 
           <div class="d-flex align-items-center">
             <b-button variant="outline-primary" size="sm" class="mr-2"
-              v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
-              :disabled="!canEditAttribution" :key="'edit'">
+                      v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
+                      :disabled="!canEditAttribution" :key="'edit'">
               <font-awesome-icon :icon="['fas', 'pen']" />
               {{ $t('common.edit') }}
             </b-button>
             <b-button variant="primary" size="sm" class="mr-2" v-if="canEditAttribution && (languageToAdd || editing)"
-              :disabled="!canEditAttribution" @click="publishAttribution(true)" :key="'save'">
+                      :disabled="!canEditAttribution" @click="publishAttribution(true)" :key="'save'">
               <font-awesome-icon :icon="['fas', 'check']" />
               {{ $t('common.save') }}
             </b-button>
             <b-button variant="outline-primary" size="sm" class="mr-2" v-if="canEditAttribution && editing"
-              :disabled="!canEditAttribution" :key="'add'" @click="addContributor">
+                      :disabled="!canEditAttribution" :key="'add'" @click="addContributor">
               {{ $t('common.add') + ' ' + $t('content.message_editor.contributor_single') }}
             </b-button>
             <b-button variant="outline-primary" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
-              @click="discard" :disabled="!canEditAttribution" :key="'cancel'">
+                      @click="discard" :disabled="!canEditAttribution" :key="'cancel'">
               <font-awesome-icon :icon="['fas', 'xmark']" />
               {{ $t('common.cancel') }}
             </b-button>
@@ -66,7 +67,7 @@
     </b-row>
     <!-- FORM ORG -->
     <b-row align-v="stretch"
-      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start mb-3 mr-3 ml-auto mr-auto">
+           class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start mb-3 mr-3 ml-auto mr-auto">
 
       <b-col lg="5">
         <div class="d-flex justify-content-start align-items-start">
@@ -74,7 +75,7 @@
           <div slot="button-content" class="text-dark py-0 mr-3">
             <div class="upload-img-button">
               <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled"
-                class="p-0 d-flex flex-column align-items-center justify-content-center">
+                        class="p-0 d-flex flex-column align-items-center justify-content-center">
                 <img  :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" />
                 <div class="upload-img-button-controls">
                   <fa :icon="['fas', 'plus']" />
@@ -87,9 +88,9 @@
             <b-col lg="12">
               <b-form-group :label="$t('content.message_editor.society_name_label')" label-for="socName">
                 <b-form-input type="text" id="socName" name="socName" maxlength="255"
-                  v-model="attributionEditTranslation.name"
-                  :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
-                  v-if="attributionEditTranslation" :disabled="isFormDisabled" />
+                              v-model="attributionEditTranslation.name"
+                              :state="updateErrors.errors[`translations.${updateErrors.indexError}.name`] ? false : null"
+                              v-if="attributionEditTranslation" :disabled="isFormDisabled" />
                 <b-form-invalid-feedback id="socNameFeedback">
                   <p>
                     {{ $t('common.not_empty') }}
@@ -100,7 +101,7 @@
             <b-col lg="12">
               <b-form-group :label="$t('content.message_editor.attribution_url_label')" label-for="url">
                 <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
-                  :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
+                              :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
                 <b-form-invalid-feedback id="urlFeedback">
                   <!-- This will only be shown if the preceeding input has an invalid state -->
                   <p v-for="error in updateErrors.errors.url">
@@ -126,7 +127,7 @@
     </b-row>
 
     <b-row v-if="contributors.length > 0" align-v="stretch"
-      class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start m-auto mb-3 mr-3 ml-auto mr-auto">
+           class="pl-4 pr-4 pb-3 pt-3 whatnow-message-editor-form-card d-flex align-items-center justify-content-start m-auto mb-3 mr-3 ml-auto mr-auto">
       <b-col lg="12">
         <div v-for="(contributor, index) in attributionEditTranslation.contributors" :key="index">
           <div class="d-flex justify-content-start align-items-start">
@@ -134,7 +135,7 @@
             <div slot="button-content" class="text-dark py-0 mr-3">
               <div class="upload-img-button">
                 <b-button :variant="'link'" @click="openUploadModal(logoType.CONTRIBUTOR, index)" :disabled="isFormDisabled"
-                  class="p-0 d-flex flex-column align-items-center justify-content-center">
+                          class="p-0 d-flex flex-column align-items-center justify-content-center">
                   <img  :src="contributor.logo" v-if="contributor.logo" />
                   <div class="upload-img-button-controls">
                     <fa :icon="['fas', 'plus']" />
@@ -144,16 +145,16 @@
               </div>
             </div>
             <b-form-group :label="$t('content.message_editor.contributor_name_label')" class="w-50"
-              :label-for="'contributorName' + index">
+                          :label-for="'contributorName' + index">
               <b-form-input type="text" :id="'contributorName' + index" :name="'contributorName' + index"
-                v-model="contributor.name" maxlength="100"
-                :state="updateErrors.errors[`contributors.${index}.name`] ? false : null" />
+                            v-model="contributor.name" maxlength="100"
+                            :state="updateErrors.errors[`contributors.${index}.name`] ? false : null" />
               <b-form-invalid-feedback v-if="updateErrors.errors[`contributors.${index}.name`]">
                 {{ $t('common.not_empty') }}
               </b-form-invalid-feedback>
             </b-form-group>
             <b-button variant="link" class="align-self-center ml-1 contributor-delete-btn" size="sm" v-if="canEditAttribution && (languageToAdd || editing)"
-              @click="deleteContributor(index)" :disabled="!canEditAttribution" :key="'cancel'">
+                      @click="deleteContributor(index)" :disabled="!canEditAttribution" :key="'cancel'">
               <font-awesome-icon :icon="['fas', 'trash']" />
             </b-button>
           </div>
@@ -165,14 +166,14 @@
     <b-row>
       <b-col>
         <whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage"
-          v-if="selectedLanguage && selectedSoc"></whatnow-list>
+                      v-if="selectedLanguage && selectedSoc"></whatnow-list>
       </b-col>
     </b-row>
 
     <!-- PUBLISH BUTTON -->
     <div class="publish-bottom-container d-flex justify-content-end" v-if="selectedSoc">
       <b-button size="md" variant="outline-primary" v-if="can(user, permissions.CONTENT_PUBLISH)"
-        v-b-modal.publish-modal :disabled="toPublish.length === 0 || !attributionSet" class="align-self-center">
+                v-b-modal.publish-modal :disabled="toPublish.length === 0 || !attributionSet" class="align-self-center">
         <span v-if="toPublish.length === 0">{{ $t('content.whatnow.no_publish') }}</span>
         <span v-else-if="!attributionSet">{{ $t('content.whatnow.set_attribution') }}</span>
         <span v-else-if="toPublish.length > 0 && !publishing">{{ $t('content.whatnow.publish') }}</span>
@@ -184,7 +185,7 @@
 
     <!-- Publish Modal -->
     <b-modal id="publish-modal" size="lg" centered :ok-title="$t('content.whatnow.publish')" ok-variant="primary" cancel-variant="outline-primary" hide-header @ok="publish"
-      v-if="attribution !== null && selectedLanguage && selectedSoc">
+             v-if="attribution !== null && selectedLanguage && selectedSoc">
       <div class="px-3">
         <h3>{{ $t('content.whatnow.content_to_publish') }}</h3>
         <p v-if="attributionTranslation">
@@ -203,7 +204,7 @@
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
                 <h5>{{ $t('content.whatnow.publish_summary_ns') }}</h5>
-                <p>{{ attributionTranslation.name }}</p>	
+                <p>{{ attributionTranslation.name }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
@@ -221,7 +222,7 @@
 
         <div class="whatnow-publish-content-wrapper">
           <div v-for="content in toPublish" :key="content.eventType" class="mb-3"
-            v-if="content.translations[selectedLanguage]">
+               v-if="content.translations[selectedLanguage]">
             <h5>{{ content.eventType }} {{ content.regionName ? `- ${content.regionName}` : "" }}</h5>
 
             <whatnow-summary :translation="content.translations[selectedLanguage]"></whatnow-summary>
@@ -231,8 +232,8 @@
     </b-modal>
 
     <b-modal v-model="selectingLanguage" id="role-changed" centered :title="'Add new language'" ref="selectLangModal"
-      ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
-      :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
+             ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
+             :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
       <b-form-select v-model="languageToAdd" :options="filteredLanguages" />
     </b-modal>
 
@@ -734,7 +735,7 @@ export default {
       }
     }
   }
-  
+
   .upload-img-button {
 
     .btn {
