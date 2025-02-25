@@ -688,7 +688,11 @@
     "strapline_part_2": "Global Red Cross / Red Crescent Key Safety Messages",
     "developer": {
       "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
-      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages."
+      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+      "head_1": "IFRC Safety",
+      "head_2": "Message Database",
+      "head_text_1": "Safety messages based on IFRC Public Awareness and",
+      "head_text_2": "Public Education (PAPE) resource"
     },
     "national_society": {
       "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",

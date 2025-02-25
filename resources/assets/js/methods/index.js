@@ -15,6 +15,12 @@ const icons = {
   'ifrcLogo': {
     x1: require('../../img/landing_page/ifrc-logo.png')
   },
+  'mapImg': {
+    x1: require('../../img/landing_page/landing-map.png')
+  },
+  'landingHead': {
+    x1: require('../../img/landing_page/new-landing-head.svg')
+  },
   'logoLarge': {
     x1: require('../../img/logo-large.png'),
     x2: require('../../img/logo-large@2x.png'),

@@ -1,374 +1,460 @@
 <template>
   <div>
-    <navbar></navbar>
-
-    <section class="illustrated-row bg-white d-flex align-items-center full-height container-fluid pr-5 pl-5">
-      <b-row class="w-100">
-        <b-col md="9" lg="7" xl="6">
-          <h2>
-            {{ $t('landing.strapline')}}
-          </h2>
-          <h3 class="mb-5">
-            {{ $t('landing.strapline_part_2')}}
-          </h3>
-
-          <b-tabs class="styled-tabs styled-tabs--header" v-model="activeTab">
-            <b-tab :title="$t('register_form.developer')" active>
-              <p>
-                {{ $t('landing.developer.strap_para_one')}}
+    <b-row>
+      <b-col cols="5">
+        <div>
+          <img class="head-img" :src="src('landingHead')">
+          <div class="top-head">
+            <h2 class="white-subtitle">IFRC Safety</h2>
+            <h2 class="white-subtitle">Message Database</h2>
+            <p class="white-text mt-4">Safety messages based on IFRC Public Awareness and</p>
+            <p class="white-text">Public Education (PAPE) resource</p>
+            <div class="bottom-head">
+              <p class="bottom-head-text">
+                Access and share trusted Red Cross Red Crescent
               </p>
-              <p>
-                {{ $t('landing.developer.strap_para_two')}}
+              <p class="bottom-head-text">
+                actionable messages to help people safely prepare for
               </p>
-            </b-tab>
-            <b-tab :title="$t('register_form.national_society')">
-              <p>
-                {{ $t('landing.national_society.strap_para_one')}}
+              <p class="bottom-head-text">
+                and respond to hazards.
               </p>
-              <p>
-                {{ $t('landing.national_society.strap_para_two')}}
-              </p>
-            </b-tab>
-          </b-tabs>
-
-          <b-button
-            size="lg"
-            variant="dark"
-            :to="{ name: 'register', params: { userType: activeTab === 0 ? 'developer' : 'nationalSociety' } }"
-            class="text-uppercase mr-2 mb-4 rtl-float-right">
-            {{ $t('get_started') }}
-          </b-button>
-
-          <b-button size="lg" variant="dark"
-            to="#learnMore"
-            class="text-uppercase mb-4 rtl-float-right">
-            {{ $t('common.learn_more')}}
-          </b-button>
-        </b-col>
-      </b-row>
-    </section>
-
-    <section class="use-case-section bg-dark text-white text-center container-fluid" id="learnMore">
-      <h2 class="mb-5">{{ $t('landing.use_cases.heading') }}</h2>
-      <b-row class="flex-wrap use-case-row">
-        <b-col md>
-          <a href="https://www.preparecenter.org/activities/whatnow-service" target="_blank" rel="noreferrer nofollow" class="u-link u-link--white">
-            <img role="presentation" class="case-card" :src="src('handsIcon')" :srcSet="srcSet('handsIcon')">
-            <h3 class="case-card__heading mb-3">
-              {{ $t('landing.use_cases.first_heading') }}
-            </h3>
-          </a>
-        </b-col>
-
-        <b-col md >
-          <a href="https://www.preparecenter.org/resources/whatnow-service-use-case-google-safety-tips" target="_blank" rel="noreferrer nofollow" class="u-link u-link--white">
-            <img role="presentation" class="case-card" src="../../img/landing_page/learn_more/use_cases.svg">
-            <h3 class="case-card__heading mb-3">
-              {{ $t('landing.use_cases.second_heading') }}
-            </h3>
-          </a>
-        </b-col>
-
-        <b-col md >
-          <a href="https://www.preparecenter.org/toolkit/whatnow-service-toolkit" target="_blank" rel="noreferrer nofollow" class="u-link u-link--white">
-            <img role="presentation" class="case-card" src="../../img/landing_page/learn_more/implementation_toolkit.svg">
-            <h3 class="case-card__heading mb-3">
-              {{ $t('landing.use_cases.third_heading') }}
-            </h3>
-          </a>
-        </b-col>
-
-        <b-col md >
-          <a href="https://www.youtube.com/watch?v=Tc0P1kX5xJA" target="_blank" rel="noreferrer nofollow" class="u-link u-link--white">
-            <img role="presentation" class="case-card" src="../../img/landing_page/learn_more/whatnow_video.svg">
-            <h3 class="case-card__heading mb-3">
-              {{ $t('landing.use_cases.fourth_heading') }}
-            </h3>
-          </a>
-        </b-col>
-      </b-row>
-    </section>
-
-    <section class="container-fluid p-5 bg-white">
-      <h2 class="mb-5 mt-5 text-center">{{ $t('landing.example_alert.heading') }}</h2>
-
-      <b-row class="example-panel">
-        <b-col md="5" class="pr-0">
-          <div class="example-panel__left h-100 py-5">
-
-            <b-tabs class="styled-tabs">
-              <b-tab :title="$t('landing.example_alert.alert_preview')">
-                <div class="example-panel__inner pl-5 pr-5">
-                  <div class="fake-alert mx-auto mt-4 px-3 pt-4">
-                    <img :src="src('coldIcon')" :srcset="srcSet('coldIcon')" class="alert-icon alert-icon--small embed-responsive embed-responsive-1by1 mb-2"/>
-
-                    <span class="fake-alert__timestamp">{{ $t('landing.fake_alert_time') }} <br/><span class="fake-alert__timestamp__exact">{{ $t('landing.fake_alert_time_exact') }}</span></span>
-                    <h4 class="mt-2">{{ $t('landing.fake_alert_heading') }}</h4>
-
-                    <p class="fake-alert__content">
-                      {{ $t('landing.example_alert.example_content') }}
-                    </p>
-
-                    <p class="fake-alert__content fake-alert__content__location_header">
-                      {{ $t('landing.example_alert.example_content_location_header') }}
-                    </p>
-
-                    <p class="fake-alert__content">
-                      {{ $t('landing.example_alert.example_content_location') }}
-                    </p>
-
-                  </div>
-                </div>
-
-              </b-tab>
-              <b-tab :title="$t('landing.example_alert.what_now_info')" active>
-                <div class="example-panel__inner pl-5 pr-5 mx-auto mt-4">
-                  <div class="whatnow-card orange">
-                    <div class="whatnow-card-header">
-                      <img :src="src('coldIcon')" :srcset="srcSet('coldIcon')" class="alert-icon alert-icon--small embed-responsive embed-responsive-1by1 mb-2"/>
-                      <h6>{{$t('landing.example_whatnow.alert_from')}} <br/>{{$t('landing.example_whatnow.more_info')}}: <a href="hhttp://www.redcross.org" target="_blank">http://www.redcross.org</a></h6>
-                    </div>
-                    <h4 class="mb-3">{{ $t('landing.fake_alert_heading') }}</h4>
-                    <p>{{$t('landing.example_whatnow.heading')}}</p>
-
-                    <p>
-                      {{$t('landing.example_whatnow.copy')}}:
-                    </p>
-
-                    <h5 class="my-3">{{$t('landing.example_whatnow.what_now')}}</h5>
-                    <ol class="whatnow-card__list">
-                      <li>{{$t('landing.example_whatnow.step_1')}}</li>
-                      <li>{{$t('landing.example_whatnow.step_2')}}</li>
-                      <li>{{$t('landing.example_whatnow.step_3')}}</li>
-                      <li>{{$t('landing.example_whatnow.step_4')}}</li>
-                      <li>{{$t('landing.example_whatnow.step_5')}}</li>
-                    </ol>
-                  </div>
-
-                </div>
-              </b-tab>
-            </b-tabs>
+              <b-button class="btn-primary mt-4" @click="$router.push('/register')">
+                Sign Up
+              </b-button>
+            </div>
           </div>
-        </b-col>
-
-        <b-col md="7" class="pl-0">
-          <div class="example-panel__right h-100 pb-4 pt-3 example-panel__inner pl-5 pr-5">
-            <p>
-              {{ $t('landing.example_alert.example_alert_request') }}
-            </p>
-            <pre class="styled-pre pre-scrollable mb-2">
-              <span>{</span>
-              <span>    "data": {</span>
-              <span>        "identifier": "urn:oid:2.49.1.174.2018.524",</span>
-              <span>        "sender": "The_Americian_Red_Cross",</span>
-              <span>        "sent": "2018-01-29T04:37:49+00:00",</span>
-              <span>        "status": "Actual",</span>
-              <span>        "msg_type": "Alert",</span>
-              <span>        "scope": "Public",</span>
-              <span>        "info": {</span>
-              <span>            "language": "en",</span>
-              <span>            "category": "Geo",</span>
-              <span>            "event": "Extreme Cold Warning",</span>
-              <span>            "urgency": "Immediate",</span>
-              <span>            "severity": "Extreme",</span>
-              <span>            "certainty": "Immediate",</span>
-              <span>            "effective": "2018-01-29T03:00:00+00:00",</span>
-              <span>            "onset": "2018-01-29T03:00:00+00:00",</span>
-              <span>            "expires": "2018-04-03T13:37:29+00:00",</span>
-              <span>            "sender_name": "The American Red Cross",</span>
-              <span>            "headline": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018For Tail-End of A Cold Front ",</span>
-              <span>            "description": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",</span>
-              <span>            "area": {</span>
-              <span>                "area_desc": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front ",</span>
-              <span>                "polygon": {</span>
-              <span>                    "type": "Feature",</span>
-              <span>                    "geometry": {</span>
-              <span>                        "type": "Polygon",</span>
-              <span>                        "coordinates": [</span>
-              <span>                              [</span>
-              <span>                                [</span>
-              <span>                                  -165.5584716796875,</span>
-              <span>                                  64.9188850328549</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -166.06933593749997,</span>
-              <span>                                  64.81389502168176</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -166.28082275390625,</span>
-              <span>                                  64.5212788590022</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -166.0528564453125,</span>
-              <span>                                  64.3042040393387</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -165.02563476562497,</span>
-              <span>                                  64.28514307507955</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -164.5916748046875,</span>
-              <span>                                  64.42659403500944</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -164.5751953125,</span>
-              <span>                                  64.74953235864658</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -164.94049072265625,</span>
-              <span>                                  64.91306300771964</span>
-              <span>                                ],</span>
-              <span>                                [</span>
-              <span>                                  -165.5584716796875,</span>
-              <span>                                  64.9188850328549</span>
-              <span>                                ]</span>
-              <span>                              ]</span>
-              <span>                            ]</span>
-              <span>                        ]</span>
-              <span>                    }</span>
-              <span>                }</span>
-              <span>            }</span>
-              <span>        },</span>
-              <span>        "cap_url": "http://localhost/v1/alerts/cap12/2018-01-29/urn:oid:2.49.1.174/urn:oid:2.49.1.174.2018.524.xml",</span>
-              <span>        "organisation": {</span>
-              <span>            "country": "USA",</span>
-              <span>            "name": "The American Red Cross",</span>
-              <span>            "oid_code": "urn:oid:2.49.1.174"</span>
-              <span>        }</span>
-              <span>    }</span>
-              <span>}</span>
-            </pre>
-
-            <p>
-              {{ $t('landing.example_alert.example_whatnow_request') }}
-            </p>
-            <pre class="styled-pre pre-scrollable mb-2">
-              <span>{</span>
-              <span>    "data": {</span>
-              <span>        "id": "234",</span>
-              <span>        "countryCode": "USA",</span>
-              <span>        "eventType": "Extreme Cold",</span>
-              <span>        "attribution": {</span>
-              <span>            "name": "American Red Cross",</span>
-              <span>            "countryCode": "USA",</span>
-              <span>            "url": "http://www.redcross.org",</span>
-              <span>            "translations": {</span>
-              <span>                "en": {</span>
-              <span>                    "languageCode": "en",</span>
-              <span>                    "name": "International Federation of Red Cross and Red Crescent Societies",</span>
-              <span>                    "attributionMessage": "Key Messages from International Federation of Red Cross and Red Crescent Societies"</span>
-              <span>                }</span>
-              <span>            }</span>
-              <span>        },</span>
-              <span>        "translations": {</span>
-              <span>            "en": {</span>
-              <span>                "id": "483",</span>
-              <span>                "lang": "en",</span>
-              <span>                "webUrl": "",</span>
-              <span>                "title": "Key Messages for Extreme Cold",</span>
-              <span>                "description": "These are actions to take to reduce risk and protect you and your household from extreme cold.",</span>
-              <span>                "published": true,</span>
-              <span>                "createdAt": "2017-02-17T17:38:40+00:00",</span>
-              <span>                "stages": {</span>
-              <span>                    "mitigation": [</span>
-              <span>                        "Know your area's risks for extreme weather conditions",</span>
-              <span>                        "Know your nearest points of medical support",</span>
-              <span>                        "Prepare your home. Check on pipes and have safe heating sources.",</span>
-              <span>                        "Prepare your vehicle with necessary emergency items and fuel"</span>
-              <span>                    ],</span>
-              <span>                    "seasonalForecast": [</span>
-              <span>                        "Prepare your home. Check on pipes and have safe heating sources.",</span>
-              <span>                        "Prepare your vehicle with necessary emergency items and fuel",</span>
-              <span>                        "Stay hydrated with warm fluids",</span>
-              <span>                        "Check on neighbors, friends, and those at risk"</span>
-              <span>                    ],</span>
-              <span>                    "warning": [</span>
-              <span>                        "Protect your home. Check on pipes and use heating sources safely",</span>
-              <span>                        "Stay hydrated with warm fluids",</span>
-              <span>                        "Protect yourself with warm clothing and cover exposed skin",</span>
-              <span>                        "Be aware and cautious of icy conditions, especially while driving",</span>
-              <span>                        "Check on neighbors, friends, and those at risk"</span>
-              <span>                    ],</span>
-              <span>                    "watch": [</span>
-              <span>                        "Protect your home. Check on pipes and use heating sources safely.",</span>
-              <span>                        "Stay hydrated with warm fluids",</span>
-              <span>                        "Protect yourself with warm clothing and cover exposed skin",</span>
-              <span>                        "Be aware and cautious of icy conditions, especially while driving",</span>
-              <span>                        "Check on neighbors, friends, and those at risk"</span>
-              <span>                    ],</span>
-              <span>                    "immediate": [</span>
-              <span>                        "Protect your home. Check on pipes and use heating sources safely",</span>
-              <span>                        "Stay hydrated with warm fluids",</span>
-              <span>                        "Stay inside.",</span>
-              <span>                        "Be aware and cautious of icy conditions, especially while driving",</span>
-              <span>                        "Know and watch for signs of hypothermia and frostbite",</span>
-              <span>                        "Check on neighbors, friends, and those at risk"</span>
-              <span>                    ],</span>
-              <span>                    "recover": [</span>
-              <span>                        "Be aware and cautious of icy conditions, especially while driving",</span>
-              <span>                        "Be aware of power outages",</span>
-              <span>                        "Be aware of flooding caused by snow melting"</span>
-              <span>                    ]</span>
-              <span>                }</span>
-              <span>            }</span>
-              <span>        }</span>
-              <span>    }</span>
-              <span>}</span>
-            </pre>
+        </div>
+      </b-col>
+      <b-col cols="7">
+        <img class="map-img" :src="src('mapImg')">
+      </b-col>
+    </b-row>
+    <h2 class="mid-subt">How It Works</h2>
+    <b-row>
+      <b-col>
+        <div class="black-band">
+          <div class="line-container">
+            <div class="line-item-container">
+              <div class="line-item">
+                <p>
+                  Red Cross Red Crescent National
+                </p>
+                <p>
+                  Society and government partners
+                </p>
+                <p>
+                  agree on national sets of messages
+                </p>
+              </div>
+              <div class="red-line-frag left-radius">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div class="number-line-item">
+                <div class="circle-item">
+                  <p class="circle-item-number">
+                    1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="number-line-item">
+                <div class="circle-item">
+                  <p class="circle-item-number">
+                    2
+                  </p>
+                </div>
+              </div>
+              <div class="red-line-frag">
+                <div class="red-pointer-bottom"></div>
+              </div>
+              <div class="line-item">
+                <p>
+                  Red Cross Red Crescent National
+                </p>
+                <p>
+                  Society and government partners
+                </p>
+                <p>
+                  agree on national sets of messages
+                </p>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="line-item">
+                <p>
+                  Red Cross Red Crescent National
+                </p>
+                <p>
+                  Society and government partners
+                </p>
+                <p>
+                  agree on national sets of messages
+                </p>
+              </div>
+              <div class="red-line-frag">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div class="number-line-item">
+                <div class="circle-item">
+                  <p class="circle-item-number">
+                    3
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="number-line-item">
+                <div class="circle-item">
+                  <p class="circle-item-number">
+                    4
+                  </p>
+                </div>
+              </div>
+              <div class="red-line-frag">
+                <div class="red-pointer-bottom"></div>
+              </div>
+              <div class="line-item">
+                <p>
+                  Red Cross Red Crescent National
+                </p>
+                <p>
+                  Society and government partners
+                </p>
+                <p>
+                  agree on national sets of messages
+                </p>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="line-item">
+                <p>
+                  Red Cross Red Crescent National
+                </p>
+                <p>
+                  Society and government partners
+                </p>
+                <p>
+                  agree on national sets of messages
+                </p>
+              </div>
+              <div class="red-line-frag right-radius">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div class="number-line-item">
+                <div class="circle-item">
+                  <p class="circle-item-number">
+                    5
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        </b-col>
-      </b-row>
-    </section>
+          <div class="btns-container">
+            <b-button class="btn-primary mr-2">
+              Learn more
+            </b-button>
+            <b-button class="btn-primary ml-2">
+              Watch video
+            </b-button>
+          </div>
+        </div>
+      </b-col>
+    </b-row>
+    <h2 class="mid-subt">Example Use Case</h2>
+    <b-row class="usecases">
+      <b-col class="card-use-container">
+        <div class="example-card">
+          <h6 class="card-subt">
+            API
+          </h6>
+          <p class="card-txt">
+            Include messages with hurricane early
+          </p>
+          <p class="card-txt">
+            warning alerts
+          </p>
+          <img class="map-img" src="cardImage1">
+        </div>
+      </b-col>
+      <b-col class="card-use-container">
+        <div class="example-card">
+          <h6 class="card-subt">
+            Social Media
+          </h6>
+          <p class="card-txt">
+            Post images of wildfire preparedness
+          </p>
+          <p class="card-txt">
+            messages to your network
+          </p>
+          <img class="map-img" src="cardImage3">
+        </div>
+      </b-col>
+      <b-col class="card-use-container">
+        <div class="example-card">
+          <h6 class="card-subt">
+            WhatsApp
+          </h6>
+          <p class="card-txt">
+            Share flood mitigation actions with your
+          </p>
+          <p class="card-txt">
+            family and friends
+          </p>
+          <img class="map-img" src="cardImage3">
+        </div>
+      </b-col>
+    </b-row>
+    <h2 class="mid-subt">Impact</h2>
+    <b-row>
+      <b-col class="red-section">
+        <i class="fas fa-user-circle impact-icon"></i>
+        <p class="red-sec-txt">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut elit eget enim semper maximus vitae
+          placerat
+        </p>
+        <p class="red-sec-txt">
+          nulla. Pellentesque vitae metus nunc. Donec dolor elit, gravida vel lectus in, sollicitudin commodo dolor.
+          Cras
+        </p>
+        <p class="red-sec-txt">
+          aliquet interdum sapien at tempor. Integer viverra vulputate posuere. Aliquam tincidunt turpis a mi malesuada.
+        </p>
+        <div class="div-white"></div>
+        <i class="fas fa-user-circle impact-icon"></i>
+        <p class="red-sec-txt">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut elit eget enim semper maximus vitae
+          placerat
+        </p>
+        <p class="red-sec-txt">
+          nulla. Pellentesque vitae metus nunc. Donec dolor elit, gravida vel lectus in, sollicitudin commodo dolor.
+          Cras
+        </p>
+        <p class="red-sec-txt">
+          aliquet interdum sapien at tempor. Integer viverra vulputate posuere. Aliquam tincidunt turpis a mi malesuada.
+        </p>
 
-    <section class="cta-row text-center bg-danger text-white container-fluid pt-5 pb-5">
-      <h2 class="cta-row__heading mt-3 mb-4">{{ $t('landing.build.heading') }}</h2>
-
-      <b-button size="lg" variant="light" :to="{ name: 'get_started' }" class="text-uppercase px-5">
-        {{ $t('get_started') }}
-      </b-button>
-    </section>
-
-    <section class="img-row text-center text-white container-fluid pt-5 pb-5">
-      <h2 class="img-row__heading mt-5">{{ $t('landing.data_preview.heading') }}</h2>
-      <p class="img-row__copy mb-4">
-        {{ $t('landing.data_preview.sub_heading') }}
-      </p>
-
-      <img class="mx-auto d-block mb-3 img-fluid" :srcSet="srcSet('dataPreview')" :src="src('dataPreview')">
-
-      <b-button size="lg" variant="light"
-      :to="user ? { name: 'view-whatnow', params: { } } : { name: 'register', params: { } }"
-      class="text-uppercase mb-4 px-5">
-        {{ $t('landing.view_message_library')}}
-      </b-button>
-    </section>
+      </b-col>
+    </b-row>
+    <div class="btn-bottom-container">
+      <b-button class="btn-primary btn-bottom" @click="$router.push('/register')">Sign up today</b-button>
+    </div>
   </div>
 </template>
-
 <script>
-import { mapGetters } from 'vuex'
-import Navbar from '~/components/Navbar'
+</script>
+<style scoped>
+.top-head {
+  position: relative;
+  left: 3rem;
+  bottom: 20rem;
+}
 
-export default {
-  layout: 'default',
+.white-subtitle {
+  color: white;
+  font-size: 3rem;
+}
 
-  metaInfo () {
-    return { title: this.$t('home.home') }
-  },
+.white-text {
+  color: white;
+  line-height: 1rem;
+  font-size: 1.2rem;
+}
 
-  computed: mapGetters({
-    authenticated: 'auth/check',
-    user: 'auth/user'
-  }),
+.map-img {
+  width: 100%;
+}
 
-  data () {
-    return {
-      title: window.config.appName,
-      activeTab: 0
-    }
-  },
-  components: {
-    Navbar
+.bottom-head {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10rem;
+  padding-left: 6rem;
+}
+
+.bottom-head-text {
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+.mid-subt {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.black-band {
+  margin-top: 3rem;
+  width: 100%;
+  height: 40rem;
+  background: black;
+  color: white;
+  padding: 4rem;
+}
+
+.line-item {
+  font-size: 1rem;
+  line-height: 0.6rem;
+  text-align: center;
+  height: 5rem;
+}
+
+.circle-item {
+  background: #F6333F;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.circle-item-number {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.red-line-frag {
+  margin-top: 4rem;
+  height: 3rem;
+  width: 100%;
+  background: #F6333F;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.line-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.line-item-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.red-pointer-top {
+  background: #F6333F;
+  height: 5rem;
+  width: 2rem;
+  border-radius: 100px;
+  margin-bottom: 3rem;
+}
+
+.red-pointer-bottom {
+  background: #F6333F;
+  height: 5rem;
+  width: 2rem;
+  border-radius: 100px;
+  margin-top: 3rem;
+}
+
+.left-radius {
+  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+}
+
+.right-radius {
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.btns-container {
+  margin-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    font-size: 1.3rem;
   }
 }
-</script>
+
+.usecases {
+  background: #FAFAFA;
+  padding: 3rem 10rem;
+}
+
+.card-use-container {
+  display: flex;
+  justify-content: center;
+}
+
+.example-card {
+  background: #EFEFEF;
+  border-radius: 20px;
+  width: 70%;
+  padding: 2rem;
+}
+
+.card-subt {
+  color: #F6333F;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-txt {
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+
+.red-section {
+  margin-top: 2rem;
+  background: #FB444F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.impact-icon {
+  background: #FB444F;
+  color: white;
+  font-size: 10rem;
+  margin-bottom: 2rem;
+}
+
+.div-white {
+  background: white;
+  height: 2px;
+  width: 30%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.red-sec-txt {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.btn-bottom-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-bottom {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  font-size: 3rem;
+  border-radius: 50px;
+}
+</style>
+
