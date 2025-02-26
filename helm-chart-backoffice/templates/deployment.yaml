@@ -39,7 +39,7 @@ spec:
                       httpGet:
                           path: /health # Or another appropriate endpoint
                           port: {{ .Values.service.targetPort }}
-                      initialDelaySeconds: 15 # Wait 15 seconds after container starts
+                      initialDelaySeconds: 30 # Wait 15 seconds after container starts
                       periodSeconds: 10      # Check every 10 seconds
                       timeoutSeconds: 5      # Timeout after 5 seconds
                       failureThreshold: 3    # Mark as unhealthy after 3 consecutive failures
@@ -47,8 +47,8 @@ spec:
                       httpGet:
                           path: /health # Same endpoint as liveness probe
                           port: {{ .Values.service.targetPort }}
-                      initialDelaySeconds: 5
-                      periodSeconds: 5
+                      initialDelaySeconds: 30
+                      periodSeconds: 10
                       timeoutSeconds: 3
                       failureThreshold: 3
             imagePullSecrets:

@@ -13,11 +13,11 @@ service:
     targetPort: 80
 # Environment variables
 env:
-    APP_NAME: 'Alerts admin'
+    APP_NAME: 'IFRC Safety Messages Database'
     APP_ENV: testing
     APP_DEBUG: true
     APP_LOG_LEVEL: debug
-    APP_URL: http://localhost
+    APP_URL: http://whatnow.jazusoft.com
     GOOGLE_MAPS_KEY:
     DB_CONNECTION: mysql
     DB_PORT: 3306

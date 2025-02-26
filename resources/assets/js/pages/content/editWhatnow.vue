@@ -613,7 +613,7 @@ export default {
   position: relative;
   .save-controls-container {
     padding: 16px 24px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
     height: 70px;
