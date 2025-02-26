@@ -37,6 +37,7 @@ export default {
   },
   computed: {
     hasSidebar () {
+      if (this.$route.path === '/') return false;
       if (this.user) {
         if (this.cannot(this.user, this.permissions.VIEW_BACKEND)) return false
         let hideSidebarRoutes = [ 'docs', 'get_started' ]
