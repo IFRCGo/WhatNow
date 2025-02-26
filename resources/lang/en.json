@@ -322,7 +322,10 @@
     "upploading": "Uploading",
     "download": "Download",
     "download_as_image": "Download as an image",
-    "download_as_pdf": "Download as a PDF"
+    "download_as_pdf": "Download as a PDF",
+    "add_logo": "Add logo",
+    "edit_logo": "Edit logo",
+    "loading_image": "Loading..."
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -561,6 +564,10 @@
       "create_btn": "Add hazard",
       "contributor_name_label": "Contributor Name",
       "contributor_single": "Contributor"
+    },
+    "previewer": {
+      "download_image_error": "Error downloading image, please try again.",
+      "download_pdf_error": "Error downloading PDF, please try again."
     },
     "audit": "Audit log",
     "export": "Export",

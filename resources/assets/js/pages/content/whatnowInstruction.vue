@@ -32,7 +32,7 @@
       </div>
     </div>
     <b-card
-      :class="`mb-5 key-message-card key-message-card-${instructionName} bg-grey`">
+      :class="`mb-3 key-message-card key-message-card-${instructionName} bg-grey`">
       <!-- We have to use n in x here as you cannot directly mutate an object in a v-model -->
       <transition-group v-for="(message, index) in keyMessages" :key="`message-${index}`" name="fade-slide" tag="ol" class="pt-4 whatnow-instruction-list">
         <div class="mb-5" :key="`title-${index}`">
@@ -88,21 +88,38 @@
               </b-button>
           </b-input-group>
         </li>
-        <WhatnowDownloadImage v-if="message.supportingMessages.length > 0" :instructionId="instructionId" :langCode="langCode"
-          :instructionName="instructionName" :revision="true" :key="message.key"/>
       </transition-group>
     </b-card>
+
+    <b-button variant="outline-primary" size="sm" @click="openKeyMessagePreviewer" class="btn-download btn mb-2">
+    {{ $t('common.download') }}
+      <font-awesome-icon class="ml-2" :icon="['fas', 'download']" />
+    </b-button>
+
+    <!-- preview -->
+    <b-modal size="xl"  ref="keyMessagePreviewer" :hide-footer="true" id="pre-image" centered :hide-header="true">
+      <whatnowPreviewer
+        :eventType="eventType"
+        :keyMessage="instructions"
+        :stageName="instructionName"
+        :title="title"
+        :description="description"
+        :selectedSoc="selectedSoc"
+        :selectedLanguage="selectedLanguage"
+        :contributors="selectedSoc.translations[selectedLanguage].contributors"
+      />
+    </b-modal>
   </b-col>
 </template>
 <script>
-import WhatnowDownloadImage from './whatnowDownloadImage'
+import WhatnowPreviewer from './whatnowPreviewer'
 import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 
 export default {
-  props: ['disabled', 'instructions', 'instructionName', 'instructionId', 'langCode'],
+  props: ['disabled', 'instructions', 'instructionName', 'instructionId', 'langCode', 'title', 'description', 'eventType', 'selectedSoc', 'selectedLanguage'],
   components: {
-    WhatnowDownloadImage
+    WhatnowPreviewer
   },
   data() {
     return {
@@ -165,6 +182,9 @@ export default {
         currentMessage
       ]
       this.instructionChange();
+    },
+    openKeyMessagePreviewer() {
+      this.$refs.keyMessagePreviewer.show()
     },
   },
   computed: {

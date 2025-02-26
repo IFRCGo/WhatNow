@@ -35,6 +35,6 @@ class UserNeedsConfirmation extends Notification
             ->subject(trans('auth.confirmation.confirm'))
             ->greeting(trans('auth.confirmation.confirm'))
             ->line(trans('auth.confirmation.email_body'))
-            ->action(trans('auth.confirmation.confirm'), route('confirm', (string) $this->confirmationToken));
+            ->action(trans('auth.confirmation.confirm'), route('confirm', ['token' => (string) $this->confirmationToken]));
     }
 }

@@ -115,15 +115,11 @@
 import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 import swal from 'sweetalert2'
-import WhatnowDownloadImage from './whatnowDownloadImage'
-import whatnowPrevisualizer from './whatnowPrevisualizer'
 import WhatnowMessageCard from './whatnowMessageCard'
 
 export default {
   props: ['selectedLanguage', 'content', 'isPromo', 'regionSlug', 'forceCreate', 'selectedSoc'],
   components: {
-    WhatnowDownloadImage,
-    whatnowPrevisualizer,
     WhatnowMessageCard,
   },
   data() {

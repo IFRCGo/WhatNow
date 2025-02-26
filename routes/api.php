@@ -107,7 +107,7 @@ Route::group(['middleware' => 'guest:api'], function () {
     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'); // Send password reset email
     Route::post('password/reset', 'Auth\ResetPasswordController@reset'); // Reset password
     // User confirmation
-    Route::get('confirm/{token}', 'Auth\UserConfirmationController@confirm'); // Confirm user email
+    Route::get('confirm/{token}', 'Auth\UserConfirmationController@confirm')->name('confirm'); // Confirm user email
     Route::post('confirm/password/set', 'Auth\UserConfirmationController@storePassword'); // Set initial password
 });
 

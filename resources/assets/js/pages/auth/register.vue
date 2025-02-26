@@ -189,13 +189,13 @@
             <div class="register_form-bottom">
               <p class="text-center mt-5 mb-0 bottom-text">
                 {{ $t('register_form.sign_up_agreement') }}
-                <b-link @click="sawTerms = true" :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
+                <b-link :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
                   {{ $t('register_form.terms_conditions') }}
                 </b-link>
               </p>
               <div class="form-group mb-5">
                 <!-- Submit Button -->
-                <v-button :loading="form.busy" :disabled="!sawTerms"  class="btn-primary btn btn-lg w-100">
+                <v-button :loading="form.busy" :disabled="!isFormComplete" @click="checkTerms" class="btn-primary btn btn-lg w-100">
                   {{ $t('register_form.create_account') }}
                 </v-button>
               </div>
@@ -262,7 +262,7 @@ export default {
   },
 
   methods: {
-    async register () {
+    async register() {
       // Register the user.
       const { data } = await this.form.post('/api/register')
 
@@ -278,6 +278,9 @@ export default {
           this.$fireGTEvent(this.$gtagEvents.SignUp)
         }).catch(swal.noop)
       }
+    },
+    async checkTerms() {
+      this.sawTerms = true
     },
     fbLogin () {
       FB.login(async (response) => {
@@ -310,7 +313,7 @@ export default {
       } else {
         this.$router.push({ name: 'home' })
       }
-    },
+    }
   },
   created () {
     const countries = require('country-list')()
@@ -319,7 +322,10 @@ export default {
   computed: {
     ...mapGetters({
       user: 'auth/user'
-    })
+    }),
+    isFormComplete() {
+      return this.form.first_name && this.form.last_name && this.form.email && this.form.password && this.form.password_confirmation && this.form.country_code && this.form.organisation && this.form.industry_type
+    }
   }
 }
 </script>
