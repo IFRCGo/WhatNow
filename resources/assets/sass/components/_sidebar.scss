@@ -10,6 +10,7 @@
   top: 0;
   min-height: calc(100vh - 6rem);
   max-height: 100vh;
+  border-right: 1px solid #ccc; /* Agrega esta línea para la línea gris a la derecha */
   .nav {
     transition: margin 0.3s ease-in;
     li {
@@ -69,7 +70,6 @@
 
   .nav-toggle {
     font-weight: bold;
-    text-transform: uppercase;
 
     &.collapsed {
       font-weight: normal;
