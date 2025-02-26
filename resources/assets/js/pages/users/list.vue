@@ -68,7 +68,7 @@
           v-if="!apiUsers"/>
       </b-col>
       <b-col cols="2" xl="1">
-        <b-button @click="clearFilters" :disabled="noFilters" class="float-right btn-outline-primary">
+        <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary float-right rtl-float-left clear-filter-btn">
           {{ $t('users.list.clear_filters') }}
         </b-button>
       </b-col>
@@ -128,28 +128,30 @@
             <template #cell(actions)="data">
             <div class="d-flex flex-column">
               <div class="d-flex justify-content-between mb-1">
-                <b-button class="btn-outline-primary" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
-                  <i class="fas fa-pen-square fa-lg"></i>
+                <b-button class="btn-outline-primary small-text align-text" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
+                  {{$t('common.edit')}}
                 </b-button>
                 <b-button class="btn-outline-primary small-text" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)">
                   {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }}
                 </b-button>
+                <b-button class="btn-outline-primary small-text" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
+                  Reset Password
+                </b-button>
               </div>
-              <b-button class="btn-outline-primary small-text" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
-                Reset Password
-              </b-button>
             </div>
           </template>
           </b-table>
         </div>
         <b-pagination
           v-if="users.meta.total > users.meta.per_page"
-          size="md"
+          pills
           :total-rows="users.meta.total"
           v-model="currentPage"
           :per-page="users.meta.per_page"
           :limit="10"
-          align="center"></b-pagination>
+          class="pagination"
+          align="center">
+        </b-pagination>
         <p v-if="users.data.length === 0">
           {{ $t('users.list.empty') }}
         </p>
@@ -468,7 +470,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .v-form-select-custom {
     background: #E9E9E9;
     border: none;
@@ -486,6 +488,21 @@ export default {
   .custom-avatar {
     background-color: #F6333F !important;
     color: #FFFFFF !important;
+  }
+
+  .clear-filter-btn {
+    margin-top: 2.5rem;
+  }
+
+  .align-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  btn-outline-primary.disabled, .btn-outline-primary:disabled {
+    color: white;
+    background: grey;
   }
 
 </style>

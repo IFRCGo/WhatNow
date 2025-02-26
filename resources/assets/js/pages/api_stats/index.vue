@@ -11,7 +11,7 @@
           :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
           v-model="tableView"
           :clearable="false"
-          class="w-100 styled-select ml-auto"
+          class="w-100 v-select-custom ml-auto"
           :options="tableViewOptions"
           label="name">
           <template slot="option" slot-scope="option">
@@ -34,7 +34,7 @@
                 <selectSociety v-model="selectedSoc" :societyList="filteredSocieties"></selectSociety>
                 <selectRegion v-model="selectedRegion" :socCode="selectedSoc?.countryCode ?? null"></selectRegion>
                 <b-form-datepicker :date-format-options="{ year: 'numeric', month: '2-digit', day: '2-digit' }" v-model="selectedDate" :max="new Date()" class="mb-2"></b-form-datepicker>
-                <v-select v-model="selectedLanguage" class="w-100 styled-select p-0" :options="filteredLanguages" label="name" :disabled="filteredLanguages.length === 0" :placeholder="$t('content.whatnow.select_language')">
+                <v-select v-model="selectedLanguage" class="w-100 v-select-custom p-0" :options="filteredLanguages" label="name" :disabled="filteredLanguages.length === 0" :placeholder="$t('content.whatnow.select_language')">
                   <template slot="option" slot-scope="option">
                     {{ option.text }}
                   </template>
@@ -47,13 +47,13 @@
           </b-row>
           <b-row>
             <b-col class="mb-3 mb-lg-0" cols="12" lg="4">
-              <stats-card :title="$t('api_stats.cumulative_cards.hits')" icon="profile-duo" :value="cumulativeData?.hits" />
+              <stats-card class="bg-grey" :title="$t('api_stats.cumulative_cards.hits')" icon="profile-duo" :value="cumulativeData?.hits" />
             </b-col>
             <b-col class="mb-3 mb-lg-0" cols="12" lg="4">
-              <stats-card :title="$t('api_stats.cumulative_cards.accounts')" icon="accounts" :value="cumulativeData?.applications" />
+              <stats-card class="bg-grey" :title="$t('api_stats.cumulative_cards.accounts')" icon="accounts" :value="cumulativeData?.applications" />
             </b-col>
             <b-col class="mb-3 mb-lg-0" cols="12" lg="4">
-              <stats-card :title="$t('api_stats.cumulative_cards.est_impacted_users')" icon="speedometer" :value="cumulativeData?.estimatedUsers" />
+              <stats-card class="bg-grey" :title="$t('api_stats.cumulative_cards.est_impacted_users')" icon="speedometer" :value="cumulativeData?.estimatedUsers" />
             </b-col>
           </b-row>
         </div>
@@ -61,7 +61,7 @@
     </page-banner>
 
     <!-- Table Filters -->
-    <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
+    <b-row class=" pt-3 pb-3 mb-3 api-stats-filter-content" align-v="center">
       <b-col cols="12" sm="5" md="4" lg="3">
         <label for="datepicker-min">{{ $t('api_stats.start_date') }}</label>
         <b-form-datepicker id="datepicker-min" v-model="fromDate" :max="toDate" class="mb-2"></b-form-datepicker>
@@ -71,7 +71,7 @@
         <b-form-datepicker id="datepicker-max" v-model="toDate" :disabled="!fromDate" :min="fromDate" :max="today" class="mb-2"></b-form-datepicker>
       </b-col>
       <b-col class="ml-auto" cols="12" sm="2">
-        <b-button size="sm" variant="dark" class="float-right" @click="downloadStatsCSV">
+        <b-button size="sm" class="float-right btn-outline-primary" @click="downloadStatsCSV">
           {{ $t('api_stats.download_data') }}
         </b-button>
       </b-col>
@@ -97,7 +97,7 @@ import StatsCard from '~/pages/api_stats/components/StatsCard'
 import APIApplicationsTable from '~/pages/api_stats/components/APIApplicationsTable'
 import APIEndpointsTable from '~/pages/api_stats/components/APIEndpointsTable'
 import { formatDate } from '~/utils/time'
-import SelectSociety from '~/pages/content/simpleSocietyPicker'
+import SelectSociety from '~/pages/content/selectSociety'
 import SelectRegion from '~/pages/content/regionPicker'
 import { languages } from 'countries-list'
 import SelectHazard from '~/pages/content/simpleHazardTypePicker'
@@ -291,7 +291,7 @@ export default {
   select, .b-form-datepicker{
     background: $bg-disabled;
     border-radius: 10px;
-    color: #000;
+    color: red;
     height: 45px;
   }
 

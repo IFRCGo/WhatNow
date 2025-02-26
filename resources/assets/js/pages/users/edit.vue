@@ -196,7 +196,8 @@
                   text-field="name"
                   :options="filteredRoles"
                   :disabled="isMe"
-                  class="mb-3"></b-form-select>
+                  class="mb-3">
+                </b-form-select>
                 </b-col>
               </b-row>
 
@@ -295,11 +296,11 @@
              <b-button size="lg" :variant="user.activated ? 'danger' : 'success'" class="float-right mr-2 mb-4 mt-4" v-if="(!newUser && !isMe) && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))" @click="toggleDeactivate(user)">
                {{ user.activated ? $t('common.deactivate_user') : $t('common.reactivate_user') }}
              </b-button>
-             <b-button type="submit" size="lg" variant="dark" class="float-right mr-2 mb-4 mt-4" @click="reset = false" v-if="newUser && can(authUser, permissions.USERS_CREATE)">
+             <b-button type="submit" size="lg" class="btn-outline-primary float-right mr-2 mb-4 mt-4" @click="reset = false" v-if="newUser && can(authUser, permissions.USERS_CREATE)">
                 <fa :icon="['fas', 'spinner']" spin v-show="saving && !reset"/>
                 {{ $t('common.send_invite') }}
              </b-button>
-             <b-button type="submit" size="lg" variant="dark" class="float-right mr-2 mb-4 mt-4" v-if="newUser && can(authUser, permissions.USERS_CREATE)" @click="reset = true">
+             <b-button type="submit" size="lg" class="btn-outline-primary float-right mr-2 mb-4 mt-4" v-if="newUser && can(authUser, permissions.USERS_CREATE)" @click="reset = true">
                 <fa :icon="['fas', 'spinner']" spin v-show="saving && reset"/>
                 {{ $t('common.invite_and_create') }}
              </b-button>
@@ -643,7 +644,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .inputs-form {
   background: #E9E9E9;
   border: none;
@@ -676,5 +677,12 @@ export default {
   padding: 1rem;
   border-radius: 10px;
   background: #E9E9E9;
+}
+
+.custom-select {
+  background: #E9E9E9;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
 }
 </style>
