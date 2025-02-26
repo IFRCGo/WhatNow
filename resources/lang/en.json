@@ -75,7 +75,7 @@
     "create": "Create",
     "content": "Content",
     "what_now_content": "What Now Content",
-    "bulk_upload": "Bulk Upload",
+    "bulk_upload": "Messaje File Upload",
     "audit_log": "Audit Log",
     "api_usage": "API Usage",
     "app_detail": "App Detail",
@@ -196,14 +196,14 @@
     "steps": {
       "one": {
         "heading": "Step 1 - Sign up",
-        "body": "To get started using data from the WhatNow API, firstly {0} to the WhatNow Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
+        "body": "To get started using data from the Safety Message Database API, firstly {0} to the Safety Message Database Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
         "create_account_alt": "create account",
         "existing_account": "If you already have an account, please {0}.",
         "login_cta": "log in",
         "sign_up_cta": "sign up"
       },
       "two": {
-        "body": "To use the API you must create an application in the WhatNow Portal. Tell us a little about what you're building.",
+        "body": "To use the API you must create an application in the Safety Message Database Portal. Tell us a little about what you're building.",
         "create_app_alt": "create app",
         "heading": "Step 2 - Create an app"
       },
@@ -215,7 +215,7 @@
       },
       "four": {
         "api_docs_cta": "API documentation",
-        "body": "The WhatNow API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
+        "body": "The Safety Message Database API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
         "example_title": "Example Request",
         "heading": "Step 4 - Make a request",
         "moreInfo": "For more information on all API endpoints, see the {0}."
@@ -225,13 +225,13 @@
   "home_pods": {
     "bulk_upload": "Upload .csv files so that you can update large amounts of content at once",
     "audit_log": "Here is where you can view a log of activities",
-    "whatnow_edit": "This is where you can edit WhatNow content",
-    "whatnow_review": "This is where you can review WhatNow content",
-    "whatnow_publish": "This is where you can edit and publish WhatNow content",
+    "whatnow_edit": "This is where you can edit Safety Message Database content",
+    "whatnow_review": "This is where you can review Safety Message Database content",
+    "whatnow_publish": "This is where you can edit and publish Safety Message Database content",
     "manage_users": "This is where to manage the users (Create, edit and remove)",
     "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
     "wellcome": "Welcome",
-    "wellcome_description": "Here you can edit and publish WhatNow content."
+    "wellcome_description": "Here you can edit and publish Safety Message Database content."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +259,16 @@
   "sidebar": {
     "manage": "Manage Content Users",
     "content_users": "Content Users",
-    "audit_log": "Audit Log",
-    "whatnow": "WhatNow",
-    "bulk": "Bulk Upload",
+    "audit_log": "Edit History",
+    "whatnow": "Attribution Editor",
+    "bulk": "Messaje File Upload",
     "content": "Content",
     "api": "API Usage",
     "applications": "Applications",
     "api_stats": "API Stats",
     "api_users": "API Users",
     "terms_conditions": "Terms and Conditions",
-    "regions": "Regions"
+    "regions": "Subregions"
   },
   "common": {
     "accept": "Accept",
@@ -414,7 +414,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNow Messages",
+      "btn": "Safety Messages",
       "step_1": {
         "header": "Step 1: View the messages",
         "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
@@ -446,7 +446,7 @@
     "content": "Content",
     "audit_log": {
       "audit_log": "Audit Log",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Edit History",
       "empty": "No audit history found which matches this filter",
       "soc_label": "Society",
       "select_hazard": "Select hazard type",
@@ -458,15 +458,15 @@
     "whatnow": {
       "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
-      "whatnow": "WhatNow",
-      "empty": "There are no published WhatNow messages for this National Society",
+      "whatnow": "Safety Message Database",
+      "empty": "There are no published Safety messages for this National Society",
       "steps": "Steps",
       "publish": "Publish",
       "no_publish": "Nothing to publish",
       "published": "translations published",
       "publishing": "Publishing",
       "content_to_publish": "WHAT WILL BE PUBLISHED",
-      "whatnow_content": "WhatNow content",
+      "whatnow_content": "Safety Message Database content",
       "choose_hazard": "Choose Hazard",
       "hazard": "Hazard",
       "content": "Content",
@@ -477,8 +477,8 @@
       "society_name": "National Society",
       "attribution_message": "Attribution message",
       "no_translation": "No content set",
-      "delete_content_translation": "This will remove the selected whatnow content from the current language",
-      "messages": "WhatNow messages of the",
+      "delete_content_translation": "This will remove the selected Safety Message Database content from the current language",
+      "messages": "Safety messages of the",
       "add_language": "Add new language",
       "no_languages": "Select or create a language to get started",
       "no_soc": "Select a society",
@@ -506,11 +506,11 @@
       "enter_other_hazard_type": "Enter Hazard Type Name",
       "other_hazard_type_label": "Other Hazard Type",
       "stepped_content": "Stepped Content Piece",
-      "content_title_description": "Title for these WhatNow Messages",
-      "content_description_description": "Description of these WhatNow Messages",
+      "content_title_description": "Title for these Safety Messages",
+      "content_description_description": "Description of these Safety Messages",
       "content_label": "Please enter some hazard information",
       "content_url": "URL",
-      "content_url_description": "URL for more information about these WhatNow messages. Please include the protocol, i.e. http:// or https://",
+      "content_url_description": "URL for more information about these Safety messages. Please include the protocol, i.e. http:// or https://",
       "created": "created",
       "pieces_edited": " Pieces Edited",
       "content_placeholder": "Please enter a message",
@@ -541,7 +541,7 @@
       "download_image": "Download as an Image",
       "download_image_error": "Error downloading image, please make sure you have published all changes and try again.",
       "download_instructions": "Right click and select 'Save image as…' to save",
-      "downloaded_image_alt": "WhatNow Instructions",
+      "downloaded_image_alt": "Safety Message Database Instructions",
       "add_key_message": "Add Key Message",
       "add_supporting_message": "Add Support Message",
       "early_warning": "Early Warning",
@@ -557,7 +557,7 @@
       "supporting_message_label": "Supporting message"
     },
     "message_editor": {
-      "title": "Message Editor",
+      "title": "Attribution Editor",
       "society_name_label": "National society name",
       "attribution_url_label": "Attribution URL",
       "attribution_message_label": "Attribution Message",
@@ -569,10 +569,10 @@
       "download_image_error": "Error downloading image, please try again.",
       "download_pdf_error": "Error downloading PDF, please try again."
     },
-    "audit": "Audit log",
+    "audit": "Edit history",
     "export": "Export",
     "bulk_upload": {
-      "bulk_upload": "Bulk Upload",
+      "bulk_upload": "Messaje File Upload",
       "template": "Template",
       "export_template": "Export Template",
       "import_data": "Import Data",
@@ -595,7 +595,7 @@
       "submit": "Import Content",
       "reset": "Upload Another",
       "export_template_guide": "Export Template Guide",
-      "export_template_instructions": "For instructions on how to use this bulk upload template effectively, please view this guide.",
+      "export_template_instructions": "For instructions on how to use this messaje file upload template effectively, please view this guide.",
       "refer": "Refer to",
       "detail": "for detail instructions",
       "warnings": {
@@ -673,9 +673,9 @@
   "home": {
     "home": "Home",
     "welcome": "Welcome",
-    "admin_intro": "Here you can manage users, edit and publish WhatNow content and view API usage.",
-    "ns_admin_intro": "Here you can edit and publish WhatNow content",
-    "ns_editor_intro": "Here you can edit WhatNow content",
+    "admin_intro": "Here you can manage users, edit and publish Safety Message Database content and view API usage.",
+    "ns_admin_intro": "Here you can edit and publish Safety Message Database content",
+    "ns_editor_intro": "Here you can edit Safety Message Database content",
     "api_user_intro": "Here you view your apps and manage your account.",
     "role_changed_title": "Your role was changed",
     "role_changed_p": "You have been assigned the following role:",
@@ -684,7 +684,7 @@
     "role_changed_dismiss": "Close"
   },
   "landing": {
-    "strapline": "WhatNow Service",
+    "strapline": "Safety Message Database Service",
     "strapline_part_2": "Global Red Cross / Red Crescent Key Safety Messages",
     "head_1": "IFRC Safety",
     "head_2": "Message Database",
@@ -726,16 +726,16 @@
     "sign_up_today": "Sign up today",
     "developer": {
       "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
-      "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages."
+      "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages."
     },
     "national_society": {
       "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",
       "strap_para_two": "Contact us to learn more about how to create the messages and connect with media partners."
     },
     "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
-    "strap_para_two": "Use our easy four-step guide to integrate the WhatNow messages into your application. Sign up and see all available messages.",
+    "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages.",
     "view_data": "View the data",
-    "view_message_library": "View WhatNow Messages",
+    "view_message_library": "View Safety Messages",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Extreme Cold Warning",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -755,10 +755,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Sample WhatNow Message Format",
+      "heading": "Sample Safety Message Format",
       "alert_preview": "Alert preview",
-      "what_now_info": "WhatNow Preview",
-      "example_whatnow_request": "Sample WhatNow Response",
+      "what_now_info": "Safety Message Preview",
+      "example_whatnow_request": "Sample Safety Message Database Response",
       "example_alert_request": "Sample Alert Response",
       "example_content": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",
       "example_content_location_header": "AFFECTED LOCATION",
@@ -780,7 +780,7 @@
       "heading": "Ready to build your app?"
     },
     "data_preview": {
-      "heading": "WhatNow Messages",
+      "heading": "Safety Messages",
       "sub_heading": "Sign up and view the key action messages from Red Cross / Red Crescent National Societies around the world"
     },
     "footer": {
@@ -869,7 +869,7 @@
       "heading": "License and Limitations:"
     },
     "overview": {
-      "body": "The Global Disaster Preparedness Center WhatNow Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
+      "body": "The Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
       "cta": "Click here to register."
     },
     "privacy_policy": {
@@ -901,7 +901,7 @@
   "view_data": {
     "alert_title": "ALERT:",
     "more_info": "more info:",
-    "which": "Which WhatNow Messages do you want to view?",
+    "which": "Which Safety Messages do you want to view?",
     "view_data": "View Data",
     "alerts": "Alerts",
     "alert_preview": "Alert preview",
@@ -912,7 +912,7 @@
     "date": "Date",
     "headline": "Headline",
     "alert": "Alert",
-    "whatnow_info": "Whatnow info",
+    "whatnow_info": "Safety Message Database info",
     "alert_detail": "Alert Detail",
     "more": "More info",
     "area_affected": "Area Affected",
@@ -938,7 +938,7 @@
   },
   "user_agreement": {
     "title": "User agreement",
-    "para_one": "Before you can access the WhatNow Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
+    "para_one": "Before you can access the Safety Message Database Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
     "cta": "I accept",
     "download": "Click here to view the user agreement document (105KB)"
   },
@@ -963,7 +963,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Manage Regions",
+      "manage": "Subregions",
       "create": "Create new region",
       "edit": "Edit Region",
       "add": "Add Region",
@@ -976,7 +976,7 @@
     "create": "Create a new Region",
     "form": {
       "name": "Region Name",
-      "name_help": "Name the region you want to create custom WhatNow messaging for.",
+      "name_help": "Name the region you want to create custom safety messaging for.",
       "description": "Description",
       "description_help": "Provide more information about the region, i.e. San Francisco Bay Area."
     },
@@ -1014,6 +1014,6 @@
     "hazardCreate": "Hazard Created",
     "published": "Published",
     "draft": "Draft",
-    "bulkUploadDraft": "Bulk Upload Draft"
+    "bulkUploadDraft": "Messaje File Upload Draft"
   }
 }
