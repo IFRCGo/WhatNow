@@ -437,15 +437,16 @@
     "immediate": "Mara moja",
     "warning": "Onyo",
     "anticipated": "Inatarajiwa",
-    "assess_and_plan": "Tathmini na Panga",
-    "mitigate_risks": "Punguza Hatari",
-    "prepare_to_respond": "Jitayarishe Kujibu",
+    "assess_and_plan":"Tathmini na Panga",
+    "mitigate_risks":"Punguza Hatari",
+    "prepare_to_respond":"Jitayarishe Kujibu",
     "recover": "Pona"
   },
   "content": {
     "content": "Yaliyomo",
     "audit_log": {
       "audit_log": "Ingia ya Ukaguzi",
+      "my_audit_log": "My Audit Log",
       "empty": "Hakuna historia ya ukaguzi iliyopatikana inayolingana na kichungi hiki",
       "soc_label": "Jamii",
       "select_hazard": "Chagua aina ya hatari",

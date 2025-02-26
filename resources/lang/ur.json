@@ -437,15 +437,16 @@
     "immediate": "فوری",
     "warning": "انتباہ",
     "anticipated": "متوقع",
-    "assess_and_plan": "جائزہ لیں اور منصوبہ بنائیں",
-    "mitigate_risks": "خطرات کو کم کریں",
-    "prepare_to_respond": "جواب دینے کے لیے تیار رہیں",
+    "assess_and_plan":"جائزہ لیں اور منصوبہ بنائیں",
+    "mitigate_risks":"خطرات کو کم کریں",
+    "prepare_to_respond":"جواب دینے کے لیے تیار رہیں",
     "recover": "بحال کریں"
   },
   "content": {
     "content": "مواد",
     "audit_log": {
       "audit_log": "آڈٹ لاگ",
+      "my_audit_log": "My Audit Log",
       "empty": "اس فلٹر سے ملتی جلتی کوئی آڈٹ ہسٹری نہیں ملی",
       "soc_label": "سماج",
       "select_hazard": "خطرے کی قسم منتخب کریں",

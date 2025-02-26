@@ -437,15 +437,16 @@
     "immediate": "ทันที",
     "warning": "คำเตือน",
     "anticipated": "คาดการณ์",
-    "assess_and_plan": "ประเมินและวางแผน",
-    "mitigate_risks": "ลดความเสี่ยง",
-    "prepare_to_respond": "เตรียมพร้อมตอบสนอง",
+    "assess_and_plan":"ประเมินและวางแผน",
+    "mitigate_risks":"ลดความเสี่ยง",
+    "prepare_to_respond":"เตรียมพร้อมตอบสนอง",
     "recover": "ฟื้นฟู"
   },
   "content": {
     "content": "เนื้อหา",
     "audit_log": {
       "audit_log": "รายการบันทึกข้อมูลและการเปลี่ยนแปลง",
+      "my_audit_log": "My Audit Log",
       "empty": "ไม่พบรายการบันทึกข้อมูลและการเปลี่ยนแปลงที่ตรงกับตัวกรอง",
       "soc_label": "สมาคม",
       "select_hazard": "เลือกประเภทอันตราย",

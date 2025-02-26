@@ -437,9 +437,9 @@
     "immediate": "ወዲያውኑ",
     "warning": "ማስጠንቀቂያ",
     "anticipated": "በቅድሚያ የተጠበቀ",
-    "assess_and_plan": "ግምገማ እና እቅድ",
-    "mitigate_risks": "አደጋዎችን መቀነስ",
-    "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
+    "assess_and_plan":"ግምገማ እና እቅድ",
+    "mitigate_risks":"አደጋዎችን መቀነስ",
+    "prepare_to_respond":"ለመልስ ዝግጁ ይሁኑ",
     "recover": "መልሶ ማግኛት"
   },
   "content": {
@@ -969,8 +969,8 @@
     "language_code": "የቋንቋ ኮድ"
   },
   "terms_conditions": {
-      "title": "ውሎች እና ሁኔታዎች",
-      "accept": "ተቀበል"
+    "title": "ውሎች እና ሁኔታዎች",
+    "accept": "ተቀበል"
   },
   "badges": {
     "hazardCreate": "አደጋ ተፈጥሯል",

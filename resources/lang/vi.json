@@ -437,15 +437,16 @@
     "immediate": "Ngay lập tức",
     "warning": "Cảnh báo",
     "anticipated": "Dự kiến",
-    "assess_and_plan": "Đánh giá và Lập kế hoạch",
-    "mitigate_risks": "Giảm thiểu Rủi ro",
-    "prepare_to_respond": "Chuẩn bị ứng phó",
+    "assess_and_plan":"Đánh giá và Lập kế hoạch",
+    "mitigate_risks":"Giảm thiểu Rủi ro",
+    "prepare_to_respond":"Chuẩn bị ứng phó",
     "recover": "Phục hồi"
   },
   "content": {
     "content": "Nội dung",
     "audit_log": {
       "audit_log": "Nhật ký kiểm toán",
+      "my_audit_log": "My Audit Log",
       "empty": "Không tìm thấy lịch sử kiểm toán nào trùng khớp bộ lọc này",
       "soc_label": "Hội",
       "select_hazard": "Chọn loại nguy hiểm",

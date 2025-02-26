@@ -437,15 +437,16 @@
     "immediate": "तत्काल",
     "warning": "चेतावनी",
     "anticipated": "अपेक्षित",
-    "assess_and_plan": "मूल्याङ्कन र योजना",
-    "mitigate_risks": "जोखिमहरू कम गर्नुहोस्",
-    "prepare_to_respond": "प्रतिक्रिया दिन तयार हुनुहोस्",
+    "assess_and_plan":"मूल्याङ्कन र योजना",
+    "mitigate_risks":"जोखिमहरू कम गर्नुहोस्",
+    "prepare_to_respond":"प्रतिक्रिया दिन तयार हुनुहोस्",
     "recover": "पुनर्प्राप्त गर्नुहोस्"
   },
   "content": {
     "content": "बिषयवस्तु",
     "audit_log": {
       "audit_log": "परीक्षण अभिलेखहरु",
+      "my_audit_log": "My Audit Log",
       "empty": "यो छनाैट मिल्ने कुनैपनि परिक्षणको अभिलेख पाईएन ।",
       "soc_label": " सोसाइटी",
       "select_hazard": "खतरा प्रकार चयन गर्नुहोस्",

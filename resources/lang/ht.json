@@ -437,15 +437,16 @@
     "immediate": "Imedyat",
     "warning": "Avètisman",
     "anticipated": "Antisipe",
-    "assess_and_plan": "Evalye epi Planifye",
-    "mitigate_risks": "Diminye Risk yo",
-    "prepare_to_respond": "Prepare pou Reponn",
+    "assess_and_plan":"Evalye epi Planifye",
+    "mitigate_risks":"Diminye Risk yo",
+    "prepare_to_respond":"Prepare pou Reponn",
     "recover": "Rekipere"
   },
   "content": {
     "content": "Kontni",
     "audit_log": {
       "audit_log": "Rejis kontwòl",
+      "my_audit_log": "My Audit Log",
       "empty": "Pa jwenn yon istwa kontwòl ki mache ak filtè sa a",
       "soc_label": "Sosyete",
       "select_hazard": "Chwazi kalite danje",

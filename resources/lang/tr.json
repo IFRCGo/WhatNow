@@ -437,15 +437,16 @@
     "immediate": "Acil",
     "warning": "Uyarı",
     "anticipated": "Beklenen",
-    "assess_and_plan": "Değerlendirin ve Planlayın",
-    "mitigate_risks": "Riskleri Azaltın",
-    "prepare_to_respond": "Yanıt Vermeye Hazırlanın",
+    "assess_and_plan":"Değerlendirin ve Planlayın",
+    "mitigate_risks":"Riskleri Azaltın",
+    "prepare_to_respond":"Yanıt Vermeye Hazırlanın",
     "recover": "İyileş"
   },
   "content": {
     "content": "İçerik",
     "audit_log": {
       "audit_log": "Denetim Kaydı",
+      "my_audit_log": "My Audit Log",
       "empty": "Bu filtreye uyan denetim kaydı bulunamadı",
       "soc_label": "Dernek",
       "select_hazard": "Tehlike türü seçin",

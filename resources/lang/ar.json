@@ -437,15 +437,16 @@
     "immediate": "فوري",
     "warning": "تحذير",
     "anticipated": "متوقع",
-    "assess_and_plan": "تقييم والتخطيط",
-    "mitigate_risks": "تخفيف المخاطر",
-    "prepare_to_respond": "الاستعداد للاستجابة",
+    "assess_and_plan":"تقييم والتخطيط",
+    "mitigate_risks":"تخفيف المخاطر",
+    "prepare_to_respond":"الاستعداد للاستجابة",
     "recover": "استعادة"
   },
   "content": {
     "content": "المحتوى",
     "audit_log": {
       "audit_log": "سجل التدقيق",
+      "my_audit_log": "My Audit Log",
       "empty": "لم يتم العثور على سجل تدقيق يطابق هذا الفلتر",
       "soc_label": "المجتمع",
       "select_hazard": "اختر نوع الخطر",

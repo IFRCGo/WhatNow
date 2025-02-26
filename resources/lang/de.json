@@ -437,15 +437,16 @@
     "immediate": "Sofort",
     "warning": "Warnung",
     "anticipated": "Erwartet",
-    "assess_and_plan": "Bewerten und planen",
-    "mitigate_risks": "Risiken mindern",
-    "prepare_to_respond": "Auf die Reaktion vorbereiten",
+    "assess_and_plan":"Bewerten und planen",
+    "mitigate_risks":"Risiken mindern",
+    "prepare_to_respond":"Auf die Reaktion vorbereiten",
     "recover": "Wiederherstellen"
   },
   "content": {
     "content": "Inhalt",
     "audit_log": {
       "audit_log": "Audit-Protokoll",
+      "my_audit_log": "My Audit Log",
       "empty": "Kein Audit-Protokoll gefunden, das diesem Filter entspricht",
       "soc_label": "Gesellschaft",
       "select_hazard": "Gefahrentyp auswählen",

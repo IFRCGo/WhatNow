@@ -437,15 +437,16 @@
     "immediate": "Immédiat",
     "warning": "Avertissement",
     "anticipated": "Anticipé",
-    "assess_and_plan": "Évaluer et planifier",
-    "mitigate_risks": "Atténuer les risques",
-    "prepare_to_respond": "Se préparer à répondre",
+    "assess_and_plan":"Évaluer et planifier",
+    "mitigate_risks":"Atténuer les risques",
+    "prepare_to_respond":"Se préparer à répondre",
     "recover": "Récupération"
   },
   "content": {
     "content": "Contenu",
     "audit_log": {
       "audit_log": "Journal d'audit",
+      "my_audit_log": "My Audit Log",
       "empty": "Aucun historique d'audit ne correspond à ce filtre",
       "soc_label": "Société",
       "select_hazard": "Sélectionner le type de danger",

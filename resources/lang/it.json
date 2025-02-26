@@ -437,15 +437,16 @@
     "immediate": "Immediato",
     "warning": "Avviso",
     "anticipated": "Previsto",
-    "assess_and_plan": "Valuta e Pianifica",
-    "mitigate_risks": "Mitiga i Rischi",
-    "prepare_to_respond": "Preparati a Rispondere",
+    "assess_and_plan":"Valuta e Pianifica",
+    "mitigate_risks":"Mitiga i Rischi",
+    "prepare_to_respond":"Preparati a Rispondere",
     "recover": "Recupera"
   },
   "content": {
     "content": "Contenuto",
     "audit_log": {
       "audit_log": "Registro di controllo",
+      "my_audit_log": "My Audit Log",
       "empty": "Nessuna attività registrata corrisponde a questo filtro",
       "soc_label": "Società",
       "select_hazard": "Seleziona tipo di pericolo",

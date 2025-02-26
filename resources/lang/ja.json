@@ -437,15 +437,16 @@
     "immediate": "即時",
     "warning": "警告",
     "anticipated": "予測",
-    "assess_and_plan": "評価と計画",
-    "mitigate_risks": "リスク軽減",
-    "prepare_to_respond": "対応準備",
+    "assess_and_plan":"評価と計画",
+    "mitigate_risks":"リスク軽減",
+    "prepare_to_respond":"対応準備",
     "recover": "復旧"
   },
   "content": {
     "content": "コンテンツ",
     "audit_log": {
       "audit_log": "監査ログ",
+      "my_audit_log": "My Audit Log",
       "empty": "このフィルタに一致する監査履歴はありません",
       "soc_label": "組織",
       "select_hazard": "危険の種類を選択",
