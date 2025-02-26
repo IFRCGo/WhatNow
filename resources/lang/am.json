@@ -84,153 +84,154 @@
   "documentation": {
     "heading": "የቀይ መስቀል ኤፒአይ ሰነድ አያያዝ፤",
     "sidebar": {
-        "introduction": "መግቢያ፤",
-        "base_url": "መነሻ ዩ አር ኤል፤",
-        "changelog": "መቀየሪያ ሎግ፤",
-        "authentication": "ማረጋገጫ፤",
-        "response_codes": "የመልስ መለያ፤",
-        "emergency_alert_feed": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
-        "cap_alert_document": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
-        "what_now": "ዋት ናዉ"
+      "introduction": "መግቢያ፤",
+      "base_url": "መነሻ ዩ አር ኤል፤",
+      "changelog": "መቀየሪያ ሎግ፤",
+      "authentication": "ማረጋገጫ፤",
+      "response_codes": "የመልስ መለያ፤",
+      "emergency_alert_feed": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
+      "cap_alert_document": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
+      "what_now": "ዋት ናዉ"
     },
     "steps": {
-        "one": {
-            "body": "የቀይ መስቀል ሬስት ኤፒአይ(REST API)፣ ዴቨሎፐሮች በአለማቀፍ የቀይ መስቀል ማህበራት  የሚወጡ የድንገተኛ አደጋ መረጃዎችን አና  ሃብቶችን እንዲያገኙ ያደርጋል።",
-            "heading": "መግቢያ፤",
-            "support_card": {
-                "body": "ስለ ቀይ መስቀል ኤፒአይ ጥያቄ ካለዎት፣ በ dev@3sidedcube.com  ይላኩ።",
-                "title": "ድጋፍና ጥያቄዎች፤"
-            }
-        },
-        "two": {
-            "body": "ሁሉም በ API v1.0 ሰነድ ላይ ያሉ ዩ አር ኤሎች  የሚከተለዉ መነሻ ዩ አር ኤል አላቸዉ፤",
-            "heading": "መነሻ ዩ አር ኤል፤"
-        },
-        "three": {
-          "heading": "መቀየሪያ ሎግ፤",
-          "table": {
-              "headers": {
-                  "detail": "መልቀቅ፤",
-                  "version": "የኤፒአይ ስሪት፤",
-                  "release": "መልቀቅ፤",
-                  "release_date": "የተለቀቀበት ቀን፤"
-              }
-          }
-        },
-        "four": {
-            "body": "ይህ ኤፒ አይ(API)በ ኤፒአይ ቁልፍ በኩል ሁሉንም የመረጃ ሰነዶች ለመጠቀም ማረጋገጫ  ይጠይቃል። የኤፒአይ (API)ቁልፍ ለማግኘት፣መጀመሪያ {0}።\n\nሁሉም የኤፒአይ(API) ጥያቄዎች የሚከተለዉን የ HTTP ህዳግ ማካተት ይኖርባቸዋል።",
-            "create_app_cta": "መተግበሪያ ይፍጠሩ፤",
-            "heading": "ማረጋገጫ፤"
-        },
-        "five": {
-            "heading": "የመልስ መለያ፤",
-            "table": {
-                "descriptions": {
-                    "ok": "ጥያቄዎትን በተሣካ መልኩ ልከዋል፤ እንዲሁም ምላሹ  የተጠየቀዉን ሙሉ የመረጃ ሃብት ይዟል።",
-                    "found": "ወደሌላ ቦታ መቀየርን ያሳያል። በሎኬሸን ህዳግ (Location header) ወደ  ዩ አር አይ(URI) የሚያስገባዎትንየመግግቢያ ጥያቄ( GET request)ይላኩ፤",
-                    "not_found": "የተጠየቀዉ የመረጃ ሃብት አልተገኘም።",
-                    "not_allowed": "የተጠቀሙት  የ HTTP ዘዴ በዚህ የመረጃ ሀብት ላይ አልተፈቀደም።",
-                    "server_error": "የሰርቨር ችግር   ስለተከሰተ  የጠየቁት  የመረጃ ሃብት መመለስ አልተቻለም፤",
-                    "unavailable": "አገልግሎቱን አሁን ማግኜት አንደማይቻል ያሣያል፤ በሌላ ጊዜ ጥያቄዎን እንደገና ይሞክሩ።"
-                },
-              "headers": {
-                "code": "መለያ፤",
-                "name": "ስም",
-                "description": "መግለጫ፤"
-              }
-            }
-        },
-        "six": {
-            "card": {
-              "body": "እያንዳንዱ የቀይ መስቀል ማህበር ❴0❵v1.2 በመጠቀም ለህብረተሠቡ የማስጠንቂያ መልዕክቶችን ሊያሰራጭ ይችላል።",
-              "cta": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤",
-              "title": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤"
-            },
-            "endpoint": "ኢንድፖይንት፡",
-            "example": "በዚህ ምሳሌ፣  \"{0}\" ሚለው ቦታ ማህበሩ በሚገኝበት አገር መለያ ቁጥር  መተካት አለበት። ለምሳሌ፦",
-            "feed_intro": "የእያንዳንዱ ማህበር አዳዲስ መረጃም በሚከተለው አይነት ተዘርዝረዋል ፤",
-            "heading": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
-            "intro": "በሁሉም ማህበራት  የሚሰጡት የ CAP ማስጠንቀቂያዎች የማሠራጬት በ RSS ግብዓት ሥር  ነዉ። ይህ በሚከተለዉ ኢንድፖይንት ሊገኝ ይችላል፤"
-        },
-        "seven": {
-            "endpoint": "ኢንድፖይንት፡",
-            "example_response": "የምሳሌ መልሥ፤",
-            "heading": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
-            "body": "የ CAP የማስጠንቀቂያ ሰነዶች፣ በእያንዳንዱ የ RSS መረጃ ቁጥር በተገለጸዉ የአብሶሉት ሊንክ በኩል ሊገኝ ይችላል። የማስጠንቀቂያ URI፣የሚከተለዉን ፎርማት ይጠቀማል፤ "
-        },
-        "eight": {
-            "body": "የሚከተሉት ኢንድፖይንቶች በቀይ መስቀል ማህበራት የወጡ፤ ለተለያዩ አደጋዎች መከላከል  እና ዝግጁነት የሚጠቅሙ የተሠናሠሉ መረጃዎችን ይሠጣሉ።\n\nእያንዳንዱ ግብዓት ስድስት የአደጋ መከላከል ደረጃዎች ያሉበት መረጃ ይዟል፤",
-            "endpoint": "ኢንድፖይንት፡",
-            "example_response": "የሙከራ መልሥ፤",
-            "heading": "ዋት ናዉ",
-            "note": "ያስታዉሱ!",
-            "noteDetails": "{0} ሁሉም ምላሾች በዋናዉ {1} ባለቤትነት ስር ይገኛሉ።",
-            "query_params": "የጥያቄ መለኪያዎች፤",
-            "response_properties": "የምላሽ ባህርያት፤",
-            "structure": "የዋት ናዉ  ንጥል ኦብጀክቶች አቀማመጥ፤",
-            "stucture_attribution": "የ {0} ኦብጀክት አቀማመጥ፤",
-            "stucture_attribute_translation": "የ {0} ኦብጀክት የአቀማመጥ መለያ፤",
-            "stucture_translation": "የ {0} ኦብጀክት አቀማመጥ፤",
-            "table": {
-                "query_params": {
-                    "name": "ስም",
-                    "description": "መግለጫ፤"
-                },
-                "structure": {
-                    "property": "ባህሪ፤",
-                    "data_type": "የመረጃ ዓይነት፤",
-                    "description": "መግለጫ፤"
-                }
-            }
+      "one": {
+        "body": "የቀይ መስቀል ሬስት ኤፒአይ(REST API)፣ ዴቨሎፐሮች በአለማቀፍ የቀይ መስቀል ማህበራት  የሚወጡ የድንገተኛ አደጋ መረጃዎችን አና  ሃብቶችን እንዲያገኙ ያደርጋል።",
+        "heading": "መግቢያ፤",
+        "support_card": {
+          "body": "ስለ ቀይ መስቀል ኤፒአይ ጥያቄ ካለዎት፣ በ dev@3sidedcube.com  ይላኩ።",
+          "title": "ድጋፍና ጥያቄዎች፤"
         }
+      },
+      "two": {
+        "body": "ሁሉም በ API v1.0 ሰነድ ላይ ያሉ ዩ አር ኤሎች  የሚከተለዉ መነሻ ዩ አር ኤል አላቸዉ፤",
+        "heading": "መነሻ ዩ አር ኤል፤"
+      },
+      "three": {
+        "heading": "መቀየሪያ ሎግ፤",
+        "table": {
+          "headers": {
+            "detail": "መልቀቅ፤",
+            "version": "የኤፒአይ ስሪት፤",
+            "release": "መልቀቅ፤",
+            "release_date": "የተለቀቀበት ቀን፤"
+          }
+        }
+      },
+      "four": {
+        "body": "ይህ ኤፒ አይ(API)በ ኤፒአይ ቁልፍ በኩል ሁሉንም የመረጃ ሰነዶች ለመጠቀም ማረጋገጫ  ይጠይቃል። የኤፒአይ (API)ቁልፍ ለማግኘት፣መጀመሪያ {0}።\n\nሁሉም የኤፒአይ(API) ጥያቄዎች የሚከተለዉን የ HTTP ህዳግ ማካተት ይኖርባቸዋል።",
+        "create_app_cta": "መተግበሪያ ይፍጠሩ፤",
+        "heading": "ማረጋገጫ፤"
+      },
+      "five": {
+        "heading": "የመልስ መለያ፤",
+        "table": {
+          "descriptions": {
+            "ok": "ጥያቄዎትን በተሣካ መልኩ ልከዋል፤ እንዲሁም ምላሹ  የተጠየቀዉን ሙሉ የመረጃ ሃብት ይዟል።",
+            "found": "ወደሌላ ቦታ መቀየርን ያሳያል። በሎኬሸን ህዳግ (Location header) ወደ  ዩ አር አይ(URI) የሚያስገባዎትንየመግግቢያ ጥያቄ( GET request)ይላኩ፤",
+            "not_found": "የተጠየቀዉ የመረጃ ሃብት አልተገኘም።",
+            "not_allowed": "የተጠቀሙት  የ HTTP ዘዴ በዚህ የመረጃ ሀብት ላይ አልተፈቀደም።",
+            "server_error": "የሰርቨር ችግር   ስለተከሰተ  የጠየቁት  የመረጃ ሃብት መመለስ አልተቻለም፤",
+            "unavailable": "አገልግሎቱን አሁን ማግኜት አንደማይቻል ያሣያል፤ በሌላ ጊዜ ጥያቄዎን እንደገና ይሞክሩ።"
+          },
+          "headers": {
+            "code": "መለያ፤",
+            "name": "ስም",
+            "description": "መግለጫ፤"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "እያንዳንዱ የቀይ መስቀል ማህበር ❴0❵v1.2 በመጠቀም ለህብረተሠቡ የማስጠንቂያ መልዕክቶችን ሊያሰራጭ ይችላል።",
+          "cta": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤",
+          "title": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤"
+        },
+        "endpoint": "ኢንድፖይንት፡",
+        "example": "በዚህ ምሳሌ፣  \"{0}\" ሚለው ቦታ ማህበሩ በሚገኝበት አገር መለያ ቁጥር  መተካት አለበት። ለምሳሌ፦",
+        "feed_intro": "የእያንዳንዱ ማህበር አዳዲስ መረጃም በሚከተለው አይነት ተዘርዝረዋል ፤",
+        "heading": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
+        "intro": "በሁሉም ማህበራት  የሚሰጡት የ CAP ማስጠንቀቂያዎች የማሠራጬት በ RSS ግብዓት ሥር  ነዉ። ይህ በሚከተለዉ ኢንድፖይንት ሊገኝ ይችላል፤"
+      },
+      "seven": {
+        "endpoint": "ኢንድፖይንት፡",
+        "example_response": "የምሳሌ መልሥ፤",
+        "heading": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
+        "body": "የ CAP የማስጠንቀቂያ ሰነዶች፣ በእያንዳንዱ የ RSS መረጃ ቁጥር በተገለጸዉ የአብሶሉት ሊንክ በኩል ሊገኝ ይችላል። የማስጠንቀቂያ URI፣የሚከተለዉን ፎርማት ይጠቀማል፤ "
+      },
+      "eight": {
+        "body": "የሚከተሉት ኢንድፖይንቶች በቀይ መስቀል ማህበራት የወጡ፤ ለተለያዩ አደጋዎች መከላከል  እና ዝግጁነት የሚጠቅሙ የተሠናሠሉ መረጃዎችን ይሠጣሉ።\n\nእያንዳንዱ ግብዓት ስድስት የአደጋ መከላከል ደረጃዎች ያሉበት መረጃ ይዟል፤",
+        "endpoint": "ኢንድፖይንት፡",
+        "example_response": "የሙከራ መልሥ፤",
+        "heading": "ዋት ናዉ",
+        "note": "ያስታዉሱ!",
+        "noteDetails": "{0} ሁሉም ምላሾች በዋናዉ {1} ባለቤትነት ስር ይገኛሉ።",
+        "query_params": "የጥያቄ መለኪያዎች፤",
+        "response_properties": "የምላሽ ባህርያት፤",
+        "structure": "የዋት ናዉ  ንጥል ኦብጀክቶች አቀማመጥ፤",
+        "stucture_attribution": "የ {0} ኦብጀክት አቀማመጥ፤",
+        "stucture_attribute_translation": "የ {0} ኦብጀክት የአቀማመጥ መለያ፤",
+        "stucture_translation": "የ {0} ኦብጀክት አቀማመጥ፤",
+        "table": {
+          "query_params": {
+            "name": "ስም",
+            "description": "መግለጫ፤"
+          },
+          "structure": {
+            "property": "ባህሪ፤",
+            "data_type": "የመረጃ ዓይነት፤",
+            "description": "መግለጫ፤"
+          }
+        }
+      }
     }
   },
   "get_started_docs": {
     "title": "ይጀምሩ",
     "sidebar": {
-        "create_app": "መተግበሪያዉን ይፍጠሩ፤",
-        "get_api_key": "የ API ቁልፍ ይውሠዱ፤",
-        "make_request": "ጥያቄ ይላኩ፤",
-        "sign_up": "ይመዝገቡ፤\n"
+      "create_app": "መተግበሪያዉን ይፍጠሩ፤",
+      "get_api_key": "የ API ቁልፍ ይውሠዱ፤",
+      "make_request": "ጥያቄ ይላኩ፤",
+      "sign_up": "ይመዝገቡ፤\n"
     },
     "steps": {
-        "one": {
-            "heading": "ደረጃ 1 - ይመዝገቡ",
-            "body": "ከ ዋት ናው ኤፒአይ ( API )የሚመጣውን ዳታ መጠቀም ለመጀመር፣ ወደ ዋት ናው ፖርታል {0} ያድርጉ።\n\nአካዉንት ለመክፈት፣  የፌስቡክና የጎግል አካዉንቶችዎን  ወይም ኢሜይል አድራሻ መጠቀም ይችላሉ፤",
-            "create_account_alt": "አካዉንት ይክፈቱ፤",
-            "existing_account": "ከዚህ ቀደም አካዉንት ካለዎት፣ እባከዎ {0}።",
-            "login_cta": "ይግቡ፤",
-            "sign_up_cta": "ይመዝገቡ፤"
-
-        },
-        "two": {
-            "body": "API ለመጠቀም ከፈለጉ፣ በዋትናዉ ፖርታል ላይ መተግበሪያ መፍጠር ይኖርብዎታል ።\r ስለሚሰሩት ነገር በትንሹም ቢሆን ይንገሩን፤",
-            "create_app_alt": "መተግበሪያ ይፍጠሩ",
-            "heading": "ደረጃ ሁለት፦ መተግበሪያ ይፍጠሩ"
-        },
-        "three": {
-            "body": "መተግበሪያ ሲፈጥሩ የኤፒ አይ(API) ቁልፍ ወዲያዉ ይሠጥዎታል፤\n\n{0} ይህን ቁልፍ በተቻለዎት መጠን በጥንቃቄ መያዝዎትን ያረጋግጡ፤ለሌሎች ሰዎች አያጋሩ፤ ያለበለዚያ የኤፒ አይ ቁልፍዎ በራስዎ መተግበሪያ  ተጋላጭ ይሆናል።",
-            "create_api_key_alt": "የ ኤፒ አይ (API) ቁልፍ ይፍጠሩ፤",
-            "heading": "ደረጃ3 -፦የ API(ኤፒ አይ) ቁልፍ ያግኙ፤",
-            "important": "ጠቃሚ ነገር፤"
-        },
-        "four": {
-            "api_docs_cta": "የ ኤፒ አይ (API) ሰነድ፤",
-            "body": "የWhatNow(ዋት ናዉ )API  የታተመ መረጃ አና RESTful endpoint ለመስጠት HTTP(S) ይጠቀማል፤\n\nእያንዳንዱ ጥያቄ ፣ከዚህ በፊት በተፈጠረዉ  በ API ቁልፍ በመጠቀም መረጋገጥ  አለበት።",
-            "example_title": "የሙከራ ጥያቄ፤",
-            "heading": "ደረጃ4 - ጥያቄ ያቅርቡ",
-            "moreInfo": "ስለሁሉም የ API ኢንድፖይንቶች ተጨማሪ መረጃ ለማግኘት፣{0} ይመልከቱ።"
-        }
+      "one": {
+        "heading": "ደረጃ 1 - ይመዝገቡ",
+        "body": "ከ ዋት ናው ኤፒአይ ( API )የሚመጣውን ዳታ መጠቀም ለመጀመር፣ ወደ ዋት ናው ፖርታል {0} ያድርጉ።\n\nአካዉንት ለመክፈት፣  የፌስቡክና የጎግል አካዉንቶችዎን  ወይም ኢሜይል አድራሻ መጠቀም ይችላሉ፤",
+        "create_account_alt": "አካዉንት ይክፈቱ፤",
+        "existing_account": "ከዚህ ቀደም አካዉንት ካለዎት፣ እባከዎ {0}።",
+        "login_cta": "ይግቡ፤",
+        "sign_up_cta": "ይመዝገቡ፤"
+      },
+      "two": {
+        "body": "API ለመጠቀም ከፈለጉ፣ በዋትናዉ ፖርታል ላይ መተግበሪያ መፍጠር ይኖርብዎታል ።\r ስለሚሰሩት ነገር በትንሹም ቢሆን ይንገሩን፤",
+        "create_app_alt": "መተግበሪያ ይፍጠሩ",
+        "heading": "ደረጃ ሁለት፦ መተግበሪያ ይፍጠሩ"
+      },
+      "three": {
+        "body": "መተግበሪያ ሲፈጥሩ የኤፒ አይ(API) ቁልፍ ወዲያዉ ይሠጥዎታል፤\n\n{0} ይህን ቁልፍ በተቻለዎት መጠን በጥንቃቄ መያዝዎትን ያረጋግጡ፤ለሌሎች ሰዎች አያጋሩ፤ ያለበለዚያ የኤፒ አይ ቁልፍዎ በራስዎ መተግበሪያ  ተጋላጭ ይሆናል።",
+        "create_api_key_alt": "የ ኤፒ አይ (API) ቁልፍ ይፍጠሩ፤",
+        "heading": "ደረጃ3 -፦የ API(ኤፒ አይ) ቁልፍ ያግኙ፤",
+        "important": "ጠቃሚ ነገር፤"
+      },
+      "four": {
+        "api_docs_cta": "የ ኤፒ አይ (API) ሰነድ፤",
+        "body": "የWhatNow(ዋት ናዉ )API  የታተመ መረጃ አና RESTful endpoint ለመስጠት HTTP(S) ይጠቀማል፤\n\nእያንዳንዱ ጥያቄ ፣ከዚህ በፊት በተፈጠረዉ  በ API ቁልፍ በመጠቀም መረጋገጥ  አለበት።",
+        "example_title": "የሙከራ ጥያቄ፤",
+        "heading": "ደረጃ4 - ጥያቄ ያቅርቡ",
+        "moreInfo": "ስለሁሉም የ API ኢንድፖይንቶች ተጨማሪ መረጃ ለማግኘት፣{0} ይመልከቱ።"
+      }
     }
   },
   "home_pods": {
-      "bulk_upload": "የ.csv ፋይሎችን በመጫን ፣ ትላልቅ መረጃዎችን በአንድ ጊዜ ማደስ ይችላሉ፤",
-      "audit_log": "የእንቅስቃሴዎችን መዝገብ እዚህ ማየት ይችላሉ፤",
-      "whatnow_edit": "እዚህ የዋትናዉ (ን) ይዘት ማስተካከል የሚችሉበት ቦታ ነዉ፤",
-      "whatnow_review": "ይህ የWhatNow ይዘትን መገምገም የሚችሉበት ቦታ ነው",
-      "whatnow_publish": "እዚህ የዋትናዉ (ን) ይዘት ማስተካከልና ማሳተም የሚችሉበት ቦታ ነዉ፤",
-      "manage_users": "እዚህ ተጠቃሚዎችን የሚያስተዳድሩበት(የሚፈጥሩት፣የሚያስተካክሉት እና የሚያስወግዱበት) ቦታ ነዉ፤",
-      "api_usage": "እዚህ  ማን API እየተጠቀመ እንደሆነና ምን አይነት መተግበሪያዎች እየተሰሩበት እንደሆነ ማየት እነችላለን።"
+    "bulk_upload": "የ.csv ፋይሎችን በመጫን ፣ ትላልቅ መረጃዎችን በአንድ ጊዜ ማደስ ይችላሉ፤",
+    "audit_log": "የእንቅስቃሴዎችን መዝገብ እዚህ ማየት ይችላሉ፤",
+    "whatnow_edit": "እዚህ የዋትናዉ (ን) ይዘት ማስተካከል የሚችሉበት ቦታ ነዉ፤",
+    "whatnow_review": "ይህ የWhatNow ይዘትን መገምገም የሚችሉበት ቦታ ነው",
+    "whatnow_publish": "እዚህ የዋትናዉ (ን) ይዘት ማስተካከልና ማሳተም የሚችሉበት ቦታ ነዉ፤",
+    "manage_users": "እዚህ ተጠቃሚዎችን የሚያስተዳድሩበት(የሚፈጥሩት፣የሚያስተካክሉት እና የሚያስወግዱበት) ቦታ ነዉ፤",
+    "api_usage": "እዚህ  ማን API እየተጠቀመ እንደሆነና ምን አይነት መተግበሪያዎች እየተሰሩበት እንደሆነ ማየት እነችላለን።",
+    "wellcome": "እንኳን ደህና መጣህ",
+    "wellcome_description": "እዚህ ላይ WhatNow ይዘትን �መርቀቅ እና ማስተካከል ይችላሉ።"
   },
   "languages": {
     "am": "አማርኛ",
@@ -256,250 +257,370 @@
     "vi": "Tiếng Việt"
   },
   "sidebar": {
-      "manage": "የተጠቃሚዎችን ይዘት ያስተዳድሩ፤",
-      "content_users": "የይዘት ተጠቃሚዎች፤",
-      "audit_log": "የመመርመሪያ መዝገብ፤",
-      "whatnow": "ዋትናዉ\n",
-      "bulk": "በብዛት  መጫን",
-      "content": "ይዘት",
-      "api": "የኤፒአይ (API)አጠቃቀም፤",
-      "applications": "መተግበሪያዎች",
-      "api_stats": "API Stats",
-      "api_users": "የኤፒ አይ( API) ተጠቃሚዎች፤",
-      "terms_conditions": "ደምቦች አና ሁኔታዎች፤",
-      "regions": "ክልሎች"
+    "manage": "የተጠቃሚዎችን ይዘት ያስተዳድሩ፤",
+    "content_users": "የይዘት ተጠቃሚዎች፤",
+    "audit_log": "የመመርመሪያ መዝገብ፤",
+    "whatnow": "ዋትናዉ\n",
+    "bulk": "በብዛት  መጫን",
+    "content": "ይዘት",
+    "api": "የኤፒአይ (API)አጠቃቀም፤",
+    "applications": "መተግበሪያዎች",
+    "api_stats": "API Stats",
+    "api_users": "የኤፒ አይ( API) ተጠቃሚዎች፤",
+    "terms_conditions": "ደምቦች አና ሁኔታዎች፤",
+    "regions": "ክልሎች"
   },
   "common": {
-      "accept": "ይቀበሉ፤",
-      "actions": "ተግባራት፤",
-      "create": "ፍጠር",
-      "edit": "ማስተካከያ፤",
-      "deactivate": "ያቋርጡ፤",
-      "activate": "ያስጀምሩ፤",
-      "are_you_sure": "እርግጠኛ ነዎት?",
-      "yes": "አዎ",
-      "title": "ርዕስ፤",
-      "description": "መግለጫ፤",
-      "unpublished_edits": "ያልታተሙ እርማቶች?",
-      "published": "የታተሙ፤",
-      "delete": "ይሰርዙ፤",
-      "welcome": " ወደ.....እንኳን ደህና መጡ፤",
-      "save_changes": "ለዉጦችን ያሰመዝግቡ፤",
-      "auto_saving": "በራስ-ሰር በማስቀመጥ ላይ",
-      "add": "ተጨማሪ፤",
-      "my_profile": "የእኔ የግል መግለጫ፤",
-      "cancel": "ሠርዝ፤",
-      "view_changes": "ለዉጦችን ይመልከቱ፤",
-      "view_content": "ይዘቱን ይመልከቱ፤",
-      "resend_activation": "የማስጀመሪያ ኢሜይል እንደገና ይላኩ፤",
-      "deactivate_user": "ተጠቃሚዉን ያስቁሙ፤",
-      "submit_changes": "ለውጦችን ያስገቡ",
-      "reactivate_user": "ተጠቃሚዉን እንደገና ያስጀምሩ፤",
-      "send_invite": "ግብዣ ይላኩ፤",
-      "invite_and_create": "ግብዣ በመላክ ሌላ ይፍጠሩ፤",
-      "loading": "ይዘት በማስጀመር ላይ ነዉ ፤",
-      "publish_new": "አዲስ ቨርዥን ያሳትሙ፤",
-      "greeting": "ሄሎ!",
-      "removed": "ተወግዷል",
-      "copy": "ቅጂ",
-      "copied": "ተቀድቷል",
-      "not_empty": "ይህ ቦታ ባዶ መሆን አይችልም፤",
-      "name": "ስም",
-      "webUrl": "ዩ አር ኤል፤",
-      "learn_more": "የበለጠ ለማወቅ፤",
-      "validations": {
-          "empty": "ይህ ቦታ ባዶ መሆን  አይችልም",
-          "hazardIcon": "እባክዎን ከ 30 ኪሎ ባይት በታች የሆነ ምስል ይምረጡ፤"
-      },
-      "network_error": "የኔትወርክ ችግር አጋጥሟል!",
-      "network_error_text": "የኔትወርክ ችግር ያጋጠመ ይመሥላል፤ እባክዎ ከትንሽ ጊዜ በኋላ እንደገና ይሞክሩ፤",
-      "email_sent": "ኢሜይሎት ተልኳል፤",
-      "duplicate_lang_error": "ይቅርታ፡የመረጡት  ቋንቋ የነበረ ነው፤",
-      "duplicate_lang_description": " የነበረውን ቋንቋ ያስተካክሉ ወይም ደግሞ  ዝቅ ካለዉ አዝራር ዉስጥ አዲስ ቋንቋ ይምረጡ፤",
-      "estimated_users": "የሚገመቱ ተጠቃሚዎች ብዛት"
+    "accept": "ይቀበሉ፤",
+    "actions": "ተግባራት፤",
+    "create": "ፍጠር",
+    "edit": "ማስተካከያ፤",
+    "save": "አስቀምጥ",
+    "deactivate": "ያቋርጡ፤",
+    "activate": "ያስጀምሩ፤",
+    "are_you_sure": "እርግጠኛ ነዎት?",
+    "yes": "አዎ",
+    "title": "ርዕስ፤",
+    "description": "መግለጫ፤",
+    "unpublished_edits": "ያልታተሙ እርማቶች?",
+    "published": "የታተሙ፤",
+    "delete": "ይሰርዙ፤",
+    "welcome": " ወደ.....እንኳን ደህና መጡ፤",
+    "save_changes": "ለዉጦችን ያሰመዝግቡ፤",
+    "auto_saving": "በራስ-ሰር በማስቀመጥ ላይ",
+    "add": "ተጨማሪ፤",
+    "my_profile": "የእኔ የግል መግለጫ፤",
+    "cancel": "ሠርዝ፤",
+    "view_changes": "ለዉጦችን ይመልከቱ፤",
+    "view_content": "ይዘቱን ይመልከቱ፤",
+    "resend_activation": "የማስጀመሪያ ኢሜይል እንደገና ይላኩ፤",
+    "deactivate_user": "ተጠቃሚዉን ያስቁሙ፤",
+    "submit_changes": "ለውጦችን ያስገቡ",
+    "reactivate_user": "ተጠቃሚዉን እንደገና ያስጀምሩ፤",
+    "send_invite": "ግብዣ ይላኩ፤",
+    "invite_and_create": "ግብዣ በመላክ ሌላ ይፍጠሩ፤",
+    "loading": "ይዘት በማስጀመር ላይ ነዉ ፤",
+    "publish_new": "አዲስ ቨርዥን ያሳትሙ፤",
+    "greeting": "ሄሎ!",
+    "removed": "ተወግዷል",
+    "copy": "ቅጂ",
+    "copied": "ተቀድቷል",
+    "not_empty": "ይህ ቦታ ባዶ መሆን አይችልም፤",
+    "name": "ስም",
+    "webUrl": "ዩ አር ኤል፤",
+    "learn_more": "የበለጠ ለማወቅ፤",
+    "validations": {
+      "empty": "ይህ ቦታ ባዶ መሆን  አይችልም",
+      "hazardIcon": "እባክዎን ከ 30 ኪሎ ባይት በታች የሆነ ምስል ይምረጡ፤"
+    },
+    "network_error": "የኔትወርክ ችግር አጋጥሟል!",
+    "network_error_text": "የኔትወርክ ችግር ያጋጠመ ይመሥላል፤ እባክዎ ከትንሽ ጊዜ በኋላ እንደገና ይሞክሩ፤",
+    "email_sent": "ኢሜይሎት ተልኳል፤",
+    "duplicate_lang_error": "ይቅርታ፡የመረጡት  ቋንቋ የነበረ ነው፤",
+    "duplicate_lang_description": " የነበረውን ቋንቋ ያስተካክሉ ወይም ደግሞ  ዝቅ ካለዉ አዝራር ዉስጥ አዲስ ቋንቋ ይምረጡ፤",
+    "estimated_users": "የሚገመቱ ተጠቃሚዎች ብዛት",
+    "upploading": "መጫን",
+    "download": "ማውረድ",
+    "download_as_image": "እንደ ምስል ማውረድ",
+    "download_as_pdf": "እንደ PDF ማውረድ",
+    "add_logo": "ሎጎ ጨምር",
+    "edit_logo": "ሎጎ አርትዕ",
+    "loading_image": "በመጫን ላይ..."
   },
   "banners": {
-      "get_started_create": "ይጀምሩና የራስዎትን የመጀመሪያ መተግበሪያ ይፍጠሩ፤",
-      "create_app": "መተግበሪያዉን ይፍጠሩ፤",
-      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. በኋላ ላይ አንድ ነጠላ ዓረፍተ ነገር ይኑረን።"
+    "get_started_create": "ይጀምሩና የራስዎትን የመጀመሪያ መተግበሪያ ይፍጠሩ፤",
+    "create_app": "መተግበሪያዉን ይፍጠሩ፤",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. በኋላ ላይ አንድ ነጠላ ዓረፍተ ነገር ይኑረን።"
   },
   "users": {
-      "user": "ተጠቃሚ፤",
-      "deleted": "የተሠረዘ ተጠቃሚ፤",
-      "list": {
-          "manage": "ተጠቃሚዎችን ያስተዳድሩ፤",
-          "create": "አዲስ መጠቀሚያ ይፍጠሩ፤",
-          "download_report": "ሪፖርት ያውርዱ፤",
-          "empty": "ምንም መጠቀሚያ  ማግኘት አልተቻለም፤",
-          "detail": "የተጠቃሚ ዝርዝር፤",
-          "clear_filters": "የተጣሩትን ያስወግዱ፤",
-          "table_header": {
-              "user": "ተጠቃሚ፤",
-              "role": "ሚና",
-              "society": "ማህበር፤",
-              "email": "ኢሜይል",
-              "added": "ተጨምሯል፤",
-              "last_activity": "የመጨረሻ ተሣትፎ፤",
-              "t_and_c": "ቲ እናሲ ( T&C) ቨርዥን፤"
-          },
-          "societies": "ማህበራት፤"
+    "user": "ተጠቃሚ፤",
+    "deleted": "የተሠረዘ ተጠቃሚ፤",
+    "list": {
+      "manage": "ተጠቃሚዎችን ያስተዳድሩ፤",
+      "select_status": "ሁኔታ ምረጥ",
+      "select_role": "ሚና ምረጥ",
+      "select_country": "ሀገር ምረጥ",
+      "select_terms": "የውሎች ስሪት ምረጥ",
+      "select_society": "የብሔራዊ ማህበር ምረጥ",
+      "create": "አዲስ መጠቀሚያ ይፍጠሩ፤",
+      "download_report": "ሪፖርት ያውርዱ፤",
+      "empty": "ምንም መጠቀሚያ  ማግኘት አልተቻለም፤",
+      "detail": "የተጠቃሚ ዝርዝር፤",
+      "clear_filters": "የተጣሩትን ያስወግዱ፤",
+      "table_header": {
+        "user": "ተጠቃሚ፤",
+        "role": "ሚና",
+        "society": "ማህበር፤",
+        "email": "ኢሜይል",
+        "added": "ተጨምሯል፤",
+        "last_activity": "የመጨረሻ ተሣትፎ፤",
+        "t_and_c": "ቲ እናሲ ( T&C) ቨርዥን፤"
       },
-      "status": {
-          "active": "ተጀምሯል፤",
-          "deactivated": "ቆሟል፤"
+      "societies": "ማህበራት፤"
+    },
+    "status": {
+      "active": "ተጀምሯል፤",
+      "deactivated": "ቆሟል፤"
+    },
+    "edit": {
+      "super_admin_all": "ሁሉምንም ማህበራት ማግኛ፤",
+      "user_details": "የተጠቃሚ ዝርዝር፤",
+      "create_user": "አዲስ መጠቀሚያ ይፍጠሩ፤",
+      "add_society": "ማህበር የክሉ፤ ",
+      "societies_heading": "ማህበራት",
+      "roles_heading": "ሚናና ፈቃድ፤",
+      "activity_heading": "ተግባር",
+      "roles_label": "ለዚህ ተጠቃሚ ሚናዎችንና ፈቃዶችን ይምረጡ፤",
+      "activity_link": "በተጠቃሚዉ የተተገበሩ ሁሉንም ነገሮች ይመልከቱ፤",
+      "created": "መጠቀሚያዎት በተሳካ ሁኔታ ተከፍቷል፤",
+      "updated": "መጠቀሚያዎት  በተሳካ ሁኔታ ታድሷል፤",
+      "email_update": "ኢሜይልዎትን ለማደስ፣ አባክዎ የይለፍ ቃልዎን ያስገቡ፤",
+      "view": "አሳይ",
+      "more": "ተጨማሪ",
+      "less": "ያነሰ አሳይ",
+      "user_can_do": "ተጠቃሚው ምን የማድረግ ፈቃድ እንዳለው ይመልከቱ:",
+      "user_no_permission": "ተጠቃሚው ምንም ፈቃዶች አላገኘም",
+      "soc_already_added": "ይህ ተጠቃሚ አስቀድሞ ለዚህ ማህበር ተመድቧል"
+    }
+  },
+  "new_welcome": {
+    "title_1": "እንኳን ደህና መጣህ",
+    "red_title": "IFRC",
+    "title_2": "ደህንነት",
+    "title_3": "መልእክት ዳታቤዝ",
+    "text_header": "በተለያዩ መድረኮችዎ ላይ የቀይ መስቀል እና የቀይ ጨረቃ ደህንነት መልእክቶችን ይድረሱ እና ያጋሩ።",
+    "text_header_2": "የሚከተለውን #-ደረጃ መመሪያ ይከተሉ..",
+    "bottom_subtitle": "IFRC ን ያግኙ",
+    "bottom_text": "ጥያቄዎች ካሉዎት ለ IFRC ቡድን ኢሜል ይላኩ: im@ifrc.org",
+    "bottom_btn": "IFRC ን ያግኙ",
+    "slider_1": {
+      "btn": "የ API ቁልፍ ይፍጠሩ",
+      "step_1": {
+        "header": "ደረጃ 1: መተግበሪያ ይፍጠሩ",
+        "text": "በዳታቤዝ ውስጥ API ለመጠቀም የ API ቁልፍ ይፍጠሩ። ስለሚገነቡት ነገር ይንገሩን።"
       },
-      "edit": {
-          "super_admin_all": "ሁሉምንም ማህበራት ማግኛ፤",
-          "user_details": "የተጠቃሚ ዝርዝር፤",
-          "create_user": "አዲስ መጠቀሚያ ይፍጠሩ፤",
-          "add_society": "ማህበር የክሉ፤ ",
-          "societies_heading": "ማህበራት",
-          "roles_heading": "ሚናና ፈቃድ፤",
-          "activity_heading": "ተግባር",
-          "roles_label": "ለዚህ ተጠቃሚ ሚናዎችንና ፈቃዶችን ይምረጡ፤",
-          "activity_link": "በተጠቃሚዉ የተተገበሩ ሁሉንም ነገሮች ይመልከቱ፤",
-          "created": "መጠቀሚያዎት በተሳካ ሁኔታ ተከፍቷል፤",
-          "updated": "መጠቀሚያዎት  በተሳካ ሁኔታ ታድሷል፤",
-          "email_update": "ኢሜይልዎትን ለማደስ፣ አባክዎ የይለፍ ቃልዎን ያስገቡ፤",
-          "view": "አሳይ",
-          "more": "ተጨማሪ",
-          "less": "ያነሰ አሳይ",
-          "user_can_do": "ተጠቃሚው ምን የማድረግ ፈቃድ እንዳለው ይመልከቱ:",
-          "user_no_permission": "ተጠቃሚው ምንም ፈቃዶች አላገኘም",
-          "soc_already_added": "ይህ ተጠቃሚ አስቀድሞ ለዚህ ማህበር ተመድቧል"
+      "step_2": {
+        "header": "ደረጃ 2: የ API ቁልፍ ይቀበሉ",
+        "text": "የ API ቁልፍ ሲፈጥሩ፣ በራስ-ሰር ይፈጠራል።",
+        "text_2": "አስፈላጊ: የ API ቁልፍዎን በተቻለ መጠን በደህንነት ያከማቹ። በመተግበሪያዎ ውስጥ የ API ቁልፍዎን ማጋራት ወይም ማቅረብ ያስወግዱ።"
+      },
+      "step_3": {
+        "header": "ደረጃ 3: ጥያቄ ያቅርቡ",
+        "text": "የዳታቤዝ API HTTP(S) ይጠቀማል እና የታተሙ ዳታዎችን ለማግኘት RESTful ነጥቦችን ይሰጣል። እያንዳንዱ ጥያቄ በቀደመው ደረጃ የተፈጠረውን የ API ቁልፍ በመጠቀም ማረጋገጫ ማለት አለበት። ስለሁሉም የ API ነጥቦች ተጨማሪ መረጃ ለማግኘት የ API ሰነዱን ይመልከቱ።"
+      },
+      "step_4": {
+        "header": "ደረጃ 4: መልእክቶችን ያጋሩ",
+        "text": "አደጋ ሲከሰት የቀይ መስቀል እና የቀይ ጨረቃ ደህንነት መልእክቶችን ከህዝብ ጋር ያጋሩ። ስለ መልእክቶቹ አስተያየት ካለዎት ለ IFRC ቡድን �ን ያግኙ: im@ifrc.org"
       }
+    },
+    "slider_2": {
+      "btn": "WhatNow መልእክቶች",
+      "step_1": {
+        "header": "ደረጃ 1: መልእክቶችን ይመልከቱ",
+        "text": "የቀይ መስቀል እና የቀይ ጨረቃ ብሔራዊ ማህበር መልእክቶችን ለማየት የመልእክት ዳታቤዝን ይጎብኙ።"
+      },
+      "step_2": {
+        "header": "ደረጃ 2: የመልእክት ስብስብ ምረጥ",
+        "text": "ለመመልከት የሚፈልጉትን ብሔራዊ ማህበር ይምረጡ። ከዚያም ከሚገኙት ዝርዝሮች ውስጥ የአደጋ አይነት ይምረጡ።"
+      },
+      "step_3": {
+        "header": "ደረጃ 3: መልእክቶችን ያጋሩ",
+        "text": "መልእክቶችን ለማውረድ አማራጭን ይፈልጉ። የመልእክቶችን ስብስብ እንደ ምስል ወይም እንደ PDF ማጋራት ይችላሉ። ትክክለኛውን መልእክቶች እየሰጡ መሆኑን ለማረጋገጥ ያውርዱ እና ይገምግሙ።"
+      }
+    }
+  },
+  "upload_modal": {
+    "drag_button_text": "ለመጫን ፋይልን ይጎትቱ �ይም ጠቅ ያድርጉ",
+    "button_text": "ጫን"
+  },
+  "stages": {
+    "immediate": "ወዲያውኑ",
+    "warning": "ማስጠንቀቂያ",
+    "anticipated": "በቅድሚያ የተጠበቀ",
+    "assess_and_plan": "ግምገማ እና እቅድ",
+    "mitigate_risks": "አደጋዎችን መቀነስ",
+    "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
+    "recover": "መልሶ ማግኛት"
   },
   "content": {
+    "content": "ይዘት",
+    "audit_log": {
+      "audit_log": "የኦዲት መዝገብ",
+      "my_audit_log": "My Audit Log",
+      "empty": "ከዚህ ማጣሪያ ጋር የሚሄድ ምንም የኦዲት ታሪክ አልተገኘም",
+      "soc_label": "ማህበር",
+      "select_hazard": "የአደጋ አይነት ምረጥ",
+      "select_language": "ቋንቋ ምረጥ",
+      "select_overwrite": "የመተካት አማራጭ ምረጥ",
+      "choose_file": "የፋይል አይነት ምረጥ",
+      "select_soc": "የብሔራዊ ማህበር ምረጥ"
+    },
+    "whatnow": {
+      "title": "መልእክቶች",
+      "set_attribution": "ለማሳተም የማህበሩን ስም እና  መለያ መልእክት ያዘጋጁ",
+      "whatnow": "ዋትናው",
+      "empty": "ለዚህ ብሔራዊ ማህበር የታተሙ የ ዋትናው መልዕክቶች የሉም",
+      "steps": "እርምጃዎች",
+      "publish": "ማተም",
+      "no_publish": "ምንም የሚታተም የለም",
+      "published": "ትርጉሙ ታትሟል",
+      "publishing": "አታሚ",
+      "content_to_publish": "የሚታተም ረቂቅ ይዘት",
+      "whatnow_content": "ዋትናው ይዘት",
+      "choose_hazard": "አደጋን  ይምረጡ",
+      "hazard": "አደጋ",
       "content": "ይዘት",
-      "audit_log": {
-          "audit_log": "የኦዲት መዝገብ",
-          "empty": "ከዚህ ማጣሪያ ጋር የሚሄድ ምንም የኦዲት ታሪክ አልተገኘም",
-          "soc_label": "ማህበር"
+      "create": "አደጋን  ይጨምሩ",
+      "edit_attribtion": "መለያን ማስተካከል",
+      "attribution": "መለያ",
+      "attribution_url": "የመለያ ዩአራኤል",
+      "society_name": "ብሔራዊ  ማህበር",
+      "attribution_message": "የመለያ መልእክት",
+      "no_translation": "ምንም ይዘት አልተዘጋጀም",
+      "delete_content_translation": "ይህ የተመረጠውን  ያ ዋትናው ይዘት ከአሁኑ ቋንቋ ያስወግዳል",
+      "messages": "የዋትናው መልክቶች",
+      "add_language": "አዲስ  ቋንቋ ጨምር",
+      "no_languages": " ለመጀመር  አንድ ቋንቋ ምረጥ  ወይም ፍጠር",
+      "no_soc": "አንድ ማህበር ምረጥ",
+      "no_region": "ክልል ይምረጡ",
+      "add_language_message": "አዲስ ቋንቋ ለመጨመር፣ እባኮዎን አበረው የሚሄዱ የተወሰኑ ይዘቶችን ይጨምሩ",
+      "add_language_attribution": "አዲስ ቋንቋ ለመጨመር መለያ  ይፍጠሩ",
+      "select_language": "አባኮዎን  አንድ ቋንቋ ይምረጡ",
+      "attribution_publish": "ይህ መለያ ወዲያውኑ ለመታተም ዝግጁ ይሆናል",
+      "date_added": "ቀን ተጨምሯል",
+      "url": "URL",
+      "hazard_type": "የአደጋ አይነት",
+      "show_more": "ተጨማሪ አሳይ",
+      "early": "ቅድመ ማስጠንቀቂያ",
+      "disaster": "የአደጋ አደጋ መቀነስ",
+      "recovery": "መልሶ ማግኛት",
+      "publish_summary_title": "አመልካች",
+      "publish_summary_ns": "ብሔራዊ �ማህበር",
+      "publish_summary_url": "አመልካች URL",
+      "publish_summary_message": "አመልካች መልእክት"
+    },
+    "edit_whatnow": {
+      "title": "ርዕስ",
+      "description": "መግለጫ",
+      "content_piece": "የተወሰነ ይዘት",
+      "enter_other_hazard_type": "የአደጋ አይነት  ስም  ያስገቡ",
+      "other_hazard_type_label": "ሌላ የአደጋ አይነት",
+      "stepped_content": "የተስተካከለ ይዘት",
+      "content_title_description": "ለእነዚህ ዋትናው  መልእክቶች ርእስ።",
+      "content_description_description": "የእነዚህ ዋትናው መልክቶች ዝርዝር መግለጫ",
+      "content_label": "እባክዎን የተውሰነ  ለአደጋ  መረጃ ያስገቡ",
+      "content_url": "ዩአር ኤል",
+      "content_url_description": " ለእነዚህ ዋትናው መልክቶች  የእንተርኔት ማስፈንጠሪያ ለተጨማሪ መልክቶች። አባኮዎን  የኢንተርኔት ፕሮቶኮሉን ይጨምሩ ፣ ያም http:\/\/ ወይም https:\/\/",
+      "created": "ተፈጥሯል",
+      "pieces_edited": " የተውሰኑ ይዘቶች ላይ አርትዖት ተደርጓል",
+      "content_placeholder": "እባክዎን አንድ መልእክት ያስገቡ",
+      "mitigation": "ማቃለል",
+      "mitigation_help": "አደጋዎችን ለመቀነስ የረጅም ጊዜ እርምጃዎች",
+      "mitigation_extra": "ማቃለል የአደገኛ ክስተት ትንበያ የረጅም ጊዜ መግለጫ ነው። የተወሰዱት እርምጃዎች ቤተሰቡን እና አካባቢውን ደህንነቱ የተጠበቀ ለማድረግ ግምገማ ፣ እቅድ ማውጣት እና የረጅም ጊዜ አደጋ ቅነሳ እርምጃዎች ናቸው ፡፡",
+      "seasonalForecast": "ውቅታዊ ትንበያ",
+      "seasonalForecast_help": "አደጋዎችን ለመቀነስ የአጭር ግዜ እርምጃዎች",
+      "seasonalForecast_extra": "የወቅቱ ትንበያ የአደገኛ ክስተት ትንበያ መግለጫ ነው። የሚወሰዱ እርምጃዎች አደጋዎችን ለመዳሰስ እና አደጋን ለመቀነስ እና ቤተሰቡን ለመጠበቅ የሚረዱ እንቅስቃሴዎችን ለማቀድ ነው ፡፡",
+      "watch": "ማየት",
+      "watch_help": "ለመመለስ  መዘጋጀት",
+      "watch_extra": " ማየት የሚታዘዘው የአደገኛ ክስተት ስጋት በከፍተኛ ሁኔታ ይጨምራል ፣ ግን መከሰቱ  ፣ቦታው ፣ወይም\/ እና  የጊዜ አወጣጥ አሁንም እርግጠኛ አይደሉም። ለመከላከያ እርምጃዎች እና ቅደመ ምላሽ ለመስጠት ዝግጁ ለማድረግ በቂ ጊዜ ለመስጠት የታሰበ ነው ፡፡",
+      "warning": "ማስጠንቀቂያ",
+      "warning_help": "ለመመለስ  መዘጋጀት",
+      "warning_extra": "አደገኛ ክስተት ሲከሰት ፣ ሲቃረብ ወይም በጣም ከፍተኛ የመከሰት  እድሉ ሲኖር ማስጠንቀቂያ ይሰጣል ፡፡ ያ ማለት ለህይወት ወይም ለንብረት አስጊ ሁኔታ ሲፈጠር ማለት ነው። በዚህ አደጋ ጎዳና ላይ ያሉ ሰዎች የመከላከያ እርምጃዎችን መውሰድ አለባቸው ፡፡",
+      "immediate": "አስቸኳይ",
+      "immediate_help": "የመልስ እርምጃዎች",
+      "immediate_extra": "ሁኔታዎች በአሁኑ ጊዜ ለሕይወት እና ለንብረት ስጋት ሲፈጥሩ ፡፡ አደገኛ ክስተት በሚከሰትበት ጊዜ እነዚህ ወዲያውኑ የሚወስዱ የመከላከያ እርምጃዎች ናቸው ፡፡ ራስን እና ቤትን ለመጠበቅ የምላሽ እርምጃዎች ያስፈልጋሉ ፡፡",
+      "recover": "ማገገም",
+      "recover_help": "የማገገሚያ እርምጃዎች",
+      "recover_extra": "እነዚህ አደገኛ ሁኔታን ተከትሎ አደጋን ለመቀነስ የሚወሰዱ የመከላከያ እርምጃዎች ናቸው።",
+      "anticipated": "በቅድሚያ የተጠበቀ",
+      "assess_and_plan": "ግምገማ እና እቅድ",
+      "mitigate_risks": "አደጋዎችን መቀነስ",
+      "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
+      "updated": "የተሻሻለ",
+      "download_icon": "ምልክቶችን ያውርዱ",
+      "download_image": " እንደ  ምስል ይውርዱ",
+      "download_image_error": "ምስልን ሲያወርዱ የተከሰተ ስህተት ፣ እባክዎ ሁሉንም ለውጦች እንዳተሙ ያረጋግጡ እና እንደገና ይሞክሩ።",
+      "download_instructions": "ለማስቀመጥ በቀኝ ጠቅ ያድርጉ እና 'ምስልን እንደ ያስቀምጡ....' ን ይምረጡ",
+      "downloaded_image_alt": "ዋትናው መመሪያዎች",
+      "add_key_message": "ዋና መልእክት ጨምር",
+      "add_supporting_message": "የድጋፍ መልእክት ጨምር",
+      "early_warning": "ቅድመ ማስጠንቀቂያ",
+      "early_warning_description": "ለማስጠንቀቂያዎች እና ቅድመ እርምጃዎች �ዋና ደህንነት መልእክቶች",
+      "disaster_risk_reduction": "የአደጋ አደጋ መቀነስ",
+      "disaster_risk_reduction_description": "ዋና ደህንነት መልእክቶች ከ PAPE",
+      "recovery": "መልሶ ማግኛት",
+      "recovery_description": "ለመልሶ ማግኛት ዋና ደህንነት መልእክቶች",
+      "hazard_type": "የአደጋ አይነት",
+      "content_edit_title": "ይዘት አርትዕ",
+      "content_add_hazard_title": "አደጋ ጨምር",
+      "key_message_label": "ዋና መልእክት ርዕስ",
+      "supporting_message_label": "የድጋፍ መልእክት"
+    },
+    "message_editor": {
+      "title": "መልእክት አርትዕ",
+      "society_name_label": "የብሔራዊ ማህበር �ስም",
+      "attribution_url_label": "አመልካች URL",
+      "attribution_message_label": "አመልካች መልእክት",
+      "create_btn": "አደጋ ጨምር",
+      "contributor_name_label": "የሰጪ ስም",
+      "contributor_single": "ሰጪ"
+    },
+    "previewer": {
+      "download_image_error": "ምስል ማውረድ ላይ ስህተት፣ እባክዎ እንደገና ይሞክሩ።",
+      "download_pdf_error": "PDF ማውረድ ላይ ስህተት፣ እባክዎ እንደገና ይሞክሩ።"
+    },
+    "audit": "የኦዲት መዝገብ",
+    "export": "ወደ ውጭ መላክ",
+    "bulk_upload": {
+      "bulk_upload": "በብዛት ኢንተርኔት ላይ መጫን",
+      "template": "ቅጽ",
+      "export_template": " ቅጹ ወደ ውጪ መላክ",
+      "import_data": "መረጃውን ማምጣት",
+      "import_complete": " ማስገባት ተጠናቀቀ",
+      "import_summary": "እያስመጡ ያሉት{society}በ{lang} ውስጥ ነው።",
+      "import_banner": {
+        "success": "ተሳክቷል",
+        "added": "ተጨምሯል",
+        "skipped": "የተዘለለ",
+        "denied": "የተከለከለ",
+        "updated": "የዘመነ",
+        "failed": "የወደቀ",
+        "invalid": "የማይሰራ",
+        "row": "ተርታ"
       },
-      "whatnow": {
-          "set_attribution": "ለማሳተም የማህበሩን ስም እና  መለያ መልእክት ያዘጋጁ",
-          "whatnow": "ዋትናው",
-          "empty": "ለዚህ ብሔራዊ ማህበር የታተሙ የ ዋትናው መልዕክቶች የሉም",
-          "steps": "እርምጃዎች",
-          "publish": "ማተም",
-          "no_publish": "ምንም የሚታተም የለም",
-          "published": "ትርጉሙ ታትሟል",
-          "publishing": "አታሚ",
-          "content_to_publish": "የሚታተም ረቂቅ ይዘት",
-          "whatnow_content": "ዋትናው ይዘት",
-          "choose_hazard": "አደጋን  ይምረጡ",
-          "hazard": "አደጋ",
-          "content": "ይዘት",
-          "create": "አደጋን  ይጨምሩ",
-          "edit_attribtion": "መለያን ማስተካከል",
-          "attribution": "መለያ",
-          "attribution_url": "የመለያ ዩአራኤል",
-          "society_name": "ብሔራዊ  ማህበር",
-          "attribution_message": "የመለያ መልእክት",
-          "no_translation": "ምንም ይዘት አልተዘጋጀም",
-          "delete_content_translation": "ይህ የተመረጠውን  ያ ዋትናው ይዘት ከአሁኑ ቋንቋ ያስወግዳል",
-          "messages": "የዋትናው መልክቶች",
-          "add_language": "አዲስ  ቋንቋ ጨምር",
-          "no_languages": " ለመጀመር  አንድ ቋንቋ ምረጥ  ወይም ፍጠር",
-          "no_soc": "አንድ ማህበር ምረጥ",
-          "no_region": "ክልል ይምረጡ",
-          "add_language_message": "አዲስ ቋንቋ ለመጨመር፣ እባኮዎን አበረው የሚሄዱ የተወሰኑ ይዘቶችን ይጨምሩ",
-          "add_language_attribution": "አዲስ ቋንቋ ለመጨመር መለያ  ይፍጠሩ",
-          "select_language": "አባኮዎን  አንድ ቋንቋ ይምረጡ",
-          "attribution_publish": "ይህ መለያ ወዲያውኑ ለመታተም ዝግጁ ይሆናል"
+      "upload_csv": "ሰነዱን እንደ \"CSV\" ፎርማት እኒተርኔት ላይ ይጫኑ",
+      "language_instructions": "ከውጭ እየገቡ ያሉትን የትርጉሞች ቋንቋ ይምረጡ ፡፡",
+      "file_instructions": "ፋይሉን ወደ ዚህ ይጎትቱ፣ወይም ከኮምፒተርዎ ላይ ይምረጡ።",
+      "choose": "ይምረጡ",
+      "submit": "ከውጭ ያስገቡ",
+      "reset": "ሌላ ይጫኑ",
+      "export_template_guide": "የእቅድ ንድፉን መመሪያ ያስወጡ",
+      "export_template_instructions": " እንዴት በብዛት እቅድ ንድፎችን ኤንተርኔት ላይ ለመጫን መመርያ ለማግኘት እባክዎን ይህንን መመሪያ ይመልከቱ።",
+      "refer": "ወደ",
+      "detail": "ለዝርዝር መመሪያዎች",
+      "warnings": {
+        "title": " በቅርብ የተጻፉ ይዘቶችን የሚተካ  ማንኛውም ይዘት ካለ ማስመጣት አይቀበሉ።",
+        "on": "አዎ",
+        "off": "አይ"
       },
-      "edit_whatnow": {
-          "title": "ርዕስ",
-          "description": "መግለጫ",
-          "content_piece": "የተወሰነ ይዘት",
-          "enter_other_hazard_type": "የአደጋ አይነት  ስም  ያስገቡ",
-          "other_hazard_type_label": "ሌላ የአደጋ አይነት",
-          "stepped_content": "የተስተካከለ ይዘት",
-          "content_title_description": "ለእነዚህ ዋትናው  መልእክቶች ርእስ።",
-          "content_description_description": "የእነዚህ ዋትናው መልክቶች ዝርዝር መግለጫ",
-          "content_label": "እባክዎን የተውሰነ  ለአደጋ  መረጃ ያስገቡ",
-          "content_url": "ዩአር ኤል",
-          "content_url_description": " ለእነዚህ ዋትናው መልክቶች  የእንተርኔት ማስፈንጠሪያ ለተጨማሪ መልክቶች። አባኮዎን  የኢንተርኔት ፕሮቶኮሉን ይጨምሩ ፣ ያም http:\/\/ ወይም https:\/\/",
-          "created": "ተፈጥሯል",
-          "pieces_edited": " የተውሰኑ ይዘቶች ላይ አርትዖት ተደርጓል",
-          "delete_item": "ይሰርዙ",
-          "add_item": "ያክሉ",
-          "content_placeholder": "እባክዎን አንድ መልእክት ያስገቡ",
-          "mitigation": "ማቃለል",
-          "mitigation_help": "አደጋዎችን ለመቀነስ የረጅም ጊዜ እርምጃዎች",
-          "mitigation_extra": "ማቃለል የአደገኛ ክስተት ትንበያ የረጅም ጊዜ መግለጫ ነው። የተወሰዱት እርምጃዎች ቤተሰቡን እና አካባቢውን ደህንነቱ የተጠበቀ ለማድረግ ግምገማ ፣ እቅድ ማውጣት እና የረጅም ጊዜ አደጋ ቅነሳ እርምጃዎች ናቸው ፡፡",
-          "seasonalForecast": "ውቅታዊ ትንበያ",
-          "seasonalForecast_help": "አደጋዎችን ለመቀነስ የአጭር ግዜ እርምጃዎች",
-          "seasonalForecast_extra": "የወቅቱ ትንበያ የአደገኛ ክስተት ትንበያ መግለጫ ነው። የሚወሰዱ እርምጃዎች አደጋዎችን ለመዳሰስ እና አደጋን ለመቀነስ እና ቤተሰቡን ለመጠበቅ የሚረዱ እንቅስቃሴዎችን ለማቀድ ነው ፡፡",
-          "watch": "ማየት",
-          "watch_help": "ለመመለስ  መዘጋጀት",
-          "watch_extra": " ማየት የሚታዘዘው የአደገኛ ክስተት ስጋት በከፍተኛ ሁኔታ ይጨምራል ፣ ግን መከሰቱ  ፣ቦታው ፣ወይም\/ እና  የጊዜ አወጣጥ አሁንም እርግጠኛ አይደሉም። ለመከላከያ እርምጃዎች እና ቅደመ ምላሽ ለመስጠት ዝግጁ ለማድረግ በቂ ጊዜ ለመስጠት የታሰበ ነው ፡፡",
-          "warning": "ማስጠንቀቂያ",
-          "warning_help": "ለመመለስ  መዘጋጀት",
-          "warning_extra": "አደገኛ ክስተት ሲከሰት ፣ ሲቃረብ ወይም በጣም ከፍተኛ የመከሰት  እድሉ ሲኖር ማስጠንቀቂያ ይሰጣል ፡፡ ያ ማለት ለህይወት ወይም ለንብረት አስጊ ሁኔታ ሲፈጠር ማለት ነው። በዚህ አደጋ ጎዳና ላይ ያሉ ሰዎች የመከላከያ እርምጃዎችን መውሰድ አለባቸው ፡፡",
-          "immediate": "አስቸኳይ",
-          "immediate_help": "የመልስ እርምጃዎች",
-          "immediate_extra": "ሁኔታዎች በአሁኑ ጊዜ ለሕይወት እና ለንብረት ስጋት ሲፈጥሩ ፡፡ አደገኛ ክስተት በሚከሰትበት ጊዜ እነዚህ ወዲያውኑ የሚወስዱ የመከላከያ እርምጃዎች ናቸው ፡፡ ራስን እና ቤትን ለመጠበቅ የምላሽ እርምጃዎች ያስፈልጋሉ ፡፡",
-          "recover": "ማገገም",
-          "recover_help": "የማገገሚያ እርምጃዎች",
-          "recover_extra": "እነዚህ አደገኛ ሁኔታን ተከትሎ አደጋን ለመቀነስ የሚወሰዱ የመከላከያ እርምጃዎች ናቸው።",
-          "updated": "የተሻሻለ",
-          "download_icon": "ምልክቶችን ያውርዱ",
-          "download_image": " እንደ  ምስል ይውርዱ",
-          "download_image_error": "ምስልን ሲያወርዱ የተከሰተ ስህተት ፣ እባክዎ ሁሉንም ለውጦች እንዳተሙ ያረጋግጡ እና እንደገና ይሞክሩ።",
-          "download_instructions": "ለማስቀመጥ በቀኝ ጠቅ ያድርጉ እና 'ምስልን እንደ ያስቀምጡ....' ን ይምረጡ",
-          "downloaded_image_alt": "ዋትናው መመሪያዎች"
+      "overwriting": {
+        "title": "ቁልፉን እንደገና መፃፍ",
+        "on": "ሁልጊዜ ወደዚህ ስሪት ያዘምኑ ፣ ሁሉንም ክለሳዎች ይተኩ",
+        "off": "የመጣው ይዘት አዲስ በሚሆንበት የክስተት ዓይነቶችን ብቻ ያዘምኑ"
       },
-      "audit": "የኦዲት መዝገብ",
-      "export": "ወደ ውጭ መላክ",
-      "bulk_upload": {
-          "bulk_upload": "በብዛት ኢንተርኔት ላይ መጫን",
-          "template": "ቅጽ",
-          "export_template": " ቅጹ ወደ ውጪ መላክ",
-          "import_data": "መረጃውን ማምጣት",
-          "import_complete": " ማስገባት ተጠናቀቀ",
-          "import_summary": "እያስመጡ ያሉት{society}በ{lang} ውስጥ ነው።",
-          "import_banner": {
-              "success": "ተሳክቷል",
-              "added": "ተጨምሯል",
-              "skipped": "የተዘለለ",
-              "denied": "የተከለከለ",
-              "updated": "የዘመነ",
-              "failed": "የወደቀ",
-              "invalid": "የማይሰራ",
-              "row": "ተርታ"
-          },
-          "upload_csv": "ሰነዱን እንደ \"CSV\" ፎርማት እኒተርኔት ላይ ይጫኑ",
-          "language_instructions": "ከውጭ እየገቡ ያሉትን የትርጉሞች ቋንቋ ይምረጡ ፡፡",
-          "file_instructions": "ፋይሉን ወደ ዚህ ይጎትቱ፣ወይም ከኮምፒተርዎ ላይ ይምረጡ።",
-          "choose": "ይምረጡ",
-          "submit": "ከውጭ ያስገቡ",
-          "reset": "ሌላ ይጫኑ",
-          "export_template_guide": "የእቅድ ንድፉን መመሪያ ያስወጡ",
-          "export_template_instructions": " እንዴት በብዛት እቅድ ንድፎችን ኤንተርኔት ላይ ለመጫን መመርያ ለማግኘት እባክዎን ይህንን መመሪያ ይመልከቱ።",
-          "warnings": {
-              "title": " በቅርብ የተጻፉ ይዘቶችን የሚተካ  ማንኛውም ይዘት ካለ ማስመጣት አይቀበሉ።",
-              "on": "አዎ",
-              "off": "አይ"
-          },
-          "overwriting": {
-              "title": "ቁልፉን እንደገና መፃፍ",
-              "on": "ሁልጊዜ ወደዚህ ስሪት ያዘምኑ ፣ ሁሉንም ክለሳዎች ይተኩ",
-              "off": "የመጣው ይዘት አዲስ በሚሆንበት የክስተት ዓይነቶችን ብቻ ያዘምኑ"
-          },
-          "errors": {
-              "warning_update_will_overwrite": "ወደ ውጭ መላክ ከተፈጠረ ወዲህ የተደረጉትን ለውጦች ይህ እርምጃ ይተካዋል",
-              "bad_request": "የፋይል መረጃ በትክክል አልተሰራም",
-              "bad_request_error_codes": {
-                  "30001": "የአምድ  ርዕሶች ከእቅድ ንድፍ ጋር አይመሳሰሉም",
-                  "30002": " የመለያ ስም፣ መልክዕት ወይም ማስፈንጥሪያው ተዘሏል",
-                  "30003": "የማይሰራ  የመለያ ማስፈንጠሪያ እባኮዎን የአሁን ፕሮቶኮል መሆኑን ያረጋግጡ፣ ለምሳሌ https:\/\/",
-                  "40001": "የማይሰራ  ያሀገር ኮድ ተሰጥቷል",
-                  "40002": "የተመረጠው ማህበረሰብ ከተመረጠው ፋይል ከማህበረሰቡ ጋር አይጣጣምም",
-                  "40003": "የተመረጠው ፋይል ወደ ውጭ ሲልክ የተሳሳተ ስለሆነ ማስመጣቱን ማጠናቀቅ አይችልም"
-              }
-          }
+      "errors": {
+        "warning_update_will_overwrite": "ወደ ውጭ መላክ ከተፈጠረ ወዲህ የተደረጉትን ለውጦች ይህ እርምጃ ይተካዋል",
+        "bad_request": "የፋይል መረጃ በትክክል አልተሰራም",
+        "bad_request_error_codes": {
+          "30001": "የአምድ  ርዕሶች ከእቅድ ንድፍ ጋር አይመሳሰሉም",
+          "30002": " የመለያ ስም፣ መልክዕት ወይም ማስፈንጥሪያው ተዘሏል",
+          "30003": "የማይሰራ  የመለያ ማስፈንጠሪያ እባኮዎን የአሁን ፕሮቶኮል መሆኑን ያረጋግጡ፣ ለምሳሌ https:\/\/",
+          "40001": "የማይሰራ  ያሀገር ኮድ ተሰጥቷል",
+          "40002": "የተመረጠው ማህበረሰብ ከተመረጠው ፋይል ከማህበረሰቡ ጋር አይጣጣምም",
+          "40003": "የተመረጠው ፋይል ወደ ውጭ ሲልክ የተሳሳተ ስለሆነ ማስመጣቱን ማጠናቀቅ አይችልም"
+        }
       }
+    }
   },
   "api_stats": {
     "page_title": "API Stats",
@@ -525,185 +646,214 @@
     "empty": "ለተሰጠው የቀን ክልል ምንም ስታቲስቲክስ አልተገኘም"
   },
   "api_usage": {
-      "applications": "መተግበሪያዎች",
-      "view_user": "ተጠቃሚን መመልከት",
-      "reactivate": "ዳግም ማንቀሳቀስ",
-      "app_detail": "የመተግበሪያው ዝርዝር",
-      "app_details": "የመተግበሪያው ዝርዝሮች",
-      "activity": "ተግባር",
-      "view_all_activity": "የዚህን መተገበሪያ ሁሉንም እንቅስቃሴ ተመልከት",
-      "api_users": " ኤ ፒ አይ ተጠቃሚዎች",
-      "terms_conditions": "የሁሉም ደንቦች እና መመሪያዎች እትሞች",
-      "view_prev_terms": "የቀደሙ እትሞችን ይመልከቱ",
-      "current_version": " የአሁን ቅጂ",
-      "version": "ቅጂ"
+    "applications": "መተግበሪያዎች",
+    "view_user": "ተጠቃሚን መመልከት",
+    "reactivate": "ዳግም ማንቀሳቀስ",
+    "app_detail": "የመተግበሪያው ዝርዝር",
+    "app_details": "የመተግበሪያው ዝርዝሮች",
+    "activity": "ተግባር",
+    "view_all_activity": "የዚህን መተገበሪያ ሁሉንም እንቅስቃሴ ተመልከት",
+    "api_users": " ኤ ፒ አይ ተጠቃሚዎች",
+    "terms_conditions": "የሁሉም ደንቦች እና መመሪያዎች እትሞች",
+    "view_prev_terms": "የቀደሙ እትሞችን ይመልከቱ",
+    "current_version": " የአሁን ቅጂ",
+    "version": "ቅጂ"
   },
   "applications": {
-      "my_apps": "የእኔ መተግበሪያዎች",
-      "new_tc": "አዳዲስ ደንቦች እና መመሪያዎች",
-      "build": "አዲስ መተግበሪያ ይገንቡ",
-      "edit": "መተግበሪያን ያርትዑ",
-      "building": "መተግብሪያ ግንባታ",
-      "no_apps": "እርሶ መተግበሪያ የሎትም፣ ለመጀመር አንድ ይገንቡ።"
+    "my_apps": "የእኔ መተግበሪያዎች",
+    "new_tc": "አዳዲስ ደንቦች እና መመሪያዎች",
+    "build": "አዲስ መተግበሪያ ይገንቡ",
+    "build_key": "አዲስ �ና መልእክት ይገንቡ",
+    "edit": "መተግበሪያን ያርትዑ",
+    "building": "መተግብሪያ ግንባታ",
+    "building_key": "የ API ቁልፍ መገንባት",
+    "no_apps": "እርሶ መተግበሪያ የሎትም፣ ለመጀመር አንድ ይገንቡ።",
+    "api_keys": "የ API ቁልፎች"
   },
   "home": {
-      "home": "መነሻ",
-      "welcome": "እንኳን ደህና መጡ!",
-      "admin_intro": "እዚህ ተጠቃሚዎችን ማስተዳደር ፣ የዋትናው ይዘትን ማስተካከል እና ማተም እና የኤፒአይ አጠቃቀምን ማየት ይችላሉ ፡፡",
-      "ns_admin_intro": "እዚህ የዋትናው  ይዘትን ማስተካከል እና ማተም ይችላሉ",
-      "ns_editor_intro": "እዚህ የ ዋትናው ይዘትን ማስተካከል ይችላሉ",
-      "api_user_intro": "እዚህ  የእርሶን መተግበሪያዎች ይመልከቱ እና አካውንቶን ያስተዳድሩ ።"
+    "home": "መነሻ",
+    "welcome": "እንኳን ደህና መጡ!",
+    "admin_intro": "እዚህ ተጠቃሚዎችን ማስተዳደር ፣ የዋትናው ይዘትን ማስተካከል እና ማተም እና የኤፒአይ አጠቃቀምን ማየት ይችላሉ ፡፡",
+    "ns_admin_intro": "እዚህ የዋትናው  ይዘትን ማስተካከል እና ማተም ይችላሉ",
+    "ns_editor_intro": "እዚህ የ ዋትናው ይዘትን ማስተካከል ይችላሉ",
+    "api_user_intro": "እዚህ  የእርሶን መተግበሪያዎች ይመልከቱ እና አካውንቶን ያስተዳድሩ ።",
+    "role_changed_title": "ሚናዎ ተቀይሯል",
+    "role_changed_p": "የሚከተለው ሚና ተመድቧል:",
+    "role_changed_p2": "ፈቃዶችዎ እንደሚከተለው ናቸው:",
+    "role_changed_confirm": "አረጋግጥ",
+    "role_changed_dismiss": "ዝጋ"
   },
   "landing": {
-      "strapline": "ዋትናው አገልግሎት",
-      "strapline_part_2": "የአለም አቀፍ  ቀይ መስቀል \/ ቀይ ጨረቃ ቁልፍ የደህንነት መልዕክቶች",
-      "developer": {
-          "strap_para_one": "በአካባቢያችን ባሉ ቁልፍ የድርጊት መልዕክቶቻችን ማህበረሰቦች ከአደጋዎች እንዲዘጋጁ ፣ ምላሽ እንዲሰጡ እና እንዲያገግሙ ያግዙ ፡፡",
-          "strap_para_two": "የዋትናው መልዕክቶችን በመተግበሪያዎ ውስጥ ለማዋሃድ የእኛን ቀላል ባለ አራት ደረጃ መመሪያ ይጠቀሙ ፡፡ ይመዝገቡ እና ሁሉንም  የሚገኙ መልክቶችን ይመልከቱ።"
-      },
-      "national_society": {
-          "strap_para_one": "ለአለምአቀፍ ፣ ለብሔራዊ እና ለአካባቢያዊ የመገናኛ ብዙሃን ለመድረስ እና ለማሰራጨት የ RCRC ብሔራዊ ማህበርዎን ቁልፍ የደህንነት መልዕክቶች ያትሙ ፡፡",
-          "strap_para_two": "መልእክቶቹን እንዴት መፍጠር እና ከሚዲያ አጋሮች ጋር መገናኘት ስለመቻል የበለጠ ለማወቅ እኛን ያነጋግሩን።"
-      },
+    "strapline": "ዋትናው አገልግሎት",
+    "strapline_part_2": "የአለም አቀፍ  ቀይ መስቀል \/ ቀይ ጨረቃ ቁልፍ የደህንነት መልዕክቶች",
+    "developer": {
       "strap_para_one": "በአካባቢያችን ባሉ ቁልፍ የድርጊት መልዕክቶቻችን ማህበረሰቦች ከአደጋዎች እንዲዘጋጁ ፣ ምላሽ እንዲሰጡ እና እንዲያገግሙ ያግዙ ፡፡",
-      "strap_para_two": "የዋትናው መልዕክቶችን በመተግበሪያዎ ውስጥ ለማዋሃድ የእኛን ቀላል ባለ አራት ደረጃ መመሪያ ይጠቀሙ ፡፡ ይመዝገቡ እና ሁሉንም  የሚገኙ መልክቶችን ይመልከቱ።",
-      "view_data": "መረጃውን ይመልከቱ",
-      "view_message_library": "ዋትናው መልክቶችን ይመልከቱ",
-      "what_now": "ዋትናው?",
-      "fake_alert_heading": "እጅግ በጣም የቀዘቀዘ ማስጠንቀቂያ",
-      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-      "fake_alert_time": "አንድ ሰዓት በፊት",
-      "fake_alert_time_exact": "05\/02\/18 at 05:15 CT",
-      "use_cases": {
-          "heading": "የበለጠ ይማሩ",
-          "first_heading": " እንዴት እንደሚሰራ",
-          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "second_heading": "ጉዳዮችን ይጠቀሙ",
-          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "third_heading": "የአፈጻጸም  ስብስብ",
-          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fourth_heading": "ዋትናው ቪድዮ",
-          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fifth_heading": "የአየር ሁኔታ መተግበሪያዎችን ያሻሽሉ",
-          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-      },
-      "example_alert": {
-          "heading": "የዋትናው ናሙና የመልእክት ቅርፅ",
-          "alert_preview": " የማንቂያ ቅድመ ዕይታ",
-          "what_now_info": "ዋትናው ቅድመ ዕይታ",
-          "example_whatnow_request": "የዋትናው ናሙና ምላሽ",
-          "example_alert_request": "የናሙና የማንቂያ ምላሽ",
-          "example_content": "የአየር ሁኔታ አማካሪ # 3 የመጨረሻ እስከ 11 AM, ጥር 29, 2018 እ.ኤ.አ.\nለቀዝቃዛው ግንባር መጨረሻ\n\nየቀዝቃዛው ግንባር መጨረሻ ውጤት ተዳክሟል ፡፡ የተሻሻሉ የአየር ሁኔታዎች በኖም ላይ ይሞከራሉ ፡፡ ሆኖም ገለልተኛ የሆነ ዝናብ ወይም ነጎድጓድ በተለይም ከሰዓት በኋላ ወይም ምሽት በእነዚህ አካባቢዎች በምዕራቡ ዓለም የሚጠበቅ መሆን አለበት ፡፡\n\nበዚህ ሁኔታ  ይህ የአየር ሁኔታ ስርዓት የመጨረሻ አማካሪ ነው ፡፡",
-          "example_content_location_header": "የተጠቃ አካባቢ",
-          "example_content_location": "ኖሜ ፣ አላስካ"
-      },
-      "example_whatnow": {
-          "alert_from": "ማስጠንቀቂያ ከአሜሪካ ቀይ መስቀል",
-          "more_info": "ተጨማሪ መረጃ",
-          "heading": "ለከባድ ቅዝቃዜ ቁልፍ መልዕክቶች",
-          "copy": "እነዚህ አደጋን ለመቀነስ እና እርስዎን እና ቤተሰብዎን ከከባድ ብርድ ለመጠበቅ የሚወሰዱ እርምጃዎች ናቸው።",
-          "what_now": "ዋትናው",
-          "step_1": "ቤትዎን ይጠብቁ ቧንቧዎችን ይፈትሹ እና የማሞቂያ ምንጮችን ደህንነቱ በተጠበቀ ሁኔታ ይጠቀሙ ፡፡",
-          "step_2": "ሞቃት ፈሳሾች በመውስድ ከድርቀት ይከላከሉ",
-          "step_3": "እራስዎን በሞቀ ልብስ ይከላከሉ እና የተጋለጠ ቆዳን ይሸፍኑ",
-          "step_4": "በተለይም በሚያሽከረክሩበት ጊዜ የበረዷማ ሁኔታዎችን ይወቁ እንዲሁም ጥንቃቄ ያድርጉ::",
-          "step_5": "ጎረቤቶችን ፣ ጓደኞችን እና ለአደጋ የተጋለጡትን ያረጋግጡ::"
-      },
-      "build": {
-          "heading": "መተግበሪያዎን ለመገንባት ዝግጁ ነዎት?"
-      },
-      "data_preview": {
-          "heading": "የ WhatNow መልእክቶች",
-          "sub_heading": "በዓለም ዙርያ ካሉት የቀይ መስቀል\/ቀይ ጨረቃ ብሔራዊ ማኅበራት ቁልፍ የድርጊት መልእክቶችን ለማየት ይመዝገቡ"
-      },
-      "footer": {
-          "terms_conditions": "ውሎች እና ሁኔታዎች",
-          "about": "ስለ",
-          "privacy": "ግላዊነት",
-          "getting_started": "መጀመር",
-          "docs": "ሰነድ",
-          "give_feedback": "ግብረ-መልስ ይስጡ",
-          "gdpc_logo": "የዓለም አቀፍ አደጋ ዝግጅት ማዕከል አርማ",
-          "ifrc_logo": "የዓለም አቀፍ የቀይ መስቀል እና የቀይ ጨረቃ ንቅናቄ አርማ"
-      }
+      "strap_para_two": "የዋትናው መልዕክቶችን በመተግበሪያዎ ውስጥ ለማዋሃድ የእኛን ቀላል ባለ አራት ደረጃ መመሪያ ይጠቀሙ ፡፡ ይመዝገቡ እና ሁሉንም  የሚገኙ መልክቶችን ይመልከቱ።"
+    },
+    "national_society": {
+      "strap_para_one": "ለአለምአቀፍ ፣ ለብሔራዊ እና ለአካባቢያዊ የመገናኛ ብዙሃን ለመድረስ እና ለማሰራጨት የ RCRC ብሔራዊ ማህበርዎን ቁልፍ የደህንነት መልዕክቶች ያትሙ ፡፡",
+      "strap_para_two": "መልእክቶቹን እንዴት መፍጠር እና ከሚዲያ አጋሮች ጋር መገናኘት ስለመቻል የበለጠ ለማወቅ እኛን ያነጋግሩን።"
+    },
+    "strap_para_one": "በአካባቢያችን ባሉ ቁልፍ የድርጊት መልዕክቶቻችን ማህበረሰቦች ከአደጋዎች እንዲዘጋጁ ፣ ምላሽ እንዲሰጡ እና እንዲያገግሙ ያግዙ ፡፡",
+    "strap_para_two": "የዋትናው መልዕክቶችን በመተግበሪያዎ ውስጥ ለማዋሃድ የእኛን ቀላል ባለ አራት ደረጃ መመሪያ ይጠቀሙ ፡፡ ይመዝገቡ እና ሁሉንም  የሚገኙ መልክቶችን ይመልከቱ።",
+    "view_data": "መረጃውን ይመልከቱ",
+    "view_message_library": "ዋትናው መልክቶችን ይመልከቱ",
+    "what_now": "ዋትናው?",
+    "fake_alert_heading": "እጅግ በጣም የቀዘቀዘ ማስጠንቀቂያ",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "አንድ ሰዓት በፊት",
+    "fake_alert_time_exact": "05\/02\/18 at 05:15 CT",
+    "use_cases": {
+      "heading": "የበለጠ ይማሩ",
+      "first_heading": " እንዴት እንደሚሰራ",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "ጉዳዮችን ይጠቀሙ",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "የአፈጻጸም  ስብስብ",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "ዋትናው ቪድዮ",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "የአየር ሁኔታ መተግበሪያዎችን ያሻሽሉ",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "የዋትናው ናሙና የመልእክት ቅርፅ",
+      "alert_preview": " የማንቂያ ቅድመ ዕይታ",
+      "what_now_info": "ዋትናው ቅድመ ዕይታ",
+      "example_whatnow_request": "የዋትናው ናሙና ምላሽ",
+      "example_alert_request": "የናሙና የማንቂያ ምላሽ",
+      "example_content": "የአየር ሁኔታ አማካሪ # 3 የመጨረሻ እስከ 11 AM, ጥር 29, 2018 እ.ኤ.አ.\nለቀዝቃዛው ግንባር መጨረሻ\n\nየቀዝቃዛው ግንባር መጨረሻ ውጤት ተዳክሟል ፡፡ የተሻሻሉ የአየር ሁኔታዎች በኖም ላይ ይሞከራሉ ፡፡ ሆኖም ገለልተኛ የሆነ ዝናብ ወይም ነጎድጓድ በተለይም ከሰዓት በኋላ ወይም ምሽት በእነዚህ አካባቢዎች በምዕራቡ ዓለም የሚጠበቅ መሆን አለበት ፡፡\n\nበዚህ ሁኔታ  ይህ የአየር ሁኔታ ስርዓት የመጨረሻ አማካሪ ነው ፡፡",
+      "example_content_location_header": "የተጠቃ አካባቢ",
+      "example_content_location": "ኖሜ ፣ አላስካ"
+    },
+    "example_whatnow": {
+      "alert_from": "ማስጠንቀቂያ ከአሜሪካ ቀይ መስቀል",
+      "more_info": "ተጨማሪ መረጃ",
+      "heading": "ለከባድ ቅዝቃዜ ቁልፍ መልዕክቶች",
+      "copy": "እነዚህ አደጋን ለመቀነስ እና እርስዎን እና ቤተሰብዎን ከከባድ ብርድ ለመጠበቅ የሚወሰዱ እርምጃዎች ናቸው።",
+      "what_now": "ዋትናው",
+      "step_1": "ቤትዎን ይጠብቁ ቧንቧዎችን ይፈትሹ እና የማሞቂያ ምንጮችን ደህንነቱ በተጠበቀ ሁኔታ ይጠቀሙ ፡፡",
+      "step_2": "ሞቃት ፈሳሾች በመውስድ ከድርቀት ይከላከሉ",
+      "step_3": "እራስዎን በሞቀ ልብስ ይከላከሉ እና የተጋለጠ ቆዳን ይሸፍኑ",
+      "step_4": "በተለይም በሚያሽከረክሩበት ጊዜ የበረዷማ ሁኔታዎችን ይወቁ እንዲሁም ጥንቃቄ ያድርጉ::",
+      "step_5": "ጎረቤቶችን ፣ ጓደኞችን እና ለአደጋ የተጋለጡትን ያረጋግጡ::"
+    },
+    "build": {
+      "heading": "መተግበሪያዎን ለመገንባት ዝግጁ ነዎት?"
+    },
+    "data_preview": {
+      "heading": "የ WhatNow መልእክቶች",
+      "sub_heading": "በዓለም ዙርያ ካሉት የቀይ መስቀል\/ቀይ ጨረቃ ብሔራዊ ማኅበራት ቁልፍ የድርጊት መልእክቶችን ለማየት ይመዝገቡ"
+    },
+    "footer": {
+      "terms_conditions": "ውሎች እና ሁኔታዎች",
+      "about": "ስለ",
+      "privacy": "ግላዊነት",
+      "getting_started": "መጀመር",
+      "docs": "ሰነድ",
+      "give_feedback": "ግብረ-መልስ ይስጡ",
+      "gdpc_logo": "የዓለም አቀፍ አደጋ ዝግጅት ማዕከል አርማ",
+      "ifrc_logo": "የዓለም አቀፍ የቀይ መስቀል እና የቀይ ጨረቃ ንቅናቄ አርማ",
+      "subtitle_1": "ስለ IFRC ዋና ደህንነት ዳታቤዝ",
+      "text_1": "IFRC ዋና ደህንነት ዳታቤዝ የሚያቀርበው",
+      "text_2": "የቀይ መስቀል እና የቀይ ጨረቃ መልእክቶችን በአደጋዎች ፊት",
+      "text_3": "ህዝብ በደህንነት እንዴት እንደሚሰራ ይድረሳል።",
+      "subtitle_2": "ተጨማሪ ይወቁ",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "ፖሊሲዎች",
+      "terms": "ውሎች እና ሁኔታዎች",
+      "subtitle_4": "ጠቃሚ አገናኞች",
+      "api_doc": "የ API ሰነድ",
+      "faq": "FAQ (አገናኝ ሊሰጥ ይገባል)"
+    }
   },
   "register_form": {
-      "heading": "ነፃ የ WhatNow አገልግሎት መለያዎን ይፍጠሩ",
-      "who_are_you": "ማን ነዎት?",
-      "developer": "ፈጣሪ",
-      "national_society": "ብሔራዊ ማኅበረሰብ",
-      "sign_up_with": "በእነዚህ ይመዝገቡ፡",
-      "sign_up_agreement": "መለያዎን በመፍጠርዎ ",
-      "terms_conditions": "በውሎቻችን እና ግዴታዎቻችን ተስማምተዋል፡፡ ",
-      "facebook": "በፌስቡክ ይመዝገቡ",
-      "google": "በ ጉግል ይመዝገቡ",
-      "email_sign_up": "ወይም በኢሜልዎ ይመዝገቡ:",
-      "location": "መገኛ",
-      "organisation": "ድርጅት",
-      "industry": "የኢንዱስትሪ ዓይነት",
-      "create_account": "መለያ ፍጠር",
-      "last_name": "የአያት ስም",
-      "select_country": "ሀገር ይምረጡ",
-      "select_industry": "የኢንዱስትሪ ዓይነትን ይምረጡ",
-      "industries": {
-          "media": "መገናኛ ዘዴ",
-          "emergency": "የአደጋ ጊዜ አስተዳደር",
-          "non_profit": "ለትርፍ ያልተቋቋመ \/ መንግስታዊ ያልሆነ ድርጅት",
-          "humanitarian": "የሰብአዊ እርዳታ ድርጅት",
-          "red_cross": "ቀይ መስቀል \/ ቀይ ጨረቃ",
-          "education": "ትምህርት \/ አካዳሚ",
-          "gov": "የመንግስት ድርጅት",
-          "other": "ሌላ"
-      },
-      "api_used_in": "ይህ ኤ.ፒ.አይ ጥቅም ላይ የሚውለው የት ነው?",
-      "api_used_in_help": "ይህንን አገልግሎት ከ 255 ባነሱ ካራክተሮች (ቁምፊዎች) ውስጥ ለመጠቀም እንዴት እንደፈለጉ አሁን እንመልከት",
-      "welcome": "እንኳን በደህና መጡ {ስም} ፣ እባክዎን ለመጀመር የሚከተሉትን መረጃዎች ያጠናቅቁ:",
-      "gdpc_note": "ማንኛውም ጥያቄ ካለዎት ወይም የበለጠ ለመማር ፍላጎት ካለዎት እባክዎ ያነጋግሩ: ",
-      "gdpc_ns_note": "ለመመዝገብ እባክዎን  በዓለም አቀፍ አደጋ ዝግጅት ማዕከል የሚገኘውን የ WhatNow አገልግሎት ቡድንን በዚህ ያናግሩ ",
-      "contact_gdpc": "GDPC ን ያነጋግሩ"
+    "heading_1": "ነፃ የ IFRC ደህንነት መልእክት �ና ዳታቤዝ ይፍጠሩ",
+    "heading_2": "IFRC ",
+    "heading_3": "ደህንነት መልእክት ዳታቤዝ",
+    "subtitle_1": "በአካባቢያቸው አደጋዎች ለመዘጋጀት እና ለመልስ ህዝብን ይርዱ።",
+    "subtitle_2": "በ API ለመድረስ ከፈለጉ፣ ይመዝገቡ እና መልእክቶችን በ #-ደረጃ መመሪያ ያጋሩ።",
+    "subtitle_3": "የቀይ መስቀል እና �ና ደህንነት መልእክቶችን ለመላ አለም፣ ለብሔራዊ እና ለአካባቢያዊ ሚዲያ ለማስተዋወቅ ይመዝገቡ።",
+    "who_are_you": "ማን ነዎት?",
+    "what_is_your_role": "ሚናዎ ምንድን ነው?",
+    "description": "COPY PENDING",
+    "national_society_description": "የ RCRC ብሔራዊ ማህበርዎን ዋና ደህንነት መልእክቶችን ለመላ አለም፣ ለብሔራዊ እና ለአካባቢያዊ ሚዲያ ለማስተዋወቅ ይለቅቁ።\nስለ መልእክቶቹ ለመፍጠር እና ከሚዲያ አጋሮች ጋር ለመገናኘት ተጨማሪ ለማወቅ እኛን ያግኙ።",
+    "developer": "ፈጣሪ",
+    "national_society": "ብሔራዊ ማኅበረሰብ",
+    "sign_up_with": "በእነዚህ ይመዝገቡ፡",
+    "sign_up_agreement": "መለያዎን በመፍጠርዎ ",
+    "terms_conditions": "በውሎቻችን እና ግዴታዎቻችን ተስማምተዋል፡፡ ",
+    "facebook": "በፌስቡክ ይመዝገቡ",
+    "google": "በ ጉግል ይመዝገቡ",
+    "email_sign_up": "ወይም በኢሜልዎ ይመዝገቡ:",
+    "mail": "ኢሜል",
+    "email_ifrc": "im@ifrc.org",
+    "location": "መገኛ",
+    "organisation": "ድርጅት",
+    "industry": "የኢንዱስትሪ ዓይነት",
+    "create_account": "መለያ ፍጠር",
+    "last_name": "የአያት ስም",
+    "select_country": "ሀገር ይምረጡ",
+    "select_industry": "የኢንዱስትሪ ዓይነትን ይምረጡ",
+    "industries": {
+      "media": "መገናኛ ዘዴ",
+      "emergency": "የአደጋ ጊዜ አስተዳደር",
+      "non_profit": "ለትርፍ ያልተቋቋመ \/ መንግስታዊ ያልሆነ ድርጅት",
+      "humanitarian": "የሰብአዊ እርዳታ ድርጅት",
+      "red_cross": "ቀይ መስቀል \/ ቀይ ጨረቃ",
+      "education": "ትምህርት \/ አካዳሚ",
+      "gov": "የመንግስት ድርጅት",
+      "other": "ሌላ"
+    },
+    "api_used_in": "ይህ ኤ.ፒ.አይ ጥቅም ላይ የሚውለው የት ነው?",
+    "api_used_in_help": "ይህንን አገልግሎት ከ 255 ባነሱ ካራክተሮች (ቁምፊዎች) ውስጥ ለመጠቀም እንዴት እንደፈለጉ አሁን እንመልከት",
+    "welcome": "እንኳን በደህና መጡ {ስም} ፣ እባክዎን ለመጀመር የሚከተሉትን መረጃዎች ያጠናቅቁ:",
+    "ifrc_note": "ለጥያቄዎች ወይም ተጨማሪ መረጃ፣ እባክዎ ያግኙን: ",
+    "contact_gdpc": "GDPC ን ያነጋግሩ"
   },
   "terms_service_page": {
     "applicable_law": {
-        "body": "የኮሎምቢያ ዲስትሪክት ህጎች በዚህ ስምምነት መሠረት ማንኛውንም የሕግ ግጭቶች መርሆዎች ሳይፈጽሙ ሁሉንም መብቶች እና ግዴታዎች ያስተዳድራሉ ፡፡",
-        "heading": "ተፈጻሚ ህግ:"
+      "body": "የኮሎምቢያ ዲስትሪክት ህጎች በዚህ ስምምነት መሠረት ማንኛውንም የሕግ ግጭቶች መርሆዎች ሳይፈጽሙ ሁሉንም መብቶች እና ግዴታዎች ያስተዳድራሉ ፡፡",
+      "heading": "ተፈጻሚ ህግ:"
     },
     "body": "በቀይ መስቀል ለእርስዎ የተሰጠውን የምዝገባ ቁልፍ ምስጥራዊነት እና ደህንነት የመጠበቅ ሃላፊነት የእርስዎ ነው ፡፡ ከጊዜ ወደጊዜ ለማዘመን እና መረጃዎችን (Data Feeds) መቀበልን ለመቀጠል ከኤ.ፒ.አይ ጋር ተጓዳኝነትን ማስቀጠል የእርስዎ ሃላፊነት ነው፡፡ ቀይ መስቀል የዘመኑ የኤፒአይ ስሪቶችን እና መረጃዎችን በራሱ ምርጫ ሊለቅ ይችላል። አዲስ ስሪቶች ከቀደሙት ትግበራዎች ጋር ላይጣጣሙ ይችላሉ ፤ እንዲሁም በጣም በቅርብ ጊዜ የተሻሻለውን የመረጃ መቀበያ ስሪት በማንኛውም ጊዜ ለመጠቀም ተስማምተዋል።\n\nማንኛውንም የኤ.ፒ.አይ ክፍልን ወይም ማንኛውንም የቀይ መስቀልን ሶፍትዌር ላለማሻሻል ፣ ላለማሰራጨት ፣ ላለመበተን ፣ ላለማቀናጀት ወይም ላለመቀልበስ ተስማምተዋል ፡፡\n\nኤ.ፒ.አይ.ውን ወይም የመረጃ መቀበያውን ቀይ መስቀል በወሰነው ውሳኔ መሠረት ከተመጣጣኝ የጥያቄ መጠን በላይ ወይም ከመጠን በላይ ወይም አላግባብ ላይጠቀሙ ይችላሉ::\n\nበቀይ መስቀል ብቸኛ ውሳኔ መሠረት ኤ.ፒ.አይ. ወይም የመረጃ መቀበያዎችን በሕገ-ወጥ ፣ በተሳሳተ ፣ በቸልተኛ ፣ በተንኮል-አዘል መንገድ ቀይ መስቀል፣ የአገልግሎት አቅራቢዎች ፣ የይዘት አቅራቢዎች ወይም ሌላ ሰው ላይ ጉዳት ለማድረስ በማሰብ ወይም በሚጎዳ መንገድ መጠቀም አይችሉም ፡፡\n\nቀይ መስቀል የኤ.ፒ.አይ. እና የመረጃ መቀበያዎች አጠቃቀምዎን ሊከታተል ይችላል። በእንደዚህ ዓይነት ቁጥጥር ውስጥ ጣልቃ ለመግባት ማንኛውንም ቴክኒካዊ ዘዴዎችን አይጠቀሙም ፤ እንዲሁም ቀይ መስቀል ማንኛውንም እንደዚህ ዓይነቱን ጣልቃ ገብነት ለማሸነፍ ቴክኒካዊ መንገዶችን ሊጠቀም ይችላል ፡፡\n\nየዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች (Prepare, Respond, and Recover Messages) መቅረብ ያለባቸው በወቅቱ የክስተት ማንቂያ (Event Alert) አንገብጋቢ መቼት መሰረት ወቅታዊ ወይም የዘመኑ ሲሆኑ ብቻ ነው ፤ እንዲሁም ግለሰብ የዝግጅት ፣ እያንዳንዳቸውን የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች (Prepare, Respond, and Recover Messages) በቀይ መስቀል የሚወጡ የመረጃ መቀበያዎች እና\/ወይም ተያያዥ የክስተት ማንቂያዎች (Event Alert) ወቅታዊ በሚሆኑበት ወቅት ማዘመን አለብዎት፡፡\n\nእያንዳንዱ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክት (Prepare, Respond, and Recover Message) መገናኘት ያለበት ለወጣበት መልክአ-ምድር ብቻ ነው:: የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች እንደ አሜሪካን ቀይ መስቀል ወይም ሌላ የቀይ መስቀልን ወይም የቀይ ጨረቃ ብሔራዊ ማኅበረሰብን ወይም ድርጅትን እንደ ማጣቀሻ ከተጠቀሙ (እያንዳንዱ “ምንጭ ማጣቀሻ”) ለመረጃ መቀበያዎች በተዘጋጀው ፎርም ላይ ከእያንዳንዳቸው የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች ጋር የተገናኘውን ምንጭ ማጣቀሻ መግለፅ አለብዎት፡፡ ማንኛውንም ምንጭ ማጣቀሻ መጠቀም አይቻልም::\n\nየመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ወደ ሌላ ቋንቋ መተርጎም፣ መጠቀም፣ አርትኦት ማድረግ ወይም መከለስ ወይም የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ትርጉም መቀየር አይችሉም ፡፡\n\nየመረጃ መቀበያዎችን  በርስዎ ሀላፊነት ወይም ቁጥጥር ውስጥ መሆናቸውን ማረጋገጥ አለብዎት::\n\nየክስተት ማንቂያዎችን እና  የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ማንኛውንም ማስታወቂያ ወይም ስፖንሰርሺፕን አካትቶ ለዋና ተጠቃሚዎች እንዲደርሱ ማድረግ አይችሉም ፡፡\n\nበጠቅላላው ወይም በከፊል የመረጃ መቀበያዎችን መዝገብ  መያዝ አይችሉም ፡፡",
     "contact": "ኤ.ፒ.አይ.ን በተመለከተ ማንኛውም ጥያቄ ካለዎት እባክዎን ቀይ መስቀልን በ {0} ያነጋግሩ ፡፡",
     "disclaimer": "ኤ.ፒ.አይ እና የመረጃ መቀበያዎች ለመረጃ እና ለትምህርታዊ ዓላማዎች ብቻ በ 'እንደነበረው' እና 'በተገኘው' መሠረት የተሰጡ ናቸው። ቀይ መስቀል በግልጽም ሆነ በተዘዋዋሪ ምንም ዓይነት ውክልና ወይም ዋስትና አይሰጥም ፡፡ በተዘዋዋሪ የተመለከቱ  የመሸጥ ዋስትናዎች እና ብቃት ማረጋገጫዎችን ጨምሮ ቀይ መስቀል ሁሉንም ዋስትናዎች  አይቀበልም፡፡ በቀጥታ፣ በተዘዋዋሪ፣ በአጋጣሚ፣ በቅጣት እና በተከታይነት የሚፈጠሩ ጉዳቶችን ጨምሮ ኤ.ፒ.አይን፣ የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን በመጠቀም ወቅት ለሚደርሱ ጉዳቶች ቀይ መስቀል እና ሰራተኞቹ ፣ መኮንኖች ፣ ገዥዎች እና ወኪሎች እንዲሁም ፈቃድ ሰጪዎች ተጠያቂ አይሆኑም ፡፡\n\nቀይ መስቀል ኤ.ፒ.አይን፣ የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን  ቅደም ተከተል ፣ ትክክለኛነት ፣ እውነተኝነት ወይም ሙሉነት ዋስትና አይሰጥም እንዲሁም በምንም መንገድ ለእርስዎ ወይም ለዋና ተጠቃሚዎችዎ ወይም ለማንኛውም ሶስተኛ አካል ማንኛውንም መዘግየቶች ፣ ጉድለቶች፣ ስህተቶች ወይም ግድፈቶችን ጨምሮ ያለምንም ገደብ ቀጥሎ ያሉትን ኤ.ፒ.አይ፣ የመረጃ መቀበያዎች ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች በተመለከተ ተጠያቂ አይሆንም፡፡",
     "entire_agreement": {
-        "body": "የኤ.ፒ.አይ. ውሎች በዚህ ጉዳይ ላይ በቀይ መስቀል እና በርስዎ መካከል የተደረገ የተሟላ እና ብቸኛ ስምምነትን የሚያካትቱ ሲሆን ከዚህ በፊት የተደረጉ የቃል ወይም የጽሑፍ ግንዛቤዎችን ፣ ግንኙነቶችን ወይም በዚህ ውስጥ ያልተካተቱ ስምምነቶችን ሁሉ ይተካሉ ፡፡ ቀይ መስቀል ይህንን ስምምነት በማንኛውም ጊዜ የማሻሻል ወይም የመሻር መብቱ የተጠበቀ ነው ፡፡",
-        "heading": "አጠቃላይ ስምምነት:"
+      "body": "የኤ.ፒ.አይ. ውሎች በዚህ ጉዳይ ላይ በቀይ መስቀል እና በርስዎ መካከል የተደረገ የተሟላ እና ብቸኛ ስምምነትን የሚያካትቱ ሲሆን ከዚህ በፊት የተደረጉ የቃል ወይም የጽሑፍ ግንዛቤዎችን ፣ ግንኙነቶችን ወይም በዚህ ውስጥ ያልተካተቱ ስምምነቶችን ሁሉ ይተካሉ ፡፡ ቀይ መስቀል ይህንን ስምምነት በማንኛውም ጊዜ የማሻሻል ወይም የመሻር መብቱ የተጠበቀ ነው ፡፡",
+      "heading": "አጠቃላይ ስምምነት:"
     },
     "heading": "የኤ.ፒ.አይ. ዋና ተጠቃሚ ፈቃድ አሰጣጥ ስምምነት",
     "intro": "እስማማለሁ: አገልግሎቱን በመጠቀም ወይም የቀረበው ሣጥን ላይ ምልክት በማድረግ ተጠቃሚው በዚህ ስምምነት እንዲታሰር እየተስማማ ነው።\n\nኤ.ፒ.አይ.ው እርስዎ (“እርስዎ”) በቀይ መስቀል በኩል የሚቀርቡ የዓለም የአየር ሁኔታ እና የአደጋ ክስተት ማስጠንቀቂያ እና የእይታ ማስታወቂያዎችን (“የክስተት ማንቂያዎች”) እና ተግባራዊ እና አውዳዊ መልእክቶችን ጨምሮ ለአካባቢያዊ አደጋዎች በአደጋው አይነት እና አስቸኳይነት መሰረት መዘጋጀትን ጨምሮ የመረጃ መቀብያዎችን (የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች እና በአጠቃላይ የክስተት ማንቂያዎችን እና የመረጃ መቀብያዎችን) ሰርስረው እንዲያወጡ የሚያስችልዎ መሳሪያ ነው፡፡ ተዘጋጅ፣ መልስ እና እንደገና አግኝ የሚሉ መልእክቶች ከዝግጅት ማንቂያዎች ወይም ሌላ ማስጠንቀቂያ ጋር እና በእርስዎ መተግበሪያ ውስጥ ከአየር ንብረት እና የአደጋ ክስተት ጋር  ተያያዥ ከሆኑ የማሳሰቢያ ማስታዎሻዎች  ጋር  አብረው እንዲመጡ የሚታሰቡ ናቸው። የእርስዎ መረጃ አቅርቦት በኤፒአይ ቃላት የሚመራ ነው።",
     "license_limitations": {
-        "body": "በየጊዜው ከሚታደሰው ከኤፒ አይ ጋር ያለውን ተመጣጣኝነት እስከጠበቁ ድረስ የመረጃ አቅርቦቶችን ለኤፒአይ ውሎች ከሚሆኑ ትግበራዎች ጋር አያይዘው ሊጠቀሙ ይችላሉ። የራስዎን መተግበሪያ (“የመጨረሻ ተጠቃሚዎች”) የክስተት ማስጠንቀቂያዎች እና አግባብነት ያለው ዐውደ-ጽሑፍ የተስተካከለ መልዕክቶችን በአስቸኳይ ፣ በፍጥነት በማደስ ፣ መልሶ የማግኘት ፣ የመጠቀም ፣ የማባዛት እና የማሰራጨት ብቸኛ ያልሆነ ፣ ውስን እና ሊሻር የሚችል መብት ተሰጥቶዎታል ፡፡ በኤፒአይ ውሎች መሠረት ከእያንዳንዱ የውሂብ ምግቦች የግለሰብ የዝግጅት ማስጠንቀቂያዎች ቅንብር።  ኤፒአይን መጠቀም የሚችሉት ከንግድ ጋር ያልተያያዙ በኤፒአይን ውል መሠረት የመረጃ አቅርቦቶችን ለማቃለል ብቻ ነው። የመረጃ አቅርቦቶች፣ የዝግጅት ማስጠንቀቂያዎችን እና \/ ወይም ለማዘጋጀት ፣ ምላሽ ለመስጠት እና መልዕክቶችን ያለገደብ ጨምሮ ፣ መልሶ በመሸጥ ፣ እነሱን ለመድረስ ክፍያ በመጠየቅ ፣ እነሱን እንደገና ለማሰራጨት ክፍያ ለመሙላት ወይም ክፍያ ለመሙላት በማንኛውም ሁኔታ ኤ.ፒ.አይ. መጠቀም አይችሉም ፡፡ በእነሱ ላይ የተመሠረተ የመነሻ ሥራዎችን ለመፍጠር ፡፡ የኤፒአይ ኀላፊነት፣ ባለቤትነት፣ መብትና ትርፍ የቀይ መስቀልና ፈቃድ የሰጡት አካላት ነው። ይህም የሚያካትተው ዝግጅትን፣ ምላሽን፣ የጠፉ መልእክቶችን የመመለስን፣ የኹናት ማስጠንቀቂያዎችን፣ የመረጃ አቅርቦትንና የምንጭ ጣቀሻዎችን ነው። በግልጽ ያልተሰጡ  መብቶች በሙሉ ተጠብቀዋል ፡፡",
-        "heading": "ፈቃድና ገደቦች:-"
+      "body": "በየጊዜው ከሚታደሰው ከኤፒ አይ ጋር ያለውን ተመጣጣኝነት እስከጠበቁ ድረስ የመረጃ አቅርቦቶችን ለኤፒአይ ውሎች ከሚሆኑ ትግበራዎች ጋር አያይዘው ሊጠቀሙ ይችላሉ። የራስዎን መተግበሪያ (“የመጨረሻ ተጠቃሚዎች”) የክስተት ማስጠንቀቂያዎች እና አግባብነት ያለው ዐውደ-ጽሑፍ የተስተካከለ መልዕክቶችን በአስቸኳይ ፣ በፍጥነት በማደስ ፣ መልሶ የማግኘት ፣ የመጠቀም ፣ የማባዛት እና የማሰራጨት ብቸኛ ያልሆነ ፣ ውስን እና ሊሻር የሚችል መብት ተሰጥቶዎታል ፡፡ በኤፒአይ ውሎች መሠረት ከእያንዳንዱ የውሂብ ምግቦች የግለሰብ የዝግጅት ማስጠንቀቂያዎች ቅንብር።  ኤፒአይን መጠቀም የሚችሉት ከንግድ ጋር ያልተያያዙ በኤፒአይን ውል መሠረት የመረጃ አቅርቦቶችን ለማቃለል ብቻ ነው። የመረጃ አቅርቦቶች፣ የዝግጅት ማስጠንቀቂያዎችን እና \/ ወይም ለማዘጋጀት ፣ ምላሽ ለመስጠት እና መልዕክቶችን ያለገደብ ጨምሮ ፣ መልሶ በመሸጥ ፣ እነሱን ለመድረስ ክፍያ በመጠየቅ ፣ እነሱን እንደገና ለማሰራጨት ክፍያ ለመሙላት ወይም ክፍያ ለመሙላት በማንኛውም ሁኔታ ኤ.ፒ.አይ. መጠቀም አይችሉም ፡፡ በእነሱ ላይ የተመሠረተ የመነሻ ሥራዎችን ለመፍጠር ፡፡ የኤፒአይ ኀላፊነት፣ ባለቤትነት፣ መብትና ትርፍ የቀይ መስቀልና ፈቃድ የሰጡት አካላት ነው። ይህም የሚያካትተው ዝግጅትን፣ ምላሽን፣ የጠፉ መልእክቶችን የመመለስን፣ የኹናት ማስጠንቀቂያዎችን፣ የመረጃ አቅርቦትንና የምንጭ ጣቀሻዎችን ነው። በግልጽ ያልተሰጡ  መብቶች በሙሉ ተጠብቀዋል ፡፡",
+      "heading": "ፈቃድና ገደቦች:-"
     },
     "overview": {
-        "body": "በአለም አቀፍ የአደጋ ዝግጁነት ማዕከል የዋትናው አገልግሎት መተግበሪያ መርሃግብር (ኤፒአይ) በአሜሪካ የብሄራዊ ቀይመስቀል ( ቀይ መስቀል) ቀርቦላችኋል። ኤፒአይ የምዝገባ ቁልፍ ይፈልጋል።  በምዝገባ ወቅት በቀይ መስቀል ድረ ገጽ የአገልግሎት ውል ውስጥ በ {0} (በጋራ “ኤፒአይ ውሎች”) ከሚገኙት ውሎችና ሁኔታዎች ጋር በሚከተሉት ውሎችና ሁኔታዎች መስማማት አለብዎት። የኤፒአይ ውሎች የኤፒአይ አጠቃቀምዎንና በኤፒአይው በኩል የሚገኙትን ሊወርዱ የሚችሉ የኤሌክትሮኒክስ ቁሳቁሶችዎን ይገዛል ፡፡ {1}",
-        "cta": "ለመመዝገብ ይህንን ይጫኑ።"
+      "body": "በአለም አቀፍ የአደጋ ዝግጁነት ማዕከል የዋትናው አገልግሎት መተግበሪያ መርሃግብር (ኤፒአይ) በአሜሪካ የብሄራዊ ቀይመስቀል ( ቀይ መስቀል) ቀርቦላችኋል። ኤፒአይ የምዝገባ ቁልፍ ይፈልጋል።  በምዝገባ ወቅት በቀይ መስቀል ድረ ገጽ የአገልግሎት ውል ውስጥ በ {0} (በጋራ “ኤፒአይ ውሎች”) ከሚገኙት ውሎችና ሁኔታዎች ጋር በሚከተሉት ውሎችና ሁኔታዎች መስማማት አለብዎት። የኤፒአይ ውሎች የኤፒአይ አጠቃቀምዎንና በኤፒአይው በኩል የሚገኙትን ሊወርዱ የሚችሉ የኤሌክትሮኒክስ ቁሳቁሶችዎን ይገዛል ፡፡ {1}",
+      "cta": "ለመመዝገብ ይህንን ይጫኑ።"
     },
     "privacy_policy": {
-        "body": "ኤፒአይ ውስጥ የተወሰኑ መርሃግብሮች፣ አገልግሎቶች፣  ቈሳቍስ፤ የግዢ አማራጮች፤ ዕቆች፤ ወይም መረጃዎች የሚያስፈልጋቸው እርስዎን ሊያሳውቁ የሚችሉ የግል መረጃዎች አቅርቦትን፣ ተጠቃሚነትንና ሥርጭትን መኾኑን ተረድተዋል፣ ተቀብለዋል እንዲሁም ተስማምተዋል። በዚህ መሠረት ኤ.ፒ.አይን ለመድረስ እና ለመጠቀም ከፈለጉ ኤፒአይው መጠቀሙ በ {0} በተለጠፈው የግላዊነት ፖሊሲ ውስጥ የተካተቱትን የግል መለያ መረጃዎችን የመሰብሰብና የመጠቀም ልምዶችን መቀበልን እንደሚቀበል እውቅና ይሰጡዎታል እንዲሁም ይስማማሉ ፡፡",
-        "heading": "የግላዊነት ፖሊሲ"
+      "body": "ኤፒአይ ውስጥ የተወሰኑ መርሃግብሮች፣ አገልግሎቶች፣  ቈሳቍስ፤ የግዢ አማራጮች፤ ዕቆች፤ ወይም መረጃዎች የሚያስፈልጋቸው እርስዎን ሊያሳውቁ የሚችሉ የግል መረጃዎች አቅርቦትን፣ ተጠቃሚነትንና ሥርጭትን መኾኑን ተረድተዋል፣ ተቀብለዋል እንዲሁም ተስማምተዋል። በዚህ መሠረት ኤ.ፒ.አይን ለመድረስ እና ለመጠቀም ከፈለጉ ኤፒአይው መጠቀሙ በ {0} በተለጠፈው የግላዊነት ፖሊሲ ውስጥ የተካተቱትን የግል መለያ መረጃዎችን የመሰብሰብና የመጠቀም ልምዶችን መቀበልን እንደሚቀበል እውቅና ይሰጡዎታል እንዲሁም ይስማማሉ ፡፡",
+      "heading": "የግላዊነት ፖሊሲ"
     },
     "prohibited_activities": {
-        "body": "እርስዎና የመጨረሻ ተጠቃሚዎችዎ ወይም ወኪሎችዎ ኤፒአይ ወይም የመረጃ አቅርቦቶችን በሚከተሉት መንገዶች መጠቀም የለባቸውም፤",
-        "heading": "የተከለከሉ ተግባራትና ሥነ መግባራት:-",
-        "prohibited_list": {
-            "one": "የቀይ መስቀል አገልግሎቶችን ወይም አገልጋዮችን ለማደናቀፍ ወይም ለማስተጓጎል ፡፡",
-            "two": "በቀይ መስቀል ወይም በኤ.ፒ.አይ. የተቀጠሩ ማናቸውንም የማረጋገጫ ቴክኖሎጂዎች ያለ ምንም ገደብ ጨምሮ ማንኛውንም ቁልፍ ወይም የደህንነት ዘዴዎችን ለመከልከል ወይም ለማሻሻል ፡፡",
-            "three": "ለራስዎ መለያ ለእርስዎ ከሚቀርበው በስተቀር ለቀይ መስቀል የመለያ መግቢያ ስሞችን ፣ የይለፍ ቃሎችን ወይም ሌሎች የማረጋገጫ ማስረጃዎችን ለመጠየቅ ፣ ለመሰብሰብ ፣ ለመጠየቅ ወይም በሌላ መንገድ ለማግኘት ፡፡",
-            "four": " በቀይ መስቀል ወይም ከቀይ መስቀል ጋር ተያያዥነት ባላቸው ድርጅቶች ወይም ማኅበራት መዋሃድን፣ መደገፍን ወይም መታገዝን መግለጽ ወይም ማካተት",
-            "five": "ኤፒአዩን፣ የመረጃ አቅርቦቱን፣ የክስተት ማንቂያ እና\/ ወይም የመዘጋጃ፣ የምላሽ መስጫ፣ እና የመመለሻ መልእክቶችን የእርስዎ እንደሆን ወይም እንደፈጠሩት  ለማስቀመጥ ወይም ለማመላከት",
-            "six": "ለጒዳት የሚያጋልጥ ማንኛውንም ዐይነት ቫይረስ፣ እንቅፋት፣ ትሮጃን ሆርስም ሆነ ሌላ ለማስተላለፍ"
-        }
+      "body": "እርስዎና የመጨረሻ ተጠቃሚዎችዎ ወይም ወኪሎችዎ ኤፒአይ ወይም የመረጃ አቅርቦቶችን በሚከተሉት መንገዶች መጠቀም የለባቸውም፤",
+      "heading": "የተከለከሉ ተግባራትና ሥነ መግባራት:-",
+      "prohibited_list": {
+        "one": "የቀይ መስቀል አገልግሎቶችን ወይም አገልጋዮችን ለማደናቀፍ ወይም ለማስተጓጎል ፡፡",
+        "two": "በቀይ መስቀል ወይም በኤ.ፒ.አይ. የተቀጠሩ ማናቸውንም የማረጋገጫ ቴክኖሎጂዎች ያለ ምንም ገደብ ጨምሮ ማንኛውንም ቁልፍ ወይም የደህንነት ዘዴዎችን ለመከልከል ወይም ለማሻሻል ፡፡",
+        "three": "ለራስዎ መለያ ለእርስዎ ከሚቀርበው በስተቀር ለቀይ መስቀል የመለያ መግቢያ ስሞችን ፣ የይለፍ ቃሎችን ወይም ሌሎች የማረጋገጫ ማስረጃዎችን ለመጠየቅ ፣ ለመሰብሰብ ፣ ለመጠየቅ ወይም በሌላ መንገድ ለማግኘት ፡፡",
+        "four": " በቀይ መስቀል ወይም ከቀይ መስቀል ጋር ተያያዥነት ባላቸው ድርጅቶች ወይም ማኅበራት መዋሃድን፣ መደገፍን ወይም መታገዝን መግለጽ ወይም ማካተት",
+        "five": "ኤፒአዩን፣ የመረጃ አቅርቦቱን፣ የክስተት ማንቂያ እና\/ ወይም የመዘጋጃ፣ የምላሽ መስጫ፣ እና የመመለሻ መልእክቶችን የእርስዎ እንደሆን ወይም እንደፈጠሩት  ለማስቀመጥ ወይም ለማመላከት",
+        "six": "ለጒዳት የሚያጋልጥ ማንኛውንም ዐይነት ቫይረስ፣ እንቅፋት፣ ትሮጃን ሆርስም ሆነ ሌላ ለማስተላለፍ"
+      }
     },
     "reserve_rights": "ቀይ መስቀል ኤፒአይ እና የመረጃ ምግቦች ሙሉ በሙሉ ወይም በከፊል ለጊዜው ወይም በቋሚነት በማንኛውም ጊዜ ያለ ቅድመ ማስጠንቀቂያ የመቀየር እና \/ ወይም ከአሁን በኋላ የመቀበል መብቱ የተጠበቀ ነው ፡፡ ጥርጣሬን ለማስቀረት የቀይ መስቀል ኤ.ፒ.አይ. ወይም የውሂብ ምግቦች ለእርስዎ እንዲገኙ በዚህ ውስጥ የሚያስገድድ አንዳችም ነገር የለም ፣ እናም ማንኛውም መዳረሻ በቀይ መስቀል ብቸኛ እና በፍፁም ውሳኔ ውስጥ መሆኑን ይስማማሉ እና ይቀበላሉ ፡፡",
     "severability": {
-        "body": "የኤ.ፒ.አይ. ውሎች ማንኛውም ቃል ወይም አቅርቦት ዋጋ ቢስነት የሌላ ማንኛውም አቅርቦት ትክክለኛነት ላይ ተጽዕኖ አይኖረውም ፡፡",
-        "heading": "ሊሰበር የሚችልና የሚተው\n"
+      "body": "የኤ.ፒ.አይ. ውሎች ማንኛውም ቃል ወይም አቅርቦት ዋጋ ቢስነት የሌላ ማንኛውም አቅርቦት ትክክለኛነት ላይ ተጽዕኖ አይኖረውም ፡፡",
+      "heading": "ሊሰበር የሚችልና የሚተው\n"
     },
     "suspension": {
       "body": "ቀይ መስቀሉ በኤፒአይ ውሎች ላይ በተጠቀሰው መሠረት ኤፒአይ ወይም የውሂብ ምግብ ባልተፈቀደ አጠቃቀም ላይ የተሰማሩ እንደሆኑ ወይም ኤ.ፒ.አይ ወይም የውሂብ ምግብን እየተጠቀሙ መሆኑን የሚወስን ከሆነ በቀይ መስቀል ብቸኛ ምርጫው መዳረሻዎን የማገድ ወይም የማቋረጥ መብቱ የተጠበቀ ነው ፡፡ በማንኛውም ሰው ወይም በቀይ መስቀል አውታረመረቦች ደህንነት እና \/ ወይም ደህንነት ላይ አደጋ በሚያደርስ \/ በሚጎዳ እንቅስቃሴ ውስጥ ፡፡",
@@ -711,111 +861,121 @@
     }
   },
   "view_data": {
-      "alert_title": "ማስጠንቀቂያ",
-      "more_info": "ተጨማሪ መረጃ",
-      "which": "የትኛቹን የዋትናው መልእክቶች ነው ማየት የሚፈልጉት?",
-      "view_data": "መረጃ ይመለከቱ",
-      "alerts": "ማስጠንቀቂያዎች",
-      "alert_preview": "የማንቂያ ማሳያ",
-      "cap_alerts": "ካፕ ማንቂያዎች",
-      "onset": "መባቻ",
+    "alert_title": "ማስጠንቀቂያ",
+    "more_info": "ተጨማሪ መረጃ",
+    "which": "የትኛቹን የዋትናው መልእክቶች ነው ማየት የሚፈልጉት?",
+    "view_data": "መረጃ ይመለከቱ",
+    "alerts": "ማስጠንቀቂያዎች",
+    "alert_preview": "የማንቂያ ማሳያ",
+    "cap_alerts": "ካፕ ማንቂያዎች",
+    "onset": "መባቻ",
+    "severity": "ከባድነት",
+    "title": "ርእስ",
+    "date": "ቀን",
+    "headline": "ዋና ርእስ",
+    "alert": "ማንቂያ",
+    "whatnow_info": "የዋትናው መረጃ",
+    "alert_detail": "የማንቂያ ዝርዝር",
+    "more": "ተጨማሪ መረጃ",
+    "area_affected": "የሚነካ አካባቢ",
+    "details": "ዝርዝሮች",
+    "cap": {
+      "type": "ዐይነት",
+      "status": "ሁኔታ",
+      "urgency": "አስቸኳይነት",
       "severity": "ከባድነት",
-      "title": "ርእስ",
-      "date": "ቀን",
-      "headline": "ዋና ርእስ",
-      "alert": "ማንቂያ",
-      "whatnow_info": "የዋትናው መረጃ",
-      "alert_detail": "የማንቂያ ዝርዝር",
+      "certainty": "እርግጠኝነት",
+      "sent": "ተልኳል",
+      "effective": "ውጤታማ",
+      "onset": "መባቻ",
+      "expires": "ጥቅም መስጠቱ ያበቃል",
+      "alert_from": "ማንቂያ ከ",
+      "feed": "አቅርቦት",
       "more": "ተጨማሪ መረጃ",
-      "area_affected": "የሚነካ አካባቢ",
-      "details": "ዝርዝሮች",
-      "cap": {
-          "type": "ዐይነት",
-          "status": "ሁኔታ",
-          "urgency": "አስቸኳይነት",
-          "severity": "ከባድነት",
-          "certainty": "እርግጠኝነት",
-          "sent": "ተልኳል",
-          "effective": "ውጤታማ",
-          "onset": "መባቻ",
-          "expires": "ጥቅም መስጠቱ ያበቃል",
-          "alert_from": "ማንቂያ ከ",
-          "feed": "አቅርቦት",
-          "more": "ተጨማሪ መረጃ",
-          "through": "በ",
-          "alert_feed": "የማንቂያ አቅርቦት",
-          "fetching_feed": "አቅርቦት ማምጣት",
-          "empty": "በአሁኑ ሰዓት ማንቂያዎች የሉም"
-      }
+      "through": "በ",
+      "alert_feed": "የማንቂያ አቅርቦት",
+      "fetching_feed": "አቅርቦት ማምጣት",
+      "empty": "በአሁኑ ሰዓት ማንቂያዎች የሉም"
+    }
   },
   "user_agreement": {
-      "title": "የተጠቃሚ ስምምነት",
-      "para_one": "የ “WhatNow” ፖርታልን ከማግኘትዎ በፊት እባክዎን ከዚህ በታች ያለውን ሰነድ በማውረድ እና ከዚህ በታች ያለውን ‘እቀበላለሁ’ የሚለውን ቁልፍ በመጫን የተጠቃሚ ስምምነቱን ውሎች ማንበብ እና መቀበል ይችላሉ ፡፡",
-      "cta": "እቀበላለሁ",
-      "download": "የተጠቃሚ ስምምነት ሰነዱን ለማየት ይህን ይጫኑ (105 ኬቢ)"
+    "title": "የተጠቃሚ ስምምነት",
+    "para_one": "የ “WhatNow” ፖርታልን ከማግኘትዎ በፊት እባክዎን ከዚህ በታች ያለውን ሰነድ በማውረድ እና ከዚህ በታች ያለውን ‘እቀበላለሁ’ የሚለውን ቁልፍ በመጫን የተጠቃሚ ስምምነቱን ውሎች ማንበብ እና መቀበል ይችላሉ ፡፡",
+    "cta": "እቀበላለሁ",
+    "download": "የተጠቃሚ ስምምነት ሰነዱን ለማየት ይህን ይጫኑ (105 ኬቢ)"
   },
   "hazard_type": {
-      "dropdown": {
-        "select": "የአደጋ ዐይነትን ይምረጡ",
-        "create": "የአደገ ዐይነት ይፍጠሩ"
-      },
-      "create": {
-          "title": "አዲስ የአደጋ ዐይነት ይፍጠሩ",
-          "request": "አዲስ የአደጋ ዐይነት ይጠይቁ",
-          "other": "ሌላ",
-          "email_subject": "አዲስ የአደጋ ዐይነት ይጠይቁ",
-          "hazard_name": "የአደጋ ስም",
-          "hazard_name_placeholder": "የአደጋ ስም ያስገቡ",
-          "upload_icon": "አንድ ምልክት ይጫኑ",
-          "icon_requirements": "ምልክቶቹ ፒኤንጂ እና ከ30 ኬቢ በታች መሆን አለባቸው",
-          "requestLink": "አዲስ የአደጋ ዐይነት ለመጠየቅ GDPC ን ያነጋግሩ",
-          "success": "የአደጋ ዐይነት ተፈጥሯል",
-          "error": "ይቅርታ ፣ አዲሱን የአደጋ ዐይነትዎን የመፍጠር ችግር ተከስቷል፡፡"
-      }
+    "dropdown": {
+      "select": "የአደጋ ዐይነትን ይምረጡ",
+      "create": "የአደገ ዐይነት ይፍጠሩ"
+    },
+    "create": {
+      "title": "አዲስ የአደጋ ዐይነት ይፍጠሩ",
+      "request": "አዲስ የአደጋ ዐይነት ይጠይቁ",
+      "other": "ሌላ",
+      "email_subject": "አዲስ የአደጋ ዐይነት ይጠይቁ",
+      "hazard_name": "የአደጋ ስም",
+      "hazard_name_placeholder": "የአደጋ ስም ያስገቡ",
+      "upload_icon": "አንድ ምልክት ይጫኑ",
+      "icon_requirements": "ምልክቶቹ ፒኤንጂ እና ከ30 ኬቢ በታች መሆን አለባቸው",
+      "requestLink": "አዲስ የአደጋ ዐይነት ለመጠየቅ GDPC ን ያነጋግሩ",
+      "success": "የአደጋ ዐይነት ተፈጥሯል",
+      "error": "ይቅርታ ፣ አዲሱን የአደጋ ዐይነትዎን የመፍጠር ችግር ተከስቷል፡፡"
+    }
   },
   "regions": {
     "list": {
-        "manage": "ክልሎችን ያስተዳድሩ",
-        "create": "አዲስ ክልል ይፍጠሩ",
-        "edit": "ክልል ያርትዑ",
-        "add": "ክልል ያክሉ",
-        "empty": "ምንም ክልሎች ማግኘት አልተቻለም",
-        "table_header": {
-            "region": "ክልል"
-        }
+      "manage": "ክልሎችን ያስተዳድሩ",
+      "create": "አዲስ ክልል ይፍጠሩ",
+      "edit": "ክልል ያርትዑ",
+      "add": "ክልል ያክሉ",
+      "empty": "ምንም ክልሎች ማግኘት አልተቻለም",
+      "table_header": {
+        "region": "ክልል"
+      }
     },
     "select_soc": "ለማየት እና ክልሎች ለማከል ማህበረሰብ ይምረጡ",
     "create": "አዲስ ክልል ይፍጠሩ",
     "form": {
-        "name": "የክልል ስም",
-        "name_help": "ብጁ የ WhatNow መልዕክት መላላኪያ ለመፍጠር የሚፈልጉትን ክልል ይሰይሙ።",
-        "description": "መግለጫ",
-        "description_help": "ስለ ክልሉ ተጨማሪ መረጃ ያቅርቡ ማለትም፣ የሳን ፍራንሲስኮ የባህር ወሽመጥ አካባቢ።"
+      "name": "የክልል ስም",
+      "name_help": "ብጁ የ WhatNow መልዕክት መላላኪያ ለመፍጠር የሚፈልጉትን ክልል ይሰይሙ።",
+      "description": "መግለጫ",
+      "description_help": "ስለ ክልሉ ተጨማሪ መረጃ ያቅርቡ ማለትም፣ የሳን ፍራንሲስኮ የባህር ወሽመጥ አካባቢ።"
     },
     "edit": "ክልል ያርትዑ",
     "delete": "ይህ ክልሉን እና ከዚያ ክልል ጋር የተገናኘ ማንኛውንም ይዘት ይሰርዛል።"
   },
   "table_headers": {
-      "profile_pic": "የመገለጫ ምስል",
-      "first_name": "የአያት ስም",
-      "last_name": "የአያት_ስም",
-      "role": "ኀላፊነት",
-      "society": "ማሕበረሰብ",
-      "date": "ቀን",
-      "country": "አገር",
-      "email": "ኢሜይል",
-      "created_at": "የተፈጠረ_",
-      "last_logged_in_at": "ለመጨረሻ ጊዜ የሠራው",
-      "terms_version": "መገለጫ",
-      "actions": "ተግባራት",
-      "action": "ተግባር",
-      "content": "ይዘት",
-      "country_code": "ቦታ",
-      "organisation": "ድርጅት",
-      "industry_type": "የኢንዱስትሪ ዐይነት",
-      "all_roles": "ሁሉም ሚናዎች",
-      "version": "ቅጂ",
-      "user": "ተጠቃሚ",
-      "language_code": "የቋንቋ ኮድ"
+    "profile_pic": "የመገለጫ ምስል",
+    "first_name": "የአያት ስም",
+    "last_name": "የአያት_ስም",
+    "role": "ኀላፊነት",
+    "society": "ማሕበረሰብ",
+    "date": "ቀን",
+    "country": "አገር",
+    "email": "ኢሜይል",
+    "created_at": "የተፈጠረ_",
+    "last_logged_in_at": "ለመጨረሻ ጊዜ የሠራው",
+    "terms_version": "መገለጫ",
+    "actions": "ተግባራት",
+    "action": "ተግባር",
+    "content": "ይዘት",
+    "country_code": "ቦታ",
+    "organisation": "ድርጅት",
+    "industry_type": "የኢንዱስትሪ ዐይነት",
+    "all_roles": "ሁሉም ሚናዎች",
+    "version": "ቅጂ",
+    "user": "ተጠቃሚ",
+    "language_code": "የቋንቋ ኮድ"
+  },
+  "terms_conditions": {
+      "title": "ውሎች እና ሁኔታዎች",
+      "accept": "ተቀበል"
+  },
+  "badges": {
+    "hazardCreate": "አደጋ ተፈጥሯል",
+    "published": "ታትሟል",
+    "draft": "ረቂቅ",
+    "bulkUploadDraft": "የጅምላ ጫን ረቂቅ"
   }
 }
