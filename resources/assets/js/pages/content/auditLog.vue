@@ -93,7 +93,7 @@
                 <span>{{ $t('badges.draft') }}</span>
                 <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
               </b-badge>
-              <b-badge v-else-if="data.item.action === 'Bulk upload draft'" class="custom-badge custom-badge-bulk-upload-draft">
+              <b-badge v-else-if="data.item.action === 'Updated content via import'" class="custom-badge custom-badge-bulk-upload-draft">
                 <span>{{ $t('badges.bulkUploadDraft') }}</span>
                 <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
               </b-badge>
@@ -157,7 +157,7 @@ export default {
         { key: 'country_code', sortable: true, label: this.$t('content.audit_log.soc_label') },
         { key: 'language_code', sortable: true },
         { key: 'content', sortable: true },
-        { key: 'action', sortable: true },
+        { key: 'action', sortable: true }
 
       ],
       currentPage: 1,
@@ -204,15 +204,15 @@ export default {
   },
   methods: {
     clearFilters () {
-      this.selectedSoc = null;
-      this.hazardTypeFilter = null;
-      this.languageFilter = null;
+      this.selectedSoc = null
+      this.hazardTypeFilter = null
+      this.languageFilter = null
     },
     async fetchAllHazardTypes () {
       try {
-        await this.$store.dispatch('content/fetchHazardTypes');
+        await this.$store.dispatch('content/fetchHazardTypes')
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'));
+        this.$noty.error(this.$t('error_alert_text'))
       }
     },
     async fetchAudits() {
@@ -271,9 +271,9 @@ export default {
     },
     setLocalStorage () {
       if (this.selectedSoc) {
-        localStorage.setItem('soc', this.selectedSoc.countryCode);
+        localStorage.setItem('soc', this.selectedSoc.countryCode)
       } else {
-        localStorage.removeItem('soc');
+        localStorage.removeItem('soc')
       }
     }
   },
@@ -327,6 +327,8 @@ export default {
   justify-content: space-between;
   padding: 0 8px;
   border: 2px solid;
+  font-size: 16px;
+
 }
 
 .custom-badge-published {
@@ -343,7 +345,7 @@ export default {
 
 .custom-badge-bulk-upload-draft {
   background: #C8E4F7;
-  border: 3px solid #4288B8;
+  border: #4288B8;
   color: #4288B8;
 }
 

@@ -51,20 +51,14 @@
                 <div class="red-pointer-top"></div>
               </div>
               <div class="number-line-item mb-5">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    1
-                  </p>
+                <div>
+                  <img class="works-img" :src="src('works1')">
                 </div>
               </div>
             </div>
             <div class="line-item-container">
               <div class="number-line-item mb-5">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    2
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works2')">
               </div>
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
@@ -97,20 +91,12 @@
                 <div class="red-pointer-top"></div>
               </div>
               <div class="number-line-item mb-5">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    3
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works3')">
               </div>
             </div>
             <div class="line-item-container">
               <div class="number-line-item mb-5">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    4
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works4')">
               </div>
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
@@ -143,22 +129,14 @@
                 <div class="red-pointer-top"></div>
               </div>
               <div class="number-line-item mb-5">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    5
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works5')">
               </div>
             </div>
           </div>
           <div class="line-vertical-container">
             <b-row class="vertical-item-container">
               <b-col class="center">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    1
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works1')">
               </b-col>
               <b-col class="center">
                 <div class="vertical-red-frag top-radius"></div>
@@ -197,20 +175,12 @@
                 <div class="red-pointer-left"></div>
               </b-col>
               <b-col class="center">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    2
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works2')">
               </b-col>
             </b-row>
             <b-row class="vertical-item-container">
               <b-col class="center">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    3
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works3')">
               </b-col>
               <b-col class="center">
                 <div class="vertical-red-frag">
@@ -250,20 +220,12 @@
                 <div class="red-pointer-left"></div>
               </b-col>
               <b-col class="center">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    4
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works4')">
               </b-col>
             </b-row>
             <b-row class="vertical-item-container">
               <b-col class="center">
-                <div class="circle-item">
-                  <p class="circle-item-number">
-                    5
-                  </p>
-                </div>
+                <img class="works-img" :src="src('works5')">
               </b-col>
               <b-col class="center">
                 <div class="vertical-red-frag bottom-radius">
@@ -449,20 +411,9 @@
   height: 5rem;
 }
 
-.circle-item {
-  background: #F6333F;
+.works-img {
   width: 5rem;
   height: 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-.circle-item-number {
-  font-size: 4rem;
-  font-weight: 600;
-  margin-top: 1rem;
 }
 
 .red-line-frag {
