@@ -345,7 +345,7 @@ export default {
 
 .custom-badge-bulk-upload-draft {
   background: #C8E4F7;
-  border: 3px solid #4288B8;
+  border: #4288B8;
   color: #4288B8;
 }
 
