@@ -75,7 +75,7 @@
     "create": "Create",
     "content": "Content",
     "what_now_content": "What Now Content",
-    "bulk_upload": "Messaje File Upload",
+    "bulk_upload": "Message File Upload",
     "audit_log": "Audit Log",
     "api_usage": "API Usage",
     "app_detail": "App Detail",
@@ -261,7 +261,7 @@
     "content_users": "Content Users",
     "audit_log": "Edit History",
     "whatnow": "Attribution Editor",
-    "bulk": "Messaje File Upload",
+    "bulk": "Message File Upload",
     "content": "Content",
     "api": "API Usage",
     "applications": "Applications",
@@ -572,7 +572,7 @@
     "audit": "Edit history",
     "export": "Export",
     "bulk_upload": {
-      "bulk_upload": "Messaje File Upload",
+      "bulk_upload": "Message File Upload",
       "template": "Template",
       "export_template": "Export Template",
       "import_data": "Import Data",
@@ -595,7 +595,7 @@
       "submit": "Import Content",
       "reset": "Upload Another",
       "export_template_guide": "Export Template Guide",
-      "export_template_instructions": "For instructions on how to use this messaje file upload template effectively, please view this guide.",
+      "export_template_instructions": "For instructions on how to use this g file upload template effectively, please view this guide.",
       "refer": "Refer to",
       "detail": "for detail instructions",
       "warnings": {
@@ -1014,6 +1014,6 @@
     "hazardCreate": "Hazard Created",
     "published": "Published",
     "draft": "Draft",
-    "bulkUploadDraft": "Messaje File Upload Draft"
+    "bulkUploadDraft": "Message File Upload Draft"
   }
 }
