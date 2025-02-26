@@ -9,14 +9,15 @@
   "token_expired_alert_title": "会话已过期！",
   "token_expired_alert_text": "请重新登录后继续。",
   "login": "登录",
-  "what_now": "WhatNow",
+  "what_now": "红十字与红新月联会安全信息数据库",
   "message_portal": "消息门户",
   "register": "注册",
   "sign_up": "立即注册",
   "docs": "文档",
   "my_apps": "我的应用程序",
   "number_of_apps": "{0}应用程序",
-  "whatnow_content": "WhatNow信息",
+  "whatnow_content": "信息",
+  "create_key": "创建密钥",
   "alerts": "警告",
   "feeds": "提要",
   "get_started": "現在注册",
@@ -75,7 +76,7 @@
     "create": "创建",
     "content": "内容",
     "what_now_content": "What Now内容",
-    "bulk_upload": "批量上传",
+    "bulk_upload": "信息文件上传",
     "audit_log": "审核日志",
     "api_usage": "API使用情况",
     "app_detail": "App详情",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "步骤1：注册",
-        "body": "第一次从WhatNow API获取数据前，请先{0}进入WhatNow门户。您可以使用Facebook和Google账户，或是电子邮件创建账户。",
+        "body": "要开始使用安全信息数据库 API 中的数据，首先需要{0} 访问安全信息数据库门户网站。\n\n您可以使用 Facebook 和 Google 账户或电子邮件地址创建账户。",
         "create_account_alt": "创建账户",
         "existing_account": "若您已注册，请{0}。",
         "login_cta": "登录",
         "sign_up_cta": "注册"
       },
       "two": {
-        "body": "使用API前，您必须在WhatNow门户创建一个申请。请告诉我们一点您正在搭建的项目信息。",
+        "body": "要使用 API，您必须在安全信息数据库门户中创建一个应用程序。请向我们介绍一下您正在创建的应用程序。",
         "create_app_alt": "创建应用",
         "heading": "步骤2 - 创建一个App"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "API文档",
-        "body": "WhatNow API使用HTTP(S)并提供RESTful端点以获取已发布数据。每个请求必须使用在上一步创建的API密钥进行认证。",
+        "body": "安全信息数据库 API 使用 HTTP(S)，提供 RESTful 端点来获取发布的数据。\n\n每个请求都必须使用上一步创建的 API 密钥进行验证。",
         "example_title": "请求示例",
         "heading": "步骤4：创建请求",
         "moreInfo": "想了解更多关于所有API端点的信息，请参阅{0}。"
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "您可以通过上传.csv文件一次性更新大量内容",
     "audit_log": "您可以在此处查看活动日志",
-    "whatnow_edit": "您可以在此处编辑WhatNow内容",
-    "whatnow_review": "這裡可以複核WhatNow內容",
-    "whatnow_publish": "您可以在此处编辑并发布WhatNow内容",
+    "whatnow_edit": "您可以在此编辑安全信息数据库的内容",
+    "whatnow_review": "在这里您可以查看安全信息数据库的内容",
+    "whatnow_publish": "在这里您可以编辑和发布安全信息数据库的内容",
     "manage_users": "您可以在此处对用户进行管理，包括创建、编辑和移除",
     "api_usage": "您可以在此处查看正在使用此API的用户及使用此API搭建的应用。",
     "wellcome": "欢迎",
-    "wellcome_description": "在这里您可以编辑和发布WhatNow内容"
+    "wellcome_description": "您可以在此编辑和发布安全信息数据库内容。"
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "管理内容用户",
     "content_users": "内容用户",
-    "audit_log": "审核日志",
-    "whatnow": "WhatNow",
-    "bulk": "批量上传",
+    "audit_log": "编辑历史",
+    "whatnow": "署名编辑",
+    "bulk": "信息文件上传",
     "content": "内容",
     "api": "API使用情况",
     "applications": "应用程序",
     "api_stats": "應用程式介面統計數字",
     "api_users": "API用户",
     "terms_conditions": "条款和细则",
-    "regions": "地區"
+    "regions": "次区域"
   },
   "common": {
     "accept": "接受",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNow信息",
+      "btn": "安全信息",
       "step_1": {
         "header": "第1步：查看消息",
         "text": "访问消息数据库以查看可用的红十字会红新月会国家协会消息。"
@@ -446,7 +447,7 @@
     "content": "内容",
     "audit_log": {
       "audit_log": "审核日志",
-      "my_audit_log": "我的审计日志",
+      "my_audit_log": "编辑历史",
       "empty": "筛选器未查询到匹配的审核记录",
       "soc_label": "红十字会",
       "select_hazard": "选择风险类型",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "消息",
       "set_attribution": "设置并发布红十字会名称及属性消息",
-      "whatnow": "WhatNow",
-      "empty": "此国家红会没有发布WhatNow消息",
+      "whatnow": "安全信息数据库",
+      "empty": "该国家协会没有发布安全信息",
       "steps": "步骤",
       "publish": "发布",
       "no_publish": "无可供发布内容",
       "published": "已发布翻译版本",
       "publishing": "发布",
       "content_to_publish": "发布内容的草稿",
-      "whatnow_content": "WhatNow内容",
+      "whatnow_content": "安全信息数据库内容",
       "choose_hazard": "选择危害",
       "hazard": "危害",
       "content": "内容",
@@ -477,8 +478,8 @@
       "society_name": "国家红十字会",
       "attribution_message": "信息属性",
       "no_translation": "没有内容",
-      "delete_content_translation": "这将从当前语言中删除所选的whatnow内容",
-      "messages": "WhatNow讯息",
+      "delete_content_translation": "这将从当前语言中删除所选的安全信息数据库内容",
+      "messages": "安全信息",
       "add_language": "添加新语言",
       "no_languages": "选择或创建语言以开始",
       "no_soc": "选择一个协会",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "输入危害类型名称",
       "other_hazard_type_label": "其他危害类型",
       "stepped_content": "阶梯式内容版块",
-      "content_title_description": "WhatNow讯息的标题",
-      "content_description_description": "WhatNow讯息描述",
+      "content_title_description": "这些安全信息的标题",
+      "content_description_description": "这些安全信息的说明",
       "content_label": "请输入一些危险信息",
       "content_url": "鏈接",
-      "content_url_description": "更多有关这些WhatNow讯息的鏈接。请包括規程，即http：\/\/或https：\/\/",
+      "content_url_description": "URL 获取有关这些安全信息的更多信息。请注明协议，即 http:// 或 https://",
       "created": "已创建",
       "pieces_edited": " 已编辑",
       "content_placeholder": "请输入留言",
@@ -541,7 +542,7 @@
       "download_image": "下载为图片",
       "download_image_error": "下载图片时出错，请确保您已发布所有更新，然后重试。",
       "download_instructions": "右键单击并选择“将图像另存为...”进行保存",
-      "downloaded_image_alt": "WhatNow说明",
+      "downloaded_image_alt": "安全信息数据库说明",
       "add_key_message": "添加关键信息",
       "add_supporting_message": "添加支持信息",
       "early_warning": "预警",
@@ -557,7 +558,7 @@
       "supporting_message_label": "支持信息"
     },
     "message_editor": {
-      "title": "消息编辑器",
+      "title": "署名编辑",
       "society_name_label": "全国协会名称",
       "attribution_url_label": "URL属性",
       "attribution_message_label": "信息属性",
@@ -569,10 +570,10 @@
       "download_image_error": "下载图像时出错，请重试。",
       "download_pdf_error": "下载 PDF 时出错，请重试。"
     },
-    "audit": "审核日志",
+    "audit": "编辑历史",
     "export": "导出",
     "bulk_upload": {
-      "bulk_upload": "批量上传",
+      "bulk_upload": "信息文件上传",
       "template": "模板",
       "export_template": "导出模板",
       "import_data": "导入数据",
@@ -595,7 +596,7 @@
       "submit": "导入内容",
       "reset": "上传另一个",
       "export_template_guide": "导出模板指南",
-      "export_template_instructions": "有关如何有效使用此批量上传模板的说明，请查看本指南。",
+      "export_template_instructions": "有关如何有效使用此 g 文件上传模板的说明，请查看本指南。",
       "refer": "请参阅",
       "detail": "详细说明请参阅",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "首页",
     "welcome": "欢迎",
-    "admin_intro": "您可以在此处管理用户，编辑和发布WhatNow内容以及查看API使用情况。",
-    "ns_admin_intro": "在这里您可以编辑和发布WhatNow内容",
-    "ns_editor_intro": "在这里您可以编辑WhatNow内容",
+    "admin_intro": "在这里，您可以管理用户、编辑和发布安全信息数据库内容以及查看 API 的使用情况。",
+    "ns_admin_intro": "您可以在此编辑和发布安全信息数据库内容",
+    "ns_editor_intro": "您可以在此编辑安全信息数据库的内容",
     "api_user_intro": "在这里，您可以查看app并管理帐户。",
     "role_changed_title": "您的角色已更改",
     "role_changed_p": "您已被分配以下角色：",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "关闭"
   },
   "landing": {
-    "strapline": "WhatNow服务",
+    "strapline": "安全信息数据库服务",
     "strapline_part_2": "全球红十字会\/红新月会重要安全信息",
+    "head_1": "红十字与红新月联会安全",
+    "head_2": "信息数据库",
+    "head_text_1": "基于红十字与红新月联会《公众意识与安全》的安全信息",
+    "head_text_2": "公共教育（PAPE）资源",
+    "head_bottom_1": "访问和共享可信的红十字会与红新月会信息",
+    "head_bottom_2": "可操作的信息，帮助人们安全地为",
+    "head_bottom_3": "并应对危险。",
+    "signup": "注册",
+    "it_works": "如何使用",
+    "works_1_a": "国家红十字红新月会",
+    "works_1_b": "社会和政府合作伙伴",
+    "works_1_c": "商定国家信息集",
+    "works_2_a": "国家协会出版",
+    "works_2_b": "中的安全信息",
+    "works_2_c": "资料库",
+    "works_3_a": "改变机构和",
+    "works_3_b": "沟通渠道",
+    "works_3_c": "连接数据库 API",
+    "works_4_a": "合作伙伴分享",
+    "works_4_b": "通过其",
+    "works_4_c": "频道",
+    "works_5_a": "社区获得",
+    "works_5_b": "信息和",
+    "works_5_c": "安全行动",
+    "learn_more": "了解更多",
+    "watch_video": "观看视频",
+    "example_case": "用例示例",
+    "api": "应用程序接口",
+    "hurricane": "及早纳入飓风信息",
+    "warning_alerts": "警告提示",
+    "social_media": "社交媒体",
+    "post_images": "张贴野火准备图片",
+    "messages_network": "向您的网络发送信息",
+    "whatsapp": "WhatsApp",
+    "share_flood": "与您的",
+    "family": "家人和朋友",
+    "impact": "影响",
+    "sign_up_today": "立即注册",
     "developer": {
       "strap_para_one": "通过我们本地化的关键行动信息帮助社区做好准备，做出反应并从灾害中恢复。",
-      "strap_para_two": "使用我们简单的四步指南将WhatNow消息集成到您的应用程序中。注册并查看所有可用消息。"
+      "strap_para_two": "使用我们简单的四步指南，将安全信息集成到您的应用程序中。注册并查看所有可用信息。"
     },
     "national_society": {
       "strap_para_one": "发布RCRC国家协会的主要安全信息，供全球，国家和本地媒体访问和广播。",
       "strap_para_two": "请与我们联系以了解有关如何创建消息并与媒体合作伙伴联系的更多信息。"
     },
     "strap_para_one": "通过我们本地化的关键行动信息帮助社区做好准备，做出反应并从灾害中恢复。",
-    "strap_para_two": "使用我们简单的四步指南将WhatNow消息集成到您的应用程序中。注册并查看所有可用消息。",
+    "strap_para_two": "使用我们简单的四步指南，将安全信息集成到您的应用程序中。注册并查看所有可用信息。",
     "view_data": "查看数据",
-    "view_message_library": "查看WhatNow消息",
+    "view_message_library": "查看安全信息",
     "what_now": "WhatNow？",
     "fake_alert_heading": "极寒警告",
     "fake_alert_description": "但这需要简单和容易的区分。争取自由时我们的力量。",
@@ -717,10 +756,10 @@
       "fifth_content": "每个人都可以参加，我们将为您提供帮助"
     },
     "example_alert": {
-      "heading": "示例WhatNow消息格式",
+      "heading": "安全信息格式示例",
       "alert_preview": "警报预览",
-      "what_now_info": "WhatNow预览",
-      "example_whatnow_request": "样本WhatNow响应",
+      "what_now_info": "安全信息预览",
+      "example_whatnow_request": "安全信息数据库响应示例",
       "example_alert_request": "样本警报响应",
       "example_content": "截至1月上午11时，天气咨询＃3最终结果。29，2018\n冷锋的尾部 \n\n冷锋尾部的影响已经减弱。Nome将看到更好的天气。但是，由于西部，在这些地区，预计应该有阵雨或雷暴雨，特别是在下午或晚上。随着这一发展，这是该天气系统的最终建议。",
       "example_content_location_header": "受影响的位置",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "警报来自：美国红十字会",
       "more_info": "更多信息",
-      "heading": "极端寒冷的关键信息",
+      "heading": "极寒天气安全提示",
       "copy": "这些是为降低风险并保护您和您的家人免受严寒而采取的措施。",
-      "what_now": "WhatNow",
+      "what_now": "红十字与红新月联会安全信息数据库",
       "step_1": "保护您的家。检查管道并安全使用加热源。",
       "step_2": "用温水保持身体水分",
       "step_3": "用暖和的衣服保护自己，并遮盖裸露的皮肤",
@@ -742,7 +781,7 @@
       "heading": "准备构建你的app吗？"
     },
     "data_preview": {
-      "heading": "WhatNow信息",
+      "heading": "安全信息",
       "sub_heading": "注册并查看来自世界各地的红十字会\/红新月会的主要行动消息"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "许可和限制:"
     },
     "overview": {
-      "body": "全球备灾中心WhatNow服务应用程序接口(“API”)由美国国家红十字会(“红十字”)提供给您。API需要一个注册密码。在注册过程中，您必须同意以下条款和条件，以及{0}上提供的红十字网站服务条款协议中的条款和条件(统称为“API条款”)。API条款将规范您对API和通过API提供的可下载电子材料的使用 {1}",
+      "body": "全球备灾中心安全信息数据库服务应用程序接口（\"API\"）由美国国家红十字会（\"红十字会\"）向您提供。API 需要注册密钥。  在注册过程中，您必须同意以下条款和条件，以及红十字会网站服务条款协议中的条款和条件（可从{0} 获取）（统称为 \"API 条款\"）。API 条款将对您使用 API 和通过 API 提供的可下载电子材料进行管理。{1}",
       "cta": "点击这里注册。"
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": " 警告:",
     "more_info": "详细信息:",
-    "which": "您想查看哪些WhatNow消息?\r",
+    "which": "您想查看哪些安全信息？",
     "view_data": "觀看资料",
     "alerts": "警告",
     "alert_preview": " 警告预览",
@@ -874,7 +913,7 @@
     "date": "日期",
     "headline": "标题",
     "alert": "（电子设备的）提示信号",
-    "whatnow_info": "WhatNow信息",
+    "whatnow_info": "安全信息数据库信息",
     "alert_detail": "（电子设备的）提示信号详情",
     "more": "更多信息",
     "area_affected": "影响的区域",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "用户协议",
-    "para_one": "在您访问WhatNow门户之前，请您阅读并接受用户协议的条款，下载下面的文件并点击下面的“我接受”按钮。",
+    "para_one": "在访问安全信息数据库门户网站之前，请下载以下文件并点击下面的 \"我接受 \"按钮，阅读并接受用户协议条款。",
     "cta": "我同意",
     "download": "点击此处查看用户协议文件(105KB)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "管理地區",
+      "manage": "次区域",
       "create": "創建新地區",
       "edit": "編輯地區",
       "add": "新增地區",
@@ -938,7 +977,7 @@
     "create": "創建新地區",
     "form": {
       "name": "地區名",
-      "name_help": "為一個你想創建度身訂造 WhatNow 訊息的地區命名。",
+      "name_help": "为要创建自定义安全信息的区域命名。",
       "description": "描述",
       "description_help": "提供更多關於此地區的資料，即，三藩市灣區。"
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "危险已创建",
     "published": "已发布",
     "draft": "草稿",
-    "bulkUploadDraft": "批量上传草稿"
+    "bulkUploadDraft": "信息文件上传草稿"
   }
 }

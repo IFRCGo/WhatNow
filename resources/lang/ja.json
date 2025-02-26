@@ -9,14 +9,15 @@
   "token_expired_alert_title": "セッションの有効期限が切れました！",
   "token_expired_alert_text": "続行するには、再度ログインしてください。",
   "login": "ログイン",
-  "what_now": "WhatNow",
+  "what_now": "IFRC安全メッセージデータベース",
   "message_portal": "メッセージポータル",
   "register": "登録",
   "sign_up": "新規登録",
   "docs": "マニュアル",
   "my_apps": "マイアプリ",
   "number_of_apps": "{0}のアプリ",
-  "whatnow_content": "WhatNowメッセージ",
+  "whatnow_content": "メッセージ",
+  "create_key": "キー作成",
   "alerts": "警報",
   "feeds": "フィード",
   "get_started": "今すぐ登録",
@@ -75,7 +76,7 @@
     "create": "作成",
     "content": "コンテンツ",
     "what_now_content": "What Nowコンテンツ",
-    "bulk_upload": "一括アップロード",
+    "bulk_upload": "メッセージファイルのアップロード",
     "audit_log": "監査ログ",
     "api_usage": "APIの使用",
     "app_detail": "アプリの詳細",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "ステップ1 - 新規登録",
-        "body": "WhatNow APIのデータを使い始めるには、まずWhatNowポータルに{0}してください。FacebookまたはGoogleアカウントを使用するか、メールアドレスを用いてアカウントを作成できます。",
+        "body": "Safety Message Database API からのデータの使用を開始するには、まず Safety Message Database Portal{0} にアクセスします。\n\nFacebookやGoogleのアカウント、またはメールアドレスを使用してアカウントを作成できます。",
         "create_account_alt": "アカウントを作成",
         "existing_account": "アカウントを既にお持ちの場合は、{0}してください。",
         "login_cta": "ログイン",
         "sign_up_cta": "新規登録"
       },
       "two": {
-        "body": "APIを使用するには、WhatNowポータルにアプリケーションを作成する必要があります。内容について少しお教えください。",
+        "body": "APIを使用するには、安全メッセージデータベースポータルでアプリケーションを作成する必要があります。作成するアプリケーションについて教えてください。",
         "create_app_alt": "アプリの作成",
         "heading": "ステップ2 - アプリの作成"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "APIの文書",
-        "body": "WhatNow APIはHTTPまたはHTTPSを使用して、公開データを取得するためのRESTに準拠したエンドポイントを提供します。各リクエストは、前のステップで作成したAPIキーを用いて認証を行う必要があります。",
+        "body": "Safety Message Database APIはHTTP(S)を使用し、公開データを取得するためのRESTfulエンドポイントを提供します。\n\n各リクエストは、前のステップで作成した API キーを使用して認証する必要があります。",
         "example_title": "リクエストの例",
         "heading": "ステップ4 - リクエストの実行",
         "moreInfo": "全てのAPIエンドポイントの詳細については、{0}を参照してください。"
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": ".csvファイルをアップロードすると、大量のコンテンツを一括更新できます",
     "audit_log": "ここにアクティビティのログが表示されます",
-    "whatnow_edit": "ここでWhatNowコンテンツを編集できます",
-    "whatnow_review": "ここでWhatNowコンテンツをレビューできます",
-    "whatnow_publish": "ここでWhatNowコンテンツの編集と公開ができます",
+    "whatnow_edit": "ここでは、セーフティメッセージデータベースの内容を編集できます。",
+    "whatnow_review": "安全メッセージデータベースの内容を確認できます。",
+    "whatnow_publish": "ここでは、安全メッセージデータベースのコンテンツを編集および公開できます。",
     "manage_users": "ここでユーザーの管理（作成、編集、削除）ができます",
     "api_usage": "ここにAPIを使用しているユーザーと構築中のアプリケーションが表示されます。",
     "wellcome": "ようこそ",
-    "wellcome_description": "ここでは、WhatNowのコンテンツを編集および公開できます。"
+    "wellcome_description": "ここでは、安全メッセージデータベースのコンテンツを編集して公開できます。"
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "コンテンツユーザーの管理",
     "content_users": "コンテンツユーザー",
-    "audit_log": "監査ログ",
-    "whatnow": "WhatNow",
-    "bulk": "一括アップロード",
+    "audit_log": "編集履歴",
+    "whatnow": "アトリビューション・エディター",
+    "bulk": "メッセージファイルのアップロード",
     "content": "コンテンツ",
     "api": "APIの使用",
     "applications": "アプリケーション",
     "api_stats": "API 統計",
     "api_users": "APIユーザー",
     "terms_conditions": "利用規約",
-    "regions": "地域"
+    "regions": "サブリージョン"
   },
   "common": {
     "accept": "承諾",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNowメッセージ",
+      "btn": "安全に関するメッセージ",
       "step_1": {
         "header": "ステップ1：メッセージを表示",
         "text": "メッセージデータベースにアクセスして、利用可能な赤十字・赤新月社国内協会のメッセージを表示します。"
@@ -446,7 +447,7 @@
     "content": "コンテンツ",
     "audit_log": {
       "audit_log": "監査ログ",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "編集履歴",
       "empty": "このフィルタに一致する監査履歴はありません",
       "soc_label": "組織",
       "select_hazard": "危険の種類を選択",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "メッセージ",
       "set_attribution": "組織名と公開する組織名のメッセージを設定",
-      "whatnow": "WhatNow",
-      "empty": "この全国組織から公開されているWhatNowメッセージはありません",
+      "whatnow": "安全メッセージデータベース",
+      "empty": "このナショナル・ソサエティの安全に関するメッセージは公表されていません。",
       "steps": "ステップ",
       "publish": "公開",
       "no_publish": "公開するものはありません",
       "published": "公開された翻訳",
       "publishing": "公開",
       "content_to_publish": "公開用の下書きコンテンツ",
-      "whatnow_content": "WhatNowコンテンツ",
+      "whatnow_content": "セーフティ・メッセージ・データベースの内容",
       "choose_hazard": "災害を選択",
       "hazard": "災害",
       "content": "コンテンツ",
@@ -477,8 +478,8 @@
       "society_name": "全国組織",
       "attribution_message": "組織名のメッセージ",
       "no_translation": "コンテンツがありません",
-      "delete_content_translation": "選択したWhatNowコンテンツを使用言語から削除します",
-      "messages": "WhatNowメッセージ：",
+      "delete_content_translation": "選択した安全メッセージデータベースのコンテンツが現在の言語から削除されます。",
+      "messages": "安全に関するメッセージ",
       "add_language": "新しい言語を追加",
       "no_languages": "言語を選択するか作成して開始してください",
       "no_soc": "組織を選択してください",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "災害タイプ名を入力してください",
       "other_hazard_type_label": "他の災害タイプ",
       "stepped_content": "段階的コンテンツの項目",
-      "content_title_description": "WhatNowメッセージのタイトル",
-      "content_description_description": "WhatNowメッセージの説明",
+      "content_title_description": "安全メッセージのタイトル",
+      "content_description_description": "安全に関するメッセージ",
       "content_label": "災害情報を入力してください",
       "content_url": "URL",
-      "content_url_description": "WhatNowメッセージに関する詳細情報のURL。http:\/\/またはhttps:\/\/などのプロトコルを含めてください",
+      "content_url_description": "これらのセーフティ・メッセージの詳細についてはURLをご覧ください。プロトコルを明記してください（例：http:// または https://）。",
       "created": "作成日",
       "pieces_edited": " 編集した項目",
       "content_placeholder": "メッセージを入力してください",
@@ -541,7 +542,7 @@
       "download_image": "画像としてダウンロード",
       "download_image_error": "画像のダウンロード中にエラー発生、全ての変更を公開したことを確認して再度お試しください。",
       "download_instructions": "右クリックし、[名前を付けて画像を保存]を選択して保存します",
-      "downloaded_image_alt": "WhatNowの使用説明",
+      "downloaded_image_alt": "安全メッセージデータベース使用説明書",
       "add_key_message": "主要メッセージを追加",
       "add_supporting_message": "サポートメッセージを追加",
       "early_warning": "早期警告",
@@ -557,7 +558,7 @@
       "supporting_message_label": "サポートメッセージ"
     },
     "message_editor": {
-      "title": "メッセージエディタ",
+      "title": "アトリビューション・エディター",
       "society_name_label": "国内協会名",
       "attribution_url_label": "帰属URL",
       "attribution_message_label": "帰属メッセージ",
@@ -569,10 +570,10 @@
       "download_image_error": "画像のダウンロード中にエラーが発生しました。もう一度お試しください。",
       "download_pdf_error": "PDFのダウンロード中にエラーが発生しました。もう一度お試しください。"
     },
-    "audit": "監査ログ",
+    "audit": "編集履歴",
     "export": "エクスポート",
     "bulk_upload": {
-      "bulk_upload": "一括アップロード",
+      "bulk_upload": "メッセージファイルのアップロード",
       "template": "テンプレート",
       "export_template": "テンプレートをエクスポート",
       "import_data": "データをインポート",
@@ -595,7 +596,7 @@
       "submit": "コンテンツをインポート",
       "reset": "別のものをアップロード",
       "export_template_guide": "テンプレートガイドをエクスポート",
-      "export_template_instructions": "一括アップロードテンプレートを効果的に使用する方法については、このガイドを参照してください。",
+      "export_template_instructions": "このgファイルアップロードテンプレートの効果的な使用方法については、こちらのガイドをご覧ください。",
       "refer": "参照",
       "detail": "詳細な指示",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "ホームページ",
     "welcome": "ようこそ",
-    "admin_intro": "ユーザーの管理、WhatNowコンテンツの編集・公開、API使用量の表示ができます。",
-    "ns_admin_intro": "ここでWhatNowコンテンツの編集と公開ができます",
-    "ns_editor_intro": "ここでWhatNowコンテンツを編集できます",
+    "admin_intro": "ここでは、ユーザーの管理、セーフティメッセージデータベースのコンテンツの編集と公開、API使用状況の確認ができます。",
+    "ns_admin_intro": "ここでは、安全メッセージデータベースのコンテンツを編集して公開できます。",
+    "ns_editor_intro": "ここでは、セーフティメッセージデータベースの内容を編集できます。",
     "api_user_intro": "ここでアプリを表示したり、アカウントを管理したりします。",
     "role_changed_title": "あなたの役割が変更されました",
     "role_changed_p": "あなたは以下の役割を割り当てられました：",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "閉じる"
   },
   "landing": {
-    "strapline": "WhatNowサービス",
+    "strapline": "セーフティ・メッセージ・データベース・サービス",
     "strapline_part_2": "国際赤十字・赤新月社連盟からの重要な安全メッセージ",
+    "head_1": "IFRCの安全性",
+    "head_2": "メッセージデータベース",
+    "head_text_1": "IFRCの広報啓発に基づく安全メッセージ",
+    "head_text_2": "公共教育（PAPE）リソース",
+    "head_bottom_1": "信頼できる赤十字赤新月社へのアクセスと共有",
+    "head_bottom_2": "人々が安全に準備するための行動可能なメッセージ",
+    "head_bottom_3": "そして危険に対応する。",
+    "signup": "会員登録",
+    "it_works": "仕組み",
+    "works_1_a": "赤十字赤新月社",
+    "works_1_b": "社会と政府のパートナー",
+    "works_1_c": "国別メッセージ・セットの合意",
+    "works_2_a": "各国協会が出版",
+    "works_2_b": "の安全メッセージ",
+    "works_2_c": "データベース",
+    "works_3_a": "代理店の変更と",
+    "works_3_b": "通信チャネル",
+    "works_3_c": "データベースAPIに接続する",
+    "works_4_a": "パートナーのシェア",
+    "works_4_b": "を通じてメッセージを送る。",
+    "works_4_c": "チャンネル",
+    "works_5_a": "地域は以下を受け取る",
+    "works_5_b": "メッセージと",
+    "works_5_c": "安全に行動する",
+    "learn_more": "さらに詳しく",
+    "watch_video": "ビデオを見る",
+    "example_case": "使用例",
+    "api": "API",
+    "hurricane": "ハリケーンのメッセージを早めに入れる",
+    "warning_alerts": "警告アラート",
+    "social_media": "ソーシャルメディア",
+    "post_images": "山火事への備えの投稿画像",
+    "messages_network": "ネットワークへのメッセージ",
+    "whatsapp": "WhatsApp",
+    "share_flood": "洪水軽減のための行動を共有する",
+    "family": "家族と友人",
+    "impact": "インパクト",
+    "sign_up_today": "今すぐ登録",
     "developer": {
       "strap_para_one": "翻訳された重要な行動メッセージを用いて、地域社会による災害の準備・対応・復旧に役立ててください。",
-      "strap_para_two": "簡単な４ステップガイドを用いて、WhatNowメッセージをアプリに統合してください。登録し、全てのメッセージを確認してください。"
+      "strap_para_two": "簡単な4ステップガイドを使用して、セーフティメッセージをアプリケーションに統合してください。サインアップして、利用可能なすべてのメッセージをご覧ください。"
     },
     "national_society": {
       "strap_para_one": "世界中の国・地域のメディアがアクセスして報道できるように、国際赤十字・赤新月社の重要な安全メッセージを公開してください。",
       "strap_para_two": "メッセージを作成し、メディアパートナーとつながる方法については、お問い合わせください。"
     },
     "strap_para_one": "翻訳された重要な行動メッセージを用いて、地域社会による災害の準備・対応・復旧に役立ててください。",
-    "strap_para_two": "簡単な４ステップガイドを用いて、WhatNowメッセージをアプリに統合してください。登録し、全てのメッセージを確認してください。",
+    "strap_para_two": "簡単な4ステップガイドを使用して、セーフティメッセージをアプリケーションに統合してください。サインアップして、利用可能なすべてのメッセージをご覧ください。",
     "view_data": "データを表示",
-    "view_message_library": "WhatNowメッセージを表示",
+    "view_message_library": "安全に関するメッセージを見る",
     "what_now": "WhatNow？",
     "fake_alert_heading": "極寒警告",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -717,10 +756,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "WhatNowメッセージ形式の例",
+      "heading": "安全メッセージのフォーマット例",
       "alert_preview": "警報プレビュー",
-      "what_now_info": "WhatNowプレビュー",
-      "example_whatnow_request": "WhatNow対応の例",
+      "what_now_info": "安全メッセージ・プレビュー",
+      "example_whatnow_request": "セーフティ・メッセージ・データベースの応答例",
       "example_alert_request": "警報対応の例",
       "example_content": "1月午前11時時点の気象注意報の第3報最終 2018年、29日\n寒冷前線の後方\n\n寒冷前線の後方の影響は弱まりました。ノームでは天候が回復するでしょう。ただし、局地的ににわか雨や雷雨が、特に午後から夜にかけての間、西に至るこれらの地域で予測されます。この開発により、これがこの気象状況に関する最後の予報となります。",
       "example_content_location_header": "影響を受ける地域",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "アメリカ赤十字からの警報",
       "more_info": "詳細情報",
-      "heading": "極寒に関する重要なメッセージ",
+      "heading": "極端な寒さに対する安全メッセージ",
       "copy": "極寒のリスクを軽減し、自分と家族を守るために取るべき行動です。",
-      "what_now": "WhatNow",
+      "what_now": "IFRC安全メッセージデータベース",
       "step_1": "家を守る。水道管を確認し、暖房器具を安全に使用してください。",
       "step_2": "暖かい飲物で水分を十分に補充してください",
       "step_3": "肌が露出しないように暖かい衣服で身を守ってください",
@@ -742,7 +781,7 @@
       "heading": "アプリを作成する準備はできましたか？"
     },
     "data_preview": {
-      "heading": "WhatNowメッセージ",
+      "heading": "安全に関するメッセージ",
       "sub_heading": "登録し、世界中の赤十字・赤新月社からの重要な行動メッセージを確認してください"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "ライセンスおよび制限事項："
     },
     "overview": {
-      "body": "世界防災準備センター（Global Disaster Preparedness Center）のWhatNow Service Application Program Interface（「API」という）は、米国赤十字社（「赤十字社」という）が提供します。 APIには登録キーが必要です。あなたは、登録プロセスで、以下の利用規約と{0}に記載されている赤十字社ウェブサイトのサービス利用規約（「API利用規約」と総称）に同意する必要があります。 API利用規約は、APIの使用とAPIを通じて提供されるダウンロード可能な電子資料に適用されます。{1}",
+      "body": "世界災害対策センター安否情報データベース・サービス・アプリケーション・プログラム・インターフェース（以下「API」といいます）は、米国赤十字社（以下「赤十字社」といいます）により提供されています。APIには登録キーが必要です。  登録プロセスにおいて、利用者は、{0} で利用可能な赤十字ウェブサイト利用規約の条件とともに、以下の条件に同意する必要があります（以下、総称して「API規約」といいます）。API利用規約は、APIおよびAPIを通じて利用可能となるダウンロード可能な電子資料の利用について規定します。{1}",
       "cta": "ここをクリックして登録してください"
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "警報：",
     "more_info": "詳細情報：",
-    "which": "どのWhatNowメッセージを表示しますか？",
+    "which": "どのセーフティ・メッセージをご覧になりますか？",
     "view_data": "データを表示",
     "alerts": "警報",
     "alert_preview": "警報のプレビュー",
@@ -874,7 +913,7 @@
     "date": "日付",
     "headline": "見出し",
     "alert": "警報",
-    "whatnow_info": "WhatNow情報",
+    "whatnow_info": "セーフティ・メッセージ・データベース情報",
     "alert_detail": "警報の詳細",
     "more": "詳細情報",
     "area_affected": "影響を受ける地域",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "使用許諾契約",
-    "para_one": "WhatNowポータルにアクセスする前に、以下の文書をダウンロードして使用許諾契約の条件をよく読み、下の「承諾」ボタンをクリックして承諾してください。",
+    "para_one": "セーフティ・メッセージ・データベース・ポータルにアクセスする前に、以下の文書をダウンロードし、下の「同意する」ボタンをクリックして、利用規約の条件を読み、同意してください。",
     "cta": "承諾",
     "download": "ここをクリックして使用許諾契約書を表示（105KB）"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "地域を管理",
+      "manage": "サブリージョン",
       "create": "新しい地域を作成",
       "edit": "地域を編集",
       "add": "地域を追加",
@@ -938,7 +977,7 @@
     "create": "新しい地域を作成する",
     "form": {
       "name": "地域名",
-      "name_help": "カスタムWhatNowメッセージングを作成する地域に名前を付けます。",
+      "name_help": "カスタム安全メッセージを作成する地域を指定します。",
       "description": "説明",
       "description_help": "地域に関する詳細情報を入力します (サンフランシスコベイエリアなど)。"
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "危険作成済み",
     "published": "公開済み",
     "draft": "下書き",
-    "bulkUploadDraft": "一括アップロード下書き"
+    "bulkUploadDraft": "メッセージファイルのアップロード"
   }
 }

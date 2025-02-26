@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Sitzung abgelaufen!",
   "token_expired_alert_text": "Bitte loggen Sie sich erneut ein, um fortzufahren.",
   "login": "Login",
-  "what_now": "WhatNow",
+  "what_now": "IFRC-Datenbank für Sicherheitsmeldungen",
   "message_portal": "Nachrichten-Portal",
   "register": "Registrieren",
   "sign_up": "Anmelden",
   "docs": "Dokumente",
   "my_apps": "Meine Apps",
   "number_of_apps": "{0} Apps",
-  "whatnow_content": "WhatNow-Meldungen",
+  "whatnow_content": "Nachrichten",
+  "create_key": "Schlüssel erstellen",
   "alerts": "Warnmeldungen",
   "feeds": "Feeds",
   "get_started": "Jetzt anmelden",
@@ -75,7 +76,7 @@
     "create": "Erstellen",
     "content": "Inhalt",
     "what_now_content": "WhatNow-Inhalt",
-    "bulk_upload": "Bulk-Upload",
+    "bulk_upload": "Upload von Nachrichtendateien",
     "audit_log": "Audit-Protokoll",
     "api_usage": "API-Nutzung",
     "app_detail": "App-Detail",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "Schritt 1 - Anmelden",
-        "body": "Um mit der Verwendung von Daten aus der WhatNow-API zu beginnen, rufen Sie zunächst {0} das WhatNow-Portal auf.\n\nSie können Ihre Facebook- und Google-Konten oder eine E-Mail-Adresse verwenden, um ein Konto zu erstellen.",
+        "body": "Um mit der Nutzung von Daten aus der Safety Message Database API zu beginnen, besuchen Sie zunächst das Safety Message Database Portal {0}.\n\nSie können Ihre Facebook- und Google-Konten oder eine E-Mail-Adresse verwenden, um ein Konto zu erstellen.",
         "create_account_alt": "Konto erstellen",
         "existing_account": "Wenn Sie bereits ein Konto haben, bitte {0}.",
         "login_cta": "einloggen",
         "sign_up_cta": "anmelden"
       },
       "two": {
-        "body": "Um die API zu verwenden, müssen Sie eine Anwendung im WhatNow-Portal erstellen. Erzählen Sie uns ein wenig darüber, was Sie bauen.",
+        "body": "Um die API zu nutzen, müssen Sie eine Anwendung im Safety Message Database Portal erstellen. Erzählen Sie uns ein wenig darüber, was Sie bauen.",
         "create_app_alt": "App erstellen",
         "heading": "Schritt 2 - Eine App erstellen"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "API-Dokumentation",
-        "body": "Die WhatNow-API verwendet HTTP(S) und bietet RESTful-Endpunkte, um veröffentlichte Daten zu erhalten.\n\nJede Anfrage muss mit dem im vorherigen Schritt erstellten API-Schlüssel authentifiziert werden.",
+        "body": "Die Sicherheitsnachrichtendatenbank-API verwendet HTTP(S) und bietet RESTful-Endpunkte, um veröffentlichte Daten zu erhalten.\n\nJede Anfrage muss mit dem im vorherigen Schritt erstellten API-Schlüssel authentifiziert werden.",
         "example_title": "Beispielanfrage",
         "heading": "Schritt 4 - Eine Anfrage stellen",
         "moreInfo": "Weitere Informationen zu allen API-Endpunkten finden Sie in {0}."
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "Laden Sie .csv-Dateien hoch, so dass Sie große Mengen an Inhalten auf einmal aktualisieren können",
     "audit_log": "Hier können Sie ein Protokoll der Aktivitäten einsehen",
-    "whatnow_edit": "Hier können Sie WhatNow-Inhalte bearbeiten",
-    "whatnow_review": "Hier können Sie Ihren WhatNow-Inhalt überprüfen",
-    "whatnow_publish": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
+    "whatnow_edit": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen bearbeiten",
+    "whatnow_review": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen überprüfen",
+    "whatnow_publish": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen bearbeiten und veröffentlichen.",
     "manage_users": "Hier werden die Benutzer verwaltet (erstellen, bearbeiten und entfernen)",
     "api_usage": "Hier können Sie sehen, wer die API verwendet und welche Anwendungen damit erstellt werden.",
     "wellcome": "Willkommen",
-    "wellcome_description": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen."
+    "wellcome_description": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen bearbeiten und veröffentlichen."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "Benutzer der Inhalte verwalten",
     "content_users": "Benutzer der Inhalte",
-    "audit_log": "Audit-Protokoll",
-    "whatnow": "WhatNow",
-    "bulk": "Bulk-Upload",
+    "audit_log": "Geschichte bearbeiten",
+    "whatnow": "Attribution Editor",
+    "bulk": "Upload von Nachrichtendateien",
     "content": "Inhalt",
     "api": "API-Nutzung",
     "applications": "Anwendungen",
     "api_stats": "API-Statistik",
     "api_users": "API-Benutzer",
     "terms_conditions": "Geschäftsbedingungen",
-    "regions": "Regionen"
+    "regions": "Teilregionen"
   },
   "common": {
     "accept": "Akzeptieren",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNow-Nachrichten",
+      "btn": "Sicherheitshinweise",
       "step_1": {
         "header": "Schritt 1: Nachrichten anzeigen",
         "text": "Besuchen Sie die Nachrichtendatenbank, um die verfügbaren Nachrichten der nationalen Gesellschaften des Roten Kreuzes und des Roten Halbmonds anzuzeigen."
@@ -446,7 +447,7 @@
     "content": "Inhalt",
     "audit_log": {
       "audit_log": "Audit-Protokoll",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Geschichte bearbeiten",
       "empty": "Kein Audit-Protokoll gefunden, das diesem Filter entspricht",
       "soc_label": "Gesellschaft",
       "select_hazard": "Gefahrentyp auswählen",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "Nachrichten",
       "set_attribution": "Gesellschaftsnamen und Zuordnungsnachricht zur Veröffentlichung erstellen",
-      "whatnow": "WhatNow",
-      "empty": "Es gibt keine veröffentlichten WhatNow-Meldungen für diese Landesgesellschaft",
+      "whatnow": "Datenbank für Sicherheitsmeldungen",
+      "empty": "Es gibt keine veröffentlichten Sicherheitsmeldungen für diese Nationale Gesellschaft",
       "steps": "Schritte",
       "publish": "Veröffentlichen",
       "no_publish": "Nichts zu veröffentlichen",
       "published": "veröffentlichte Übersetzungen",
       "publishing": "Veröffentlichen",
       "content_to_publish": "Entwurf des zu veröffentlichenden Inhalts",
-      "whatnow_content": "WhatNow-Inhalt",
+      "whatnow_content": "Inhalt der Datenbank für Sicherheitsmeldungen",
       "choose_hazard": "Gefahr wählen",
       "hazard": "Gefahr",
       "content": "Inhalt",
@@ -477,8 +478,8 @@
       "society_name": "Landesgesellschaft",
       "attribution_message": "Zuordnungsnachricht",
       "no_translation": "Kein Inhalt eingestellt",
-      "delete_content_translation": "Dadurch wird der ausgewählte Whatnow-Inhalt aus der aktuellen Sprache entfernt",
-      "messages": "WhatNow-Meldungen:",
+      "delete_content_translation": "Dadurch wird der Inhalt der ausgewählten Datenbank für Sicherheitsmeldungen aus der aktuellen Sprache entfernt.",
+      "messages": "Sicherheitshinweise des",
       "add_language": "Neue Sprache hinzufügen",
       "no_languages": "Wählen oder erstellen Sie eine neue Sprache, um loszulegen",
       "no_soc": "Wählen Sie eine Gesellschaft",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "Namen der Gefahrenart eingeben",
       "other_hazard_type_label": "Anderer Gefahrentyp",
       "stepped_content": "Abgestuftes Inhaltsstück",
-      "content_title_description": "Titel für diese WhatNow-Meldungen",
-      "content_description_description": "Beschreibungen dieser WhatNow-Meldungen",
+      "content_title_description": "Titel für diese Sicherheitshinweise",
+      "content_description_description": "Beschreibung dieser Sicherheitshinweise",
       "content_label": "Bitte geben Sie einige Gefahreninformationen ein",
       "content_url": "URL",
-      "content_url_description": "URL für weitere Informationen zu diesen WhatNow-Meldungen. Bitte geben Sie das Protokoll an, d.h. http:\/\/ oder https:\/\/",
+      "content_url_description": "URL für weitere Informationen über diese Sicherheitsmeldungen. Bitte geben Sie das Protokoll an, d.h. http:// oder https://",
       "created": "erstellt",
       "pieces_edited": " Stücke bearbeitet",
       "content_placeholder": "Bitte geben Sie eine Nachricht ein",
@@ -541,7 +542,7 @@
       "download_image": "Als Bild herunterladen",
       "download_image_error": "Fehler beim Herunterladen des Bildes, bitte stellen Sie sicher, dass Sie alle Änderungen veröffentlicht haben und versuchen Sie es erneut.",
       "download_instructions": "Klicken Sie mit der rechten Maustaste und wählen Sie \"Bild speichern unter...\", um zu speichern",
-      "downloaded_image_alt": "WhatNow Anleitungen",
+      "downloaded_image_alt": "Anweisungen zur Datenbank für Sicherheitsmeldungen",
       "add_key_message": "Hauptnachricht hinzufügen",
       "add_supporting_message": "Unterstützende Nachricht hinzufügen",
       "early_warning": "Frühwarnung",
@@ -557,7 +558,7 @@
       "supporting_message_label": "Unterstützende Nachricht"
     },
     "message_editor": {
-      "title": "Nachrichteneditor",
+      "title": "Attribution Editor",
       "society_name_label": "Name der nationalen Gesellschaft",
       "attribution_url_label": "Zuschreibungs-URL",
       "attribution_message_label": "Zuschreibungsnachricht",
@@ -569,10 +570,10 @@
       "download_image_error": "Fehler beim Herunterladen des Bildes, bitte versuchen Sie es erneut.",
       "download_pdf_error": "Fehler beim Herunterladen der PDF, bitte versuchen Sie es erneut."
     },
-    "audit": "Auditprotokoll",
+    "audit": "Geschichte bearbeiten",
     "export": "Export",
     "bulk_upload": {
-      "bulk_upload": "Bulk-Upload",
+      "bulk_upload": "Upload von Nachrichtendateien",
       "template": "Vorlage",
       "export_template": "Vorlage exportieren",
       "import_data": "Daten importieren",
@@ -595,7 +596,7 @@
       "submit": "Inhalte importieren",
       "reset": "Eine weitere Datei hochladen",
       "export_template_guide": "Anleitung zur Vorlage exportieren",
-      "export_template_instructions": "Für Anweisungen, wie Sie diese Vorlage für den Bulk-Upload effektiv nutzen können, sehen Sie sich bitte diese Anleitung an.",
+      "export_template_instructions": "Wie Sie diese Vorlage zum Hochladen von Dateien effektiv nutzen können, erfahren Sie in dieser Anleitung.",
       "refer": "Siehe",
       "detail": "für detaillierte Anweisungen",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "Zuhause",
     "welcome": "Willkommen",
-    "admin_intro": "Hier können Sie Benutzer verwalten, WhatNow-Inhalte bearbeiten und veröffentlichen und die API-Nutzung anzeigen.",
-    "ns_admin_intro": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
-    "ns_editor_intro": "Hier können Sie WhatNow-Inhalte bearbeiten",
+    "admin_intro": "Hier können Sie Benutzer verwalten, Inhalte der Sicherheitsnachrichtendatenbank bearbeiten und veröffentlichen und die API-Nutzung einsehen.",
+    "ns_admin_intro": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen bearbeiten und veröffentlichen",
+    "ns_editor_intro": "Hier können Sie den Inhalt der Datenbank für Sicherheitsmeldungen bearbeiten",
     "api_user_intro": "Hier sehen Sie Ihre Apps und verwalten Ihr Konto.",
     "role_changed_title": "Ihre Rolle wurde geändert",
     "role_changed_p": "Ihnen wurde die folgende Rolle zugewiesen:",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "Schließen"
   },
   "landing": {
-    "strapline": "WhatNow-Service",
+    "strapline": "Datenbankdienst für Sicherheitsmeldungen",
     "strapline_part_2": "Die wichtigsten Sicherheitsbotschaften des Globalen Roten Kreuzes \/ Roten Halbmondes",
+    "head_1": "IFRC-Sicherheit",
+    "head_2": "Nachrichten-Datenbank",
+    "head_text_1": "Sicherheitsbotschaften auf der Grundlage von IFRC Public Awareness and",
+    "head_text_2": "Ressource Öffentliche Bildung (PAPE)",
+    "head_bottom_1": "Zugang und gemeinsame Nutzung von vertrauenswürdigen Rotkreuz- und Rothalbmond",
+    "head_bottom_2": "umsetzbare Botschaften, die den Menschen helfen, sich sicher auf",
+    "head_bottom_3": "und auf Gefährdungen zu reagieren.",
+    "signup": "Anmeldung",
+    "it_works": "Wie es funktioniert",
+    "works_1_a": "Rotes Kreuz Roter Halbmond National",
+    "works_1_b": "Gesellschaft und staatliche Partner",
+    "works_1_c": "sich auf nationale Botschaften zu einigen",
+    "works_2_a": "Nationale Gesellschaften veröffentlichen",
+    "works_2_b": "Sicherheitsmeldungen in der",
+    "works_2_c": "Datenbank",
+    "works_3_a": "Änderung von Agenturen und",
+    "works_3_b": "Kommunikationskanäle",
+    "works_3_c": "Verbindung zur Datenbank-API",
+    "works_4_a": "Partner teilen",
+    "works_4_b": "Nachrichten durch ihre",
+    "works_4_c": "Kanäle",
+    "works_5_a": "Gemeinden erhalten",
+    "works_5_b": "die Nachrichten und",
+    "works_5_c": "sicher handeln",
+    "learn_more": "Mehr erfahren",
+    "watch_video": "Video ansehen",
+    "example_case": "Beispiel für einen Anwendungsfall",
+    "api": "API",
+    "hurricane": "Meldungen mit Hurrikanen frühzeitig einbeziehen",
+    "warning_alerts": "Warnmeldungen",
+    "social_media": "Soziale Medien",
+    "post_images": "Bilder zur Vorbereitung auf Waldbrände posten",
+    "messages_network": "Nachrichten an Ihr Netzwerk",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Teilen Sie die Maßnahmen zum Hochwasserschutz mit Ihrem",
+    "family": "Familie und Freunde",
+    "impact": "Auswirkungen",
+    "sign_up_today": "Heute anmelden",
     "developer": {
       "strap_para_one": "Helfen Sie Gemeinden, sich auf Gefahren vorzubereiten, darauf zu reagieren und sich von ihnen zu erholen - mit unseren lokalisierten wichtigsten Handlungsbotschaften.",
-      "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten."
+      "strap_para_two": "Nutzen Sie unsere einfache Anleitung in vier Schritten, um die Sicherheitsmeldungen in Ihre Anwendung zu integrieren. Registrieren Sie sich und sehen Sie alle verfügbaren Meldungen."
     },
     "national_society": {
       "strap_para_one": "Veröffentlichen Sie die wichtigsten Sicherheitsbotschaften Ihrer nationalen Rotkreuz- und Rothalbmond-Gesellschaft, damit globale, nationale und lokale Medien darauf zugreifen und sie senden können.",
       "strap_para_two": "Kontaktieren Sie uns, um mehr darüber zu erfahren, wie Sie die Botschaften erstellen und sich mit Medienpartnern verbinden können."
     },
     "strap_para_one": "Helfen Sie Gemeinden, sich auf Gefahren vorzubereiten, darauf zu reagieren und sich von ihnen zu erholen - mit unseren lokalisierten wichtigsten Handlungsbotschaften.",
-    "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten.",
+    "strap_para_two": "Nutzen Sie unsere einfache Anleitung in vier Schritten, um die Sicherheitsmeldungen in Ihre Anwendung zu integrieren. Registrieren Sie sich und sehen Sie alle verfügbaren Meldungen.",
     "view_data": "Daten ansehen",
-    "view_message_library": "WhatNow-Meldungen ansehen",
+    "view_message_library": "Sicherheitshinweise anzeigen",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Warnung vor extremer Kälte",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -717,10 +756,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Beispiel für das Format einer WhatNow-Meldung",
+      "heading": "Muster für eine Sicherheitsmeldung",
       "alert_preview": "Vorschau der Warnmeldungen",
-      "what_now_info": "WhatNow-Vorschau",
-      "example_whatnow_request": "Beispiel einer WhatNow-Reaktion",
+      "what_now_info": "Vorschau auf Sicherheitsmeldungen",
+      "example_whatnow_request": "Beispiel für eine Antwort aus der Datenbank für Sicherheitsmeldungen",
       "example_alert_request": "Beispiel einer Alarmreaktion",
       "example_content": "Wetter-Gefahreninformation #3 FINAL; Stand 11 Uhr, Januar. 29, 2018\nFür das Ende einer Kaltfront\n\nDie Wirkung des Endes einer Kaltfront hat sich abgeschwächt. Über Nome werden sich die Wetterbedingungen verbessern. Vereinzelte Regenschauer oder Gewitter, vor allem am Nachmittag oder Abend, sollten jedoch in diesen Gebieten aufgrund des Westens erwartet werden.\n\nMit dieser Entwicklung ist dies die letzte Empfehlung für dieses Wettersystem.",
       "example_content_location_header": "BETROFFENES GEBIET",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "Alarm von: Amerikanisches Rotes Kreuz",
       "more_info": "Mehr Infos",
-      "heading": "Die wichtigsten Botschaften für extreme Kälte",
+      "heading": "Sicherheitshinweise für extreme Kälte",
       "copy": "Dies sind Maßnahmen, die Sie ergreifen können, um das Risiko zu verringern und sich und Ihren Haushalt vor extremer Kälte zu schützen.",
-      "what_now": "WhatNow",
+      "what_now": "IFRC-Datenbank für Sicherheitsmeldungen",
       "step_1": "Schützen Sie Ihr Zuhause. Überprüfen Sie die Leitungen und verwenden Sie Heizquellen sicher.",
       "step_2": "Bleiben Sie mit warmen Flüssigkeiten hydriert",
       "step_3": "Schützen Sie sich mit warmer Kleidung und bedecken Sie freiliegende Haut",
@@ -742,7 +781,7 @@
       "heading": "Sind Sie bereit, Ihre App zu erstellen?"
     },
     "data_preview": {
-      "heading": "WhatNow-Meldungen",
+      "heading": "Sicherheitshinweise",
       "sub_heading": "Melden Sie sich an und sehen Sie sich die wichtigsten Aktionsbotschaften der Nationalen Gesellschaften des Roten Kreuzes \/ Roten Halbmondes in aller Welt an"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "Lizenz und Beschränkungen:"
     },
     "overview": {
-      "body": "Das Global Disaster Preparedness Center WhatNow Service Application Program Interface (die „API“) wird Ihnen vom Amerikanischen Roten Kreuz („Rotes Kreuz“) zur Verfügung gestellt. Die API erfordert einen Registrierungsschlüssel.  Während des Registrierungsprozesses müssen Sie den folgenden Bedingungen zustimmen, einschließlich der Nutzungsbedingungen der Webseite des Roten Kreuzes, die unter {0} verfügbar sind (zusammengefasst die „API-Bedingungen“). Die API-Bedingungen bestimmen Ihre Nutzung der API und der über die API zur Verfügung gestellten herunterladbaren elektronischen Materialien. {1}",
+      "body": "Das Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (die \"API\") wird Ihnen vom Amerikanischen Nationalen Roten Kreuz (\"Rotes Kreuz\") zur Verfügung gestellt. Für die API ist ein Registrierungsschlüssel erforderlich.  Während des Registrierungsprozesses müssen Sie den folgenden Bedingungen zustimmen, zusammen mit den Bedingungen in den Nutzungsbedingungen der Website des Roten Kreuzes, die unter {0} verfügbar sind (zusammen die \"API-Bedingungen\"). Die API-Bedingungen regeln Ihre Nutzung der API und der herunterladbaren elektronischen Materialien, die über die API zur Verfügung gestellt werden. {1}",
       "cta": "Zur Registrierung hier klicken."
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "WARNUNG:",
     "more_info": "Mehr Info:",
-    "which": "Welche WhatNow-Nachrichten würden Sie gerne sehen?",
+    "which": "Welche Sicherheitsmitteilungen möchten Sie sehen?",
     "view_data": "Daten anzeigen",
     "alerts": "Warnmeldungen",
     "alert_preview": "Vorschau der Warnmeldungen",
@@ -874,7 +913,7 @@
     "date": "Datum",
     "headline": "Überschrift",
     "alert": "Warnmeldung",
-    "whatnow_info": "WhatNow-Info",
+    "whatnow_info": "Informationen zur Datenbank für Sicherheitsmeldungen",
     "alert_detail": "Details Warnhinweis",
     "more": "Mehr Info",
     "area_affected": "Betroffener Bereich",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "Nutzungsbedingungen",
-    "para_one": "Bevor Sie auf das WhatNow-Portal zugreifen können, lesen und akzeptieren Sie bitte die Nutzungsbedingungen, indem Sie das unten stehende Dokument herunterladen und auf die Schaltfläche „Ich stimme zu“ klicken.",
+    "para_one": "Bevor Sie auf das Safety Message Database Portal zugreifen können, lesen und akzeptieren Sie bitte die Bedingungen der Nutzungsvereinbarung, indem Sie das unten stehende Dokument herunterladen und auf die Schaltfläche \"Ich akzeptiere\" klicken.",
     "cta": "Ich stimme zu",
     "download": "Klicken Sie hier, um die Nutzungsbedingungen zu lesen (105 kB)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Regionen verwalten",
+      "manage": "Teilregionen",
       "create": "Neue Region erstellen",
       "edit": "Region bearbeiten",
       "add": "Region hinzufügen",
@@ -938,7 +977,7 @@
     "create": "Eine neue Region erstellen",
     "form": {
       "name": "Name der Region",
-      "name_help": "Benennen Sie die Region, für die Sie eine benutzerdefinierte WhatNow-Nachrichtenübermittlung erstellen möchten.",
+      "name_help": "Benennen Sie die Region, für die Sie benutzerdefinierte Sicherheitsmitteilungen erstellen möchten.",
       "description": "Beschreibung",
       "description_help": "Geben Sie weitere Informationen über die Region an, z. B. San Francisco Bay Area."
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "Gefahr erstellt",
     "published": "Veröffentlicht",
     "draft": "Entwurf",
-    "bulkUploadDraft": "Massenupload-Entwurf"
+    "bulkUploadDraft": "Nachricht Datei-Upload-Entwurf"
   }
 }

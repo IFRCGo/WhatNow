@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Oturum süresi doldu!",
   "token_expired_alert_text": "Devam etmek için lütfen tekrar giriş yapınız.",
   "login": "Giriş Yap",
-  "what_now": "WhatNow",
+  "what_now": "IFRC Güvenlik Mesajı Veritabanı",
   "message_portal": "Mesajlar",
   "register": "Kayıt ol",
   "sign_up": "Üye ol",
   "docs": "Belgeler",
   "my_apps": "Uygulamalarım",
   "number_of_apps": "{0} Uygulamalar",
-  "whatnow_content": "WhatNow Mesajları",
+  "whatnow_content": "Mesajlar",
+  "create_key": "Anahtar Oluştur",
   "alerts": "Uyarılar",
   "feeds": "Bildirmeler",
   "get_started": "Şimdi üye ol",
@@ -75,7 +76,7 @@
     "create": "Oluştur",
     "content": "İçerik",
     "what_now_content": "What Now İçeriği",
-    "bulk_upload": "Toplu Yükleme",
+    "bulk_upload": "Mesaj Dosyası Yükleme",
     "audit_log": "Denetim Kaydı",
     "api_usage": "API Kullanımı",
     "app_detail": "Uygulama Detayı",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "1. Adım - Üye ol",
-        "body": "WhatNow API'den veri kullanımı için önce {0} WhatNow portal'a bakın.\n\nHesap oluşturmak için Facebook & Google hesabınızı veya e-posta adresinizi kullanabilirsiniz.",
+        "body": "Safety Message Database API'sindeki verileri kullanmaya başlamak için öncelikle {0} adresinden Safety Message Database Portalına gidin.\n\nHesap oluşturmak için Facebook ve Google hesaplarınızı veya bir e-posta adresini kullanabilirsiniz.",
         "create_account_alt": "hesap oluştur",
         "existing_account": "Zaten hesabınız varsa, lütfen {0}.",
         "login_cta": "giriş yap",
         "sign_up_cta": "üye ol"
       },
       "two": {
-        "body": "API kullanmak için önce WhatNow Portal'da uygulama oluşturmalısınız. Ne oluşturduğunuzu bize biraz anlatın.",
+        "body": "API'yi kullanmak için Safety Message Database Portal'da bir uygulama oluşturmalısınız. Bize ne inşa ettiğinizden biraz bahsedin.",
         "create_app_alt": "uygulama oluştur",
         "heading": "2. Adım - Uygulama oluştur"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "API belgeler",
-        "body": "Yayınlanan veriye ulaşmak için WhatNow API HTTP(S) kullanır ve RESTful bitiş noktasını içerir.\n\nÖnceki adımda oluşturulan API anahtarı kullanılarak her istekte kimlik doğrulaması kullanılır.",
+        "body": "Safety Message Database API, HTTP(S) kullanır ve yayınlanan verileri elde etmek için RESTful uç noktaları sağlar.\n\nHer istek için bir önceki adımda oluşturulan API anahtarı kullanılarak kimlik doğrulaması yapılmalıdır.",
         "example_title": "Örnek İstek",
         "heading": "4. Adım - İstek yap",
         "moreInfo": "API bitiş noktaları hakkında daha fazla bilgi için {0}."
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "Daha fazla miktarda içerik yükleyebilmeniz için dosyaları .csv formatında yükleyin",
     "audit_log": "Burada tüm kayıt edilen etkinliklerini görebilirsiniz",
-    "whatnow_edit": "Burada WhatNow içeriğini düzenleyebilirsiniz",
-    "whatnow_review": "Burada WhatNow içeriğini düzenleyebilir ve yayınlayabilirsiniz",
-    "whatnow_publish": "Burada WhatNow içeriğini düzenleyebilir ve yayınlayabilirsiniz",
+    "whatnow_edit": "Burası Güvenlik Mesajı Veritabanı içeriğini düzenleyebileceğiniz yerdir",
+    "whatnow_review": "Güvenlik Mesajı Veritabanı içeriğini buradan inceleyebilirsiniz",
+    "whatnow_publish": "Burası Güvenlik Mesajı Veritabanı içeriğini düzenleyebileceğiniz ve yayınlayabileceğiniz yerdir",
     "manage_users": "Burada kullanıcıları yönetebilirsiniz (Oluştur, düzenle ve kaldır)",
     "api_usage": "Burada hangi kullanıcılar API kullanıyor ve hangi uygulamalar oluşturuluyor görebilirsiniz.",
     "wellcome": "Hoş Geldiniz",
-    "wellcome_description": "Burada WhatNow içeriğini düzenleyebilir ve yayınlayabilirsiniz."
+    "wellcome_description": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "İçerik Kullanıcılarını Yönetin",
     "content_users": "İçerik kullanıcıları",
-    "audit_log": "Denetim Kaydı",
-    "whatnow": "WhatNow",
-    "bulk": "Toplu Yükleme",
+    "audit_log": "Geçmişi Düzenle",
+    "whatnow": "Atıf Editörü",
+    "bulk": "Mesaj Dosyası Yükleme",
     "content": "İçerik",
     "api": "API Kullanımı",
     "applications": "Uygulamalar",
     "api_stats": "API İstatikleri",
     "api_users": "API Kullanıcıları",
     "terms_conditions": "Hüküm ve Koşullar",
-    "regions": "Bölgeler"
+    "regions": "Alt Bölgeler"
   },
   "common": {
     "accept": "Kabul et",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNow Mesajları",
+      "btn": "Güvenlik Mesajları",
       "step_1": {
         "header": "Adım 1: Mesajları görüntüleyin",
         "text": "Mevcut Kızılhaç Kızılay Ulusal Topluluğu mesajlarını görüntülemek için mesaj veritabanını ziyaret edin."
@@ -446,7 +447,7 @@
     "content": "İçerik",
     "audit_log": {
       "audit_log": "Denetim Kaydı",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Geçmişi Düzenle",
       "empty": "Bu filtreye uyan denetim kaydı bulunamadı",
       "soc_label": "Dernek",
       "select_hazard": "Tehlike türü seçin",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "Mesajlar",
       "set_attribution": "Yayınlanacak dernek ismi ve ilgili not oluştur",
-      "whatnow": "WhatNow",
-      "empty": "Bu ulusal dernek için yayınlanmış WhatNow mesajı yok",
+      "whatnow": "Güvenlik Mesajı Veritabanı",
+      "empty": "Bu Ulusal Toplum için henüz bir Güvenlik mesajı yayınlanmamıştır",
       "steps": "Adımlar",
       "publish": "Yayınla",
       "no_publish": "Yayınlanacak bir şey yok",
       "published": "yayınlanan çeviriler",
       "publishing": "Yayınlanıyor",
       "content_to_publish": "Yayınlanacak olan taslak içeriği",
-      "whatnow_content": "WhatNow içerik",
+      "whatnow_content": "Güvenlik Mesajı Veritabanı içeriği",
       "choose_hazard": "Tehlike Seç",
       "hazard": "Tehlike",
       "content": "İçerik",
@@ -477,8 +478,8 @@
       "society_name": "Ulusal Dernek",
       "attribution_message": "Özellik mesajı",
       "no_translation": "İçerik seçili değil",
-      "delete_content_translation": "Bu işlem seçilen whatnow içeriğini mevcut dilden kaldıracak",
-      "messages": "WhatNow Mesajları",
+      "delete_content_translation": "Bu, seçilen Güvenlik Mesajı Veritabanı içeriğini geçerli dilden kaldıracaktır",
+      "messages": "Güvenlik mesajları",
       "add_language": "Yeni dil ekle",
       "no_languages": "Başlamak için bir dil seç veya oluştur",
       "no_soc": "Bir dernek seç",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "Tehlike Türü İçin İsim Gir",
       "other_hazard_type_label": "Diğer Tehlike Türü",
       "stepped_content": "Kademeli İçerik Parçası",
-      "content_title_description": "WhatNow Mesajları için Başlık",
-      "content_description_description": "WhatNow Mesajları için Tanım",
+      "content_title_description": "Bu Güvenlik Mesajları için Başlık",
+      "content_description_description": "Bu Güvenlik Mesajlarının Açıklaması",
       "content_label": "Lütfen tehlike bilgisi girin",
       "content_url": "URL",
-      "content_url_description": "WhatNow mesajları hakkında daha fazla bilgi için URL. Lütfen kullanılan protokolü belirtin, ör. http:\/\/ veya https:\/\/",
+      "content_url_description": "Bu Güvenlik mesajları hakkında daha fazla bilgi için URL. Lütfen protokolü ekleyin, örneğin http:// veya https://",
       "created": "oluşturuldu",
       "pieces_edited": " Düzeltilmiş Parçalar",
       "content_placeholder": "Lütfen bir mesaj girin",
@@ -541,7 +542,7 @@
       "download_image": "Resim Olarak İndir",
       "download_image_error": "Resim indirilemedi. Lütfen bütün değişikliklerin yayınlandığından emin olun ve tekrar deneyin.",
       "download_instructions": "Kaydetmek için sağ tıklayın ve 'Resmi farklı kaydet...'i seçin",
-      "downloaded_image_alt": "WhatNow Talimatları",
+      "downloaded_image_alt": "Güvenlik Mesajı Veritabanı Talimatları",
       "add_key_message": "Anahtar Mesaj Ekle",
       "add_supporting_message": "Destek Mesajı Ekle",
       "early_warning": "Erken Uyarı",
@@ -557,7 +558,7 @@
       "supporting_message_label": "Destek mesajı"
     },
     "message_editor": {
-      "title": "Mesaj Düzenleyici",
+      "title": "Atıf Editörü",
       "society_name_label": "Ulusal topluluk adı",
       "attribution_url_label": "Atıf URL'si",
       "attribution_message_label": "Atıf Mesajı",
@@ -569,10 +570,10 @@
       "download_image_error": "Resim indirilirken hata oluştu, lütfen tekrar deneyin.",
       "download_pdf_error": "PDF indirilirken hata oluştu, lütfen tekrar deneyin."
     },
-    "audit": "Denetim günlüğü",
+    "audit": "Geçmişi düzenle",
     "export": "Dışa Aktar",
     "bulk_upload": {
-      "bulk_upload": "Toplu Yükleme",
+      "bulk_upload": "Mesaj Dosyası Yükleme",
       "template": "Şablon",
       "export_template": "Şablonu Dışa Aktar",
       "import_data": "Verileri İçe Aktar",
@@ -595,7 +596,7 @@
       "submit": "İçeriği İçe Aktar",
       "reset": "Başka İçerik Yükle",
       "export_template_guide": "Şablon Rehberini Dışa Aktar",
-      "export_template_instructions": "Bu toplu yükleme şablonunu etkin bir biçimde kullanabilmek için rehberdeki talimatları takip edin.",
+      "export_template_instructions": "Bu g dosya yükleme şablonunun nasıl etkili bir şekilde kullanılacağına ilişkin talimatlar için lütfen bu kılavuzu inceleyin.",
       "refer": "Şuraya bakın",
       "detail": "ayrıntılı talimatlar için",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "Ana Sayfa",
     "welcome": "Hoş geldiniz",
-    "admin_intro": "Burada kullanıcıları yönetebilir, WhatNow içeriğini düzenleyip yayınlayabilir ve API kullanımını görebilirsiniz.",
-    "ns_admin_intro": "Burada WhatNow içeriğini düzenleyip yayınlayabilirsiniz",
-    "ns_editor_intro": "Burada WhatNow içeriğini düzenleyebilirsiniz",
+    "admin_intro": "Burada kullanıcıları yönetebilir, Safety Message Database içeriğini düzenleyip yayınlayabilir ve API kullanımını görüntüleyebilirsiniz.",
+    "ns_admin_intro": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz",
+    "ns_editor_intro": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilirsiniz",
     "api_user_intro": "Burada uygulamalarınızı görebilir ve hesabınızı yönetebilirsiniz.",
     "role_changed_title": "Rolünüz değiştirildi",
     "role_changed_p": "Aşağıdaki rol size atandı:",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "Kapat"
   },
   "landing": {
-    "strapline": "WhatNow Servis",
+    "strapline": "Güvenlik Mesajı Veritabanı Hizmeti",
     "strapline_part_2": "Küresel Kızılhaç \/ Kızılay Güvenlik Mesajları",
+    "head_1": "IFRC Güvenlik",
+    "head_2": "Mesaj Veritabanı",
+    "head_text_1": "IFRC Halkı Bilinçlendirme ve Bilinçlendirmeye dayalı güvenlik mesajları",
+    "head_text_2": "Kamu Eğitimi (PAPE) kaynağı",
+    "head_bottom_1": "Güvenilir Kızılhaç Kızılay'a erişin ve paylaşın",
+    "head_bottom_2": "insanların güvenli bir şekilde hazırlanmalarına yardımcı olmak için eyleme geçirilebilir mesajlar",
+    "head_bottom_3": "ve tehlikelere müdahale etmek.",
+    "signup": "Kaydolun",
+    "it_works": "Nasıl Çalışır",
+    "works_1_a": "Kızılhaç Kızılay Ulusal",
+    "works_1_b": "Toplum ve hükümet ortakları",
+    "works_1_c": "ulusal mesaj setleri üzerinde anlaşmak",
+    "works_2_a": "Ulusal Dernekler yayınlıyor",
+    "works_2_b": "güvenlik mesajları",
+    "works_2_c": "veritabanı",
+    "works_3_a": "Ajansların değiştirilmesi ve",
+    "works_3_b": "iletişim kanalları",
+    "works_3_c": "veritabanı API'sine bağlanın",
+    "works_4_a": "Ortaklar paylaşır",
+    "works_4_b": "mesajları aracılığıyla",
+    "works_4_c": "kanallar",
+    "works_5_a": "Topluluklar şunları alır",
+    "works_5_b": "mesajlar ve",
+    "works_5_c": "güvenli̇ bi̇r şeki̇lde hareket edi̇n",
+    "learn_more": "Daha fazla bilgi edinin",
+    "watch_video": "Videoyu izleyin",
+    "example_case": "Örnek Kullanım Örneği",
+    "api": "API",
+    "hurricane": "Kasırga ile ilgili mesajları erkenden ekleyin",
+    "warning_alerts": "uyarı ikazları",
+    "social_media": "Sosyal Medya",
+    "post_images": "Orman yangınına hazırlık görselleri yayınlayın",
+    "messages_network": "ağınıza mesajlar",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Taşkın azaltma eylemlerini sizinle paylaşın",
+    "family": "aile ve arkadaşlar",
+    "impact": "Etki",
+    "sign_up_today": "Bugün kaydolun",
     "developer": {
       "strap_para_one": "Yerelleştirilmiş eylem mesajlarımızla toplumların tehlikelere hazırlanmasına, onları karşılamasına ve tehlikelerden kurtulmasına yardımcı olun.",
-      "strap_para_two": "Dört kolay adımdan oluşan rehber sayesinde WhatNow mesajlarını uygulamanıza dahil edin. Üye ol ve tüm mevcut mesajları gör."
+      "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için dört adımlı kolay kılavuzumuzu kullanın. Kaydolun ve mevcut tüm mesajları görün."
     },
     "national_society": {
       "strap_para_one": " Kızılhaç ve Kızılay ulusal dernek güvenlik mesajlarını dünya çapında, ulusal ve yerel medya erişimi için yayınlayın.",
       "strap_para_two": "Nasıl mesaj oluşturulacağını öğrenmek ve medya ortaklarıyla iletişim için bize ulaşın."
     },
     "strap_para_one": "Yerelleştirilmiş eylem mesajlarımızla toplumların tehlikelere hazırlanmasına, onları karşılamasına ve tehlikelerden kurtulmasına yardımcı olun.",
-    "strap_para_two": "Dört kolay adımdan oluşan rehber sayesinde WhatNow mesajlarını uygulamanıza dahil edin. Üye ol ve tüm mevcut mesajları gör.",
+    "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için dört adımlı kolay kılavuzumuzu kullanın. Kaydolun ve mevcut tüm mesajları görün.",
     "view_data": "Verileri gör",
-    "view_message_library": "WhatNow Mesajları Gör",
+    "view_message_library": "Güvenlik Mesajlarını Görüntüle",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Dondurucu Soğuk Uyarısı",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero temporare, cum soluta nobis est.",
@@ -717,10 +756,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Örnek WhatNow Mesaj Formatı",
+      "heading": "Örnek Güvenlik Mesajı Formatı",
       "alert_preview": "Uyarı önizleme",
-      "what_now_info": "WhatNow Önizleme",
-      "example_whatnow_request": "Örnek WhatNow Karşılama",
+      "what_now_info": "Güvenlik Mesajı Önizlemesi",
+      "example_whatnow_request": "Örnek Güvenlik Mesajı Veritabanı Yanıtı",
       "example_alert_request": "Örnek Uyarı Karşılama",
       "example_content": "Hava Durumu Bilgilendirme# 3 SON saat 11.00 ÖÖ, Ocak 29, 2018\nSoğuk dalganın devamı\n\nSoğuk dalganın devam özelliği zayıfladı. Nome üzerinde gelişen hava koşulları gözlemlenecek. Ancak, batı taraflarından ötürü bu bölgelerde yer yer sağanaklar veya şiddetli sağanaklar özellikle öğleden sonra veya akşam beklenebilir.\n\nBu gelişmeyi içeren uyarı hava durumu sisteminin son uyarısıdır.",
       "example_content_location_header": "ETKİLENEN BÖLGE",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "Gelen uyarı: Amerika Kızılhaç",
       "more_info": "Daha Fazla Bilgi",
-      "heading": "Dondurucu soğuklar için önemli mesajlar",
+      "heading": "Aşırı Soğuklar için Güvenlik Mesajları",
       "copy": "Kendinizi ve ev halkını dondurucu soğuklardan koruyup riskleri en aza indirmek için bu eylemleri uygulayın.",
-      "what_now": "WhatNow",
+      "what_now": "IFRC Güvenlik Mesajı Veritabanı",
       "step_1": "Evinizi koruyun. Su borularını kontrol edin ve ısınma kaynaklarını dikkatli kullanın.",
       "step_2": "Sıcak içeceklerle vücudun sıvı ihtiyacını giderin",
       "step_3": "Sıcak tutan giysilerle ve açıkta kalan cildinizi örterek kendinizi koruyun",
@@ -742,7 +781,7 @@
       "heading": "Uygulamanızı oluşturmaya hazır mısınız?"
     },
     "data_preview": {
-      "heading": "WhatNow Mesajları",
+      "heading": "Güvenlik Mesajları",
       "sub_heading": "Üye Olun ve dünya genelindeki Kızılhaç \/ Kızılay derneklerinden önemli mesajları görüntüleyin"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "Müsaade ve Sınırlamalar:"
     },
     "overview": {
-      "body": "Küresel Felaket Hazırlık Merkezi WhatNow Servis Başvuru Programı Arayüzü (API), Amerika Kızılhaç tarafından sizin için hazırlanmıştır. API giriş anahtarı için gereklidir.  Kayıt aşamasında, Kızılhaç internet sitesinde bulunan hüküm ve koşullar ile birlikte, aşağıdaki hüküm ve koşulları da kabul etmelisiniz {0} (toplu olarak, API Hükümleri). API Hükümleri, API kullanımınızı ve API aracılığıyla sunulan indirilebilir elektronik materyalleri yönetecektir. {1}",
+      "body": "Küresel Afete Hazırlık Merkezi Güvenlik Mesajı Veritabanı Hizmeti Uygulama Programı Arayüzü (\"API\"), Amerikan Ulusal Kızıl Haçı (\"Kızıl Haç\") tarafından kullanımınıza sunulmuştur. API bir kayıt anahtarı gerektirir.  Kayıt işlemi sırasında, {0} adresinde bulunan Kızıl Haç Web Sitesi Hizmet Koşulları Sözleşmesi'ndeki hüküm ve koşullarla birlikte aşağıdaki hüküm ve koşulları kabul etmeniz gerekir (topluca \"API Koşulları\"). API Koşulları, API'yi ve API aracılığıyla kullanıma sunulan indirilebilir elektronik materyalleri kullanımınızı yönetecektir. {1}",
       "cta": "Giriş yapmak için tıklayın."
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "UYARI:",
     "more_info": "daha fazla bilgi:",
-    "which": "Hangi WhatNow mesajlarını görüntülemek istersin?",
+    "which": "Hangi Güvenlik Mesajlarını görüntülemek istiyorsunuz?",
     "view_data": "Veriyi Görüntüle",
     "alerts": "Uyarılar",
     "alert_preview": "Uyarı önizleme",
@@ -874,7 +913,7 @@
     "date": "Tarih",
     "headline": "Başlık",
     "alert": "Uyarı",
-    "whatnow_info": "WhatNow bilgisi",
+    "whatnow_info": "Güvenlik Mesajı Veritabanı bilgisi",
     "alert_detail": "Uyarı Detayları",
     "more": "Daha fazla bilgi",
     "area_affected": "Etkilenen Alan",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "Kullanıcı sözleşmesi",
-    "para_one": "WhatNow Portalına erişmeden önce, lütfen aşağıdaki belgeyi indirip aşağıdaki 'Kabul ediyorum' düğmesini tıklayarak kullanıcı sözleşmesinin şartlarını okuyup kabul edin.",
+    "para_one": "Safety Message Database Portalına erişmeden önce, lütfen aşağıdaki belgeyi indirerek ve aşağıdaki 'kabul ediyorum' düğmesine tıklayarak kullanıcı sözleşmesinin şartlarını okuyup kabul edebilir misiniz?",
     "cta": "Kabul ediyorum",
     "download": "Kullanıcı sözleşmesi belgesini görüntülemek için buraya tıklayın (105KB)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Bölgeleri yönet",
+      "manage": "Alt Bölgeler",
       "create": "Yeni bölge oluştur",
       "edit": "Bölgeyi Düzenle",
       "add": "Bölge Ekle",
@@ -938,7 +977,7 @@
     "create": "Yeni Bölge yarat",
     "form": {
       "name": "Bölge Adı",
-      "name_help": "Özel WhatNow mesajlaşması oluşturmak istediğiniz bölgeyi isimlendirin.",
+      "name_help": "Özel güvenlik mesajı oluşturmak istediğiniz bölgeyi adlandırın.",
       "description": "Tanım",
       "description_help": "Bölge hakkında daha fazla bilgi verin, ör. San Francisco Körfez Bölgesi."
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "Tehlike Oluşturuldu",
     "published": "Yayınlandı",
     "draft": "Taslak",
-    "bulkUploadDraft": "Toplu Yükleme Taslağı"
+    "bulkUploadDraft": "Mesaj Dosyası Yükleme Taslağı"
   }
 }

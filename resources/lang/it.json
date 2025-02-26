@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Sessione Scaduta!",
   "token_expired_alert_text": "Effettua l'accesso per continuare.",
   "login": "Log In",
-  "what_now": "WhatNow",
+  "what_now": "Banca dati dei messaggi di sicurezza IFRC",
   "message_portal": "Messaggi",
   "register": "Registrarsi",
   "sign_up": "Iscriviti",
   "docs": "Documenti",
   "my_apps": "Le mie app",
   "number_of_apps": "{0} applicazioni",
-  "whatnow_content": "Messaggi di WhatNow",
+  "whatnow_content": "Messaggi",
+  "create_key": "Creare la chiave",
   "alerts": "Avvisi",
   "feeds": "Feeds",
   "get_started": "Registrati ora",
@@ -75,7 +76,7 @@
     "create": "Crea",
     "content": "Contenuto",
     "what_now_content": "Indice WhatNow",
-    "bulk_upload": "Caricamento Collettivo",
+    "bulk_upload": "Caricamento del file del messaggio",
     "audit_log": "Registro di controllo",
     "api_usage": "Utilizzo dell'API",
     "app_detail": "Dettagli dell'app",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "1. Registrati",
-        "body": "Per cominciare ad usare i dati dall'API di WhatNow, prima {0} al portale WhatNow.\n\nPuoi usare i tuoi account Facebook e Google, oppure un indirizzo email per creare un account.",
+        "body": "Per iniziare a utilizzare i dati dell'API del database dei messaggi di sicurezza, occorre innanzitutto visitare il portale del database dei messaggi di sicurezza all'indirizzo {0}.\n\nPer creare un account è possibile utilizzare i propri account Facebook e Google o un indirizzo e-mail.",
         "create_account_alt": "creare un account",
         "existing_account": "Se hai già un account, per favore{0}.",
         "login_cta": "accedi",
         "sign_up_cta": "registrati"
       },
       "two": {
-        "body": "Per utilizzare l'API è necessario creare un'app nel portale WhatNow. Raccontaci qualcosa su ciò che stai realizzando.",
+        "body": "Per utilizzare l'API è necessario creare un'applicazione nel portale del database dei messaggi di sicurezza. Parlateci un po' di quello che state costruendo.",
         "create_app_alt": "crea un'app",
         "heading": "2. Creare un'app"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "Documentazione API",
-        "body": "L'API WhatNow usa HTTP(S) e offre endpoint RESTful per ottenere dati pubblici.\n\nOgni richiesta deve essere autenticata usando l'API key creata nel passaggio precedente.",
+        "body": "L'API del database dei messaggi di sicurezza utilizza HTTP(S) e fornisce endpoint RESTful per ottenere i dati pubblicati.\n\nOgni richiesta deve essere autenticata utilizzando la chiave API creata nel passaggio precedente.",
         "example_title": "Esempio di richiesta",
         "heading": "4. Effettua una richiesta",
         "moreInfo": "Per ulteriori informazioni, consulta {0}."
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "Carica i file .cvs al fine di caricare grandi quantità di contenuti",
     "audit_log": "Qui è dove è possibile visualizzare un registro delle attività",
-    "whatnow_edit": "Qui è dove puoi editare i contenuti WhatNow",
-    "whatnow_review": "Qui è dove puoi revisionare i contenuti WhatNow",
-    "whatnow_publish": "Qui è dove puoi editare e pubblicare i contenuti WhatNow",
+    "whatnow_edit": "Qui è possibile modificare il contenuto del database dei messaggi di sicurezza.",
+    "whatnow_review": "Qui è possibile rivedere il contenuto del database dei messaggi di sicurezza.",
+    "whatnow_publish": "Qui è possibile modificare e pubblicare i contenuti del database dei messaggi di sicurezza.",
     "manage_users": "Qui è dove puoi gestire gli utenti (crea, modifica e rimuovi)",
     "api_usage": "Qui puoi vedere chi sta usando l'API e quali applicazioni vengono realizzate con essa.",
     "wellcome": "Benvenuto",
-    "wellcome_description": "Qui puoi modificare e pubblicare i contenuti di WhatNow."
+    "wellcome_description": "Qui è possibile modificare e pubblicare i contenuti del database dei messaggi di sicurezza."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "Gestire gli utenti dei contenuti",
     "content_users": "Utente dei contenuti",
-    "audit_log": "Registro di controllo",
-    "whatnow": "WhatNow",
-    "bulk": "Caricamento Collettivo",
+    "audit_log": "Modifica della storia",
+    "whatnow": "Attribuzione dell'editore",
+    "bulk": "Caricamento del file del messaggio",
     "content": "Contenuto",
     "api": "Utilizzo dell'API",
     "applications": "Applicazioni",
     "api_stats": "API Stats",
     "api_users": "Utenti API",
     "terms_conditions": "Termini e condizioni",
-    "regions": "Regioni"
+    "regions": "Sottoregioni"
   },
   "common": {
     "accept": "Accetta",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "Messaggi WhatNow",
+      "btn": "Messaggi di sicurezza",
       "step_1": {
         "header": "Passo 1: Visualizza i messaggi",
         "text": "Visita il database dei messaggi per visualizzare i messaggi disponibili della Società Nazionale della Croce Rossa e Mezzaluna Rossa."
@@ -446,7 +447,7 @@
     "content": "Contenuto",
     "audit_log": {
       "audit_log": "Registro di controllo",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Modifica della storia",
       "empty": "Nessuna attività registrata corrisponde a questo filtro",
       "soc_label": "Società",
       "select_hazard": "Seleziona tipo di pericolo",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "Messaggi",
       "set_attribution": "Imposta il nome della società e il messaggio per pubblicare",
-      "whatnow": "WhatNow",
-      "empty": "Non ci sono messaggi WhatNow pubblicati per questa società nazionale",
+      "whatnow": "Database dei messaggi di sicurezza",
+      "empty": "Non ci sono messaggi di sicurezza pubblicati per questa Società Nazionale.",
       "steps": "Passaggi",
       "publish": "Pubblica",
       "no_publish": "Niente da pubblicare",
       "published": "traduzioni pubblicate",
       "publishing": "Pubblicazione",
       "content_to_publish": "Bozza d'autore in fase di realizzazione",
-      "whatnow_content": "Contenuto WhatNow",
+      "whatnow_content": "Contenuto della banca dati dei messaggi di sicurezza",
       "choose_hazard": "Scegli il pericolo",
       "hazard": "Pericolo",
       "content": "Contenuto",
@@ -477,8 +478,8 @@
       "society_name": "Società nazionale",
       "attribution_message": "Messaggio di attribuzione",
       "no_translation": "Nessun contenuto impostato",
-      "delete_content_translation": "Ciò rimuoverà il contenuto WhatNow selezionato dalla lingua corrente",
-      "messages": "Messaggi WhatNow del",
+      "delete_content_translation": "Questo rimuove il contenuto del database dei messaggi di sicurezza selezionato dalla lingua corrente.",
+      "messages": "Messaggi di sicurezza del",
       "add_language": "Aggiungi Nuova Lingua",
       "no_languages": "Seleziona o crea una lingua per iniziare",
       "no_soc": "Seleziona una società",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "Immettere nome tipo pericolo",
       "other_hazard_type_label": "Altro tipo di pericolo",
       "stepped_content": "Contenuti affrontati",
-      "content_title_description": "Titolo per questi Messaggi WhatNow",
-      "content_description_description": "Descrizione di questi Messaggi WhatNow",
+      "content_title_description": "Titolo di questi messaggi di sicurezza",
+      "content_description_description": "Descrizione dei messaggi di sicurezza",
       "content_label": "Inserire informazioni sui pericoli",
       "content_url": "URL",
-      "content_url_description": "URL per ulteriori informazioni su questi messaggi WhatNow. Si prega di inserire l'URL con http:\/\/ o https:\/\/",
+      "content_url_description": "URL per ulteriori informazioni su questi messaggi di sicurezza. Includere il protocollo, ad esempio http:// o https://.",
       "created": "creato",
       "pieces_edited": " Contenuti modificati",
       "content_placeholder": "Inserisci un messaggio",
@@ -541,7 +542,7 @@
       "download_image": "Scarica come immagine",
       "download_image_error": "Errore download immagine, assicurarti di aver pubblicato tutte le modifiche e riprova.",
       "download_instructions": "Fare clic con il pulsante destro del mouse su 'Salva immagine come...' per salvare",
-      "downloaded_image_alt": "Istruzioni WhatNow",
+      "downloaded_image_alt": "Istruzioni per il database dei messaggi di sicurezza",
       "add_key_message": "Aggiungi Messaggio Chiave",
       "add_supporting_message": "Aggiungi Messaggio di Supporto",
       "early_warning": "Allarme Precoce",
@@ -557,7 +558,7 @@
       "supporting_message_label": "Messaggio di supporto"
     },
     "message_editor": {
-      "title": "Editor di Messaggi",
+      "title": "Attribuzione dell'editore",
       "society_name_label": "Nome della società nazionale",
       "attribution_url_label": "URL di Attribuzione",
       "attribution_message_label": "Messaggio di Attribuzione",
@@ -569,10 +570,10 @@
       "download_image_error": "Errore durante il download dell'immagine, riprova.",
       "download_pdf_error": "Errore durante il download del PDF, riprova."
     },
-    "audit": "Registro di controllo",
+    "audit": "Modifica della storia",
     "export": "Esporta",
     "bulk_upload": {
-      "bulk_upload": "Caricamento Collettivo",
+      "bulk_upload": "Caricamento del file del messaggio",
       "template": "Modello",
       "export_template": "Modello di esportazione",
       "import_data": "Importa dati",
@@ -595,7 +596,7 @@
       "submit": "Importa Contenuti",
       "reset": "Carica un altro file",
       "export_template_guide": "Guida modello di esportazione",
-      "export_template_instructions": "Per le istruzioni su come utilizzare questo modello di caricamento collettivo si prega di consultare questa guida.",
+      "export_template_instructions": "Per istruzioni su come utilizzare efficacemente questo modello di caricamento di file g, consultare questa guida.",
       "refer": "Fai riferimento a",
       "detail": "per istruzioni dettagliate",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "Pagina iniziale",
     "welcome": "Benvenuti",
-    "admin_intro": "Qui è possibile gestire gli utenti, modificare e pubblicare contenuti WhatNow e visualizzare l'utilizzo API.",
-    "ns_admin_intro": "Qui è possibile modificare e pubblicare contenuti WhatNow",
-    "ns_editor_intro": "Qui è possibile modificare contenuti WhatNow",
+    "admin_intro": "Qui è possibile gestire gli utenti, modificare e pubblicare i contenuti del database dei messaggi di sicurezza e visualizzare l'utilizzo delle API.",
+    "ns_admin_intro": "Qui è possibile modificare e pubblicare il contenuto del database dei messaggi di sicurezza.",
+    "ns_editor_intro": "Qui è possibile modificare il contenuto del database dei messaggi di sicurezza",
     "api_user_intro": "Qui è possibile visualizzare le app e gestire l'account.",
     "role_changed_title": "Il tuo ruolo è stato modificato",
     "role_changed_p": "Ti è stato assegnato il seguente ruolo:",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "Chiudi"
   },
   "landing": {
-    "strapline": "Servizio WhatNow",
+    "strapline": "Servizio di database dei messaggi di sicurezza",
     "strapline_part_2": "Messaggi chiave di sicurezza per la Croce Rossa e la Mezzaluna Rossa Internazionale",
+    "head_1": "Sicurezza IFRC",
+    "head_2": "Database dei messaggi",
+    "head_text_1": "Messaggi di sicurezza basati sulla sensibilizzazione del pubblico IFRC e sul",
+    "head_text_2": "Risorse per l'istruzione pubblica (PAPE)",
+    "head_bottom_1": "Accesso e condivisione di informazioni affidabili sulla Croce Rossa e sulla Mezzaluna Rossa.",
+    "head_bottom_2": "messaggi praticabili per aiutare le persone a prepararsi in modo sicuro per",
+    "head_bottom_3": "e rispondere ai pericoli.",
+    "signup": "Iscriviti",
+    "it_works": "Come funziona",
+    "works_1_a": "Croce Rossa Mezzaluna Rossa Nazionale",
+    "works_1_b": "Partner sociali e governativi",
+    "works_1_c": "concordare un insieme di messaggi a livello nazionale",
+    "works_2_a": "Le Società Nazionali pubblicano",
+    "works_2_b": "messaggi di sicurezza nel",
+    "works_2_c": "database",
+    "works_3_a": "Modifica delle agenzie e",
+    "works_3_b": "canali di comunicazione",
+    "works_3_c": "connettersi all'API del database",
+    "works_4_a": "I partner condividono",
+    "works_4_b": "messaggi attraverso i loro",
+    "works_4_c": "canali",
+    "works_5_a": "Le comunità ricevono",
+    "works_5_b": "i messaggi e",
+    "works_5_c": "agire in sicurezza",
+    "learn_more": "Per saperne di più",
+    "watch_video": "Guarda il video",
+    "example_case": "Caso d'uso esemplificativo",
+    "api": "API",
+    "hurricane": "Includere messaggi con l'uragano in anticipo",
+    "warning_alerts": "avvisi di pericolo",
+    "social_media": "Media sociali",
+    "post_images": "Immagini di preparazione agli incendi",
+    "messages_network": "messaggi alla rete",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Condividere le azioni di mitigazione delle alluvioni con i vostri",
+    "family": "famiglia e amici",
+    "impact": "Impatto",
+    "sign_up_today": "Iscriviti oggi",
     "developer": {
       "strap_para_one": "Aiuta le comunità a prepararsi, rispondere e riprendersi dai pericoli con i nostri messaggi di azione chiave localizzati.",
-      "strap_para_two": "Usa la nostra guida in quattro fasi per integrare i messaggi WhatNow nella tua applicazione. Iscriviti e vedi tutti i messaggi disponibili."
+      "strap_para_two": "Utilizzate la nostra semplice guida in quattro fasi per integrare i messaggi di sicurezza nella vostra applicazione. Registratevi per vedere tutti i messaggi disponibili."
     },
     "national_society": {
       "strap_para_one": "Pubblica i messaggi chiave sulla sicurezza della Croce Rossa e Mezzaluna Rossa del tuo Paese affinché i media globali, nazionali e locali possano accedervi e condividerle.",
       "strap_para_two": "Contattaci per saperne di più su come creare i messaggi e connetterti ai partner mediatici."
     },
     "strap_para_one": "Aiuta le comunità a prepararsi, rispondere e riprendersi dai pericoli con i nostri messaggi di azione chiave localizzati.",
-    "strap_para_two": "Usa la nostra guida in quattro fasi per integrare i messaggi WhatNow nella tua applicazione. Iscriviti e vedi tutti i messaggi disponibili.",
+    "strap_para_two": "Utilizzate la nostra semplice guida in quattro fasi per integrare i messaggi di sicurezza nella vostra applicazione. Registratevi per vedere tutti i messaggi disponibili.",
     "view_data": "Visualizza i dati",
-    "view_message_library": "Visualizza i messaggi WhatNow",
+    "view_message_library": "Visualizza i messaggi di sicurezza",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Avviso di freddo estremo",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -717,10 +756,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Modello formato messaggio WhatNow",
+      "heading": "Esempio di messaggio sulla sicurezza",
       "alert_preview": "Anteprima avviso",
-      "what_now_info": "Anteprima WhatNow",
-      "example_whatnow_request": "Modello risposta WhatNow",
+      "what_now_info": "Anteprima del messaggio di sicurezza",
+      "example_whatnow_request": "Esempio di risposta del database dei messaggi di sicurezza",
       "example_alert_request": "Modello risposta avviso",
       "example_content": "Avviso meteorologico n. 3 FINALE alle 11:00, gennaio. 29, 2018\nPer la coda di un fronte freddo\n\nL'effetto della coda di un fronte freddo si è indebolito. Le condizioni meteorologiche migliorate saranno sperimentate su Nome. Comunque, isolati rovesci o temporali, specialmente durante il pomeriggio o la sera, potrebbero verificarsi in queste aree a causa di venti da ovest.\n\nCon questo sviluppo, questo è l'avviso finale per questo sistema meteorologico.",
       "example_content_location_header": "ZONA INTERESSATA",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "Avviso da: Croce Rossa Americana",
       "more_info": "Maggiori informazioni",
-      "heading": "Messaggi chiave per il freddo estremo",
+      "heading": "Messaggi di sicurezza per il freddo estremo",
       "copy": "Queste sono azioni da prendere per ridurre il rischio e proteggere te e la tua casa dal freddo estremo.",
-      "what_now": "WhatNow",
+      "what_now": "Banca dati dei messaggi di sicurezza IFRC",
       "step_1": "Proteggi la tua casa. Controlla le tubazioni e usa le fonti di calore in modo sicuro.",
       "step_2": "Resta idratato con fluidi caldi",
       "step_3": "Proteggiti con abiti caldi e copri la pelle esposta",
@@ -742,7 +781,7 @@
       "heading": "Sei pronto a costruire la tua app?"
     },
     "data_preview": {
-      "heading": "Messaggi di WhatNow",
+      "heading": "Messaggi di sicurezza",
       "sub_heading": "Iscriviti e visualizza i messaggi di azione chiave della Croce Rossa e Mezzaluna Rossa Internazionale in tutto il mondo"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "Licenza e Limitazioni:"
     },
     "overview": {
-      "body": "L'interfaccia di programmazione dell'applicazione (\"API\") WhatNow del Global Disaster Preparedness Center è messa a disposizione dell'utente dalla Croce Rossa Nazionale Americana (\"Croce Rossa\"). L'API richiede una chiave di registrazione.  Durante il processo di registrazione, l'utente deve accettare i seguenti termini e condizioni, insieme ai termini e alle condizioni dell'accordo sui termini di servizio del sito web della Croce Rossa disponibile a {0} (collettivamente, i \"Termini API\"). I Termini API regolano l'uso dell'API e dei materiali elettronici scaricabili e resi disponibili attraverso l'API. {1}",
+      "body": "Il Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (l'\"API\") è messo a disposizione dalla Croce Rossa Nazionale Americana (\"Croce Rossa\"). L'API richiede una chiave di registrazione.  Durante il processo di registrazione, l'utente deve accettare i seguenti termini e condizioni, insieme ai termini e alle condizioni dell'Accordo sui termini di servizio del sito Web della Croce Rossa disponibile all'indirizzo {0} (collettivamente, i \"Termini API\"). I Termini API regolano l'uso dell'API e dei materiali elettronici scaricabili resi disponibili attraverso l'API. {1}",
       "cta": "Cliccare qui per registrarsi."
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "AVVISO:",
     "more_info": "ulteriori informazioni:",
-    "which": "Quali messaggi di WhatNow vuoi visualizzare?",
+    "which": "Quali messaggi di sicurezza si desidera visualizzare?",
     "view_data": "Visualizza Dati",
     "alerts": "Avvisi",
     "alert_preview": "Anteprima avviso",
@@ -874,7 +913,7 @@
     "date": "Data",
     "headline": "Headline",
     "alert": "Avviso",
-    "whatnow_info": "Informazioni di WhatNow",
+    "whatnow_info": "Informazioni sul database dei messaggi di sicurezza",
     "alert_detail": "Dettagli avviso",
     "more": "Altre informazioni",
     "area_affected": "Area interessata",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "Accordo utente",
-    "para_one": "Prima di poter accedere al portale WhatNow, si prega di leggere e accettare i termini delle condizioni d'uso scaricando il documento qui sotto e cliccando sul pulsante \"Accetto\".",
+    "para_one": "Prima di accedere al portale del database dei messaggi di sicurezza, vi preghiamo di leggere e accettare i termini dell'accordo con l'utente scaricando il documento qui sotto e facendo clic sul pulsante \"Accetto\" qui sotto.",
     "cta": "Accetto",
     "download": "Clicca qui per visualizzare le condizioni d'uso (105KB)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Gestione delle regioni",
+      "manage": "Sottoregioni",
       "create": "Creare una nuova regione",
       "edit": "Modificare una regione",
       "add": "Aggiungere una regione",
@@ -938,7 +977,7 @@
     "create": "Creare una nuova regione",
     "form": {
       "name": "Nome della regione",
-      "name_help": "Nominare una regione per cui si desidera creare messaggi WhatNow personalizzati.",
+      "name_help": "Nominare la regione per la quale si desidera creare messaggi di sicurezza personalizzati.",
       "description": "Descrizione",
       "description_help": "Fornire ulteriori informazioni sulla regione, ad es. San Francisco Bay Area."
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "Pericolo Creato",
     "published": "Pubblicato",
     "draft": "Bozza",
-    "bulkUploadDraft": "Bozza di Caricamento Massivo"
+    "bulkUploadDraft": "Messaggio Caricamento file Bozza"
   }
 }

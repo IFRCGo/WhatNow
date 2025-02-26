@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Sesi Berakhir!",
   "token_expired_alert_text": "Silakan masuk kembali untuk melanjutkan.",
   "login": "Masuk",
-  "what_now": "WhatNow",
+  "what_now": "Database Pesan Keselamatan IFRC",
   "message_portal": "Portal Pesan",
   "register": "Registrasi",
   "sign_up": "Daftar",
   "docs": "Dokumen",
   "my_apps": "Aplikasi saya",
   "number_of_apps": "{0} Aplikasi",
-  "whatnow_content": "Pesan WhatNow",
+  "whatnow_content": "Pesan",
+  "create_key": "Buat Kunci",
   "alerts": "Peringatan",
   "feeds": "Umpan",
   "get_started": "Daftar sekarang",
@@ -75,7 +76,7 @@
     "create": "Buat",
     "content": "Isi",
     "what_now_content": "Isi WhatNow",
-    "bulk_upload": "Unggah Sekaligus",
+    "bulk_upload": "Unggah File Pesan",
     "audit_log": "Log Audit",
     "api_usage": "Penggunaan API",
     "app_detail": "Rincian Aplikasi",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "Langkah 1 - Daftar",
-        "body": "Untuk memulai menggunakan data dari WhatNow API, pertama {0} kunjungi Portal WhatNow.\n\nAnda dapat menggunakan akun Facebook & Google, atau alamat surel untuk membuat akun.",
+        "body": "Untuk mulai menggunakan data dari API Basis Data Pesan Keselamatan, pertama-tama {0} ke Portal Basis Data Pesan Keselamatan.\n\nAnda dapat menggunakan akun Facebook & Google Anda, atau alamat email untuk membuat akun.",
         "create_account_alt": "buat akun",
         "existing_account": "Jika Anda sudah memiliki akun, mohon untuk {0}.",
         "login_cta": "masuk",
         "sign_up_cta": "daftar"
       },
       "two": {
-        "body": "Untuk menggunakan API, Anda harus membuat aplikasi di Portal WhatNow. Ceritakan sedikit tentang apa yang sedang Anda bangun.",
+        "body": "Untuk menggunakan API, Anda harus membuat aplikasi di Portal Basis Data Pesan Keselamatan. Ceritakan sedikit tentang apa yang sedang Anda buat.",
         "create_app_alt": "buat aplikasi",
         "heading": "Langkah 2 - Buat aplikasi"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "Dokumentasi API",
-        "body": "API WhatNow menggunakan HTTP(S) dan menyediakan titik akhir RESTful untuk memperoleh data yang diterbitkan.\n\nTiap permintaan harus diautentikasi menggunakan kunci API yang dibuat pada langkah sebelumnya.",
+        "body": "API Basis Data Pesan Keselamatan menggunakan HTTP(S) dan menyediakan titik akhir RESTful untuk mendapatkan data yang dipublikasikan.\n\nSetiap permintaan harus diautentikasi menggunakan kunci API yang dibuat pada langkah sebelumnya.",
         "example_title": "Contoh Permintaan",
         "heading": "Langkah 4 - Membuat permintaan",
         "moreInfo": "Untuk informasi lebih lanjut mengenai semua titik akhir API, lihat {0}."
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "Unggah berkas .csv agar Anda dapat memperbarui isi dalam jumlah besar sekaligus",
     "audit_log": "Anda dapat melihat catatan aktivitas di sini",
-    "whatnow_edit": "Anda dapat mengedit isi WhatNow di sini",
-    "whatnow_review": "Anda dapat meninjau konten WhatNow di sini",
-    "whatnow_publish": "Anda dapat mengedit dan menerbitkan isi WhatNow di sini",
+    "whatnow_edit": "Di sinilah Anda dapat mengedit konten Basis Data Pesan Keselamatan",
+    "whatnow_review": "Di sinilah Anda dapat meninjau konten Basis Data Pesan Keselamatan",
+    "whatnow_publish": "Di sinilah Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan",
     "manage_users": "Mengelola pengguna di sini (Buat, edit dan hapus)",
     "api_usage": "Anda dapat melihat siapa yang menggunakan API dan aplikasi apa yang sedang dibangun di sini.",
     "wellcome": "Welcome",
-    "wellcome_description": "Here you can edit and publish WhatNow content."
+    "wellcome_description": "Di sini Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "Mengelola Pengguna Konten",
     "content_users": "Pengguna Konten",
-    "audit_log": "Log Audit",
-    "whatnow": "WhatNow",
-    "bulk": "Unggah Sekaligus",
+    "audit_log": "Edit Riwayat",
+    "whatnow": "Editor Atribusi",
+    "bulk": "Unggah File Pesan",
     "content": "Isi",
     "api": "Penggunaan API",
     "applications": "Aplikasi",
     "api_stats": "Statistik API",
     "api_users": "Pengguna API",
     "terms_conditions": "Syarat dan Ketentuan",
-    "regions": "Wilayah"
+    "regions": "Sub-wilayah"
   },
   "common": {
     "accept": "Terima",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "WhatNow Messages",
+      "btn": "Pesan Keselamatan",
       "step_1": {
         "header": "Step 1: View the messages",
         "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
@@ -446,7 +447,7 @@
     "content": "Isi",
     "audit_log": {
       "audit_log": "Log Audit",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Edit Riwayat",
       "empty": "Tidak ada riwayat audit yang cocok dengan filter ini",
       "soc_label": "Perhimpunan",
       "select_hazard": "Select hazard type",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "Messages",
       "set_attribution": "Setel nama perhimpunan dan atribusi pesan untuk diterbitkan",
-      "whatnow": "WhatNow",
-      "empty": "Tidak ada pesan WhatNow yang dipublikasikan untuk Perhimpunan Nasional ini",
+      "whatnow": "Basis Data Pesan Keselamatan",
+      "empty": "Tidak ada pesan Keselamatan yang dipublikasikan untuk Perhimpunan Nasional ini",
       "steps": "Langkah-langkah",
       "publish": "Terbitkan",
       "no_publish": "Tidak ada yang diterbitkan",
       "published": "terjemahan diterbitkan",
       "publishing": "Penerbitan",
       "content_to_publish": "Draf Isi yang akan Diterbitkan",
-      "whatnow_content": "Isi WhatNow",
+      "whatnow_content": "Konten Basis Data Pesan Keselamatan",
       "choose_hazard": "Pilih Bahaya",
       "hazard": "Bahaya",
       "content": "Isi",
@@ -477,8 +478,8 @@
       "society_name": "Perhimpunan Nasional",
       "attribution_message": "Pesan atribusi",
       "no_translation": "Tidak ada isi yang disetel",
-      "delete_content_translation": "Ini akan menghapus isi whatnow yang dipilih dari bahasa saat ini",
-      "messages": "Pesan WhatNow dari",
+      "delete_content_translation": "Ini akan menghapus konten Basis Data Pesan Keselamatan yang dipilih dari bahasa saat ini",
+      "messages": "Pesan keselamatan dari",
       "add_language": "Tambahkan bahasa baru",
       "no_languages": "Pilih atau buat bahasa untuk memulai",
       "no_soc": "Pilih perhimpunan",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "Masukkan Nama Jenis Bahaya",
       "other_hazard_type_label": "Jenis Bahaya Lainnya",
       "stepped_content": "Tingkatan Bagian Isi",
-      "content_title_description": "Judul untuk Pesan WhatNow ini",
-      "content_description_description": "Deskripsi untuk Pesan WhatNow ini",
+      "content_title_description": "Judul untuk Pesan Keselamatan ini",
+      "content_description_description": "Deskripsi Pesan Keselamatan ini",
       "content_label": "Silakan masukkan beberapa informasi bahaya",
       "content_url": "URL",
-      "content_url_description": "URL untuk mengetahui lebih lanjut tentang pesan WhatNow ini. Sertakan protokol, http:\/\/ atau https:\/\/",
+      "content_url_description": "URL untuk informasi lebih lanjut tentang pesan Keamanan ini. Harap sertakan protokolnya, yaitu http:// atau https://",
       "created": "dibuat",
       "pieces_edited": " Bagian yang diedit",
       "content_placeholder": "Masukkan pesan",
@@ -541,7 +542,7 @@
       "download_image": "Unduh sebagai Gambar",
       "download_image_error": "Terjadi kesalahan saat mengunduh gambar, pastikan Anda telah menerbitkan semua perubahan dan silakan coba lagi.",
       "download_instructions": "Klik kanan dan pilih 'Simpan gambar sebagai...' untuk menyimpan",
-      "downloaded_image_alt": "Instruksi WhatNow",
+      "downloaded_image_alt": "Petunjuk Basis Data Pesan Keselamatan",
       "add_key_message": "Add Key Message",
       "add_supporting_message": "Add Support Message",
       "early_warning": "Early Warning",
@@ -557,7 +558,7 @@
       "supporting_message_label": "Supporting message"
     },
     "message_editor": {
-      "title": "Message Editor",
+      "title": "Editor Atribusi",
       "society_name_label": "National society name",
       "attribution_url_label": "Attribution URL",
       "attribution_message_label": "Attribution Message",
@@ -569,10 +570,10 @@
       "download_image_error": "Error downloading image, please try again.",
       "download_pdf_error": "Error downloading PDF, please try again."
     },
-    "audit": "Log audit",
+    "audit": "Edit riwayat",
     "export": "Ekspor",
     "bulk_upload": {
-      "bulk_upload": "Unggah Sekaligus",
+      "bulk_upload": "Unggah File Pesan",
       "template": "Templat",
       "export_template": "Ekspor Templat",
       "import_data": "Impor Data",
@@ -595,7 +596,7 @@
       "submit": "Impor Konten",
       "reset": "Unggah Lainnya",
       "export_template_guide": "Panduan Ekspor Templat",
-      "export_template_instructions": "Untuk petunjuk tentang cara menggunakan templat unggah sekaligus secara efektif, silakan lihat panduan ini.",
+      "export_template_instructions": "Untuk petunjuk tentang cara menggunakan templat unggahan file g ini secara efektif, silakan lihat panduan ini.",
       "refer": "Refer to",
       "detail": "for detail instructions",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "Beranda",
     "welcome": "Selamat Datang",
-    "admin_intro": "Anda dapat mengelola pengguna, mengedit dan menerbitkan isi WhatNow serta melihat penggunaan API di sini.",
-    "ns_admin_intro": "Anda dapat mengedit dan menerbitkan isi WhatNow di sini",
-    "ns_editor_intro": "Anda dapat mengedit isi WhatNow di sini",
+    "admin_intro": "Di sini Anda dapat mengelola pengguna, mengedit dan mempublikasikan konten Basis Data Pesan Keselamatan, serta melihat penggunaan API.",
+    "ns_admin_intro": "Di sini Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan",
+    "ns_editor_intro": "Di sini Anda dapat mengedit konten Basis Data Pesan Keselamatan",
     "api_user_intro": "Anda melihat aplikasi dan mengelola akun Anda di sini.",
     "role_changed_title": "Your role was changed",
     "role_changed_p": "You have been assigned the following role:",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "Close"
   },
   "landing": {
-    "strapline": "Layanan WhatNow",
+    "strapline": "Layanan Basis Data Pesan Keamanan",
     "strapline_part_2": "Pesan Keamanan Utama Palang Merah \/ Bulan Sabit Merah Global",
+    "head_1": "Keselamatan IFRC",
+    "head_2": "Basis Data Pesan",
+    "head_text_1": "Pesan keselamatan berdasarkan Kesadaran Publik IFRC dan",
+    "head_text_2": "Sumber daya Pendidikan Publik (PAPE)",
+    "head_bottom_1": "Mengakses dan berbagi Bulan Sabit Merah Palang Merah yang tepercaya",
+    "head_bottom_2": "pesan yang dapat ditindaklanjuti untuk membantu orang mempersiapkan diri dengan aman",
+    "head_bottom_3": "dan merespons bahaya.",
+    "signup": "Daftar",
+    "it_works": "Bagaimana cara kerjanya",
+    "works_1_a": "Palang Merah Bulan Sabit Merah Nasional",
+    "works_1_b": "Mitra masyarakat dan pemerintah",
+    "works_1_c": "menyepakati rangkaian pesan nasional",
+    "works_2_a": "Masyarakat Nasional menerbitkan",
+    "works_2_b": "pesan keselamatan di",
+    "works_2_c": "basis data",
+    "works_3_a": "Mengubah lembaga dan",
+    "works_3_b": "saluran komunikasi",
+    "works_3_c": "menyambung ke API basis data",
+    "works_4_a": "Mitra berbagi",
+    "works_4_b": "pesan melalui",
+    "works_4_c": "saluran",
+    "works_5_a": "Masyarakat menerima",
+    "works_5_b": "pesan-pesan dan",
+    "works_5_c": "bertindak dengan aman",
+    "learn_more": "Pelajari lebih lanjut",
+    "watch_video": "Tonton video",
+    "example_case": "Contoh Kasus Penggunaan",
+    "api": "API",
+    "hurricane": "Sertakan pesan dengan badai lebih awal",
+    "warning_alerts": "peringatan peringatan",
+    "social_media": "Media Sosial",
+    "post_images": "Memposting gambar kesiapsiagaan kebakaran hutan",
+    "messages_network": "pesan ke jaringan Anda",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Bagikan tindakan mitigasi banjir dengan",
+    "family": "keluarga dan teman",
+    "impact": "Dampak",
+    "sign_up_today": "Daftar hari ini",
     "developer": {
       "strap_para_one": "Bantu komunitas untuk siap, tanggap, dan pulih dari bahaya dengan pesan tindakan utama kami yang dilokalkan.",
-      "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan WhatNow ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia."
+      "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan Keamanan ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia."
     },
     "national_society": {
       "strap_para_one": "Publikasi pesan keamanan utama Perhimpunan Nasional RCRC Anda agar dapat diakses dan disiarkan media global, nasional, dan lokal.",
       "strap_para_two": "Hubungi kami untuk mempelajari lebih lanjut tentang cara membuat pesan dan terhubung dengan mitra media."
     },
     "strap_para_one": "Bantu komunitas untuk siap, tanggap, dan pulih dari bahaya dengan pesan tindakan utama kami yang dilokalkan.",
-    "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan WhatNow ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia.",
+    "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan Keamanan ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia.",
     "view_data": "Lihat data",
-    "view_message_library": "Lihat Pesan WhatNow",
+    "view_message_library": "Lihat Pesan Keamanan",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Peringatan Cuaca Dingin Ekstrim",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -717,10 +756,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Contoh Format Pesan WhatNow",
+      "heading": "Contoh Format Pesan Keselamatan",
       "alert_preview": "Pratinjau peringatan",
-      "what_now_info": "Pratinjau WhatNow",
-      "example_whatnow_request": "Contoh Tanggapan WhatNow",
+      "what_now_info": "Pratinjau Pesan Keamanan",
+      "example_whatnow_request": "Contoh Respons Basis Data Pesan Keamanan",
       "example_alert_request": "Contoh Tanggapan Peringatan",
       "example_content": "Anjuran Cuaca# 3 FINAL per pukul 11 Pagi, Jan. 29, 2018\nUntuk Bagian paling akhir dari Front Dingin\nPengaruh Bagian paling akhir dari Front Dingin telah melemah. Kondisi cuaca yang lebih baik akan dialami di kota Nome. Namun, hujan lebat atau badai petir lokal, terutama pada sore atau malam hari, dapat terjadi di daerah ini sampai ke barat.\n\nDengan perkembangan tersebut, ini merupakan fungsi anjuran terakhir untuk sistem cuaca ini.",
       "example_content_location_header": "LOKASI YANG TERDAMPAK",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "Peringatan dari: Red Cross America",
       "more_info": "Info selengkapnya",
-      "heading": "Pesan Utama untuk Cuaca Dingin Ekstrem",
+      "heading": "Pesan Keselamatan untuk Suhu Dingin Ekstrem",
       "copy": "Ini adalah tindakan yang harus diambil untuk mengurangi risiko dan melindungi Anda dan keluarga dari cuaca dingin yang ekstrem.",
-      "what_now": "WhatNow",
+      "what_now": "Basis Data Pesan Keselamatan IFRC",
       "step_1": "Lindungi rumah Anda. Periksa perpipaan dan gunakan sumber panas dengan aman.",
       "step_2": "Tetap terhidrasi dengan cairan hangat",
       "step_3": "Lindungi diri Anda dengan pakaian hangat dan tutupi kulit yang terbuka",
@@ -742,7 +781,7 @@
       "heading": "Siap untuk membuat aplikasi Anda?"
     },
     "data_preview": {
-      "heading": "Pesan WhatNow",
+      "heading": "Pesan Keselamatan",
       "sub_heading": "Daftar dan lihat pesan tindakan utama dari Perhimpunan Nasional Palang Merah \/ Bulan Sabit Merah di seluruh dunia"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "Perizinan dan Pembatasan:"
     },
     "overview": {
-      "body": "Aplikasi Program Interface Layanan WhatNow milik Global Disaster Preparedness Center (“API”) disediakan untuk Anda oleh American National Red Cross (“Palang Merah”). API memerlukan kode registrasi.  Selama proses pendaftaran, Anda harus menyetujui syarat dan ketentuan berikut, beserta dengan syarat dan ketentuan di dalam Syarat dan Ketentuan Situs Web Palang Merah yang tersedia di {0} (secara kolektif, disebut “Syarat API”). Syarat API akan mengatur penggunaan API Anda dan materi elektronik yang dapat diunduh tersedia melalui API. {1}",
+      "body": "Antarmuka Program Aplikasi Layanan Basis Data Pesan Keselamatan Pusat Kesiapsiagaan Bencana Global (\"API\") disediakan untuk Anda oleh Palang Merah Nasional Amerika Serikat (\"Palang Merah\"). API memerlukan kunci pendaftaran.  Selama proses pendaftaran, Anda harus menyetujui syarat dan ketentuan berikut ini, bersama dengan syarat dan ketentuan dalam Perjanjian Persyaratan Layanan Situs Web Palang Merah yang tersedia di {0} (secara bersama-sama disebut sebagai \"Persyaratan API\"). Persyaratan API akan mengatur penggunaan API dan materi elektronik yang dapat diunduh yang tersedia melalui API. {1}",
       "cta": "Klik di sini untuk mendaftar."
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "PERINGATAN:",
     "more_info": "info selengkapnya:",
-    "which": "Mana Pesan WhatNow yang ingin Anda tampilkan?",
+    "which": "Pesan Keselamatan mana yang ingin Anda lihat?",
     "view_data": "Tampilkan Data",
     "alerts": "Peringatan",
     "alert_preview": "Pratinjau peringatan",
@@ -874,7 +913,7 @@
     "date": "Tanggal",
     "headline": "Berita Utama",
     "alert": "Peringatan",
-    "whatnow_info": "Info Whatnow",
+    "whatnow_info": "Info Basis Data Pesan Keselamatan",
     "alert_detail": "Rincian Peringatan",
     "more": "Info lebih lanjut",
     "area_affected": "Kawasan Terdampak",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "Perjanjian pengguna",
-    "para_one": "Sebelum Anda dapat mengakses Portal WhatNow, mohon Anda membaca dan menerima persyaratan perjanjian pengguna dengan mengunduh dokumen di bawah ini dan mengeklik tombol 'Saya terima'.",
+    "para_one": "Sebelum Anda dapat mengakses Portal Basis Data Pesan Keselamatan, mohon Anda dapat membaca dan menyetujui persyaratan perjanjian pengguna dengan mengunduh dokumen di bawah ini dan mengklik tombol 'Saya setuju' di bawah ini.",
     "cta": "Saya terima",
     "download": "Klik di sini untuk melihat dokumen perjanjian pengguna (105KB)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Kelola Wilayah",
+      "manage": "Sub-wilayah",
       "create": "Buat wilayah baru",
       "edit": "Sunting Wilayah",
       "add": "Tambah Wilayah",
@@ -938,7 +977,7 @@
     "create": "Buat Wilayah baru",
     "form": {
       "name": "Nama Wilayah",
-      "name_help": "Beri nama wilayah tempat Anda ingin membuat pesan WhatNow khusus.",
+      "name_help": "Beri nama wilayah yang ingin Anda buat pesan keamanan khusus.",
       "description": "Deskripsi",
       "description_help": "Berikan informasi lebih lanjut mengenai wilayah, mis. Wilayah Pesisir San Francisco."
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "Hazard Created",
     "published": "Published",
     "draft": "Draft",
-    "bulkUploadDraft": "Bulk Upload Draft"
+    "bulkUploadDraft": "Draf Unggah File Pesan"
   }
 }
