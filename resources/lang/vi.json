@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Phiên đăng nhập đã hết hạn!",
   "token_expired_alert_text": "Hãy đăng nhập lại để tiếp tục.",
   "login": "Đăng nhập",
-  "what_now": "WhatNow",
+  "what_now": "Cơ sở dữ liệu Tin nhắn An toàn IFRC",
   "message_portal": "Cổng tin nhắn",
   "register": "Đăng ký",
   "sign_up": "Đăng ký",
   "docs": "Tài liệu",
   "my_apps": "Ứng dụng của tôi",
   "number_of_apps": "{0} ứng dụng",
-  "whatnow_content": "Tin nhắn WhatNow",
+  "whatnow_content": "Tin nhắn",
+  "create_key": "Tạo Khóa",
   "alerts": "Cảnh báo",
   "feeds": "Dòng tin",
   "get_started": "Đăng ký ngay",
@@ -75,7 +76,7 @@
     "create": "Tạo",
     "content": "Nội dung",
     "what_now_content": "Nội dung WhatNow",
-    "bulk_upload": "Tải lên hàng loạt",
+    "bulk_upload": "Tải lên Tệp Tin nhắn",
     "audit_log": "Nhật ký kiểm toán",
     "api_usage": "Sử dụng API",
     "app_detail": "Chi tiết ứng dụng",
@@ -196,15 +197,13 @@
     "steps": {
       "one": {
         "heading": "Bước 1: Đăng ký",
-        "body": "Để bắt đầu dùng dữ liệu từ API WhatNow, trước tiên {0} Cổng WhatNow.\n\nBạn có thể dùng tài khoản Facebook & Google, hoặc một địa chỉ e- để tạo tài khoản.",
-        "create_account_alt": "tạo tài khoản",
+        "body": "Để bắt đầu sử dụng dữ liệu từ API Cơ sở dữ liệu Tin nhắn An toàn, trước tiên {0} vào Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn.\n\nBạn có thể sử dụng tài khoản Facebook & Google hoặc địa chỉ email để tạo tài khoản.",        "create_account_alt": "tạo tài khoản",
         "existing_account": "Nếu bạn đã có tài khoản, hãy {0}.",
         "login_cta": "đăng nhập",
         "sign_up_cta": "đăng ký"
       },
       "two": {
-        "body": "Để sử dụng API, bạn cần tạo một ứng dụng trong Cổng WhatNow. Vui lòng cho biết một chút về cái bạn đang phát triển.",
-        "create_app_alt": "tạo ứng dụng",
+        "body": "Để sử dụng API, bạn phải tạo một ứng dụng trong Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn. Hãy cho chúng tôi biết một chút về những gì bạn đang xây dựng.",        "create_app_alt": "tạo ứng dụng",
         "heading": "Bước 2: Tạo ứng dụng"
       },
       "three": {
@@ -215,8 +214,7 @@
       },
       "four": {
         "api_docs_cta": "Tài liệu API",
-        "body": "API WhatNow dùng HTTP(S) và cung cấp điểm cuối RESTful để lấy dữ liệu đã đăng tải.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ra ở các bước trước.",
-        "example_title": "Ví dụ yêu cầu",
+        "body": "API Cơ sở dữ liệu Tin nhắn An toàn sử dụng HTTP(S) và cung cấp các điểm cuối RESTful để lấy dữ liệu đã xuất bản.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ở bước trước.",        "example_title": "Ví dụ yêu cầu",
         "heading": "Bước 4: Làm yêu cầu",
         "moreInfo": "Xem {0} để biết thêm thông tin về tất cả điểm cuối API."
       }
@@ -225,13 +223,13 @@
   "home_pods": {
     "bulk_upload": "Tải lên tệp .csv để bạn có thể cập nhật cùng lúc một số lượng lớn nội dung",
     "audit_log": "Đây là nơi bạn có thể xem nhật ký hoạt động",
-    "whatnow_edit": "Đây là nơi bạn có thể sửa nội dung WhatNow",
-    "whatnow_review": "Đây là nơi bạn có thể kiểm tra các nội dung của WhatNow",
-    "whatnow_publish": "Đây là nơi bạn có thể sửa và đăng tải nội dung WhatNow",
+    "whatnow_edit": "Đây là nơi bạn có thể chỉnh sửa nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "whatnow_review": "Đây là nơi bạn có thể xem lại nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "whatnow_publish": "Đây là nơi bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn",
     "manage_users": "Đây là nơi để quản lý người dùng (tạo, sửa và xóa)",
     "api_usage": "Đây là nơi bạn có thể xem ai đang dùng API và có ứng dụng nào đang được phát triển bằng API.",
     "wellcome": "Chào mừng",
-    "wellcome_description": "Tại đây bạn có thể chỉnh sửa và xuất bản nội dung WhatNow."
+    "wellcome_description": "Tại đây bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +257,16 @@
   "sidebar": {
     "manage": "Quản lý người dùng nội dung",
     "content_users": "Người dùng nội dung",
-    "audit_log": "Nhật ký kiểm toán",
-    "whatnow": "WhatNow",
-    "bulk": "Tải lên hàng loạt",
+    "audit_log": "Lịch sử Chỉnh sửa",
+    "whatnow": "Trình chỉnh sửa Ghi công",
+    "bulk": "Tải lên Tệp Tin nhắn",
     "content": "Nội dung",
     "api": "Sử dụng API",
     "applications": "Ứng dụng",
     "api_stats": "Thống kê Giao diện Lập trình Ứng dụng (API)",
     "api_users": "Người dùng API",
     "terms_conditions": "Điều khoản & Điều kiện",
-    "regions": "Các khu vực"
+    "regions": "Tiểu vùng"
   },
   "common": {
     "accept": "Chấp nhận",
@@ -414,7 +412,7 @@
       }
     },
     "slider_2": {
-      "btn": "Tin nhắn WhatNow",
+      "btn": "Tin nhắn An toàn",
       "step_1": {
         "header": "Bước 1: Xem tin nhắn",
         "text": "Truy cập cơ sở dữ liệu tin nhắn để xem các tin nhắn có sẵn của Hội Quốc gia Hội Chữ thập đỏ Trăng lưỡi liềm đỏ."
@@ -446,7 +444,7 @@
     "content": "Nội dung",
     "audit_log": {
       "audit_log": "Nhật ký kiểm toán",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Lịch sử Chỉnh sửa",
       "empty": "Không tìm thấy lịch sử kiểm toán nào trùng khớp bộ lọc này",
       "soc_label": "Hội",
       "select_hazard": "Chọn loại nguy hiểm",
@@ -458,15 +456,15 @@
     "whatnow": {
       "title": "Tin nhắn",
       "set_attribution": "Cài tên hội và tin nhắn thuộc tính để đăng tải",
-      "whatnow": "WhatNow",
-      "empty": "Không có tin nhắn WhatNow được đăng tải cho Hội quốc gia này",
+      "whatnow": "Cơ sở dữ liệu Tin nhắn An toàn",
+      "empty": "Không có tin nhắn An toàn nào được xuất bản cho Hội Quốc gia này",
       "steps": "Bước",
       "publish": "Đăng tải",
       "no_publish": "Không có gì để đăng tải",
       "published": "đã đăng tải bản dịch",
       "publishing": "Phát hành",
       "content_to_publish": "Phát hành nội dung bản thảo",
-      "whatnow_content": "Nội dung WhatNow",
+      "whatnow_content": "Nội dung Cơ sở dữ liệu Tin nhắn An toàn",
       "choose_hazard": "Chọn sự may rủi",
       "hazard": "Sự may rủi",
       "content": "Nội dung",
@@ -477,8 +475,8 @@
       "society_name": "Hiệp hội quốc gia",
       "attribution_message": "Thông báo đặc tính",
       "no_translation": "Không quy định nội dung",
-      "delete_content_translation": "Thao tác này sẽ xóa nội dung whatnow đã chọn khỏi ngôn ngữ hiện tại",
-      "messages": "Tin nhắn WhatNow về",
+      "delete_content_translation": "Điều này sẽ xóa nội dung Cơ sở dữ liệu Tin nhắn An toàn đã chọn khỏi ngôn ngữ hiện tại",
+      "messages": "Tin nhắn an toàn của",
       "add_language": "Thêm ngôn ngữ mới",
       "no_languages": "Chọn hoặc tạo một ngôn ngữ để bắt đầu",
       "no_soc": "Chọn một hiệp hội",
@@ -506,11 +504,11 @@
       "enter_other_hazard_type": "Nhập tên loại rủi ro",
       "other_hazard_type_label": "Loại rủi ro khác",
       "stepped_content": "Phần nội dung theo từng bước",
-      "content_title_description": "Tiêu đề dành cho các tin nhắn Whatnow",
-      "content_description_description": "Mô tả các Tin nhắn WhatNow này",
+      "content_title_description": "Tiêu đề cho các Tin nhắn An toàn này",
+      "content_description_description": "Mô tả về các Tin nhắn An toàn này",
       "content_label": "Vui lòng nhập một số thông tin về rủi ro",
       "content_url": "URL",
-      "content_url_description": "URL để biết thêm thông tin về các tin nhắn WhatNow này. Vui lòng bao gồm giao thức, http: \/\/ hoặc https: \/\/",
+      "content_url_description": "URL để biết thêm thông tin về các Tin nhắn An toàn này. Vui lòng bao gồm giao thức, ví dụ: http:// hoặc https://",
       "created": "đã tạo",
       "pieces_edited": " Các phần đã được chỉnh sửa",
       "content_placeholder": "Vui lòng nhập một tin nhắn",
@@ -541,7 +539,7 @@
       "download_image": "Tải xuống dưới dạng hình ảnh",
       "download_image_error": "Lỗi khi tải hình ảnh, hãy đảm bảo rằng bạn đã công bố mọi thay đổi và thử lại.",
       "download_instructions": "Nhấp chuột phải và chọn 'Lưu hình ảnh thành…' để lưu",
-      "downloaded_image_alt": "Hướng dẫn về WhatNow",
+      "downloaded_image_alt": "Hướng dẫn Cơ sở dữ liệu Tin nhắn An toàn",
       "add_key_message": "Thêm Tin nhắn chính",
       "add_supporting_message": "Thêm Tin nhắn hỗ trợ",
       "early_warning": "Cảnh báo sớm",
@@ -557,7 +555,7 @@
       "supporting_message_label": "Tin nhắn hỗ trợ"
     },
     "message_editor": {
-      "title": "Trình chỉnh sửa tin nhắn",
+      "title": "Trình chỉnh sửa Ghi công",
       "society_name_label": "Tên hội quốc gia",
       "attribution_url_label": "URL ghi công",
       "attribution_message_label": "Tin nhắn ghi công",
@@ -569,10 +567,10 @@
       "download_image_error": "Lỗi tải xuống hình ảnh, vui lòng thử lại.",
       "download_pdf_error": "Lỗi tải xuống PDF, vui lòng thử lại."
     },
-    "audit": "Sổ kiểm tra",
+    "audit": "Lịch sử Chỉnh sửa",
     "export": "Xuất",
     "bulk_upload": {
-      "bulk_upload": "Tải lên hàng loạt",
+      "bulk_upload": "Tải lên Tệp Tin nhắn",
       "template": "Tiêu bản",
       "export_template": "Xuất tiêu bản",
       "import_data": "Nhập dữ liệu",
@@ -595,7 +593,7 @@
       "submit": "Nhập nội dung",
       "reset": "Tải nội dung khác",
       "export_template_guide": "Hướng dẫn xuất tiêu bản",
-      "export_template_instructions": "Để được hướng dẫn cách sử dụng hiệu quả tiêu bản tải hàng loạt này, vui lòng xem hướng dẫn này.",
+      "export_template_instructions": "Để biết hướng dẫn về cách sử dụng hiệu quả mẫu tải lên tệp g này, vui lòng xem hướng dẫn này.",
       "refer": "Tham khảo",
       "detail": "để biết hướng dẫn chi tiết",
       "warnings": {
@@ -673,9 +671,9 @@
   "home": {
     "home": "Trang Chủ",
     "welcome": "Chào mừng bạn",
-    "admin_intro": "Tại đây, bạn có thể quản lý người dùng, chỉnh sửa và phát hành nội dung WhatNow và xem việc sử dụng API.",
-    "ns_admin_intro": "Tại đây, bạn có thể chỉnh sửa và phát hành nội dung WhatNow",
-    "ns_editor_intro": "Tại đây bạn có thể chỉnh sửa nội dung WhatNow",
+    "admin_intro": "Tại đây bạn có thể quản lý người dùng, chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn và xem mức sử dụng API.",
+    "ns_admin_intro": "Tại đây bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "ns_editor_intro": "Tại đây bạn có thể chỉnh sửa nội dung Cơ sở dữ liệu Tin nhắn An toàn",
     "api_user_intro": "Tại đây, bạn có thể xem các ứng dụng và quản lý tài khoản của mình.",
     "role_changed_title": "Vai trò của bạn đã được thay đổi",
     "role_changed_p": "Bạn đã được chỉ định vai trò sau:",
@@ -684,20 +682,58 @@
     "role_changed_dismiss": "Đóng"
   },
   "landing": {
-    "strapline": "Dịch vụ WhatNow",
+    "strapline": "Dịch vụ Cơ sở dữ liệu Tin nhắn An toàn",
     "strapline_part_2": "Thông điệp an toàn chính của hội Chữ thập đỏ \/ Trăng lưỡi liềm đỏ toàn cầu",
+    "head_1": "An toàn IFRC",
+    "head_2": "Cơ sở dữ liệu Tin nhắn",
+    "head_text_1": "Tin nhắn an toàn dựa trên Nhận thức Cộng đồng của IFRC và",
+    "head_text_2": "Tài nguyên Giáo dục Cộng đồng (PAPE)",
+    "head_bottom_1": "Truy cập và chia sẻ các tin nhắn có thể hành động đáng tin cậy của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ",
+    "head_bottom_2": "để giúp mọi người chuẩn bị an toàn cho",
+    "head_bottom_3": "và ứng phó với các mối nguy hiểm.",
+    "signup": "Đăng ký",
+    "it_works": "Cách thức hoạt động",
+    "works_1_a": "Hội Quốc gia Hội Chữ thập đỏ Trăng lưỡi liềm đỏ",
+    "works_1_b": "và các đối tác chính phủ",
+    "works_1_c": "thống nhất về các bộ tin nhắn quốc gia",
+    "works_2_a": "Các Hội Quốc gia xuất bản",
+    "works_2_b": "tin nhắn an toàn trong",
+    "works_2_c": "cơ sở dữ liệu",
+    "works_3_a": "Các cơ quan cảnh báo và",
+    "works_3_b": "các kênh liên lạc",
+    "works_3_c": "kết nối với API cơ sở dữ liệu",
+    "works_4_a": "Các đối tác chia sẻ",
+    "works_4_b": "tin nhắn thông qua",
+    "works_4_c": "các kênh của họ",
+    "works_5_a": "Cộng đồng nhận được",
+    "works_5_b": "tin nhắn và",
+    "works_5_c": "hành động an toàn",
+    "learn_more": "Tìm hiểu thêm",
+    "watch_video": "Xem video",
+    "example_case": "Trường hợp Sử dụng Ví dụ",
+    "api": "API",
+    "hurricane": "Bao gồm tin nhắn với cảnh báo sớm về bão",
+    "warning_alerts": "cảnh báo sớm",
+    "social_media": "Mạng xã hội",
+    "post_images": "Đăng hình ảnh về sự chuẩn bị cho cháy rừng",
+    "messages_network": "tin nhắn cho mạng của bạn",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Chia sẻ các hành động giảm thiểu lũ lụt với",
+    "family": "gia đình và bạn bè của bạn",
+    "impact": "Tác động",
+    "sign_up_today": "Đăng ký ngay hôm nay",
     "developer": {
       "strap_para_one": "Giúp cộng đồng chuẩn bị, ứng phó và phục hồi sau các mối nguy hiểm bằng các thông điệp hành động chính được bản địa hóa của chúng tôi.",
-      "strap_para_two": "Sử dụng hướng dẫn bốn bước đơn giản của chúng tôi để tích hợp các thông điệp của WhatNow vào ứng dụng của bạn. Đăng ký và đọc mọi tin nhắn có sẵn."
+      "strap_para_two": "Sử dụng hướng dẫn bốn bước dễ dàng của chúng tôi để tích hợp các tin nhắn An toàn vào ứng dụng của bạn. Đăng ký và xem tất cả các tin nhắn có sẵn."
     },
     "national_society": {
       "strap_para_one": "Công bố các thông điệp an toàn chính của hội Chữ Thập đỏ và Trăng Lưỡi liềm để truyền thông thế giới, quốc gia và địa phương tiếp cận và quảng bá.",
       "strap_para_two": "Liên hệ với chúng tôi để tìm hiểu thêm về cách tạo thông điệp và kết nối với các đối tác truyền thông."
     },
     "strap_para_one": "Giúp cộng đồng chuẩn bị, ứng phó và phục hồi sau các mối nguy hiểm bằng các thông điệp hành động chính được bản địa hóa của chúng tôi.",
-    "strap_para_two": "Sử dụng hướng dẫn bốn bước đơn giản của chúng tôi để tích hợp các thông điệp của WhatNow vào ứng dụng của bạn. Đăng ký và đọc mọi tin nhắn có sẵn.",
+    "strap_para_two": "Sử dụng hướng dẫn bốn bước dễ dàng của chúng tôi để tích hợp các tin nhắn An toàn vào ứng dụng của bạn. Đăng ký và xem tất cả các tin nhắn có sẵn.",
     "view_data": "Xem dữ liệu",
-    "view_message_library": "Xem tin nhắn của WhatNow",
+    "view_message_library": "Xem Thư viện Tin nhắn An toàn",
     "what_now": "WhatNow ư?",
     "fake_alert_heading": "Cảnh báo cực lạnh",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
@@ -717,10 +753,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Định dạng mẫu thông báo WhatNow",
+      "heading": "Định dạng Tin nhắn An toàn Mẫu",
       "alert_preview": "Xem trước cảnh báo",
-      "what_now_info": "Xem trước WhatNow",
-      "example_whatnow_request": "Phản hồi mẫu WhatNow",
+      "what_now_info": "Xem trước Tin nhắn An toàn",
+      "example_whatnow_request": "Phản hồi Cơ sở dữ liệu Tin nhắn An toàn Mẫu",
       "example_alert_request": "Phản hồi mẫu cảnh báo",
       "example_content": "Báo cáo Thời tiết # 3 CUỐI CÙNG kể từ 11 giờ sáng, tháng 1. ngày 29 năm 2018\n Cho phần sau luồng không khí lạnh\n\nTác động của phần sau luồng không khí lạnh đã suy yếu. Trải nghiệm các điều kiện thời tiết đã cải thiện ở Nome. Tuy nhiên, dự kiến có mưa rào hoặc sấm sét, đặc biệt là về chiều và tối, tại các khu vực ở hướng Tây.\n\nVới diễn biến này, đây là báo cáo cuối cùng cho hệ thống thời tiết này.",
       "example_content_location_header": "VỊ TRÍ ẢNH HƯỞNG",
@@ -729,9 +765,9 @@
     "example_whatnow": {
       "alert_from": "Cảnh báo từ: hội Chữ Thập đỏ Hoa Kỳ",
       "more_info": "Thêm thông tin",
-      "heading": "Thông điệp chính về cái lạnh khắc nghiệt",
+      "heading": "Tin nhắn An toàn cho Thời tiết Lạnh Cực độ",
       "copy": "Cần hành động để giảm thiểu rủi ro, bảo vệ bạn và gia đình của bạn khỏi cái lạnh khắc nghiệt.",
-      "what_now": "WhatNow",
+      "what_now": "Cơ sở dữ liệu Tin nhắn An toàn IFRC",
       "step_1": "Bảo vệ ngôi nhà của bạn. Kiểm tra các đường ống và sử dụng các nguồn sưởi ấm một cách an toàn.",
       "step_2": "Uống đủ nước với chất lỏng ấm",
       "step_3": "Bảo vệ bản thân với quần áo ấm và che vùng da hở",
@@ -742,7 +778,7 @@
       "heading": "Bạn đã sẵn sàng xây dựng ứng dụng chưa?"
     },
     "data_preview": {
-      "heading": "Thông điệp của WhatNow",
+      "heading": "Tin nhắn An toàn",
       "sub_heading": "Đăng ký và xem các thông điệp hành động chính của các Hiệp hội quốc gia Chữ thập đỏ \/ Trăng lưỡi liềm đỏ trên toàn thế giới"
     },
     "footer": {
@@ -831,7 +867,7 @@
       "heading": "Giấy phép và những điều khoản hạn chế:"
     },
     "overview": {
-      "body": "Giao diện ứng dụng trung tâm chuẩn bị ứng phó với thảm họa toàn cầu WhatNow (\"API\") được cung cấp đến bạn bới Hội Chữ Thập Đỏ Hoa Kỳ (\"Hội Chữ Thập Đỏ\")\r API yêu cầu mã đăng ký  Trong quá trình đăng ký, bạn phải đồng ý với những điều khoản và điều kiện dưới đây, cùng với những điều khoản và điều kiện trong Thoả thuận điều khoản dịch vụ của trang web Hội Chữ Thập Đỏ có sẵn tại {0} (được gọi chung là \"điều khoản API\"\r Các điều khoản API sẽ quản lý việc sử dụng API và các tài liệu điện tử tải xuống từ API. {1}",
+      "body": "Giao diện Chương trình Ứng dụng Dịch vụ Cơ sở dữ liệu Tin nhắn An toàn Trung tâm Chuẩn bị Thảm họa Toàn cầu (“API”) được Cung cấp cho bạn bởi Hội Chữ thập đỏ Quốc gia Hoa Kỳ (“Hội Chữ thập đỏ”). API yêu cầu khóa đăng ký. Trong quá trình đăng ký, bạn phải đồng ý với các điều khoản và điều kiện sau, cùng với các điều khoản và điều kiện trong Thỏa thuận Điều khoản Dịch vụ Trang web của Hội Chữ thập đỏ có tại {0} (gọi chung là “Điều khoản API”). Điều khoản API sẽ chi phối việc bạn sử dụng API và các tài liệu điện tử có thể tải xuống được cung cấp thông qua API. {1}",
       "cta": "Nhấp vào đây để đăng ký."
     },
     "privacy_policy": {
@@ -863,7 +899,7 @@
   "view_data": {
     "alert_title": "CẢNH BÁO:",
     "more_info": "Đọc thêm:",
-    "which": "Bạn muốn xem tin nhắn nào từ WhatNow?",
+    "which": "Bạn muốn xem Tin nhắn An toàn nào?",
     "view_data": "Xem dữ liệu",
     "alerts": "Cảnh báo",
     "alert_preview": "Xem trước cảnh báo",
@@ -874,7 +910,7 @@
     "date": "Ngày tháng",
     "headline": "Đầu đề",
     "alert": "Cảnh báo",
-    "whatnow_info": "Thông tin từ Whatnow",
+    "whatnow_info": "Thông tin Cơ sở dữ liệu Tin nhắn An toàn",
     "alert_detail": "Chi tiết cảnh báo",
     "more": "Đọc thêm",
     "area_affected": "Khu vực chịu ảnh hưởng",
@@ -900,7 +936,7 @@
   },
   "user_agreement": {
     "title": "Thoả thuận người dùng",
-    "para_one": "Trước khi truy cập cổng Thông tin WhatNow, xin vui lòng đọc và chấp nhận điều khoản người dùng bằng việc tải tài liệu dưới đây và nhấp vào nút \"Tôi Chấp Nhận\".",
+    "para_one": "Trước khi bạn có thể truy cập Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn, vui lòng đọc và chấp nhận các điều khoản của thỏa thuận người dùng bằng cách tải xuống tài liệu bên dưới và nhấp vào nút 'Tôi chấp nhận' bên dưới.",
     "cta": "Tôi đồng ý",
     "download": "Nhấp vào đây để xem thông tin thoả thuận người dùng (105KB)"
   },
@@ -925,7 +961,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Quản lý khu vực",
+      "manage": "Tiểu vùng",
       "create": "Tạo khu vực mới",
       "edit": "Chỉnh sửa khu vực",
       "add": "Bổ sung khu vực",
@@ -938,7 +974,7 @@
     "create": "Tạo một khu vực mới",
     "form": {
       "name": "Tên khu vực",
-      "name_help": "Đặt tên khu vực mà bạn muốn tạo tin nhắn WhatNow tùy chỉnh.",
+      "name_help": "Đặt tên cho khu vực bạn muốn tạo tin nhắn an toàn tùy chỉnh.",
       "description": "Mô tả",
       "description_help": "Vui lòng cung cấp thêm thông tin về khu vực, ví dụ như Khu vực Vịnh San Francisco."
     },
@@ -976,6 +1012,6 @@
     "hazardCreate": "Nguy hiểm đã tạo",
     "published": "Đã xuất bản",
     "draft": "Bản nháp",
-    "bulkUploadDraft": "Bản nháp Tải lên Hàng loạt"
+    "bulkUploadDraft": "Bản nháp Tải lên Tệp Tin nhắn"
   }
 }
