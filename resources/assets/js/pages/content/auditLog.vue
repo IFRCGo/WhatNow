@@ -5,7 +5,7 @@
         <h1 class="sec-title">{{ $t('content.audit_log.my_audit_log') }}</h1>
       </b-col>
       <b-col>
-        <b-button class="float-right rtl-float-left mr-2 rtl-ml-2 btn-outline-primary" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
+        <b-button class="float-right rtl-float-left rtl-ml-2 btn-outline-primary" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">
           {{ $t('users.list.download_report') }}
         </b-button>
       </b-col>
@@ -19,7 +19,7 @@
         <v-select
           :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
           v-model="languageFilter"
-          class="w-100 styled-select"
+          class="w-100 v-select-custom"
           :options="filteredLanguages"
           label="text" :disabled="filteredLanguages.length === 0"
           :placeholder="$t('content.whatnow.select_language')">
@@ -41,7 +41,7 @@
           :staynull="true" />
       </b-col>
       <b-col cols="3">
-        <b-button size="sm" variant="dark" @click="clearFilters" :disabled="noFilters" class="float-right rtl-float-left">
+        <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary float-right rtl-float-left">
           {{ $t('users.list.clear_filters') }}
         </b-button>
       </b-col>
@@ -351,5 +351,10 @@ export default {
   background: #FFF8CA;
   border-color: #E56A2D;
   color: #E56A2D;
+}
+
+btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: white;
+  background: grey;
 }
 </style>

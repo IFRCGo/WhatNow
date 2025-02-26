@@ -2,27 +2,27 @@
 
 return [
 
-    
+
 
     'name' => env('APP_NAME', 'Alerts Admin'),
 
-    
+
 
     'env' => env('APP_ENV', 'production'),
 
-    
+
 
     'debug' => env('APP_DEBUG', false),
 
-    
+
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    
+
 
     'timezone' => 'UTC',
 
-    
+
 
     'locale' => 'en',
 
@@ -32,28 +32,28 @@ return [
         'es' => 'ES',
     ],
 
-    
+
 
     'fallback_locale' => 'en',
 
-    
+
 
     'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
-    
+
 
     'log' => env('APP_LOG', 'single'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
 
-    
+
 
     'providers' => [
 
-        
+
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -77,21 +77,21 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        
 
-        
+
+
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-                App\Providers\EventServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
 
-        
+
         App\Classes\RcnApi\RcnApiServiceProvider::class,
         App\Providers\ImageClientServiceProvider::class,
     ],
 
-    
+
 
     'aliases' => [
 

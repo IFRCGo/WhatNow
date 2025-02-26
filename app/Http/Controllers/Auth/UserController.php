@@ -58,7 +58,11 @@ class UserController extends Controller
             'role_id' => 'required|exists:roles,id',
         ]);
 
-        
+        $latestTermsVersion = $this->terms->getLatestTermsVersion();
+        if (! $$latestTermsVersion) {
+            throw new HttpException(Response::HTTP_FORBIDDEN, 'No terms and conditions found');
+        }
+
         $adminUser = $request->user();
         
         $adminRole = $adminUser->roles->first();
@@ -67,7 +71,11 @@ class UserController extends Controller
 
         $this->checkRoleCanBeAssigned($adminRole, $role);
 
-        $user = $this->users->createUser($request->all());
+        $user = $this->users->createUser(array_merge($request->all(), [
+            'terms_version' => $latestTermsVersion,
+            'accepted_agreement' => true,
+        ]));
+
 
         $user->notify(new AdminUserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code)));
 

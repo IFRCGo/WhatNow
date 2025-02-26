@@ -1,5 +1,5 @@
 <template>
-  <v-select v-if="list.length !== 0" :disabled="fetching || list.length === 0" :dir="isLangRTL(locale) ? 'rtl' : 'ltr'" :value="value" @input="$emit('input', $event)" class="w-100 styled-select" :options="list" label="title" :placeholder="$t('content.whatnow.no_region')">
+  <v-select v-if="list.length !== 0" :disabled="fetching || list.length === 0" :dir="isLangRTL(locale) ? 'rtl' : 'ltr'" :value="value" @input="$emit('input', $event)" class="w-100 v-select-custom" :options="list" label="title" :placeholder="$t('content.whatnow.no_region')">
     <template slot="option" slot-scope="option">
       <div class="ml-2 rtl-mr-2 dropdown-option">
         <span v-if="option.translations[selectLang]?.title">

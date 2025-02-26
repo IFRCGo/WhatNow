@@ -144,7 +144,7 @@ export default {
   .new-footer {
     width: 100%;
     background: #323232;
-    padding-top: 2rem;
+    padding: 2rem;
     color: white;
     display: flex;
     justify-content: space-around;
@@ -159,5 +159,13 @@ export default {
     a {
       font-size: 1rem;
     }
+  }
+
+  @media screen and (max-width: 850px) {
+    .new-footer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+  }
   }
 </style>
