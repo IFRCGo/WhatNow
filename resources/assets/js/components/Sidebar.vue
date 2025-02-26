@@ -74,7 +74,7 @@ export default {
     firstSocietyCode () {
       if (this.user) {
         if (this.can(this.user, permissionsList.ALL_ORGANISATIONS)) {
-          return 'GB'
+          return 'USA'
         }
         if (this.user.data.organisations && this.user.data.organisations.length === 0) {
           return null

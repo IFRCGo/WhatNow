@@ -11,6 +11,7 @@
   min-height: calc(100vh - 6rem);
   max-height: 100vh;
   border-right: 1px solid #ccc; /* Agrega esta línea para la línea gris a la derecha */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega esta línea para la sombra */
   .nav {
     transition: margin 0.3s ease-in;
     li {
