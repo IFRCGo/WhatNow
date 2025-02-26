@@ -717,7 +717,7 @@ export default {
   position: relative;
 
   .publish-bottom-container {
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
     height: 70px;
