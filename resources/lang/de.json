@@ -84,153 +84,154 @@
   "documentation": {
     "heading": "Rotes-Kreuz-API-Dokumentation",
     "sidebar": {
-        "introduction": "Einführung",
-        "base_url": "Basis-URL",
-        "changelog": "Änderungsprotokoll",
-        "authentication": "Authentifizierung",
-        "response_codes": "Antwortcodes",
-        "emergency_alert_feed": "Notfall-Warnungs-Feed",
-        "cap_alert_document": "CAP-Alert-Dokument",
-        "what_now": "What Now"
+      "introduction": "Einführung",
+      "base_url": "Basis-URL",
+      "changelog": "Änderungsprotokoll",
+      "authentication": "Authentifizierung",
+      "response_codes": "Antwortcodes",
+      "emergency_alert_feed": "Notfall-Warnungs-Feed",
+      "cap_alert_document": "CAP-Alert-Dokument",
+      "what_now": "What Now"
     },
     "steps": {
-        "one": {
-            "body": "Die REST-API des Roten Kreuzes ermöglicht Entwicklern den Zugriff auf Notfall-Informationen und -Ressourcen, die von internationalen Rotkreuz-Gesellschaften herausgegeben werden.",
-            "heading": "Einführung",
-            "support_card": {
-                "body": "Bei Fragen zur Rotkreuz-API wenden Sie sich bitte an dev@3sidedcube.com",
-                "title": "Support & Fragen"
-            }
-        },
-        "two": {
-            "body": "Alle URLs in der API v1.0-Dokumentation haben die folgende Basis-URL:",
-            "heading": "Basis-URL"
-        },
-        "three": {
-          "heading": "Änderungsprotokoll",
-          "table": {
-              "headers": {
-                  "detail": "Veröffentlichung",
-                  "version": "API-Version",
-                  "release": "Veröffentlichung",
-                  "release_date": "Veröffentlichungsdatum"
-              }
-          }
-        },
-        "four": {
-            "body": "Die API erfordert eine Authentifizierung für den Zugriff auf alle Ressourcen mithilfe eines API-Schlüssels. Um einen API-Schlüssel zu erhalten, führen Sie zunächst {0} aus.\n\nAlle API-Anfragen müssen den folgenden HTTP-Header enthalten:",
-            "create_app_cta": "Anwendung erstellen",
-            "heading": "Authentifizierung"
-        },
-        "five": {
-            "heading": "Antwortcodes",
-            "table": {
-                "descriptions": {
-                    "ok": "Die Anfrage war erfolgreich und die Antwortdatei enthält die angeforderte Ressource",
-                    "found": "Zeigt eine Weiterleitung an. Stellen Sie eine GET-Anfrage an den Ressourcen-URI in der Location: Header.",
-                    "not_found": "Die angeforderte Ressource wurde nicht gefunden.",
-                    "not_allowed": "Zeigt an, dass die verwendete HTTP-Methode für diese Ressource nicht zulässig ist.",
-                    "server_error": "Es ist ein Serverfehler aufgetreten und die angeforderte Ressource konnte nicht abgerufen werden.",
-                    "unavailable": "Zeigt an, dass der Dienst derzeit nicht verfügbar ist. Versuchen Sie die Anfrage zu einem späteren Zeitpunkt erneut."
-                },
-              "headers": {
-                "code": "Code",
-                "name": "Name",
-                "description": "Beschreibung"
-              }
-            }
-        },
-        "six": {
-            "card": {
-              "body": "Jede Rotkreuz-Gesellschaft kann öffentliche Warnmeldungen unter Verwendung des {0} v1.2 ausgeben.",
-              "cta": "Common Alerting Protocol",
-              "title": "Common Alerting Protocol"
-            },
-            "endpoint": "Endpunkt:",
-            "example": "In diesem Beispiel sollte das Segment {0} durch den Ländercode der entsprechenden Gesellschaft ersetzt werden. z. B.",
-            "feed_intro": "Für jede Gesellschaft wird auch ein Feed zur Verfügung gestellt, in dem aktive Warnmeldungen aufgelistet werden, die von einer bestimmten Gesellschaft veröffentlicht wurden, gekennzeichnet durch",
-            "heading": "Notfall-Warnungs-Feed",
-            "intro": "Die CAP-Alerts aller Gesellschaften werden über einen RSS-Feed ausgegeben. Auf diesen kann über den folgenden Endpunkt zugegriffen werden:"
-        },
-        "seven": {
-            "endpoint": "Endpunkt:",
-            "example_response": "Beispielantwort:",
-            "heading": "CAP-Alert-Dokument",
-            "body": "CAP-Alert-Dokumente können über den in jedem RSS-Feed-Element angegebenen absoluten Link aufgerufen werden. Der URI einer Warnmeldung verwendet das folgende Format: "
-        },
-        "eight": {
-            "body": "Die folgenden Endpunkte stellen strukturierte Daten zur Verfügung, die von Rotkreuz-Gesellschaften veröffentlicht wurden, um die Katastrophenvorsorge für eine Vielzahl von Ereignistypen zu unterstützen.\n\nJeder Eintrag bietet Informationen zu sechs Stufen des Katastrophenmanagements:",
-            "endpoint": "Endpunkt:",
-            "example_response": "Beispielantwort:",
-            "heading": "What Now",
-            "note": "Hinweis:",
-            "noteDetails": "{0} sind alle Antworten in einer Parent-Eigenschaft {1} enthalten.",
-            "query_params": "Abfrageparameter:",
-            "response_properties": "Antwort-Eigenschaften:",
-            "structure": "Struktur der What-Now-Element-Objekte:",
-            "stucture_attribution": "Struktur eines {0}-Objekts:",
-            "stucture_attribute_translation": "Struktur eines Attributionsobjekts {0}:",
-            "stucture_translation": "Struktur eines {0}-Objekts:",
-            "table": {
-                "query_params": {
-                    "name": "Name",
-                    "description": "Beschreibung"
-                },
-                "structure": {
-                    "property": "Eigenschaft",
-                    "data_type": "Datentyp",
-                    "description": "Beschreibung"
-                }
-            }
+      "one": {
+        "body": "Die REST-API des Roten Kreuzes ermöglicht Entwicklern den Zugriff auf Notfall-Informationen und -Ressourcen, die von internationalen Rotkreuz-Gesellschaften herausgegeben werden.",
+        "heading": "Einführung",
+        "support_card": {
+          "body": "Bei Fragen zur Rotkreuz-API wenden Sie sich bitte an dev@3sidedcube.com",
+          "title": "Support & Fragen"
         }
+      },
+      "two": {
+        "body": "Alle URLs in der API v1.0-Dokumentation haben die folgende Basis-URL:",
+        "heading": "Basis-URL"
+      },
+      "three": {
+        "heading": "Änderungsprotokoll",
+        "table": {
+          "headers": {
+            "detail": "Veröffentlichung",
+            "version": "API-Version",
+            "release": "Veröffentlichung",
+            "release_date": "Veröffentlichungsdatum"
+          }
+        }
+      },
+      "four": {
+        "body": "Die API erfordert eine Authentifizierung für den Zugriff auf alle Ressourcen mithilfe eines API-Schlüssels. Um einen API-Schlüssel zu erhalten, führen Sie zunächst {0} aus.\n\nAlle API-Anfragen müssen den folgenden HTTP-Header enthalten:",
+        "create_app_cta": "Anwendung erstellen",
+        "heading": "Authentifizierung"
+      },
+      "five": {
+        "heading": "Antwortcodes",
+        "table": {
+          "descriptions": {
+            "ok": "Die Anfrage war erfolgreich und die Antwortdatei enthält die angeforderte Ressource",
+            "found": "Zeigt eine Weiterleitung an. Stellen Sie eine GET-Anfrage an den Ressourcen-URI in der Location: Header.",
+            "not_found": "Die angeforderte Ressource wurde nicht gefunden.",
+            "not_allowed": "Zeigt an, dass die verwendete HTTP-Methode für diese Ressource nicht zulässig ist.",
+            "server_error": "Es ist ein Serverfehler aufgetreten und die angeforderte Ressource konnte nicht abgerufen werden.",
+            "unavailable": "Zeigt an, dass der Dienst derzeit nicht verfügbar ist. Versuchen Sie die Anfrage zu einem späteren Zeitpunkt erneut."
+          },
+          "headers": {
+            "code": "Code",
+            "name": "Name",
+            "description": "Beschreibung"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "Jede Rotkreuz-Gesellschaft kann öffentliche Warnmeldungen unter Verwendung des {0} v1.2 ausgeben.",
+          "cta": "Common Alerting Protocol",
+          "title": "Common Alerting Protocol"
+        },
+        "endpoint": "Endpunkt:",
+        "example": "In diesem Beispiel sollte das Segment {0} durch den Ländercode der entsprechenden Gesellschaft ersetzt werden. z. B.",
+        "feed_intro": "Für jede Gesellschaft wird auch ein Feed zur Verfügung gestellt, in dem aktive Warnmeldungen aufgelistet werden, die von einer bestimmten Gesellschaft veröffentlicht wurden, gekennzeichnet durch",
+        "heading": "Notfall-Warnungs-Feed",
+        "intro": "Die CAP-Alerts aller Gesellschaften werden über einen RSS-Feed ausgegeben. Auf diesen kann über den folgenden Endpunkt zugegriffen werden:"
+      },
+      "seven": {
+        "endpoint": "Endpunkt:",
+        "example_response": "Beispielantwort:",
+        "heading": "CAP-Alert-Dokument",
+        "body": "CAP-Alert-Dokumente können über den in jedem RSS-Feed-Element angegebenen absoluten Link aufgerufen werden. Der URI einer Warnmeldung verwendet das folgende Format: "
+      },
+      "eight": {
+        "body": "Die folgenden Endpunkte stellen strukturierte Daten zur Verfügung, die von Rotkreuz-Gesellschaften veröffentlicht wurden, um die Katastrophenvorsorge für eine Vielzahl von Ereignistypen zu unterstützen.\n\nJeder Eintrag bietet Informationen zu sechs Stufen des Katastrophenmanagements:",
+        "endpoint": "Endpunkt:",
+        "example_response": "Beispielantwort:",
+        "heading": "What Now",
+        "note": "Hinweis:",
+        "noteDetails": "{0} sind alle Antworten in einer Parent-Eigenschaft {1} enthalten.",
+        "query_params": "Abfrageparameter:",
+        "response_properties": "Antwort-Eigenschaften:",
+        "structure": "Struktur der What-Now-Element-Objekte:",
+        "stucture_attribution": "Struktur eines {0}-Objekts:",
+        "stucture_attribute_translation": "Struktur eines Attributionsobjekts {0}:",
+        "stucture_translation": "Struktur eines {0}-Objekts:",
+        "table": {
+          "query_params": {
+            "name": "Name",
+            "description": "Beschreibung"
+          },
+          "structure": {
+            "property": "Eigenschaft",
+            "data_type": "Datentyp",
+            "description": "Beschreibung"
+          }
+        }
+      }
     }
   },
   "get_started_docs": {
     "title": "Beginnen",
     "sidebar": {
-        "create_app": "Eine App erstellen",
-        "get_api_key": "Einen API-Schlüssel erstellen",
-        "make_request": "Eine Anfrage stellen",
-        "sign_up": "Anmelden"
+      "create_app": "Eine App erstellen",
+      "get_api_key": "Einen API-Schlüssel erstellen",
+      "make_request": "Eine Anfrage stellen",
+      "sign_up": "Anmelden"
     },
     "steps": {
-        "one": {
-            "heading": "Schritt 1 - Anmelden",
-            "body": "Um mit der Verwendung von Daten aus der WhatNow-API zu beginnen, rufen Sie zunächst {0} das WhatNow-Portal auf.\n\nSie können Ihre Facebook- und Google-Konten oder eine E-Mail-Adresse verwenden, um ein Konto zu erstellen.",
-            "create_account_alt": "Konto erstellen",
-            "existing_account": "Wenn Sie bereits ein Konto haben, bitte {0}.",
-            "login_cta": "einloggen",
-            "sign_up_cta": "anmelden"
-
-        },
-        "two": {
-            "body": "Um die API zu verwenden, müssen Sie eine Anwendung im WhatNow-Portal erstellen. Erzählen Sie uns ein wenig darüber, was Sie bauen.",
-            "create_app_alt": "App erstellen",
-            "heading": "Schritt 2 - Eine App erstellen"
-        },
-        "three": {
-            "body": "Wenn Sie eine App erstellt haben, wird automatisch ein API-Schlüssel generiert.\n\n{0} Achten Sie darauf, diesen so sicher wie möglich zu speichern und vermeiden Sie die Weitergabe oder anderweitige Offenlegung Ihres API-Schlüssels innerhalb Ihrer eigenen Anwendung.",
-            "create_api_key_alt": "API-Key erstellen",
-            "heading": "Schritt 3 - Einen API-Schlüssel erstellen",
-            "important": "Wichtig:"
-        },
-        "four": {
-            "api_docs_cta": "API-Dokumentation",
-            "body": "Die WhatNow-API verwendet HTTP(S) und bietet RESTful-Endpunkte, um veröffentlichte Daten zu erhalten.\n\nJede Anfrage muss mit dem im vorherigen Schritt erstellten API-Schlüssel authentifiziert werden.",
-            "example_title": "Beispielanfrage",
-            "heading": "Schritt 4 - Eine Anfrage stellen",
-            "moreInfo": "Weitere Informationen zu allen API-Endpunkten finden Sie in {0}."
-        }
+      "one": {
+        "heading": "Schritt 1 - Anmelden",
+        "body": "Um mit der Verwendung von Daten aus der WhatNow-API zu beginnen, rufen Sie zunächst {0} das WhatNow-Portal auf.\n\nSie können Ihre Facebook- und Google-Konten oder eine E-Mail-Adresse verwenden, um ein Konto zu erstellen.",
+        "create_account_alt": "Konto erstellen",
+        "existing_account": "Wenn Sie bereits ein Konto haben, bitte {0}.",
+        "login_cta": "einloggen",
+        "sign_up_cta": "anmelden"
+      },
+      "two": {
+        "body": "Um die API zu verwenden, müssen Sie eine Anwendung im WhatNow-Portal erstellen. Erzählen Sie uns ein wenig darüber, was Sie bauen.",
+        "create_app_alt": "App erstellen",
+        "heading": "Schritt 2 - Eine App erstellen"
+      },
+      "three": {
+        "body": "Wenn Sie eine App erstellt haben, wird automatisch ein API-Schlüssel generiert.\n\n{0} Achten Sie darauf, diesen so sicher wie möglich zu speichern und vermeiden Sie die Weitergabe oder anderweitige Offenlegung Ihres API-Schlüssels innerhalb Ihrer eigenen Anwendung.",
+        "create_api_key_alt": "API-Key erstellen",
+        "heading": "Schritt 3 - Einen API-Schlüssel erstellen",
+        "important": "Wichtig:"
+      },
+      "four": {
+        "api_docs_cta": "API-Dokumentation",
+        "body": "Die WhatNow-API verwendet HTTP(S) und bietet RESTful-Endpunkte, um veröffentlichte Daten zu erhalten.\n\nJede Anfrage muss mit dem im vorherigen Schritt erstellten API-Schlüssel authentifiziert werden.",
+        "example_title": "Beispielanfrage",
+        "heading": "Schritt 4 - Eine Anfrage stellen",
+        "moreInfo": "Weitere Informationen zu allen API-Endpunkten finden Sie in {0}."
+      }
     }
   },
   "home_pods": {
-      "bulk_upload": "Laden Sie .csv-Dateien hoch, so dass Sie große Mengen an Inhalten auf einmal aktualisieren können",
-      "audit_log": "Hier können Sie ein Protokoll der Aktivitäten einsehen",
-      "whatnow_edit": "Hier können Sie WhatNow-Inhalte bearbeiten",
-      "whatnow_review": "Hier können Sie Ihren WhatNow-Inhalt überprüfen",
-      "whatnow_publish": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
-      "manage_users": "Hier werden die Benutzer verwaltet (erstellen, bearbeiten und entfernen)",
-      "api_usage": "Hier können Sie sehen, wer die API verwendet und welche Anwendungen damit erstellt werden."
+    "bulk_upload": "Laden Sie .csv-Dateien hoch, so dass Sie große Mengen an Inhalten auf einmal aktualisieren können",
+    "audit_log": "Hier können Sie ein Protokoll der Aktivitäten einsehen",
+    "whatnow_edit": "Hier können Sie WhatNow-Inhalte bearbeiten",
+    "whatnow_review": "Hier können Sie Ihren WhatNow-Inhalt überprüfen",
+    "whatnow_publish": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
+    "manage_users": "Hier werden die Benutzer verwaltet (erstellen, bearbeiten und entfernen)",
+    "api_usage": "Hier können Sie sehen, wer die API verwendet und welche Anwendungen damit erstellt werden.",
+    "wellcome": "Willkommen",
+    "wellcome_description": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen."
   },
   "languages": {
     "am": "አማርኛ",
@@ -256,250 +257,369 @@
     "vi": "Tiếng Việt"
   },
   "sidebar": {
-      "manage": "Benutzer der Inhalte verwalten",
-      "content_users": "Benutzer der Inhalte",
-      "audit_log": "Audit-Protokoll",
-      "whatnow": "WhatNow",
-      "bulk": "Bulk-Upload",
-      "content": "Inhalt",
-      "api": "API-Nutzung",
-      "applications": "Anwendungen",
-      "api_stats": "API-Statistik",
-      "api_users": "API-Benutzer",
-      "terms_conditions": "Geschäftsbedingungen",
-      "regions": "Regionen"
+    "manage": "Benutzer der Inhalte verwalten",
+    "content_users": "Benutzer der Inhalte",
+    "audit_log": "Audit-Protokoll",
+    "whatnow": "WhatNow",
+    "bulk": "Bulk-Upload",
+    "content": "Inhalt",
+    "api": "API-Nutzung",
+    "applications": "Anwendungen",
+    "api_stats": "API-Statistik",
+    "api_users": "API-Benutzer",
+    "terms_conditions": "Geschäftsbedingungen",
+    "regions": "Regionen"
   },
   "common": {
-      "accept": "Akzeptieren",
-      "actions": "Aktionen",
-      "create": "Erstellen",
-      "edit": "Bearbeiten",
-      "deactivate": "Deaktivieren",
-      "activate": "Aktivieren",
-      "are_you_sure": "Sind Sie sicher?",
-      "yes": "Ja",
-      "title": "Titel",
-      "description": "Beschreibung",
-      "unpublished_edits": "Unveröffentlichte Bearbeitungen?",
-      "published": "Veröffentlicht",
-      "delete": "Löschen",
-      "welcome": "Willkommen bei",
-      "save_changes": "Änderungen speichern",
-      "auto_saving": "Auto-Speichern",
-      "add": "Hinzufügen",
-      "my_profile": "Mein Profil",
-      "cancel": "Abbrechen",
-      "view_changes": "Änderungen anzeigen",
-      "view_content": "Inhalt anzeigen",
-      "resend_activation": "Aktivierungs-Mail erneut senden",
-      "deactivate_user": "Benutzer deaktivieren",
-      "submit_changes": "Änderungen übermitteln",
-      "reactivate_user": "Benutzer reaktivieren",
-      "send_invite": "Einladung versenden",
-      "invite_and_create": "Einladen und einen weiteren erstellen",
-      "loading": "Inhalt wird geladen",
-      "publish_new": "Neue Version veröffentlichen",
-      "greeting": "Hallo",
-      "removed": "Entfernt",
-      "copy": "Kopieren",
-      "copied": "Kopiert",
-      "not_empty": "Darf nicht leer sein",
-      "name": "Name",
-      "webUrl": "URL",
-      "learn_more": "Mehr erfahren",
-      "validations": {
-          "empty": "Dies darf nicht leer sein",
-          "hazardIcon": "Bitte wählen Sie ein Bild, das kleiner als 30 kB ist"
-      },
-      "network_error": "Netzwerkfehler",
-      "network_error_text": "Es gab einen Netzwerkfehler. Bitte versuchen Sie es in ein paar Augenblicken erneut",
-      "email_sent": "E-Mail gesendet",
-      "duplicate_lang_error": "Die gewählte Sprache existiert bereits",
-      "duplicate_lang_description": "Bitte bearbeiten Sie entweder die vorhandene Sprache oder wählen Sie eine neue Sprache aus dem Dropdown-Menü",
-      "estimated_users": "Geschätzte Benutzeranzahl"
+    "accept": "Akzeptieren",
+    "actions": "Aktionen",
+    "create": "Erstellen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "deactivate": "Deaktivieren",
+    "activate": "Aktivieren",
+    "are_you_sure": "Sind Sie sicher?",
+    "yes": "Ja",
+    "title": "Titel",
+    "description": "Beschreibung",
+    "unpublished_edits": "Unveröffentlichte Bearbeitungen?",
+    "published": "Veröffentlicht",
+    "delete": "Löschen",
+    "welcome": "Willkommen bei",
+    "save_changes": "Änderungen speichern",
+    "auto_saving": "Auto-Speichern",
+    "add": "Hinzufügen",
+    "my_profile": "Mein Profil",
+    "cancel": "Abbrechen",
+    "view_changes": "Änderungen anzeigen",
+    "view_content": "Inhalt anzeigen",
+    "resend_activation": "Aktivierungs-Mail erneut senden",
+    "deactivate_user": "Benutzer deaktivieren",
+    "submit_changes": "Änderungen übermitteln",
+    "reactivate_user": "Benutzer reaktivieren",
+    "send_invite": "Einladung versenden",
+    "invite_and_create": "Einladen und einen weiteren erstellen",
+    "loading": "Inhalt wird geladen",
+    "publish_new": "Neue Version veröffentlichen",
+    "greeting": "Hallo",
+    "removed": "Entfernt",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "not_empty": "Darf nicht leer sein",
+    "name": "Name",
+    "webUrl": "URL",
+    "learn_more": "Mehr erfahren",
+    "validations": {
+      "empty": "Dies darf nicht leer sein",
+      "hazardIcon": "Bitte wählen Sie ein Bild, das kleiner als 30 kB ist"
+    },
+    "network_error": "Netzwerkfehler",
+    "network_error_text": "Es gab einen Netzwerkfehler. Bitte versuchen Sie es in ein paar Augenblicken erneut",
+    "email_sent": "E-Mail gesendet",
+    "duplicate_lang_error": "Die gewählte Sprache existiert bereits",
+    "duplicate_lang_description": "Bitte bearbeiten Sie entweder die vorhandene Sprache oder wählen Sie eine neue Sprache aus dem Dropdown-Menü",
+    "estimated_users": "Geschätzte Benutzeranzahl",
+    "upploading": "Hochladen",
+    "download": "Herunterladen",
+    "download_as_image": "Als Bild herunterladen",
+    "download_as_pdf": "Als PDF herunterladen",
+    "add_logo": "Logo hinzufügen",
+    "edit_logo": "Logo bearbeiten",
+    "loading_image": "Laden..."
   },
   "banners": {
-      "get_started_create": "Beginnen Sie mit dem Erstellen Ihrer ersten App",
-      "create_app": "Eine App erstellen",
-      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+    "get_started_create": "Beginnen Sie mit dem Erstellen Ihrer ersten App",
+    "create_app": "Eine App erstellen",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
   },
   "users": {
-      "user": "Benutzer",
-      "deleted": "Gelöschte Benutzer",
-      "list": {
-          "manage": "Benutzer verwalten",
-          "create": "Neuen Benutzer anlegen",
-          "download_report": "Bericht herunterladen",
-          "empty": "Es konnten keine Benutzer gefunden werden",
-          "detail": "Benutzerdaten",
-          "clear_filters": "Filter zurücksetzen",
-          "table_header": {
-              "user": "Benutzer",
-              "role": "Funktion",
-              "society": "Gesellschaft",
-              "email": "E-Mail",
-              "added": "Hinzugefügt",
-              "last_activity": "Letzte Aktivität",
-              "t_and_c": "AGB Version"
-          },
-          "societies": "Gesellschaften"
+    "user": "Benutzer",
+    "deleted": "Gelöschte Benutzer",
+    "list": {
+      "manage": "Benutzer verwalten",
+      "select_status": "Status auswählen",
+      "select_role": "Rolle auswählen",
+      "select_country": "Land auswählen",
+      "select_terms": "Version der Bedingungen auswählen",
+      "select_society": "Nationale Gesellschaft auswählen",
+      "create": "Neuen Benutzer anlegen",
+      "download_report": "Bericht herunterladen",
+      "empty": "Es konnten keine Benutzer gefunden werden",
+      "detail": "Benutzerdaten",
+      "clear_filters": "Filter zurücksetzen",
+      "table_header": {
+        "user": "Benutzer",
+        "role": "Funktion",
+        "society": "Gesellschaft",
+        "email": "E-Mail",
+        "added": "Hinzugefügt",
+        "last_activity": "Letzte Aktivität",
+        "t_and_c": "AGB Version"
       },
-      "status": {
-          "active": "Aktiviert",
-          "deactivated": "Deaktiviert"
+      "societies": "Gesellschaften"
+    },
+    "status": {
+      "active": "Aktiviert",
+      "deactivated": "Deaktiviert"
+    },
+    "edit": {
+      "super_admin_all": "Zugriff auf alle Gesellschaften",
+      "user_details": "Benutzerdaten",
+      "create_user": "Neuen Benutzer anlegen",
+      "add_society": "Gesellschaft hinzufügen+ ",
+      "societies_heading": "Gesellschaften",
+      "roles_heading": "Rolle & Berechtigungen",
+      "activity_heading": "Aktivität",
+      "roles_label": "Wählen Sie Rollen und Berechtigungen für diesen Benutzer",
+      "activity_link": "Alle Aktionen nach Benutzer anzeigen",
+      "created": "Benutzer erfolgreich erstellt",
+      "updated": "Benutzer erfolgreich aktualisiert",
+      "email_update": "Um Ihre E-Mail-Adresse zu aktualisieren, geben Sie bitte Ihr Passwort ein",
+      "view": "Anzeigen",
+      "more": "mehr",
+      "less": "Weniger anzeigen",
+      "user_can_do": "Anzeigen, wozu der Benutzer berechtigt ist:",
+      "user_no_permission": "Der Benutzer hat keine Berechtigungen",
+      "soc_already_added": "Dieser Benutzer hat diese Gesellschaft bereits zugewiesen bekommen"
+    }
+  },
+  "new_welcome": {
+    "title_1": "Willkommen bei",
+    "red_title": "IFRC",
+    "title_2": "Sicherheits-",
+    "title_3": "Nachrichtendatenbank",
+    "text_header": "Greifen Sie auf Sicherheitsnachrichten des Roten Kreuzes und des Roten Halbmonds zu und teilen Sie sie auf Ihren Plattformen.",
+    "text_header_2": "Folgen Sie der #-Schritt-Anleitung unten...",
+    "bottom_subtitle": "Kontaktieren Sie IFRC",
+    "bottom_text": "E-Mail an das IFRC-Team, wenn Sie Fragen haben: im@ifrc.org",
+    "bottom_btn": "Kontaktieren Sie IFRC",
+    "slider_1": {
+      "btn": "API-Schlüssel erstellen",
+      "step_1": {
+        "header": "Schritt 1: App erstellen",
+        "text": "Erstellen Sie einen API-Schlüssel, um die API in der Datenbank zu nutzen. Teilen Sie uns mit, was Sie erstellen."
       },
-      "edit": {
-          "super_admin_all": "Zugriff auf alle Gesellschaften",
-          "user_details": "Benutzerdaten",
-          "create_user": "Neuen Benutzer anlegen",
-          "add_society": "Gesellschaft hinzufügen+ ",
-          "societies_heading": "Gesellschaften",
-          "roles_heading": "Rolle & Berechtigungen",
-          "activity_heading": "Aktivität",
-          "roles_label": "Wählen Sie Rollen und Berechtigungen für diesen Benutzer",
-          "activity_link": "Alle Aktionen nach Benutzer anzeigen",
-          "created": "Benutzer erfolgreich erstellt",
-          "updated": "Benutzer erfolgreich aktualisiert",
-          "email_update": "Um Ihre E-Mail-Adresse zu aktualisieren, geben Sie bitte Ihr Passwort ein",
-          "view": "Anzeigen",
-          "more": "mehr",
-          "less": "Weniger anzeigen",
-          "user_can_do": "Anzeigen, wozu der Benutzer berechtigt ist:",
-          "user_no_permission": "Der Benutzer hat keine Berechtigungen",
-          "soc_already_added": "Dieser Benutzer hat diese Gesellschaft bereits zugewiesen bekommen"
+      "step_2": {
+        "header": "Schritt 2: API-Schlüssel erhalten",
+        "text": "Wenn Sie einen API-Schlüssel erstellt haben, wird dieser automatisch generiert.",
+        "text_2": "Wichtig: Speichern Sie Ihren API-Schlüssel so sicher wie möglich. Vermeiden Sie es, Ihren API-Schlüssel in Ihrer Anwendung zu teilen oder offenzulegen."
+      },
+      "step_3": {
+        "header": "Schritt 3: Anfrage stellen",
+        "text": "Die Datenbank-API verwendet HTTP(S) und bietet RESTful-Endpunkte, um veröffentlichte Daten abzurufen. Jede Anfrage muss mit dem in der vorherigen Schritt erstellten API-Schlüssel authentifiziert werden. Weitere Informationen zu allen API-Endpunkten finden Sie in der API-Dokumentation."
+      },
+      "step_4": {
+        "header": "Schritt 4: Nachrichten teilen",
+        "text": "Teilen Sie die Sicherheitsnachrichten des Roten Kreuzes und des Roten Halbmonds mit der Öffentlichkeit, wenn eine Gefahr droht. Sie können das IFRC-Team kontaktieren, wenn Sie Feedback zu den Nachrichten haben: im@ifrc.org"
       }
+    },
+    "slider_2": {
+      "btn": "WhatNow-Nachrichten",
+      "step_1": {
+        "header": "Schritt 1: Nachrichten anzeigen",
+        "text": "Besuchen Sie die Nachrichtendatenbank, um die verfügbaren Nachrichten der nationalen Gesellschaften des Roten Kreuzes und des Roten Halbmonds anzuzeigen."
+      },
+      "step_2": {
+        "header": "Schritt 2: Nachrichtensatz auswählen",
+        "text": "Wählen Sie die nationale Gesellschaft aus, die Sie anzeigen möchten. Wählen Sie dann einen Gefahrentyp aus der verfügbaren Liste."
+      },
+      "step_3": {
+        "header": "Schritt 3: Nachrichten teilen",
+        "text": "Suchen Sie nach der Option, die Nachrichten herunterzuladen. Sie können den Nachrichtensatz als Bild oder als PDF teilen. Laden Sie die Nachrichten herunter und überprüfen Sie sie, um sicherzustellen, dass Sie die richtigen Nachrichten teilen."
+      }
+    }
+  },
+  "upload_modal": {
+    "drag_button_text": "Klicken oder Datei in diesen Bereich ziehen, um hochzuladen",
+    "button_text": "Hochladen"
+  },
+  "stages": {
+    "immediate": "Sofort",
+    "warning": "Warnung",
+    "anticipated": "Erwartet",
+    "assess_and_plan": "Bewerten und planen",
+    "mitigate_risks": "Risiken mindern",
+    "prepare_to_respond": "Auf die Reaktion vorbereiten",
+    "recover": "Wiederherstellen"
   },
   "content": {
+    "content": "Inhalt",
+    "audit_log": {
+      "audit_log": "Audit-Protokoll",
+      "empty": "Kein Audit-Protokoll gefunden, das diesem Filter entspricht",
+      "soc_label": "Gesellschaft",
+      "select_hazard": "Gefahrentyp auswählen",
+      "select_language": "Sprache auswählen",
+      "select_overwrite": "Überschreibungsoption auswählen",
+      "choose_file": "Dateityp auswählen",
+      "select_soc": "Nationale Gesellschaft auswählen"
+    },
+    "whatnow": {
+      "title": "Nachrichten",
+      "set_attribution": "Gesellschaftsnamen und Zuordnungsnachricht zur Veröffentlichung erstellen",
+      "whatnow": "WhatNow",
+      "empty": "Es gibt keine veröffentlichten WhatNow-Meldungen für diese Landesgesellschaft",
+      "steps": "Schritte",
+      "publish": "Veröffentlichen",
+      "no_publish": "Nichts zu veröffentlichen",
+      "published": "veröffentlichte Übersetzungen",
+      "publishing": "Veröffentlichen",
+      "content_to_publish": "Entwurf des zu veröffentlichenden Inhalts",
+      "whatnow_content": "WhatNow-Inhalt",
+      "choose_hazard": "Gefahr wählen",
+      "hazard": "Gefahr",
       "content": "Inhalt",
-      "audit_log": {
-          "audit_log": "Audit-Protokoll",
-          "empty": "Kein Audit-Protokoll gefunden, das diesem Filter entspricht",
-          "soc_label": "Gesellschaft"
+      "create": "Gefahr hinzufügen",
+      "edit_attribtion": "Zuordnung bearbeiten",
+      "attribution": "Zuordnung",
+      "attribution_url": "URL Zuordnung",
+      "society_name": "Landesgesellschaft",
+      "attribution_message": "Zuordnungsnachricht",
+      "no_translation": "Kein Inhalt eingestellt",
+      "delete_content_translation": "Dadurch wird der ausgewählte Whatnow-Inhalt aus der aktuellen Sprache entfernt",
+      "messages": "WhatNow-Meldungen:",
+      "add_language": "Neue Sprache hinzufügen",
+      "no_languages": "Wählen oder erstellen Sie eine neue Sprache, um loszulegen",
+      "no_soc": "Wählen Sie eine Gesellschaft",
+      "no_region": "Wählen Sie eine Region",
+      "add_language_message": "Um eine neue Sprache hinzuzufügen, fügen Sie bitte einige dazu passende Inhalte hinzu",
+      "add_language_attribution": "Zuordnung erstellen, um eine neue Sprache hinzuzufügen",
+      "select_language": "Bitte wählen Sie eine Sprache aus",
+      "attribution_publish": "Diese Zuordnung ist bei der Veröffentlichung sofort verfügbar",
+      "date_added": "Hinzugefügt am",
+      "url": "URL",
+      "hazard_type": "Gefahrentyp",
+      "show_more": "Mehr anzeigen",
+      "early": "Frühwarnung",
+      "disaster": "Katastrophenvorsorge",
+      "recovery": "Wiederherstellung",
+      "publish_summary_title": "Zuschreibung",
+      "publish_summary_ns": "Nationale Gesellschaft",
+      "publish_summary_url": "Zuschreibungs-URL",
+      "publish_summary_message": "Zuschreibungsnachricht"
+    },
+    "edit_whatnow": {
+      "title": "Titel",
+      "description": "Beschreibung",
+      "content_piece": "Inhaltsstück",
+      "enter_other_hazard_type": "Namen der Gefahrenart eingeben",
+      "other_hazard_type_label": "Anderer Gefahrentyp",
+      "stepped_content": "Abgestuftes Inhaltsstück",
+      "content_title_description": "Titel für diese WhatNow-Meldungen",
+      "content_description_description": "Beschreibungen dieser WhatNow-Meldungen",
+      "content_label": "Bitte geben Sie einige Gefahreninformationen ein",
+      "content_url": "URL",
+      "content_url_description": "URL für weitere Informationen zu diesen WhatNow-Meldungen. Bitte geben Sie das Protokoll an, d.h. http:\/\/ oder https:\/\/",
+      "created": "erstellt",
+      "pieces_edited": " Stücke bearbeitet",
+      "content_placeholder": "Bitte geben Sie eine Nachricht ein",
+      "mitigation": "Milderung",
+      "mitigation_help": "Längerfristige Maßnahmen zur Risikominderung",
+      "mitigation_extra": "Eine Milderung ist eine längerfristige Aussage zur Vorhersage eines gefährlichen Ereignisses. Es werden Maßnahmen zur Bewertung, Planung und längerfristigen Risikominderung ergriffen, um den Haushalt und die Umgebung sicherer zu machen.",
+      "seasonalForecast": "Saisonale Vorhersage",
+      "seasonalForecast_help": "Kurzfristige Maßnahmen zur Risikominderung",
+      "seasonalForecast_extra": "Eine saisonale Vorhersage ist eine Aussage über die Vorhersehbarkeit eines gefährlichen Ereignisses. Die ergriffenen Maßnahmen dienen der Bewertung potenzieller Risiken und der Planung von Aktivitäten zur Risikominderung und zum Schutz des Haushalts.",
+      "watch": "Ansehen",
+      "watch_help": "Bereiten Sie sich vor, zu reagieren",
+      "watch_extra": "Eine Frühwarnung wird ausgegeben, wenn das Risiko eines gefährlichen Ereignisses erheblich gestiegen ist, aber sein Auftreten, sein Ort und\/oder sein Zeitpunkt noch ungewiss sind. Sie soll genügend Zeit für Schutzmaßnahmen und die Vorbereitung auf die Reaktion bieten.",
+      "warning": "Warnung",
+      "warning_help": "Bereiten Sie sich vor, zu reagieren",
+      "warning_extra": "Eine Warnung wird ausgegeben, wenn ein gefährliches Ereignis eintritt, unmittelbar bevorsteht oder eine sehr hohe Eintrittswahrscheinlichkeit hat. Es bedeutet, dass die Bedingungen eine Gefahr für Leben oder Eigentum darstellen. Personen, die sich im Wirkungsbereich dieser Gefahr befinden, müssen Schutzmaßnahmen ergreifen.",
+      "immediate": "Unmittelbar",
+      "immediate_help": "Reaktionsmaßnahmen",
+      "immediate_extra": "Die Bedingungen stellen derzeit eine Bedrohung für Leben und Eigentum dar. Dies sind unmittelbare Schutzmaßnahmen, die beim Auftreten eines gefährlichen Ereignisses zu ergreifen sind. Reaktionsmaßnahmen zum Schutz von sich selbst und dem Haushalt sind erforderlich.",
+      "recover": "Wiederherstellung",
+      "recover_help": "Wiederherstellungsmaßnahmen",
+      "recover_extra": "Dies sind Schutzmaßnahmen, die zu ergreifen sind, um das Risiko nach einem gefährlichen Ereignis zu verringern.",
+      "anticipated": "Erwartet",
+      "assess_and_plan": "Bewerten und planen",
+      "mitigate_risks": "Risiken mindern",
+      "prepare_to_respond": "Auf die Reaktion vorbereiten",
+      "updated": "aktualisiert",
+      "download_icon": "Icon herunterladen",
+      "download_image": "Als Bild herunterladen",
+      "download_image_error": "Fehler beim Herunterladen des Bildes, bitte stellen Sie sicher, dass Sie alle Änderungen veröffentlicht haben und versuchen Sie es erneut.",
+      "download_instructions": "Klicken Sie mit der rechten Maustaste und wählen Sie \"Bild speichern unter...\", um zu speichern",
+      "downloaded_image_alt": "WhatNow Anleitungen",
+      "add_key_message": "Hauptnachricht hinzufügen",
+      "add_supporting_message": "Unterstützende Nachricht hinzufügen",
+      "early_warning": "Frühwarnung",
+      "early_warning_description": "Wichtige Sicherheitsnachrichten für Warnungen und frühe Maßnahmen",
+      "disaster_risk_reduction": "Katastrophenvorsorge",
+      "disaster_risk_reduction_description": "Wichtige Sicherheitsnachrichten von PAPE",
+      "recovery": "Wiederherstellung",
+      "recovery_description": "Wichtige Sicherheitsnachrichten für Wiederherstellungsmaßnahmen",
+      "hazard_type": "Gefahrentyp",
+      "content_edit_title": "Inhalt bearbeiten",
+      "content_add_hazard_title": "Gefahr hinzufügen",
+      "key_message_label": "Titel der Hauptnachricht",
+      "supporting_message_label": "Unterstützende Nachricht"
+    },
+    "message_editor": {
+      "title": "Nachrichteneditor",
+      "society_name_label": "Name der nationalen Gesellschaft",
+      "attribution_url_label": "Zuschreibungs-URL",
+      "attribution_message_label": "Zuschreibungsnachricht",
+      "create_btn": "Gefahr hinzufügen",
+      "contributor_name_label": "Name des Beitragenden",
+      "contributor_single": "Beitragender"
+    },
+    "previewer": {
+      "download_image_error": "Fehler beim Herunterladen des Bildes, bitte versuchen Sie es erneut.",
+      "download_pdf_error": "Fehler beim Herunterladen der PDF, bitte versuchen Sie es erneut."
+    },
+    "audit": "Auditprotokoll",
+    "export": "Export",
+    "bulk_upload": {
+      "bulk_upload": "Bulk-Upload",
+      "template": "Vorlage",
+      "export_template": "Vorlage exportieren",
+      "import_data": "Daten importieren",
+      "import_complete": "Import vollständig",
+      "import_summary": "Sie importieren unter {society} in {lang}.",
+      "import_banner": {
+        "success": "Erfolg",
+        "added": "Hinzugefügt",
+        "skipped": "Übersprungen",
+        "denied": "Abgelehnt",
+        "updated": "Aktualisiert",
+        "failed": "Fehlgeschlagen",
+        "invalid": "Ungültig",
+        "row": "Zeile"
       },
-      "whatnow": {
-          "set_attribution": "Gesellschaftsnamen und Zuordnungsnachricht zur Veröffentlichung erstellen",
-          "whatnow": "WhatNow",
-          "empty": "Es gibt keine veröffentlichten WhatNow-Meldungen für diese Landesgesellschaft",
-          "steps": "Schritte",
-          "publish": "Veröffentlichen",
-          "no_publish": "Nichts zu veröffentlichen",
-          "published": "veröffentlichte Übersetzungen",
-          "publishing": "Veröffentlichen",
-          "content_to_publish": "Entwurf des zu veröffentlichenden Inhalts",
-          "whatnow_content": "WhatNow-Inhalt",
-          "choose_hazard": "Gefahr wählen",
-          "hazard": "Gefahr",
-          "content": "Inhalt",
-          "create": "Gefahr hinzufügen",
-          "edit_attribtion": "Zuordnung bearbeiten",
-          "attribution": "Zuordnung",
-          "attribution_url": "URL Zuordnung",
-          "society_name": "Landesgesellschaft",
-          "attribution_message": "Zuordnungsnachricht",
-          "no_translation": "Kein Inhalt eingestellt",
-          "delete_content_translation": "Dadurch wird der ausgewählte Whatnow-Inhalt aus der aktuellen Sprache entfernt",
-          "messages": "WhatNow-Meldungen:",
-          "add_language": "Neue Sprache hinzufügen",
-          "no_languages": "Wählen oder erstellen Sie eine neue Sprache, um loszulegen",
-          "no_soc": "Wählen Sie eine Gesellschaft",
-          "no_region": "Wählen Sie eine Region",
-          "add_language_message": "Um eine neue Sprache hinzuzufügen, fügen Sie bitte einige dazu passende Inhalte hinzu",
-          "add_language_attribution": "Zuordnung erstellen, um eine neue Sprache hinzuzufügen",
-          "select_language": "Bitte wählen Sie eine Sprache aus",
-          "attribution_publish": "Diese Zuordnung ist bei der Veröffentlichung sofort verfügbar"
+      "upload_csv": "Ein Dokument im CSV-Format hochladen",
+      "language_instructions": "Wählen Sie die Sprache der Übersetzungen, die importiert werden.",
+      "file_instructions": "Ziehen Sie eine Datei hierher, oder wählen Sie eine Datei von Ihrem Computer.",
+      "choose": "Auswählen",
+      "submit": "Inhalte importieren",
+      "reset": "Eine weitere Datei hochladen",
+      "export_template_guide": "Anleitung zur Vorlage exportieren",
+      "export_template_instructions": "Für Anweisungen, wie Sie diese Vorlage für den Bulk-Upload effektiv nutzen können, sehen Sie sich bitte diese Anleitung an.",
+      "refer": "Siehe",
+      "detail": "für detaillierte Anweisungen",
+      "warnings": {
+        "title": "Verweigern Sie den Import, wenn jeglicher Inhalt neuere Versionen überschreiben würde.",
+        "on": "Ja",
+        "off": "Nein"
       },
-      "edit_whatnow": {
-          "title": "Titel",
-          "description": "Beschreibung",
-          "content_piece": "Inhaltsstück",
-          "enter_other_hazard_type": "Namen der Gefahrenart eingeben",
-          "other_hazard_type_label": "Anderer Gefahrentyp",
-          "stepped_content": "Abgestuftes Inhaltsstück",
-          "content_title_description": "Titel für diese WhatNow-Meldungen",
-          "content_description_description": "Beschreibungen dieser WhatNow-Meldungen",
-          "content_label": "Bitte geben Sie einige Gefahreninformationen ein",
-          "content_url": "URL",
-          "content_url_description": "URL für weitere Informationen zu diesen WhatNow-Meldungen. Bitte geben Sie das Protokoll an, d.h. http:\/\/ oder https:\/\/",
-          "created": "erstellt",
-          "pieces_edited": " Stücke bearbeitet",
-          "delete_item": "Artikel löschen",
-          "add_item": "Artikel hinzufügen +",
-          "content_placeholder": "Bitte geben Sie eine Nachricht ein",
-          "mitigation": "Milderung",
-          "mitigation_help": "Längerfristige Maßnahmen zur Risikominderung",
-          "mitigation_extra": "Eine Milderung ist eine längerfristige Aussage zur Vorhersage eines gefährlichen Ereignisses. Es werden Maßnahmen zur Bewertung, Planung und längerfristigen Risikominderung ergriffen, um den Haushalt und die Umgebung sicherer zu machen.",
-          "seasonalForecast": "Saisonale Vorhersage",
-          "seasonalForecast_help": "Kurzfristige Maßnahmen zur Risikominderung",
-          "seasonalForecast_extra": "Eine saisonale Vorhersage ist eine Aussage über die Vorhersehbarkeit eines gefährlichen Ereignisses. Die ergriffenen Maßnahmen dienen der Bewertung potenzieller Risiken und der Planung von Aktivitäten zur Risikominderung und zum Schutz des Haushalts.",
-          "watch": "Ansehen",
-          "watch_help": "Bereiten Sie sich vor, zu reagieren",
-          "watch_extra": "Eine Frühwarnung wird ausgegeben, wenn das Risiko eines gefährlichen Ereignisses erheblich gestiegen ist, aber sein Auftreten, sein Ort und\/oder sein Zeitpunkt noch ungewiss sind. Sie soll genügend Zeit für Schutzmaßnahmen und die Vorbereitung auf die Reaktion bieten.",
-          "warning": "Warnung",
-          "warning_help": "Bereiten Sie sich vor, zu reagieren",
-          "warning_extra": "Eine Warnung wird ausgegeben, wenn ein gefährliches Ereignis eintritt, unmittelbar bevorsteht oder eine sehr hohe Eintrittswahrscheinlichkeit hat. Es bedeutet, dass die Bedingungen eine Gefahr für Leben oder Eigentum darstellen. Personen, die sich im Wirkungsbereich dieser Gefahr befinden, müssen Schutzmaßnahmen ergreifen.",
-          "immediate": "Unmittelbar",
-          "immediate_help": "Reaktionsmaßnahmen",
-          "immediate_extra": "Die Bedingungen stellen derzeit eine Bedrohung für Leben und Eigentum dar. Dies sind unmittelbare Schutzmaßnahmen, die beim Auftreten eines gefährlichen Ereignisses zu ergreifen sind. Reaktionsmaßnahmen zum Schutz von sich selbst und dem Haushalt sind erforderlich.",
-          "recover": "Wiederherstellung",
-          "recover_help": "Wiederherstellungsmaßnahmen",
-          "recover_extra": "Dies sind Schutzmaßnahmen, die zu ergreifen sind, um das Risiko nach einem gefährlichen Ereignis zu verringern.",
-          "updated": "aktualisiert",
-          "download_icon": "Icon herunterladen",
-          "download_image": "Als Bild herunterladen",
-          "download_image_error": "Fehler beim Herunterladen des Bildes, bitte stellen Sie sicher, dass Sie alle Änderungen veröffentlicht haben und versuchen Sie es erneut.",
-          "download_instructions": "Klicken Sie mit der rechten Maustaste und wählen Sie \"Bild speichern unter...\", um zu speichern",
-          "downloaded_image_alt": "WhatNow Anleitungen"
+      "overwriting": {
+        "title": "Einstellungen überschreiben.",
+        "on": "Immer auf diese Version aktualisieren, alle Revisionen überschreiben",
+        "off": "Nur Ereignis-Typen aktualisieren, bei denen der importierte Inhalt neuer ist"
       },
-      "audit": "Auditprotokoll",
-      "export": "Export",
-      "bulk_upload": {
-          "bulk_upload": "Bulk-Upload",
-          "template": "Vorlage",
-          "export_template": "Vorlage exportieren",
-          "import_data": "Daten importieren",
-          "import_complete": "Import vollständig",
-          "import_summary": "Sie importieren unter {society} in {lang}.",
-          "import_banner": {
-              "success": "Erfolg",
-              "added": "Hinzugefügt",
-              "skipped": "Übersprungen",
-              "denied": "Abgelehnt",
-              "updated": "Aktualisiert",
-              "failed": "Fehlgeschlagen",
-              "invalid": "Ungültig",
-              "row": "Zeile"
-          },
-          "upload_csv": "Ein Dokument im CSV-Format hochladen",
-          "language_instructions": "Wählen Sie die Sprache der Übersetzungen, die importiert werden.",
-          "file_instructions": "Ziehen Sie eine Datei hierher, oder wählen Sie eine Datei von Ihrem Computer.",
-          "choose": "Auswählen",
-          "submit": "Inhalte importieren",
-          "reset": "Eine weitere Datei hochladen",
-          "export_template_guide": "Anleitung zur Vorlage exportieren",
-          "export_template_instructions": "Für Anweisungen, wie Sie diese Vorlage für den Bulk-Upload effektiv nutzen können, sehen Sie sich bitte diese Anleitung an.",
-          "warnings": {
-              "title": "Verweigern Sie den Import, wenn jeglicher Inhalt neuere Versionen überschreiben würde.",
-              "on": "Ja",
-              "off": "Nein"
-          },
-          "overwriting": {
-              "title": "Einstellungen überschreiben.",
-              "on": "Immer auf diese Version aktualisieren, alle Revisionen überschreiben",
-              "off": "Nur Ereignis-Typen aktualisieren, bei denen der importierte Inhalt neuer ist"
-          },
-          "errors": {
-              "warning_update_will_overwrite": "Diese Aktion überschreibt die Änderungen, die seit der Erstellung dieses Exports vorgenommen wurden",
-              "bad_request": "Dateidaten sind nicht korrekt geformt",
-              "bad_request_error_codes": {
-                  "30001": "Spaltenüberschriften stimmen nicht mit der Vorlage überein",
-                  "30002": "Zuordnungsname, Nachricht oder URL fehlen",
-                  "30003": "Ungültige Zuordnungs-URL - bitte stellen Sie sicher, dass das Protokoll vorhanden ist, z. B. https:\/\/",
-                  "40001": "Ungültiger Ländercode angegeben",
-                  "40002": "Ausgewählte Gesellschaft stimmt nicht mit der Gesellschaft für die ausgewählte Datei überein",
-                  "40003": "Das Datum, an dem die ausgewählte Datei exportiert wurde, ist fehlerhaft und der Import kann nicht abgeschlossen werden"
-              }
-          }
+      "errors": {
+        "warning_update_will_overwrite": "Diese Aktion überschreibt die Änderungen, die seit der Erstellung dieses Exports vorgenommen wurden",
+        "bad_request": "Dateidaten sind nicht korrekt geformt",
+        "bad_request_error_codes": {
+          "30001": "Spaltenüberschriften stimmen nicht mit der Vorlage überein",
+          "30002": "Zuordnungsname, Nachricht oder URL fehlen",
+          "30003": "Ungültige Zuordnungs-URL - bitte stellen Sie sicher, dass das Protokoll vorhanden ist, z. B. https:\/\/",
+          "40001": "Ungültiger Ländercode angegeben",
+          "40002": "Ausgewählte Gesellschaft stimmt nicht mit der Gesellschaft für die ausgewählte Datei überein",
+          "40003": "Das Datum, an dem die ausgewählte Datei exportiert wurde, ist fehlerhaft und der Import kann nicht abgeschlossen werden"
+        }
       }
+    }
   },
   "api_stats": {
     "page_title": "API-Statistik",
@@ -525,185 +645,214 @@
     "empty": "Keine Statistik für die angegebene Zeitspanne gefunden"
   },
   "api_usage": {
-      "applications": "Anwendungen",
-      "view_user": "Benutzer ansehen",
-      "reactivate": "Reaktivieren",
-      "app_detail": "App-Detail",
-      "app_details": "App-Details",
-      "activity": "Aktivität",
-      "view_all_activity": "Alle Aktivitäten für diese App anzeigen",
-      "api_users": "API-Benutzer",
-      "terms_conditions": "Alle Versionen der Allgemeinen Geschäftsbedingungen",
-      "view_prev_terms": "Frühere Versionen ansehen",
-      "current_version": "Aktuelle Version",
-      "version": "Version"
+    "applications": "Anwendungen",
+    "view_user": "Benutzer ansehen",
+    "reactivate": "Reaktivieren",
+    "app_detail": "App-Detail",
+    "app_details": "App-Details",
+    "activity": "Aktivität",
+    "view_all_activity": "Alle Aktivitäten für diese App anzeigen",
+    "api_users": "API-Benutzer",
+    "terms_conditions": "Alle Versionen der Allgemeinen Geschäftsbedingungen",
+    "view_prev_terms": "Frühere Versionen ansehen",
+    "current_version": "Aktuelle Version",
+    "version": "Version"
   },
   "applications": {
-      "my_apps": "Meine Apps",
-      "new_tc": "Neue Allgemeine Geschäftsbedingungen",
-      "build": "Neue App erstellen",
-      "edit": "App bearbeiten",
-      "building": "App erstellen",
-      "no_apps": "Sie haben keine Apps. Erstellen Sie eine, um loszulegen."
+    "my_apps": "Meine Apps",
+    "new_tc": "Neue Allgemeine Geschäftsbedingungen",
+    "build": "Neue App erstellen",
+    "build_key": "Neuen API-Schlüssel erstellen",
+    "edit": "App bearbeiten",
+    "building": "App erstellen",
+    "building_key": "API-Schlüssel wird erstellt",
+    "no_apps": "Sie haben keine Apps. Erstellen Sie eine, um loszulegen.",
+    "api_keys": "API-Schlüssel"
   },
   "home": {
-      "home": "Zuhause",
-      "welcome": "Willkommen",
-      "admin_intro": "Hier können Sie Benutzer verwalten, WhatNow-Inhalte bearbeiten und veröffentlichen und die API-Nutzung anzeigen.",
-      "ns_admin_intro": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
-      "ns_editor_intro": "Hier können Sie WhatNow-Inhalte bearbeiten",
-      "api_user_intro": "Hier sehen Sie Ihre Apps und verwalten Ihr Konto."
+    "home": "Zuhause",
+    "welcome": "Willkommen",
+    "admin_intro": "Hier können Sie Benutzer verwalten, WhatNow-Inhalte bearbeiten und veröffentlichen und die API-Nutzung anzeigen.",
+    "ns_admin_intro": "Hier können Sie WhatNow-Inhalte bearbeiten und veröffentlichen",
+    "ns_editor_intro": "Hier können Sie WhatNow-Inhalte bearbeiten",
+    "api_user_intro": "Hier sehen Sie Ihre Apps und verwalten Ihr Konto.",
+    "role_changed_title": "Ihre Rolle wurde geändert",
+    "role_changed_p": "Ihnen wurde die folgende Rolle zugewiesen:",
+    "role_changed_p2": "Ihre Berechtigungen sind wie folgt:",
+    "role_changed_confirm": "Bestätigen",
+    "role_changed_dismiss": "Schließen"
   },
   "landing": {
-      "strapline": "WhatNow-Service",
-      "strapline_part_2": "Die wichtigsten Sicherheitsbotschaften des Globalen Roten Kreuzes \/ Roten Halbmondes",
-      "developer": {
-          "strap_para_one": "Helfen Sie Gemeinden, sich auf Gefahren vorzubereiten, darauf zu reagieren und sich von ihnen zu erholen - mit unseren lokalisierten wichtigsten Handlungsbotschaften.",
-          "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten."
-      },
-      "national_society": {
-          "strap_para_one": "Veröffentlichen Sie die wichtigsten Sicherheitsbotschaften Ihrer nationalen Rotkreuz- und Rothalbmond-Gesellschaft, damit globale, nationale und lokale Medien darauf zugreifen und sie senden können.",
-          "strap_para_two": "Kontaktieren Sie uns, um mehr darüber zu erfahren, wie Sie die Botschaften erstellen und sich mit Medienpartnern verbinden können."
-      },
+    "strapline": "WhatNow-Service",
+    "strapline_part_2": "Die wichtigsten Sicherheitsbotschaften des Globalen Roten Kreuzes \/ Roten Halbmondes",
+    "developer": {
       "strap_para_one": "Helfen Sie Gemeinden, sich auf Gefahren vorzubereiten, darauf zu reagieren und sich von ihnen zu erholen - mit unseren lokalisierten wichtigsten Handlungsbotschaften.",
-      "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten.",
-      "view_data": "Daten ansehen",
-      "view_message_library": "WhatNow-Meldungen ansehen",
-      "what_now": "WhatNow?",
-      "fake_alert_heading": "Warnung vor extremer Kälte",
-      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-      "fake_alert_time": "VOR 1 STUNDE",
-      "fake_alert_time_exact": "02.05.18 um 5:15 CT",
-      "use_cases": {
-          "heading": "Mehr erfahren",
-          "first_heading": "Wie funktioniert es?",
-          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "second_heading": "Anwendungsfälle",
-          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "third_heading": "Implementierungs-Toolkit",
-          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fourth_heading": "WhatNow-Video",
-          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fifth_heading": "Wetter-Apps verbessern",
-          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-      },
-      "example_alert": {
-          "heading": "Beispiel für das Format einer WhatNow-Meldung",
-          "alert_preview": "Vorschau der Warnmeldungen",
-          "what_now_info": "WhatNow-Vorschau",
-          "example_whatnow_request": "Beispiel einer WhatNow-Reaktion",
-          "example_alert_request": "Beispiel einer Alarmreaktion",
-          "example_content": "Wetter-Gefahreninformation #3 FINAL; Stand 11 Uhr, Januar. 29, 2018\nFür das Ende einer Kaltfront\n\nDie Wirkung des Endes einer Kaltfront hat sich abgeschwächt. Über Nome werden sich die Wetterbedingungen verbessern. Vereinzelte Regenschauer oder Gewitter, vor allem am Nachmittag oder Abend, sollten jedoch in diesen Gebieten aufgrund des Westens erwartet werden.\n\nMit dieser Entwicklung ist dies die letzte Empfehlung für dieses Wettersystem.",
-          "example_content_location_header": "BETROFFENES GEBIET",
-          "example_content_location": "Nome, Alaska"
-      },
-      "example_whatnow": {
-          "alert_from": "Alarm von: Amerikanisches Rotes Kreuz",
-          "more_info": "Mehr Infos",
-          "heading": "Die wichtigsten Botschaften für extreme Kälte",
-          "copy": "Dies sind Maßnahmen, die Sie ergreifen können, um das Risiko zu verringern und sich und Ihren Haushalt vor extremer Kälte zu schützen.",
-          "what_now": "WhatNow",
-          "step_1": "Schützen Sie Ihr Zuhause. Überprüfen Sie die Leitungen und verwenden Sie Heizquellen sicher.",
-          "step_2": "Bleiben Sie mit warmen Flüssigkeiten hydriert",
-          "step_3": "Schützen Sie sich mit warmer Kleidung und bedecken Sie freiliegende Haut",
-          "step_4": "Seien Sie aufmerksam und vorsichtig bei eisigen Bedingungen, insbesondere beim Fahren",
-          "step_5": "Sehen Sie nach Nachbarn, Freunden und gefährdeten Personen"
-      },
-      "build": {
-          "heading": "Sind Sie bereit, Ihre App zu erstellen?"
-      },
-      "data_preview": {
-          "heading": "WhatNow-Meldungen",
-          "sub_heading": "Melden Sie sich an und sehen Sie sich die wichtigsten Aktionsbotschaften der Nationalen Gesellschaften des Roten Kreuzes \/ Roten Halbmondes in aller Welt an"
-      },
-      "footer": {
-          "terms_conditions": "Geschäftsbedingungen",
-          "about": "Über",
-          "privacy": "Datenschutz",
-          "getting_started": "Erste Schritte",
-          "docs": "Dokumentation",
-          "give_feedback": "Feedback geben",
-          "gdpc_logo": "Logo für das Global Disaster Preparedness Center",
-          "ifrc_logo": "Logo für die Internationale Rotkreuz- und Rothalbmond-Bewegung"
-      }
+      "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten."
+    },
+    "national_society": {
+      "strap_para_one": "Veröffentlichen Sie die wichtigsten Sicherheitsbotschaften Ihrer nationalen Rotkreuz- und Rothalbmond-Gesellschaft, damit globale, nationale und lokale Medien darauf zugreifen und sie senden können.",
+      "strap_para_two": "Kontaktieren Sie uns, um mehr darüber zu erfahren, wie Sie die Botschaften erstellen und sich mit Medienpartnern verbinden können."
+    },
+    "strap_para_one": "Helfen Sie Gemeinden, sich auf Gefahren vorzubereiten, darauf zu reagieren und sich von ihnen zu erholen - mit unseren lokalisierten wichtigsten Handlungsbotschaften.",
+    "strap_para_two": "Verwenden Sie unsere einfache Anleitung in vier Schritten, um die WhatNow-Meldungen in Ihre Anwendung zu integrieren. Melden Sie sich an und sehen Sie alle verfügbaren Nachrichten.",
+    "view_data": "Daten ansehen",
+    "view_message_library": "WhatNow-Meldungen ansehen",
+    "what_now": "WhatNow?",
+    "fake_alert_heading": "Warnung vor extremer Kälte",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "VOR 1 STUNDE",
+    "fake_alert_time_exact": "02.05.18 um 5:15 CT",
+    "use_cases": {
+      "heading": "Mehr erfahren",
+      "first_heading": "Wie funktioniert es?",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "Anwendungsfälle",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "Implementierungs-Toolkit",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "WhatNow-Video",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "Wetter-Apps verbessern",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "Beispiel für das Format einer WhatNow-Meldung",
+      "alert_preview": "Vorschau der Warnmeldungen",
+      "what_now_info": "WhatNow-Vorschau",
+      "example_whatnow_request": "Beispiel einer WhatNow-Reaktion",
+      "example_alert_request": "Beispiel einer Alarmreaktion",
+      "example_content": "Wetter-Gefahreninformation #3 FINAL; Stand 11 Uhr, Januar. 29, 2018\nFür das Ende einer Kaltfront\n\nDie Wirkung des Endes einer Kaltfront hat sich abgeschwächt. Über Nome werden sich die Wetterbedingungen verbessern. Vereinzelte Regenschauer oder Gewitter, vor allem am Nachmittag oder Abend, sollten jedoch in diesen Gebieten aufgrund des Westens erwartet werden.\n\nMit dieser Entwicklung ist dies die letzte Empfehlung für dieses Wettersystem.",
+      "example_content_location_header": "BETROFFENES GEBIET",
+      "example_content_location": "Nome, Alaska"
+    },
+    "example_whatnow": {
+      "alert_from": "Alarm von: Amerikanisches Rotes Kreuz",
+      "more_info": "Mehr Infos",
+      "heading": "Die wichtigsten Botschaften für extreme Kälte",
+      "copy": "Dies sind Maßnahmen, die Sie ergreifen können, um das Risiko zu verringern und sich und Ihren Haushalt vor extremer Kälte zu schützen.",
+      "what_now": "WhatNow",
+      "step_1": "Schützen Sie Ihr Zuhause. Überprüfen Sie die Leitungen und verwenden Sie Heizquellen sicher.",
+      "step_2": "Bleiben Sie mit warmen Flüssigkeiten hydriert",
+      "step_3": "Schützen Sie sich mit warmer Kleidung und bedecken Sie freiliegende Haut",
+      "step_4": "Seien Sie aufmerksam und vorsichtig bei eisigen Bedingungen, insbesondere beim Fahren",
+      "step_5": "Sehen Sie nach Nachbarn, Freunden und gefährdeten Personen"
+    },
+    "build": {
+      "heading": "Sind Sie bereit, Ihre App zu erstellen?"
+    },
+    "data_preview": {
+      "heading": "WhatNow-Meldungen",
+      "sub_heading": "Melden Sie sich an und sehen Sie sich die wichtigsten Aktionsbotschaften der Nationalen Gesellschaften des Roten Kreuzes \/ Roten Halbmondes in aller Welt an"
+    },
+    "footer": {
+      "terms_conditions": "Geschäftsbedingungen",
+      "about": "Über",
+      "privacy": "Datenschutz",
+      "getting_started": "Erste Schritte",
+      "docs": "Dokumentation",
+      "give_feedback": "Feedback geben",
+      "gdpc_logo": "Logo für das Global Disaster Preparedness Center",
+      "ifrc_logo": "Logo für die Internationale Rotkreuz- und Rothalbmond-Bewegung",
+      "subtitle_1": "Über die IFRC-Sicherheitsdatenbank",
+      "text_1": "Die IFRC-Sicherheitsdatenbank bietet Zugang zu",
+      "text_2": "Nachrichten des Roten Kreuzes und des Roten Halbmonds, wie Menschen",
+      "text_3": "sicher auf Gefahren reagieren können",
+      "subtitle_2": "Mehr erfahren",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "Richtlinien",
+      "terms": "Allgemeine Geschäftsbedingungen",
+      "subtitle_4": "Nützliche Links",
+      "api_doc": "API-Dokumentation",
+      "faq": "FAQ (Link wird bereitgestellt)"
+    }
   },
   "register_form": {
-      "heading": "Erstellen Sie Ihr kostenloses WhatNow Service-Konto",
-      "who_are_you": "Wer sind Sie?",
-      "developer": "Entwickler",
-      "national_society": "Nationale Gesellschaft",
-      "sign_up_with": "Melden Sie sich an mit:",
-      "sign_up_agreement": "Durch die Erstellung Ihres Kontos erklären Sie sich einverstanden mit unseren ",
-      "terms_conditions": "Geschäftsbedingungen ",
-      "facebook": "Mit Facebook registrieren",
-      "google": "Mit Google registrieren",
-      "email_sign_up": "Oder registrieren Sie sich mit Ihrer E-Mail-Adresse:",
-      "location": "Standort",
-      "organisation": "Organisation",
-      "industry": "Branche",
-      "create_account": "Konto erstellen",
-      "last_name": "Nachname",
-      "select_country": "Wählen Sie ein Land",
-      "select_industry": "Wählen Sie eine Branche",
-      "industries": {
-          "media": "Mediathek",
-          "emergency": "Notfallmanagement",
-          "non_profit": "Non-Profit\/NGO",
-          "humanitarian": "Humanitäre Organisation",
-          "red_cross": "Rotes Kreuz\/Roter Halbmond",
-          "education": "Bildungswesen\/Wissenschaft",
-          "gov": "Regierungsbehörde",
-          "other": "Sonstiges"
-      },
-      "api_used_in": "Wo wird diese API verwendet werden?",
-      "api_used_in_help": "Lassen Sie uns in weniger als 255 Zeichen wissen, wie Sie diesen Dienst nutzen möchten",
-      "welcome": "Willkommen {name}, bitte füllen Sie die folgenden Informationen aus, um zu beginnen:",
-      "gdpc_note": "Wenn Sie Fragen haben oder mehr erfahren möchten, wenden Sie sich bitte an: ",
-      "gdpc_ns_note": "Um sich registrieren, wenden Sie sich bitte an das WhatNow Service-Team im Global Disaster Preparedness Center unter ",
-      "contact_gdpc": "Kontaktieren Sie GDPC"
+    "heading_1": "Erstellen Sie Ihr kostenloses",
+    "heading_2": "IFRC",
+    "heading_3": "Sicherheitsnachrichtendatenbank-Konto",
+    "subtitle_1": "Helfen Sie Gemeinschaften, sich auf lokale Gefahren vorzubereiten und darauf zu reagieren, mit umsetzbaren Sicherheitsnachrichten des Roten Kreuzes und des Roten Halbmonds.",
+    "subtitle_2": "Wenn Sie über die API zugreifen möchten, registrieren Sie sich und teilen Sie die Nachrichten mit der #-Schritt-Anleitung.",
+    "subtitle_3": "Wenn Sie eine nationale Gesellschaft des Roten Kreuzes oder des Roten Halbmonds sind, registrieren Sie sich und Sie erhalten Anweisungen, wie Sie Ihre Sicherheitsnachrichten anpassen und teilen können.",
+    "who_are_you": "Wer sind Sie?",
+    "what_is_your_role": "Welche Rolle haben Sie?",
+    "description": "COPY PENDING",
+    "national_society_description": "Veröffentlichen Sie die wichtigsten Sicherheitsnachrichten Ihrer RCRC-Nationalgesellschaft, damit globale, nationale und lokale Medien darauf zugreifen und sie verbreiten können.\nKontaktieren Sie uns, um mehr darüber zu erfahren, wie Sie Nachrichten erstellen und sich mit Medienpartnern verbinden können.",
+    "developer": "Entwickler",
+    "national_society": "Nationale Gesellschaft",
+    "sign_up_with": "Melden Sie sich an mit:",
+    "sign_up_agreement": "Durch die Erstellung Ihres Kontos erklären Sie sich einverstanden mit unseren ",
+    "terms_conditions": "Geschäftsbedingungen ",
+    "facebook": "Mit Facebook registrieren",
+    "google": "Mit Google registrieren",
+    "email_sign_up": "Oder registrieren Sie sich mit Ihrer E-Mail-Adresse:",
+    "mail": "E-Mail",
+    "email_ifrc": "im@ifrc.org",
+    "location": "Standort",
+    "organisation": "Organisation",
+    "industry": "Branche",
+    "create_account": "Konto erstellen",
+    "last_name": "Nachname",
+    "select_country": "Wählen Sie ein Land",
+    "select_industry": "Wählen Sie eine Branche",
+    "industries": {
+      "media": "Mediathek",
+      "emergency": "Notfallmanagement",
+      "non_profit": "Non-Profit\/NGO",
+      "humanitarian": "Humanitäre Organisation",
+      "red_cross": "Rotes Kreuz\/Roter Halbmond",
+      "education": "Bildungswesen\/Wissenschaft",
+      "gov": "Regierungsbehörde",
+      "other": "Sonstiges"
+    },
+    "api_used_in": "Wo wird diese API verwendet werden?",
+    "api_used_in_help": "Lassen Sie uns in weniger als 255 Zeichen wissen, wie Sie diesen Dienst nutzen möchten",
+    "welcome": "Willkommen {name}, bitte füllen Sie die folgenden Informationen aus, um zu beginnen:",
+    "ifrc_note": "Bei Fragen oder für weitere Informationen kontaktieren Sie bitte: ",
+    "contact_gdpc": "Kontaktieren Sie GDPC"
   },
   "terms_service_page": {
     "applicable_law": {
-        "body": "Die Gesetze des District of Columbia bestimmen alle Rechte und Pflichten dieser Vereinbarung unter Ausschluss der Grundsätze des Kollisionsrechts.",
-        "heading": "Geltendes Recht:"
+      "body": "Die Gesetze des District of Columbia bestimmen alle Rechte und Pflichten dieser Vereinbarung unter Ausschluss der Grundsätze des Kollisionsrechts.",
+      "heading": "Geltendes Recht:"
     },
     "body": "Sie sind verantwortlich für die Geheimhaltung und Sicherheit des Registrierungsschlüssels, der Ihnen vom Roten Kreuz zur Verfügung gestellt wird. Sie sind dafür verantwortlich, die Kompatibilität mit der von Zeit zu Zeit aktualisierten API aufrechtzuerhalten, um weiterhin die Daten-Feeds zu erhalten. Das Rote Kreuz kann nach eigenem Ermessen aktualisierte Versionen der API und der Daten-Feeds veröffentlichen. Neue Versionen sind möglicherweise nicht mit früheren Implementierungen kompatibel, und Sie erklären sich damit einverstanden, stets die zuletzt aktualisierte Version der Daten-Feeds zu verwenden.\n\nSie erklären sich damit einverstanden, keinen Teil der API oder Software vom Roten Kreuz zu verändern, zu vertreiben, zu entschlüsseln, zu disassemblieren oder zu rekonstruieren.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die ein angemessenes Anfragevolumen überschreitet oder eine exzessive oder missbräuchliche Nutzung darstellt, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die rechtswidrig, irreführend, fahrlässig, böswillig oder in der Absicht, Schaden zu verursachen, ist oder das Rote Kreuz, seinen Dienstanbietern, seinen Inhaltsanbietern oder einer anderen Person schadet, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nDas Rote Kreuz kann Ihre Nutzung der API und Daten-Feeds überwachen. Sie dürfen keine technischen Mittel einsetzen, um diese Überwachung zu stören, und das Rote Kreuz darf technische Mittel einsetzen, um eine solche Störung zu überwinden.\n\nDie Verwendung von Prepare-, Respond- und Recover-Nachrichten darf nur als aktuell oder als aktualisiert auf die damals aktuelle Dringlichkeitseinstellung der damit verbundenen Ereigniswarnung dargestellt werden, und Sie müssen einzelne Prepare-, Respond- und Recover-Nachrichten bei jeder Aktualisierung der Daten-Feeds und\/oder korrelierten Ereigniswarnungen durch das Rote Kreuz aktualisieren.\n\nEinzelne Prepare-, Respond- und Recover-Nachrichten, die Sie verwenden, werden nur mit der geografischen Region in Verbindung gebracht, für die sie freigegeben sind. Wenn eine Prepare-, Respond- und Recover-Nachricht einen Verweis auf eine Quelle wie das Amerikanische Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds (jeweils ein \"Quellenverweis\") enthält, müssen Sie den Quellenverweis, der mit jeder Prepare-, Respond- und Recover-Nachricht verbunden ist, in der in den Daten-Feeds bereitgestellten Form angeben. Sie dürfen die Quellverweise nicht weiter verwenden.\n\nEs ist nicht gestattet, die Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Nachrichten in eine andere Sprache zu übersetzen, zu verwenden, zu bearbeiten oder zu überarbeiten oder die Bedeutung der Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Nachrichten zu verändern.\n\nSie müssen sicherstellen, dass die Daten-Feeds in Ihrem alleinigen Besitz und\/oder unter Ihrer Kontrolle sind.\n\nSie dürfen nicht zulassen, dass Ereigniswarnungen und Prepare-, Respond- und Recover-Nachrichten, die an Endbenutzer gesendet werden, Werbung oder Sponsoring enthalten.\n\nSie dürfen die Daten-Feeds weder ganz noch teilweise archivieren.",
     "contact": "Bitte kontaktieren Sie bei Fragen zur API das Rote Kreuz unter {0}.",
     "disclaimer": "Die API und die Daten-Feeds werden NUR ZU INFORMATIONS- UND BILDUNGSZWECKEN UND auf einer Basis \"wie vorliegend\" und \"wie verfügbar\" zur Verfügung gestellt. Das Rote Kreuz trifft keinerlei ausdrückliche oder implizite Zusicherungen oder Garantien. Das Rote Kreuz lehnt alle ausdrücklichen oder impliziten Garantien ab, einschließlich, aber nicht beschränkt auf implizite Garantien der Marktgängigkeit und Eignung für einen bestimmten Zweck. Das Rote Kreuz und seine Mitarbeiter, leitenden Angestellten, Geschäftsführer und Vertreter sowie Lizenzgeber haften nicht für Schäden jeglicher Art, die aus der Nutzung der API, der DatenFeeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Nachrichten entstehen, einschließlich, aber nicht beschränkt auf direkte, indirekte, zufällige, strafbare und mittelbare Schäden.\n\nDas Rote Kreuz übernimmt keine Garantie für die Reihenfolge, Genauigkeit, Authentizität oder Vollständigkeit der API, der Daten-Feeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Nachrichten und haftet in keiner Weise gegenüber Ihnen oder Ihren Endnutzern oder Dritten, insbesondere nicht für Verzögerungen, Ungenauigkeiten, Fehler oder Auslassungen in Bezug auf die API, die Datenfeeds, die Ereigniswarnungen und\/oder die Prepare-, Respond- und Recover-Nachrichten, die im Rahmen dieser Vereinbarung bereitgestellt werden.",
     "entire_agreement": {
-        "body": "Die API-Bedingungen stellen die vollständige und ausschließliche Vereinbarung zwischen dem Roten Kreuz und Ihnen in Bezug auf den Vertragsgegenstand dar und ersetzen alle früheren mündlichen oder schriftlichen Absprachen, Mitteilungen oder Vereinbarungen, die nicht ausdrücklich hierin enthalten sind. Das Rote Kreuz behält sich das Recht vor, diese Vereinbarung jederzeit zu ändern oder zu widerrufen.",
-        "heading": "Gesamte Vereinbarung:"
+      "body": "Die API-Bedingungen stellen die vollständige und ausschließliche Vereinbarung zwischen dem Roten Kreuz und Ihnen in Bezug auf den Vertragsgegenstand dar und ersetzen alle früheren mündlichen oder schriftlichen Absprachen, Mitteilungen oder Vereinbarungen, die nicht ausdrücklich hierin enthalten sind. Das Rote Kreuz behält sich das Recht vor, diese Vereinbarung jederzeit zu ändern oder zu widerrufen.",
+      "heading": "Gesamte Vereinbarung:"
     },
     "heading": "API ENDBENUTZER-LIZENZVERTRAG",
     "intro": "ZUSTIMMEN: DURCH DIE NUTZUNG DES DIENSTES ODER DAS ANKREUZEN DES VORGESEHENEN KÄSTCHENS STIMMT DER BENUTZER ZU, AN DIESE VEREINBARUNG GEBUNDEN ZU SEIN.\n\nDie API ist ein Tool, das es Ihnen (\"Sie\") ermöglicht, die vom Roten Kreuz zur Verfügung gestellten Daten-Feeds abzurufen und zu nutzen, einschließlich eines Feeds mit globalen Wetter- und Katastrophenwarnungen und -beobachtungen (\"Ereigniswarnungen\") und eines Feeds mit umsetzbaren und kontextualisierten Nachrichten zur Vorbereitung auf lokale Gefahren nach Gefahrentyp und Dringlichkeit (\"Prepare-, Respond- und Recover-Nachrichten\", und zusammen mit den Ereigniswarnungen die \"Daten-Feeds\"). Prepare-, Respond- und Recover-Meldungen dienen dazu, Ereigniswarnungen oder andere Warn- und Beobachtungsmeldungen im Zusammenhang mit Wetter- und Katastrophenereignissen in Ihrer eigenen Anwendung zu begleiten. Ihre Nutzung der Daten-Feeds wird durch die API-Bedingungen geregelt.",
     "license_limitations": {
-        "body": "Sie sind nur berechtigt, die Daten-Feeds in Verbindung mit Ihrer eigenen Anwendung zu nutzen, vorbehaltlich der API-Bedingungen und unter der Voraussetzung, dass Sie die Kompatibilität mit der von Zeit zu Zeit aktualisierten API gewährleisten. Ihnen wird ein nicht-exklusives, beschränktes und widerrufliches Recht eingeräumt, Ereigniswarnungen und relevante kontextualisierte Prepare-, Respond- und Recover-Meldungen in Verbindung mit der Dringlichkeitseinstellung einzelner Ereigniswarnungen aus den Daten-Feeds gemäß den API-Bedingungen herunterzuladen, zu verwenden, zu vervielfältigen und an Endnutzer Ihrer eigenen Anwendung („Endnutzer“) zu verteilen. Sie dürfen die API nur nutzen, um die nicht-kommerzielle Nutzung der Daten-Feeds in Übereinstimmung mit den API-Bedingungen zu ermöglichen. Sie sind keinesfalls berechtigt, die API zu nutzen, um eine kommerzielle Nutzung der Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Meldungen zu ermöglichen, einschließlich, aber nicht beschränkt auf den Weiterverkauf, die Erhebung von Gebühren für den Zugriff auf die Daten-Feeds, die Weiterverbreitung der Daten-Feeds oder die Erstellung von abgeleiteten Werken auf der Grundlage der Daten-Feeds. Das Rote Kreuz und seine Lizenzgeber besitzen alle Titel, Eigentumsrechte, Rechte und Interessen an der API, den Prepare-, Respond- und Recover-Meldungen, den Ereigniswarnungen, den Daten-Feeds und den Quellenverweisen (wie unten definiert). Alle nicht ausdrücklich gewährten Rechte sind vorbehalten.",
-        "heading": "Lizenz und Beschränkungen:"
+      "body": "Sie sind nur berechtigt, die Daten-Feeds in Verbindung mit Ihrer eigenen Anwendung zu nutzen, vorbehaltlich der API-Bedingungen und unter der Voraussetzung, dass Sie die Kompatibilität mit der von Zeit zu Zeit aktualisierten API gewährleisten. Ihnen wird ein nicht-exklusives, beschränktes und widerrufliches Recht eingeräumt, Ereigniswarnungen und relevante kontextualisierte Prepare-, Respond- und Recover-Meldungen in Verbindung mit der Dringlichkeitseinstellung einzelner Ereigniswarnungen aus den Daten-Feeds gemäß den API-Bedingungen herunterzuladen, zu verwenden, zu vervielfältigen und an Endnutzer Ihrer eigenen Anwendung („Endnutzer“) zu verteilen. Sie dürfen die API nur nutzen, um die nicht-kommerzielle Nutzung der Daten-Feeds in Übereinstimmung mit den API-Bedingungen zu ermöglichen. Sie sind keinesfalls berechtigt, die API zu nutzen, um eine kommerzielle Nutzung der Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Meldungen zu ermöglichen, einschließlich, aber nicht beschränkt auf den Weiterverkauf, die Erhebung von Gebühren für den Zugriff auf die Daten-Feeds, die Weiterverbreitung der Daten-Feeds oder die Erstellung von abgeleiteten Werken auf der Grundlage der Daten-Feeds. Das Rote Kreuz und seine Lizenzgeber besitzen alle Titel, Eigentumsrechte, Rechte und Interessen an der API, den Prepare-, Respond- und Recover-Meldungen, den Ereigniswarnungen, den Daten-Feeds und den Quellenverweisen (wie unten definiert). Alle nicht ausdrücklich gewährten Rechte sind vorbehalten.",
+      "heading": "Lizenz und Beschränkungen:"
     },
     "overview": {
-        "body": "Das Global Disaster Preparedness Center WhatNow Service Application Program Interface (die „API“) wird Ihnen vom Amerikanischen Roten Kreuz („Rotes Kreuz“) zur Verfügung gestellt. Die API erfordert einen Registrierungsschlüssel.  Während des Registrierungsprozesses müssen Sie den folgenden Bedingungen zustimmen, einschließlich der Nutzungsbedingungen der Webseite des Roten Kreuzes, die unter {0} verfügbar sind (zusammengefasst die „API-Bedingungen“). Die API-Bedingungen bestimmen Ihre Nutzung der API und der über die API zur Verfügung gestellten herunterladbaren elektronischen Materialien. {1}",
-        "cta": "Zur Registrierung hier klicken."
+      "body": "Das Global Disaster Preparedness Center WhatNow Service Application Program Interface (die „API“) wird Ihnen vom Amerikanischen Roten Kreuz („Rotes Kreuz“) zur Verfügung gestellt. Die API erfordert einen Registrierungsschlüssel.  Während des Registrierungsprozesses müssen Sie den folgenden Bedingungen zustimmen, einschließlich der Nutzungsbedingungen der Webseite des Roten Kreuzes, die unter {0} verfügbar sind (zusammengefasst die „API-Bedingungen“). Die API-Bedingungen bestimmen Ihre Nutzung der API und der über die API zur Verfügung gestellten herunterladbaren elektronischen Materialien. {1}",
+      "cta": "Zur Registrierung hier klicken."
     },
     "privacy_policy": {
-        "body": "Sie verstehen, erkennen an und stimmen zu, dass der Betrieb bestimmter Programme, Dienste, Tools, Kaufoptionen, Materialien oder Informationen in der API die Übermittlung, Verwendung und Weitergabe verschiedener persönlicher Identifikationsdaten erfordert. Entsprechend bestätigen Sie, wenn Sie auf die API zugreifen und diese nutzen möchten, dass Sie mit der Nutzung der API die in der Datenschutzrichtlinie enthaltenen Praktiken zur Erhebung und Nutzung personenbezogener Daten akzeptieren: {0}",
-        "heading": "Datenschutzerklärung:"
+      "body": "Sie verstehen, erkennen an und stimmen zu, dass der Betrieb bestimmter Programme, Dienste, Tools, Kaufoptionen, Materialien oder Informationen in der API die Übermittlung, Verwendung und Weitergabe verschiedener persönlicher Identifikationsdaten erfordert. Entsprechend bestätigen Sie, wenn Sie auf die API zugreifen und diese nutzen möchten, dass Sie mit der Nutzung der API die in der Datenschutzrichtlinie enthaltenen Praktiken zur Erhebung und Nutzung personenbezogener Daten akzeptieren: {0}",
+      "heading": "Datenschutzerklärung:"
     },
     "prohibited_activities": {
-        "body": "Sie und Ihre Endnutzer oder Vertreter dürfen die API oder Daten-Feeds nicht auf die folgende Weise nutzen:",
-        "heading": "Untersagte Aktivitäten und Handlungen:",
-        "prohibited_list": {
-            "one": "Die Dienste oder Server des Roten Kreuzes zu stören oder zu unterbrechen.",
-            "two": "Die Umgehung oder Modifizierung von Schlüsseln oder Sicherheitsmechanismen, die vom Roten Kreuz oder der API verwendet werden, einschließlich und ohne Einschränkung jeglicher Authentifizierungstechnologien.",
-            "three": "Die Anforderung, Sammlung, Aufforderung oder anderweitige Erlangung des Zugangs zu Anmeldenamen, Passwörtern oder anderen Authentifizierungsdaten für das Rote Kreuz, die Ihnen nicht für Ihr eigenes Konto zur Verfügung gestellt wurden.",
-            "four": "Die Zugehörigkeit, das Sponsoring oder die Befürwortung durch das Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds anzugeben oder zu implizieren.",
-            "five": "Die Angabe oder Andeutung, dass Sie Eigentümer oder Ersteller der API, der Daten-Feeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Meldungen sind.",
-            "six": "Die Übertragung von Viren, Würmern, Trojanern oder anderen zerstörerischen Elementen."
-        }
+      "body": "Sie und Ihre Endnutzer oder Vertreter dürfen die API oder Daten-Feeds nicht auf die folgende Weise nutzen:",
+      "heading": "Untersagte Aktivitäten und Handlungen:",
+      "prohibited_list": {
+        "one": "Die Dienste oder Server des Roten Kreuzes zu stören oder zu unterbrechen.",
+        "two": "Die Umgehung oder Modifizierung von Schlüsseln oder Sicherheitsmechanismen, die vom Roten Kreuz oder der API verwendet werden, einschließlich und ohne Einschränkung jeglicher Authentifizierungstechnologien.",
+        "three": "Die Anforderung, Sammlung, Aufforderung oder anderweitige Erlangung des Zugangs zu Anmeldenamen, Passwörtern oder anderen Authentifizierungsdaten für das Rote Kreuz, die Ihnen nicht für Ihr eigenes Konto zur Verfügung gestellt wurden.",
+        "four": "Die Zugehörigkeit, das Sponsoring oder die Befürwortung durch das Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds anzugeben oder zu implizieren.",
+        "five": "Die Angabe oder Andeutung, dass Sie Eigentümer oder Ersteller der API, der Daten-Feeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Meldungen sind.",
+        "six": "Die Übertragung von Viren, Würmern, Trojanern oder anderen zerstörerischen Elementen."
+      }
     },
     "reserve_rights": "Das Rote Kreuz behält sich das Recht vor, die API und Daten-Feeds jederzeit ohne vorherige Ankündigung ganz oder teilweise, entweder vorübergehend oder dauerhaft, zu ändern und\/oder nicht mehr zur Verfügung zu stellen. Um Missverständnisse zu vermeiden: Nichts hierin verpflichtet das Rote Kreuz dazu, Ihnen die API oder Daten-Feeds zur Verfügung zu stellen, und Sie stimmen zu und erkennen an, dass jeglicher Zugriff im alleinigen und absoluten Ermessen des Roten Kreuzes liegt.",
     "severability": {
-        "body": "Die Ungültigkeit einzelner Bestimmungen dieser Nutzungsbedingung hat keine Auswirkungen auf die Gültigkeit der übrigen Bestimmungen.",
-        "heading": "Salvatorische Klausel und Verzichtserklärung:"
+      "body": "Die Ungültigkeit einzelner Bestimmungen dieser Nutzungsbedingung hat keine Auswirkungen auf die Gültigkeit der übrigen Bestimmungen.",
+      "heading": "Salvatorische Klausel und Verzichtserklärung:"
     },
     "suspension": {
       "body": "Das Rote Kreuz behält sich das Recht vor, Ihren Zugang zu sperren oder zu beenden, wenn das Rote Kreuz nach eigenem Ermessen feststellt, dass Sie die API oder den Daten-Feed wie in den API-Bedingungen beschrieben unberechtigt nutzen oder dass Sie die API oder den Daten-Feed für Aktivitäten nutzen, die die Sicherheit einer Person oder der Netzwerke des Roten Kreuzes bedrohen\/kompromittieren.",
@@ -711,111 +860,121 @@
     }
   },
   "view_data": {
-      "alert_title": "WARNUNG:",
-      "more_info": "Mehr Info:",
-      "which": "Welche WhatNow-Nachrichten würden Sie gerne sehen?",
-      "view_data": "Daten anzeigen",
-      "alerts": "Warnmeldungen",
-      "alert_preview": "Vorschau der Warnmeldungen",
-      "cap_alerts": "CAP-Warnhinweise",
-      "onset": "Beginn",
+    "alert_title": "WARNUNG:",
+    "more_info": "Mehr Info:",
+    "which": "Welche WhatNow-Nachrichten würden Sie gerne sehen?",
+    "view_data": "Daten anzeigen",
+    "alerts": "Warnmeldungen",
+    "alert_preview": "Vorschau der Warnmeldungen",
+    "cap_alerts": "CAP-Warnhinweise",
+    "onset": "Beginn",
+    "severity": "Schwere",
+    "title": "Titel",
+    "date": "Datum",
+    "headline": "Überschrift",
+    "alert": "Warnmeldung",
+    "whatnow_info": "WhatNow-Info",
+    "alert_detail": "Details Warnhinweis",
+    "more": "Mehr Info",
+    "area_affected": "Betroffener Bereich",
+    "details": "Details",
+    "cap": {
+      "type": "Art",
+      "status": "Status",
+      "urgency": "Dringlichkeit",
       "severity": "Schwere",
-      "title": "Titel",
-      "date": "Datum",
-      "headline": "Überschrift",
-      "alert": "Warnmeldung",
-      "whatnow_info": "WhatNow-Info",
-      "alert_detail": "Details Warnhinweis",
-      "more": "Mehr Info",
-      "area_affected": "Betroffener Bereich",
-      "details": "Details",
-      "cap": {
-          "type": "Art",
-          "status": "Status",
-          "urgency": "Dringlichkeit",
-          "severity": "Schwere",
-          "certainty": "Sicherheit",
-          "sent": "Gesendet",
-          "effective": "Gültig",
-          "onset": "Beginn",
-          "expires": "Läuft ab",
-          "alert_from": "Warnung von",
-          "feed": "Feed",
-          "more": "Mehr Info:",
-          "through": "durch",
-          "alert_feed": "Warnungs-Feed",
-          "fetching_feed": "Wird abgerufen",
-          "empty": "Zurzeit sind keine aktuellen Warnungen vorhanden"
-      }
+      "certainty": "Sicherheit",
+      "sent": "Gesendet",
+      "effective": "Gültig",
+      "onset": "Beginn",
+      "expires": "Läuft ab",
+      "alert_from": "Warnung von",
+      "feed": "Feed",
+      "more": "Mehr Info:",
+      "through": "durch",
+      "alert_feed": "Warnungs-Feed",
+      "fetching_feed": "Wird abgerufen",
+      "empty": "Zurzeit sind keine aktuellen Warnungen vorhanden"
+    }
   },
   "user_agreement": {
-      "title": "Nutzungsbedingungen",
-      "para_one": "Bevor Sie auf das WhatNow-Portal zugreifen können, lesen und akzeptieren Sie bitte die Nutzungsbedingungen, indem Sie das unten stehende Dokument herunterladen und auf die Schaltfläche „Ich stimme zu“ klicken.",
-      "cta": "Ich stimme zu",
-      "download": "Klicken Sie hier, um die Nutzungsbedingungen zu lesen (105 kB)"
+    "title": "Nutzungsbedingungen",
+    "para_one": "Bevor Sie auf das WhatNow-Portal zugreifen können, lesen und akzeptieren Sie bitte die Nutzungsbedingungen, indem Sie das unten stehende Dokument herunterladen und auf die Schaltfläche „Ich stimme zu“ klicken.",
+    "cta": "Ich stimme zu",
+    "download": "Klicken Sie hier, um die Nutzungsbedingungen zu lesen (105 kB)"
   },
   "hazard_type": {
-      "dropdown": {
-        "select": "Gefährdungsart auswählen",
-        "create": "Gefährdungsart erstellen"
-      },
-      "create": {
-          "title": "Neue Gefährdungsart erstellen",
-          "request": "Neue Gefährdungsart anfragen",
-          "other": "Sonstiges",
-          "email_subject": "Anfrage für neue Gefährdungsart",
-          "hazard_name": "Name Gefährdung",
-          "hazard_name_placeholder": "Name der Gefährdung eingeben",
-          "upload_icon": "Icon hochladen",
-          "icon_requirements": "Icons müssen im PNG-Format mit max. 30 kB vorliegen",
-          "requestLink": "GDPC kontaktieren, um eine neue Gefährdungsart anzufragen",
-          "success": "Gefährdungsart erstellt",
-          "error": "Entschuldigung! Beim Erstellen Ihrer Gefährdungsart ist ein Problem aufgetreten."
-      }
+    "dropdown": {
+      "select": "Gefährdungsart auswählen",
+      "create": "Gefährdungsart erstellen"
+    },
+    "create": {
+      "title": "Neue Gefährdungsart erstellen",
+      "request": "Neue Gefährdungsart anfragen",
+      "other": "Sonstiges",
+      "email_subject": "Anfrage für neue Gefährdungsart",
+      "hazard_name": "Name Gefährdung",
+      "hazard_name_placeholder": "Name der Gefährdung eingeben",
+      "upload_icon": "Icon hochladen",
+      "icon_requirements": "Icons müssen im PNG-Format mit max. 30 kB vorliegen",
+      "requestLink": "GDPC kontaktieren, um eine neue Gefährdungsart anzufragen",
+      "success": "Gefährdungsart erstellt",
+      "error": "Entschuldigung! Beim Erstellen Ihrer Gefährdungsart ist ein Problem aufgetreten."
+    }
   },
   "regions": {
     "list": {
-        "manage": "Regionen verwalten",
-        "create": "Neue Region erstellen",
-        "edit": "Region bearbeiten",
-        "add": "Region hinzufügen",
-        "empty": "Es konnten keine Regionen gefunden werden",
-        "table_header": {
-            "region": "Region"
-        }
+      "manage": "Regionen verwalten",
+      "create": "Neue Region erstellen",
+      "edit": "Region bearbeiten",
+      "add": "Region hinzufügen",
+      "empty": "Es konnten keine Regionen gefunden werden",
+      "table_header": {
+        "region": "Region"
+      }
     },
     "select_soc": "Wählen Sie eine anzuzeigende Organisation und fügen Sie Regionen hinzu",
     "create": "Eine neue Region erstellen",
     "form": {
-        "name": "Name der Region",
-        "name_help": "Benennen Sie die Region, für die Sie eine benutzerdefinierte WhatNow-Nachrichtenübermittlung erstellen möchten.",
-        "description": "Beschreibung",
-        "description_help": "Geben Sie weitere Informationen über die Region an, z. B. San Francisco Bay Area."
+      "name": "Name der Region",
+      "name_help": "Benennen Sie die Region, für die Sie eine benutzerdefinierte WhatNow-Nachrichtenübermittlung erstellen möchten.",
+      "description": "Beschreibung",
+      "description_help": "Geben Sie weitere Informationen über die Region an, z. B. San Francisco Bay Area."
     },
     "edit": "Region bearbeiten",
     "delete": "Dies löscht die Region und alle mit der Region verbundenen Inhalte."
   },
   "table_headers": {
-      "profile_pic": "Profilbild",
-      "first_name": "Nachname",
-      "last_name": "last_name",
-      "role": "Rolle",
-      "society": "Gesellschaft",
-      "date": "Datum",
-      "country": "Land",
-      "email": "E-Mail",
-      "created_at": "created_at",
-      "last_logged_in_at": "Zuletzt aktiv",
-      "terms_version": "Profil",
-      "actions": "Aktionen",
-      "action": "Aktion",
-      "content": "Inhalt",
-      "country_code": "Standort",
-      "organisation": "Organisation",
-      "industry_type": "Branche",
-      "all_roles": "Alle Rollen",
-      "version": "Version",
-      "user": "Benutzer",
-      "language_code": "Sprachcode"
+    "profile_pic": "Profilbild",
+    "first_name": "Nachname",
+    "last_name": "last_name",
+    "role": "Rolle",
+    "society": "Gesellschaft",
+    "date": "Datum",
+    "country": "Land",
+    "email": "E-Mail",
+    "created_at": "created_at",
+    "last_logged_in_at": "Zuletzt aktiv",
+    "terms_version": "Profil",
+    "actions": "Aktionen",
+    "action": "Aktion",
+    "content": "Inhalt",
+    "country_code": "Standort",
+    "organisation": "Organisation",
+    "industry_type": "Branche",
+    "all_roles": "Alle Rollen",
+    "version": "Version",
+    "user": "Benutzer",
+    "language_code": "Sprachcode"
+  },
+  "terms_conditions": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "accept": "Akzeptieren"
+  },
+  "badges": {
+    "hazardCreate": "Gefahr erstellt",
+    "published": "Veröffentlicht",
+    "draft": "Entwurf",
+    "bulkUploadDraft": "Massenupload-Entwurf"
   }
 }
