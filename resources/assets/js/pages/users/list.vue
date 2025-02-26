@@ -144,12 +144,14 @@
         </div>
         <b-pagination
           v-if="users.meta.total > users.meta.per_page"
-          size="md"
+          pills
           :total-rows="users.meta.total"
           v-model="currentPage"
           :per-page="users.meta.per_page"
           :limit="10"
-          align="center"></b-pagination>
+          class="pagination"
+          align="center">
+        </b-pagination>
         <p v-if="users.data.length === 0">
           {{ $t('users.list.empty') }}
         </p>

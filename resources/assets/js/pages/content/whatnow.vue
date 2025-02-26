@@ -949,4 +949,10 @@ export default {
   }
 }
 
+btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: white;
+  background: grey;
+  border: none;
+}
+
 </style>

@@ -41,11 +41,17 @@
               <label class="key-message-label" :for="`${instructionName}-title-${index}`">
                 {{ $t('content.edit_whatnow.key_message_label') }}
               </label>
-              <div class="mx-5">
-                <span variant="link" class="more-info-icon" v-b-tooltip.hover
-                  :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
-                  <fa :icon="['fas', 'info-circle']" />
-                </span>
+              <div class="mx-5 tooltip-container">
+            <span
+              class="more-info-icon"
+              @mouseover="showTooltip = true"
+              @mouseleave="showTooltip = false"
+            >
+              <fa :icon="['fas', 'info-circle']" />
+            </span>
+                <div v-if="showTooltip" class="custom-tooltip">
+                  {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+                </div>
               </div>
             </div>
             <div>

@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   padding: 24px;
-  border: 2px solid $grey2;
   border-radius: 6px;
   max-width: 390px;
   width: 100%;
@@ -14,7 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 16px;
     width: 100%;
   }
 
@@ -24,17 +22,11 @@
     align-items: center;
     height: 37px;
     flex: 0 0 37px;
-    background-color: $white;
-    border: 2px solid $body-bg;
     border-radius: 50%;
-    margin-right: 16px;
   }
 
   &__title {
-    font-weight: 700;
     font-size: 20px;
-    line-height: 27px;
-    color: #878E95;
     margin: 0;
   }
 
