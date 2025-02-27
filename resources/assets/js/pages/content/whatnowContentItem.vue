@@ -27,7 +27,6 @@
       <b-button variant="outline-primary" size="sm" class="mb-1" v-if="can(user, permissions.CONTENT_DELETE) && !forceCreate"
         :disabled="deletingContentTranslation === content.id" @click="deleteContentTranslation(content.id)">
         <font-awesome-icon :icon="['fas', 'spinner']" spin v-show="deletingContentTranslation === content.id" />
-        <font-awesome-icon :icon="['fas', 'trash']" />
         {{ $t('common.delete') }}
       </b-button>
     </b-col>
