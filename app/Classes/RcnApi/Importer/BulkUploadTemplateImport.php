@@ -120,3 +120,4 @@ class BulkUploadTemplateImport implements ToCollection
 
 
 }
+

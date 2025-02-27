@@ -6,3 +6,8 @@ body {
   font-size: 2.8rem;
   font-weight: 600;
 }
+
+.page-item.active .page-link {
+  background-color: red;
+  border-color: white;
+}

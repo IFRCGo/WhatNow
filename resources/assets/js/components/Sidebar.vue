@@ -10,7 +10,7 @@
             <svg fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M357.6,281.4L357.6,281.4C301.5,281.4,256,326.9,256,383v116.8c0,5.6,4.5,10.2,10.2,10.2H449c5.6,0,10.2-4.5,10.2-10.2V383   C459.2,326.9,413.7,281.4,357.6,281.4z"></path><circle cx="357.6" cy="154.4" r="76.2"></circle><path d="M154.4,205.2L154.4,205.2c-56.1,0-101.6,45.5-101.6,101.6v116.8c0,5.6,4.5,10.2,10.2,10.2H195c5.6,0,10.2-4.5,10.2-10.2   V383c0-40,15.5-76.3,40.7-103.5c2.7-2.9,3.7-7,2.2-10.6C233.1,231.6,197,205.2,154.4,205.2z"></path><circle cx="154.4" cy="78.2" r="76.2"></circle></g></svg>
           </div>
           <div>
-            {{ $t('sidebar.content_users') }}
+            {{ $t('sidebar.content_users')}}
           </div>
         </div>
       </b-nav-item>

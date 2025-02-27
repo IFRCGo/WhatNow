@@ -141,10 +141,20 @@
                   </div>
                   <b-collapse :visible="urgencyCollapses[urgency.value]" :id="'urgency-collapse-' + i">
                     <div v-for="name in instructionNames" :key="name">
-                      <whatnow-instructions v-if="urgency.stages.includes(name)" :disabled="isCreateHazardMode"
-                        :instructions="content.translations[langCode].stages[name] || []" :instructionName="name"
-                        :instructionId="whatnowId" :langCode="langCode" class="mb-4"
-                        v-on:instructionUpdate="instructionUpdate" />
+                      <whatnow-instructions class="mb-4"
+                        v-if="urgency.stages.includes(name)" 
+                        :disabled="isCreateHazardMode"
+                        :instructions="content.translations[langCode].stages[name] || []"
+                        :instructionName="name"
+                        :instructionId="whatnowId"
+                        :langCode="langCode"
+                        v-on:instructionUpdate="instructionUpdate"
+                        :eventType="content.eventType"
+                        :title="content.translations[langCode].title"
+                        :description="content.translations[langCode].description"
+                        :selectedSoc="content.attribution"
+                        :selectedLanguage="langCode"
+                      />
                     </div>
                   </b-collapse>
 
@@ -603,7 +613,7 @@ export default {
   position: relative;
   .save-controls-container {
     padding: 16px 24px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
     height: 70px;

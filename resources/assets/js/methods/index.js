@@ -18,6 +18,21 @@ const icons = {
   'mapImg': {
     x1: require('../../img/landing_page/landing-map.png')
   },
+  'works1': {
+    x1: require('../../img/landing_page/Icon-1.svg')
+  },
+  'works2': {
+    x1: require('../../img/landing_page/Icon-2.svg')
+  },
+  'works3': {
+    x1: require('../../img/landing_page/Icon-3.svg')
+  },
+  'works4': {
+    x1: require('../../img/landing_page/Icon-4.svg')
+  },
+  'works5': {
+    x1: require('../../img/landing_page/Icon-5.svg')
+  },
   'landingHead': {
     x1: require('../../img/landing_page/new-landing-head.svg')
   },

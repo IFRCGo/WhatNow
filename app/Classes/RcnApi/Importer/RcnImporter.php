@@ -125,19 +125,20 @@ class RcnImporter
     }
 
 
-
-
     /**
      * @throws RcnImportException
      */
     public function importFile($file, string $countryCode, string $languageCode)
     {
+        $organisation = $this->client->getOrganisationByCountryCode($countryCode);
+        if (! $organisation) {
+            throw new RcnApiResourceNotFoundException("Organisation with this country code '{$countryCode}' not found");
+        }
         Excel::import($this->bulkUpload,$file);
+        if($organisation->getName() !== $this->bulkUpload->getData()['nationalSociety']) throw new RcnImportException("The national society selected is not equal to the national society in the file");
         $this->metadata = new ImportMetadata($countryCode, $languageCode,$this->bulkUpload->getData()['region']);
         $this->runInstructionsImport($countryCode,$this->bulkUpload->getData());
-        //$this->saveAttributionData($languageCode, $countryCode, $name, $message, $url);
     }
-
 
     private function saveAttributionData(string $languageCode, string $countryCode, string $name = null, string $message = null, string $url = null)
     {
@@ -159,7 +160,6 @@ class RcnImporter
 
         if ($existingTranslation && $existingTranslation->isPublished() && ! $user->hasPermission('content-publish')) {
             $this->attributionStatus = 'denied';
-
             return;
         }
 
@@ -244,12 +244,12 @@ class RcnImporter
         $stages = [];
         foreach ($record['urgencyLevels'] as $stage) { // Parsing stages as the Instruction model requires
                 foreach ($stage['safetyMessages'] as $safetyMessage) {
-                    $stages[strtolower(str_replace("_",'',$stage['urgencyLevel']))] = [
+                    $stages[strtolower(str_replace("_",'',$stage['urgencyLevel']))][] =
                         [
                             'title' => $safetyMessage['safetyMessage'],
                             'content' => $safetyMessage['supportingMessages'],
                         ]
-                    ];
+                    ;
                 }
         }
         $translationRequest = [

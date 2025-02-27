@@ -113,7 +113,7 @@
                     </template>
                   </v-select>
                 </div>
-                <hr v-if="file">
+                <hr v-if="importForm.file">
                 <div class="mt-4" v-if="importForm.file && importForm.selectedImportLang && importForm.selectedFileType">
                   <!-- Submit Button -->
                   <v-button :loading="isUploading" class="btn-dark w-100 mt-4">
@@ -319,11 +319,9 @@ export default {
       this.uploadResults = null
       this.importForm.file = null
       this.importForm.warnings = true
-      this.importForm.overwrite = false
+      this.importForm.overwrite.value = false
+      this.importForm.overwrite.text = this.$t('content.bulk_upload.overwriting.off')
       this.clearFiles()
-      console.log('Entro')
-      console.log(this.importForm)
-      console.log(this.uploadResults)
     },
     downloadTemplate (extension = 'xlsx') {
       const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
@@ -444,7 +442,7 @@ export default {
   border: none;
 }
 .bulk-select {
-  width: 26%!important;
+  width: 26%;
   display: inline-block;
   input {
     line-height: 0;

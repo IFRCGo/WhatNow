@@ -21,10 +21,10 @@ import '~/plugins'
 import '~/components'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPencil, faPen, faSpinner, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faPencil, faPen, faSpinner, faTrash, faXmark, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faPencil, faSpinner, faPen, faTrash, faXmark)
+library.add(faPencil, faSpinner, faPen, faTrash, faXmark, faDownload)
 
 Sentry.init({
   dsn: window.config.sentry_dsn,

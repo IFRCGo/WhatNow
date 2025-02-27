@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Phiên đăng nhập đã hết hạn!",
   "token_expired_alert_text": "Hãy đăng nhập lại để tiếp tục.",
   "login": "Đăng nhập",
-  "what_now": "WhatNow",
+  "what_now": "Cơ sở dữ liệu Tin nhắn An toàn IFRC",
   "message_portal": "Cổng tin nhắn",
   "register": "Đăng ký",
   "sign_up": "Đăng ký",
   "docs": "Tài liệu",
   "my_apps": "Ứng dụng của tôi",
   "number_of_apps": "{0} ứng dụng",
-  "whatnow_content": "Tin nhắn WhatNow",
+  "whatnow_content": "Tin nhắn",
+  "create_key": "Tạo Khóa",
   "alerts": "Cảnh báo",
   "feeds": "Dòng tin",
   "get_started": "Đăng ký ngay",
@@ -75,7 +76,7 @@
     "create": "Tạo",
     "content": "Nội dung",
     "what_now_content": "Nội dung WhatNow",
-    "bulk_upload": "Tải lên hàng loạt",
+    "bulk_upload": "Tải lên Tệp Tin nhắn",
     "audit_log": "Nhật ký kiểm toán",
     "api_usage": "Sử dụng API",
     "app_detail": "Chi tiết ứng dụng",
@@ -84,153 +85,151 @@
   "documentation": {
     "heading": "Tài liệu API Chữ Thập Đỏ",
     "sidebar": {
-        "introduction": "Giới thiệu",
-        "base_url": "URL gốc",
-        "changelog": "Lịch sử thay đổi",
-        "authentication": "Xác thực",
-        "response_codes": "Mã phản hồi",
-        "emergency_alert_feed": "Dòng tin cảnh báo khẩn",
-        "cap_alert_document": "Tài liệu cảnh báo CAP",
-        "what_now": "What Now"
+      "introduction": "Giới thiệu",
+      "base_url": "URL gốc",
+      "changelog": "Lịch sử thay đổi",
+      "authentication": "Xác thực",
+      "response_codes": "Mã phản hồi",
+      "emergency_alert_feed": "Dòng tin cảnh báo khẩn",
+      "cap_alert_document": "Tài liệu cảnh báo CAP",
+      "what_now": "What Now"
     },
     "steps": {
-        "one": {
-            "body": "REST API của Chữ Thập Đỏ cho phép các nhà phát triển truy cập vào các thông tin và nguồn lực khẩn cấp được Hội Chữ Thập Đỏ Quốc Tế ban hành.",
-            "heading": "Giới thiệu",
-            "support_card": {
-                "body": "Nếu bạn có câu hỏi gì về API của Chữ Thập Đỏ, xin vui lòng liên hệ dev@3sidedcube.com",
-                "title": "Hỗ trợ & Câu hỏi"
-            }
-        },
-        "two": {
-            "body": "Tất cả các URL trong tài liệu của API v1.0 đều có URL gốc như sau:",
-            "heading": "URL gốc"
-        },
-        "three": {
-          "heading": "Lịch sử thay đổi",
-          "table": {
-              "headers": {
-                  "detail": "Phiên bản phát hành",
-                  "version": "Phiên bản API",
-                  "release": "Phiên bản phát hành",
-                  "release_date": "Ngày phát hành"
-              }
-          }
-        },
-        "four": {
-            "body": "API yêu cầu xác thực để có thể truy cập tất cả các nguồn lực bằng khoá API. Nhấp vào đây để lấy khóa API, đầu tiên là {0}.\n\nTất cả các yêu cầu API phải có đầu đề HTTP như sau:",
-            "create_app_cta": "tạo yêu cầu",
-            "heading": "Xác thực"
-        },
-        "five": {
-            "heading": "Mã phản hồi",
-            "table": {
-                "descriptions": {
-                    "ok": "Yêu cầu thành công và nội dung trả lời dưới đây chứa các nguồn lực bạn đã yêu cầu",
-                    "found": "Cho thấy đường dẫn quay lại. Phát yêu cầu GET đến URI nguồn lực ở vị trí: đầu đề.",
-                    "not_found": "Nguồn lực được yêu cầu không tồn tại.",
-                    "not_allowed": "Cho thấy phương thức HTTP được dùng không được phép ở nguồn lực này.",
-                    "server_error": "Xảy ra lỗi máy chủ và không thể trả lại nguồn lực được yêu cầu.",
-                    "unavailable": "Cho thấy dịch vụ hiện không khả dụng. Hãy thử yêu cầu lại sau này."
-                },
-              "headers": {
-                "code": "Mã",
-                "name": "Tên",
-                "description": "Mô tả"
-              }
-            }
-        },
-        "six": {
-            "card": {
-              "body": "Mỗi Hội Chữ Thập Đỏ có thể ra các cảnh báo công cộng bằng {0} v1.2.",
-              "cta": "Thủ tục cảnh báo chung",
-              "title": "Thủ tục cảnh báo chung"
-            },
-            "endpoint": "Điểm cuối:",
-            "example": "Trong ví dụ này, đoạn {0} nên được thay bằng mã quốc gia của một hội cho trước, ví dụ như",
-            "feed_intro": "Cung cấp một dòng tin cho mỗi hội, liệt kê các cảnh báo hiện hoạt được một hội cho trước đăng tải và được xác định bởi",
-            "heading": "Dòng tin cảnh báo khẩn",
-            "intro": "Cảnh báo CAP được tất cả hội phát ra sẽ được đăng tải bằng dòng tin RSS. Bạn có thể truy cập chúng ở điểm cuối sau:"
-        },
-        "seven": {
-            "endpoint": "Điểm cuối:",
-            "example_response": "Ví dụ phản hồi:",
-            "heading": "Tài liệu cảnh báo CAP",
-            "body": "Bạn chỉ có thể truy cập tài liệu cảnh báo CAP qua đường dẫn tuyệt đối quy định trong mỗi mục tin RSS. URI của một cảnh báo dùng định dạng sau: "
-        },
-        "eight": {
-            "body": "Các điểm cuối sau cung cấp dữ liệu có cấu trúc do các hội Chữ Thập Đỏ công bố để hỗ trợ ứng phó cho nhiều loại thiên tai khác nhau.\n\nMỗi mục cung cấp thông tin về sáu giai đoạn kiểm soát thiên tai:",
-            "endpoint": "Điểm cuối:",
-            "example_response": "Ví dụ phản hồi:",
-            "heading": "What Now",
-            "note": "Ghi chú:",
-            "noteDetails": "Tất cả {0} phản hồi được chứa trong một thuộc tính mẫu {1}.",
-            "query_params": "Thông số truy vấn:",
-            "response_properties": "Thuộc tính phản hồi:",
-            "structure": "Cấu trúc của đối tượng mục What Now:",
-            "stucture_attribution": "Cấu trúc của một đối tượng {0}:",
-            "stucture_attribute_translation": "Cấu trúc của một đối tượng thuộc tính {0}:",
-            "stucture_translation": "Cấu trúc của một đối tượng {0}:",
-            "table": {
-                "query_params": {
-                    "name": "tên",
-                    "description": "mô tả"
-                },
-                "structure": {
-                    "property": "Thuộc tính",
-                    "data_type": "Loại dữ liệu",
-                    "description": "Mô tả"
-                }
-            }
+      "one": {
+        "body": "REST API của Chữ Thập Đỏ cho phép các nhà phát triển truy cập vào các thông tin và nguồn lực khẩn cấp được Hội Chữ Thập Đỏ Quốc Tế ban hành.",
+        "heading": "Giới thiệu",
+        "support_card": {
+          "body": "Nếu bạn có câu hỏi gì về API của Chữ Thập Đỏ, xin vui lòng liên hệ dev@3sidedcube.com",
+          "title": "Hỗ trợ & Câu hỏi"
         }
+      },
+      "two": {
+        "body": "Tất cả các URL trong tài liệu của API v1.0 đều có URL gốc như sau:",
+        "heading": "URL gốc"
+      },
+      "three": {
+        "heading": "Lịch sử thay đổi",
+        "table": {
+          "headers": {
+            "detail": "Phiên bản phát hành",
+            "version": "Phiên bản API",
+            "release": "Phiên bản phát hành",
+            "release_date": "Ngày phát hành"
+          }
+        }
+      },
+      "four": {
+        "body": "API yêu cầu xác thực để có thể truy cập tất cả các nguồn lực bằng khoá API. Nhấp vào đây để lấy khóa API, đầu tiên là {0}.\n\nTất cả các yêu cầu API phải có đầu đề HTTP như sau:",
+        "create_app_cta": "tạo yêu cầu",
+        "heading": "Xác thực"
+      },
+      "five": {
+        "heading": "Mã phản hồi",
+        "table": {
+          "descriptions": {
+            "ok": "Yêu cầu thành công và nội dung trả lời dưới đây chứa các nguồn lực bạn đã yêu cầu",
+            "found": "Cho thấy đường dẫn quay lại. Phát yêu cầu GET đến URI nguồn lực ở vị trí: đầu đề.",
+            "not_found": "Nguồn lực được yêu cầu không tồn tại.",
+            "not_allowed": "Cho thấy phương thức HTTP được dùng không được phép ở nguồn lực này.",
+            "server_error": "Xảy ra lỗi máy chủ và không thể trả lại nguồn lực được yêu cầu.",
+            "unavailable": "Cho thấy dịch vụ hiện không khả dụng. Hãy thử yêu cầu lại sau này."
+          },
+          "headers": {
+            "code": "Mã",
+            "name": "Tên",
+            "description": "Mô tả"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "Mỗi Hội Chữ Thập Đỏ có thể ra các cảnh báo công cộng bằng {0} v1.2.",
+          "cta": "Thủ tục cảnh báo chung",
+          "title": "Thủ tục cảnh báo chung"
+        },
+        "endpoint": "Điểm cuối:",
+        "example": "Trong ví dụ này, đoạn {0} nên được thay bằng mã quốc gia của một hội cho trước, ví dụ như",
+        "feed_intro": "Cung cấp một dòng tin cho mỗi hội, liệt kê các cảnh báo hiện hoạt được một hội cho trước đăng tải và được xác định bởi",
+        "heading": "Dòng tin cảnh báo khẩn",
+        "intro": "Cảnh báo CAP được tất cả hội phát ra sẽ được đăng tải bằng dòng tin RSS. Bạn có thể truy cập chúng ở điểm cuối sau:"
+      },
+      "seven": {
+        "endpoint": "Điểm cuối:",
+        "example_response": "Ví dụ phản hồi:",
+        "heading": "Tài liệu cảnh báo CAP",
+        "body": "Bạn chỉ có thể truy cập tài liệu cảnh báo CAP qua đường dẫn tuyệt đối quy định trong mỗi mục tin RSS. URI của một cảnh báo dùng định dạng sau: "
+      },
+      "eight": {
+        "body": "Các điểm cuối sau cung cấp dữ liệu có cấu trúc do các hội Chữ Thập Đỏ công bố để hỗ trợ ứng phó cho nhiều loại thiên tai khác nhau.\n\nMỗi mục cung cấp thông tin về sáu giai đoạn kiểm soát thiên tai:",
+        "endpoint": "Điểm cuối:",
+        "example_response": "Ví dụ phản hồi:",
+        "heading": "What Now",
+        "note": "Ghi chú:",
+        "noteDetails": "Tất cả {0} phản hồi được chứa trong một thuộc tính mẫu {1}.",
+        "query_params": "Thông số truy vấn:",
+        "response_properties": "Thuộc tính phản hồi:",
+        "structure": "Cấu trúc của đối tượng mục What Now:",
+        "stucture_attribution": "Cấu trúc của một đối tượng {0}:",
+        "stucture_attribute_translation": "Cấu trúc của một đối tượng thuộc tính {0}:",
+        "stucture_translation": "Cấu trúc của một đối tượng {0}:",
+        "table": {
+          "query_params": {
+            "name": "tên",
+            "description": "mô tả"
+          },
+          "structure": {
+            "property": "Thuộc tính",
+            "data_type": "Loại dữ liệu",
+            "description": "Mô tả"
+          }
+        }
+      }
     }
   },
   "get_started_docs": {
     "title": "Bắt đầu",
     "sidebar": {
-        "create_app": "Tạo ứng dụng",
-        "get_api_key": "Lấy khóa API",
-        "make_request": "Làm yêu cầu",
-        "sign_up": "Đăng ký"
+      "create_app": "Tạo ứng dụng",
+      "get_api_key": "Lấy khóa API",
+      "make_request": "Làm yêu cầu",
+      "sign_up": "Đăng ký"
     },
     "steps": {
-        "one": {
-            "heading": "Bước 1: Đăng ký",
-            "body": "Để bắt đầu dùng dữ liệu từ API WhatNow, trước tiên {0} Cổng WhatNow.\n\nBạn có thể dùng tài khoản Facebook & Google, hoặc một địa chỉ e- để tạo tài khoản.",
-            "create_account_alt": "tạo tài khoản",
-            "existing_account": "Nếu bạn đã có tài khoản, hãy {0}.",
-            "login_cta": "đăng nhập",
-            "sign_up_cta": "đăng ký"
-
-        },
-        "two": {
-            "body": "Để sử dụng API, bạn cần tạo một ứng dụng trong Cổng WhatNow. Vui lòng cho biết một chút về cái bạn đang phát triển.",
-            "create_app_alt": "tạo ứng dụng",
-            "heading": "Bước 2: Tạo ứng dụng"
-        },
-        "three": {
-            "body": "Khi bạn tạo ra một ứng dụng, khóa API sẽ tự động được tạo.\n\n{0} Hãy nhớ lưu trữ khóa này càng bảo mật càng tốt, tránh chia sẻ hay để lộ khóa API trong ứng dụng của bạn.",
-            "create_api_key_alt": "Tạo khóa API",
-            "heading": "Bước 3: Lấy khóa API",
-            "important": "Quan trọng:"
-        },
-        "four": {
-            "api_docs_cta": "Tài liệu API",
-            "body": "API WhatNow dùng HTTP(S) và cung cấp điểm cuối RESTful để lấy dữ liệu đã đăng tải.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ra ở các bước trước.",
-            "example_title": "Ví dụ yêu cầu",
-            "heading": "Bước 4: Làm yêu cầu",
-            "moreInfo": "Xem {0} để biết thêm thông tin về tất cả điểm cuối API."
-        }
+      "one": {
+        "heading": "Bước 1: Đăng ký",
+        "body": "Để bắt đầu sử dụng dữ liệu từ API Cơ sở dữ liệu Tin nhắn An toàn, trước tiên {0} vào Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn.\n\nBạn có thể sử dụng tài khoản Facebook & Google hoặc địa chỉ email để tạo tài khoản.",        "create_account_alt": "tạo tài khoản",
+        "existing_account": "Nếu bạn đã có tài khoản, hãy {0}.",
+        "login_cta": "đăng nhập",
+        "sign_up_cta": "đăng ký"
+      },
+      "two": {
+        "body": "Để sử dụng API, bạn phải tạo một ứng dụng trong Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn. Hãy cho chúng tôi biết một chút về những gì bạn đang xây dựng.",        "create_app_alt": "tạo ứng dụng",
+        "heading": "Bước 2: Tạo ứng dụng"
+      },
+      "three": {
+        "body": "Khi bạn tạo ra một ứng dụng, khóa API sẽ tự động được tạo.\n\n{0} Hãy nhớ lưu trữ khóa này càng bảo mật càng tốt, tránh chia sẻ hay để lộ khóa API trong ứng dụng của bạn.",
+        "create_api_key_alt": "Tạo khóa API",
+        "heading": "Bước 3: Lấy khóa API",
+        "important": "Quan trọng:"
+      },
+      "four": {
+        "api_docs_cta": "Tài liệu API",
+        "body": "API Cơ sở dữ liệu Tin nhắn An toàn sử dụng HTTP(S) và cung cấp các điểm cuối RESTful để lấy dữ liệu đã xuất bản.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ở bước trước.",        "example_title": "Ví dụ yêu cầu",
+        "heading": "Bước 4: Làm yêu cầu",
+        "moreInfo": "Xem {0} để biết thêm thông tin về tất cả điểm cuối API."
+      }
     }
   },
   "home_pods": {
-      "bulk_upload": "Tải lên tệp .csv để bạn có thể cập nhật cùng lúc một số lượng lớn nội dung",
-      "audit_log": "Đây là nơi bạn có thể xem nhật ký hoạt động",
-      "whatnow_edit": "Đây là nơi bạn có thể sửa nội dung WhatNow",
-      "whatnow_review": "Đây là nơi bạn có thể kiểm tra các nội dung của WhatNow",
-      "whatnow_publish": "Đây là nơi bạn có thể sửa và đăng tải nội dung WhatNow",
-      "manage_users": "Đây là nơi để quản lý người dùng (tạo, sửa và xóa)",
-      "api_usage": "Đây là nơi bạn có thể xem ai đang dùng API và có ứng dụng nào đang được phát triển bằng API."
+    "bulk_upload": "Tải lên tệp .csv để bạn có thể cập nhật cùng lúc một số lượng lớn nội dung",
+    "audit_log": "Đây là nơi bạn có thể xem nhật ký hoạt động",
+    "whatnow_edit": "Đây là nơi bạn có thể chỉnh sửa nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "whatnow_review": "Đây là nơi bạn có thể xem lại nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "whatnow_publish": "Đây là nơi bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "manage_users": "Đây là nơi để quản lý người dùng (tạo, sửa và xóa)",
+    "api_usage": "Đây là nơi bạn có thể xem ai đang dùng API và có ứng dụng nào đang được phát triển bằng API.",
+    "wellcome": "Chào mừng",
+    "wellcome_description": "Tại đây bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn."
   },
   "languages": {
     "am": "አማርኛ",
@@ -256,250 +255,370 @@
     "vi": "Tiếng Việt"
   },
   "sidebar": {
-      "manage": "Quản lý người dùng nội dung",
-      "content_users": "Người dùng nội dung",
-      "audit_log": "Nhật ký kiểm toán",
-      "whatnow": "WhatNow",
-      "bulk": "Tải lên hàng loạt",
-      "content": "Nội dung",
-      "api": "Sử dụng API",
-      "applications": "Ứng dụng",
-      "api_stats": "Thống kê Giao diện Lập trình Ứng dụng (API)",
-      "api_users": "Người dùng API",
-      "terms_conditions": "Điều khoản & Điều kiện",
-      "regions": "Các khu vực"
+    "manage": "Quản lý người dùng nội dung",
+    "content_users": "Người dùng nội dung",
+    "audit_log": "Lịch sử Chỉnh sửa",
+    "whatnow": "Trình chỉnh sửa Ghi công",
+    "bulk": "Tải lên Tệp Tin nhắn",
+    "content": "Nội dung",
+    "api": "Sử dụng API",
+    "applications": "Ứng dụng",
+    "api_stats": "Thống kê Giao diện Lập trình Ứng dụng (API)",
+    "api_users": "Người dùng API",
+    "terms_conditions": "Điều khoản & Điều kiện",
+    "regions": "Tiểu vùng"
   },
   "common": {
-      "accept": "Chấp nhận",
-      "actions": "Hành động",
-      "create": "Tạo mới",
-      "edit": "Sửa",
-      "deactivate": "Vô hiệu hóa",
-      "activate": "Kích hoạt",
-      "are_you_sure": "Bạn chắc chắn?",
-      "yes": "Có",
-      "title": "Tiêu đề",
-      "description": "Mô tả",
-      "unpublished_edits": "Gỡ đăng tải các sửa chữa?",
-      "published": "Đã đăng",
-      "delete": "Xóa",
-      "welcome": "Chào mừng bạn đến với",
-      "save_changes": "Lưu thay đổi",
-      "auto_saving": "Lưu tự động",
-      "add": "Thêm",
-      "my_profile": "Hồ sơ",
-      "cancel": "Hủy",
-      "view_changes": "Xem thay đổi",
-      "view_content": "Xem nội dung",
-      "resend_activation": "Gửi lại e- kích hoạt",
-      "deactivate_user": "Vô hiệu hóa người dùng",
-      "submit_changes": "Nộp các Thay đổi",
-      "reactivate_user": "Kích hoạt lại người dùng",
-      "send_invite": "Gửi lời mời",
-      "invite_and_create": "Mời và tạo một cái khác",
-      "loading": "Đang tải nội dung",
-      "publish_new": "Đăng tải phiên bản mới",
-      "greeting": "Chào",
-      "removed": "Đã xóa",
-      "copy": "Sao chép",
-      "copied": "Đã sao chép",
-      "not_empty": "Không được để trống",
-      "name": "Tên",
-      "webUrl": "URL",
-      "learn_more": "Tìm hiểu thêm",
-      "validations": {
-          "empty": "Không được để trống chỗ này",
-          "hazardIcon": "Hãy chọn hình nhỏ hơn 30kb"
-      },
-      "network_error": "Lỗi mạng",
-      "network_error_text": "Hình như đã có lỗi mạng. Hãy thử lại trong giây lát",
-      "email_sent": "Đã gửi e-",
-      "duplicate_lang_error": "Rất tiếc, ngôn ngữ được chọn đã tồn tại",
-      "duplicate_lang_description": "Hãy sửa ngôn ngữ hiện có hoặc chọn một ngôn ngữ mới từ menu thả xuống",
-      "estimated_users": "Số lượng người dùng dự kiến"
+    "accept": "Chấp nhận",
+    "actions": "Hành động",
+    "create": "Tạo mới",
+    "edit": "Sửa",
+    "save": "Lưu",
+    "deactivate": "Vô hiệu hóa",
+    "activate": "Kích hoạt",
+    "are_you_sure": "Bạn chắc chắn?",
+    "yes": "Có",
+    "title": "Tiêu đề",
+    "description": "Mô tả",
+    "unpublished_edits": "Gỡ đăng tải các sửa chữa?",
+    "published": "Đã đăng",
+    "delete": "Xóa",
+    "welcome": "Chào mừng bạn đến với",
+    "save_changes": "Lưu thay đổi",
+    "auto_saving": "Lưu tự động",
+    "add": "Thêm",
+    "my_profile": "Hồ sơ",
+    "cancel": "Hủy",
+    "view_changes": "Xem thay đổi",
+    "view_content": "Xem nội dung",
+    "resend_activation": "Gửi lại e- kích hoạt",
+    "deactivate_user": "Vô hiệu hóa người dùng",
+    "submit_changes": "Nộp các Thay đổi",
+    "reactivate_user": "Kích hoạt lại người dùng",
+    "send_invite": "Gửi lời mời",
+    "invite_and_create": "Mời và tạo một cái khác",
+    "loading": "Đang tải nội dung",
+    "publish_new": "Đăng tải phiên bản mới",
+    "greeting": "Chào",
+    "removed": "Đã xóa",
+    "copy": "Sao chép",
+    "copied": "Đã sao chép",
+    "not_empty": "Không được để trống",
+    "name": "Tên",
+    "webUrl": "URL",
+    "learn_more": "Tìm hiểu thêm",
+    "validations": {
+      "empty": "Không được để trống chỗ này",
+      "hazardIcon": "Hãy chọn hình nhỏ hơn 30kb"
+    },
+    "network_error": "Lỗi mạng",
+    "network_error_text": "Hình như đã có lỗi mạng. Hãy thử lại trong giây lát",
+    "email_sent": "Đã gửi e-",
+    "duplicate_lang_error": "Rất tiếc, ngôn ngữ được chọn đã tồn tại",
+    "duplicate_lang_description": "Hãy sửa ngôn ngữ hiện có hoặc chọn một ngôn ngữ mới từ menu thả xuống",
+    "estimated_users": "Số lượng người dùng dự kiến",
+    "upploading": "Đang tải lên",
+    "download": "Tải xuống",
+    "download_as_image": "Tải xuống dưới dạng hình ảnh",
+    "download_as_pdf": "Tải xuống dưới dạng PDF",
+    "add_logo": "Thêm logo",
+    "edit_logo": "Chỉnh sửa logo",
+    "loading_image": "Đang tải..."
   },
   "banners": {
-      "get_started_create": ", bắt đầu và tạo ứng dụng đầu tiên",
-      "create_app": "Tạo ứng dụng",
-      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+    "get_started_create": ", bắt đầu và tạo ứng dụng đầu tiên",
+    "create_app": "Tạo ứng dụng",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
   },
   "users": {
-      "user": "Người dùng",
-      "deleted": "Người dùng bị xóa",
-      "list": {
-          "manage": "Quản lý người dùng",
-          "create": "Tạo người dùng mới",
-          "download_report": "Tải xuống báo cáo",
-          "empty": "Không tìm thấy người dùng nào",
-          "detail": "Chi tiết người dùng",
-          "clear_filters": "Xóa bộ lọc",
-          "table_header": {
-              "user": "Người dùng",
-              "role": "Vai trò",
-              "society": "Hội",
-              "email": "Email",
-              "added": "Đã thêm",
-              "last_activity": "Hoạt động cuối",
-              "t_and_c": "Phiên bản ĐK&ĐK"
-          },
-          "societies": "Các hội"
+    "user": "Người dùng",
+    "deleted": "Người dùng bị xóa",
+    "list": {
+      "manage": "Quản lý người dùng",
+      "select_status": "Chọn trạng thái",
+      "select_role": "Chọn vai trò",
+      "select_country": "Chọn quốc gia",
+      "select_terms": "Chọn phiên bản điều khoản",
+      "select_society": "Chọn hội quốc gia",
+      "create": "Tạo người dùng mới",
+      "download_report": "Tải xuống báo cáo",
+      "empty": "Không tìm thấy người dùng nào",
+      "detail": "Chi tiết người dùng",
+      "clear_filters": "Xóa bộ lọc",
+      "table_header": {
+        "user": "Người dùng",
+        "role": "Vai trò",
+        "society": "Hội",
+        "email": "Email",
+        "added": "Đã thêm",
+        "last_activity": "Hoạt động cuối",
+        "t_and_c": "Phiên bản ĐK&ĐK"
       },
-      "status": {
-          "active": "Đã kích hoạt",
-          "deactivated": "Đã vô hiệu hóa"
+      "societies": "Các hội"
+    },
+    "status": {
+      "active": "Đã kích hoạt",
+      "deactivated": "Đã vô hiệu hóa"
+    },
+    "edit": {
+      "super_admin_all": "Truy cập tất cả các hội",
+      "user_details": "Chi tiết người dùng",
+      "create_user": "Tạo người dùng mới",
+      "add_society": "Thêm hội + ",
+      "societies_heading": "Các hội",
+      "roles_heading": "Vai trò & quyền hạn",
+      "activity_heading": "Hoạt động",
+      "roles_label": "Chọn vai trò & quyền hạn cho người dùng này",
+      "activity_link": "Xem tất cả hành động của người dùng",
+      "created": "Đã tạo người dùng thành công",
+      "updated": "Đã cập nhật người dùng thành công",
+      "email_update": "Để cập nhật e-, hãy nhập mật khẩu",
+      "view": "Xem",
+      "more": "thêm",
+      "less": "Thu gọn",
+      "user_can_do": "Xem người dùng nào có quyền hạn làm:",
+      "user_no_permission": "Người dùng không có quyền hạn nào",
+      "soc_already_added": "Người dùng đã được gán hội này"
+    }
+  },
+  "new_welcome": {
+    "title_1": "Chào mừng đến với",
+    "red_title": "IFRC",
+    "title_2": "An toàn",
+    "title_3": "Cơ sở dữ liệu tin nhắn",
+    "text_header": "Truy cập và chia sẻ tin nhắn an toàn của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ trên các nền tảng của bạn.",
+    "text_header_2": "Làm theo hướng dẫn #-bước bên dưới..",
+    "bottom_subtitle": "Liên hệ với IFRC",
+    "bottom_text": "Gửi email cho nhóm IFRC nếu bạn có câu hỏi: im@ifrc.org",
+    "bottom_btn": "Liên hệ với IFRC",
+    "slider_1": {
+      "btn": "Tạo khóa API",
+      "step_1": {
+        "header": "Bước 1: Tạo ứng dụng",
+        "text": "Tạo khóa API để sử dụng API trong cơ sở dữ liệu. Hãy cho chúng tôi biết bạn đang xây dựng gì."
       },
-      "edit": {
-          "super_admin_all": "Truy cập tất cả các hội",
-          "user_details": "Chi tiết người dùng",
-          "create_user": "Tạo người dùng mới",
-          "add_society": "Thêm hội + ",
-          "societies_heading": "Các hội",
-          "roles_heading": "Vai trò & quyền hạn",
-          "activity_heading": "Hoạt động",
-          "roles_label": "Chọn vai trò & quyền hạn cho người dùng này",
-          "activity_link": "Xem tất cả hành động của người dùng",
-          "created": "Đã tạo người dùng thành công",
-          "updated": "Đã cập nhật người dùng thành công",
-          "email_update": "Để cập nhật e-, hãy nhập mật khẩu",
-          "view": "Xem",
-          "more": "thêm",
-          "less": "Thu gọn",
-          "user_can_do": "Xem người dùng nào có quyền hạn làm:",
-          "user_no_permission": "Người dùng không có quyền hạn nào",
-          "soc_already_added": "Người dùng đã được gán hội này"
+      "step_2": {
+        "header": "Bước 2: Nhận khóa API",
+        "text": "Khi bạn tạo khóa API, nó sẽ tự động được tạo.",
+        "text_2": "Quan trọng: Lưu trữ khóa API của bạn một cách an toàn nhất có thể. Tránh chia sẻ hoặc tiết lộ khóa API của bạn trong ứng dụng của riêng bạn."
+      },
+      "step_3": {
+        "header": "Bước 3: Thực hiện yêu cầu",
+        "text": "API cơ sở dữ liệu sử dụng HTTP(S) và cung cấp các điểm cuối RESTful để lấy dữ liệu đã xuất bản. Mỗi yêu cầu phải được xác thực bằng khóa API được tạo ở bước trước. Để biết thêm thông tin về tất cả các điểm cuối API, hãy xem tài liệu API."
+      },
+      "step_4": {
+        "header": "Bước 4: Chia sẻ tin nhắn",
+        "text": "Chia sẻ tin nhắn an toàn của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ với công chúng khi có mối đe dọa nguy hiểm. Bạn có thể liên hệ với nhóm IFRC nếu bạn có bất kỳ phản hồi nào về tin nhắn: im@ifrc.org"
       }
+    },
+    "slider_2": {
+      "btn": "Tin nhắn An toàn",
+      "step_1": {
+        "header": "Bước 1: Xem tin nhắn",
+        "text": "Truy cập cơ sở dữ liệu tin nhắn để xem các tin nhắn có sẵn của Hội Quốc gia Hội Chữ thập đỏ Trăng lưỡi liềm đỏ."
+      },
+      "step_2": {
+        "header": "Bước 2: Chọn bộ tin nhắn",
+        "text": "Chọn Hội Quốc gia bạn muốn xem. Sau đó chọn loại nguy hiểm từ danh sách có sẵn."
+      },
+      "step_3": {
+        "header": "Bước 3: Chia sẻ tin nhắn",
+        "text": "Tìm tùy chọn tải xuống tin nhắn. Bạn có thể chia sẻ bộ tin nhắn dưới dạng hình ảnh hoặc PDF. Tải xuống và xem lại để đảm bảo bạn đang chia sẻ đúng tin nhắn."
+      }
+    }
+  },
+  "upload_modal": {
+    "drag_button_text": "Nhấp hoặc kéo tệp vào khu vực này để tải lên",
+    "button_text": "Tải lên"
+  },
+  "stages": {
+    "immediate": "Ngay lập tức",
+    "warning": "Cảnh báo",
+    "anticipated": "Dự kiến",
+    "assess_and_plan":"Đánh giá và Lập kế hoạch",
+    "mitigate_risks":"Giảm thiểu Rủi ro",
+    "prepare_to_respond":"Chuẩn bị ứng phó",
+    "recover": "Phục hồi"
   },
   "content": {
+    "content": "Nội dung",
+    "audit_log": {
+      "audit_log": "Nhật ký kiểm toán",
+      "my_audit_log": "Lịch sử Chỉnh sửa",
+      "empty": "Không tìm thấy lịch sử kiểm toán nào trùng khớp bộ lọc này",
+      "soc_label": "Hội",
+      "select_hazard": "Chọn loại nguy hiểm",
+      "select_language": "Chọn ngôn ngữ",
+      "select_overwrite": "Chọn tùy chọn ghi đè",
+      "choose_file": "Chọn loại tệp",
+      "select_soc": "Chọn hội quốc gia"
+    },
+    "whatnow": {
+      "title": "Tin nhắn",
+      "set_attribution": "Cài tên hội và tin nhắn thuộc tính để đăng tải",
+      "whatnow": "Cơ sở dữ liệu Tin nhắn An toàn",
+      "empty": "Không có tin nhắn An toàn nào được xuất bản cho Hội Quốc gia này",
+      "steps": "Bước",
+      "publish": "Đăng tải",
+      "no_publish": "Không có gì để đăng tải",
+      "published": "đã đăng tải bản dịch",
+      "publishing": "Phát hành",
+      "content_to_publish": "Phát hành nội dung bản thảo",
+      "whatnow_content": "Nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+      "choose_hazard": "Chọn sự may rủi",
+      "hazard": "Sự may rủi",
       "content": "Nội dung",
-      "audit_log": {
-          "audit_log": "Nhật ký kiểm toán",
-          "empty": "Không tìm thấy lịch sử kiểm toán nào trùng khớp bộ lọc này",
-          "soc_label": "Hội"
+      "create": "Thêm sự may rủi",
+      "edit_attribtion": "Chỉnh sửa đặc tính",
+      "attribution": "Đặc tính",
+      "attribution_url": "Đặc tính URL",
+      "society_name": "Hiệp hội quốc gia",
+      "attribution_message": "Thông báo đặc tính",
+      "no_translation": "Không quy định nội dung",
+      "delete_content_translation": "Điều này sẽ xóa nội dung Cơ sở dữ liệu Tin nhắn An toàn đã chọn khỏi ngôn ngữ hiện tại",
+      "messages": "Tin nhắn an toàn của",
+      "add_language": "Thêm ngôn ngữ mới",
+      "no_languages": "Chọn hoặc tạo một ngôn ngữ để bắt đầu",
+      "no_soc": "Chọn một hiệp hội",
+      "no_region": "Chọn một khu vực",
+      "add_language_message": "Để thêm một ngôn ngữ mới, vui lòng thêm một số nội dung đi kèm",
+      "add_language_attribution": "Tạo đặc tính để thêm một ngôn ngữ mới",
+      "select_language": "Vui lòng chọn một ngôn ngữ",
+      "attribution_publish": "Đặc tính này sẽ có sẵn ngay khi phát hành",
+      "date_added": "Ngày thêm",
+      "url": "URL",
+      "hazard_type": "Loại nguy hiểm",
+      "show_more": "Xem thêm",
+      "early": "Cảnh báo sớm",
+      "disaster": "Giảm thiểu rủi ro thiên tai",
+      "recovery": "Phục hồi",
+      "publish_summary_title": "Ghi công",
+      "publish_summary_ns": "Hội Quốc gia",
+      "publish_summary_url": "URL ghi công",
+      "publish_summary_message": "Tin nhắn ghi công"
+    },
+    "edit_whatnow": {
+      "title": "Đề mục",
+      "description": "Mô tả",
+      "content_piece": "Phần nội dung",
+      "enter_other_hazard_type": "Nhập tên loại rủi ro",
+      "other_hazard_type_label": "Loại rủi ro khác",
+      "stepped_content": "Phần nội dung theo từng bước",
+      "content_title_description": "Tiêu đề cho các Tin nhắn An toàn này",
+      "content_description_description": "Mô tả về các Tin nhắn An toàn này",
+      "content_label": "Vui lòng nhập một số thông tin về rủi ro",
+      "content_url": "URL",
+      "content_url_description": "URL để biết thêm thông tin về các Tin nhắn An toàn này. Vui lòng bao gồm giao thức, ví dụ: http:// hoặc https://",
+      "created": "đã tạo",
+      "pieces_edited": " Các phần đã được chỉnh sửa",
+      "content_placeholder": "Vui lòng nhập một tin nhắn",
+      "mitigation": "Giảm thiểu",
+      "mitigation_help": "Các hành động dài hạn để giảm thiểu rủi ro",
+      "mitigation_extra": "Giảm nhẹ là một tuyên bố dự đoán dài hạn hơn về một biến cố nguy hiểm. Các hành động đánh giá, lập kế hoạch và các biện pháp giảm thiểu rủi ro dài hạn được thực hiện để tạo sự an toàn cho gia đình và môi trường.",
+      "seasonalForecast": "Dự báo theo mùa",
+      "seasonalForecast_help": "Các hành động ngắn hạn để giảm rủi ro",
+      "seasonalForecast_extra": "Dự báo theo mùa là một tuyên bố dự đoán về một biến cố nguy hiểm. Hành động đánh giá các rủi ro tiềm ẩn và các dự định giảm thiểu rủi ro và bảo vệ gia đình.",
+      "watch": "Theo dõi",
+      "watch_help": "Chuẩn bị ứng phó",
+      "watch_extra": "Tiến hành việc theo dõi khi rủi ro liên quan đến một biến cố nguy hiểm gia tăng đáng kể, nhưng vẫn chưa xác định được sự xuất hiện, vị trí, thời điểm của chúng. Để có đủ thời gian thực hiện các hành động bảo vệ và chuẩn bị ứng phó.",
+      "warning": "Cảnh báo",
+      "warning_help": "Chuẩn bị ứng phó",
+      "warning_extra": "Cảnh báo được đưa ra khi một biến cố nguy hiểm đang xảy ra, sắp xảy ra hoặc có khả năng xảy ra rất cao. Có nghĩa là các điều kiện đe dọa đến tính mạng hoặc tài sản. Những người gặp nguy hiểm này cần phải có các hành động bảo vệ.",
+      "immediate": "Ngay tức khắc",
+      "immediate_help": "Hành động ứng phó",
+      "immediate_extra": "Các điều kiện hiện đang đe dọa tính mạng và tài sản. Đây là những hành động bảo vệ ngay lập tức khi một biến cố nguy hiểm đang xảy ra. Cần có các hành động ứng phó để bảo vệ bản thân và gia đình.",
+      "recover": "Hồi phục",
+      "recover_help": "Hành động hồi phục",
+      "recover_extra": "Đây là những hành động bảo vệ cần thực hiện để giảm thiểu rủi ro sau một biến cố nguy hiểm.",
+      "anticipated": "Dự kiến",
+      "assess_and_plan": "Đánh giá và Lập kế hoạch",
+      "mitigate_risks": "Giảm thiểu Rủi ro",
+      "prepare_to_respond": "Chuẩn bị ứng phó",
+      "updated": "cập nhật",
+      "download_icon": "Tải biểu tượng",
+      "download_image": "Tải xuống dưới dạng hình ảnh",
+      "download_image_error": "Lỗi khi tải hình ảnh, hãy đảm bảo rằng bạn đã công bố mọi thay đổi và thử lại.",
+      "download_instructions": "Nhấp chuột phải và chọn 'Lưu hình ảnh thành…' để lưu",
+      "downloaded_image_alt": "Hướng dẫn Cơ sở dữ liệu Tin nhắn An toàn",
+      "add_key_message": "Thêm Tin nhắn chính",
+      "add_supporting_message": "Thêm Tin nhắn hỗ trợ",
+      "early_warning": "Cảnh báo sớm",
+      "early_warning_description": "Tin nhắn an toàn chính cho cảnh báo và hành động sớm",
+      "disaster_risk_reduction": "Giảm thiểu rủi ro thiên tai",
+      "disaster_risk_reduction_description": "Tin nhắn an toàn chính từ PAPE",
+      "recovery": "Phục hồi",
+      "recovery_description": "An toàn chính cho hành động phục hồi",
+      "hazard_type": "Loại nguy hiểm",
+      "content_edit_title": "Chỉnh sửa nội dung",
+      "content_add_hazard_title": "Thêm nguy hiểm",
+      "key_message_label": "Tiêu đề tin nhắn chính",
+      "supporting_message_label": "Tin nhắn hỗ trợ"
+    },
+    "message_editor": {
+      "title": "Trình chỉnh sửa Ghi công",
+      "society_name_label": "Tên hội quốc gia",
+      "attribution_url_label": "URL ghi công",
+      "attribution_message_label": "Tin nhắn ghi công",
+      "create_btn": "Thêm nguy hiểm",
+      "contributor_name_label": "Tên người đóng góp",
+      "contributor_single": "Người đóng góp"
+    },
+    "previewer": {
+      "download_image_error": "Lỗi tải xuống hình ảnh, vui lòng thử lại.",
+      "download_pdf_error": "Lỗi tải xuống PDF, vui lòng thử lại."
+    },
+    "audit": "Lịch sử Chỉnh sửa",
+    "export": "Xuất",
+    "bulk_upload": {
+      "bulk_upload": "Tải lên Tệp Tin nhắn",
+      "template": "Tiêu bản",
+      "export_template": "Xuất tiêu bản",
+      "import_data": "Nhập dữ liệu",
+      "import_complete": "Hoàn tất Nhập",
+      "import_summary": "Bạn đang nhập theo {society} bằng {lang}.",
+      "import_banner": {
+        "success": "Thành công",
+        "added": "Bổ sung",
+        "skipped": "Bỏ qua",
+        "denied": "Từ chối",
+        "updated": "Cập nhật",
+        "failed": "Không thành công",
+        "invalid": "Không hợp lệ",
+        "row": "Hàng"
       },
-      "whatnow": {
-          "set_attribution": "Cài tên hội và tin nhắn thuộc tính để đăng tải",
-          "whatnow": "WhatNow",
-          "empty": "Không có tin nhắn WhatNow được đăng tải cho Hội quốc gia này",
-          "steps": "Bước",
-          "publish": "Đăng tải",
-          "no_publish": "Không có gì để đăng tải",
-          "published": "đã đăng tải bản dịch",
-          "publishing": "Phát hành",
-          "content_to_publish": "Phát hành nội dung bản thảo",
-          "whatnow_content": "Nội dung WhatNow",
-          "choose_hazard": "Chọn sự may rủi",
-          "hazard": "Sự may rủi",
-          "content": "Nội dung",
-          "create": "Thêm sự may rủi",
-          "edit_attribtion": "Chỉnh sửa đặc tính",
-          "attribution": "Đặc tính",
-          "attribution_url": "Đặc tính URL",
-          "society_name": "Hiệp hội quốc gia",
-          "attribution_message": "Thông báo đặc tính",
-          "no_translation": "Không quy định nội dung",
-          "delete_content_translation": "Thao tác này sẽ xóa nội dung whatnow đã chọn khỏi ngôn ngữ hiện tại",
-          "messages": "Tin nhắn WhatNow về",
-          "add_language": "Thêm ngôn ngữ mới",
-          "no_languages": "Chọn hoặc tạo một ngôn ngữ để bắt đầu",
-          "no_soc": "Chọn một hiệp hội",
-          "no_region": "Chọn một khu vực",
-          "add_language_message": "Để thêm một ngôn ngữ mới, vui lòng thêm một số nội dung đi kèm",
-          "add_language_attribution": "Tạo đặc tính để thêm một ngôn ngữ mới",
-          "select_language": "Vui lòng chọn một ngôn ngữ",
-          "attribution_publish": "Đặc tính này sẽ có sẵn ngay khi phát hành"
+      "upload_csv": "Tải lên tài liệu ở định dạng CSV",
+      "language_instructions": "Chọn ngôn ngữ bản dịch được nhập.",
+      "file_instructions": "Kéo tệp ở đây hoặc chọn từ máy tính của bạn.",
+      "choose": "Chọn lựa",
+      "submit": "Nhập nội dung",
+      "reset": "Tải nội dung khác",
+      "export_template_guide": "Hướng dẫn xuất tiêu bản",
+      "export_template_instructions": "Để biết hướng dẫn về cách sử dụng hiệu quả mẫu tải lên tệp g này, vui lòng xem hướng dẫn này.",
+      "refer": "Tham khảo",
+      "detail": "để biết hướng dẫn chi tiết",
+      "warnings": {
+        "title": "Từ chối nhập nếu bất kỳ nội dung nào sẽ ghi đè lên các phiên bản mới hơn.",
+        "on": "Có",
+        "off": "Không"
       },
-      "edit_whatnow": {
-          "title": "Đề mục",
-          "description": "Mô tả",
-          "content_piece": "Phần nội dung",
-          "enter_other_hazard_type": "Nhập tên loại rủi ro",
-          "other_hazard_type_label": "Loại rủi ro khác",
-          "stepped_content": "Phần nội dung theo từng bước",
-          "content_title_description": "Tiêu đề dành cho các tin nhắn Whatnow",
-          "content_description_description": "Mô tả các Tin nhắn WhatNow này",
-          "content_label": "Vui lòng nhập một số thông tin về rủi ro",
-          "content_url": "URL",
-          "content_url_description": "URL để biết thêm thông tin về các tin nhắn WhatNow này. Vui lòng bao gồm giao thức, http: \/\/ hoặc https: \/\/",
-          "created": "đã tạo",
-          "pieces_edited": " Các phần đã được chỉnh sửa",
-          "delete_item": "Bỏ mục",
-          "add_item": "Thêm mục +",
-          "content_placeholder": "Vui lòng nhập một tin nhắn",
-          "mitigation": "Giảm thiểu",
-          "mitigation_help": "Các hành động dài hạn để giảm thiểu rủi ro",
-          "mitigation_extra": "Giảm nhẹ là một tuyên bố dự đoán dài hạn hơn về một biến cố nguy hiểm. Các hành động đánh giá, lập kế hoạch và các biện pháp giảm thiểu rủi ro dài hạn được thực hiện để tạo sự an toàn cho gia đình và môi trường.",
-          "seasonalForecast": "Dự báo theo mùa",
-          "seasonalForecast_help": "Các hành động ngắn hạn để giảm rủi ro",
-          "seasonalForecast_extra": "Dự báo theo mùa là một tuyên bố dự đoán về một biến cố nguy hiểm. Hành động đánh giá các rủi ro tiềm ẩn và các dự định giảm thiểu rủi ro và bảo vệ gia đình.",
-          "watch": "Theo dõi",
-          "watch_help": "Chuẩn bị ứng phó",
-          "watch_extra": "Tiến hành việc theo dõi khi rủi ro liên quan đến một biến cố nguy hiểm gia tăng đáng kể, nhưng vẫn chưa xác định được sự xuất hiện, vị trí, thời điểm của chúng. Để có đủ thời gian thực hiện các hành động bảo vệ và chuẩn bị ứng phó.",
-          "warning": "Cảnh báo",
-          "warning_help": "Chuẩn bị ứng phó",
-          "warning_extra": "Cảnh báo được đưa ra khi một biến cố nguy hiểm đang xảy ra, sắp xảy ra hoặc có khả năng xảy ra rất cao. Có nghĩa là các điều kiện đe dọa đến tính mạng hoặc tài sản. Những người gặp nguy hiểm này cần phải có các hành động bảo vệ.",
-          "immediate": "Ngay tức khắc",
-          "immediate_help": "Hành động ứng phó",
-          "immediate_extra": "Các điều kiện hiện đang đe dọa tính mạng và tài sản. Đây là những hành động bảo vệ ngay lập tức khi một biến cố nguy hiểm đang xảy ra. Cần có các hành động ứng phó để bảo vệ bản thân và gia đình.",
-          "recover": "Hồi phục",
-          "recover_help": "Hành động hồi phục",
-          "recover_extra": "Đây là những hành động bảo vệ cần thực hiện để giảm thiểu rủi ro sau một biến cố nguy hiểm.",
-          "updated": "cập nhật",
-          "download_icon": "Tải biểu tượng",
-          "download_image": "Tải xuống dưới dạng hình ảnh",
-          "download_image_error": "Lỗi khi tải hình ảnh, hãy đảm bảo rằng bạn đã công bố mọi thay đổi và thử lại.",
-          "download_instructions": "Nhấp chuột phải và chọn 'Lưu hình ảnh thành…' để lưu",
-          "downloaded_image_alt": "Hướng dẫn về WhatNow"
+      "overwriting": {
+        "title": "Cài đặt Ghi đè.",
+        "on": "Luôn cập nhật phiên bản này, ghi đè lên tất cả các bản sửa đổi",
+        "off": "Chỉ cập nhật các loại sự kiện có nội dung nhập mới hơn"
       },
-      "audit": "Sổ kiểm tra",
-      "export": "Xuất",
-      "bulk_upload": {
-          "bulk_upload": "Tải lên hàng loạt",
-          "template": "Tiêu bản",
-          "export_template": "Xuất tiêu bản",
-          "import_data": "Nhập dữ liệu",
-          "import_complete": "Hoàn tất Nhập",
-          "import_summary": "Bạn đang nhập theo {society} bằng {lang}.",
-          "import_banner": {
-              "success": "Thành công",
-              "added": "Bổ sung",
-              "skipped": "Bỏ qua",
-              "denied": "Từ chối",
-              "updated": "Cập nhật",
-              "failed": "Không thành công",
-              "invalid": "Không hợp lệ",
-              "row": "Hàng"
-          },
-          "upload_csv": "Tải lên tài liệu ở định dạng CSV",
-          "language_instructions": "Chọn ngôn ngữ bản dịch được nhập.",
-          "file_instructions": "Kéo tệp ở đây hoặc chọn từ máy tính của bạn.",
-          "choose": "Chọn lựa",
-          "submit": "Nhập nội dung",
-          "reset": "Tải nội dung khác",
-          "export_template_guide": "Hướng dẫn xuất tiêu bản",
-          "export_template_instructions": "Để được hướng dẫn cách sử dụng hiệu quả tiêu bản tải hàng loạt này, vui lòng xem hướng dẫn này.",
-          "warnings": {
-              "title": "Từ chối nhập nếu bất kỳ nội dung nào sẽ ghi đè lên các phiên bản mới hơn.",
-              "on": "Có",
-              "off": "Không"
-          },
-          "overwriting": {
-              "title": "Cài đặt Ghi đè.",
-              "on": "Luôn cập nhật phiên bản này, ghi đè lên tất cả các bản sửa đổi",
-              "off": "Chỉ cập nhật các loại sự kiện có nội dung nhập mới hơn"
-          },
-          "errors": {
-              "warning_update_will_overwrite": "Hành động này sẽ ghi đè các thay đổi đã thực hiện kể từ khi tạo ra viêc xuất này",
-              "bad_request": "Tệp dữ liệu không được hình thành chính xác",
-              "bad_request_error_codes": {
-                  "30001": "Tiêu đề cột không khớp với tiêu bản",
-                  "30002": "Tên đặc tính, tin nhắn hoặc url bị thiếu",
-                  "30003": "Đặc tính Url không hợp lệ - hãy đảm bảo rằng giao thức có sẵn, ví dụ: https: \/\/",
-                  "40001": "Mã quốc gia không hợp lệ",
-                  "40002": "Hiệp hội được chọn không khớp với hiệp hội trong tệp đã chọn",
-                  "40003": "Ngày xuất tệp đã chọn không đúng nên không thể hoàn tất việc nhập vào"
-              }
-          }
+      "errors": {
+        "warning_update_will_overwrite": "Hành động này sẽ ghi đè các thay đổi đã thực hiện kể từ khi tạo ra viêc xuất này",
+        "bad_request": "Tệp dữ liệu không được hình thành chính xác",
+        "bad_request_error_codes": {
+          "30001": "Tiêu đề cột không khớp với tiêu bản",
+          "30002": "Tên đặc tính, tin nhắn hoặc url bị thiếu",
+          "30003": "Đặc tính Url không hợp lệ - hãy đảm bảo rằng giao thức có sẵn, ví dụ: https: \/\/",
+          "40001": "Mã quốc gia không hợp lệ",
+          "40002": "Hiệp hội được chọn không khớp với hiệp hội trong tệp đã chọn",
+          "40003": "Ngày xuất tệp đã chọn không đúng nên không thể hoàn tất việc nhập vào"
+        }
       }
+    }
   },
   "api_stats": {
     "page_title": "Thống kê Giao diện Lập trình Ứng dụng (API)",
@@ -525,185 +644,252 @@
     "empty": "Không tìm thấy số liệu thống kê nào trong khoảng thời gian nhất định"
   },
   "api_usage": {
-      "applications": "Các ứng dụng",
-      "view_user": "Xem người dùng",
-      "reactivate": "Kích hoạt lại",
-      "app_detail": "Chi tiết ứng dụng",
-      "app_details": "Các chi tiết ứng dụng",
-      "activity": "Hoạt động",
-      "view_all_activity": "Xem mọi hoạt động của ứng dụng này",
-      "api_users": "Người dùng API",
-      "terms_conditions": "Tất cả các phiên bản về Điều khoản & Điều kiện",
-      "view_prev_terms": "Xem các phiên bản trước",
-      "current_version": "Phiên bản hiện tại",
-      "version": "Phiên bản"
+    "applications": "Các ứng dụng",
+    "view_user": "Xem người dùng",
+    "reactivate": "Kích hoạt lại",
+    "app_detail": "Chi tiết ứng dụng",
+    "app_details": "Các chi tiết ứng dụng",
+    "activity": "Hoạt động",
+    "view_all_activity": "Xem mọi hoạt động của ứng dụng này",
+    "api_users": "Người dùng API",
+    "terms_conditions": "Tất cả các phiên bản về Điều khoản & Điều kiện",
+    "view_prev_terms": "Xem các phiên bản trước",
+    "current_version": "Phiên bản hiện tại",
+    "version": "Phiên bản"
   },
   "applications": {
-      "my_apps": "Những ứng dụng của tôi",
-      "new_tc": "Các điều khoản và điều kiện mới",
-      "build": "Xây dựng ứng dụng mới",
-      "edit": "Chỉnh sửa ứng dụng",
-      "building": "Xây dựng ứng dụng",
-      "no_apps": "Bạn chưa có ứng dụng, hãy tạo một ứng dụng để bắt đầu."
+    "my_apps": "Những ứng dụng của tôi",
+    "new_tc": "Các điều khoản và điều kiện mới",
+    "build": "Xây dựng ứng dụng mới",
+    "build_key": "Xây dựng khóa API mới",
+    "edit": "Chỉnh sửa ứng dụng",
+    "building": "Xây dựng ứng dụng",
+    "building_key": "Đang xây dựng khóa API",
+    "no_apps": "Bạn chưa có ứng dụng, hãy tạo một ứng dụng để bắt đầu.",
+    "api_keys": "Khóa API"
   },
   "home": {
-      "home": "Trang Chủ",
-      "welcome": "Chào mừng bạn",
-      "admin_intro": "Tại đây, bạn có thể quản lý người dùng, chỉnh sửa và phát hành nội dung WhatNow và xem việc sử dụng API.",
-      "ns_admin_intro": "Tại đây, bạn có thể chỉnh sửa và phát hành nội dung WhatNow",
-      "ns_editor_intro": "Tại đây bạn có thể chỉnh sửa nội dung WhatNow",
-      "api_user_intro": "Tại đây, bạn có thể xem các ứng dụng và quản lý tài khoản của mình."
+    "home": "Trang Chủ",
+    "welcome": "Chào mừng bạn",
+    "admin_intro": "Tại đây bạn có thể quản lý người dùng, chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn và xem mức sử dụng API.",
+    "ns_admin_intro": "Tại đây bạn có thể chỉnh sửa và xuất bản nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "ns_editor_intro": "Tại đây bạn có thể chỉnh sửa nội dung Cơ sở dữ liệu Tin nhắn An toàn",
+    "api_user_intro": "Tại đây, bạn có thể xem các ứng dụng và quản lý tài khoản của mình.",
+    "role_changed_title": "Vai trò của bạn đã được thay đổi",
+    "role_changed_p": "Bạn đã được chỉ định vai trò sau:",
+    "role_changed_p2": "Quyền của bạn như sau:",
+    "role_changed_confirm": "Xác nhận",
+    "role_changed_dismiss": "Đóng"
   },
   "landing": {
-      "strapline": "Dịch vụ WhatNow",
-      "strapline_part_2": "Thông điệp an toàn chính của hội Chữ thập đỏ \/ Trăng lưỡi liềm đỏ toàn cầu",
-      "developer": {
-          "strap_para_one": "Giúp cộng đồng chuẩn bị, ứng phó và phục hồi sau các mối nguy hiểm bằng các thông điệp hành động chính được bản địa hóa của chúng tôi.",
-          "strap_para_two": "Sử dụng hướng dẫn bốn bước đơn giản của chúng tôi để tích hợp các thông điệp của WhatNow vào ứng dụng của bạn. Đăng ký và đọc mọi tin nhắn có sẵn."
-      },
-      "national_society": {
-          "strap_para_one": "Công bố các thông điệp an toàn chính của hội Chữ Thập đỏ và Trăng Lưỡi liềm để truyền thông thế giới, quốc gia và địa phương tiếp cận và quảng bá.",
-          "strap_para_two": "Liên hệ với chúng tôi để tìm hiểu thêm về cách tạo thông điệp và kết nối với các đối tác truyền thông."
-      },
+    "strapline": "Dịch vụ Cơ sở dữ liệu Tin nhắn An toàn",
+    "strapline_part_2": "Thông điệp an toàn chính của hội Chữ thập đỏ \/ Trăng lưỡi liềm đỏ toàn cầu",
+    "head_1": "An toàn IFRC",
+    "head_2": "Cơ sở dữ liệu Tin nhắn",
+    "head_text_1": "Tin nhắn an toàn dựa trên Nhận thức Cộng đồng của IFRC và",
+    "head_text_2": "Tài nguyên Giáo dục Cộng đồng (PAPE)",
+    "head_bottom_1": "Truy cập và chia sẻ các tin nhắn có thể hành động đáng tin cậy của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ",
+    "head_bottom_2": "để giúp mọi người chuẩn bị an toàn cho",
+    "head_bottom_3": "và ứng phó với các mối nguy hiểm.",
+    "signup": "Đăng ký",
+    "it_works": "Cách thức hoạt động",
+    "works_1_a": "Hội Quốc gia Hội Chữ thập đỏ Trăng lưỡi liềm đỏ",
+    "works_1_b": "và các đối tác chính phủ",
+    "works_1_c": "thống nhất về các bộ tin nhắn quốc gia",
+    "works_2_a": "Các Hội Quốc gia xuất bản",
+    "works_2_b": "tin nhắn an toàn trong",
+    "works_2_c": "cơ sở dữ liệu",
+    "works_3_a": "Các cơ quan cảnh báo và",
+    "works_3_b": "các kênh liên lạc",
+    "works_3_c": "kết nối với API cơ sở dữ liệu",
+    "works_4_a": "Các đối tác chia sẻ",
+    "works_4_b": "tin nhắn thông qua",
+    "works_4_c": "các kênh của họ",
+    "works_5_a": "Cộng đồng nhận được",
+    "works_5_b": "tin nhắn và",
+    "works_5_c": "hành động an toàn",
+    "learn_more": "Tìm hiểu thêm",
+    "watch_video": "Xem video",
+    "example_case": "Trường hợp Sử dụng Ví dụ",
+    "api": "API",
+    "hurricane": "Bao gồm tin nhắn với cảnh báo sớm về bão",
+    "warning_alerts": "cảnh báo sớm",
+    "social_media": "Mạng xã hội",
+    "post_images": "Đăng hình ảnh về sự chuẩn bị cho cháy rừng",
+    "messages_network": "tin nhắn cho mạng của bạn",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Chia sẻ các hành động giảm thiểu lũ lụt với",
+    "family": "gia đình và bạn bè của bạn",
+    "impact": "Tác động",
+    "sign_up_today": "Đăng ký ngay hôm nay",
+    "developer": {
       "strap_para_one": "Giúp cộng đồng chuẩn bị, ứng phó và phục hồi sau các mối nguy hiểm bằng các thông điệp hành động chính được bản địa hóa của chúng tôi.",
-      "strap_para_two": "Sử dụng hướng dẫn bốn bước đơn giản của chúng tôi để tích hợp các thông điệp của WhatNow vào ứng dụng của bạn. Đăng ký và đọc mọi tin nhắn có sẵn.",
-      "view_data": "Xem dữ liệu",
-      "view_message_library": "Xem tin nhắn của WhatNow",
-      "what_now": "WhatNow ư?",
-      "fake_alert_heading": "Cảnh báo cực lạnh",
-      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-      "fake_alert_time": "CÁCH ĐÂY 1 GIỜ",
-      "fake_alert_time_exact": "05\/02\/2018 lúc 05:15 CT",
-      "use_cases": {
-          "heading": "Tìm hiểu thêm",
-          "first_heading": "Cách nó hoạt động",
-          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "second_heading": "Trường hợp sử dụng",
-          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "third_heading": "Bộ công cụ triển khai",
-          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fourth_heading": "Vi đê ô về WhatNow",
-          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fifth_heading": "Nâng cao ứng dụng về thời tiết",
-          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-      },
-      "example_alert": {
-          "heading": "Định dạng mẫu thông báo WhatNow",
-          "alert_preview": "Xem trước cảnh báo",
-          "what_now_info": "Xem trước WhatNow",
-          "example_whatnow_request": "Phản hồi mẫu WhatNow",
-          "example_alert_request": "Phản hồi mẫu cảnh báo",
-          "example_content": "Báo cáo Thời tiết # 3 CUỐI CÙNG kể từ 11 giờ sáng, tháng 1. ngày 29 năm 2018\n Cho phần sau luồng không khí lạnh\n\nTác động của phần sau luồng không khí lạnh đã suy yếu. Trải nghiệm các điều kiện thời tiết đã cải thiện ở Nome. Tuy nhiên, dự kiến có mưa rào hoặc sấm sét, đặc biệt là về chiều và tối, tại các khu vực ở hướng Tây.\n\nVới diễn biến này, đây là báo cáo cuối cùng cho hệ thống thời tiết này.",
-          "example_content_location_header": "VỊ TRÍ ẢNH HƯỞNG",
-          "example_content_location": "Nome, Alaska"
-      },
-      "example_whatnow": {
-          "alert_from": "Cảnh báo từ: hội Chữ Thập đỏ Hoa Kỳ",
-          "more_info": "Thêm thông tin",
-          "heading": "Thông điệp chính về cái lạnh khắc nghiệt",
-          "copy": "Cần hành động để giảm thiểu rủi ro, bảo vệ bạn và gia đình của bạn khỏi cái lạnh khắc nghiệt.",
-          "what_now": "WhatNow",
-          "step_1": "Bảo vệ ngôi nhà của bạn. Kiểm tra các đường ống và sử dụng các nguồn sưởi ấm một cách an toàn.",
-          "step_2": "Uống đủ nước với chất lỏng ấm",
-          "step_3": "Bảo vệ bản thân với quần áo ấm và che vùng da hở",
-          "step_4": "Hãy lưu ý và thận trọng với các điều kiện băng giá, đặc biệt là khi lái xe",
-          "step_5": "Kiểm tra hàng xóm, bạn bè và những người có nguy cơ"
-      },
-      "build": {
-          "heading": "Bạn đã sẵn sàng xây dựng ứng dụng chưa?"
-      },
-      "data_preview": {
-          "heading": "Thông điệp của WhatNow",
-          "sub_heading": "Đăng ký và xem các thông điệp hành động chính của các Hiệp hội quốc gia Chữ thập đỏ \/ Trăng lưỡi liềm đỏ trên toàn thế giới"
-      },
-      "footer": {
-          "terms_conditions": "Điều khoản & điều kiện",
-          "about": "Về",
-          "privacy": "Quyền riêng tư",
-          "getting_started": "Bắt đầu",
-          "docs": "Tài liệu",
-          "give_feedback": "Đưa ra phản hồi",
-          "gdpc_logo": "Biểu trưng của Trung tâm Ứng phó Thảm họa Toàn cầu",
-          "ifrc_logo": "Biểu trưng cho Phong trào Chữ thập đỏ và Trăng lưỡi liềm đỏ quốc tế"
-      }
+      "strap_para_two": "Sử dụng hướng dẫn bốn bước dễ dàng của chúng tôi để tích hợp các tin nhắn An toàn vào ứng dụng của bạn. Đăng ký và xem tất cả các tin nhắn có sẵn."
+    },
+    "national_society": {
+      "strap_para_one": "Công bố các thông điệp an toàn chính của hội Chữ Thập đỏ và Trăng Lưỡi liềm để truyền thông thế giới, quốc gia và địa phương tiếp cận và quảng bá.",
+      "strap_para_two": "Liên hệ với chúng tôi để tìm hiểu thêm về cách tạo thông điệp và kết nối với các đối tác truyền thông."
+    },
+    "strap_para_one": "Giúp cộng đồng chuẩn bị, ứng phó và phục hồi sau các mối nguy hiểm bằng các thông điệp hành động chính được bản địa hóa của chúng tôi.",
+    "strap_para_two": "Sử dụng hướng dẫn bốn bước dễ dàng của chúng tôi để tích hợp các tin nhắn An toàn vào ứng dụng của bạn. Đăng ký và xem tất cả các tin nhắn có sẵn.",
+    "view_data": "Xem dữ liệu",
+    "view_message_library": "Xem Thư viện Tin nhắn An toàn",
+    "what_now": "WhatNow ư?",
+    "fake_alert_heading": "Cảnh báo cực lạnh",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "CÁCH ĐÂY 1 GIỜ",
+    "fake_alert_time_exact": "05\/02\/2018 lúc 05:15 CT",
+    "use_cases": {
+      "heading": "Tìm hiểu thêm",
+      "first_heading": "Cách nó hoạt động",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "Trường hợp sử dụng",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "Bộ công cụ triển khai",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "Vi đê ô về WhatNow",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "Nâng cao ứng dụng về thời tiết",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "Định dạng Tin nhắn An toàn Mẫu",
+      "alert_preview": "Xem trước cảnh báo",
+      "what_now_info": "Xem trước Tin nhắn An toàn",
+      "example_whatnow_request": "Phản hồi Cơ sở dữ liệu Tin nhắn An toàn Mẫu",
+      "example_alert_request": "Phản hồi mẫu cảnh báo",
+      "example_content": "Báo cáo Thời tiết # 3 CUỐI CÙNG kể từ 11 giờ sáng, tháng 1. ngày 29 năm 2018\n Cho phần sau luồng không khí lạnh\n\nTác động của phần sau luồng không khí lạnh đã suy yếu. Trải nghiệm các điều kiện thời tiết đã cải thiện ở Nome. Tuy nhiên, dự kiến có mưa rào hoặc sấm sét, đặc biệt là về chiều và tối, tại các khu vực ở hướng Tây.\n\nVới diễn biến này, đây là báo cáo cuối cùng cho hệ thống thời tiết này.",
+      "example_content_location_header": "VỊ TRÍ ẢNH HƯỞNG",
+      "example_content_location": "Nome, Alaska"
+    },
+    "example_whatnow": {
+      "alert_from": "Cảnh báo từ: hội Chữ Thập đỏ Hoa Kỳ",
+      "more_info": "Thêm thông tin",
+      "heading": "Tin nhắn An toàn cho Thời tiết Lạnh Cực độ",
+      "copy": "Cần hành động để giảm thiểu rủi ro, bảo vệ bạn và gia đình của bạn khỏi cái lạnh khắc nghiệt.",
+      "what_now": "Cơ sở dữ liệu Tin nhắn An toàn IFRC",
+      "step_1": "Bảo vệ ngôi nhà của bạn. Kiểm tra các đường ống và sử dụng các nguồn sưởi ấm một cách an toàn.",
+      "step_2": "Uống đủ nước với chất lỏng ấm",
+      "step_3": "Bảo vệ bản thân với quần áo ấm và che vùng da hở",
+      "step_4": "Hãy lưu ý và thận trọng với các điều kiện băng giá, đặc biệt là khi lái xe",
+      "step_5": "Kiểm tra hàng xóm, bạn bè và những người có nguy cơ"
+    },
+    "build": {
+      "heading": "Bạn đã sẵn sàng xây dựng ứng dụng chưa?"
+    },
+    "data_preview": {
+      "heading": "Tin nhắn An toàn",
+      "sub_heading": "Đăng ký và xem các thông điệp hành động chính của các Hiệp hội quốc gia Chữ thập đỏ \/ Trăng lưỡi liềm đỏ trên toàn thế giới"
+    },
+    "footer": {
+      "terms_conditions": "Điều khoản & điều kiện",
+      "about": "Về",
+      "privacy": "Quyền riêng tư",
+      "getting_started": "Bắt đầu",
+      "docs": "Tài liệu",
+      "give_feedback": "Đưa ra phản hồi",
+      "gdpc_logo": "Biểu trưng của Trung tâm Ứng phó Thảm họa Toàn cầu",
+      "ifrc_logo": "Biểu trưng cho Phong trào Chữ thập đỏ và Trăng lưỡi liềm đỏ quốc tế",
+      "subtitle_1": "Giới thiệu về Cơ sở dữ liệu An toàn Chính của IFRC",
+      "text_1": "Cơ sở dữ liệu An toàn Chính của IFRC cung cấp quyền truy cập vào",
+      "text_2": "các tin nhắn của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ về cách mọi người",
+      "text_3": "có thể hành động an toàn khi đối mặt với nguy hiểm",
+      "subtitle_2": "Tìm hiểu thêm",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "Chính sách",
+      "terms": "Điều khoản và Điều kiện",
+      "subtitle_4": "Liên kết hữu ích",
+      "api_doc": "Tài liệu API",
+      "faq": "Câu hỏi thường gặp (liên kết sẽ được cung cấp)"
+    }
   },
   "register_form": {
-      "heading": "Tạo tài khoản Dịch vụ WhatNow miễn phí của bạn",
-      "who_are_you": "Bạn là ai?",
-      "developer": "Nhà phát triển",
-      "national_society": "Xã hội quốc gia",
-      "sign_up_with": "Đăng ký với:",
-      "sign_up_agreement": "Bằng cách tạo tài khoản của bạn, bạn đồng ý với ",
-      "terms_conditions": "Các điều khoản và điều kiện ",
-      "facebook": "Đăng ký với Facebook",
-      "google": "Đăng ký với Google",
-      "email_sign_up": "Hoặc đăng ký bằng email của bạn:",
-      "location": "Địa điểm",
-      "organisation": "Tổ chức",
-      "industry": "Loại công nghiệp",
-      "create_account": "Tạo tài khoản",
-      "last_name": "Họ",
-      "select_country": "Chọn một quốc gia",
-      "select_industry": "Chọn loại ngành",
-      "industries": {
-          "media": "Đa phương tiện",
-          "emergency": "Quản lý khẩn cấp",
-          "non_profit": "Phi lợi nhuận \/ NGO",
-          "humanitarian": "Tổ chức Nhân đạo",
-          "red_cross": "Chữ thập đỏ \/ Trăng lưỡi liềm đỏ",
-          "education": "Giáo dục \/ Học viện",
-          "gov": "Cơ quan chính phủ",
-          "other": "Khác"
-      },
-      "api_used_in": "API này sẽ được sử dụng ở đâu?",
-      "api_used_in_help": "Bây giờ, hãy cho chúng tôi biết bạn dự định sử dụng dịch vụ này như thế nào với dưới 255 ký tự",
-      "welcome": "Chào mừng {tên}, vui lòng điền đầy đủ thông tin sau để bắt đầu:",
-      "gdpc_note": "Mọi thắc mắc hoặc muốn tìm hiểu thêm, vui lòng liên hệ: ",
-      "gdpc_ns_note": "Để đăng ký, vui lòng liên hệ với nhóm Dịch vụ WhatNow tại Trung tâm Ứng phó Thảm họa Toàn cầu tại ",
-      "contact_gdpc": "Liên hệ với GDPC"
+    "heading_1": "Tạo miễn phí của bạn",
+    "heading_2": "IFRC",
+    "heading_3": "Cơ sở dữ liệu Tin nhắn An toàn",
+    "subtitle_1": "Giúp cộng đồng chuẩn bị và ứng phó với các nguy hiểm địa phương bằng các tin nhắn an toàn có thể hành động của Hội Chữ thập đỏ Trăng lưỡi liềm đỏ.",
+    "subtitle_2": "Nếu bạn muốn truy cập bằng API, hãy đăng ký và chia sẻ tin nhắn với hướng dẫn #-bước.",
+    "subtitle_3": "Nếu bạn là Hội Quốc gia Hội Chữ thập đỏ Trăng lưỡi liềm đỏ, hãy đăng ký và bạn sẽ nhận được hướng dẫn về cách điều chỉnh và chia sẻ tin nhắn an toàn của mình.",
+    "who_are_you": "Bạn là ai?",
+    "what_is_your_role": "Vai trò của bạn là gì?",
+    "description": "SAO CHÉP ĐANG CHỜ XỬ LÝ",
+    "national_society_description": "Xuất bản các tin nhắn an toàn chính của Hội Quốc gia RCRC của bạn để truyền thông toàn cầu, quốc gia và địa phương truy cập và phát sóng.\nLiên hệ với chúng tôi để tìm hiểu thêm về cách tạo tin nhắn và kết nối với các đối tác truyền thông.",
+    "developer": "Nhà phát triển",
+    "national_society": "Xã hội quốc gia",
+    "sign_up_with": "Đăng ký với:",
+    "sign_up_agreement": "Bằng cách tạo tài khoản của bạn, bạn đồng ý với ",
+    "terms_conditions": "Các điều khoản và điều kiện ",
+    "facebook": "Đăng ký với Facebook",
+    "google": "Đăng ký với Google",
+    "email_sign_up": "Hoặc đăng ký bằng email của bạn:",
+    "mail": "thư",
+    "email_ifrc": "im@ifrc.org",
+    "location": "Địa điểm",
+    "organisation": "Tổ chức",
+    "industry": "Loại công nghiệp",
+    "create_account": "Tạo tài khoản",
+    "last_name": "Họ",
+    "select_country": "Chọn một quốc gia",
+    "select_industry": "Chọn loại ngành",
+    "industries": {
+      "media": "Đa phương tiện",
+      "emergency": "Quản lý khẩn cấp",
+      "non_profit": "Phi lợi nhuận \/ NGO",
+      "humanitarian": "Tổ chức Nhân đạo",
+      "red_cross": "Chữ thập đỏ \/ Trăng lưỡi liềm đỏ",
+      "education": "Giáo dục \/ Học viện",
+      "gov": "Cơ quan chính phủ",
+      "other": "Khác"
+    },
+    "api_used_in": "API này sẽ được sử dụng ở đâu?",
+    "api_used_in_help": "Bây giờ, hãy cho chúng tôi biết bạn dự định sử dụng dịch vụ này như thế nào với dưới 255 ký tự",
+    "welcome": "Chào mừng {tên}, vui lòng điền đầy đủ thông tin sau để bắt đầu:",
+    "ifrc_note": "Đối với câu hỏi hoặc biết thêm thông tin, vui lòng liên hệ:",
+    "contact_gdpc": "Liên hệ với GDPC"
   },
   "terms_service_page": {
     "applicable_law": {
-        "body": "Luật của Đặc khu Columbia sẽ điều chỉnh tất cả các quyền và nghĩa vụ theo Thỏa thuận này, mà không ảnh hưởng đến bất kỳ nguyên tắc xung đột pháp luật nào.",
-        "heading": "Luật áp dụng:"
+      "body": "Luật của Đặc khu Columbia sẽ điều chỉnh tất cả các quyền và nghĩa vụ theo Thỏa thuận này, mà không ảnh hưởng đến bất kỳ nguyên tắc xung đột pháp luật nào.",
+      "heading": "Luật áp dụng:"
     },
     "body": "Bạn có trách nhiệm duy trì tính bí mật và bảo mật của khóa đăng ký do Hội Chữ thập Đỏ cung cấp cho Bạn. Bạn chịu trách nhiệm duy trì khả năng tương thích với API, được cập nhật theo thời gian, để tiếp tục nhận được Nguồn cấp dữ liệu. Hội Chữ thập Đỏ có thể phát hành các phiên bản cập nhật của API và Nguồn cấp dữ liệu theo quyết định riêng của mình. Các phiên bản mới có thể không tương thích với các triển khai trước đó và Bạn đồng ý sử dụng phiên bản cập nhật gần đây nhất của Nguồn cấp dữ liệu.\n\nBạn đồng ý không sửa đổi, phân phối, dịch ngược, tháo rời hoặc thiết kế đối chiếu bất kỳ phần nào của API hoặc bất kỳ phần mềm nào của Hội Chữ thập Đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách vượt quá khối lượng yêu cầu hợp lý hoặc cấu thành việc sử dụng quá mức hoặc lạm dụng, theo quyết định riêng của Hội Chữ thập đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách bất hợp pháp, gây hiểu lầm, cẩu thả, độc hại, có ý định gây hại hoặc gây hại cho Hội Chữ thập đỏ, các nhà cung cấp dịch vụ, nhà cung cấp nội dung của Hội chữ thập đỏ hoặc bất kỳ người nào khác, theo quyết định của Hội Chữ thập Đỏ theo quyết định của riêng mình.\n\n\nChữ thập đỏ có thể giám sát việc sử dụng API và Nguồn cấp dữ liệu của bạn. Bạn không được sử dụng bất kỳ phương tiện kỹ thuật nào để can thiệp vào việc giám sát đó, và Hội Chữ thập đỏ có thể sử dụng các phương tiện kỹ thuật để khắc phục bất kỳ sự can thiệp nào như vậy.\n\nViệc sử dụng các Thông báo Chuẩn bị, Trả lời và Khôi phục sẽ chỉ được trình bày dưới dạng hiện tại hoặc được cập nhật theo cài đặt khẩn cấp hiện tại của Cảnh báo sự kiện tương ứng và bạn sẽ cập nhật các Thông báo Chuẩn bị, Trả lời và Khôi phục riêng lẻ khi có bất kỳ bản cập nhật nào của Nguồn cấp dữ liệu và \/ hoặc Cảnh báo sự kiện tương quan của Hội Chữ thập đỏ.\n\nCác Tin nhắn Soạn thảo, Trả lời và Khôi phục Cá nhân Bạn sử dụng sẽ chỉ được liên kết với khu vực địa lý mà nó được phát hành. Nếu một Thông báo Chuẩn bị, Trả lời và Phục hồi bao gồm tham chiếu đến một nguồn như Hội Chữ thập đỏ Hoa Kỳ hoặc một tổ chức hoặc xã hội quốc gia Chữ thập đỏ hoặc Trăng lưỡi liềm đỏ khác (mỗi một \"Nguồn tham khảo\"), Bạn sẽ bao gồm Tham chiếu Nguồn được liên kết với mỗi Chuẩn bị, Trả lời và Khôi phục Thư ở dạng được cung cấp trong Nguồn cấp dữ liệu. Bạn sẽ không sử dụng thêm bất kỳ Tham chiếu Nguồn nào.\n\nBạn không được dịch Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục thông báo sang bất kỳ ngôn ngữ nào khác, sử dụng, chỉnh sửa hoặc sửa đổi hoặc thay đổi (các) ý nghĩa của Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Tin nhắn.\n\nBạn phải đảm bảo rằng Nguồn cấp dữ liệu, vẫn thuộc quyền sở hữu và \/ hoặc quyền kiểm soát duy nhất của bạn.\n\nBạn không thể cho phép Thông báo Sự kiện và Chuẩn bị, Trả lời và Khôi phục Thông báo được gửi đến Người dùng Cuối để kết hợp bất kỳ quảng cáo hoặc tài trợ nào.\n\nBạn không được phép lưu trữ toàn bộ hoặc một phần Nguồn cấp dữ liệu.",
     "contact": "Vui lòng liên hệ với Hội Chữ thập đỏ tại {0} nếu có bất kỳ câu hỏi nào liên quan đến API.",
     "disclaimer": "API và Nguồn cấp dữ liệu được cung cấp CHỈ CHO CÁC MỤC ĐÍCH VỀ THÔNG TIN VÀ GIÁO DỤC VÀ trên cơ sở 'nguyên trạng' và 'nếu có'. Hội Chữ thập Đỏ không tuyên bố hoặc bảo đảm dưới bất kỳ hình thức nào, rõ ràng hay ngụ ý. Hội chữ thập đỏ từ chối mọi bảo đảm, rõ ràng hay ngụ ý, bao gồm nhưng không giới hạn ở những bảo đảm ngụ ý về khả năng bán được và tính phù hợp cho một mục đích cụ thể. Hội Chữ thập Đỏ và các nhân viên, viên chức, thống đốc và các đại lý và người cấp phép sẽ không chịu trách nhiệm về những thiệt hại dưới bất kỳ hình thức nào phát sinh từ việc sử dụng API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo bao gồm nhưng không giới hạn đối với các thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, trừng phạt và do hậu quả.\n\nHội Chữ thập Đỏ không đảm bảo trình tự, độ chính xác, tính xác thực hoặc tính hoàn chỉnh của API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo và sẽ không chịu trách nhiệm pháp lý dưới bất kỳ hình thức nào đối với Bạn hoặc Người dùng cuối của bạn hoặc bất kỳ bên thứ ba nào bên, bao gồm nhưng không giới hạn, đối với bất kỳ sự chậm trễ, không chính xác, lỗi hoặc thiếu sót nào, liên quan đến API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo được cung cấp dưới đây.",
     "entire_agreement": {
-        "body": "Các Điều Khoản này là thỏa thuận cuối cùng, đầy đủ và độc quyền của các bên liên quan đến vấn đề này và thay thế và hợp nhất tất cả các thảo luận trước đó giữa các bên liên quan đến vấn đề này. Hội Chữ thập đỏ có quyền sửa đổi hoặc thu hồi thỏa thuận này bất kỳ lúc nào.",
-        "heading": "Toàn bộ thỏa thuận:"
+      "body": "Các Điều Khoản này là thỏa thuận cuối cùng, đầy đủ và độc quyền của các bên liên quan đến vấn đề này và thay thế và hợp nhất tất cả các thảo luận trước đó giữa các bên liên quan đến vấn đề này. Hội Chữ thập đỏ có quyền sửa đổi hoặc thu hồi thỏa thuận này bất kỳ lúc nào.",
+      "heading": "Toàn bộ thỏa thuận:"
     },
     "heading": "API KẾT THÚC THỎA THUẬN CẤP PHÉP NGƯỜI DÙNG",
     "intro": "THỎA THUẬN: BẰNG CÁCH SỬ DỤNG DỊCH VỤ HOẶC KIỂM TRA HỘP ĐƯỢC CUNG CẤP, NGƯỜI DÙNG ĐỒNG Ý BỊ TRẢ LẠI THEO THỎA THUẬN NÀY.\n\nAPI là một công cụ cho phép bạn (“Bạn”) truy xuất và sử dụng nguồn cấp dữ liệu do Hội Chữ Thập Đỏ cung cấp, bao gồm nguồn cấp dữ liệu về cảnh báo thời tiết và thảm họa toàn cầu và thông báo xem (“Cảnh báo sự kiện”) và nguồn cấp dữ liệu có thể hành động và theo ngữ cảnh thông báo về cách chuẩn bị đối phó với các mối nguy hiểm cục bộ theo loại nguy cơ và mức độ khẩn cấp (“Chuẩn bị, Phản hồi và Khôi phục Thông báo” và gọi chung là Cảnh báo Sự kiện, “Nguồn cấp dữ liệu”). Thông báo Chuẩn bị, Phản hồi và Khôi phục được tạo ra nhằm mục đích đi kèm với Cảnh báo sự kiện hoặc các cảnh báo và theo dõi khác có kiên quan đến thời tiết hoặc thảm hoạ trong ứng dụng riêng của bạn. Việc sử dụng Nguồn cấp dữ liệu của bạn được quản lý bởi các điều khoản API.",
     "license_limitations": {
-        "body": "Bạn chỉ có thể sử dụng Nguồn cấp dữ liệu liên quan đến ứng dụng của bạn được quản lý bới các điều khoản API, và miễn là bạn duy trì khả năng tương thích với API được cập nhật theo thời gian. \nBạn được cấp một quyền không độc quyền, có giới hạn và có thể thu hồi để tải về, sử dụng và phân phát đến người dùng ứng dụng chính của bạn (\"Người dùng chính\") những Thông tin Cảnh báo và những ngữ cảnh có liên quan đến việc Chuẩn bị, Phản hồi và Khôi phục liên quan đến thiết lập khẩn cấp của Cảnh báo Sự kiện cá nhân từ Nguồn cung cấp dữ liệu, tuân theo điểu khoản API. Bạn chỉ có thể sử dụng API để sử dụng Nguồn cung cấp dữ liệu cho các mục đích phi thương mại phù hợp với các điều khoản của API. Trong bất kỳ trường hợp nào, bạn không được dùng API để sử dụng Nguồn cung cấp dữ liệu, Thông tin cảnh báo, hoặc\/và tin nhắn Chuẩn bị, Phản hồi và Khôi phục cho mục đích thương mại, bao gồm nhưng không giới hạn, bán lại, tính phí để truy cập, phân phối hoặc tạo ra các tác phẩm khác dựa nào nó. Hội Chữ Thập Đỏ và người cấp phép của Hội duy trì tất cả chứng thư, quyền sở hữu, quyền và lợi ích trong và đối với API, tin nhắn Chuẩn bị, Phản hồi và Khôi phục, Thông tin cảnh báo, Nguồn cung cấp dữ liệu, và Nguồn Tham Khảo (như được định nghĩa bên dưới). \nTất cả các quyền không được cung cấp rõ ràng đều được bảo lưu.",
-        "heading": "Giấy phép và những điều khoản hạn chế:"
+      "body": "Bạn chỉ có thể sử dụng Nguồn cấp dữ liệu liên quan đến ứng dụng của bạn được quản lý bới các điều khoản API, và miễn là bạn duy trì khả năng tương thích với API được cập nhật theo thời gian. \nBạn được cấp một quyền không độc quyền, có giới hạn và có thể thu hồi để tải về, sử dụng và phân phát đến người dùng ứng dụng chính của bạn (\"Người dùng chính\") những Thông tin Cảnh báo và những ngữ cảnh có liên quan đến việc Chuẩn bị, Phản hồi và Khôi phục liên quan đến thiết lập khẩn cấp của Cảnh báo Sự kiện cá nhân từ Nguồn cung cấp dữ liệu, tuân theo điểu khoản API. Bạn chỉ có thể sử dụng API để sử dụng Nguồn cung cấp dữ liệu cho các mục đích phi thương mại phù hợp với các điều khoản của API. Trong bất kỳ trường hợp nào, bạn không được dùng API để sử dụng Nguồn cung cấp dữ liệu, Thông tin cảnh báo, hoặc\/và tin nhắn Chuẩn bị, Phản hồi và Khôi phục cho mục đích thương mại, bao gồm nhưng không giới hạn, bán lại, tính phí để truy cập, phân phối hoặc tạo ra các tác phẩm khác dựa nào nó. Hội Chữ Thập Đỏ và người cấp phép của Hội duy trì tất cả chứng thư, quyền sở hữu, quyền và lợi ích trong và đối với API, tin nhắn Chuẩn bị, Phản hồi và Khôi phục, Thông tin cảnh báo, Nguồn cung cấp dữ liệu, và Nguồn Tham Khảo (như được định nghĩa bên dưới). \nTất cả các quyền không được cung cấp rõ ràng đều được bảo lưu.",
+      "heading": "Giấy phép và những điều khoản hạn chế:"
     },
     "overview": {
-        "body": "Giao diện ứng dụng trung tâm chuẩn bị ứng phó với thảm họa toàn cầu WhatNow (\"API\") được cung cấp đến bạn bới Hội Chữ Thập Đỏ Hoa Kỳ (\"Hội Chữ Thập Đỏ\")\r API yêu cầu mã đăng ký  Trong quá trình đăng ký, bạn phải đồng ý với những điều khoản và điều kiện dưới đây, cùng với những điều khoản và điều kiện trong Thoả thuận điều khoản dịch vụ của trang web Hội Chữ Thập Đỏ có sẵn tại {0} (được gọi chung là \"điều khoản API\"\r Các điều khoản API sẽ quản lý việc sử dụng API và các tài liệu điện tử tải xuống từ API. {1}",
-        "cta": "Nhấp vào đây để đăng ký."
+      "body": "Giao diện Chương trình Ứng dụng Dịch vụ Cơ sở dữ liệu Tin nhắn An toàn Trung tâm Chuẩn bị Thảm họa Toàn cầu (“API”) được Cung cấp cho bạn bởi Hội Chữ thập đỏ Quốc gia Hoa Kỳ (“Hội Chữ thập đỏ”). API yêu cầu khóa đăng ký. Trong quá trình đăng ký, bạn phải đồng ý với các điều khoản và điều kiện sau, cùng với các điều khoản và điều kiện trong Thỏa thuận Điều khoản Dịch vụ Trang web của Hội Chữ thập đỏ có tại {0} (gọi chung là “Điều khoản API”). Điều khoản API sẽ chi phối việc bạn sử dụng API và các tài liệu điện tử có thể tải xuống được cung cấp thông qua API. {1}",
+      "cta": "Nhấp vào đây để đăng ký."
     },
     "privacy_policy": {
-        "body": "Bạn hiểu, thừa nhận và chấp thuận rằng hoạt động của một số chương trình, dịch vụ, công cụ, lựa chọn mua sắm, tài liệu hoặc thông tin trong API yêu cầu gửi, sử dụng và phổ biến các thông tin nhận dạng cá nhân khác nhau. Theo đó, nếu Bạn muốn truy cập và sử dụng API, Bạn thừa nhận và chấp thuận rằng việc Bạn sử dụng API sẽ thiết lập sự đồng thuận trong việc thu thập và sử dụng thông tin nhận dạng cá nhân có trong chính sách bảo mật đã đăng: {0}",
-        "heading": "Chính sách bảo mật:"
+      "body": "Bạn hiểu, thừa nhận và chấp thuận rằng hoạt động của một số chương trình, dịch vụ, công cụ, lựa chọn mua sắm, tài liệu hoặc thông tin trong API yêu cầu gửi, sử dụng và phổ biến các thông tin nhận dạng cá nhân khác nhau. Theo đó, nếu Bạn muốn truy cập và sử dụng API, Bạn thừa nhận và chấp thuận rằng việc Bạn sử dụng API sẽ thiết lập sự đồng thuận trong việc thu thập và sử dụng thông tin nhận dạng cá nhân có trong chính sách bảo mật đã đăng: {0}",
+      "heading": "Chính sách bảo mật:"
     },
     "prohibited_activities": {
-        "body": "Bạn và người dùng chính hoặc người đại diện không được phép sử dụng API hoặc Nguồn cung cấp dữ liệu theo những cách sau:",
-        "heading": "Các Hoạt động và Hành vi bị cấm:",
-        "prohibited_list": {
-            "one": "Can thiệp hoặc làm gián đoạn các dịch vụ hoặc máy chủ của Hội Chữ Thập Đỏ.",
-            "two": "Phá vỡ hoặc sửa đổi bất kỳ mã khóa hoặc cơ chế bảo mật được sử dụng bởi Hội Chữ Thập Đỏ hoặc API, bao gồm nhưng không giới hạn bất kỳ công nghệ xác thực nào.",
-            "three": "Yêu cầu, thu thập, gạ gẫm để có được quyền truy cập vào tên đăng nhập, mật khẩu và những thông tin xác thực khác của Hội Chữ Thập Đỏ ngoài những gì được cung cấp cho Bạn và tài khoản của bạn.",
-            "four": "Tuyên bố hoặc ngụ ý rằng bạn có liên kết, được tài trợ hoặc ủng hội bởi Hội Chữ Thập Đỏ hoặc những cộng đồng quốc qua và tổ chức của Hội Chữ Thập Đỏ và Trăng Lưỡi Liềm.",
-            "five": "Tuyên bố hoặc ngụ ý rằng bạn sở hữu hoặc tạo ra API, Nguồn cấp dữ liệu, Cảnh báo sự kiện hoặc\/và những tin nhắn Chuẩn bị, Phản hồi và Khôi phục.",
-            "six": "Truyền tải virus, sâu máy tính, Trojan, hoặc bất kỳ phần tử có tính chất gây hại nào."
-        }
+      "body": "Bạn và người dùng chính hoặc người đại diện không được phép sử dụng API hoặc Nguồn cung cấp dữ liệu theo những cách sau:",
+      "heading": "Các Hoạt động và Hành vi bị cấm:",
+      "prohibited_list": {
+        "one": "Can thiệp hoặc làm gián đoạn các dịch vụ hoặc máy chủ của Hội Chữ Thập Đỏ.",
+        "two": "Phá vỡ hoặc sửa đổi bất kỳ mã khóa hoặc cơ chế bảo mật được sử dụng bởi Hội Chữ Thập Đỏ hoặc API, bao gồm nhưng không giới hạn bất kỳ công nghệ xác thực nào.",
+        "three": "Yêu cầu, thu thập, gạ gẫm để có được quyền truy cập vào tên đăng nhập, mật khẩu và những thông tin xác thực khác của Hội Chữ Thập Đỏ ngoài những gì được cung cấp cho Bạn và tài khoản của bạn.",
+        "four": "Tuyên bố hoặc ngụ ý rằng bạn có liên kết, được tài trợ hoặc ủng hội bởi Hội Chữ Thập Đỏ hoặc những cộng đồng quốc qua và tổ chức của Hội Chữ Thập Đỏ và Trăng Lưỡi Liềm.",
+        "five": "Tuyên bố hoặc ngụ ý rằng bạn sở hữu hoặc tạo ra API, Nguồn cấp dữ liệu, Cảnh báo sự kiện hoặc\/và những tin nhắn Chuẩn bị, Phản hồi và Khôi phục.",
+        "six": "Truyền tải virus, sâu máy tính, Trojan, hoặc bất kỳ phần tử có tính chất gây hại nào."
+      }
     },
     "reserve_rights": "Hội Chữ Thập Đỏ có quyền thay đổi hoặc\/và ngừng cung cấp một phần hoặc toàn bộ API và Nguồn cấp dữ liệu, tạm thời hoặc vĩnh viễn mà không cần thông báo trước. Để tránh nghi ngờ, Hội Chữ Thập Đỏ không có nghĩa vụ phải cung cấp API và Nguồn cấp dữ liệu cho Bạn, và Bạn hiểu và chấp thuận rằng quyền truy cập thuộc quyền quyết định duy nhất và tuyệt đối của Hội Chữ Thập Đỏ",
     "severability": {
-        "body": "\nTính không hợp lệ của bất kỳ điều khoản nào của Điều khoản API sẽ không ảnh hưởng đến hiệu lực của bất kỳ điều khoản nào khác",
-        "heading": "Hiệu lực pháp lý và Quyền tự bỏ kiện tụng:"
+      "body": "\nTính không hợp lệ của bất kỳ điều khoản nào của Điều khoản API sẽ không ảnh hưởng đến hiệu lực của bất kỳ điều khoản nào khác",
+      "heading": "Hiệu lực pháp lý và Quyền tự bỏ kiện tụng:"
     },
     "suspension": {
       "body": "Hội Chữ Thập Đỏ có quyền đình chỉ hoặc chấm dứt quyền truy cập của bạn nếu Hội Chữ Thập Đỏ xác định, quyền quyết địch duy nhất của Hội Chữ Thập Đỏ, là Bạn đang tham gia vào việc sử dụng trái phép các API hoặc Nguồn cung cấp dữ liệu như được nêu trong các điều khoản API hoặc Bạn đang sử dụng API hoặc Nguồn cung cấp dữ liệu trong bất kỳ hoạt động đe dọa \/ xâm phạm đến sự an toàn hoặc\/và bảo mật của bất kỳ người nào hoặc của mạng lưới Chữ Thập Đỏ",
@@ -711,111 +897,121 @@
     }
   },
   "view_data": {
-      "alert_title": "CẢNH BÁO:",
-      "more_info": "Đọc thêm:",
-      "which": "Bạn muốn xem tin nhắn nào từ WhatNow?",
-      "view_data": "Xem dữ liệu",
-      "alerts": "Cảnh báo",
-      "alert_preview": "Xem trước cảnh báo",
-      "cap_alerts": "Cảnh báo CAP",
-      "onset": "Bắt đầu",
+    "alert_title": "CẢNH BÁO:",
+    "more_info": "Đọc thêm:",
+    "which": "Bạn muốn xem Tin nhắn An toàn nào?",
+    "view_data": "Xem dữ liệu",
+    "alerts": "Cảnh báo",
+    "alert_preview": "Xem trước cảnh báo",
+    "cap_alerts": "Cảnh báo CAP",
+    "onset": "Bắt đầu",
+    "severity": "Mức độ nghiêm trọng",
+    "title": "Đề mục",
+    "date": "Ngày tháng",
+    "headline": "Đầu đề",
+    "alert": "Cảnh báo",
+    "whatnow_info": "Thông tin Cơ sở dữ liệu Tin nhắn An toàn",
+    "alert_detail": "Chi tiết cảnh báo",
+    "more": "Đọc thêm",
+    "area_affected": "Khu vực chịu ảnh hưởng",
+    "details": "Chi tiết",
+    "cap": {
+      "type": "Loại",
+      "status": "Tình trạng",
+      "urgency": "Mức độ khẩn cấp",
       "severity": "Mức độ nghiêm trọng",
-      "title": "Đề mục",
-      "date": "Ngày tháng",
-      "headline": "Đầu đề",
-      "alert": "Cảnh báo",
-      "whatnow_info": "Thông tin từ Whatnow",
-      "alert_detail": "Chi tiết cảnh báo",
-      "more": "Đọc thêm",
-      "area_affected": "Khu vực chịu ảnh hưởng",
-      "details": "Chi tiết",
-      "cap": {
-          "type": "Loại",
-          "status": "Tình trạng",
-          "urgency": "Mức độ khẩn cấp",
-          "severity": "Mức độ nghiêm trọng",
-          "certainty": "Mức độ chắc chắn",
-          "sent": "Đã gửi",
-          "effective": "Hiệu quả",
-          "onset": "Bắt đầu",
-          "expires": "Hết hiệu lực",
-          "alert_from": "Thông tin cảnh báo từ",
-          "feed": "Nguồn cấp dữ liệu",
-          "more": "Đọc thêm:",
-          "through": "thông qua",
-          "alert_feed": "Thông tin cảnh báo",
-          "fetching_feed": "Đang lấy dữ liệu",
-          "empty": "Hiện tại không có thông tin cảnh báo"
-      }
+      "certainty": "Mức độ chắc chắn",
+      "sent": "Đã gửi",
+      "effective": "Hiệu quả",
+      "onset": "Bắt đầu",
+      "expires": "Hết hiệu lực",
+      "alert_from": "Thông tin cảnh báo từ",
+      "feed": "Nguồn cấp dữ liệu",
+      "more": "Đọc thêm:",
+      "through": "thông qua",
+      "alert_feed": "Thông tin cảnh báo",
+      "fetching_feed": "Đang lấy dữ liệu",
+      "empty": "Hiện tại không có thông tin cảnh báo"
+    }
   },
   "user_agreement": {
-      "title": "Thoả thuận người dùng",
-      "para_one": "Trước khi truy cập cổng Thông tin WhatNow, xin vui lòng đọc và chấp nhận điều khoản người dùng bằng việc tải tài liệu dưới đây và nhấp vào nút \"Tôi Chấp Nhận\".",
-      "cta": "Tôi đồng ý",
-      "download": "Nhấp vào đây để xem thông tin thoả thuận người dùng (105KB)"
+    "title": "Thoả thuận người dùng",
+    "para_one": "Trước khi bạn có thể truy cập Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn, vui lòng đọc và chấp nhận các điều khoản của thỏa thuận người dùng bằng cách tải xuống tài liệu bên dưới và nhấp vào nút 'Tôi chấp nhận' bên dưới.",
+    "cta": "Tôi đồng ý",
+    "download": "Nhấp vào đây để xem thông tin thoả thuận người dùng (105KB)"
   },
   "hazard_type": {
-      "dropdown": {
-        "select": "Lựa chọn loại sự cố",
-        "create": "Tạo loại sự cố"
-      },
-      "create": {
-          "title": "Tạo loại sự cố mới",
-          "request": "yêu cầu loại sự cố mới",
-          "other": "Khác",
-          "email_subject": "Yêu cầu cho loại sự cố mới",
-          "hazard_name": "Tên sự cố",
-          "hazard_name_placeholder": "Điền tên sự cố",
-          "upload_icon": "Tải lên một biểu tượng",
-          "icon_requirements": "Biểu tượng phải là loại tệp png và không nặng quá 30kb",
-          "requestLink": "Liên hệ GDPC để yêu cần loại sự cố rủi ro mới",
-          "success": "Loại sự cố rủi ro mới đã được tạo",
-          "error": "Xin lỗi, đã có lỗi xảy ra khi tạo loại sự cố rủi ro mới của bạn"
-      }
+    "dropdown": {
+      "select": "Lựa chọn loại sự cố",
+      "create": "Tạo loại sự cố"
+    },
+    "create": {
+      "title": "Tạo loại sự cố mới",
+      "request": "yêu cầu loại sự cố mới",
+      "other": "Khác",
+      "email_subject": "Yêu cầu cho loại sự cố mới",
+      "hazard_name": "Tên sự cố",
+      "hazard_name_placeholder": "Điền tên sự cố",
+      "upload_icon": "Tải lên một biểu tượng",
+      "icon_requirements": "Biểu tượng phải là loại tệp png và không nặng quá 30kb",
+      "requestLink": "Liên hệ GDPC để yêu cần loại sự cố rủi ro mới",
+      "success": "Loại sự cố rủi ro mới đã được tạo",
+      "error": "Xin lỗi, đã có lỗi xảy ra khi tạo loại sự cố rủi ro mới của bạn"
+    }
   },
   "regions": {
     "list": {
-        "manage": "Quản lý khu vực",
-        "create": "Tạo khu vực mới",
-        "edit": "Chỉnh sửa khu vực",
-        "add": "Bổ sung khu vực",
-        "empty": "Không tìm thấy bất kỳ khu vực nào",
-        "table_header": {
-            "region": "Khu vực"
-        }
+      "manage": "Tiểu vùng",
+      "create": "Tạo khu vực mới",
+      "edit": "Chỉnh sửa khu vực",
+      "add": "Bổ sung khu vực",
+      "empty": "Không tìm thấy bất kỳ khu vực nào",
+      "table_header": {
+        "region": "Khu vực"
+      }
     },
     "select_soc": "Chọn một cộng đồng để xem và bổ sung khu vực",
     "create": "Tạo một khu vực mới",
     "form": {
-        "name": "Tên khu vực",
-        "name_help": "Đặt tên khu vực mà bạn muốn tạo tin nhắn WhatNow tùy chỉnh.",
-        "description": "Mô tả",
-        "description_help": "Vui lòng cung cấp thêm thông tin về khu vực, ví dụ như Khu vực Vịnh San Francisco."
+      "name": "Tên khu vực",
+      "name_help": "Đặt tên cho khu vực bạn muốn tạo tin nhắn an toàn tùy chỉnh.",
+      "description": "Mô tả",
+      "description_help": "Vui lòng cung cấp thêm thông tin về khu vực, ví dụ như Khu vực Vịnh San Francisco."
     },
     "edit": "Chỉnh sửa khu vực",
     "delete": "Thao tác này sẽ xoá khu vực và tất cả nội dung liên quan đến khu vực."
   },
   "table_headers": {
-      "profile_pic": "ảnh đại diện",
-      "first_name": "Họ",
-      "last_name": "họ",
-      "role": "vai trò",
-      "society": "cộng đồng",
-      "date": "Ngày tháng",
-      "country": "Quốc gia",
-      "email": "email",
-      "created_at": "được tạo lúc",
-      "last_logged_in_at": "Lần hoạt động cuối cùng",
-      "terms_version": "hồ sơ",
-      "actions": "Hành động",
-      "action": "Hành động",
-      "content": "Nội dung",
-      "country_code": "Địa điểm",
-      "organisation": "tổ chức",
-      "industry_type": "ngành công nghiệp",
-      "all_roles": "Tất cả các vai trò",
-      "version": "Phiên bản",
-      "user": "Người dùng",
-      "language_code": "Mã Ngôn ngữ"
+    "profile_pic": "ảnh đại diện",
+    "first_name": "Họ",
+    "last_name": "họ",
+    "role": "vai trò",
+    "society": "cộng đồng",
+    "date": "Ngày tháng",
+    "country": "Quốc gia",
+    "email": "email",
+    "created_at": "được tạo lúc",
+    "last_logged_in_at": "Lần hoạt động cuối cùng",
+    "terms_version": "hồ sơ",
+    "actions": "Hành động",
+    "action": "Hành động",
+    "content": "Nội dung",
+    "country_code": "Địa điểm",
+    "organisation": "tổ chức",
+    "industry_type": "ngành công nghiệp",
+    "all_roles": "Tất cả các vai trò",
+    "version": "Phiên bản",
+    "user": "Người dùng",
+    "language_code": "Mã Ngôn ngữ"
+  },
+  "terms_conditions": {
+    "title": "Điều khoản và Điều kiện",
+    "accept": "Chấp nhận"
+  },
+  "badges": {
+    "hazardCreate": "Nguy hiểm đã tạo",
+    "published": "Đã xuất bản",
+    "draft": "Bản nháp",
+    "bulkUploadDraft": "Bản nháp Tải lên Tệp Tin nhắn"
   }
 }

@@ -6,11 +6,12 @@ use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
+use Namshi\JOSE\Base64\Base64Encoder;
 use PhpOffice\PhpSpreadsheet\Cell\DataValidation;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
-
+use PhpOffice\PhpSpreadsheet\Style\Protection;
 class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
 {
     /**
@@ -111,6 +112,18 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
 
                 $sheet->getStyle($row1Range)->applyFromArray($headerStyle);
                 $sheet->getStyle($row3Range)->applyFromArray($headerStyle);
+
+                $protection = $sheet->getProtection();
+                $protection->setSheet(true);
+                $base = new Base64Encoder();
+                $protection->setPassword($base->encode('fsjsD-1FfJTZvs2X'));
+
+                $sheet->getStyle('A1:Z100')->getProtection()->setLocked(Protection::PROTECTION_UNPROTECTED);
+
+                $cellsToLock = ['A1', 'B1', 'A2', 'B2', 'A3:F3'];
+                foreach ($cellsToLock as $cell) {
+                    $sheet->getStyle($cell)->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                }
             }
         ];
     }

@@ -2,7 +2,7 @@
   <div class="container-fluid login-section">
     <div class="row w-100">
       <div class="col-lg-6 m-auto">
-        <card>
+        <card class="card-container">
           <h1 class="text-center mb-5">
             {{ $t('reset_password') }}
           </h1>
@@ -11,11 +11,12 @@
 
             <alert-success :form="form" :message="status"></alert-success>
 
-            <!-- Email -->
             <div class="form-group">
-              <label class="text-uppercase font-weight-bold styled-label">{{ $t('email') }}</label>
-              <!-- <div class="col-md-7"> -->
-                <input v-model="form.email" type="email" name="email" class="form-control"
+              <label class="styled-label-signup styled-label" for="email">
+                {{ $t('email') }}
+                <span class="is-required"></span>
+              </label>
+                <input v-model="form.email" type="email" name="email" class="form-control styled-input"
                   :class="{ 'is-invalid': form.errors.has('email') }">
                 <has-error :form="form" field="email" class="pl-2 font-italic"></has-error>
               <!-- </div> -->
@@ -24,7 +25,7 @@
             <!-- Submit Button -->
             <div class="form-group mt-4">
               <!-- <div class="col-md-9 ml-md-auto"> -->
-                <v-button :loading="form.busy" class="btn-dark w-100">{{ $t('send_password_reset_link') }}</v-button>
+                <v-button :loading="form.busy" class="btn-dark w-50 mx-auto d-block">{{ $t('send_password_reset_link') }}</v-button>
               <!-- </div> -->
             </div>
           </form>
@@ -61,3 +62,18 @@ export default {
   }
 }
 </script>
+<style scoped>
+.card-container {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f7f7f7;
+}
+
+.styled-label {
+  font-size: 20px;
+}
+</style>

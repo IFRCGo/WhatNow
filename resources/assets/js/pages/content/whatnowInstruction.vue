@@ -6,11 +6,17 @@
           <h4 class="key-message-title">
             {{ $t(`content.edit_whatnow.${instructionName}`) }}
           </h4>
-          <div class="mx-5">
-            <span variant="link" class="more-info-icon" v-b-tooltip.hover
-              :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
+          <div class="mx-5 tooltip-container">
+            <span
+              class="more-info-icon"
+              @mouseover="showTooltip = true"
+              @mouseleave="showTooltip = false"
+              >
               <fa :icon="['fas', 'info-circle']" />
             </span>
+            <div v-if="showTooltip" class="custom-tooltip">
+              {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            </div>
           </div>
         </div>
         <b-collapse id="more">
@@ -25,8 +31,8 @@
         </b-button>
       </div>
     </div>
-    <b-card 
-      :class="`mb-5 key-message-card key-message-card-${instructionName} bg-grey`">
+    <b-card
+      :class="`mb-3 key-message-card key-message-card-${instructionName} bg-grey`">
       <!-- We have to use n in x here as you cannot directly mutate an object in a v-model -->
       <transition-group v-for="(message, index) in keyMessages" :key="`message-${index}`" name="fade-slide" tag="ol" class="pt-4 whatnow-instruction-list">
         <div class="mb-5" :key="`title-${index}`">
@@ -35,11 +41,17 @@
               <label class="key-message-label" :for="`${instructionName}-title-${index}`">
                 {{ $t('content.edit_whatnow.key_message_label') }}
               </label>
-              <div class="mx-5">
-                <span variant="link" class="more-info-icon" v-b-tooltip.hover
-                  :title="$t(`content.edit_whatnow.${instructionName}_extra`)">
-                  <fa :icon="['fas', 'info-circle']" />
-                </span>
+              <div class="mx-5 tooltip-container">
+            <span
+              class="more-info-icon"
+              @mouseover="showTooltip = true"
+              @mouseleave="showTooltip = false"
+            >
+              <fa :icon="['fas', 'info-circle']" />
+            </span>
+                <div v-if="showTooltip" class="custom-tooltip">
+                  {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+                </div>
               </div>
             </div>
             <div>
@@ -76,27 +88,45 @@
               </b-button>
           </b-input-group>
         </li>
-        <WhatnowDownloadImage v-if="message.supportingMessages.length > 0" :instructionId="instructionId" :langCode="langCode"
-          :instructionName="instructionName" :revision="true" :key="message.key"/>
       </transition-group>
     </b-card>
+
+    <b-button variant="outline-primary" size="sm" @click="openKeyMessagePreviewer" class="btn-download btn mb-2">
+    {{ $t('common.download') }}
+      <font-awesome-icon class="ml-2" :icon="['fas', 'download']" />
+    </b-button>
+
+    <!-- preview -->
+    <b-modal size="xl"  ref="keyMessagePreviewer" :hide-footer="true" id="pre-image" centered :hide-header="true">
+      <whatnowPreviewer
+        :eventType="eventType"
+        :keyMessage="instructions"
+        :stageName="instructionName"
+        :title="title"
+        :description="description"
+        :selectedSoc="selectedSoc"
+        :selectedLanguage="selectedLanguage"
+        :contributors="selectedSoc.translations[selectedLanguage].contributors"
+      />
+    </b-modal>
   </b-col>
 </template>
 <script>
-import WhatnowDownloadImage from './whatnowDownloadImage'
+import WhatnowPreviewer from './whatnowPreviewer'
 import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 
 export default {
-  props: ['disabled', 'instructions', 'instructionName', 'instructionId', 'langCode'],
+  props: ['disabled', 'instructions', 'instructionName', 'instructionId', 'langCode', 'title', 'description', 'eventType', 'selectedSoc', 'selectedLanguage'],
   components: {
-    WhatnowDownloadImage
+    WhatnowPreviewer
   },
   data() {
     return {
       instructionsCopy: [],
       permissions: permissionsList,
       keyMessages: [],
+      showTooltip: false
     }
   },
   mounted() {
@@ -152,6 +182,9 @@ export default {
         currentMessage
       ]
       this.instructionChange();
+    },
+    openKeyMessagePreviewer() {
+      this.$refs.keyMessagePreviewer.show()
     },
   },
   computed: {
@@ -303,4 +336,39 @@ export default {
     }
   }
 }
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  width: 10rem;
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 120%; /* Posición arriba del icono */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #E6E6E6;
+  color: black;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+
+  /* Ajustes para el tamaño y los saltos de línea */
+  width: 10rem; /* Fijar el ancho */
+  max-width: 10rem; /* Evitar que crezca más */
+  white-space: normal; /* Permitir saltos de línea */
+  word-wrap: break-word; /* Romper palabras largas si es necesario */
+}
+
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
 </style>

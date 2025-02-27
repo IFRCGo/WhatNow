@@ -16,12 +16,13 @@ class UserProfileRepository extends Repository
     
     protected $users;
 
-    
+
     public function create(int $userId, $data)
     {
         $userProfileData = [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
+            'accepted_agreement' => true,
         ];
 
         if (isset($data['country_code'])) {
@@ -39,6 +40,10 @@ class UserProfileRepository extends Repository
         if (isset($data['api_used_in'])) {
             $userProfileData['api_used_in'] = $data['api_used_in'];
         }
+        if (isset($data['terms_version'])) {
+            $userProfileData['terms_version'] = $data['terms_version'];
+        }
+
 
         
         $userProfile = new UserProfile($userProfileData);
