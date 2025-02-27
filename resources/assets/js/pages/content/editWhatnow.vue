@@ -76,7 +76,21 @@
                 </div>
               </b-col>
               <b-col class="col-12 hazard-form-input-container">
-                <label for="title" class="hazard-form-label required">{{ $t('common.title') }}</label>
+                <div class="t-container">
+                    <label for="title" class="hazard-form-label required">{{ $t('common.title') }}</label>
+                    <div class="mx-5 mb-1 tooltip-container">
+                    <span
+                      class="more-info-icon"
+                      @mouseover="showTooltip = true"
+                      @mouseleave="showTooltip = false"
+                    >
+                      <fa :icon="['fas', 'info-circle']"/>
+                    </span>
+                      <div v-if="showTooltip" class="custom-tooltip">
+                        {{ $t(`content.edit_whatnow.title_tool`) }}
+                      </div>
+                    </div>
+                </div>
                 <b-form-input class="form-control hazard-form-input" :disabled="isCreateHazardMode || !canEdit"
                   type="text" id="title" name="title" v-model.trim="content.translations[langCode].title"
                   :state="validations.showErrors ? validations.title : null" />
@@ -85,7 +99,21 @@
                 </b-form-invalid-feedback>
               </b-col>
               <b-col class="col-12 hazard-form-input-container">
-                <label for="description" class="hazard-form-label required">{{ $t('common.description') }}</label>
+                <div class="t-container">
+                    <label for="description" class="hazard-form-label required">{{ $t('common.description') }}</label>
+                    <div class="mx-5 mb-1 tooltip-container">
+                        <span
+                          class="more-info-icon"
+                          @mouseover="showTooltip = true"
+                          @mouseleave="showTooltip = false"
+                        >
+                          <fa :icon="['fas', 'info-circle']"/>
+                        </span>
+                      <div v-if="showTooltip" class="custom-tooltip">
+                        {{ $t(`content.edit_whatnow.desc_tool`) }}
+                      </div>
+                    </div>
+                </div>
                 <textarea id="description" name="description" :disabled="isCreateHazardMode || !canEdit"
                   :class="`form-control hazard-form-input ${validations.showErrors && (validations.description === false) ? 'is-invalid' : ''}`"
                   v-model="content.translations[langCode].description" :rows="3"></textarea>
@@ -94,7 +122,21 @@
                 </b-form-invalid-feedback>
               </b-col>
               <b-col class="col-12 hazard-form-input-container">
-                <label for="url" class="hazard-form-label">{{ $t('content.edit_whatnow.content_url') }}</label>
+                <div class="t-container">
+                  <label for="url" class="hazard-form-label">{{ $t('content.edit_whatnow.content_url') }}</label>
+                  <div class="mx-5 mb-1 tooltip-container">
+                          <span
+                            class="more-info-icon"
+                            @mouseover="showTooltip = true"
+                            @mouseleave="showTooltip = false"
+                          >
+                            <fa :icon="['fas', 'info-circle']"/>
+                          </span>
+                    <div v-if="showTooltip" class="custom-tooltip">
+                      {{ $t(`content.edit_whatnow.url_tool`) }}
+                    </div>
+                  </div>
+                </div>
                 <b-form-input
                   :class="`form-control hazard-form-input ${validations.showErrors && (validations.urlFeedback === false) ? 'is-invalid' : ''}`"
                   :disabled="isCreateHazardMode || !canEdit" type="url" id="url" name="url"
@@ -142,7 +184,7 @@
                   <b-collapse :visible="urgencyCollapses[urgency.value]" :id="'urgency-collapse-' + i">
                     <div v-for="name in instructionNames" :key="name">
                       <whatnow-instructions class="mb-4"
-                        v-if="urgency.stages.includes(name)" 
+                        v-if="urgency.stages.includes(name)"
                         :disabled="isCreateHazardMode"
                         :instructions="content.translations[langCode].stages[name] || []"
                         :instructionName="name"
@@ -258,6 +300,7 @@ export default {
   data() {
     return {
       permissions: permissionsList,
+      showTooltip: false,
       items: [
         { message: 'Stockpile essential foods' },
         { message: 'Plan daily basic food rations of good nutritional value' }
@@ -731,5 +774,42 @@ export default {
     background-color: transparent;
     color: $grey;
   }
+}
+
+.t-container {
+  display: flex;
+  align-items: center;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  width: 10rem;
+}
+
+.custom-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #E6E6E6;
+  color: black;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
+  width: 10rem;
+  max-width: 10rem;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+
+.tooltip-container:hover .custom-tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 </style>
