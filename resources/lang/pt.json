@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Sessão expirada!",
   "token_expired_alert_text": "Por favor entre para continuar.",
   "login": "Iniciar sessão",
-  "what_now": "WhatNow",
+  "what_now": "Base de dados de mensagens de segurança da FICV",
   "message_portal": "Portal de Mensagens",
   "register": "Registe-se",
   "sign_up": "Inscreva-se",
   "docs": "Documentos",
   "my_apps": "As minhas aplicações",
   "number_of_apps": "{0} Aplicações",
-  "whatnow_content": "Mensagens WhatNow",
+  "whatnow_content": "Mensagens",
+  "create_key": "Criar chave",
   "alerts": "Alertas",
   "feeds": "Feeds",
   "get_started": "Inscreva-se agora",
@@ -75,7 +76,7 @@
     "create": "Criar",
     "content": "Conteúdo",
     "what_now_content": "Conteúdo do WhatNow",
-    "bulk_upload": "Carregamento em Massa",
+    "bulk_upload": "Upload de ficheiros de mensagens",
     "audit_log": "Controlo de Registos",
     "api_usage": "Utilização da API",
     "app_detail": "Detalhes da Aplicação",
@@ -84,153 +85,154 @@
   "documentation": {
     "heading": "Documentação da API da Cruz Vermelha",
     "sidebar": {
-        "introduction": "Introdução",
-        "base_url": "URL Base",
-        "changelog": "Changelog",
-        "authentication": "Autenticação",
-        "response_codes": "Códigos de resposta",
-        "emergency_alert_feed": "Alertas de Emergência",
-        "cap_alert_document": "Documento de Alerta CAP",
-        "what_now": "What Now"
+      "introduction": "Introdução",
+      "base_url": "URL Base",
+      "changelog": "Changelog",
+      "authentication": "Autenticação",
+      "response_codes": "Códigos de resposta",
+      "emergency_alert_feed": "Alertas de Emergência",
+      "cap_alert_document": "Documento de Alerta CAP",
+      "what_now": "What Now"
     },
     "steps": {
-        "one": {
-            "body": "A REST API da Cruz Vermelha permite que os programadores acedam a informações e recursos de emergência emitidos pelas Sociedades da Cruz Vermelha internacionais.",
-            "heading": "Introdução",
-            "support_card": {
-                "body": "Para perguntas sobre a API da Cruz Vermelha, por favor entre em contacto com dev@3sidedcube.com",
-                "title": "Apoio & Questões"
-            }
-        },
-        "two": {
-            "body": "Todos os URLs na documentação da API v1.0 têm o seguinte URL base:",
-            "heading": "URL Base"
-        },
-        "three": {
-          "heading": "Changelog",
-          "table": {
-              "headers": {
-                  "detail": "Lançamento",
-                  "version": "Versão da API",
-                  "release": "Lançamento",
-                  "release_date": "Data de Lançamento"
-              }
-          }
-        },
-        "four": {
-            "body": "A API exige a autenticação com uma chave API para poder aceder a todos os recursos. Para obter uma chave API, primeiro {0}.\n\nTodos os pedidos de API devem incluir o seguinte cabeçalho HTTP:",
-            "create_app_cta": "criar uma aplicação",
-            "heading": "Autenticação"
-        },
-        "five": {
-            "heading": "Códigos de resposta",
-            "table": {
-                "descriptions": {
-                    "ok": "O pedido foi aceite e o órgão de resposta tem o recurso solicitado",
-                    "found": "Indica um redirecionamento. Emite um pedido GET ao recurso URI na Localização: cabeçalho.",
-                    "not_found": "O recurso solicitado não foi encontrado.",
-                    "not_allowed": "Indica que o método HTTP utilizado não é permitido neste recurso.",
-                    "server_error": "Ocorreu um erro de servidor e não foi possível devolver o recurso.",
-                    "unavailable": "Indica que o serviço não está disponível de momento. Tente fazer o pedido mais tarde."
-                },
-              "headers": {
-                "code": "Código",
-                "name": "Nome",
-                "description": "Descrição"
-              }
-            }
-        },
-        "six": {
-            "card": {
-              "body": "Cada Sociedade da Cruz Vermelha poderá emitir alertas públicos utilizando {0} v1.2.",
-              "cta": "Common Alerting Protocol",
-              "title": "Common Alerting Protocol"
-            },
-            "endpoint": "Endpoint:",
-            "example": "Neste exemplo, o segmento {0} deverá ser substituído pelo código do país de uma determinada sociedade. e.g.",
-            "feed_intro": "É também disponibilizado um feed para cada sociedade, onde constam alertas ativos publicados por uma determinada sociedade, identificados por",
-            "heading": "Alertas de Emergência",
-            "intro": "São publicados alertas do CAP emitidos por todas as sociedades através de um feed RSS. Isto pode ser acedido através do seguinte endpoint:"
-        },
-        "seven": {
-            "endpoint": "Endpoint:",
-            "example_response": "Exemplo de Resposta:",
-            "heading": "Documento de Alerta CAP",
-            "body": "Pode-se aceder aos documentos de alerta CAP através do link absoluto especificado em cada item do feed RSS. O URI de um alerta tem o seguinte formato: "
-        },
-        "eight": {
-            "body": "Os seguintes endpoints fornecem dados estruturados publicados pelas sociedades da Cruz Vermelha para auxiliar na prevenção de catástrofes, para uma variedade de tipos de incidentes.\n\nCada registo fornece informação em seis etapas de gestão de catástrofes:",
-            "endpoint": "Endpoint:",
-            "example_response": "Exemplo de Resposta:",
-            "heading": "What Now",
-            "note": "Nota:",
-            "noteDetails": "{0} todas as respostas estão dentro de uma propriedade parent {1}.",
-            "query_params": "Parâmetros de Consulta:",
-            "response_properties": "Propriedades da Resposta:",
-            "structure": "Estrutura dos Itens de Objetos do What Now:",
-            "stucture_attribution": "Estrutura de um {0} objeto:",
-            "stucture_attribute_translation": "Estrutura de um {0} objeto de atribuição:",
-            "stucture_translation": "Estrutura de um {0} objeto:",
-            "table": {
-                "query_params": {
-                    "name": "nome",
-                    "description": "descrição"
-                },
-                "structure": {
-                    "property": "Propriedade",
-                    "data_type": "Tipo de dados",
-                    "description": "Descrição"
-                }
-            }
+      "one": {
+        "body": "A REST API da Cruz Vermelha permite que os programadores acedam a informações e recursos de emergência emitidos pelas Sociedades da Cruz Vermelha internacionais.",
+        "heading": "Introdução",
+        "support_card": {
+          "body": "Para perguntas sobre a API da Cruz Vermelha, por favor entre em contacto com dev@3sidedcube.com",
+          "title": "Apoio & Questões"
         }
+      },
+      "two": {
+        "body": "Todos os URLs na documentação da API v1.0 têm o seguinte URL base:",
+        "heading": "URL Base"
+      },
+      "three": {
+        "heading": "Changelog",
+        "table": {
+          "headers": {
+            "detail": "Lançamento",
+            "version": "Versão da API",
+            "release": "Lançamento",
+            "release_date": "Data de Lançamento"
+          }
+        }
+      },
+      "four": {
+        "body": "A API exige a autenticação com uma chave API para poder aceder a todos os recursos. Para obter uma chave API, primeiro {0}.\n\nTodos os pedidos de API devem incluir o seguinte cabeçalho HTTP:",
+        "create_app_cta": "criar uma aplicação",
+        "heading": "Autenticação"
+      },
+      "five": {
+        "heading": "Códigos de resposta",
+        "table": {
+          "descriptions": {
+            "ok": "O pedido foi aceite e o órgão de resposta tem o recurso solicitado",
+            "found": "Indica um redirecionamento. Emite um pedido GET ao recurso URI na Localização: cabeçalho.",
+            "not_found": "O recurso solicitado não foi encontrado.",
+            "not_allowed": "Indica que o método HTTP utilizado não é permitido neste recurso.",
+            "server_error": "Ocorreu um erro de servidor e não foi possível devolver o recurso.",
+            "unavailable": "Indica que o serviço não está disponível de momento. Tente fazer o pedido mais tarde."
+          },
+          "headers": {
+            "code": "Código",
+            "name": "Nome",
+            "description": "Descrição"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "Cada Sociedade da Cruz Vermelha poderá emitir alertas públicos utilizando {0} v1.2.",
+          "cta": "Common Alerting Protocol",
+          "title": "Common Alerting Protocol"
+        },
+        "endpoint": "Endpoint:",
+        "example": "Neste exemplo, o segmento {0} deverá ser substituído pelo código do país de uma determinada sociedade. e.g.",
+        "feed_intro": "É também disponibilizado um feed para cada sociedade, onde constam alertas ativos publicados por uma determinada sociedade, identificados por",
+        "heading": "Alertas de Emergência",
+        "intro": "São publicados alertas do CAP emitidos por todas as sociedades através de um feed RSS. Isto pode ser acedido através do seguinte endpoint:"
+      },
+      "seven": {
+        "endpoint": "Endpoint:",
+        "example_response": "Exemplo de Resposta:",
+        "heading": "Documento de Alerta CAP",
+        "body": "Pode-se aceder aos documentos de alerta CAP através do link absoluto especificado em cada item do feed RSS. O URI de um alerta tem o seguinte formato: "
+      },
+      "eight": {
+        "body": "Os seguintes endpoints fornecem dados estruturados publicados pelas sociedades da Cruz Vermelha para auxiliar na prevenção de catástrofes, para uma variedade de tipos de incidentes.\n\nCada registo fornece informação em seis etapas de gestão de catástrofes:",
+        "endpoint": "Endpoint:",
+        "example_response": "Exemplo de Resposta:",
+        "heading": "What Now",
+        "note": "Nota:",
+        "noteDetails": "{0} todas as respostas estão dentro de uma propriedade parent {1}.",
+        "query_params": "Parâmetros de Consulta:",
+        "response_properties": "Propriedades da Resposta:",
+        "structure": "Estrutura dos Itens de Objetos do What Now:",
+        "stucture_attribution": "Estrutura de um {0} objeto:",
+        "stucture_attribute_translation": "Estrutura de um {0} objeto de atribuição:",
+        "stucture_translation": "Estrutura de um {0} objeto:",
+        "table": {
+          "query_params": {
+            "name": "nome",
+            "description": "descrição"
+          },
+          "structure": {
+            "property": "Propriedade",
+            "data_type": "Tipo de dados",
+            "description": "Descrição"
+          }
+        }
+      }
     }
   },
   "get_started_docs": {
     "title": "Começar",
     "sidebar": {
-        "create_app": "Criar uma aplicação",
-        "get_api_key": "Obter uma chave API",
-        "make_request": "Fazer um pedido",
-        "sign_up": "Inscreva-se"
+      "create_app": "Criar uma aplicação",
+      "get_api_key": "Obter uma chave API",
+      "make_request": "Fazer um pedido",
+      "sign_up": "Inscreva-se"
     },
     "steps": {
-        "one": {
-            "heading": "Passo 1 - Inscreva-se",
-            "body": "Para começar a utilizar dados da API de WhatNow, primeiro {0} ao Portal WhatNow.\n\nPode utilizar a sua conta do Facebook e do Google, ou um endereço de e-mail para criar uma conta.",
-            "create_account_alt": "criar conta",
-            "existing_account": "Se já tem uma conta, por favor {0}.",
-            "login_cta": "iniciar sessão",
-            "sign_up_cta": "inscreva-se"
-
-        },
-        "two": {
-            "body": "Para utilizar a API, deverá criar uma aplicação no Portal WhatNow. Fale-nos um pouco do que está a construir.",
-            "create_app_alt": "criar aplicação",
-            "heading": "Passo 2 - Criar uma aplicação"
-        },
-        "three": {
-            "body": "Depois de criar uma aplicação, uma chave API será automaticamente gerada.\n\n{0} Certifique-se de que a mantém o mais segura possível e evite partilhá-la, caso contrário exporá a sua chave API na sua própria aplicação.",
-            "create_api_key_alt": "Criar chave API",
-            "heading": "Passo 3 - Obter uma chave API",
-            "important": "Importante:"
-        },
-        "four": {
-            "api_docs_cta": "Documentação da API",
-            "body": "A API do WhatNow utiliza HTTP(S) e fornece endpoints RESTful para obter dados publicados.\n\nCada pedido deverá ser autenticado através da chave API que foi criada no passo anterior.",
-            "example_title": "Exemplo de Pedido",
-            "heading": "Passo 4 - Faça um pedido",
-            "moreInfo": "Para mais informações sobre todos os endpoints da API, consulte {0}."
-        }
+      "one": {
+        "heading": "Passo 1 - Inscreva-se",
+        "body": "Para começar a utilizar os dados da API da base de dados de mensagens de segurança, comece por aceder ao portal da base de dados de mensagens de segurança em {0}.\n\nPode utilizar as suas contas Facebook e Google ou um endereço de correio eletrónico para criar uma conta.",
+        "create_account_alt": "criar conta",
+        "existing_account": "Se já tem uma conta, por favor {0}.",
+        "login_cta": "iniciar sessão",
+        "sign_up_cta": "inscreva-se"
+      },
+      "two": {
+        "body": "Para utilizar a API, é necessário criar uma aplicação no portal da base de dados de mensagens de segurança. Fale-nos um pouco sobre o que está a criar.",
+        "create_app_alt": "criar aplicação",
+        "heading": "Passo 2 - Criar uma aplicação"
+      },
+      "three": {
+        "body": "Depois de criar uma aplicação, uma chave API será automaticamente gerada.\n\n{0} Certifique-se de que a mantém o mais segura possível e evite partilhá-la, caso contrário exporá a sua chave API na sua própria aplicação.",
+        "create_api_key_alt": "Criar chave API",
+        "heading": "Passo 3 - Obter uma chave API",
+        "important": "Importante:"
+      },
+      "four": {
+        "api_docs_cta": "Documentação da API",
+        "body": "A API da base de dados de mensagens de segurança utiliza HTTP(S) e fornece pontos de extremidade RESTful para obter dados publicados.\n\nCada pedido deve ser autenticado utilizando a chave API criada no passo anterior.",
+        "example_title": "Exemplo de Pedido",
+        "heading": "Passo 4 - Faça um pedido",
+        "moreInfo": "Para mais informações sobre todos os endpoints da API, consulte {0}."
+      }
     }
   },
   "home_pods": {
-      "bulk_upload": "Carregue ficheiros .csv para poder atualizar uma quantidade maior de conteúdos ao mesmo tempo",
-      "audit_log": "Aqui poderá ver um registo de atividades",
-      "whatnow_edit": "Aqui poderá editar conteúdos do WhatNow",
-      "whatnow_review": "Aqui poderá rever conteúdos do WhatNow",
-      "whatnow_publish": "Aqui poderá editar e publicar conteúdos do WhatNow",
-      "manage_users": "Aqui poderá gerir os utilizadores (Criar, editar e eliminar)",
-      "api_usage": "Aqui poderá ver quem está a utilizar a API e quais as aplicações que estão a ser criadas com ela."
+    "bulk_upload": "Carregue ficheiros .csv para poder atualizar uma quantidade maior de conteúdos ao mesmo tempo",
+    "audit_log": "Aqui poderá ver um registo de atividades",
+    "whatnow_edit": "É aqui que se pode editar o conteúdo da base de dados de mensagens de segurança",
+    "whatnow_review": "É aqui que se pode rever o conteúdo da base de dados de mensagens de segurança",
+    "whatnow_publish": "É aqui que se pode editar e publicar o conteúdo da base de dados de mensagens de segurança",
+    "manage_users": "Aqui poderá gerir os utilizadores (Criar, editar e eliminar)",
+    "api_usage": "Aqui poderá ver quem está a utilizar a API e quais as aplicações que estão a ser criadas com ela.",
+    "wellcome": "Bem-vindo",
+    "wellcome_description": "Aqui pode editar e publicar conteúdos da base de dados de mensagens de segurança."
   },
   "languages": {
     "am": "አማርኛ",
@@ -256,250 +258,370 @@
     "vi": "Tiếng Việt"
   },
   "sidebar": {
-      "manage": "Gerir Conteúdo dos Utilizadores",
-      "content_users": "Conteúdo dos Utilizadores",
-      "audit_log": "Controlo de Registos",
-      "whatnow": "WhatNow",
-      "bulk": "Carregamento em Massa",
-      "content": "Conteúdo",
-      "api": "Utilização da API",
-      "applications": "Aplicações",
-      "api_stats": "Estatísticas API",
-      "api_users": "Utilizadores API",
-      "terms_conditions": "Termos e Condições",
-      "regions": "Regiões"
+    "manage": "Gerir Conteúdo dos Utilizadores",
+    "content_users": "Conteúdo dos Utilizadores",
+    "audit_log": "Editar histórico",
+    "whatnow": "Editor de Atribuição",
+    "bulk": "Upload de ficheiros de mensagens",
+    "content": "Conteúdo",
+    "api": "Utilização da API",
+    "applications": "Aplicações",
+    "api_stats": "Estatísticas API",
+    "api_users": "Utilizadores API",
+    "terms_conditions": "Termos e Condições",
+    "regions": "Sub-regiões"
   },
   "common": {
-      "accept": "Aceitar",
-      "actions": "Ações",
-      "create": "Criar",
-      "edit": "Editar",
-      "deactivate": "Desativar",
-      "activate": "Ativar",
-      "are_you_sure": "Tem a certeza?",
-      "yes": "Sim",
-      "title": "Título",
-      "description": "Descrição",
-      "unpublished_edits": "Alterações não publicadas?",
-      "published": "Publicado",
-      "delete": "Apagar",
-      "welcome": "Bem-vindo ao",
-      "save_changes": "Guardar alterações",
-      "auto_saving": "Salvaguarda automática",
-      "add": "Adicionar",
-      "my_profile": "O Meu Perfil",
-      "cancel": "Cancelar",
-      "view_changes": "Ver Alterações",
-      "view_content": "Ver o conteúdo",
-      "resend_activation": "Reenviar e-mail de ativação",
-      "deactivate_user": "Desativar utilizador",
-      "submit_changes": "Enviar alterações",
-      "reactivate_user": "Reativar utilizador",
-      "send_invite": "Enviar convite",
-      "invite_and_create": "Convidar e criar outro",
-      "loading": "A carregar o conteúdo",
-      "publish_new": "Publicar Nova Versão",
-      "greeting": "Olá",
-      "removed": "Eliminado",
-      "copy": "Copiar",
-      "copied": "Copiado",
-      "not_empty": "Não pode estar vazio",
-      "name": "Nome",
-      "webUrl": "URL",
-      "learn_more": "Saiba mais",
-      "validations": {
-          "empty": "Não pode estar vazio",
-          "hazardIcon": "Por favor, selecione uma imagem com menos de 30kb"
-      },
-      "network_error": "Erro de rede",
-      "network_error_text": "Parece que ocorreu um erro de rede. Por favor, tente novamente dentro de instantes",
-      "email_sent": "E-mail enviado",
-      "duplicate_lang_error": "Desculpe, o idioma escolhido já existe",
-      "duplicate_lang_description": "Por favor, edite o idioma já existente ou selecione um novo idioma da lista",
-      "estimated_users": "Número de utilizadores previstos"
+    "accept": "Aceitar",
+    "actions": "Ações",
+    "create": "Criar",
+    "edit": "Editar",
+    "save": "Salvar",
+    "deactivate": "Desativar",
+    "activate": "Ativar",
+    "are_you_sure": "Tem a certeza?",
+    "yes": "Sim",
+    "title": "Título",
+    "description": "Descrição",
+    "unpublished_edits": "Alterações não publicadas?",
+    "published": "Publicado",
+    "delete": "Apagar",
+    "welcome": "Bem-vindo ao",
+    "save_changes": "Guardar alterações",
+    "auto_saving": "Salvaguarda automática",
+    "add": "Adicionar",
+    "my_profile": "O Meu Perfil",
+    "cancel": "Cancelar",
+    "view_changes": "Ver Alterações",
+    "view_content": "Ver o conteúdo",
+    "resend_activation": "Reenviar e-mail de ativação",
+    "deactivate_user": "Desativar utilizador",
+    "submit_changes": "Enviar alterações",
+    "reactivate_user": "Reativar utilizador",
+    "send_invite": "Enviar convite",
+    "invite_and_create": "Convidar e criar outro",
+    "loading": "A carregar o conteúdo",
+    "publish_new": "Publicar Nova Versão",
+    "greeting": "Olá",
+    "removed": "Eliminado",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "not_empty": "Não pode estar vazio",
+    "name": "Nome",
+    "webUrl": "URL",
+    "learn_more": "Saiba mais",
+    "validations": {
+      "empty": "Não pode estar vazio",
+      "hazardIcon": "Por favor, selecione uma imagem com menos de 30kb"
+    },
+    "network_error": "Erro de rede",
+    "network_error_text": "Parece que ocorreu um erro de rede. Por favor, tente novamente dentro de instantes",
+    "email_sent": "E-mail enviado",
+    "duplicate_lang_error": "Desculpe, o idioma escolhido já existe",
+    "duplicate_lang_description": "Por favor, edite o idioma já existente ou selecione um novo idioma da lista",
+    "estimated_users": "Número de utilizadores previstos",
+    "upploading": "Carregando",
+    "download": "Baixar",
+    "download_as_image": "Descarregar como Imagem",
+    "download_as_pdf": "Baixar como PDF",
+    "add_logo": "Adicionar logotipo",
+    "edit_logo": "Editar logotipo",
+    "loading_image": "Carregando..."
   },
   "banners": {
-      "get_started_create": ", Começar e Criar A Sua Primeira Aplicação",
-      "create_app": "Criar uma aplicação",
-      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+    "get_started_create": ", Começar e Criar A Sua Primeira Aplicação",
+    "create_app": "Criar uma aplicação",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
   },
   "users": {
-      "user": "Utilizador",
-      "deleted": "Utilizador apagado",
-      "list": {
-          "manage": "Gerir utilizadores",
-          "create": "Criar novo utilizador",
-          "download_report": "Descarregar relatório",
-          "empty": "Não foi possível encontrar utilizadores",
-          "detail": "Dados do Utilizador",
-          "clear_filters": "Limpar filtros",
-          "table_header": {
-              "user": "Utilizador",
-              "role": "Função",
-              "society": "Sociedade",
-              "email": "E-mail",
-              "added": "Adicionado",
-              "last_activity": "Última Atividade",
-              "t_and_c": "Versão T&C"
-          },
-          "societies": "Sociedades"
+    "user": "Utilizador",
+    "deleted": "Utilizador apagado",
+    "list": {
+      "manage": "Gerir utilizadores",
+      "select_status": "Selecionar status",
+      "select_role": "Selecione um papel",
+      "select_country": "Selecione um país",
+      "select_terms": "Selecione uma versão dos termos",
+      "select_society": "Selecione uma sociedade nacional",
+      "create": "Criar novo utilizador",
+      "download_report": "Descarregar relatório",
+      "empty": "Não foi possível encontrar utilizadores",
+      "detail": "Dados do Utilizador",
+      "clear_filters": "Limpar filtros",
+      "table_header": {
+        "user": "Utilizador",
+        "role": "Função",
+        "society": "Sociedade",
+        "email": "E-mail",
+        "added": "Adicionado",
+        "last_activity": "Última Atividade",
+        "t_and_c": "Versão T&C"
       },
-      "status": {
-          "active": "Ativado",
-          "deactivated": "Desativado"
+      "societies": "Sociedades"
+    },
+    "status": {
+      "active": "Ativado",
+      "deactivated": "Desativado"
+    },
+    "edit": {
+      "super_admin_all": "Acesso a todas as sociedades",
+      "user_details": "Detalhes do utilizador",
+      "create_user": "Criar novo utilizador",
+      "add_society": "Adicionar sociedade + ",
+      "societies_heading": "Sociedades",
+      "roles_heading": "Função e permissões",
+      "activity_heading": "Atividade",
+      "roles_label": "Selecionar funções e permissões para este utilizador",
+      "activity_link": "Ver todas as ações por utilizador",
+      "created": "Utilizador criado com sucesso",
+      "updated": "Utilizador atualizado com sucesso",
+      "email_update": "Para atualizar o seu e-mail, por favor introduza a sua palavra-passe",
+      "view": "Ver",
+      "more": "mais",
+      "less": "Mostrar menos",
+      "user_can_do": "Ver o que o utilizador tem permissão para fazer:",
+      "user_no_permission": "O utilizador não tem nenhuma permissão",
+      "soc_already_added": "Este utilizador já foi atribuído a esta sociedade"
+    }
+  },
+  "new_welcome": {
+    "title_1": "Bem-vindo à",
+    "red_title": "IFRC",
+    "title_2": "Segurança",
+    "title_3": "Banco de Dados de Mensagens",
+    "text_header": "Acesse e compartilhe mensagens de segurança da Cruz Vermelha e do Crescente Vermelho em suas plataformas.",
+    "text_header_2": "Siga o guia de #-passos abaixo..",
+    "bottom_subtitle": "Contate a IFRC",
+    "bottom_text": "Envie um e-mail para a equipe da IFRC se tiver dúvidas: im@ifrc.org",
+    "bottom_btn": "Contate a IFRC",
+    "slider_1": {
+      "btn": "Criar uma chave de API",
+      "step_1": {
+        "header": "Passo 1: Criar uma aplicação",
+        "text": "Crie uma chave de API para usar a API no banco de dados. Conte-nos sobre o que você está construindo."
       },
-      "edit": {
-          "super_admin_all": "Acesso a todas as sociedades",
-          "user_details": "Detalhes do utilizador",
-          "create_user": "Criar novo utilizador",
-          "add_society": "Adicionar sociedade + ",
-          "societies_heading": "Sociedades",
-          "roles_heading": "Função e permissões",
-          "activity_heading": "Atividade",
-          "roles_label": "Selecionar funções e permissões para este utilizador",
-          "activity_link": "Ver todas as ações por utilizador",
-          "created": "Utilizador criado com sucesso",
-          "updated": "Utilizador atualizado com sucesso",
-          "email_update": "Para atualizar o seu e-mail, por favor introduza a sua palavra-passe",
-          "view": "Ver",
-          "more": "mais",
-          "less": "Mostrar menos",
-          "user_can_do": "Ver o que o utilizador tem permissão para fazer:",
-          "user_no_permission": "O utilizador não tem nenhuma permissão",
-          "soc_already_added": "Este utilizador já foi atribuído a esta sociedade"
+      "step_2": {
+        "header": "Etapa 2: Receber uma chave de API",
+        "text": "Quando você criar uma chave de API, ela será gerada automaticamente.",
+        "text_2": "Importante: Armazene sua chave de API da forma mais segura possível. Evite compartilhar ou expor sua chave de API dentro do seu próprio aplicativo."
+      },
+      "step_3": {
+        "header": "Passo 3: Faça um pedido",
+        "text": "A API do banco de dados utiliza HTTP(S) e fornece endpoints RESTful para obter dados publicados. Cada solicitação deve ser autenticada usando a chave da API criada na etapa anterior. Para mais informações sobre todos os endpoints da API, consulte a documentação da API"
+      },
+      "step_4": {
+        "header": "Etapa 4: Compartilhar as mensagens",
+        "text": "Compartilhe as mensagens de segurança da Cruz Vermelha e do Crescente Vermelho com o público quando houver uma ameaça de perigo. Você pode entrar em contato com a equipe da IFRC se tiver algum feedback sobre as mensagens: im@ifrc.org"
       }
+    },
+    "slider_2": {
+      "btn": "Mensagens de segurança",
+      "step_1": {
+        "header": "Etapa 1: Visualizar as mensagens",
+        "text": "Visite o banco de dados de mensagens para ver as mensagens disponíveis da Sociedade Nacional da Cruz Vermelha e do Crescente Vermelho."
+      },
+      "step_2": {
+        "header": "Etapa 2: Selecione o conjunto de mensagens",
+        "text": "Selecione a Sociedade Nacional que deseja visualizar. Em seguida, escolha um tipo de risco da lista disponível."
+      },
+      "step_3": {
+        "header": "Etapa 3: Compartilhar as mensagens",
+        "text": "Procure a opção para baixar as mensagens. Você pode compartilhar o conjunto de mensagens como uma imagem ou como um PDF. Baixe e revise para garantir que está compartilhando as mensagens corretas."
+      }
+    }
+  },
+  "upload_modal": {
+    "drag_button_text": "Clique ou arraste o arquivo para esta área para fazer o upload",
+    "button_text": "Carregar"
+  },
+  "stages": {
+    "immediate": "Imediata",
+    "warning": "Aviso",
+    "anticipated": "Antecipado",
+    "assess_and_plan":"Avaliar e Planejar",
+    "mitigate_risks":"Mitigar Riscos",
+    "prepare_to_respond":"Preparar para responder",
+    "recover": "Recuperar"
   },
   "content": {
+    "content": "Conteúdo",
+    "audit_log": {
+      "audit_log": "Controlo de Registos",
+      "my_audit_log": "Editar histórico",
+      "empty": "Nenhum histórico de registos corresponde a este filtro",
+      "soc_label": "Sociedade",
+      "select_hazard": "Selecionar tipo de desastre",
+      "select_language": "Selecione um idioma",
+      "select_overwrite": "Selecione a opção de sobrescrever",
+      "choose_file": "Escolher tipo de arquivo",
+      "select_soc": "Selecione uma sociedade nacional"
+    },
+    "whatnow": {
+      "title": "Mensagens",
+      "set_attribution": "Defina o nome da sociedade e mensagem de referência para publicar",
+      "whatnow": "Base de dados de mensagens de segurança",
+      "empty": "Não existem mensagens de segurança publicadas para esta Sociedade Nacional",
+      "steps": "Passos",
+      "publish": "Publicar",
+      "no_publish": "Nada para publicar",
+      "published": "traduções publicadas",
+      "publishing": "Publicação",
+      "content_to_publish": "Conteúdo de Rascunho a ser Publicado",
+      "whatnow_content": "Conteúdo da base de dados de mensagens de segurança",
+      "choose_hazard": "Escolher Desastre",
+      "hazard": "Desastre",
       "content": "Conteúdo",
-      "audit_log": {
-          "audit_log": "Controlo de Registos",
-          "empty": "Nenhum histórico de registos corresponde a este filtro",
-          "soc_label": "Sociedade"
+      "create": "Adicionar Desastre",
+      "edit_attribtion": "Editar atribuição",
+      "attribution": "Atribuição",
+      "attribution_url": "URL de Atribuição",
+      "society_name": "Sociedade Nacional",
+      "attribution_message": "Mensagem de referência",
+      "no_translation": "Nenhum conteúdo criado",
+      "delete_content_translation": "Esta ação remove o conteúdo da base de dados de mensagens de segurança selecionada da língua atual",
+      "messages": "Mensagens de segurança do",
+      "add_language": "Adicionar novo idioma",
+      "no_languages": "Selecionar ou criar um idioma para começar",
+      "no_soc": "Selecionar uma sociedade",
+      "no_region": "Selecione uma região",
+      "add_language_message": "Para adicionar um novo idioma, por favor adicione conteúdos para o acompanhar",
+      "add_language_attribution": "Criar atribuição para adicionar um novo idioma",
+      "select_language": "Por favor, selecione um idioma",
+      "attribution_publish": "Esta atribuição estará disponível de imediato na publicação",
+      "date_added": "Data de Adição",
+      "url": "URL",
+      "hazard_type": "Tipo de Perigo",
+      "show_more": "Mostrar mais",
+      "early": "Aviso Prévio",
+      "disaster": "Redução do Risco de Desastres",
+      "recovery": "Recuperação",
+      "publish_summary_title": "Atribuição",
+      "publish_summary_ns": "Sociedade Nacional",
+      "publish_summary_url": "URL de Atribuição",
+      "publish_summary_message": "Mensagem de referência"
+    },
+    "edit_whatnow": {
+      "title": "Título",
+      "description": "Descrição",
+      "content_piece": "Unidade do conteúdo",
+      "enter_other_hazard_type": "Introduza o Nome do Tipo de Desastre",
+      "other_hazard_type_label": "Outro Tipo de Desastre",
+      "stepped_content": "Unidade do Conteúdo Abordado",
+      "content_title_description": "Título para estas mensagens de segurança",
+      "content_description_description": "Descrição das mensagens de segurança",
+      "content_label": "Por favor, introduza alguma informação do desastre",
+      "content_url": "URL",
+      "content_url_description": "URL para obter mais informações sobre estas mensagens de segurança. Por favor, inclua o protocolo, ou seja, http:// ou https://",
+      "created": "criado",
+      "pieces_edited": " Unidades Editadas",
+      "content_placeholder": "Por favor, escreva uma mensagem",
+      "mitigation": "Mitigação",
+      "mitigation_help": "Ações a longo prazo para reduzir riscos",
+      "mitigation_extra": "Uma mitigação é uma declaração a longo prazo de previsão de um incidente desastroso. As ações tomadas são a avaliação, o planeamento e as medidas de redução de riscos a longo prazo, para que as habitações e o ambiente estejam mais seguros.",
+      "seasonalForecast": "Previsão Sazonal",
+      "seasonalForecast_help": "Ações a curto prazo para reduzir riscos",
+      "seasonalForecast_extra": "Uma previsão sazonal é uma declaração de previsão de um incidente desastroso. As ações são tomadas para avaliar potenciais riscos e planificar atividades para reduzir o risco e para proteger as habitações.",
+      "watch": "Vigilância",
+      "watch_help": "Preparar para responder",
+      "watch_extra": "É emitida a vigilância quando o risco de um incidente desastroso aumenta significativamente, mas a sua ocorrência, localização e\/ou momento ainda são incertos. É suposto dar tempo suficiente para ações de proteção e preparação para reagir.",
+      "warning": "Aviso",
+      "warning_help": "Preparar para responder",
+      "warning_extra": "Um aviso é emitido quando um incidente desastroso está a ocorrer, está iminente ou tem uma grande probabilidade de ocorrer. Isso significa condições que são uma ameaça à vida ou propriedade. As pessoas na trajetória deste perigo precisam de tomar precauções.",
+      "immediate": "Imediata",
+      "immediate_help": "Ações de resposta",
+      "immediate_extra": "Condições que no momento são uma ameaça à vida e à propriedade. Estas são ações de proteção imediata a serem tomadas quando está a ocorrer um incidente desastroso. São necessárias ações de resposta para proteção própria e da habitação.",
+      "recover": "Recuperar",
+      "recover_help": "Ações de recuperação",
+      "recover_extra": "Estas são ações de proteção a tomar para reduzir o risco após um evento desastroso.",
+      "anticipated": "Previsto",
+      "assess_and_plan": "Avaliar e Planejar",
+      "mitigate_risks": "Mitigar Riscos",
+      "prepare_to_respond": "Preparar para responder",
+      "updated": "atualizado",
+      "download_icon": "Descarregar Ícone",
+      "download_image": "Descarregar como Imagem",
+      "download_image_error": "Erro ao descarregar imagem, por favor certifique-se de que publicou todas as alterações e tente novamente.",
+      "download_instructions": "Clique com o botão direito e selecione \"Guardar imagem como...\" para guardar",
+      "downloaded_image_alt": "Instruções para a base de dados de mensagens de segurança",
+      "add_key_message": "Adicionar Mensagem Chave",
+      "add_supporting_message": "Adicionar Mensagem de Suporte",
+      "early_warning": "Aviso Prévio",
+      "early_warning_description": "Mensagens-chave de segurança para alertas e ações antecipadas",
+      "disaster_risk_reduction": "Redução do Risco de Desastres",
+      "disaster_risk_reduction_description": "Mensagens-chave de segurança do PAPE",
+      "recovery": "Recuperação",
+      "recovery_description": "Segurança chave para ações de recuperação",
+      "hazard_type": "Tipo de Perigo",
+      "content_edit_title": "Edição de Conteúdo",
+      "content_add_hazard_title": "Adicionar Desastre",
+      "key_message_label": "Título da mensagem principal",
+      "supporting_message_label": "Mensagem de apoio"
+    },
+    "message_editor": {
+      "title": "Editor de Atribuição",
+      "society_name_label": "Nome da sociedade nacional",
+      "attribution_url_label": "URL de Atribuição",
+      "attribution_message_label": "Mensagem de referência",
+      "create_btn": "Adicionar Desastre",
+      "contributor_name_label": "Nome do Contribuidor",
+      "contributor_single": "Contribuidor"
+    },
+    "previewer": {
+      "download_image_error": "Erro ao baixar a imagem, por favor, tente novamente.",
+      "download_pdf_error": "Erro ao baixar o PDF, por favor, tente novamente."
+    },
+    "audit": "Editar histórico",
+    "export": "Exportar",
+    "bulk_upload": {
+      "bulk_upload": "Upload de ficheiros de mensagens",
+      "template": "Modelo",
+      "export_template": "Exportar Modelo",
+      "import_data": "Importar Dados",
+      "import_complete": "Importação Concluída",
+      "import_summary": "Está a importar sob {society} em {lang}.",
+      "import_banner": {
+        "success": "Sucesso",
+        "added": "Adicionado",
+        "skipped": "Ignorado",
+        "denied": "Recusado",
+        "updated": "Atualizado",
+        "failed": "Falhou",
+        "invalid": "Inválido",
+        "row": "Linha"
       },
-      "whatnow": {
-          "set_attribution": "Defina o nome da sociedade e mensagem de referência para publicar",
-          "whatnow": "WhatNow",
-          "empty": "Não existem mensagens do WhatNow publicadas para esta Sociedade Nacional",
-          "steps": "Passos",
-          "publish": "Publicar",
-          "no_publish": "Nada para publicar",
-          "published": "traduções publicadas",
-          "publishing": "Publicação",
-          "content_to_publish": "Conteúdo de Rascunho a ser Publicado",
-          "whatnow_content": "Conteúdo WhatNow",
-          "choose_hazard": "Escolher Desastre",
-          "hazard": "Desastre",
-          "content": "Conteúdo",
-          "create": "Adicionar Desastre",
-          "edit_attribtion": "Editar atribuição",
-          "attribution": "Atribuição",
-          "attribution_url": "URL de Atribuição",
-          "society_name": "Sociedade Nacional",
-          "attribution_message": "Mensagem de referência",
-          "no_translation": "Nenhum conteúdo criado",
-          "delete_content_translation": "Isto eliminará o conteúdo whatnow selecionado do idioma atual",
-          "messages": "Mensagens WhatNow de",
-          "add_language": "Adicionar novo idioma",
-          "no_languages": "Selecionar ou criar um idioma para começar",
-          "no_soc": "Selecionar uma sociedade",
-          "no_region": "Selecione uma região",
-          "add_language_message": "Para adicionar um novo idioma, por favor adicione conteúdos para o acompanhar",
-          "add_language_attribution": "Criar atribuição para adicionar um novo idioma",
-          "select_language": "Por favor, selecione um idioma",
-          "attribution_publish": "Esta atribuição estará disponível de imediato na publicação"
+      "upload_csv": "Carregar um documento em formato CSV",
+      "language_instructions": "Selecione a língua das traduções que estão a ser importadas.",
+      "file_instructions": "Arraste um ficheiro para aqui, ou escolha a partir do seu computador.",
+      "choose": "Escolher",
+      "submit": "Importar Conteúdos",
+      "reset": "Carregar Outro",
+      "export_template_guide": "Exportar Guia de Modelos",
+      "export_template_instructions": "Para obter instruções sobre como utilizar eficazmente este modelo de carregamento de ficheiros g, consulte este guia.",
+      "refer": "Consulte",
+      "detail": "para instruções detalhadas",
+      "warnings": {
+        "title": "Rejeitar a importação se algum conteúdo substituir versões mais recentes.",
+        "on": "Sim",
+        "off": "Não"
       },
-      "edit_whatnow": {
-          "title": "Título",
-          "description": "Descrição",
-          "content_piece": "Unidade do conteúdo",
-          "enter_other_hazard_type": "Introduza o Nome do Tipo de Desastre",
-          "other_hazard_type_label": "Outro Tipo de Desastre",
-          "stepped_content": "Unidade do Conteúdo Abordado",
-          "content_title_description": "Título para estas Mensagens de WhatNow",
-          "content_description_description": "Descrição destas Mensagens de WhatNow",
-          "content_label": "Por favor, introduza alguma informação do desastre",
-          "content_url": "URL",
-          "content_url_description": "URL para mais informações sobre estas mensagens da WhatNow. Por favor inclua o protocolo, i.e. http:\/\/ ou https:\/\/",
-          "created": "criado",
-          "pieces_edited": " Unidades Editadas",
-          "delete_item": "Eliminar Item",
-          "add_item": "Adicionar item +",
-          "content_placeholder": "Por favor, escreva uma mensagem",
-          "mitigation": "Mitigação",
-          "mitigation_help": "Ações a longo prazo para reduzir riscos",
-          "mitigation_extra": "Uma mitigação é uma declaração a longo prazo de previsão de um incidente desastroso. As ações tomadas são a avaliação, o planeamento e as medidas de redução de riscos a longo prazo, para que as habitações e o ambiente estejam mais seguros.",
-          "seasonalForecast": "Previsão Sazonal",
-          "seasonalForecast_help": "Ações a curto prazo para reduzir riscos",
-          "seasonalForecast_extra": "Uma previsão sazonal é uma declaração de previsão de um incidente desastroso. As ações são tomadas para avaliar potenciais riscos e planificar atividades para reduzir o risco e para proteger as habitações.",
-          "watch": "Vigilância",
-          "watch_help": "Preparar para responder",
-          "watch_extra": "É emitida a vigilância quando o risco de um incidente desastroso aumenta significativamente, mas a sua ocorrência, localização e\/ou momento ainda são incertos. É suposto dar tempo suficiente para ações de proteção e preparação para reagir.",
-          "warning": "Aviso",
-          "warning_help": "Preparar para responder",
-          "warning_extra": "Um aviso é emitido quando um incidente desastroso está a ocorrer, está iminente ou tem uma grande probabilidade de ocorrer. Isso significa condições que são uma ameaça à vida ou propriedade. As pessoas na trajetória deste perigo precisam de tomar precauções.",
-          "immediate": "Imediata",
-          "immediate_help": "Ações de resposta",
-          "immediate_extra": "Condições que no momento são uma ameaça à vida e à propriedade. Estas são ações de proteção imediata a serem tomadas quando está a ocorrer um incidente desastroso. São necessárias ações de resposta para proteção própria e da habitação.",
-          "recover": "Recuperar",
-          "recover_help": "Ações de recuperação",
-          "recover_extra": "Estas são ações de proteção a tomar para reduzir o risco após um evento desastroso.",
-          "updated": "atualizado",
-          "download_icon": "Descarregar Ícone",
-          "download_image": "Descarregar como Imagem",
-          "download_image_error": "Erro ao descarregar imagem, por favor certifique-se de que publicou todas as alterações e tente novamente.",
-          "download_instructions": "Clique com o botão direito e selecione \"Guardar imagem como...\" para guardar",
-          "downloaded_image_alt": "Instruções da WhatNow"
+      "overwriting": {
+        "title": "Substituir a Configuração.",
+        "on": "Atualizar sempre para esta versão, substituir todas as revisões",
+        "off": "Só atualizar tipos de eventos em que o conteúdo importado é mais recente"
       },
-      "audit": "Registo de auditoria",
-      "export": "Exportar",
-      "bulk_upload": {
-          "bulk_upload": "Carregamento em Massa",
-          "template": "Modelo",
-          "export_template": "Exportar Modelo",
-          "import_data": "Importar Dados",
-          "import_complete": "Importação Concluída",
-          "import_summary": "Está a importar sob {society} em {lang}.",
-          "import_banner": {
-              "success": "Sucesso",
-              "added": "Adicionado",
-              "skipped": "Ignorado",
-              "denied": "Recusado",
-              "updated": "Atualizado",
-              "failed": "Falhou",
-              "invalid": "Inválido",
-              "row": "Linha"
-          },
-          "upload_csv": "Carregar um documento em formato CSV",
-          "language_instructions": "Selecione a língua das traduções que estão a ser importadas.",
-          "file_instructions": "Arraste um ficheiro para aqui, ou escolha a partir do seu computador.",
-          "choose": "Escolher",
-          "submit": "Importar Conteúdos",
-          "reset": "Carregar Outro",
-          "export_template_guide": "Exportar Guia de Modelos",
-          "export_template_instructions": "Para instruções sobre como utilizar eficazmente este modelo de carregamento em massa, por favor consulte este guia.",
-          "warnings": {
-              "title": "Rejeitar a importação se algum conteúdo substituir versões mais recentes.",
-              "on": "Sim",
-              "off": "Não"
-          },
-          "overwriting": {
-              "title": "Substituir a Configuração.",
-              "on": "Atualizar sempre para esta versão, substituir todas as revisões",
-              "off": "Só atualizar tipos de eventos em que o conteúdo importado é mais recente"
-          },
-          "errors": {
-              "warning_update_will_overwrite": "Esta ação substituirá as alterações que foram feitas desde que esta exportação foi criada",
-              "bad_request": "Os dados do ficheiro não estão corretamente formados",
-              "bad_request_error_codes": {
-                  "30001": "Os cabeçalhos das colunas não correspondem ao modelo",
-                  "30002": "Falta o nome da atribuição, mensagem ou url",
-                  "30003": "URL de atribuição inválido - por favor assegure-se de que o protocolo está presente, e.g. https: \/\/",
-                  "40001": "Código de país fornecido inválido",
-                  "40002": "A sociedade selecionada não corresponde à sociedade do ficheiro selecionado",
-                  "40003": "A data em que o ficheiro selecionado foi exportado foi deformada e a importação não pode ser concluída"
-              }
-          }
+      "errors": {
+        "warning_update_will_overwrite": "Esta ação substituirá as alterações que foram feitas desde que esta exportação foi criada",
+        "bad_request": "Os dados do ficheiro não estão corretamente formados",
+        "bad_request_error_codes": {
+          "30001": "Os cabeçalhos das colunas não correspondem ao modelo",
+          "30002": "Falta o nome da atribuição, mensagem ou url",
+          "30003": "URL de atribuição inválido - por favor assegure-se de que o protocolo está presente, e.g. https: \/\/",
+          "40001": "Código de país fornecido inválido",
+          "40002": "A sociedade selecionada não corresponde à sociedade do ficheiro selecionado",
+          "40003": "A data em que o ficheiro selecionado foi exportado foi deformada e a importação não pode ser concluída"
+        }
       }
+    }
   },
   "api_stats": {
     "page_title": "Estatísticas API",
@@ -525,185 +647,252 @@
     "empty": "Não foram encontradas estatísticas para o intervalo de datas em questão"
   },
   "api_usage": {
-      "applications": "Aplicações",
-      "view_user": "Ver utilizador",
-      "reactivate": "Reativar",
-      "app_detail": "Detalhes da Aplicação",
-      "app_details": "Detalhes da Aplicação",
-      "activity": "Atividade",
-      "view_all_activity": "Ver toda a atividade para esta aplicação",
-      "api_users": "Utilizadores API",
-      "terms_conditions": "Todas as Versões de Termos & Condições",
-      "view_prev_terms": "Ver versões anteriores",
-      "current_version": "Versão Atual",
-      "version": "Versão"
+    "applications": "Aplicações",
+    "view_user": "Ver utilizador",
+    "reactivate": "Reativar",
+    "app_detail": "Detalhes da Aplicação",
+    "app_details": "Detalhes da Aplicação",
+    "activity": "Atividade",
+    "view_all_activity": "Ver toda a atividade para esta aplicação",
+    "api_users": "Utilizadores API",
+    "terms_conditions": "Todas as Versões de Termos & Condições",
+    "view_prev_terms": "Ver versões anteriores",
+    "current_version": "Versão Atual",
+    "version": "Versão"
   },
   "applications": {
-      "my_apps": "As Minhas Aplicações",
-      "new_tc": "Novos termos e condições",
-      "build": "Construir nova aplicação",
-      "edit": "Editar aplicação",
-      "building": "A construir a aplicação",
-      "no_apps": "Não tem nenhuma aplicação, construa uma para começar."
+    "my_apps": "As Minhas Aplicações",
+    "new_tc": "Novos termos e condições",
+    "build": "Construir nova aplicação",
+    "build_key": "Criar nova chave de API",
+    "edit": "Editar aplicação",
+    "building": "A construir a aplicação",
+    "building_key": "Construindo chave de API",
+    "no_apps": "Não tem nenhuma aplicação, construa uma para começar.",
+    "api_keys": "Códigos API"
   },
   "home": {
-      "home": "Página Inicial",
-      "welcome": "Bem-vindo",
-      "admin_intro": "Aqui pode gerir utilizadores, editar e publicar conteúdo WhatNow e ver utilizadores API.",
-      "ns_admin_intro": "Aqui pode editar e publicar conteúdo WhatNow",
-      "ns_editor_intro": "Aqui pode editar conteúdo WhatNow",
-      "api_user_intro": "Aqui pode ver as suas aplicações e gerir a sua conta."
+    "home": "Página Inicial",
+    "welcome": "Bem-vindo",
+    "admin_intro": "Aqui pode gerir utilizadores, editar e publicar conteúdos da base de dados de mensagens de segurança e visualizar a utilização da API.",
+    "ns_admin_intro": "Aqui pode editar e publicar conteúdos da base de dados de mensagens de segurança",
+    "ns_editor_intro": "Aqui pode editar o conteúdo da base de dados de mensagens de segurança",
+    "api_user_intro": "Aqui pode ver as suas aplicações e gerir a sua conta.",
+    "role_changed_title": "Seu papel foi alterado",
+    "role_changed_p": "Você foi designado para o seguinte papel:",
+    "role_changed_p2": "Suas permissões são as seguintes:",
+    "role_changed_confirm": "Confirmar",
+    "role_changed_dismiss": "Fechar"
   },
   "landing": {
-      "strapline": "Serviço WhatNow",
-      "strapline_part_2": "Mensagens Principais de Segurança da Cruz Vermelha Internacional \/ Crescente Vermelho",
-      "developer": {
-          "strap_para_one": "Ajude as comunidades a prepararem-se, responderem e recuperarem dos desastres com as nossas mensagens principais de ação localizadas.",
-          "strap_para_two": "Utilize o nosso guia fácil de quatro passos para integrar as mensagens WhatNow na sua aplicação. Inscreva-se e veja todas as mensagens disponíveis."
-      },
-      "national_society": {
-          "strap_para_one": "Publique as suas mensagens principais de segurança da Sociedade Nacional da Cruz Vermelha e do Crescente Vermelho para que os meios de comunicação social globais, nacionais e locais tenham acesso e transmitam.",
-          "strap_para_two": "Contacte-nos para saber mais sobre como criar as mensagens e contactar com parceiros de meios de comunicação."
-      },
+    "strapline": "Serviço de base de dados de mensagens de segurança",
+    "strapline_part_2": "Mensagens Principais de Segurança da Cruz Vermelha Internacional \/ Crescente Vermelho",
+    "head_1": "Segurança da FICV",
+    "head_2": "Base de dados de mensagens",
+    "head_text_1": "Mensagens de segurança baseadas na sensibilização do público e na",
+    "head_text_2": "Recurso de Educação Pública (PAPE)",
+    "head_bottom_1": "Aceder e partilhar dados de confiança da Cruz Vermelha e do Crescente Vermelho",
+    "head_bottom_2": "mensagens práticas para ajudar as pessoas a prepararem-se com segurança para",
+    "head_bottom_3": "e responder aos perigos.",
+    "signup": "Inscrever-se",
+    "it_works": "Como funciona",
+    "works_1_a": "Cruz Vermelha Crescente Vermelho Nacional",
+    "works_1_b": "Parceiros sociais e governamentais",
+    "works_1_c": "chegar a acordo sobre conjuntos nacionais de mensagens",
+    "works_2_a": "As Sociedades Nacionais publicam",
+    "works_2_b": "mensagens de segurança no",
+    "works_2_c": "base de dados",
+    "works_3_a": "Alterar as agências e",
+    "works_3_b": "canais de comunicação",
+    "works_3_c": "ligar-se à API da base de dados",
+    "works_4_a": "Parceiros partilham",
+    "works_4_b": "mensagens através dos seus",
+    "works_4_c": "canais",
+    "works_5_a": "As comunidades recebem",
+    "works_5_b": "as mensagens e",
+    "works_5_c": "atuar com segurança",
+    "learn_more": "Saiba mais",
+    "watch_video": "Ver vídeo",
+    "example_case": "Exemplo de caso de utilização",
+    "api": "API",
+    "hurricane": "Incluir mensagens com o furacão mais cedo",
+    "warning_alerts": "alertas de aviso",
+    "social_media": "Redes sociais",
+    "post_images": "Publicar imagens de preparação para incêndios florestais",
+    "messages_network": "mensagens para a sua rede",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Partilhe as acções de atenuação das inundações com os seus",
+    "family": "família e amigos",
+    "impact": "Impacto",
+    "sign_up_today": "Inscrever-se hoje",
+    "developer": {
       "strap_para_one": "Ajude as comunidades a prepararem-se, responderem e recuperarem dos desastres com as nossas mensagens principais de ação localizadas.",
-      "strap_para_two": "Utilize o nosso guia fácil de quatro passos para integrar as mensagens WhatNow na sua aplicação. Inscreva-se e veja todas as mensagens disponíveis.",
-      "view_data": "Ver os dados",
-      "view_message_library": "Ver Mensagens WhatNow",
-      "what_now": "WhatNow?",
-      "fake_alert_heading": "Aviso de Frio Extremo",
-      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-      "fake_alert_time": "HÁ 1 HORA",
-      "fake_alert_time_exact": "05-02-18 às 05:15 CT",
-      "use_cases": {
-          "heading": "Saber Mais",
-          "first_heading": "Como Funciona",
-          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "second_heading": "Casos de Uso",
-          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "third_heading": "Conjunto de ferramentas de Implementação",
-          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fourth_heading": "Vídeo WhatNow",
-          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fifth_heading": "Melhorar as Aplicações Meteorológicas",
-          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-      },
-      "example_alert": {
-          "heading": "Experimente o Formato de Mensagem WhatNow",
-          "alert_preview": "Pré-visualização do alerta",
-          "what_now_info": "Pré-visualização WhatNow",
-          "example_whatnow_request": "Experimente a Resposta de WhatNow",
-          "example_alert_request": "Experimente a Resposta do Alerta",
-          "example_content": "Informação meteorológica# 3 FINAL a partir das 11h, janeiro. 29, 2018\nPara a Parte Final de uma Frente Fria\n\nO efeito da Parte Final de uma Frente Fria enfraqueceu. Melhores condições climatéricas serão experienciadas em Nome. No entanto, devem esperar-se aguaceiros isolados ou trovoadas, especialmente durante a tarde ou à noite, nestas áreas devido ao oeste.\n\nCom este desenvolvimento, esta é a última informação para este sistema meteorológico.",
-          "example_content_location_header": "LOCALIZAÇÃO AFETADA",
-          "example_content_location": "Nome, Alasca"
-      },
-      "example_whatnow": {
-          "alert_from": "Alerta de: Cruz Vermelha Americana",
-          "more_info": "Mais Informações",
-          "heading": "Mensagens Principais para o Frio Extremo",
-          "copy": "Estas são ações a tomar para reduzir o risco e proteger a si e ao seu agregado familiar do frio extremo.",
-          "what_now": "WhatNow",
-          "step_1": "Proteja sua casa. Verifique os canos e utilize fontes de aquecimento de forma segura.",
-          "step_2": "Mantenha-se hidratado com líquidos quentes",
-          "step_3": "Proteja-se com roupas quentes e cubra a pele exposta",
-          "step_4": "Preste atenção e tenha cuidado com as condições glaciais, especialmente enquanto conduz",
-          "step_5": "Verifique vizinhos, amigos e aqueles em risco"
-      },
-      "build": {
-          "heading": "Pronto para construir a sua aplicação?"
-      },
-      "data_preview": {
-          "heading": "Mensagens WhatNow",
-          "sub_heading": "Inscreva-se e veja as mensagens principais de ação das Sociedades Nacionais da Cruz Vermelha e do Crescente Vermelho em todo o mundo"
-      },
-      "footer": {
-          "terms_conditions": "Termos & Condições",
-          "about": "Sobre",
-          "privacy": "Privacidade",
-          "getting_started": "Começar",
-          "docs": "Documentação",
-          "give_feedback": "Dar Feedback",
-          "gdpc_logo": "Logótipo para o Centro Global de Preparação para Desastres",
-          "ifrc_logo": "Logótipo para o Movimento Internacional da Cruz Vermelha e do Crescente Vermelho"
-      }
+      "strap_para_two": "Utilize o nosso guia simples em quatro passos para integrar as mensagens de segurança na sua aplicação. Registe-se e veja todas as mensagens disponíveis."
+    },
+    "national_society": {
+      "strap_para_one": "Publique as suas mensagens principais de segurança da Sociedade Nacional da Cruz Vermelha e do Crescente Vermelho para que os meios de comunicação social globais, nacionais e locais tenham acesso e transmitam.",
+      "strap_para_two": "Contacte-nos para saber mais sobre como criar as mensagens e contactar com parceiros de meios de comunicação."
+    },
+    "strap_para_one": "Ajude as comunidades a prepararem-se, responderem e recuperarem dos desastres com as nossas mensagens principais de ação localizadas.",
+    "strap_para_two": "Utilize o nosso guia simples em quatro passos para integrar as mensagens de segurança na sua aplicação. Registe-se e veja todas as mensagens disponíveis.",
+    "view_data": "Ver os dados",
+    "view_message_library": "Ver mensagens de segurança",
+    "what_now": "WhatNow?",
+    "fake_alert_heading": "Aviso de Frio Extremo",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "HÁ 1 HORA",
+    "fake_alert_time_exact": "05-02-18 às 05:15 CT",
+    "use_cases": {
+      "heading": "Saber Mais",
+      "first_heading": "Como Funciona",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "Casos de Uso",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "Conjunto de ferramentas de Implementação",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "Vídeo WhatNow",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "Melhorar as Aplicações Meteorológicas",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "Modelo de mensagem de segurança",
+      "alert_preview": "Pré-visualização do alerta",
+      "what_now_info": "Pré-visualização da mensagem de segurança",
+      "example_whatnow_request": "Exemplo de resposta da base de dados de mensagens de segurança",
+      "example_alert_request": "Experimente a Resposta do Alerta",
+      "example_content": "Informação meteorológica# 3 FINAL a partir das 11h, janeiro. 29, 2018\nPara a Parte Final de uma Frente Fria\n\nO efeito da Parte Final de uma Frente Fria enfraqueceu. Melhores condições climatéricas serão experienciadas em Nome. No entanto, devem esperar-se aguaceiros isolados ou trovoadas, especialmente durante a tarde ou à noite, nestas áreas devido ao oeste.\n\nCom este desenvolvimento, esta é a última informação para este sistema meteorológico.",
+      "example_content_location_header": "LOCALIZAÇÃO AFETADA",
+      "example_content_location": "Nome, Alasca"
+    },
+    "example_whatnow": {
+      "alert_from": "Alerta de: Cruz Vermelha Americana",
+      "more_info": "Mais Informações",
+      "heading": "Mensagens de segurança para o frio extremo",
+      "copy": "Estas são ações a tomar para reduzir o risco e proteger a si e ao seu agregado familiar do frio extremo.",
+      "what_now": "Base de dados de mensagens de segurança da FICV",
+      "step_1": "Proteja sua casa. Verifique os canos e utilize fontes de aquecimento de forma segura.",
+      "step_2": "Mantenha-se hidratado com líquidos quentes",
+      "step_3": "Proteja-se com roupas quentes e cubra a pele exposta",
+      "step_4": "Preste atenção e tenha cuidado com as condições glaciais, especialmente enquanto conduz",
+      "step_5": "Verifique vizinhos, amigos e aqueles em risco"
+    },
+    "build": {
+      "heading": "Pronto para construir a sua aplicação?"
+    },
+    "data_preview": {
+      "heading": "Mensagens de segurança",
+      "sub_heading": "Inscreva-se e veja as mensagens principais de ação das Sociedades Nacionais da Cruz Vermelha e do Crescente Vermelho em todo o mundo"
+    },
+    "footer": {
+      "terms_conditions": "Termos & Condições",
+      "about": "Sobre",
+      "privacy": "Privacidade",
+      "getting_started": "Começar",
+      "docs": "Documentação",
+      "give_feedback": "Dar Feedback",
+      "gdpc_logo": "Logótipo para o Centro Global de Preparação para Desastres",
+      "ifrc_logo": "Logótipo para o Movimento Internacional da Cruz Vermelha e do Crescente Vermelho",
+      "subtitle_1": "Sobre o Banco de Dados de Segurança Chave da IFRC",
+      "text_1": "A Base de Dados de Segurança Chave da IFRC fornece acesso a",
+      "text_2": "Mensagens da Cruz Vermelha e do Crescente Vermelho sobre como as pessoas",
+      "text_3": "podem agir com segurança diante de perigos",
+      "subtitle_2": "Saiba Mais",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "Políticas",
+      "terms": "Termos e Condições",
+      "subtitle_4": "Links Úteis",
+      "api_doc": "Documentação da API",
+      "faq": "Perguntas Frequentes (link a ser fornecido)"
+    }
   },
   "register_form": {
-      "heading": "Crie a sua conta grátis WhatNow Service",
-      "who_are_you": "Quem é?",
-      "developer": "Desenvolvedor",
-      "national_society": "Sociedade Nacional",
-      "sign_up_with": "Inscreva-se com:",
-      "sign_up_agreement": "Ao criar a sua conta, concorda com os nossos ",
-      "terms_conditions": "Termos e Condições ",
-      "facebook": "Inscreva-se com o Facebook",
-      "google": "Inscrever-se com o Google",
-      "email_sign_up": "Ou inscreva-se com o seu e-mail:",
-      "location": "Localização",
-      "organisation": "Organização",
-      "industry": "Tipo de indústria",
-      "create_account": "Criar Conta",
-      "last_name": "Apelido",
-      "select_country": "Selecione um país",
-      "select_industry": "Selecione o tipo de indústria",
-      "industries": {
-          "media": "Meios de Comunicação",
-          "emergency": "Gestão de Emergências",
-          "non_profit": "Sem fins lucrativos\/ONG",
-          "humanitarian": "Organização Humanitária",
-          "red_cross": "Cruz Vermelha\/Crescente Vermelho",
-          "education": "Educação\/Académica",
-          "gov": "Agência Governamental",
-          "other": "Outros"
-      },
-      "api_used_in": "Onde será utilizada esta API?",
-      "api_used_in_help": "Informe-nos como pretende utilizar este serviço em menos de 255 caracteres",
-      "welcome": "Bem-vindo {name}, por favor complete a seguinte informação para começar:",
-      "gdpc_note": "Se tiver alguma pergunta ou estiver interessado em saber mais, por favor contacte: ",
-      "gdpc_ns_note": "Para se inscrever, por favor contacte a equipa WhatNow Service do Centro Global de Preparação para Desastres em ",
-      "contact_gdpc": "Contacte o CGPD"
+    "heading_1": "Crie sua conta gratuita",
+    "heading_2": "IFRC",
+    "heading_3": "Banco de Dados de Mensagens de Segurança",
+    "subtitle_1": "Ajude as comunidades a se prepararem e responderem a perigos locais com mensagens de segurança acionáveis da Cruz Vermelha e do Crescente Vermelho.",
+    "subtitle_2": "Se você deseja acessar com a API, inscreva-se e compartilhe as mensagens com o guia de #-passos.",
+    "subtitle_3": "Se você é uma Sociedade Nacional da Cruz Vermelha ou do Crescente Vermelho, inscreva-se e você receberá instruções sobre como adaptar e compartilhar suas mensagens de segurança.",
+    "who_are_you": "Quem é?",
+    "what_is_your_role": "Qual é o seu papel?",
+    "description": "TRADUÇÃO PENDENTE",
+    "national_society_description": "Publique as principais mensagens de segurança da sua Sociedade Nacional RCRC para que a mídia global, nacional e local possa acessar e transmitir.\nEntre em contato conosco para saber mais sobre como criar as mensagens e se conectar com parceiros de mídia.",
+    "developer": "Desenvolvedor",
+    "national_society": "Sociedade Nacional",
+    "sign_up_with": "Inscreva-se com:",
+    "sign_up_agreement": "Ao criar a sua conta, concorda com os nossos ",
+    "terms_conditions": "Termos e Condições ",
+    "facebook": "Inscreva-se com o Facebook",
+    "google": "Inscrever-se com o Google",
+    "email_sign_up": "Ou inscreva-se com o seu e-mail:",
+    "mail": "email",
+    "email_ifrc": "im@ifrc.org",
+    "location": "Localização",
+    "organisation": "Organização",
+    "industry": "Tipo de indústria",
+    "create_account": "Criar Conta",
+    "last_name": "Apelido",
+    "select_country": "Selecione um país",
+    "select_industry": "Selecione o tipo de indústria",
+    "industries": {
+      "media": "Meios de Comunicação",
+      "emergency": "Gestão de Emergências",
+      "non_profit": "Sem fins lucrativos\/ONG",
+      "humanitarian": "Organização Humanitária",
+      "red_cross": "Cruz Vermelha\/Crescente Vermelho",
+      "education": "Educação\/Académica",
+      "gov": "Agência Governamental",
+      "other": "Outros"
+    },
+    "api_used_in": "Onde será utilizada esta API?",
+    "api_used_in_help": "Informe-nos como pretende utilizar este serviço em menos de 255 caracteres",
+    "welcome": "Bem-vindo {name}, por favor complete a seguinte informação para começar:",
+    "ifrc_note": "Para perguntas ou mais informações, por favor, entre em contato:",
+    "contact_gdpc": "Contacte o CGPD"
   },
   "terms_service_page": {
     "applicable_law": {
-        "body": "As leis do Distrito de Colúmbia regerão todos os direitos e obrigações ao abrigo deste Acordo, sem dar efeito a quaisquer princípios de conflitos de leis.",
-        "heading": "Lei Aplicável:"
+      "body": "As leis do Distrito de Colúmbia regerão todos os direitos e obrigações ao abrigo deste Acordo, sem dar efeito a quaisquer princípios de conflitos de leis.",
+      "heading": "Lei Aplicável:"
     },
     "body": "O Utilizador é responsável por manter o segredo e a segurança da chave de registo que lhe foi fornecida pela Cruz Vermelha. É responsável por manter a compatibilidade com a API, tal como atualizado de tempos a tempos, a fim de continuar a receber os Data Feeds. A Cruz Vermelha pode lançar versões atualizadas da API e dos Data Feeds a seu exclusivo critério. As novas versões podem não ser compatíveis com implementações anteriores, e O Utilizador concorda em utilizar a versão atualizada mais recente dos Data Feeds em qualquer altura.\n\nO Utilizador concorda em não modificar, distribuir, descompilar, desmontar, ou fazer engenharia inversa de qualquer parte da API ou de qualquer software da Cruz Vermelha.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de uma forma que exceda o volume razoável do pedido ou que constitua uma utilização excessiva ou abusiva, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de forma ilegal, enganosa, negligente, maliciosa, com intenção de causar danos, ou que prejudique a Cruz Vermelha, os seus fornecedores de serviços, os seus fornecedores de conteúdos, ou qualquer outra pessoa, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nA Cruz Vermelha pode monitorizar a sua utilização da API e dos Data Feeds. O Utilizador não pode utilizar quaisquer meios técnicos para interferir com tal monitorização, e a Cruz Vermelha pode utilizar meios técnicos para ultrapassar qualquer interferência deste tipo.\n\nA utilização de Mensagens de Preparação, Resposta e Recuperação será apresentada apenas como atual ou atualizada à configuração de urgência então vigente do Alerta de Evento correlacionado, e o Utilizador deverá atualizar Mensagens individuais de Preparação, Resposta e Recuperação após qualquer atualização dos Data Feeds e\/ou Alertas de Evento correlacionados pela Cruz Vermelha.\n\nAs Mensagens de Preparação, Resposta e Recuperação Individuais que utiliza devem ser associadas apenas à região geográfica para a qual são emitidas. Se uma Mensagem de Preparação, Resposta e Recuperação incluir uma referência a uma fonte como a Cruz Vermelha Americana ou outra sociedade ou organização nacional da Cruz Vermelha ou do Crescente Vermelho (cada uma delas uma \"Referência de Fonte\"), o Utilizador deve incluir a Referência de Fonte associada a cada Mensagem de Preparação, Resposta e Recuperação no formulário fornecido nos Data Feeds. O Utilizador não deverá fazer mais uso de qualquer Referência de Fonte.\n\nO Utilizador não pode traduzir os Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação para qualquer outra língua, fazer qualquer uso, edição ou revisão, ou alterar o significado dos Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação.\n\nO Utilizador deve assegurar-se de que os Data Feeds permanecem na sua posse e\/ou controlo exclusivo.\n\nO Utilizador não pode permitir que Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação entregues a Utilizadores Finais incorporem qualquer publicidade ou patrocínio.\n\nO Utilizador não pode ficar com qualquer arquivo ou Data Feeds no todo ou em parte.",
     "contact": "Por favor contacte a Cruz Vermelha em {0} com quaisquer questões sobre a API.",
     "disclaimer": "A API e os Data Feeds são fornecidos APENAS PARA FINS INFORMATIVOS E EDUCACIONAIS E numa base de \"no estado em que se encontram\" ou \"conforme disponíveis\". A Cruz Vermelha não faz representações ou garantias expressas ou implícitas de nenhum género. A Cruz Vermelha nega todas as garantias, expressas ou implícitas, incluindo mas não limitando-se a garantias de comercialização e de adequação para nenhum fim em particular. A Cruz Vermelha e os seus colaboradores, oficiais, governadores e agentes e licenciadores não serão responsáveis por nenhuma forma de dano resultante do uso da API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a danos diretos, indiretos, incidentais, punitivos e consequentes.\n\nA Cruz Vermelha não garante a ordem, precisão, autenticidade ou a integralidade da API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação e não será considerada responsável de nenhuma forma quanto ao Utilizador ou os seus Utilizadores Finais ou a terceiros, incluindo mas não limitando-se a quaisquer atrasos, imprecisões, erros ou omissões quanto à API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação fornecidas a seguir.",
     "entire_agreement": {
-        "body": "Os Termos da API constituem o acordo completo e exclusivo entre a Cruz Vermelha e o Utilizador com respeito ao presente assunto e substitui todos os acordos orais ou escritos, comunicações ou contratos precedentes não incorporados aqui especificamente. A Cruz Vermelha reserva o direito de modificar ou revogar este acordo a qualquer momento.",
-        "heading": "Contrato Integral:"
+      "body": "Os Termos da API constituem o acordo completo e exclusivo entre a Cruz Vermelha e o Utilizador com respeito ao presente assunto e substitui todos os acordos orais ou escritos, comunicações ou contratos precedentes não incorporados aqui especificamente. A Cruz Vermelha reserva o direito de modificar ou revogar este acordo a qualquer momento.",
+      "heading": "Contrato Integral:"
     },
     "heading": "CONTRATO DE LICENCIAMENTO DE USUÁRIO FINAL DA API",
     "intro": "ACEITAR: ATRAVÉS DO USO DO SERVIÇO OU DA MARCAÇÃO DA CAIXA APRESENTADA, O USUÁRIO ESTÁ A CONCORDAR COM O QUE É ESTABELECIDO NESTE CONTRATO.\n\nA API é uma ferramenta que te permite (\"O Usuário\") recolher e usar data feeds disponibilizados pela Cruz Vermelha, incluindo um feed meteorológico de notificações de aviso e vigilância de eventos de desastre global (\"Alertas de Eventos\") e um feed de mensagens úteis e contextuais sobre como se preparar para desastres locais de acordo com o tipo e urgência do desastre (\"Mensagens de Preparação, Resposta e Recuperação\", juntamente aos Alertas de Eventos e os \"Data Feeds\"). As Mensagens de Preparação, Resposta e Recuperação têm como objetivo acompanhar os Alertas de Eventos e outras notificações de aviso e vigilância associadas a eventos de desastre na sua própria aplicação. O uso dos Data Feeds pelo Usuário é regulado pelos Termos da API.",
     "license_limitations": {
-        "body": "O Utilizador pode usar os Data Feeds apenas em associação com a sua aplicação sujeita aos Termos da API e desde que O Usuário mantenha a compatibilidade com a API, de acordo com as atualizações periódicas. É garantido ao Usuário um direito não-exclusivo, limitado e revogável para descarregar, usar, reproduzir e distribuir para usuários finais da sua própria aplicação (\"Usuários Finais\") Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação relevantes e contextuais em associação com a configuração de urgência de Alertas de Evento individuais dos Data Feeds, sujeito aos Termos da API. O Usuário pode apenas utilizar a API para usos não comerciais dos Data Feeds de acordo com os Termos da API. O Usuário não pode, a nenhum momento, utilizar a API para meios comerciais dos Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a revenda, cobrar o seu acesso, cobrar para os redistribuir ou cobrar para criar trabalhos derivados com base neles. A Cruz Vermelha e os seus licenciadores preservam todos os títulos, propriedade, direitos e garantias e interesses da API, Mensagens de Preparação, Resposta e Recuperação, Alertas de Eventos, Data Feeds e Fontes de Referência (como definidas abaixo). Todos os direitos não concedidos expressamente estão reservados.",
-        "heading": "Licença e Limitações:"
+      "body": "O Utilizador pode usar os Data Feeds apenas em associação com a sua aplicação sujeita aos Termos da API e desde que O Usuário mantenha a compatibilidade com a API, de acordo com as atualizações periódicas. É garantido ao Usuário um direito não-exclusivo, limitado e revogável para descarregar, usar, reproduzir e distribuir para usuários finais da sua própria aplicação (\"Usuários Finais\") Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação relevantes e contextuais em associação com a configuração de urgência de Alertas de Evento individuais dos Data Feeds, sujeito aos Termos da API. O Usuário pode apenas utilizar a API para usos não comerciais dos Data Feeds de acordo com os Termos da API. O Usuário não pode, a nenhum momento, utilizar a API para meios comerciais dos Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a revenda, cobrar o seu acesso, cobrar para os redistribuir ou cobrar para criar trabalhos derivados com base neles. A Cruz Vermelha e os seus licenciadores preservam todos os títulos, propriedade, direitos e garantias e interesses da API, Mensagens de Preparação, Resposta e Recuperação, Alertas de Eventos, Data Feeds e Fontes de Referência (como definidas abaixo). Todos os direitos não concedidos expressamente estão reservados.",
+      "heading": "Licença e Limitações:"
     },
     "overview": {
-        "body": "A Interface do Programa da Aplicação (a \"API\") do WhatNow Service do Centro Global de Preparação para Desastres é disponibilizada pela Cruz Vermelha Americana (\"Red Cross\"). A API requer uma chave de registo.  Durante o processo de registo, O Usuário deve concordar com os seguintes termos e condições, para além dos termos e condições na Página Web do Acordo dos Termos de Serviço da Cruz Vermelha, disponível em {0} (coletivamente, os \"Termos da API\"). Os Termos da API vão gerir o seu uso da API e todos os materiais eletrónicos descarregáveis disponibilizados na API. {1}",
-        "cta": "Clique aqui para se registar."
+      "body": "A Interface de Programa de Aplicação do Serviço de Base de Dados de Mensagens de Segurança do Centro Global de Preparação para Catástrofes (a \"API\") é-lhe disponibilizada pela Cruz Vermelha Nacional Americana (\"Cruz Vermelha\"). A API requer uma chave de registo.  Durante o processo de registo, o utilizador tem de concordar com os seguintes termos e condições, juntamente com os termos e condições do Acordo de Termos de Serviço do Web Site da Cruz Vermelha disponível em {0} (coletivamente, os \"Termos da API\"). Os Termos da API regerão a sua utilização da API e dos materiais electrónicos descarregáveis disponibilizados através da API. {1}",
+      "cta": "Clique aqui para se registar."
     },
     "privacy_policy": {
-        "body": "O Usuário compreende, reconhece e concorda que a operação de certos programas, serviços, ferramentas, opções de compra, materiais ou informações na API requer a submissão, uso e disseminação de informações pessoais e identificativas variadas. Assim, se O Usuário pretende aceder e utilizar a API, O Usuário reconhece e concorda que a utilização da API pelo Usuário constituirá a aceitação da recolha de informações pessoais e identificativas e das práticas de utilização contidas na política de privacidade publicadas: {0}",
-        "heading": "Política de Privacidade:"
+      "body": "O Usuário compreende, reconhece e concorda que a operação de certos programas, serviços, ferramentas, opções de compra, materiais ou informações na API requer a submissão, uso e disseminação de informações pessoais e identificativas variadas. Assim, se O Usuário pretende aceder e utilizar a API, O Usuário reconhece e concorda que a utilização da API pelo Usuário constituirá a aceitação da recolha de informações pessoais e identificativas e das práticas de utilização contidas na política de privacidade publicadas: {0}",
+      "heading": "Política de Privacidade:"
     },
     "prohibited_activities": {
-        "body": "O Usuário e os seus Usuários Finais ou agentes não devem utilizar a API ou os Data Feeds das seguintes formas:",
-        "heading": "Conduta e Atividades Proibidas:",
-        "prohibited_list": {
-            "one": "Interferir ou interromper os serviços ou servidores da Cruz Vermelha.",
-            "two": "Contornar ou modificar quaisquer mecanismos de segurança ou chaves empregadas pela Cruz Vermelha ou pela API, incluindo mas não limitando-se a quaisquer tecnologias de autenticação.",
-            "three": "Requerer, recolher, solicitar ou de outra forma obter acesso a dados de início de sessão, palavras-chave ou outras credenciais de autenticação para a Cruz Vermelha para além do que é fornecido ao Usuário para a sua própria conta.",
-            "four": "Afirmar ou insinuar afiliação, patrocínio ou apoio por parte da Cruz Vermelha ou qualquer outra sociedade nacional ou organização da Cruz Vermelha ou do Crescente Vermelho.",
-            "five": "Afirmar ou insinuar que O Usuário é dono da API ou criou a API, Data Feeds, Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação.",
-            "six": "Transmitir quaisquer vírus, vermes, cavalos de Troia ou quaisquer itens de natureza destrutiva."
-        }
+      "body": "O Usuário e os seus Usuários Finais ou agentes não devem utilizar a API ou os Data Feeds das seguintes formas:",
+      "heading": "Conduta e Atividades Proibidas:",
+      "prohibited_list": {
+        "one": "Interferir ou interromper os serviços ou servidores da Cruz Vermelha.",
+        "two": "Contornar ou modificar quaisquer mecanismos de segurança ou chaves empregadas pela Cruz Vermelha ou pela API, incluindo mas não limitando-se a quaisquer tecnologias de autenticação.",
+        "three": "Requerer, recolher, solicitar ou de outra forma obter acesso a dados de início de sessão, palavras-chave ou outras credenciais de autenticação para a Cruz Vermelha para além do que é fornecido ao Usuário para a sua própria conta.",
+        "four": "Afirmar ou insinuar afiliação, patrocínio ou apoio por parte da Cruz Vermelha ou qualquer outra sociedade nacional ou organização da Cruz Vermelha ou do Crescente Vermelho.",
+        "five": "Afirmar ou insinuar que O Usuário é dono da API ou criou a API, Data Feeds, Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação.",
+        "six": "Transmitir quaisquer vírus, vermes, cavalos de Troia ou quaisquer itens de natureza destrutiva."
+      }
     },
     "reserve_rights": "A Cruz Vermelha reserva o direito de alterar e\/ou parar de fornecer a API e os Data Feeds na sua totalidade ou em parte, provisoriamente ou permanentemente, a qualquer momento e sem aviso prévio. A fim de evitar incertezas, nada aqui presente obriga a Cruz Vermelha a tornar a API e Data Feeds disponíveis para O Usuário e O Usuário concorda e reconhece que qualquer acesso está ao critério exclusivo e absoluto da Cruz Vermelha.",
     "severability": {
-        "body": "A invalidade ou ilegalidade de qualquer disposição deste documento não deverá afetar a validade de qualquer outra disposição.",
-        "heading": "Disjunção e Renúncia:"
+      "body": "A invalidade ou ilegalidade de qualquer disposição deste documento não deverá afetar a validade de qualquer outra disposição.",
+      "heading": "Disjunção e Renúncia:"
     },
     "suspension": {
       "body": "A Cruz Vermelha reserva o direito de suspender ou cancelar o acesso do Usuário se a Cruz Vermelha determinar, a seu exclusivo critério, que O Usuário está envolvido na utilização não autorizada da API ou do Data Feed como descrito nos Termos da API ou que O Usuário está a utilizar a API ou o Data Feed em qualquer atividade que ameaça\/põe em risco a segurança e\/ou proteção de qualquer pessoa ou das redes da Cruz Vermelha.",
@@ -711,111 +900,121 @@
     }
   },
   "view_data": {
-      "alert_title": "ALERTA:",
-      "more_info": "mais informações:",
-      "which": "Quais Mensagens WhatNow quer visualizar?",
-      "view_data": "Ver dados",
-      "alerts": "Alertas",
-      "alert_preview": "Pré-visualização do alerta",
-      "cap_alerts": "Alertas CAP",
-      "onset": "Início",
+    "alert_title": "ALERTA:",
+    "more_info": "mais informações:",
+    "which": "Que mensagens de segurança pretende visualizar?",
+    "view_data": "Ver dados",
+    "alerts": "Alertas",
+    "alert_preview": "Pré-visualização do alerta",
+    "cap_alerts": "Alertas CAP",
+    "onset": "Início",
+    "severity": "Gravidade",
+    "title": "Título",
+    "date": "Data",
+    "headline": "Cabeçalho",
+    "alert": "Alerta",
+    "whatnow_info": "Informação da base de dados de mensagens de segurança",
+    "alert_detail": "Detalhes do Alerta",
+    "more": "Informações adicionais",
+    "area_affected": "Área Afetada",
+    "details": "Detalhes",
+    "cap": {
+      "type": "Tipo",
+      "status": "Status",
+      "urgency": "Urgência",
       "severity": "Gravidade",
-      "title": "Título",
-      "date": "Data",
-      "headline": "Cabeçalho",
-      "alert": "Alerta",
-      "whatnow_info": "Informação WhatNow",
-      "alert_detail": "Detalhes do Alerta",
-      "more": "Informações adicionais",
-      "area_affected": "Área Afetada",
-      "details": "Detalhes",
-      "cap": {
-          "type": "Tipo",
-          "status": "Status",
-          "urgency": "Urgência",
-          "severity": "Gravidade",
-          "certainty": "Grau de certeza",
-          "sent": "Caixa de saída",
-          "effective": "Efetivo",
-          "onset": "Início",
-          "expires": "Expira",
-          "alert_from": "Alerta do",
-          "feed": "Feed",
-          "more": "Mais informações:",
-          "through": "através",
-          "alert_feed": "Feed de Alertas",
-          "fetching_feed": "Procurar feed",
-          "empty": "Atualmente, não existem alertas"
-      }
+      "certainty": "Grau de certeza",
+      "sent": "Caixa de saída",
+      "effective": "Efetivo",
+      "onset": "Início",
+      "expires": "Expira",
+      "alert_from": "Alerta do",
+      "feed": "Feed",
+      "more": "Mais informações:",
+      "through": "através",
+      "alert_feed": "Feed de Alertas",
+      "fetching_feed": "Procurar feed",
+      "empty": "Atualmente, não existem alertas"
+    }
   },
   "user_agreement": {
-      "title": "Acordo de utilização",
-      "para_one": "Antes de poder aceder ao Portal WhatNow, por favor leia e aceite os termos do acordo de utilização ao descarregar o documento abaixo e clicar no botão \"Aceito\" abaixo.",
-      "cta": "Aceito",
-      "download": "Clique aqui para aceder ao documento do acordo de utilização (105KB)"
+    "title": "Acordo de utilização",
+    "para_one": "Antes de poder aceder ao portal da base de dados de mensagens de segurança, leia e aceite os termos do acordo de utilização descarregando o documento abaixo e clicando no botão \"Aceito\" abaixo.",
+    "cta": "Aceito",
+    "download": "Clique aqui para aceder ao documento do acordo de utilização (105KB)"
   },
   "hazard_type": {
-      "dropdown": {
-        "select": "Selecionar tipo de desastre",
-        "create": "Criar tipo de desastre"
-      },
-      "create": {
-          "title": "Criar novo tipo de desastre",
-          "request": "Requerer novo tipo de desastre",
-          "other": "Outros",
-          "email_subject": "Requerer um novo tipo de desastre",
-          "hazard_name": "Nome do desastre",
-          "hazard_name_placeholder": "Introduza o nome do desastre",
-          "upload_icon": "Carregar\/Adicionar imagem",
-          "icon_requirements": "Imagens devem estar em formato .png e terem um tamanho abaixo de 30kb",
-          "requestLink": "Contactar o CGPD para requerer um novo tipo de desastre",
-          "success": "Tipo de desastre criado",
-          "error": "Ocorreu um erro ao criar o seu novo tipo de desastre."
-      }
+    "dropdown": {
+      "select": "Selecionar tipo de desastre",
+      "create": "Criar tipo de desastre"
+    },
+    "create": {
+      "title": "Criar novo tipo de desastre",
+      "request": "Requerer novo tipo de desastre",
+      "other": "Outros",
+      "email_subject": "Requerer um novo tipo de desastre",
+      "hazard_name": "Nome do desastre",
+      "hazard_name_placeholder": "Introduza o nome do desastre",
+      "upload_icon": "Carregar\/Adicionar imagem",
+      "icon_requirements": "Imagens devem estar em formato .png e terem um tamanho abaixo de 30kb",
+      "requestLink": "Contactar o CGPD para requerer um novo tipo de desastre",
+      "success": "Tipo de desastre criado",
+      "error": "Ocorreu um erro ao criar o seu novo tipo de desastre."
+    }
   },
   "regions": {
     "list": {
-        "manage": "Gerir regiões",
-        "create": "Criar nova região",
-        "edit": "Editar região",
-        "add": "Adicionar região",
-        "empty": "Não foi possível encontrar regiões",
-        "table_header": {
-            "region": "Região"
-        }
+      "manage": "Sub-regiões",
+      "create": "Criar nova região",
+      "edit": "Editar região",
+      "add": "Adicionar região",
+      "empty": "Não foi possível encontrar regiões",
+      "table_header": {
+        "region": "Região"
+      }
     },
     "select_soc": "Selecione uma sociedade para visualizar e adicionar regiões",
     "create": "Criar uma nova região",
     "form": {
-        "name": "Nome da região",
-        "name_help": "Dê um nome à região para a qual deseja criar o envio de mensagens personalizado do WhatNow.",
-        "description": "Descrição",
-        "description_help": "Forneça mais informação sobre a região, p. ex., San Francisco Bay Area."
+      "name": "Nome da região",
+      "name_help": "Dê um nome à região para a qual pretende criar mensagens de segurança personalizadas.",
+      "description": "Descrição",
+      "description_help": "Forneça mais informação sobre a região, p. ex., San Francisco Bay Area."
     },
     "edit": "Editar região",
     "delete": "Esta ação irá eliminar a região e qualquer conteúdo associado a essa região."
   },
   "table_headers": {
-      "profile_pic": "imagem de perfil",
-      "first_name": "Apelido",
-      "last_name": "apelido",
-      "role": "cargo",
-      "society": "sociedade",
-      "date": "Data",
-      "country": "País",
-      "email": "e-mail",
-      "created_at": "criado_em",
-      "last_logged_in_at": "Última Atividade",
-      "terms_version": "perfil",
-      "actions": "Ações",
-      "action": "Ação",
-      "content": "Conteúdo",
-      "country_code": "Localização",
-      "organisation": "organização",
-      "industry_type": "tipo de indústria",
-      "all_roles": "Todos os cargos",
-      "version": "Versão",
-      "user": "Utilizador",
-      "language_code": "Código do Idioma"
+    "profile_pic": "imagem de perfil",
+    "first_name": "Apelido",
+    "last_name": "apelido",
+    "role": "cargo",
+    "society": "sociedade",
+    "date": "Data",
+    "country": "País",
+    "email": "e-mail",
+    "created_at": "criado_em",
+    "last_logged_in_at": "Última Atividade",
+    "terms_version": "perfil",
+    "actions": "Ações",
+    "action": "Ação",
+    "content": "Conteúdo",
+    "country_code": "Localização",
+    "organisation": "organização",
+    "industry_type": "tipo de indústria",
+    "all_roles": "Todos os cargos",
+    "version": "Versão",
+    "user": "Utilizador",
+    "language_code": "Código do Idioma"
+  },
+  "terms_conditions": {
+    "title": "Termos e Condições",
+    "accept": "Aceitar"
+  },
+  "badges": {
+    "hazardCreate": "Perigo Criado",
+    "published": "Publicado",
+    "draft": "Rascunho",
+    "bulkUploadDraft": "Carregar ficheiro de mensagem Rascunho"
   }
 }

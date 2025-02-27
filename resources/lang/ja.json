@@ -9,14 +9,15 @@
   "token_expired_alert_title": "セッションの有効期限が切れました！",
   "token_expired_alert_text": "続行するには、再度ログインしてください。",
   "login": "ログイン",
-  "what_now": "WhatNow",
+  "what_now": "IFRC安全メッセージデータベース",
   "message_portal": "メッセージポータル",
   "register": "登録",
   "sign_up": "新規登録",
   "docs": "マニュアル",
   "my_apps": "マイアプリ",
   "number_of_apps": "{0}のアプリ",
-  "whatnow_content": "WhatNowメッセージ",
+  "whatnow_content": "メッセージ",
+  "create_key": "キー作成",
   "alerts": "警報",
   "feeds": "フィード",
   "get_started": "今すぐ登録",
@@ -75,7 +76,7 @@
     "create": "作成",
     "content": "コンテンツ",
     "what_now_content": "What Nowコンテンツ",
-    "bulk_upload": "一括アップロード",
+    "bulk_upload": "メッセージファイルのアップロード",
     "audit_log": "監査ログ",
     "api_usage": "APIの使用",
     "app_detail": "アプリの詳細",
@@ -84,153 +85,154 @@
   "documentation": {
     "heading": "赤十字APIマニュアル",
     "sidebar": {
-        "introduction": "はじめに",
-        "base_url": "ベースURL",
-        "changelog": "変更ログ",
-        "authentication": "認証",
-        "response_codes": "レスポンスコード",
-        "emergency_alert_feed": "緊急警報フィード",
-        "cap_alert_document": "CAP警報マニュアル",
-        "what_now": "What Now"
+      "introduction": "はじめに",
+      "base_url": "ベースURL",
+      "changelog": "変更ログ",
+      "authentication": "認証",
+      "response_codes": "レスポンスコード",
+      "emergency_alert_feed": "緊急警報フィード",
+      "cap_alert_document": "CAP警報マニュアル",
+      "what_now": "What Now"
     },
     "steps": {
-        "one": {
-            "body": "赤十字のREST APIで、国際赤十字社が発行する緊急情報やリソースにアクセスできます。",
-            "heading": "はじめに",
-            "support_card": {
-                "body": "赤十字のAPIに関する質問がありましたら、dev@3sidedcube.comにご連絡ください",
-                "title": "サポートと質問"
-            }
-        },
-        "two": {
-            "body": "API v1.0マニュアルに記載されている全てのURLには、以下のベースURLがあります：",
-            "heading": "ベースURL"
-        },
-        "three": {
-          "heading": "変更ログ",
-          "table": {
-              "headers": {
-                  "detail": "リリース",
-                  "version": "APIバージョン",
-                  "release": "リリース",
-                  "release_date": "リリース日"
-              }
-          }
-        },
-        "four": {
-            "body": "APIには、APIキーを用いて全てのリソースにアクセスするための認証情報が必要です。APIキーを取得するには、まず{0}を行います。全てのAPIリクエストには、以下のHTTPヘッダーを含める必要があります：",
-            "create_app_cta": "アプリケーションの作成",
-            "heading": "認証"
-        },
-        "five": {
-            "heading": "レスポンスコード",
-            "table": {
-                "descriptions": {
-                    "ok": "リクエストは実行され、レスポンスデータにはリクエストされたリソースが含まれています",
-                    "found": "リダイレクトを示します。以下の場所のリソースURIにGETリクエストを発行：「ヘッダー」。",
-                    "not_found": "お探しのリソースは見つかりませんでした。",
-                    "not_allowed": "使用されたHTTPメソッドが本リソースで禁じられていることを示します。",
-                    "server_error": "サーバーエラーが発生し、リクエストされたリソースを返せませんでした。",
-                    "unavailable": "サービスが現在利用できないことを示します。あとで再度お試しください。"
-                },
-              "headers": {
-                "code": "コード",
-                "name": "名前",
-                "description": "説明"
-              }
-            }
-        },
-        "six": {
-            "card": {
-              "body": "各国の赤十字社は、{0} v1.2を用いて公衆警報を発行する可能性があります。",
-              "cta": "共通警報プロトコル（CAP）",
-              "title": "共通警報プロトコル（CAP）"
-            },
-            "endpoint": "エンドポイント：",
-            "example": "この例では、{0}セグメントを任意の組織の国コードに置き換えてください。例）",
-            "feed_intro": "各組織のフィードも提供されます。そこには以下の国で識別される所定の組織から発行された有効な警報が記載されています：",
-            "heading": "緊急警報フィード",
-            "intro": "全ての組織から発行されたCAP警報は、RSSフィードで公開されます。これには以下のエンドポイントからアクセスできます："
-        },
-        "seven": {
-            "endpoint": "エンドポイント：",
-            "example_response": "レスポンスの例：",
-            "heading": "CAP警報マニュアル",
-            "body": "CAP警報マニュアルには、各RSSフィードの項目で指定された絶対リンクからアクセスできます。警報のURIは以下の形式です： "
-        },
-        "eight": {
-            "body": "以下のエンドポイントには、各種の災害への備えを支援するために赤十字社が公開している構造化データがあります。各エントリーには防災の６段階に関する情報が示されています：",
-            "endpoint": "エンドポイント：",
-            "example_response": "レスポンスの例：",
-            "heading": "What Now",
-            "note": "注：",
-            "noteDetails": "{0} 全レスポンスは親の {1} プロパティに含まれています。",
-            "query_params": "クエリパラメータ：",
-            "response_properties": "レスポンスのプロパティ：",
-            "structure": "What Nowアイテムオブジェクトの構造：",
-            "stucture_attribution": "{0} オブジェクトの構造：",
-            "stucture_attribute_translation": "組織名{0}オブジェクトの構造：",
-            "stucture_translation": "{0}オブジェクトの構造：",
-            "table": {
-                "query_params": {
-                    "name": "名前",
-                    "description": "説明"
-                },
-                "structure": {
-                    "property": "プロパティ",
-                    "data_type": "データタイプ",
-                    "description": "説明"
-                }
-            }
+      "one": {
+        "body": "赤十字のREST APIで、国際赤十字社が発行する緊急情報やリソースにアクセスできます。",
+        "heading": "はじめに",
+        "support_card": {
+          "body": "赤十字のAPIに関する質問がありましたら、dev@3sidedcube.comにご連絡ください",
+          "title": "サポートと質問"
         }
+      },
+      "two": {
+        "body": "API v1.0マニュアルに記載されている全てのURLには、以下のベースURLがあります：",
+        "heading": "ベースURL"
+      },
+      "three": {
+        "heading": "変更ログ",
+        "table": {
+          "headers": {
+            "detail": "リリース",
+            "version": "APIバージョン",
+            "release": "リリース",
+            "release_date": "リリース日"
+          }
+        }
+      },
+      "four": {
+        "body": "APIには、APIキーを用いて全てのリソースにアクセスするための認証情報が必要です。APIキーを取得するには、まず{0}を行います。全てのAPIリクエストには、以下のHTTPヘッダーを含める必要があります：",
+        "create_app_cta": "アプリケーションの作成",
+        "heading": "認証"
+      },
+      "five": {
+        "heading": "レスポンスコード",
+        "table": {
+          "descriptions": {
+            "ok": "リクエストは実行され、レスポンスデータにはリクエストされたリソースが含まれています",
+            "found": "リダイレクトを示します。以下の場所のリソースURIにGETリクエストを発行：「ヘッダー」。",
+            "not_found": "お探しのリソースは見つかりませんでした。",
+            "not_allowed": "使用されたHTTPメソッドが本リソースで禁じられていることを示します。",
+            "server_error": "サーバーエラーが発生し、リクエストされたリソースを返せませんでした。",
+            "unavailable": "サービスが現在利用できないことを示します。あとで再度お試しください。"
+          },
+          "headers": {
+            "code": "コード",
+            "name": "名前",
+            "description": "説明"
+          }
+        }
+      },
+      "six": {
+        "card": {
+          "body": "各国の赤十字社は、{0} v1.2を用いて公衆警報を発行する可能性があります。",
+          "cta": "共通警報プロトコル（CAP）",
+          "title": "共通警報プロトコル（CAP）"
+        },
+        "endpoint": "エンドポイント：",
+        "example": "この例では、{0}セグメントを任意の組織の国コードに置き換えてください。例）",
+        "feed_intro": "各組織のフィードも提供されます。そこには以下の国で識別される所定の組織から発行された有効な警報が記載されています：",
+        "heading": "緊急警報フィード",
+        "intro": "全ての組織から発行されたCAP警報は、RSSフィードで公開されます。これには以下のエンドポイントからアクセスできます："
+      },
+      "seven": {
+        "endpoint": "エンドポイント：",
+        "example_response": "レスポンスの例：",
+        "heading": "CAP警報マニュアル",
+        "body": "CAP警報マニュアルには、各RSSフィードの項目で指定された絶対リンクからアクセスできます。警報のURIは以下の形式です： "
+      },
+      "eight": {
+        "body": "以下のエンドポイントには、各種の災害への備えを支援するために赤十字社が公開している構造化データがあります。各エントリーには防災の６段階に関する情報が示されています：",
+        "endpoint": "エンドポイント：",
+        "example_response": "レスポンスの例：",
+        "heading": "What Now",
+        "note": "注：",
+        "noteDetails": "{0} 全レスポンスは親の {1} プロパティに含まれています。",
+        "query_params": "クエリパラメータ：",
+        "response_properties": "レスポンスのプロパティ：",
+        "structure": "What Nowアイテムオブジェクトの構造：",
+        "stucture_attribution": "{0} オブジェクトの構造：",
+        "stucture_attribute_translation": "組織名{0}オブジェクトの構造：",
+        "stucture_translation": "{0}オブジェクトの構造：",
+        "table": {
+          "query_params": {
+            "name": "名前",
+            "description": "説明"
+          },
+          "structure": {
+            "property": "プロパティ",
+            "data_type": "データタイプ",
+            "description": "説明"
+          }
+        }
+      }
     }
   },
   "get_started_docs": {
     "title": "始める",
     "sidebar": {
-        "create_app": "アプリの作成",
-        "get_api_key": "APIキーの取得",
-        "make_request": "リクエストの作成",
-        "sign_up": "新規登録"
+      "create_app": "アプリの作成",
+      "get_api_key": "APIキーの取得",
+      "make_request": "リクエストの作成",
+      "sign_up": "新規登録"
     },
     "steps": {
-        "one": {
-            "heading": "ステップ1 - 新規登録",
-            "body": "WhatNow APIのデータを使い始めるには、まずWhatNowポータルに{0}してください。FacebookまたはGoogleアカウントを使用するか、メールアドレスを用いてアカウントを作成できます。",
-            "create_account_alt": "アカウントを作成",
-            "existing_account": "アカウントを既にお持ちの場合は、{0}してください。",
-            "login_cta": "ログイン",
-            "sign_up_cta": "新規登録"
-
-        },
-        "two": {
-            "body": "APIを使用するには、WhatNowポータルにアプリケーションを作成する必要があります。内容について少しお教えください。",
-            "create_app_alt": "アプリの作成",
-            "heading": "ステップ2 - アプリの作成"
-        },
-        "three": {
-            "body": "アプリを作成すると、APIキーが自動生成されます。{0} できる限り安全な場所に必ず保存し、APIキーを共有したり別のアプリケーションに表示させたりしないでください。",
-            "create_api_key_alt": "APIキーを作成",
-            "heading": "ステップ3 - API キーの取得",
-            "important": "重要："
-        },
-        "four": {
-            "api_docs_cta": "APIの文書",
-            "body": "WhatNow APIはHTTPまたはHTTPSを使用して、公開データを取得するためのRESTに準拠したエンドポイントを提供します。各リクエストは、前のステップで作成したAPIキーを用いて認証を行う必要があります。",
-            "example_title": "リクエストの例",
-            "heading": "ステップ4 - リクエストの実行",
-            "moreInfo": "全てのAPIエンドポイントの詳細については、{0}を参照してください。"
-        }
+      "one": {
+        "heading": "ステップ1 - 新規登録",
+        "body": "Safety Message Database API からのデータの使用を開始するには、まず Safety Message Database Portal{0} にアクセスします。\n\nFacebookやGoogleのアカウント、またはメールアドレスを使用してアカウントを作成できます。",
+        "create_account_alt": "アカウントを作成",
+        "existing_account": "アカウントを既にお持ちの場合は、{0}してください。",
+        "login_cta": "ログイン",
+        "sign_up_cta": "新規登録"
+      },
+      "two": {
+        "body": "APIを使用するには、安全メッセージデータベースポータルでアプリケーションを作成する必要があります。作成するアプリケーションについて教えてください。",
+        "create_app_alt": "アプリの作成",
+        "heading": "ステップ2 - アプリの作成"
+      },
+      "three": {
+        "body": "アプリを作成すると、APIキーが自動生成されます。{0} できる限り安全な場所に必ず保存し、APIキーを共有したり別のアプリケーションに表示させたりしないでください。",
+        "create_api_key_alt": "APIキーを作成",
+        "heading": "ステップ3 - API キーの取得",
+        "important": "重要："
+      },
+      "four": {
+        "api_docs_cta": "APIの文書",
+        "body": "Safety Message Database APIはHTTP(S)を使用し、公開データを取得するためのRESTfulエンドポイントを提供します。\n\n各リクエストは、前のステップで作成した API キーを使用して認証する必要があります。",
+        "example_title": "リクエストの例",
+        "heading": "ステップ4 - リクエストの実行",
+        "moreInfo": "全てのAPIエンドポイントの詳細については、{0}を参照してください。"
+      }
     }
   },
   "home_pods": {
-      "bulk_upload": ".csvファイルをアップロードすると、大量のコンテンツを一括更新できます",
-      "audit_log": "ここにアクティビティのログが表示されます",
-      "whatnow_edit": "ここでWhatNowコンテンツを編集できます",
-      "whatnow_review": "ここでWhatNowコンテンツをレビューできます",
-      "whatnow_publish": "ここでWhatNowコンテンツの編集と公開ができます",
-      "manage_users": "ここでユーザーの管理（作成、編集、削除）ができます",
-      "api_usage": "ここにAPIを使用しているユーザーと構築中のアプリケーションが表示されます。"
+    "bulk_upload": ".csvファイルをアップロードすると、大量のコンテンツを一括更新できます",
+    "audit_log": "ここにアクティビティのログが表示されます",
+    "whatnow_edit": "ここでは、セーフティメッセージデータベースの内容を編集できます。",
+    "whatnow_review": "安全メッセージデータベースの内容を確認できます。",
+    "whatnow_publish": "ここでは、安全メッセージデータベースのコンテンツを編集および公開できます。",
+    "manage_users": "ここでユーザーの管理（作成、編集、削除）ができます",
+    "api_usage": "ここにAPIを使用しているユーザーと構築中のアプリケーションが表示されます。",
+    "wellcome": "ようこそ",
+    "wellcome_description": "ここでは、安全メッセージデータベースのコンテンツを編集して公開できます。"
   },
   "languages": {
     "am": "አማርኛ",
@@ -256,250 +258,370 @@
     "vi": "Tiếng Việt"
   },
   "sidebar": {
-      "manage": "コンテンツユーザーの管理",
-      "content_users": "コンテンツユーザー",
-      "audit_log": "監査ログ",
-      "whatnow": "WhatNow",
-      "bulk": "一括アップロード",
-      "content": "コンテンツ",
-      "api": "APIの使用",
-      "applications": "アプリケーション",
-      "api_stats": "API 統計",
-      "api_users": "APIユーザー",
-      "terms_conditions": "利用規約",
-      "regions": "地域"
+    "manage": "コンテンツユーザーの管理",
+    "content_users": "コンテンツユーザー",
+    "audit_log": "編集履歴",
+    "whatnow": "アトリビューション・エディター",
+    "bulk": "メッセージファイルのアップロード",
+    "content": "コンテンツ",
+    "api": "APIの使用",
+    "applications": "アプリケーション",
+    "api_stats": "API 統計",
+    "api_users": "APIユーザー",
+    "terms_conditions": "利用規約",
+    "regions": "サブリージョン"
   },
   "common": {
-      "accept": "承諾",
-      "actions": "アクション",
-      "create": "作成",
-      "edit": "編集",
-      "deactivate": "無効化",
-      "activate": "有効化",
-      "are_you_sure": "よろしいですか？",
-      "yes": "はい",
-      "title": "タイトル",
-      "description": "説明",
-      "unpublished_edits": "編集内容を未公開にしますか？",
-      "published": "公開済",
-      "delete": "削除",
-      "welcome": "ようこそ",
-      "save_changes": "変更を保存",
-      "auto_saving": "自動保存",
-      "add": "追加",
-      "my_profile": "マイプロファイル",
-      "cancel": "取消",
-      "view_changes": "変更を表示",
-      "view_content": "コンテンツを表示",
-      "resend_activation": "アクティベーションメールを再送信",
-      "deactivate_user": "ユーザーの無効化",
-      "submit_changes": "変更を送信",
-      "reactivate_user": "ユーザーを再有効化",
-      "send_invite": "招待を送信",
-      "invite_and_create": "招待してもうひとつ作成",
-      "loading": "コンテンツを読み込み中",
-      "publish_new": "新しいバージョンを公開",
-      "greeting": "こんにちは",
-      "removed": "削除済",
-      "copy": "コピー",
-      "copied": "コピーしました",
-      "not_empty": "空にすることはできません",
-      "name": "名前",
-      "webUrl": "URL",
-      "learn_more": "詳細を表示",
-      "validations": {
-          "empty": "空にすることはできません",
-          "hazardIcon": "30KB未満の画像を選択してください"
-      },
-      "network_error": "ネットワークエラー",
-      "network_error_text": "ネットワークエラーが発生したようです。しばらくしてから再度お試しください",
-      "email_sent": "メールを送信しました",
-      "duplicate_lang_error": "選択した言語はすでに存在しています",
-      "duplicate_lang_description": "既存の言語を編集するか、ドロップダウンメニューで新しい言語を選択してください",
-      "estimated_users": "推定ユーザー数"
+    "accept": "承諾",
+    "actions": "アクション",
+    "create": "作成",
+    "edit": "編集",
+    "save": "保存",
+    "deactivate": "無効化",
+    "activate": "有効化",
+    "are_you_sure": "よろしいですか？",
+    "yes": "はい",
+    "title": "タイトル",
+    "description": "説明",
+    "unpublished_edits": "編集内容を未公開にしますか？",
+    "published": "公開済",
+    "delete": "削除",
+    "welcome": "ようこそ",
+    "save_changes": "変更を保存",
+    "auto_saving": "自動保存",
+    "add": "追加",
+    "my_profile": "マイプロファイル",
+    "cancel": "取消",
+    "view_changes": "変更を表示",
+    "view_content": "コンテンツを表示",
+    "resend_activation": "アクティベーションメールを再送信",
+    "deactivate_user": "ユーザーの無効化",
+    "submit_changes": "変更を送信",
+    "reactivate_user": "ユーザーを再有効化",
+    "send_invite": "招待を送信",
+    "invite_and_create": "招待してもうひとつ作成",
+    "loading": "コンテンツを読み込み中",
+    "publish_new": "新しいバージョンを公開",
+    "greeting": "こんにちは",
+    "removed": "削除済",
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "not_empty": "空にすることはできません",
+    "name": "名前",
+    "webUrl": "URL",
+    "learn_more": "詳細を表示",
+    "validations": {
+      "empty": "空にすることはできません",
+      "hazardIcon": "30KB未満の画像を選択してください"
+    },
+    "network_error": "ネットワークエラー",
+    "network_error_text": "ネットワークエラーが発生したようです。しばらくしてから再度お試しください",
+    "email_sent": "メールを送信しました",
+    "duplicate_lang_error": "選択した言語はすでに存在しています",
+    "duplicate_lang_description": "既存の言語を編集するか、ドロップダウンメニューで新しい言語を選択してください",
+    "estimated_users": "推定ユーザー数",
+    "upploading": "アップロード中",
+    "download": "ダウンロード",
+    "download_as_image": "画像としてダウンロード",
+    "download_as_pdf": "PDFとしてダウンロード",
+    "add_logo": "ロゴを追加",
+    "edit_logo": "ロゴを編集",
+    "loading_image": "読み込み中..."
   },
   "banners": {
-      "get_started_create": "、開始して最初のアプリを作成しましょう",
-      "create_app": "アプリの作成",
-      "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
+    "get_started_create": "、開始して最初のアプリを作成しましょう",
+    "create_app": "アプリの作成",
+    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
   },
   "users": {
-      "user": "ユーザー",
-      "deleted": "削除されたユーザー",
-      "list": {
-          "manage": "ユーザーの管理",
-          "create": "新規ユーザーの作成",
-          "download_report": "レポートをダウンロード",
-          "empty": "ユーザーが見つかりません",
-          "detail": "ユーザーの詳細",
-          "clear_filters": "フィルタを解除",
-          "table_header": {
-              "user": "ユーザー",
-              "role": "ロール",
-              "society": "組織",
-              "email": "電子メール",
-              "added": "追加済",
-              "last_activity": "直近のアクティビティ",
-              "t_and_c": "利用規約バージョン"
-          },
-          "societies": "組織"
+    "user": "ユーザー",
+    "deleted": "削除されたユーザー",
+    "list": {
+      "manage": "ユーザーの管理",
+      "select_status": "ステータスを選択",
+      "select_role": "役割を選択",
+      "select_country": "国を選択",
+      "select_terms": "利用規約のバージョンを選択",
+      "select_society": "国内協会を選択",
+      "create": "新規ユーザーの作成",
+      "download_report": "レポートをダウンロード",
+      "empty": "ユーザーが見つかりません",
+      "detail": "ユーザーの詳細",
+      "clear_filters": "フィルタを解除",
+      "table_header": {
+        "user": "ユーザー",
+        "role": "ロール",
+        "society": "組織",
+        "email": "電子メール",
+        "added": "追加済",
+        "last_activity": "直近のアクティビティ",
+        "t_and_c": "利用規約バージョン"
       },
-      "status": {
-          "active": "アクティベート済",
-          "deactivated": "無効化済"
+      "societies": "組織"
+    },
+    "status": {
+      "active": "アクティベート済",
+      "deactivated": "無効化済"
+    },
+    "edit": {
+      "super_admin_all": "全組織へのアクセス",
+      "user_details": "ユーザーの詳細",
+      "create_user": "新規ユーザーの作成",
+      "add_society": "組織を追加 + ",
+      "societies_heading": "組織",
+      "roles_heading": "ロールと権限",
+      "activity_heading": "アクティビティ",
+      "roles_label": "このユーザーのロールと権限を選択します",
+      "activity_link": "ユーザー別に全てのアクションを表示",
+      "created": "ユーザーを作成しました",
+      "updated": "ユーザーを更新しました",
+      "email_update": "電子メールを更新するには、パスワードを入力してください",
+      "view": "表示",
+      "more": "さらに表示",
+      "less": "少なく表示",
+      "user_can_do": "権限のあるユーザーを表示：",
+      "user_no_permission": "ユーザーには権限がありません",
+      "soc_already_added": "このユーザーは既に組織に割り当てられています"
+    }
+  },
+  "new_welcome": {
+    "title_1": "ようこそ",
+    "red_title": "IFRCへ",
+    "title_2": "安全",
+    "title_3": "メッセージデータベース",
+    "text_header": "プラットフォーム全体で赤十字・赤新月社の安全メッセージにアクセスし、共有しましょう。",
+    "text_header_2": "以下の#-ステップガイドに従ってください。",
+    "bottom_subtitle": "IFRCに連絡",
+    "bottom_text": "ご質問がある場合は、IFRCチームにメールでご連絡ください：im@ifrc.org",
+    "bottom_btn": "IFRCに連絡",
+    "slider_1": {
+      "btn": "APIキーを作成",
+      "step_1": {
+        "header": "ステップ1：アプリを作成",
+        "text": "データベースでAPIを使用するためのAPIキーを作成します。構築しているものについて教えてください。"
       },
-      "edit": {
-          "super_admin_all": "全組織へのアクセス",
-          "user_details": "ユーザーの詳細",
-          "create_user": "新規ユーザーの作成",
-          "add_society": "組織を追加 + ",
-          "societies_heading": "組織",
-          "roles_heading": "ロールと権限",
-          "activity_heading": "アクティビティ",
-          "roles_label": "このユーザーのロールと権限を選択します",
-          "activity_link": "ユーザー別に全てのアクションを表示",
-          "created": "ユーザーを作成しました",
-          "updated": "ユーザーを更新しました",
-          "email_update": "電子メールを更新するには、パスワードを入力してください",
-          "view": "表示",
-          "more": "さらに表示",
-          "less": "少なく表示",
-          "user_can_do": "権限のあるユーザーを表示：",
-          "user_no_permission": "ユーザーには権限がありません",
-          "soc_already_added": "このユーザーは既に組織に割り当てられています"
+      "step_2": {
+        "header": "ステップ2：APIキーを受け取る",
+        "text": "APIキーを作成すると、自動的に生成されます。",
+        "text_2": "重要：APIキーは可能な限り安全に保管してください。独自のアプリケーション内でAPIキーを共有したり、公開したりしないでください。"
+      },
+      "step_3": {
+        "header": "ステップ3：リクエストを作成",
+        "text": "データベースAPIはHTTP(S)を使用し、公開されたデータを取得するためのRESTfulエンドポイントを提供します。各リクエストは、前のステップで作成されたAPIキーを使用して認証する必要があります。すべてのAPIエンドポイントの詳細については、APIドキュメントを参照してください。"
+      },
+      "step_4": {
+        "header": "ステップ4：メッセージを共有",
+        "text": "危険の脅威がある場合、赤十字・赤新月社の安全メッセージを一般に共有してください。メッセージに関するフィードバックがある場合は、IFRCチームに連絡できます：im@ifrc.org"
       }
+    },
+    "slider_2": {
+      "btn": "安全に関するメッセージ",
+      "step_1": {
+        "header": "ステップ1：メッセージを表示",
+        "text": "メッセージデータベースにアクセスして、利用可能な赤十字・赤新月社国内協会のメッセージを表示します。"
+      },
+      "step_2": {
+        "header": "ステップ2：メッセージセットを選択",
+        "text": "表示したい国内協会を選択します。次に、利用可能なリストから危険の種類を選択します。"
+      },
+      "step_3": {
+        "header": "ステップ3：メッセージを共有",
+        "text": "メッセージをダウンロードするオプションを探します。メッセージのセットを画像またはPDFとして共有できます。正しいメッセージを共有していることを確認するために、ダウンロードして確認してください。"
+      }
+    }
+  },
+  "upload_modal": {
+    "drag_button_text": "クリックまたはドラッグしてこの領域にファイルをアップロード",
+    "button_text": "アップロード"
+  },
+  "stages": {
+    "immediate": "即時",
+    "warning": "警告",
+    "anticipated": "予測",
+    "assess_and_plan":"評価と計画",
+    "mitigate_risks":"リスク軽減",
+    "prepare_to_respond":"対応準備",
+    "recover": "復旧"
   },
   "content": {
+    "content": "コンテンツ",
+    "audit_log": {
+      "audit_log": "監査ログ",
+      "my_audit_log": "編集履歴",
+      "empty": "このフィルタに一致する監査履歴はありません",
+      "soc_label": "組織",
+      "select_hazard": "危険の種類を選択",
+      "select_language": "言語を選択",
+      "select_overwrite": "上書きオプションを選択",
+      "choose_file": "ファイルの種類を選択",
+      "select_soc": "国内協会を選択"
+    },
+    "whatnow": {
+      "title": "メッセージ",
+      "set_attribution": "組織名と公開する組織名のメッセージを設定",
+      "whatnow": "安全メッセージデータベース",
+      "empty": "このナショナル・ソサエティの安全に関するメッセージは公表されていません。",
+      "steps": "ステップ",
+      "publish": "公開",
+      "no_publish": "公開するものはありません",
+      "published": "公開された翻訳",
+      "publishing": "公開",
+      "content_to_publish": "公開用の下書きコンテンツ",
+      "whatnow_content": "セーフティ・メッセージ・データベースの内容",
+      "choose_hazard": "災害を選択",
+      "hazard": "災害",
       "content": "コンテンツ",
-      "audit_log": {
-          "audit_log": "監査ログ",
-          "empty": "このフィルタに一致する監査履歴はありません",
-          "soc_label": "組織"
+      "create": "災害を追加",
+      "edit_attribtion": "組織名の編集",
+      "attribution": "組織名",
+      "attribution_url": "組織名のURL",
+      "society_name": "全国組織",
+      "attribution_message": "組織名のメッセージ",
+      "no_translation": "コンテンツがありません",
+      "delete_content_translation": "選択した安全メッセージデータベースのコンテンツが現在の言語から削除されます。",
+      "messages": "安全に関するメッセージ",
+      "add_language": "新しい言語を追加",
+      "no_languages": "言語を選択するか作成して開始してください",
+      "no_soc": "組織を選択してください",
+      "no_region": "地域を選択",
+      "add_language_message": "新しい言語を追加するには、その言語のコンテンツを追加してください",
+      "add_language_attribution": "組織名を作成し、新しい言語を追加してください",
+      "select_language": "言語を選択してください",
+      "attribution_publish": "この組織名は公開と同時に利用できます",
+      "date_added": "追加日",
+      "url": "URL",
+      "hazard_type": "危険の種類",
+      "show_more": "もっと見る",
+      "early": "早期警告",
+      "disaster": "防災",
+      "recovery": "復旧",
+      "publish_summary_title": "帰属",
+      "publish_summary_ns": "国内協会",
+      "publish_summary_url": "帰属URL",
+      "publish_summary_message": "帰属メッセージ"
+    },
+    "edit_whatnow": {
+      "title": "タイトル",
+      "description": "説明",
+      "content_piece": "コンテンツの項目",
+      "enter_other_hazard_type": "災害タイプ名を入力してください",
+      "other_hazard_type_label": "他の災害タイプ",
+      "stepped_content": "段階的コンテンツの項目",
+      "content_title_description": "安全メッセージのタイトル",
+      "content_description_description": "安全に関するメッセージ",
+      "content_label": "災害情報を入力してください",
+      "content_url": "URL",
+      "content_url_description": "これらのセーフティ・メッセージの詳細についてはURLをご覧ください。プロトコルを明記してください（例：http:// または https://）。",
+      "created": "作成日",
+      "pieces_edited": " 編集した項目",
+      "content_placeholder": "メッセージを入力してください",
+      "mitigation": "軽減",
+      "mitigation_help": "リスクを軽減するための長期的な行動",
+      "mitigation_extra": "軽減は、危険事象を予測する長期的な声明です。取るべき行動は、家庭や周囲の安全を確保するためのアセスメント、計画、長期的なリスク軽減のための手段です。",
+      "seasonalForecast": "季節予報",
+      "seasonalForecast_help": "リスクを軽減するための短期的な行動",
+      "seasonalForecast_extra": "季節予報は、危険事象を予測する声明です。取るべき行動は、潜在リスクを評価し、リスクを軽減したり家庭を守ったりするための行動を計画するためのものです。",
+      "watch": "注意",
+      "watch_help": "対応の準備を備えてください",
+      "watch_extra": "注意は、危険事象のリスクが大いに高まっているが、その発生、場所、時期がまだ不確かなときに発出されます。防護措置と対応の準備に十分な時間を確保することを意図しています。",
+      "warning": "警告",
+      "warning_help": "対応の準備を備えてください",
+      "warning_extra": "警告は、危険事象が起こりつつあるか、差し迫っているか、起こる可能性が高いときに発出されます。生命や所有物の脅威となる状況を意味します。この災害の進路にいる人は、防御行動を取る必要があります。",
+      "immediate": "即時",
+      "immediate_help": "対応行動",
+      "immediate_extra": "現時点で生命と所有物に脅威となる状況。危険事象が起こりつつある時に、直ちに防御行動を取るべきであることを示します。自分と家族を守るための対応行動が必要です。",
+      "recover": "復旧",
+      "recover_help": "復旧行動",
+      "recover_extra": "危険事象後のリスクを軽減するために取るべき防御行動です。",
+      "anticipated": "予測",
+      "assess_and_plan": "評価と計画",
+      "mitigate_risks": "リスク軽減",
+      "prepare_to_respond": "対応準備",
+      "updated": "更新済",
+      "download_icon": "ダウンロードアイコン",
+      "download_image": "画像としてダウンロード",
+      "download_image_error": "画像のダウンロード中にエラー発生、全ての変更を公開したことを確認して再度お試しください。",
+      "download_instructions": "右クリックし、[名前を付けて画像を保存]を選択して保存します",
+      "downloaded_image_alt": "安全メッセージデータベース使用説明書",
+      "add_key_message": "主要メッセージを追加",
+      "add_supporting_message": "サポートメッセージを追加",
+      "early_warning": "早期警告",
+      "early_warning_description": "アラートと早期行動のための主要な安全メッセージ",
+      "disaster_risk_reduction": "防災",
+      "disaster_risk_reduction_description": "PAPEからの主要な安全メッセージ",
+      "recovery": "復旧",
+      "recovery_description": "復旧行動のための主要な安全メッセージ",
+      "hazard_type": "危険の種類",
+      "content_edit_title": "コンテンツ編集",
+      "content_add_hazard_title": "危険を追加",
+      "key_message_label": "主要メッセージのタイトル",
+      "supporting_message_label": "サポートメッセージ"
+    },
+    "message_editor": {
+      "title": "アトリビューション・エディター",
+      "society_name_label": "国内協会名",
+      "attribution_url_label": "帰属URL",
+      "attribution_message_label": "帰属メッセージ",
+      "create_btn": "危険を追加",
+      "contributor_name_label": "貢献者名",
+      "contributor_single": "貢献者"
+    },
+    "previewer": {
+      "download_image_error": "画像のダウンロード中にエラーが発生しました。もう一度お試しください。",
+      "download_pdf_error": "PDFのダウンロード中にエラーが発生しました。もう一度お試しください。"
+    },
+    "audit": "編集履歴",
+    "export": "エクスポート",
+    "bulk_upload": {
+      "bulk_upload": "メッセージファイルのアップロード",
+      "template": "テンプレート",
+      "export_template": "テンプレートをエクスポート",
+      "import_data": "データをインポート",
+      "import_complete": "インポート完了",
+      "import_summary": "{lang}の{society}の下でインポート中です。",
+      "import_banner": {
+        "success": "成功しました",
+        "added": "追加済",
+        "skipped": "スキップされました",
+        "denied": "不許可",
+        "updated": "更新しました",
+        "failed": "失敗しました",
+        "invalid": "無効",
+        "row": "行"
       },
-      "whatnow": {
-          "set_attribution": "組織名と公開する組織名のメッセージを設定",
-          "whatnow": "WhatNow",
-          "empty": "この全国組織から公開されているWhatNowメッセージはありません",
-          "steps": "ステップ",
-          "publish": "公開",
-          "no_publish": "公開するものはありません",
-          "published": "公開された翻訳",
-          "publishing": "公開",
-          "content_to_publish": "公開用の下書きコンテンツ",
-          "whatnow_content": "WhatNowコンテンツ",
-          "choose_hazard": "災害を選択",
-          "hazard": "災害",
-          "content": "コンテンツ",
-          "create": "災害を追加",
-          "edit_attribtion": "組織名の編集",
-          "attribution": "組織名",
-          "attribution_url": "組織名のURL",
-          "society_name": "全国組織",
-          "attribution_message": "組織名のメッセージ",
-          "no_translation": "コンテンツがありません",
-          "delete_content_translation": "選択したWhatNowコンテンツを使用言語から削除します",
-          "messages": "WhatNowメッセージ：",
-          "add_language": "新しい言語を追加",
-          "no_languages": "言語を選択するか作成して開始してください",
-          "no_soc": "組織を選択してください",
-          "no_region": "地域を選択",
-          "add_language_message": "新しい言語を追加するには、その言語のコンテンツを追加してください",
-          "add_language_attribution": "組織名を作成し、新しい言語を追加してください",
-          "select_language": "言語を選択してください",
-          "attribution_publish": "この組織名は公開と同時に利用できます"
+      "upload_csv": "マニュアルをCSV形式でアップロード",
+      "language_instructions": "インポートする訳文の言語を選択してください。",
+      "file_instructions": "ここにファイルをドラッグするか、パソコンから選択してください。",
+      "choose": "選択してください",
+      "submit": "コンテンツをインポート",
+      "reset": "別のものをアップロード",
+      "export_template_guide": "テンプレートガイドをエクスポート",
+      "export_template_instructions": "このgファイルアップロードテンプレートの効果的な使用方法については、こちらのガイドをご覧ください。",
+      "refer": "参照",
+      "detail": "詳細な指示",
+      "warnings": {
+        "title": "コンテンツで最新バージョンが上書きされる場合は、インポートを拒否してください。",
+        "on": "はい",
+        "off": "いいえ"
       },
-      "edit_whatnow": {
-          "title": "タイトル",
-          "description": "説明",
-          "content_piece": "コンテンツの項目",
-          "enter_other_hazard_type": "災害タイプ名を入力してください",
-          "other_hazard_type_label": "他の災害タイプ",
-          "stepped_content": "段階的コンテンツの項目",
-          "content_title_description": "WhatNowメッセージのタイトル",
-          "content_description_description": "WhatNowメッセージの説明",
-          "content_label": "災害情報を入力してください",
-          "content_url": "URL",
-          "content_url_description": "WhatNowメッセージに関する詳細情報のURL。http:\/\/またはhttps:\/\/などのプロトコルを含めてください",
-          "created": "作成日",
-          "pieces_edited": " 編集した項目",
-          "delete_item": "アイテムを削除",
-          "add_item": "アイテムを追加 +",
-          "content_placeholder": "メッセージを入力してください",
-          "mitigation": "軽減",
-          "mitigation_help": "リスクを軽減するための長期的な行動",
-          "mitigation_extra": "軽減は、危険事象を予測する長期的な声明です。取るべき行動は、家庭や周囲の安全を確保するためのアセスメント、計画、長期的なリスク軽減のための手段です。",
-          "seasonalForecast": "季節予報",
-          "seasonalForecast_help": "リスクを軽減するための短期的な行動",
-          "seasonalForecast_extra": "季節予報は、危険事象を予測する声明です。取るべき行動は、潜在リスクを評価し、リスクを軽減したり家庭を守ったりするための行動を計画するためのものです。",
-          "watch": "注意",
-          "watch_help": "対応の準備を備えてください",
-          "watch_extra": "注意は、危険事象のリスクが大いに高まっているが、その発生、場所、時期がまだ不確かなときに発出されます。防護措置と対応の準備に十分な時間を確保することを意図しています。",
-          "warning": "警告",
-          "warning_help": "対応の準備を備えてください",
-          "warning_extra": "警告は、危険事象が起こりつつあるか、差し迫っているか、起こる可能性が高いときに発出されます。生命や所有物の脅威となる状況を意味します。この災害の進路にいる人は、防御行動を取る必要があります。",
-          "immediate": "即時",
-          "immediate_help": "対応行動",
-          "immediate_extra": "現時点で生命と所有物に脅威となる状況。危険事象が起こりつつある時に、直ちに防御行動を取るべきであることを示します。自分と家族を守るための対応行動が必要です。",
-          "recover": "復旧",
-          "recover_help": "復旧行動",
-          "recover_extra": "危険事象後のリスクを軽減するために取るべき防御行動です。",
-          "updated": "更新済",
-          "download_icon": "ダウンロードアイコン",
-          "download_image": "画像としてダウンロード",
-          "download_image_error": "画像のダウンロード中にエラー発生、全ての変更を公開したことを確認して再度お試しください。",
-          "download_instructions": "右クリックし、[名前を付けて画像を保存]を選択して保存します",
-          "downloaded_image_alt": "WhatNowの使用説明"
+      "overwriting": {
+        "title": "上書き設定。",
+        "on": "このバージョンに常に更新、全ての改訂を上書きしてください",
+        "off": "インポートしたコンテンツが新しくなった場合のみ、事象タイプを更新してください"
       },
-      "audit": "監査ログ",
-      "export": "エクスポート",
-      "bulk_upload": {
-          "bulk_upload": "一括アップロード",
-          "template": "テンプレート",
-          "export_template": "テンプレートをエクスポート",
-          "import_data": "データをインポート",
-          "import_complete": "インポート完了",
-          "import_summary": "{lang}の{society}の下でインポート中です。",
-          "import_banner": {
-              "success": "成功しました",
-              "added": "追加済",
-              "skipped": "スキップされました",
-              "denied": "不許可",
-              "updated": "更新しました",
-              "failed": "失敗しました",
-              "invalid": "無効",
-              "row": "行"
-          },
-          "upload_csv": "マニュアルをCSV形式でアップロード",
-          "language_instructions": "インポートする訳文の言語を選択してください。",
-          "file_instructions": "ここにファイルをドラッグするか、パソコンから選択してください。",
-          "choose": "選択してください",
-          "submit": "コンテンツをインポート",
-          "reset": "別のものをアップロード",
-          "export_template_guide": "テンプレートガイドをエクスポート",
-          "export_template_instructions": "一括アップロードテンプレートを効果的に使用する方法については、このガイドを参照してください。",
-          "warnings": {
-              "title": "コンテンツで最新バージョンが上書きされる場合は、インポートを拒否してください。",
-              "on": "はい",
-              "off": "いいえ"
-          },
-          "overwriting": {
-              "title": "上書き設定。",
-              "on": "このバージョンに常に更新、全ての改訂を上書きしてください",
-              "off": "インポートしたコンテンツが新しくなった場合のみ、事象タイプを更新してください"
-          },
-          "errors": {
-              "warning_update_will_overwrite": "このアクションで、このエキスポートが作成された後の変更が上書きされます",
-              "bad_request": "ファイルデータは正しく作成されていません",
-              "bad_request_error_codes": {
-                  "30001": "列見出しがテンプレートと一致しません",
-                  "30002": "組織名、メッセージ、またはURLがありません",
-                  "30003": "組織名のURLが無効です。https:\/\/などのプロトコルが存在することを確認してください",
-                  "40001": "不正な国コードが入力されました",
-                  "40002": "選択した組織は、選択したファイルの組織と一致しません",
-                  "40003": "選択したファイルがエクスポートされた日付は不正に作成され、インポートが完了していません"
-              }
-          }
+      "errors": {
+        "warning_update_will_overwrite": "このアクションで、このエキスポートが作成された後の変更が上書きされます",
+        "bad_request": "ファイルデータは正しく作成されていません",
+        "bad_request_error_codes": {
+          "30001": "列見出しがテンプレートと一致しません",
+          "30002": "組織名、メッセージ、またはURLがありません",
+          "30003": "組織名のURLが無効です。https:\/\/などのプロトコルが存在することを確認してください",
+          "40001": "不正な国コードが入力されました",
+          "40002": "選択した組織は、選択したファイルの組織と一致しません",
+          "40003": "選択したファイルがエクスポートされた日付は不正に作成され、インポートが完了していません"
+        }
       }
+    }
   },
   "api_stats": {
     "page_title": "API 統計",
@@ -525,185 +647,252 @@
     "empty": "指定された日付範囲の統計が見つかりません"
   },
   "api_usage": {
-      "applications": "アプリケーション",
-      "view_user": "ユーザーを表示",
-      "reactivate": "再有効化",
-      "app_detail": "アプリの詳細",
-      "app_details": "アプリの詳細",
-      "activity": "アクティビティ",
-      "view_all_activity": "このアプリの全てのアクティビティを表示",
-      "api_users": "APIユーザー",
-      "terms_conditions": "全ての利用規約バージョン",
-      "view_prev_terms": "旧バージョンの表示",
-      "current_version": "現在のバージョン",
-      "version": "バージョン"
+    "applications": "アプリケーション",
+    "view_user": "ユーザーを表示",
+    "reactivate": "再有効化",
+    "app_detail": "アプリの詳細",
+    "app_details": "アプリの詳細",
+    "activity": "アクティビティ",
+    "view_all_activity": "このアプリの全てのアクティビティを表示",
+    "api_users": "APIユーザー",
+    "terms_conditions": "全ての利用規約バージョン",
+    "view_prev_terms": "旧バージョンの表示",
+    "current_version": "現在のバージョン",
+    "version": "バージョン"
   },
   "applications": {
-      "my_apps": "マイアプリ",
-      "new_tc": "新しい利用規約",
-      "build": "新しいアプリを構築",
-      "edit": "アプリケーションを編集",
-      "building": "アプリを構築",
-      "no_apps": "アプリがありません、アプリを構築して開始しましょう。"
+    "my_apps": "マイアプリ",
+    "new_tc": "新しい利用規約",
+    "build": "新しいアプリを構築",
+    "build_key": "新しいAPIキーを作成",
+    "edit": "アプリケーションを編集",
+    "building": "アプリを構築",
+    "building_key": "APIキーを作成中",
+    "no_apps": "アプリがありません、アプリを構築して開始しましょう。",
+    "api_keys": "APIキー"
   },
   "home": {
-      "home": "ホームページ",
-      "welcome": "ようこそ",
-      "admin_intro": "ユーザーの管理、WhatNowコンテンツの編集・公開、API使用量の表示ができます。",
-      "ns_admin_intro": "ここでWhatNowコンテンツの編集と公開ができます",
-      "ns_editor_intro": "ここでWhatNowコンテンツを編集できます",
-      "api_user_intro": "ここでアプリを表示したり、アカウントを管理したりします。"
+    "home": "ホームページ",
+    "welcome": "ようこそ",
+    "admin_intro": "ここでは、ユーザーの管理、セーフティメッセージデータベースのコンテンツの編集と公開、API使用状況の確認ができます。",
+    "ns_admin_intro": "ここでは、安全メッセージデータベースのコンテンツを編集して公開できます。",
+    "ns_editor_intro": "ここでは、セーフティメッセージデータベースの内容を編集できます。",
+    "api_user_intro": "ここでアプリを表示したり、アカウントを管理したりします。",
+    "role_changed_title": "あなたの役割が変更されました",
+    "role_changed_p": "あなたは以下の役割を割り当てられました：",
+    "role_changed_p2": "あなたの権限は以下の通りです：",
+    "role_changed_confirm": "確認",
+    "role_changed_dismiss": "閉じる"
   },
   "landing": {
-      "strapline": "WhatNowサービス",
-      "strapline_part_2": "国際赤十字・赤新月社連盟からの重要な安全メッセージ",
-      "developer": {
-          "strap_para_one": "翻訳された重要な行動メッセージを用いて、地域社会による災害の準備・対応・復旧に役立ててください。",
-          "strap_para_two": "簡単な４ステップガイドを用いて、WhatNowメッセージをアプリに統合してください。登録し、全てのメッセージを確認してください。"
-      },
-      "national_society": {
-          "strap_para_one": "世界中の国・地域のメディアがアクセスして報道できるように、国際赤十字・赤新月社の重要な安全メッセージを公開してください。",
-          "strap_para_two": "メッセージを作成し、メディアパートナーとつながる方法については、お問い合わせください。"
-      },
+    "strapline": "セーフティ・メッセージ・データベース・サービス",
+    "strapline_part_2": "国際赤十字・赤新月社連盟からの重要な安全メッセージ",
+    "head_1": "IFRCの安全性",
+    "head_2": "メッセージデータベース",
+    "head_text_1": "IFRCの広報啓発に基づく安全メッセージ",
+    "head_text_2": "公共教育（PAPE）リソース",
+    "head_bottom_1": "信頼できる赤十字赤新月社へのアクセスと共有",
+    "head_bottom_2": "人々が安全に準備するための行動可能なメッセージ",
+    "head_bottom_3": "そして危険に対応する。",
+    "signup": "会員登録",
+    "it_works": "仕組み",
+    "works_1_a": "赤十字赤新月社",
+    "works_1_b": "社会と政府のパートナー",
+    "works_1_c": "国別メッセージ・セットの合意",
+    "works_2_a": "各国協会が出版",
+    "works_2_b": "の安全メッセージ",
+    "works_2_c": "データベース",
+    "works_3_a": "代理店の変更と",
+    "works_3_b": "通信チャネル",
+    "works_3_c": "データベースAPIに接続する",
+    "works_4_a": "パートナーのシェア",
+    "works_4_b": "を通じてメッセージを送る。",
+    "works_4_c": "チャンネル",
+    "works_5_a": "地域は以下を受け取る",
+    "works_5_b": "メッセージと",
+    "works_5_c": "安全に行動する",
+    "learn_more": "さらに詳しく",
+    "watch_video": "ビデオを見る",
+    "example_case": "使用例",
+    "api": "API",
+    "hurricane": "ハリケーンのメッセージを早めに入れる",
+    "warning_alerts": "警告アラート",
+    "social_media": "ソーシャルメディア",
+    "post_images": "山火事への備えの投稿画像",
+    "messages_network": "ネットワークへのメッセージ",
+    "whatsapp": "WhatsApp",
+    "share_flood": "洪水軽減のための行動を共有する",
+    "family": "家族と友人",
+    "impact": "インパクト",
+    "sign_up_today": "今すぐ登録",
+    "developer": {
       "strap_para_one": "翻訳された重要な行動メッセージを用いて、地域社会による災害の準備・対応・復旧に役立ててください。",
-      "strap_para_two": "簡単な４ステップガイドを用いて、WhatNowメッセージをアプリに統合してください。登録し、全てのメッセージを確認してください。",
-      "view_data": "データを表示",
-      "view_message_library": "WhatNowメッセージを表示",
-      "what_now": "WhatNow？",
-      "fake_alert_heading": "極寒警告",
-      "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-      "fake_alert_time": "1時間前",
-      "fake_alert_time_exact": "2018年5月2日午前5時15分（アメリカ中部時間）",
-      "use_cases": {
-          "heading": "詳細はこちら",
-          "first_heading": "使い方",
-          "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "second_heading": "使用事例",
-          "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "third_heading": "実装ツールキット",
-          "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fourth_heading": "WhatNowの動画",
-          "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-          "fifth_heading": "天気予報アプリの向上",
-          "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-      },
-      "example_alert": {
-          "heading": "WhatNowメッセージ形式の例",
-          "alert_preview": "警報プレビュー",
-          "what_now_info": "WhatNowプレビュー",
-          "example_whatnow_request": "WhatNow対応の例",
-          "example_alert_request": "警報対応の例",
-          "example_content": "1月午前11時時点の気象注意報の第3報最終 2018年、29日\n寒冷前線の後方\n\n寒冷前線の後方の影響は弱まりました。ノームでは天候が回復するでしょう。ただし、局地的ににわか雨や雷雨が、特に午後から夜にかけての間、西に至るこれらの地域で予測されます。この開発により、これがこの気象状況に関する最後の予報となります。",
-          "example_content_location_header": "影響を受ける地域",
-          "example_content_location": "アラスカ州ノーム"
-      },
-      "example_whatnow": {
-          "alert_from": "アメリカ赤十字からの警報",
-          "more_info": "詳細情報",
-          "heading": "極寒に関する重要なメッセージ",
-          "copy": "極寒のリスクを軽減し、自分と家族を守るために取るべき行動です。",
-          "what_now": "WhatNow",
-          "step_1": "家を守る。水道管を確認し、暖房器具を安全に使用してください。",
-          "step_2": "暖かい飲物で水分を十分に補充してください",
-          "step_3": "肌が露出しないように暖かい衣服で身を守ってください",
-          "step_4": "凍結に注意してください（特に運転中）",
-          "step_5": "近所や友人、そして高リスクの人を見守ってあげてください"
-      },
-      "build": {
-          "heading": "アプリを作成する準備はできましたか？"
-      },
-      "data_preview": {
-          "heading": "WhatNowメッセージ",
-          "sub_heading": "登録し、世界中の赤十字・赤新月社からの重要な行動メッセージを確認してください"
-      },
-      "footer": {
-          "terms_conditions": "利用規約",
-          "about": "バージョン情報",
-          "privacy": "プライバシー",
-          "getting_started": "はじめに",
-          "docs": "マニュアル",
-          "give_feedback": "フィードバックを送信",
-          "gdpc_logo": "世界防災準備センター（Global Disaster Preparedness Center）のロゴ",
-          "ifrc_logo": "国際赤十字・赤新月社運動のロゴ"
-      }
+      "strap_para_two": "簡単な4ステップガイドを使用して、セーフティメッセージをアプリケーションに統合してください。サインアップして、利用可能なすべてのメッセージをご覧ください。"
+    },
+    "national_society": {
+      "strap_para_one": "世界中の国・地域のメディアがアクセスして報道できるように、国際赤十字・赤新月社の重要な安全メッセージを公開してください。",
+      "strap_para_two": "メッセージを作成し、メディアパートナーとつながる方法については、お問い合わせください。"
+    },
+    "strap_para_one": "翻訳された重要な行動メッセージを用いて、地域社会による災害の準備・対応・復旧に役立ててください。",
+    "strap_para_two": "簡単な4ステップガイドを使用して、セーフティメッセージをアプリケーションに統合してください。サインアップして、利用可能なすべてのメッセージをご覧ください。",
+    "view_data": "データを表示",
+    "view_message_library": "安全に関するメッセージを見る",
+    "what_now": "WhatNow？",
+    "fake_alert_heading": "極寒警告",
+    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+    "fake_alert_time": "1時間前",
+    "fake_alert_time_exact": "2018年5月2日午前5時15分（アメリカ中部時間）",
+    "use_cases": {
+      "heading": "詳細はこちら",
+      "first_heading": "使い方",
+      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "second_heading": "使用事例",
+      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "third_heading": "実装ツールキット",
+      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fourth_heading": "WhatNowの動画",
+      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+      "fifth_heading": "天気予報アプリの向上",
+      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    },
+    "example_alert": {
+      "heading": "安全メッセージのフォーマット例",
+      "alert_preview": "警報プレビュー",
+      "what_now_info": "安全メッセージ・プレビュー",
+      "example_whatnow_request": "セーフティ・メッセージ・データベースの応答例",
+      "example_alert_request": "警報対応の例",
+      "example_content": "1月午前11時時点の気象注意報の第3報最終 2018年、29日\n寒冷前線の後方\n\n寒冷前線の後方の影響は弱まりました。ノームでは天候が回復するでしょう。ただし、局地的ににわか雨や雷雨が、特に午後から夜にかけての間、西に至るこれらの地域で予測されます。この開発により、これがこの気象状況に関する最後の予報となります。",
+      "example_content_location_header": "影響を受ける地域",
+      "example_content_location": "アラスカ州ノーム"
+    },
+    "example_whatnow": {
+      "alert_from": "アメリカ赤十字からの警報",
+      "more_info": "詳細情報",
+      "heading": "極端な寒さに対する安全メッセージ",
+      "copy": "極寒のリスクを軽減し、自分と家族を守るために取るべき行動です。",
+      "what_now": "IFRC安全メッセージデータベース",
+      "step_1": "家を守る。水道管を確認し、暖房器具を安全に使用してください。",
+      "step_2": "暖かい飲物で水分を十分に補充してください",
+      "step_3": "肌が露出しないように暖かい衣服で身を守ってください",
+      "step_4": "凍結に注意してください（特に運転中）",
+      "step_5": "近所や友人、そして高リスクの人を見守ってあげてください"
+    },
+    "build": {
+      "heading": "アプリを作成する準備はできましたか？"
+    },
+    "data_preview": {
+      "heading": "安全に関するメッセージ",
+      "sub_heading": "登録し、世界中の赤十字・赤新月社からの重要な行動メッセージを確認してください"
+    },
+    "footer": {
+      "terms_conditions": "利用規約",
+      "about": "バージョン情報",
+      "privacy": "プライバシー",
+      "getting_started": "はじめに",
+      "docs": "マニュアル",
+      "give_feedback": "フィードバックを送信",
+      "gdpc_logo": "世界防災準備センター（Global Disaster Preparedness Center）のロゴ",
+      "ifrc_logo": "国際赤十字・赤新月社運動のロゴ",
+      "subtitle_1": "IFRC主要安全データベースについて",
+      "text_1": "IFRC主要安全データベースは、以下へのアクセスを提供します",
+      "text_2": "人々がどのように",
+      "text_3": "危険に直面した際に安全に行動できるかについての赤十字・赤新月社のメッセージ",
+      "subtitle_2": "詳細はこちら",
+      "email_ifrc": "im@ifrc.org",
+      "web_ifrc": "ifrc.org",
+      "subtitle_3": "ポリシー",
+      "terms": "利用規約",
+      "subtitle_4": "役立つリンク",
+      "api_doc": "APIドキュメント",
+      "faq": "FAQ（リンクは後日提供）"
+    }
   },
   "register_form": {
-      "heading": "無料のWhatNow Serviceアカウントを作成",
-      "who_are_you": "あなたは誰ですか？",
-      "developer": "開発者",
-      "national_society": "全国組織",
-      "sign_up_with": "次の方法で登録：",
-      "sign_up_agreement": "アカウントを作成することにより、以下の規約に同意することになります： ",
-      "terms_conditions": "利用規約 ",
-      "facebook": "Facebookで登録",
-      "google": "Googleで登録",
-      "email_sign_up": "メールアドレスで登録：",
-      "location": "所在地",
-      "organisation": "組織",
-      "industry": "業界タイプ",
-      "create_account": "アカウントの作成",
-      "last_name": "姓",
-      "select_country": "国を選択",
-      "select_industry": "業界タイプを選択",
-      "industries": {
-          "media": "メディア",
-          "emergency": "緊急事態管理",
-          "non_profit": "非営利団体／NGO",
-          "humanitarian": "人道組織",
-          "red_cross": "赤十字・赤新月社",
-          "education": "教育／学術",
-          "gov": "政府機関",
-          "other": "その他"
-      },
-      "api_used_in": "このAPIをどこで使用しますか？",
-      "api_used_in_help": "このサービスの利用方法として意図しているものを255文字未満でお答えください。",
-      "welcome": "{name}さん、ようこそ。ご利用にあたって次の情報をご入力ください。",
-      "gdpc_note": "ご質問があったり詳細を知りたいという場合は、以下にお問い合わせください： ",
-      "gdpc_ns_note": "登録するには、世界防災準備センター（Global Disaster Preparedness Center）のWhatNow Serviceチームにご連絡ください： ",
-      "contact_gdpc": "GDPCに連絡"
+    "heading_1": "無料アカウントを作成",
+    "heading_2": "IFRC",
+    "heading_3": "安全メッセージデータベース",
+    "subtitle_1": "赤十字・赤新月社の実行可能な安全メッセージで、地域社会が地域の危険に備え、対応できるように支援します。",
+    "subtitle_2": "APIでアクセスしたい場合は、サインアップして#-ステップガイドでメッセージを共有してください。",
+    "subtitle_3": "赤十字・赤新月社国内協会の方は、サインアップすると、安全メッセージを適応させて共有する方法についての指示を受け取ります。",
+    "who_are_you": "あなたは誰ですか？",
+    "what_is_your_role": "あなたの役割は何ですか？",
+    "description": "コピー保留中",
+    "national_society_description": "グローバル、国内、および地域のメディアがアクセスして放送できるように、RCRC国内協会の主要な安全メッセージを公開します。\nメッセージの作成方法やメディアパートナーとの連携方法について詳しくはお問い合わせください。",
+    "developer": "開発者",
+    "national_society": "全国組織",
+    "sign_up_with": "次の方法で登録：",
+    "sign_up_agreement": "アカウントを作成することにより、以下の規約に同意することになります： ",
+    "terms_conditions": "利用規約 ",
+    "facebook": "Facebookで登録",
+    "google": "Googleで登録",
+    "email_sign_up": "メールアドレスで登録：",
+    "mail": "メール",
+    "email_ifrc": "im@ifrc.org",
+    "location": "所在地",
+    "organisation": "組織",
+    "industry": "業界タイプ",
+    "create_account": "アカウントの作成",
+    "last_name": "姓",
+    "select_country": "国を選択",
+    "select_industry": "業界タイプを選択",
+    "industries": {
+      "media": "メディア",
+      "emergency": "緊急事態管理",
+      "non_profit": "非営利団体／NGO",
+      "humanitarian": "人道組織",
+      "red_cross": "赤十字・赤新月社",
+      "education": "教育／学術",
+      "gov": "政府機関",
+      "other": "その他"
+    },
+    "api_used_in": "このAPIをどこで使用しますか？",
+    "api_used_in_help": "このサービスの利用方法として意図しているものを255文字未満でお答えください。",
+    "welcome": "{name}さん、ようこそ。ご利用にあたって次の情報をご入力ください。",
+    "ifrc_note": "ご質問や詳細については、以下までお問い合わせください：",
+    "contact_gdpc": "GDPCに連絡"
   },
   "terms_service_page": {
     "applicable_law": {
-        "body": "本契約における全ての権利と義務は、法の抵触の原則を適用することなく、コロンビア特別区法に準拠するものとします。",
-        "heading": "準拠法："
+      "body": "本契約における全ての権利と義務は、法の抵触の原則を適用することなく、コロンビア特別区法に準拠するものとします。",
+      "heading": "準拠法："
     },
     "body": "あなたには、赤十字社が提供した登録キーの機密性と安全性を維持する責任があります。APIは適宜更新されることから、あなたにはデータフィード（Data Feeds）を継続して受信するためにAPIとの互換性を維持する責任があります。赤十字社は独自の裁量でAPIとデータフィード（Data Feeds）の更新バージョンをリリースすることができます。新規バージョンは過去の実装との互換性を持たない可能性があり、あなたはデータフィード（Data Feeds）の最新更新バージョンを常に使用することに同意します。あなたは、赤十字社のAPIもしくはあらゆるソフトウェアの一部の改変、配布、逆コンパイル、逆アセンブル、またはリバースエンジニアリングを行わないことに同意します。あなたは、赤十字社の独自の裁量により、合理的なリクエスト量を超過していると見なされる方法で、または過度の使用もしくは悪用と見なされる方法でAPIまたはデータフィード（Data Feeds）を使用してはなりません。あなたは、赤十字社の独自の裁量により、不法、不当、過失、悪意のある、危害を加える意図があると見なされる方法で、または赤十字社やそのサービスプロバイダー、コンテンツプロバイダーもしくはその他の人に危害を加えると見なされる方法でAPIまたはデータフィード（Data Feeds）を使用してはなりません。赤十字社はAPIとデータフィード（Data Feeds）の使用を監視することができます。あなたは、当該監視を干渉する技術的手段を使用してはならず、赤十字社は当該干渉を制する技術的手段を使用することができます。準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の使用は、相互に関連する気象災害警報（Event Alerts）のその時点で最新の緊急時設定への最新または更新情報としてのみ提示するものとし、赤十字社がデータフィード（Data Feeds）または相互に関連する気象災害警報（Event Alerts）もしくはその両方を更新した時に、あなたは個々の準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）を更新するものとします。あなたが使用する個々の準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）は、発出された地理的地域のみに関連付けるものとします。準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）に、アメリカ赤十字社または他の赤十字社または赤新月社の全国組織または組織といった情報源への参照（各自「情報源の参照」という）が含まれている場合、データフィード（Data Feeds）で提供された形式で、個々の準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）に関連付けられている情報源の参照を含めるものとします。いかなる情報源の参照もこれ以上の目的に使用してはなりません。データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の他言語への翻訳、利用、編集または改訂は行ってはならず、データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の意味を変更してはなりません。データフィード（Data Feeds）は、あなたが単独所有ならびに管理することを確実にする必要があります。気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）に広告やスポンサーシップを組み合わせてエンドユーザーに提供することを許可してはなりません。データフィード（Data Feeds）の一部または全てのアーカイブを作成してはなりません。",
     "contact": "APIについてご質問がある場合、{0}から赤十字社にお問い合わせください。",
     "disclaimer": "APIおよびデータフィード（Data Feeds）は、「現状有姿」かつ「提供可能な場合に限り提供しうる」状態で、情報提供および教育のみを目的として提供されます。赤十字社は、明示的または黙示的を問わず、いかなる表明または保証も一切行いません。赤十字社は、明示的または黙示的を問わず、商品性ならびに特定の目的への適合性に関する黙示的保証を含むがこれに限定されない全ての保証を否認します。赤十字社およびその社員、理事、職員および実施許諾者は、直接・間接的損害、付随的損害、懲罰的損害賠償および結果的損害を含むがこれに限定されない、API、データフィード（Data Feeds）、気象災害警報（Event Alerts）または準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の使用から生じる損害について一切の責任を負いません。赤十字社は、API、データフィード（Data Feeds）、気象災害警報（Event Alerts）または準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の遅延、不正確性、誤りまたは不行為を含むがこれに限定されない、当該API、データフィード（Data Feeds）、気象災害警報（Event Alerts）または準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の順序、精度、信頼性または完全性を保証せず、あなたやあなたのエンドユーザーまたはあらゆるサードパーティに対していかなる方法によっても一切の責任を負いません。",
     "entire_agreement": {
-        "body": "APIの利用規約は、本契約の事項に関する赤十字社とあなたとの間の完全かつ独占的な合意を構成し、本契約に明示していない契約以前の全ての口頭または書面による了解事項、伝達事項および合意に優先します。赤十字社は、時を問わず本契約を変更または撤回する権利を有します。",
-        "heading": "完全合意："
+      "body": "APIの利用規約は、本契約の事項に関する赤十字社とあなたとの間の完全かつ独占的な合意を構成し、本契約に明示していない契約以前の全ての口頭または書面による了解事項、伝達事項および合意に優先します。赤十字社は、時を問わず本契約を変更または撤回する権利を有します。",
+      "heading": "完全合意："
     },
     "heading": "APIエンドユーザーライセンス契約",
     "intro": "同意：本サービスを使用するか、もしくはチェックボックスを選択することにより、ユーザーは本契約に拘束されることに同意したことになります。APIは、赤十字社が供するデータフィード（Data Feeds）をあなた（「あなた」という）が取得し使用できるようにするツールです。データフィード（Data Feeds）には、世界気象災害に関する警告・注意予報（「気象災害警報（Event Alerts）」という）、災害タイプや緊急度別に地域の防災方法を伝える使用可能かつ状況に合わせたメッセージのフィード（「準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）」および気象災害警報（Event Alerts）と合わせて「データフィード（Data Feeds）」という）が含まれます。準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）は、アプリケーション内で気象災害警報（Event Alerts）または気象災害に関する他の警告・注意予報と併用することを意図しています。データフィード（Data Feeds）の使用はAPI利用規約に準拠します。",
     "license_limitations": {
-        "body": "データフィード（Data Feeds）は、APIの利用規約に従いあなた独自のアプリケーションのみと併用でき、APIの適宜更新に応じてAPIとの互換性を維持することを条件とします。あなたには、APIの利用規約に従い、データフィード（Data Feeds）からの個々の気象災害警報（Event Alerts）に関する緊急度に応じて、気象災害警報（Event Alerts）および関連する準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）をダウンロード、使用、複製したり、アプリケーションのエンドユーザー（「エンドユーザー」という）に配布したりする非独占的、限定的かつ取消可能な権限が付与されます。APIの利用規約に基づき、データフィード（Data Feeds）の非商業的な使用を促進するためにのみAPIを使用できます。いかなる場合でも、データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の再販、当該プログラムへのアクセスや再配布に対する課金または当該データフィードに基づく二次的著作物の創作に対する課金を含むがこれらに限定されない、当該データフィードの商業的な使用を促進するためにAPIを使用してはなりません。赤十字社およびその実施許諾者は、本契約のAPI、準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）、気象災害警報（Event Alerts）、データフィード（Data Feeds）および情報源の参照（以下に定義）に関する全ての権原、所有権、権利および利益を有します。明示的に付与されていない全ての権利は留保されます。",
-        "heading": "ライセンスおよび制限事項："
+      "body": "データフィード（Data Feeds）は、APIの利用規約に従いあなた独自のアプリケーションのみと併用でき、APIの適宜更新に応じてAPIとの互換性を維持することを条件とします。あなたには、APIの利用規約に従い、データフィード（Data Feeds）からの個々の気象災害警報（Event Alerts）に関する緊急度に応じて、気象災害警報（Event Alerts）および関連する準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）をダウンロード、使用、複製したり、アプリケーションのエンドユーザー（「エンドユーザー」という）に配布したりする非独占的、限定的かつ取消可能な権限が付与されます。APIの利用規約に基づき、データフィード（Data Feeds）の非商業的な使用を促進するためにのみAPIを使用できます。いかなる場合でも、データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）の再販、当該プログラムへのアクセスや再配布に対する課金または当該データフィードに基づく二次的著作物の創作に対する課金を含むがこれらに限定されない、当該データフィードの商業的な使用を促進するためにAPIを使用してはなりません。赤十字社およびその実施許諾者は、本契約のAPI、準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）、気象災害警報（Event Alerts）、データフィード（Data Feeds）および情報源の参照（以下に定義）に関する全ての権原、所有権、権利および利益を有します。明示的に付与されていない全ての権利は留保されます。",
+      "heading": "ライセンスおよび制限事項："
     },
     "overview": {
-        "body": "世界防災準備センター（Global Disaster Preparedness Center）のWhatNow Service Application Program Interface（「API」という）は、米国赤十字社（「赤十字社」という）が提供します。 APIには登録キーが必要です。あなたは、登録プロセスで、以下の利用規約と{0}に記載されている赤十字社ウェブサイトのサービス利用規約（「API利用規約」と総称）に同意する必要があります。 API利用規約は、APIの使用とAPIを通じて提供されるダウンロード可能な電子資料に適用されます。{1}",
-        "cta": "ここをクリックして登録してください"
+      "body": "世界災害対策センター安否情報データベース・サービス・アプリケーション・プログラム・インターフェース（以下「API」といいます）は、米国赤十字社（以下「赤十字社」といいます）により提供されています。APIには登録キーが必要です。  登録プロセスにおいて、利用者は、{0} で利用可能な赤十字ウェブサイト利用規約の条件とともに、以下の条件に同意する必要があります（以下、総称して「API規約」といいます）。API利用規約は、APIおよびAPIを通じて利用可能となるダウンロード可能な電子資料の利用について規定します。{1}",
+      "cta": "ここをクリックして登録してください"
     },
     "privacy_policy": {
-        "body": "あなたは、APIの特定プログラム、サービス、ツール、購入オプション、資料および情報の運用にあたり、各種の個人情報の提出、使用および伝播が求められることを理解して確認し同意します。したがって、APIにアクセスして使用する場合、APIを使用することにより、個人情報の収集ならびに以下のプライバシーポリシーに含まれる使用慣行に対する承諾を構成することを確認し同意します：{0}",
-        "heading": "プライバシーポリシー："
+      "body": "あなたは、APIの特定プログラム、サービス、ツール、購入オプション、資料および情報の運用にあたり、各種の個人情報の提出、使用および伝播が求められることを理解して確認し同意します。したがって、APIにアクセスして使用する場合、APIを使用することにより、個人情報の収集ならびに以下のプライバシーポリシーに含まれる使用慣行に対する承諾を構成することを確認し同意します：{0}",
+      "heading": "プライバシーポリシー："
     },
     "prohibited_activities": {
-        "body": "あなたとそのエンドユーザーおよび代理人は、APIまたはデータフィード（Data Feeds）を以下の方法で使用してはなりません：",
-        "heading": "禁止されている活動および行為：",
-        "prohibited_list": {
-            "one": "赤十字社のサービスまたはサーバーに干渉または妨害すること。",
-            "two": "赤十字社またはAPIで使用されている、認証技術を含むがこれに限定されないキーまたはセキュリティ対策を回避または改変すること。",
-            "three": "自分のアカウント用に提供された情報以外の、赤十字社のサインイン名、パスワードまたは他の認証情報を要求、収集または懇請すること、または当該情報にアクセスすること。",
-            "four": "赤十字社または他のあらゆる赤十字社、または赤新月社の全国組織による提携、スポンサーシップまたはエンドースメントを表明または暗示すること。",
-            "five": "API、データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）を自分が所有したり作成したりしたと表明または暗示すること。",
-            "six": "ウイルス、ワーム、瑕疵、トロイの木馬または破壊的な性質のあらゆるプログラムを伝染させること。"
-        }
+      "body": "あなたとそのエンドユーザーおよび代理人は、APIまたはデータフィード（Data Feeds）を以下の方法で使用してはなりません：",
+      "heading": "禁止されている活動および行為：",
+      "prohibited_list": {
+        "one": "赤十字社のサービスまたはサーバーに干渉または妨害すること。",
+        "two": "赤十字社またはAPIで使用されている、認証技術を含むがこれに限定されないキーまたはセキュリティ対策を回避または改変すること。",
+        "three": "自分のアカウント用に提供された情報以外の、赤十字社のサインイン名、パスワードまたは他の認証情報を要求、収集または懇請すること、または当該情報にアクセスすること。",
+        "four": "赤十字社または他のあらゆる赤十字社、または赤新月社の全国組織による提携、スポンサーシップまたはエンドースメントを表明または暗示すること。",
+        "five": "API、データフィード（Data Feeds）、気象災害警報（Event Alerts）および準備・対応・復旧メッセージ（Prepare, Respond, and Recover Messages）を自分が所有したり作成したりしたと表明または暗示すること。",
+        "six": "ウイルス、ワーム、瑕疵、トロイの木馬または破壊的な性質のあらゆるプログラムを伝染させること。"
+      }
     },
     "reserve_rights": "赤十字社は事前通知なしにいつでも、APIとデータフィード（Data Feeds）を全体的にも部分的にも、一時的あるいは永久に変更または提供を止める権利を有します。疑いを避けるため、本契約の記載事項は赤十字社にAPIやデータフィード（Data Feeds）をあなたに提供する義務を負わせるものではありません。あなたは、当該データフィードへのあらゆるアクセスは赤十字社の独自かつ完全なる裁量によることに同意し承諾します。",
     "severability": {
-        "body": "API利用規約のいずれかの条件または規定が無効になっても、その他の規定の有効性には影響を及ぼしません。",
-        "heading": "可分性および権利放棄："
+      "body": "API利用規約のいずれかの条件または規定が無効になっても、その他の規定の有効性には影響を及ぼしません。",
+      "heading": "可分性および権利放棄："
     },
     "suspension": {
       "body": "赤十字社は独自の裁量により、API利用規約の規定に沿って、あなたがAPIまたはデータフィード（Data Feeds）を不正使用したり、APIまたはデータフィード（Data Feeds）をあらゆる人または赤十字社ネットワークの安全性またはセキュリティを脅かしたり侵害したりする活動で使用していると判断した場合、あなたのアクセスを停止または終了する権利を有します。",
@@ -711,111 +900,121 @@
     }
   },
   "view_data": {
-      "alert_title": "警報：",
-      "more_info": "詳細情報：",
-      "which": "どのWhatNowメッセージを表示しますか？",
-      "view_data": "データを表示",
-      "alerts": "警報",
-      "alert_preview": "警報のプレビュー",
-      "cap_alerts": "CAP警報",
-      "onset": "開始",
+    "alert_title": "警報：",
+    "more_info": "詳細情報：",
+    "which": "どのセーフティ・メッセージをご覧になりますか？",
+    "view_data": "データを表示",
+    "alerts": "警報",
+    "alert_preview": "警報のプレビュー",
+    "cap_alerts": "CAP警報",
+    "onset": "開始",
+    "severity": "重大度",
+    "title": "タイトル",
+    "date": "日付",
+    "headline": "見出し",
+    "alert": "警報",
+    "whatnow_info": "セーフティ・メッセージ・データベース情報",
+    "alert_detail": "警報の詳細",
+    "more": "詳細情報",
+    "area_affected": "影響を受ける地域",
+    "details": "詳細",
+    "cap": {
+      "type": "タイプ",
+      "status": "ステータス",
+      "urgency": "緊急度",
       "severity": "重大度",
-      "title": "タイトル",
-      "date": "日付",
-      "headline": "見出し",
-      "alert": "警報",
-      "whatnow_info": "WhatNow情報",
-      "alert_detail": "警報の詳細",
-      "more": "詳細情報",
-      "area_affected": "影響を受ける地域",
-      "details": "詳細",
-      "cap": {
-          "type": "タイプ",
-          "status": "ステータス",
-          "urgency": "緊急度",
-          "severity": "重大度",
-          "certainty": "確実性",
-          "sent": "送信済",
-          "effective": "発効日",
-          "onset": "開始",
-          "expires": "有効期限",
-          "alert_from": "警報発出元",
-          "feed": "フィード",
-          "more": "詳細情報：",
-          "through": "情報源",
-          "alert_feed": "警報フィード",
-          "fetching_feed": "フィードを取得中",
-          "empty": "現在警報はありません"
-      }
+      "certainty": "確実性",
+      "sent": "送信済",
+      "effective": "発効日",
+      "onset": "開始",
+      "expires": "有効期限",
+      "alert_from": "警報発出元",
+      "feed": "フィード",
+      "more": "詳細情報：",
+      "through": "情報源",
+      "alert_feed": "警報フィード",
+      "fetching_feed": "フィードを取得中",
+      "empty": "現在警報はありません"
+    }
   },
   "user_agreement": {
-      "title": "使用許諾契約",
-      "para_one": "WhatNowポータルにアクセスする前に、以下の文書をダウンロードして使用許諾契約の条件をよく読み、下の「承諾」ボタンをクリックして承諾してください。",
-      "cta": "承諾",
-      "download": "ここをクリックして使用許諾契約書を表示（105KB）"
+    "title": "使用許諾契約",
+    "para_one": "セーフティ・メッセージ・データベース・ポータルにアクセスする前に、以下の文書をダウンロードし、下の「同意する」ボタンをクリックして、利用規約の条件を読み、同意してください。",
+    "cta": "承諾",
+    "download": "ここをクリックして使用許諾契約書を表示（105KB）"
   },
   "hazard_type": {
-      "dropdown": {
-        "select": "災害タイプを選択",
-        "create": "災害タイプを作成"
-      },
-      "create": {
-          "title": "新しい災害タイプを作成",
-          "request": "新しい災害タイプをリクエスト",
-          "other": "その他",
-          "email_subject": "新しい災害タイプをリクエスト",
-          "hazard_name": "災害名",
-          "hazard_name_placeholder": "災害名を入力",
-          "upload_icon": "アイコンをアップロード",
-          "icon_requirements": "アイコンは30KB以下のPNG形式にしてください",
-          "requestLink": "GDPCに連絡して新しい災害タイプをリクエスト",
-          "success": "災害タイプの作成済み",
-          "error": "新しい災害タイプの作成中に問題が発生しました。"
-      }
+    "dropdown": {
+      "select": "災害タイプを選択",
+      "create": "災害タイプを作成"
+    },
+    "create": {
+      "title": "新しい災害タイプを作成",
+      "request": "新しい災害タイプをリクエスト",
+      "other": "その他",
+      "email_subject": "新しい災害タイプをリクエスト",
+      "hazard_name": "災害名",
+      "hazard_name_placeholder": "災害名を入力",
+      "upload_icon": "アイコンをアップロード",
+      "icon_requirements": "アイコンは30KB以下のPNG形式にしてください",
+      "requestLink": "GDPCに連絡して新しい災害タイプをリクエスト",
+      "success": "災害タイプの作成済み",
+      "error": "新しい災害タイプの作成中に問題が発生しました。"
+    }
   },
   "regions": {
     "list": {
-        "manage": "地域を管理",
-        "create": "新しい地域を作成",
-        "edit": "地域を編集",
-        "add": "地域を追加",
-        "empty": "地域が見つかりませんでした",
-        "table_header": {
-            "region": "地域"
-        }
+      "manage": "サブリージョン",
+      "create": "新しい地域を作成",
+      "edit": "地域を編集",
+      "add": "地域を追加",
+      "empty": "地域が見つかりませんでした",
+      "table_header": {
+        "region": "地域"
+      }
     },
     "select_soc": "表示して地域を追加するソサエティを選択してください",
     "create": "新しい地域を作成する",
     "form": {
-        "name": "地域名",
-        "name_help": "カスタムWhatNowメッセージングを作成する地域に名前を付けます。",
-        "description": "説明",
-        "description_help": "地域に関する詳細情報を入力します (サンフランシスコベイエリアなど)。"
+      "name": "地域名",
+      "name_help": "カスタム安全メッセージを作成する地域を指定します。",
+      "description": "説明",
+      "description_help": "地域に関する詳細情報を入力します (サンフランシスコベイエリアなど)。"
     },
     "edit": "地域を編集",
     "delete": "これにより、地域とその地域に関連付けられているすべてのコンテンツが削除されます。"
   },
   "table_headers": {
-      "profile_pic": "プロファイル写真",
-      "first_name": "姓",
-      "last_name": "last_name",
-      "role": "ロール",
-      "society": "組織",
-      "date": "日付",
-      "country": "国",
-      "email": "メールアドレス",
-      "created_at": "created_at",
-      "last_logged_in_at": "最後に有効になった日",
-      "terms_version": "プロファイル",
-      "actions": "アクション",
-      "action": "アクション",
-      "content": "コンテンツ",
-      "country_code": "場所",
-      "organisation": "組織",
-      "industry_type": "業界タイプ",
-      "all_roles": "全てのロール",
-      "version": "バージョン",
-      "user": "ユーザー",
-      "language_code": "言語コード"
+    "profile_pic": "プロファイル写真",
+    "first_name": "姓",
+    "last_name": "last_name",
+    "role": "ロール",
+    "society": "組織",
+    "date": "日付",
+    "country": "国",
+    "email": "メールアドレス",
+    "created_at": "created_at",
+    "last_logged_in_at": "最後に有効になった日",
+    "terms_version": "プロファイル",
+    "actions": "アクション",
+    "action": "アクション",
+    "content": "コンテンツ",
+    "country_code": "場所",
+    "organisation": "組織",
+    "industry_type": "業界タイプ",
+    "all_roles": "全てのロール",
+    "version": "バージョン",
+    "user": "ユーザー",
+    "language_code": "言語コード"
+  },
+  "terms_conditions": {
+    "title": "利用規約",
+    "accept": "同意"
+  },
+  "badges": {
+    "hazardCreate": "危険作成済み",
+    "published": "公開済み",
+    "draft": "下書き",
+    "bulkUploadDraft": "メッセージファイルのアップロード"
   }
 }
