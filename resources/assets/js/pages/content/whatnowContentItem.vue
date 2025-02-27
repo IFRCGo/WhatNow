@@ -22,7 +22,6 @@
       <b-button variant="outline-primary" size="sm" class="mb-1 mr-1" :to="editLink"
         v-if="(can(user, permissions.CONTENT_EDIT) || can(user, permissions.CONTENT_VIEW))"
         :disabled="deletingContentTranslation === content.id">
-        <font-awesome-icon :icon="['fas', 'pen']" />
         {{ can(user, permissions.CONTENT_EDIT) ? $t('common.edit') : $t('common.view_content') }}
       </b-button>
       <b-button variant="outline-primary" size="sm" class="mb-1" v-if="can(user, permissions.CONTENT_DELETE) && !forceCreate"
