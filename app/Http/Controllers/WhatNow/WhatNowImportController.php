@@ -44,7 +44,7 @@ final class WhatNowImportController extends ApiController
         try{
             $fileType = $request->get('fileType');
             $this->validate($request, [
-                $fileType => ['file', 'mimes:xlsx,csv,txt|max:2048'],
+                'file' => ['file', 'mimetypes:text/plain,text/csv,application/vnd.ms-excel', 'max:2048'],
             ]);
 
         }catch (ValidationException $e)
