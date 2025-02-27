@@ -62,10 +62,15 @@
           <template #cell(user)="data">
             <div v-if="data.item.user">
               <b-img v-if="data.item.user.user_profile.photo_url" :src="data.item.user.user_profile.photo_url" width="20" height="20" rounded="circle" alt="" role="presentation"></b-img>
-              <span v-else><avatar
+              <span v-else>
+                <avatar
                 :username="data.item.user.user_profile.first_name + ' ' + data.item.user.user_profile.last_name"
-                :size="20" :customStyle="{display: 'inline-block'}"
-                backgroundColor="#ff5607"></avatar></span>
+                  :size="30"
+                  :customStyle="{display: 'inline-block'}"
+                  :backgroundColor="'#F6333F'"
+                  :color="'#FFFFFF'"
+                ></avatar>
+              </span>
               <span>{{ truncate(data.item.user.user_profile.first_name + ' ' + data.item.user.user_profile.last_name, 20) }}</span>
             </div>
             <span v-else>{{ $t('users.deleted') }}</span>
@@ -83,19 +88,19 @@
             <div class="d-flex justify-content-between align-items-center">
               <b-badge v-if="data.item.action === 'Created content'" class="custom-badge custom-badge-hazard-create">
                 <span>{{ $t('badges.hazardCreate') }}</span>
-                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+                <span class="small-date">{{ data.item.created_at | moment("MM-DD-YY HH:mm") }}</span>
               </b-badge>
               <b-badge v-else-if="data.item.action === 'Published a content translation'" class="custom-badge custom-badge-published">
                 <span>{{ $t('badges.published') }}</span>
-                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+                <span class="small-date">{{ data.item.created_at | moment("MM-DD-YY HH:mm") }}</span>
               </b-badge>
               <b-badge v-else-if="data.item.action === 'Updated content'" class="custom-badge custom-badge-draft">
                 <span>{{ $t('badges.draft') }}</span>
-                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+                <span class="small-date">{{ data.item.created_at | moment("MM-DD-YY HH:mm") }}</span>
               </b-badge>
-              <b-badge v-else-if="data.item.action === 'Bulk upload draft'" class="custom-badge custom-badge-bulk-upload-draft">
+              <b-badge v-else-if="data.item.action === 'Updated content via import'" class="custom-badge custom-badge-bulk-upload-draft">
                 <span>{{ $t('badges.bulkUploadDraft') }}</span>
-                <span>{{ data.item.created_at | moment("MM/DD/YY HH:mm") }}</span>
+                <span class="small-date">{{ data.item.created_at | moment("MM-DD-YY HH:mm") }}</span>
               </b-badge>
               <span v-else>{{ data.item.action }}</span>
             </div>
@@ -157,7 +162,7 @@ export default {
         { key: 'country_code', sortable: true, label: this.$t('content.audit_log.soc_label') },
         { key: 'language_code', sortable: true },
         { key: 'content', sortable: true },
-        { key: 'action', sortable: true },
+        { key: 'action', sortable: true }
 
       ],
       currentPage: 1,
@@ -204,15 +209,15 @@ export default {
   },
   methods: {
     clearFilters () {
-      this.selectedSoc = null;
-      this.hazardTypeFilter = null;
-      this.languageFilter = null;
+      this.selectedSoc = null
+      this.hazardTypeFilter = null
+      this.languageFilter = null
     },
     async fetchAllHazardTypes () {
       try {
-        await this.$store.dispatch('content/fetchHazardTypes');
+        await this.$store.dispatch('content/fetchHazardTypes')
       } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'));
+        this.$noty.error(this.$t('error_alert_text'))
       }
     },
     async fetchAudits() {
@@ -271,9 +276,9 @@ export default {
     },
     setLocalStorage () {
       if (this.selectedSoc) {
-        localStorage.setItem('soc', this.selectedSoc.countryCode);
+        localStorage.setItem('soc', this.selectedSoc.countryCode)
       } else {
-        localStorage.removeItem('soc');
+        localStorage.removeItem('soc')
       }
     }
   },
@@ -327,8 +332,12 @@ export default {
   justify-content: space-between;
   padding: 0 8px;
   border: 2px solid;
-}
+  font-size: 16px;
 
+}
+.small-date {
+  font-size: 11px;
+}
 .custom-badge-published {
   background: #E6FEDF;
   border-color: #21A656;
@@ -343,7 +352,7 @@ export default {
 
 .custom-badge-bulk-upload-draft {
   background: #C8E4F7;
-  border: 3px solid #4288B8;
+  border-color: #4288B8;
   color: #4288B8;
 }
 
@@ -357,4 +366,5 @@ btn-outline-primary.disabled, .btn-outline-primary:disabled {
   color: white;
   background: grey;
 }
+
 </style>

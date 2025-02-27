@@ -121,21 +121,21 @@
             </template>
             <template #cell(profile_pic)="data">
               <div>
-                <b-img v-if="data.item.user_profile?.photo_url" :src="data.item.user_profile.photo_url" width="42" height="42" rounded="circle" alt="" role="presentation"></b-img>
-                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name" :size="42" class="custom-avatar" />
+                <b-img v-if="data.item.user_profile?.photo_url" :src="data.item.user_profile.photo_url" width="35" height="35" rounded="circle" alt="" role="presentation"></b-img>
+                <avatar v-else :username="data.item.user_profile.first_name + ' ' + data.item.user_profile.last_name" :size="35" class="custom-avatar" />
               </div>
             </template>
             <template #cell(actions)="data">
             <div class="d-flex flex-column">
-              <div class="d-flex justify-content-between mb-1">
-                <b-button class="btn-outline-primary small-text align-text" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
+              <div class="mb-1">
+                <b-button class="btn-outline-primary small-text mb-1" :to="{ name: 'users.edit', params: { id: data.item.id, isApiUser: apiUsers } }" v-if="can(user, permissions.USERS_EDIT)">
                   {{$t('common.edit')}}
                 </b-button>
-                <b-button class="btn-outline-primary small-text" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)">
+                <b-button class="btn-outline-primary small-text mb-1" @click="toggleDeactivate(data.item)" v-if="can(user, permissions.USERS_DEACTIVATE) && can(user, permissions.USERS_REACTIVATE)">
                   {{ data.item.activated ? $t('common.deactivate') : $t('common.activate') }}
                 </b-button>
-                <b-button class="btn-outline-primary small-text" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
-                  Reset Password
+                <b-button class="btn-outline-primary small-text mb-1 text-nowrap" @click="sendResetPasswordEmail(data.item.email)" v-if="can(user, permissions.USERS_EDIT)">
+                  {{$t('common.reset_password')}}
                 </b-button>
               </div>
             </div>
@@ -493,13 +493,6 @@ export default {
   .clear-filter-btn {
     margin-top: 2.5rem;
   }
-
-  .align-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   btn-outline-primary.disabled, .btn-outline-primary:disabled {
     color: white;
     background: grey;
