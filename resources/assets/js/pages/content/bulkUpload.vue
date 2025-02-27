@@ -53,7 +53,7 @@
       </b-col>
     </b-row>
     <hr>
-    <b-form @submit="uploadCsv" v-if="can(user, permissionsList.CONTENT_EDIT)">
+    <b-form @submit.prevent="uploadFile" v-if="can(user, permissionsList.CONTENT_EDIT)">
       <b-row class="pl-4 pr-4 pt-4">
         <b-col cols="6" v-if="!uploadResults">
           <h1>{{ $t('content.bulk_upload.import_data') }}</h1>
@@ -76,17 +76,17 @@
               <b-col cols="12" xl="6">
                 <div class="mt-4">
                   <p class="bulk-text">{{ $t('content.bulk_upload.file_instructions') }}</p>
-                  <b-form-file class="file-inp" ref="fileinput" accept=".csv" :choose-label="$t('content.bulk_upload.choose')" id="file_input1" v-model="file"></b-form-file>
+                  <b-form-file  class="file-inp" ref="fileinput" accept=".csv;*.xlsx" :choose-label="$t('content.bulk_upload.choose')" id="file_input1" v-model="importForm.file"></b-form-file>
                 </div>
                 <hr>
                 <div class="mt-4">
                   <p class="bulk-text"> {{ $t('content.bulk_upload.choose_file') }} </p>
                   <div>
                     <label class="custom-radio">
-                      <input type="radio" v-model="selectedFileType" value="XLS" name="fileType" /> XLS
+                      <input type="radio" v-model="importForm.selectedFileType" value="xlsx" name="fileType" /> XLS
                     </label>
                     <label class="ml-4 custom-radio">
-                      <input type="radio" v-model="selectedFileType" value="CSV" name="fileType" /> CSV
+                      <input type="radio" v-model="importForm.selectedFileType" value="csv" name="fileType" /> CSV
                     </label>
                   </div>
                 </div>
@@ -95,11 +95,12 @@
                   <p class="bulk-text">{{ $t('content.bulk_upload.language_instructions') }}</p>
                   <v-select
                     :dir="isLangRTL(locale) ? 'rtl' : 'ltr'"
-                    v-model="languageFilter"
+                    v-model="importForm.selectedImportLang"
                     class="w-100 v-select-custom bulk-select-2 mr-4"
-                    :options="filteredLanguages"
-                    label="text" :disabled="filteredLanguages.length === 0"
-                    :placeholder="$t('content.audit_log.select_language')">
+                    :options="allLanguages"
+                    label="text" :disabled="allLanguages.length === 0"
+                    :placeholder="$t('content.audit_log.select_language')"
+                    @input="handleImportLangSelection">
                     <template slot="option" slot-scope="option">
                       <div class="ml-2 rtl-mr-2 dropdown-option">
                         {{ option.text }}
@@ -113,7 +114,7 @@
                   </v-select>
                 </div>
                 <hr v-if="file">
-                <div class="mt-4" v-if="file">
+                <div class="mt-4" v-if="importForm.file && importForm.selectedImportLang && importForm.selectedFileType">
                   <!-- Submit Button -->
                   <v-button :loading="isUploading" class="btn-dark w-100 mt-4">
                     {{ $t('content.bulk_upload.submit') }}
@@ -124,15 +125,18 @@
                 <div class="mt-4">
                   <p class="bulk-text">{{ $t('content.bulk_upload.warnings.title') }}</p>
                   <div class="btns-container">
-                    <v-button class="new-btn btn-yes">Yes</v-button>
-                    <v-button class="btn-no">No</v-button>
+                      <b-form-radio-group v-model="importForm.warnings" buttons button-variant="outline-primary">
+                      <b-form-radio class="new-btn btn-yes" value="true">{{ $t('Yes') }}</b-form-radio>
+                      <b-form-radio class="btn-no" value="false">{{ $t('No') }}</b-form-radio>
+                    </b-form-radio-group>
                   </div>
                 </div>
                 <hr>
-                <div class="mt-4" v-if="warnings">
+                <div class="mt-4" v-if="importForm.warnings" >
                   <p class="bulk-text">{{ $t('content.bulk_upload.overwriting.title') }}</p>
                   <v-select
-                    v-model="overwrite"
+
+                    v-model="importForm.overwrite"
                     class="w-100 v-select-custom bulk-select-3 mr-4"
                     :options="overwriteOptions"
                     label="text" :disabled="overwriteOptions[0].text === ''"
@@ -194,13 +198,18 @@ export default {
       isFetchingLangs: false,
       uploadResults: null,
       isUploading: false,
-      file: null,
+      importForm: {
+        file: null,
+        warnings: true,
+        selectedImportLang: null,
+        selectedFileType: null,
+        overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off') },
+        errors: {}
+      },
       selectedSoc: null,
       selectedRegion: null,
       selectedLanguage: false,
       selectedExportLang: null,
-      warnings: true,
-      overwrite: { value: false, text: this.$t('content.bulk_upload.overwriting.off') },
       languages,
       pdf: pdfFile,
       permissionsList: permissionsList,
@@ -247,6 +256,9 @@ export default {
     handleExportLangSelection (lang) {
       this.selectedExportLang = lang.value
     },
+    handleImportLangSelection (lang) {
+      this.importForm.selectedImportLang = lang.value
+    },
     async fetchOrganisations () {
       this.isFetchingLangs = true
       try {
@@ -263,19 +275,19 @@ export default {
         this.$noty.error(this.$t('error_alert_text'))
       }
     },
-    async uploadCsv (evt) {
+
+    async uploadFile (evt) {
       this.uploadWarning = null
       this.uploadError = null
       this.isUploading = true
-      evt.preventDefault()
       const formData = new FormData()
-      formData.append('warnings', this.warnings)
-      formData.append('overwrite', this.overwrite)
-      formData.append('csv', this.file)
-      await axios.post(`/api/import/${this.selectedSoc.countryCode}/${this.selectedLanguage}`, formData)
-        .then((reponse) => {
-          this.uploadResults = reponse.data
-          this.isUploading = false
+      formData.append('warnings', this.importForm.warnings)
+      formData.append('overwrite', this.importForm.overwrite.value)
+      formData.append('fileType', this.importForm.selectedFileType)
+      formData.append(this.importForm.selectedFileType, this.importForm.file)
+      await axios.post(`/api/import/${this.selectedSoc.countryCode}/${this.importForm.selectedImportLang}`, formData)
+        .then((response) => {
+          this.uploadResults = response.data
           this.$noty.success('Success')
         })
         .catch((error) => {
@@ -290,7 +302,6 @@ export default {
               } else {
                 this.uploadError = this.$t('content.bulk_upload.errors.bad_request')
               }
-
               break
             default:
               this.uploadError = this.$t('error_alert_text')
@@ -298,14 +309,21 @@ export default {
               break
           }
         })
+        .finally(() => {
+          this.isUploading = false
+        })
 
       this.$fireGTEvent(this.$gtagEvents.BulkDataImport)
     },
     resetForm () {
       this.uploadResults = null
-      this.file = null
-      this.warnings = true
-      this.overwrite = false
+      this.importForm.file = null
+      this.importForm.warnings = true
+      this.importForm.overwrite = false
+      this.clearFiles()
+      console.log('Entro')
+      console.log(this.importForm)
+      console.log(this.uploadResults)
     },
     downloadTemplate (extension = 'xlsx') {
       const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
@@ -388,6 +406,17 @@ export default {
 
       return languages
     },
+    allLanguages () {
+      const languages = []
+      for (const key in this.languages) {
+        languages.push({
+          value: key,
+          text: `${this.languages[key].name}  (${this.languages[key].native} - ${key})`
+        })
+      }
+
+      return languages
+    },
     filteredSocieties () {
       if (this.user) {
         if (this.can(this.user, permissionsList.ALL_ORGANISATIONS)) {
@@ -457,6 +486,15 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  & > div {
+    display: flex;
+    gap: 5px;
+    & label {
+      border-radius: 20px !important;
+      align-content: center !important;
+      justify-content: center !important;
+    }
+  }
 }
 .bulk-text {
   font-size: 0.8rem;

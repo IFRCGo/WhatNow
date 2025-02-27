@@ -6,6 +6,7 @@ use App\Classes\RcnApi\Entities\Instruction;
 use App\Classes\RcnApi\Exceptions\RcnApiException;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
 use App\Classes\RcnApi\Importer\BulkUploadTemplateExport;
+use App\Classes\RcnApi\Importer\BulkUploadTemplateImport;
 use App\Classes\RcnApi\Importer\Exceptions\RcnExportException;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportInvalidFileException;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportException;
@@ -24,12 +25,13 @@ use Illuminate\Validation\ValidationException;
 use League\Csv\AbstractCsv;
 use League\Csv\CannotInsertRecord;
 use League\Csv\Reader;
+use Maatwebsite\Excel\Excel;
+use function Maatwebsite\Excel\Facades\Excel;
 
 final class WhatNowImportController extends ApiController
 {
 
     private $client;
-
 
     public function __construct(RcnApiClient $client)
     {
@@ -40,10 +42,13 @@ final class WhatNowImportController extends ApiController
     public function import(Request $request, string $countryCode, string $languageCode)
     {
         try{
+            $fileType = $request->get('fileType');
             $this->validate($request, [
-                'csv' => ['file', 'mimes:csv,txt'],
+                $fileType => ['file', 'mimes:xlsx,csv,txt|max:2048'],
             ]);
+
         }catch (ValidationException $e)
+
         {
             return new JsonResponse([
                 'message' => $e->errors()['csv'][0],
@@ -61,11 +66,13 @@ final class WhatNowImportController extends ApiController
             $importer->turnOverwritingOn();
         }
 
-        $file = $request->file('csv');
-        $csv = Reader::createFromPath($file->path(), 'r');
 
+
+
+
+        $file = $request->file($fileType);
         try {
-            $importer->importCsv($csv, $countryCode, $languageCode);
+            $importer->importFile($file, $countryCode, $languageCode);
         } catch (RcnImportInvalidFileException $e) {
             return new JsonResponse([
                 'message' => trans('rcnapi.bad_request'),

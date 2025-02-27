@@ -17,7 +17,7 @@ use App\Models\Access\User\User;
 use Illuminate\Support\Collection;
 use League\Csv\MapIterator;
 use League\Csv\Reader;
-
+use Maatwebsite\Excel\Facades\Excel;
 class RcnImporter
 {
     public const ATTRIBUTION_HEADERS_OFFSET = 2;
@@ -29,34 +29,34 @@ class RcnImporter
         'INVALID_URL' => 30003,
     ];
 
-    
+    private $bulkUpload;
     private $client;
 
-    
+
     private $metadata;
 
-    
+
     private $warnings = true;
 
-    
+
     private $overwrite = false;
 
-    
+
     private $created = [];
 
-    
+
     private $updated = [];
 
-    
+
     private $skipped = [];
 
-    
+
     private $failed = [];
 
-    
+
     private $invalid = [];
 
-    
+
     private $attributionStatus = 'skipped';
 
     private $current = null;
@@ -70,14 +70,16 @@ class RcnImporter
         'language' => '',
         'importSummary' => [],
     ];
+    private $turnRejectOverwritingOn = true;
 
-    
+
     public function __construct(WhatNowResourceInterface $client)
     {
         $this->client = $client;
+        $this->bulkUpload = new BulkUploadTemplateImport();
     }
 
-    
+
     public function getReport()
     {
         $this->mapInfoEvent($this->created, 'added');
@@ -101,7 +103,7 @@ class RcnImporter
         }
     }
 
-    
+
     public function canOverwrite(): bool
     {
         return $this->overwrite;
@@ -122,48 +124,21 @@ class RcnImporter
         $this->overwrite = true;
     }
 
-    
-    public function importCsv(Reader $csv, string $countryCode, string $languageCode)
+
+
+
+    /**
+     * @throws RcnImportException
+     */
+    public function importFile($file, string $countryCode, string $languageCode)
     {
-        $metadataLine = $csv->fetchOne(0);         $this->metadata = new ImportMetadata($metadataLine, $countryCode, $languageCode);
-        $this->info['language'] = $languageCode;
-
-        $csv->setHeaderOffset(self::INSTRUCTION_HEADERS_OFFSET);
-        if (RcnExporter::createInstructionsHeader() !== $csv->getHeader()) {
-            throw new RcnImportInvalidFileException(
-                self::ERROR_CODES['INVALID_COLUMN_HEADINGS'],
-                'Column headings do not match'
-            );
-        }
-
-        $csv->setHeaderOffset(self::ATTRIBUTION_HEADERS_OFFSET);
-        if (RcnExporter::createAttributionHeader() !== array_slice($csv->getHeader(), 0, 3)) {
-            throw new RcnImportInvalidFileException(
-                self::ERROR_CODES['INVALID_COLUMN_HEADINGS'],
-                'Column headings do not match'
-            );
-        }
-
-        $csv->setHeaderOffset(self::INSTRUCTION_HEADERS_OFFSET);
-
-                                $attributionData = array_filter(array_values($csv->fetchOne(3)));
-
-        $name = isset($attributionData[0]) ? $attributionData[0] : null;
-        $message = isset($attributionData[1]) ? $attributionData[1] : null;
-        $url = isset($attributionData[2]) ? $attributionData[2] : null;
-
-        if (! is_null($url) && ! filter_var($url, FILTER_VALIDATE_URL)) {
-            throw new RcnImportInvalidFileException(
-                self::ERROR_CODES['INVALID_URL'],
-                'Column headings do not match'
-            );
-        }
-
-        $this->runInstructionsImport($csv->getRecords());
-        $this->saveAttributionData($languageCode, $countryCode, $name, $message, $url);
+        Excel::import($this->bulkUpload,$file);
+        $this->metadata = new ImportMetadata($countryCode, $languageCode,$this->bulkUpload->getData()['region']);
+        $this->runInstructionsImport($countryCode,$this->bulkUpload->getData());
+        //$this->saveAttributionData($languageCode, $countryCode, $name, $message, $url);
     }
 
-    
+
     private function saveAttributionData(string $languageCode, string $countryCode, string $name = null, string $message = null, string $url = null)
     {
         if (! $name || ! $message) {
@@ -179,7 +154,7 @@ class RcnImporter
         $existingTranslation = $organisation->getTranslationsByLanguage($languageCode);
 
 
-        
+
         $user = auth()->user();
 
         if ($existingTranslation && $existingTranslation->isPublished() && ! $user->hasPermission('content-publish')) {
@@ -209,158 +184,88 @@ class RcnImporter
         }
     }
 
-    
-    private function runInstructionsImport(MapIterator $records)
+
+    /**
+     * @throws RcnImportException
+     * @throws RcnImportWillOverwriteException
+     */
+    private function runInstructionsImport(string $countryCode, Array $records)
     {
         try {
-            $existingInstructions = $this->client->getLatestInstructionsByCountryCode($this->metadata->getCountryCode());
+            $existingInstructions = $this->client->getLatestInstructionsByCountryCode($countryCode);
         } catch (RcnApiResourceNotFoundException $e) {
             $existingInstructions = new Collection;
         } catch (RcnApiException $e) {
             throw new RcnImportException();
         }
 
-        $validRecords = $this->prepareValidRecords($records);
-
-                $validRecords = $validRecords->map(function ($record) {
-            unset($record[trans('csvTemplate.instruction_columns.otherType')]);
-
-            return $record;
-        });
-
-        $this->checkForPotentialOverwrites($validRecords, $existingInstructions);
-
-        $validRecords->each(function (array $record) use ($existingInstructions) {
+        $this->checkForPotentialOverwrites($records, $existingInstructions);
+        foreach ($records['hazards'] as $record) {
             $existingInstruction = self::findExisting(
                 $existingInstructions,
-                $record[trans('csvTemplate.instruction_columns.eventType')],
-                $record[trans('csvTemplate.instruction_columns.regionName')]
+                $record['hazard'],
+                $this->metadata->getRegion()
             );
-
             $this->importInstructionRecord($record, $existingInstruction);
-        });
-    }
-
-    private function prepareValidRecords($records): Collection
-    {
-        $validRecords = new Collection();
-        $fieldEventType = trans('csvTemplate.instruction_columns.eventType');
-        $stages = array_fill_keys(InstructionTranslation::EVENT_STAGES, null);
-        $needsAdding = false;
-
-        foreach ($records as $offset => $record) {
-            if ($offset < self::INSTRUCTION_HEADERS_OFFSET) {
-                continue;             }
-
-            if (empty($this->current) && empty($record[$fieldEventType])) {
-                $this->invalid[] = $offset + 1;
-
-                continue;             }
-
-            if (! empty($record[$fieldEventType])) {
-                $this->current = $record;
-            }
-
-            if (empty($this->previous[$fieldEventType])) {
-                $this->previous = $this->current;
-            }
-
-            if ($this->current[$fieldEventType] != $this->previous[$fieldEventType]) {
-                $needsAdding = false;
-                foreach ($this->stages as $key => $value) {
-                    $this->previous[$key] = implode(trans('csvTemplate.separator'), $value);
-                }
-                $validRecords->push($this->previous);
-                $this->stages = [];
-                $this->previous = $this->current;
-                foreach ($stages as $stage => $null) {
-                    $key = trans('csvTemplate.instruction_columns.stages.'.$stage);
-                    if (! empty($record[$key])) {
-                        $this->stages[$key][] = $record[$key] ;
-                    }
-                }
-            } else {
-                $needsAdding = true;
-                foreach ($stages as $stage => $null) {
-                    $key = trans('csvTemplate.instruction_columns.stages.'.$stage);
-                    if (! empty($record[$key])) {
-                        $this->stages[$key][] = $record[$key] ;
-                    }
-                }
-            }
         }
 
-        if ($needsAdding) {
-            foreach ($this->stages as $key => $value) {
-                $this->previous[$key] = implode(trans('csvTemplate.separator'), $value);
-            }
-            $validRecords->push($this->previous);
-            $this->stages = [];
-            $this->previous = $this->current;
-        }
 
-        return $validRecords;
     }
 
-    
-    private function checkForPotentialOverwrites(Collection $records, $existingInstructions)
+    /**
+     * @throws RcnImportWillOverwriteException
+     */
+    private function checkForPotentialOverwrites(array $records, $existingInstructions)
     {
         if (! $this->canWarn()) {
             return;
         }
-
-        $records->each(function (array $record) use ($existingInstructions) {
-            $existingInstruction = self::findExisting(
+        foreach ($records['hazards'] as $offset => $hazard) {
+            $existingInstruction = $this->findExisting(
                 $existingInstructions,
-                $record[trans('csvTemplate.instruction_columns.eventType')],
-                $record[trans('csvTemplate.instruction_columns.regionName')]
+                $hazard['hazard'],
+                $records['region']
             );
 
             if ($existingInstruction) {
                 $existingTranslation = $existingInstruction->getTranslationsByLanguage($this->metadata->getLanguageCode());
-                if ($existingTranslation && $existingTranslation->getCreatedAt() > $this->metadata->getExportDate()
-                ) {
+                if ($existingTranslation){
                     throw new RcnImportWillOverwriteException('Import will overwrite '.$existingTranslation->getId());
                 }
+
             }
-        });
-    }
-
-    
-    private function importInstructionRecord($record, Instruction $existingInstruction = null)
-    {
-        $stages = array_fill_keys(InstructionTranslation::EVENT_STAGES, null);
-        foreach ($stages as $stage => $null) {
-            $stageKey = trans('csvTemplate.instruction_columns.stages.'.$stage);
-            if (! isset($record[$stageKey])) {
-                continue;             }
-
-            $stageString = ($record[$stageKey]) ?: null;
-            if (is_null($stageString)) {
-                $stages[$stage] = null; 
-                continue;
-            }
-
-            $stageArray = explode(trans('csvTemplate.separator'), $stageString);
-            $stageArray = array_values(array_map('trim', $stageArray));
-
-            $stages[$stage] = $stageArray;
         }
 
+    }
+
+
+    private function importInstructionRecord($record, Instruction $existingInstruction = null)
+    {
+        $stages = [];
+        foreach ($record['urgencyLevels'] as $stage) { // Parsing stages as the Instruction model requires
+                foreach ($stage['safetyMessages'] as $safetyMessage) {
+                    $stages[strtolower(str_replace("_",'',$stage['urgencyLevel']))] = [
+                        [
+                            'title' => $safetyMessage['safetyMessage'],
+                            'content' => $safetyMessage['supportingMessages'],
+                        ]
+                    ];
+                }
+        }
         $translationRequest = [
             'lang' => $this->metadata->getLanguageCode(),
-            'webUrl' => ($record[trans('csvTemplate.instruction_columns.webUrl')]) ?: null,
-            'regionName' => ($record[trans('csvTemplate.instruction_columns.regionName')]) ?: null,
-            'title' => ($record[trans('csvTemplate.instruction_columns.title')]) ?: null,
-            'description' => ($record[trans('csvTemplate.instruction_columns.description')]) ?: null,
+            'webUrl' => $record['url'] ?: null,
+            'regionName' => ($this->metadata->getRegion()) ?: null,
+            'title' => ($record['title']) ?: null,
+            'description' => ($record['description']) ?: null,
             'stages' => $stages,
         ];
 
         if (! $existingInstruction instanceof Instruction) {
             $newInstruction = Instruction::createFromRequest([
                 'countryCode' => $this->metadata->getCountryCode(),
-                'eventType' => $record[trans('csvTemplate.instruction_columns.eventType')],
-                'regionName' => $record[trans('csvTemplate.instruction_columns.regionName')],
+                'eventType' => $record['hazard'],
+                'regionName' => $this->metadata->getRegion(),
                 'translations' => [
                     $this->metadata->getCountryCode() => $translationRequest,
                 ],
@@ -380,9 +285,7 @@ class RcnImporter
         $existingTranslation = $existingInstruction->getTranslationsByLanguage($this->metadata->getLanguageCode());
         $force = false;
 
-        if ($existingTranslation
-            && $existingTranslation->getCreatedAt() > $this->metadata->getExportDate()
-        ) {
+        if ($existingTranslation) {
             if (! $this->canOverwrite()) {
                                 $this->skipped[] = $existingInstruction;
 
@@ -397,7 +300,7 @@ class RcnImporter
         $existingInstruction->setRegionName($translationRequest['regionName']);
         $changes = $this->whatsDifferent($original, json_encode($existingInstruction));
 
-        if (count($changes) > 0 || ! $existingTranslation) {
+        if (count($changes) > 0 || ! $existingTranslation ) {
             try {
                 $r = $this->client->updateInstruction($existingInstruction);
 
@@ -452,7 +355,7 @@ class RcnImporter
         return $changes;
     }
 
-    
+
     private static function findExisting(Collection $existingInstructions, string $eventType, string $regionName): ?Instruction
     {
         $region = empty($regionName) ? 'National' : $regionName;
