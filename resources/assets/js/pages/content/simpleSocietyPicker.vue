@@ -1,5 +1,5 @@
 <template>
-  <v-select :dir="isLangRTL(locale) ? 'rtl' : 'ltr'" :value="value" @input="$emit('input', $event)" class="w-100 styled-select" :options="list" label="name" :disabled="list.length === 0" :placeholder="$t('content.whatnow.no_soc')">
+  <v-select :dir="isLangRTL(locale) ? 'rtl' : 'ltr'" :value="value" @input="$emit('input', $event)" class="w-100 v-select-custom" :options="list" label="name" :disabled="list.length === 0" :placeholder="$t('content.whatnow.no_soc')">
     <template slot="option" slot-scope="option">
       <div class="ml-2 rtl-mr-2 dropdown-option">
         {{ option.name }}
