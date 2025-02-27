@@ -63,7 +63,7 @@
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
               </div>
-              <div class="line-item mb-5">
+              <div class="line-item mb-5 pt-5">
                 <p>
                   {{ $t('landing.works_2_a') }}
                 </p>
@@ -101,7 +101,7 @@
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
               </div>
-              <div class="line-item mb-5">
+              <div class="line-item mb-5 pt-5">
                 <p>
                   {{ $t('landing.works_4_a') }}
                 </p>
