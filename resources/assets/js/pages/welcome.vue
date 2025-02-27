@@ -30,7 +30,9 @@
         <img class="map-img" :src="src('mapImg')">
       </b-col>
     </b-row>
+  <div class="it-works">
     <h2 class="mid-subt">{{ $t('landing.it_works') }}</h2>
+  </div>
     <b-row>
       <b-col>
         <div class="black-band">
@@ -374,6 +376,10 @@
   width: 100%;
 }
 
+.it-works {
+  margin-top: -15rem;
+}
+
 .bottom-head {
   display: flex;
   flex-direction: column;
@@ -631,6 +637,10 @@
 
   .map-img {
     margin-top: -10rem;
+  }
+
+  .it-works {
+    margin-top: 0;
   }
 
 }
