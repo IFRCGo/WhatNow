@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Kipindi Kimekamilika!",
   "token_expired_alert_text": "Tafadhali ingia tena ili uendelee.",
   "login": "Ingia",
-  "what_now": "NiniSasa (WhatNow)",
+  "what_now": "Hifadhidata ya Ujumbe wa Usalama wa IFRC",
   "message_portal": "Tovuti ya Ujumbe",
   "register": "Jisajili",
   "sign_up": "Jiunge",
   "docs": "Hati",
   "my_apps": "Programu zangu",
   "number_of_apps": "{0} Programu",
-  "whatnow_content": "Jumbe za NiniSasa (WhatNow)",
+  "whatnow_content": "Ujumbe",
+  "create_key": "Unda Ufunguo",
   "alerts": "Tahadhari",
   "feeds": "Milisho",
   "get_started": "Jiunge sasa",
@@ -75,7 +76,7 @@
     "create": "Unda",
     "content": "Yaliyomo",
     "what_now_content": "Yaliyomo ya NiniSasa (What Now)",
-    "bulk_upload": "Kupakia kwa Wingi",
+    "bulk_upload": "Upakiaji wa Faili ya Ujumbe",
     "audit_log": "Ingia ya Ukaguzi",
     "api_usage": "Matumizi ya API",
     "app_detail": "Maelezo ya Programu",
@@ -196,14 +197,14 @@
     "steps": {
       "one": {
         "heading": "Hatua ya 1 - Jisajili",
-        "body": "Ili kuanza kutumia data kutoka kwa API ya NiniSasa (WhatNow), kwanza {0} kwenda kwa mtandao wa NiniSasa (WhatNow).\n\nUnaweza kutumia akaunti zako za Facebook na Google, au anwani ya barua pepe kuunda akaunti.",
+        "body": "Ili kuanza kutumia data kutoka kwa API ya Hifadhidata ya Ujumbe wa Usalama, kwanza {0} kwenye Lango la Hifadhidata ya Ujumbe wa Usalama.\n\nUnaweza kutumia akaunti yako ya Facebook & Google, au anwani ya barua pepe kuunda akaunti.",
         "create_account_alt": "sajili akaunti",
         "existing_account": "Ikiwa tayari unayo akaunti, tafadhali {0}.",
         "login_cta": "ingia",
         "sign_up_cta": "jisajili"
       },
       "two": {
-        "body": "Ili kutumia API lazima uunde programu katika Mtandao wa NiniSasa (WhatNow). Tuambie kidogo juu ya kile unachounda.",
+        "body": "Ili kuanza kutumia data kutoka kwa API ya Hifadhidata ya Ujumbe wa Usalama, kwanza {0} kwenye Lango la Hifadhidata ya Ujumbe wa Usalama.\n\nUnaweza kutumia akaunti yako ya Facebook & Google, au anwani ya barua pepe kuunda akaunti.",
         "create_app_alt": "tengeneza programu",
         "heading": "Hatua ya 2 - Unda programu"
       },
@@ -215,7 +216,7 @@
       },
       "four": {
         "api_docs_cta": "Nyaraka za API",
-        "body": "Programu ya API ya NiniSasa (WhatNow) hutumia HTTP (S) na hutoa pointi ya mwisho vya kupata data iliyochapishwa.\n\nKila ombi lazima lithibitishwe kwa kutumia kitufe cha API kilichoundwa katika hatua ya awali.",
+        "body": "Ili kuanza kutumia data kutoka kwa API ya Hifadhidata ya Ujumbe wa Usalama, kwanza {0} kwenye Lango la Hifadhidata ya Ujumbe wa Usalama.\n\nUnaweza kutumia akaunti yako ya Facebook & Google, au anwani ya barua pepe kuunda akaunti.",
         "example_title": "Ombi la Mfano",
         "heading": "Hatua ya 4 - Tuma ombi",
         "moreInfo": "Kwa habari zaidi kuhusu pointi za mwisho za API, tazama {0}."
@@ -225,13 +226,13 @@
   "home_pods": {
     "bulk_upload": "Pakia faili za .csv ili uweze kusasisha idadi kubwa ya yaliyomo mara moja",
     "audit_log": "Hapa ndipo unaweza kutazama kumbukumbu ya shughuli",
-    "whatnow_edit": "Hapa ndipo unaweza kuhariri yaliyomo kwenye NiniSasa (WhatNow)",
-    "whatnow_review": "Hapa ndipo unaweza kuhariri yaliyomo kwenye NiniSasa (WhatNow)",
-    "whatnow_publish": "Hapa ndipo unaweza kuhariri na kuchapisha yaliyomo kwenye NiniSasa (WhatNow)",
+    "whatnow_edit": "This is where you can edit Safety Message Database content",
+    "whatnow_review": "This is where you can review Safety Message Database content",
+    "whatnow_publish": "This is where you can edit and publish Safety Message Database content",
     "manage_users": "Hapa ndipo unasimamia watumiaji (Unda, hariri na ondoa)",
     "api_usage": "Hapa ndipo unaweza kuona ni nani anayetumia API na ni programu zipi zinaudwa nayo.",
     "wellcome": "Karibu",
-    "wellcome_description": "Hapa unaweza kuhariri na kuchapisha maudhui ya WhatNow."
+    "wellcome_description": "Hapa unaweza kuhariri na kuchapisha yaliyomo kwenye Hifadhidata ya Ujumbe wa Usalama."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +260,16 @@
   "sidebar": {
     "manage": "Dhibiti Watumiaji wa Yaliyomo",
     "content_users": "Watumiaji wa Yaliyomo",
-    "audit_log": "Ingia ya Ukaguzi",
-    "whatnow": "NiniSasa (WhatNow)",
-    "bulk": "Kupakia kwa Wingi",
+    "audit_log": "Historia ya Hariri",
+    "whatnow": "Mhariri wa Sifa",
+    "bulk": "Upakiaji wa Faili ya Ujumbe",
     "content": "Yaliyomo",
     "api": "Matumizi ya API",
     "applications": "Programu",
     "api_stats": "Takwimu za API",
     "api_users": "Watumiaji wa API",
     "terms_conditions": "Vigezo na Masharti",
-    "regions": "Maeneo"
+    "regions": "Mikoa"
   },
   "common": {
     "accept": "Kubali",
@@ -414,7 +415,7 @@
       }
     },
     "slider_2": {
-      "btn": "Ujumbe wa WhatNow",
+      "btn": "Ujumbe wa Usalama",
       "step_1": {
         "header": "Hatua ya 1: Tazama ujumbe",
         "text": "Tembelea hifadhidata ya ujumbe ili kutazama ujumbe unaopatikana wa Jamii ya Kitaifa ya Msalaba Mwekundu na Hilali Nyekundu."
@@ -446,7 +447,7 @@
     "content": "Yaliyomo",
     "audit_log": {
       "audit_log": "Ingia ya Ukaguzi",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Historia ya Hariri",
       "empty": "Hakuna historia ya ukaguzi iliyopatikana inayolingana na kichungi hiki",
       "soc_label": "Jamii",
       "select_hazard": "Chagua aina ya hatari",
@@ -458,15 +459,15 @@
     "whatnow": {
       "title": "Ujumbe",
       "set_attribution": "Weka jina la jamii na ujumbe wa sifa ili uchapishe",
-      "whatnow": "NiniSasa",
-      "empty": "Hakuna ujumbe uliochapishwa wa NiniSasa (WhatNow) wa Jamii hii ya Kitaifa",
+      "whatnow": "Hifadhidata ya Ujumbe wa Usalama",
+      "empty": "Hakuna ujumbe wa usalama uliochapishwa kwa Jumuiya ya Kitaifa hii",
       "steps": "Hatua",
       "publish": "Chapisha",
       "no_publish": "Hakuna cha kuchapisha",
       "published": "tafsiri zilizochapishwa",
       "publishing": "Zinachapishwa",
       "content_to_publish": "Rasimu ya Yaliyomo ya Kuchapishwa",
-      "whatnow_content": "Yaliyomo ya NiniSasa (WhatNow)",
+      "whatnow_content": "Yaliyomo ya Hifadhidata ya Ujumbe wa Usalama",
       "choose_hazard": "Chagua hatari",
       "hazard": "Hatari",
       "content": "Yaliyomo",
@@ -477,8 +478,8 @@
       "society_name": "Jamii ya Kitaifa",
       "attribution_message": "Ujumbe wa sifa",
       "no_translation": "Hakuna maudhui yaliyowekwa",
-      "delete_content_translation": "Hii itaondoa yaliyomo ya ninisasa (whatnow) kutoka kwenye lugha ya sasa",
-      "messages": "Ujumbe wa NiniSasa (WhatNow) wa",
+      "delete_content_translation": "Hii itaondoa yaliyomo ya Hifadhidata ya Ujumbe wa Usalama yaliyochaguliwa kutoka kwa lugha ya sasa",
+      "messages": "Ujumbe wa usalama wa",
       "add_language": "Ongeza lugha mpya",
       "no_languages": "Chagua au unda lugha ili uanze",
       "no_soc": "Chagua jamii",
@@ -506,11 +507,11 @@
       "enter_other_hazard_type": "Ingiza Jina la Aina ya Hatari",
       "other_hazard_type_label": "Aina nyingine ya Hatari",
       "stepped_content": "Kipande cha Maudhui kilichopitishwa",
-      "content_title_description": "Kichwa cha hizi jumbe za NiniSasa (WhatNow)",
-      "content_description_description": "Maelezo ya Ujumbe huu wa NiniSasa (WhatNow)",
+      "content_title_description": "Kichwa cha ujumbe huu wa usalama",
+      "content_description_description": "Maelezo ya ujumbe huu wa usalama",
       "content_label": "Tafadhali ingiza habari ya hatari",
       "content_url": "KIONYESHI SANIFU RASILIMALI (URL)",
-      "content_url_description": "URL kwa habari zaidi kuhusu ujumbe huu wa NiniSasa (WhatNow). Tafadhali jumuisha itifaki, yaani http: \/\/ au https: \/\/",
+      "content_url_description": "URL kwa maelezo zaidi kuhusu ujumbe huu wa usalama. Tafadhali jumuisha itifaki, mfano: http:// au https://",
       "created": "imeundwa",
       "pieces_edited": " Vipande Vimehaririwa",
       "content_placeholder": "Tafadhali ingiza ujumbe",
@@ -541,7 +542,7 @@
       "download_image": "Pakua kama Picha",
       "download_image_error": "Kasoro katika kupakua picha, tafadhali hakikisha umechapisha mabadiliko yote na ujaribu tena.",
       "download_instructions": "Bonyeza kulia na uchague 'Hifadhi picha kama...' ili uhifadhi",
-      "downloaded_image_alt": "Maagizo ya NiniSasa (WhatNow)",
+      "downloaded_image_alt": "Maelekezo ya Hifadhidata ya Ujumbe wa Usalama",
       "add_key_message": "Ongeza Ujumbe Muhimu",
       "add_supporting_message": "Ongeza Ujumbe wa Usaidizi",
       "early_warning": "Onyo la Mapema",
@@ -557,7 +558,7 @@
       "supporting_message_label": "Ujumbe wa usaidizi"
     },
     "message_editor": {
-      "title": "Mhariri wa Ujumbe",
+      "title": "Mhariri wa Sifa",
       "society_name_label": "Jina la jamii ya kitaifa",
       "attribution_url_label": "URL ya Uhusiano",
       "attribution_message_label": "Ujumbe wa Uhusiano",
@@ -569,10 +570,10 @@
       "download_image_error": "Hitilafu kupakua picha, tafadhali jaribu tena.",
       "download_pdf_error": "Hitilafu kupakua PDF, tafadhali jaribu tena."
     },
-    "audit": "Ingia ya ukaguzi",
+    "audit": "Historia ya hariri",
     "export": "Tuma nje",
     "bulk_upload": {
-      "bulk_upload": "Pakia kwa Wingi",
+      "bulk_upload": "Upakiaji wa Faili ya Ujumbe",
       "template": "Kiolezo",
       "export_template": "Tuma nje kiolezo",
       "import_data": "Ingiza Takwimu",
@@ -595,7 +596,7 @@
       "submit": "Ingiza yaliyomo",
       "reset": "Pakia Nyingine",
       "export_template_guide": "Toa nje Mwongozo wa Kiolezo",
-      "export_template_instructions": "Kwa maelekezo ya jinsi ya kutumia kiolezo hiki cha kupakia kwa wingi vizuri, tafadhali tazama mwongozo huu.",
+      "export_template_instructions": "Kwa maelekezo juu ya jinsi ya kutumia kiolezo hiki cha upakiaji wa faili kwa ufanisi, tafadhali tazama mwongozo huu.",
       "refer": "Rejelea kwa",
       "detail": "kwa maelekezo ya kina",
       "warnings": {
@@ -673,9 +674,9 @@
   "home": {
     "home": "Mwanzo",
     "welcome": "Karibu",
-    "admin_intro": "Hapa unaweza kudhibiti watumiaji, kuhariri na kuchapisha yaliyomo ya NiniSasa (WhatNow) na kuona matumizi ya API.",
-    "ns_admin_intro": "Hapa unaweza kuhariri na kuchapisha yaliyomo ya NiniSasa (WhatNow)",
-    "ns_editor_intro": "Hapa unaweza kuhariri yaliyomo ya NiniSasa (WhatNow)",
+    "admin_intro": "Hapa unaweza kusimamia watumiaji, kuhariri na kuchapisha yaliyomo ya Hifadhidata ya Ujumbe wa Usalama na kuona matumizi ya API.",
+    "ns_admin_intro": "Hapa unaweza kuhariri na kuchapisha yaliyomo ya Hifadhidata ya Ujumbe wa Usalama",
+    "ns_editor_intro": "Hapa unaweza kuhariri yaliyomo ya Hifadhidata ya Ujumbe wa Usalama",
     "api_user_intro": "Hapa unatazama programu zako na kudhibiti akaunti yako.",
     "role_changed_title": "Jukumu lako limebadilishwa",
     "role_changed_p": "Umepewa jukumu lifuatalo:",
@@ -684,20 +685,58 @@
     "role_changed_dismiss": "Funga"
   },
   "landing": {
-    "strapline": "Huduma ya NiniSasa (WhatNow)",
+    "strapline": "Huduma ya Hifadhidata ya Ujumbe wa Usalama",
     "strapline_part_2": "Ujumbe muhimu wa Usalama wa Msalaba Mwekundu \/ Hilali Nyekundu ya Kimataifa",
+    "head_1": "Usalama wa IFRC",
+    "head_2": "Hifadhidata ya Ujumbe",
+    "head_text_1": "Ujumbe wa usalama unaotegemea Ufahamu wa Umma wa IFRC na",
+    "head_text_2": "Rasilimali ya Elimu ya Umma (PAPE)",
+    "head_bottom_1": "Pata na usambaze ujumbe wa kuaminika wa Red Cross Red Crescent",
+    "head_bottom_2": "wa vitendo kusaidia watu kujiandaa kwa usalama",
+    "head_bottom_3": "na kukabiliana na hatari.",
+    "signup": "Jisajili",
+    "it_works": "Inafanya Kazi Vipi",
+    "works_1_a": "Jumuiya ya Kitaifa ya Red Cross Red Crescent",
+    "works_1_b": "na washirika wa serikali",
+    "works_1_c": "wanakubaliana kuhusu seti za ujumbe za kitaifa",
+    "works_2_a": "Jumuiya za Kitaifa huchapisha",
+    "works_2_b": "ujumbe wa usalama kwenye",
+    "works_2_c": "hifadhidata",
+    "works_3_a": "Mashirika yanayobadilisha",
+    "works_3_b": "na njia za mawasiliano",
+    "works_3_c": "hujiunga na API ya hifadhidata",
+    "works_4_a": "Washirika husambaza",
+    "works_4_b": "ujumbe kupitia",
+    "works_4_c": "njia zao",
+    "works_5_a": "Jamii hupokea",
+    "works_5_b": "ujumbe na",
+    "works_5_c": "kuchukua hatua kwa usalama",
+    "learn_more": "Jifunze Zaidi",
+    "watch_video": "Tazama video",
+    "example_case": "Mfano wa Matumizi",
+    "api": "API",
+    "hurricane": "Jumuisha ujumbe na maonyo ya mapema ya kimbunga",
+    "warning_alerts": "maonyo ya tahadhari",
+    "social_media": "Mitandao ya Kijamii",
+    "post_images": "Chapisha picha za maandalizi ya moto wa msituni",
+    "messages_network": "ujumbe kwa mtandao wako",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Sambaza hatua za kuzuia mafuriko na",
+    "family": "familia na marafiki",
+    "impact": "Athari",
+    "sign_up_today": "Jisajili leo",
     "developer": {
       "strap_para_one": "Saidia jamii kujitayarisha, kujibu, na kupona kutoka kwa hatari kwa ujumbe wetu wa hatua wa eneo husika.",
-      "strap_para_two": "Tumia mwongozo wetu rahisi wa hatua nne kujumuisha ujumbe wa NiniSasa (WhatNow) katika programu yako. Jisajili ili utazame jumbe zote zilizoko."
+      "strap_para_two": "Tumia mwongozo wetu rahisi wa hatua nne kuunganisha ujumbe wa usalama kwenye programu yako. Jisajili na uone ujumbe wote unaopatikana."
     },
     "national_society": {
       "strap_para_one": "Chapisha ujumbe muhimu wa usalama wa Jamii yako ya Kitaifa ya Msalaba Mwekundu na Hilali Nyekundu (RCRC) kwa vyombo vya habari vya ulimwengu, kitaifa, na mitaa ili kufikia na kutangaza.",
       "strap_para_two": "Wasiliana nasi ili upate maelezo zaidi kuhusu jinsi ya kuunda ujumbe na kuungana na washirika wa vyombo vya habari."
     },
     "strap_para_one": "Saidia jamii kujitayarisha, kujibu, na kupona kutoka kwa hatari kwa ujumbe wetu wa hatua wa eneo husika.",
-    "strap_para_two": "Tumia mwongozo wetu rahisi wa hatua nne kujumuisha ujumbe wa NiniSasa (WhatNow) katika programu yako. Jisajili ili utazame jumbe zote zilizoko.",
+    "strap_para_two": "Tumia mwongozo wetu rahisi wa hatua nne kuunganisha ujumbe wa usalama kwenye programu yako. Jisajili na uone ujumbe wote unaopatikana.",
     "view_data": "Tazama takwimu",
-    "view_message_library": "Tazama Ujumbe wa NiniSasa (WhatNow)",
+    "view_message_library": "Tazama Ujumbe wa Usalama",
     "what_now": "NiniSasa (WhatNow)?",
     "fake_alert_heading": "Onyo la Baridi Kali Sana",
     "fake_alert_description": "Lakini hii inahitaji tofauti rahisi na nyepesi. Kwa wakati wa bure, wakati nguvu zetu.",
@@ -717,10 +756,10 @@
       "fifth_content": "kwa kila saa, densi ya nje inawakilisha pendekezo la umoja baadaye"
     },
     "example_alert": {
-      "heading": "Muundo Mfano wa Ujumbe wa NiniSasa (WhatNow)",
+      "heading": "Muundo wa Ujumbe wa Usalama",
       "alert_preview": "Hakikisho la tahadhari",
-      "what_now_info": "Hakikisho ya NiniSasa (WhatNow)",
-      "example_whatnow_request": "Mfano wa Jibu la NiniSasa (WhatNow)",
+      "what_now_info": "Hakiki ya Ujumbe wa Usalama",
+      "example_whatnow_request": "Mfano wa Jibu la Hifadhidata ya Ujumbe wa Usalama",
       "example_alert_request": "Mfano wa Jibu la Tahadhari",
       "example_content": "Ushauri wa Hali ya Hewa # 3 MWISHO kufikia saa 5.00 asubuhi, Januari. 29, 2018\nKwa Mwisho wa Mkia wa Mbele Baridi\nAthari za Mwisho wa Mkia wa Mbele Baridi imepungua. Hali bora za hali ya hewa itapatikana kote Nome. Hata hivyo, mvua za hapa na pale au ngurumo, haswa wakati wa alasiri au jioni, inapaswa kutarajiwa katika maeneo haya kutoka magharibi.\n\nPamoja na maendeleo haya, huu ndiyo ushauri wa mwisho kwa mfumo huu wa hali ya hewa.",
       "example_content_location_header": "ENEO LILILOATHIRIKA",
@@ -729,9 +768,9 @@
     "example_whatnow": {
       "alert_from": "Tahadhari kutoka: Shirika la Msalaba Mwekundu la Amerika",
       "more_info": "Maelezo zaidi",
-      "heading": "Ujumbe muhimu kwa Baridi kali",
+      "heading": "Ujumbe wa Usalama kwa Baridi Kali",
       "copy": "Hizi ni hatua za kuchukua ili kupunguza hatari na kukukinga wewe na familia yako dhidi ya baridi kali.",
-      "what_now": "NiniSasa (WhatNow)",
+      "what_now": "Hifadhidata ya Ujumbe wa Usalama wa IFRC",
       "step_1": "Linda nyumba yako. Angalia mabomba na tumia vyanzo vya joto kwa usalama.",
       "step_2": "Tunza maji mwilini kwa maji ya joto",
       "step_3": "Jilinde kwa mavazi ya joto na funika ngozi iliyo wazi",
@@ -742,7 +781,7 @@
       "heading": "Uko tayari kuunda programu yako?"
     },
     "data_preview": {
-      "heading": "Ujumbe wa NiniSasa (WhatNow)",
+      "heading": "Ujumbe wa Usalama",
       "sub_heading": "Jisajili na uangalie ujumbe muhimu wa hatua kutoka kwa Mashirika ya Kitaiifa ya Msalaba Mwekundu \/ Hilali Nyekundu kote ulimwenguni"
     },
     "footer": {
@@ -831,7 +870,7 @@
       "heading": "Leseni na Vikwazo:"
     },
     "overview": {
-      "body": "API ya NiniSasa ya Kituo cha Utayari kwa Maafa ya Dunia (''API'') inaletwa kwako na Shirika la Msalaba Mwekundu la Marekani (\"Msalaba Mwekundu\"). API inahitaji ufunguo wa usajili.  Wakati wa mchakato wa usajili, lazima ukubali sheria na masharti yafuatayo, pamoja na vigezo na masharti katika Mkataba wa Huduma ya Tovuti ya Shirika la Msalaba Mwekundu inayopatikana katika {0} (kwa pamoja, \"Masharti ya API)\"). Masharti ya API yatasimamia utumiaji wako wa API na vifaa vya elektroniki vinavyoweza kupakuliwa vinavyopatikana kupitia API. {1}",
+      "body": "Programu ya Huduma ya Hifadhidata ya Ujumbe wa Usalama ya Kituo cha Maandalizi ya Maafa Duniani (API) inapatikana kwako kutoka kwa Red Cross ya Amerika. API inahitaji ufunguo wa usajili. Wakati wa mchakato wa usajili, lazima ukubali masharti na hali zifuatazo, pamoja na masharti katika Mkataba wa Masharti ya Huduma ya Tovuti ya Red Cross inayopatikana kwa {0} (pamoja, \"Masharti ya API\"). Masharti ya API yatatawala matumizi yako ya API na vifaa vya elektroniki vinavyopatikana kupitia API. {1}",
       "cta": "Bofya hapa kujisajili."
     },
     "privacy_policy": {
@@ -863,7 +902,7 @@
   "view_data": {
     "alert_title": "TAHADHARI:",
     "more_info": "maelezo zaidi:",
-    "which": "Ujumbe upi wa NiniSasa (WhatNow) unataka kutazama?",
+    "which": "Ni ujumbe gani wa usalama unataka kuona?",
     "view_data": "Tazama Takwimu",
     "alerts": "Tahadhari",
     "alert_preview": "Uhakiki wa tahadhari",
@@ -874,7 +913,7 @@
     "date": "Tarehe",
     "headline": "Kichwa cha habari",
     "alert": "Tahadhari",
-    "whatnow_info": "Maelezo ya NiniSasa (WhatNow)",
+    "whatnow_info": "Taarifa ya Hifadhidata ya Ujumbe wa Usalama",
     "alert_detail": "Maelezo ya Tahadhari",
     "more": "Maelezo zaidi",
     "area_affected": "Eneo Lililoathiriwa",
@@ -900,7 +939,7 @@
   },
   "user_agreement": {
     "title": "Makubaliano ya mtumiaji",
-    "para_one": "Kabla ya kufikia Kituo cha NiniSasa (WhatNow), tafadhali unaweza kusoma na kukubali masharti ya makubaliano ya mtumiaji kwa kupakua hati hapa chini na kubofya kitufe cha 'Nakubali' hapa chini.",
+    "para_one": "Kabla ya kufikia Lango la Hifadhidata ya Ujumbe wa Usalama, tafadhali soma na ukubali masharti ya mkataba wa mtumiaji kwa kushusha hati hapa chini na kubofya kitufe cha 'Nakubali' hapa chini.",
     "cta": "Nakubali",
     "download": "Bonyeza hapa kuona hati ya makubaliano ya mtumiaji (KB105)"
   },
@@ -925,7 +964,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Simamia maeneo",
+      "manage": "Mikoa",
       "create": "Unda eneo jipya",
       "edit": "Hariri Eneo",
       "add": "Ongeza Eneo",
@@ -938,7 +977,7 @@
     "create": "Unda Eneo jipya",
     "form": {
       "name": "Jina la Eneo",
-      "name_help": "Taja eneo ambalo ungependa kuundia ujumbe maalumu wa WhatNow.",
+      "name_help": "Taja eneo ambalo unataka kuunda ujumbe wa usalama maalum.",
       "description": "Maelezo",
       "description_help": "Toa maelezo zaidi kuhusu eneo hilo, yaani, Eneo la Ghuba ya San Francisco."
     },
@@ -976,6 +1015,6 @@
     "hazardCreate": "Hatari Imeundwa",
     "published": "Imetolewa",
     "draft": "Rasimu",
-    "bulkUploadDraft": "Rasimu ya Upakiaji Mwingi"
+    "bulkUploadDraft": "Rasimu ya Upakiaji wa Faili ya Ujumbe"
   }
 }

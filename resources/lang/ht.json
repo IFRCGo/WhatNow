@@ -9,14 +9,15 @@
   "token_expired_alert_title": "Sesyon an ekspire!",
   "token_expired_alert_text": "Silvouplè, konekte ankò pou kontinye.",
   "login": "Konekte",
-  "what_now": "WhatNow",
+  "what_now": "Baz Done Mesaj Sekirite IFRC",
   "message_portal": "Paj akèy mesaj",
   "register": "Anrejistre",
   "sign_up": "Enskri",
   "docs": "Dokiman yo",
   "my_apps": "Aplikasyon mwen yo",
   "number_of_apps": "{0} Aplikasyon yo",
-  "whatnow_content": "Mesaj WhatNow yo",
+  "whatnow_content": "Mesaj",
+  "create_key": "Kreye Kle",
   "alerts": "Alèt",
   "feeds": "Dispozif ki fè nouvo enfòmasyon yo parèt",
   "get_started": "Enskri kounye a",
@@ -75,7 +76,7 @@
     "create": "Kreye",
     "content": "Kontni",
     "what_now_content": "Kontni What Now",
-    "bulk_upload": "Telechaje an gwoup",
+    "bulk_upload": "Telechaje Dosye Mesaj",
     "audit_log": "Jounal verifikasyon",
     "api_usage": "Itilizasyon API",
     "app_detail": "Detay Aplikasyon an",
@@ -196,15 +197,13 @@
     "steps": {
       "one": {
         "heading": "Etap 1 - Enskri",
-        "body": "Pou kòmanse itilize done nan WhatNow API, premyèman {0} nan paj akèy la.\n\nOu ka itilize kont Fesbouk & Gougèl, oswa yon imèl pou kreye yon kont.",
-        "create_account_alt": "kreye yon kont",
+        "body": "Pou kòmanse itilize done ki soti nan API Baz Done Mesaj Sekirite a, premye {0} nan Portal Baz Done Mesaj Sekirite a.\n\nOu ka itilize kont Facebook ak Google ou, oswa yon adrès imel pou kreye yon kont.",        "create_account_alt": "kreye yon kont",
         "existing_account": "Si w gen yon kont deja, tanpri {0}.",
         "login_cta": "konekte",
         "sign_up_cta": "enskri"
       },
       "two": {
-        "body": "Pou itilize API a ou dwe kreye yon aplikasyon nan paj akèy WhatNow. la Di nou kèk bagay sou sa w ap konstwi a.",
-        "create_app_alt": "kreye yon aplikasyon",
+        "body": "Pou itilize API a, ou dwe kreye yon aplikasyon nan Portal Baz Done Mesaj Sekirite a. Di nou yon ti kras sou sa w ap bati a.",        "create_app_alt": "kreye yon aplikasyon",
         "heading": "Etap 2 - Kreye yon aplikasyon"
       },
       "three": {
@@ -215,8 +214,7 @@
       },
       "four": {
         "api_docs_cta": "Dokiman API",
-        "body": "API Whatnow la sèvi ak HTTP (yo) epi li bay restriksyon ekstremite pou jwenn done ki te pibliye yo.\n\nChak demann ta dwe valide pa kle API ki te kreye a nan etap anvan an.",
-        "example_title": "Egzanp demann",
+        "body": "API Baz Done Mesaj Sekirite a itilize HTTP(S) epi li bay pwen final RESTful pou jwenn done pibliye yo.\n\nChak demann dwe otantifye lè l sèvi avèk kle API ki te kreye nan etap anvan an.",        "example_title": "Egzanp demann",
         "heading": "Etap 4 - Fè yon demann",
         "moreInfo": "Pou plis enfòmasyon sou tout pwen final API yo, gade {0}."
       }
@@ -225,13 +223,13 @@
   "home_pods": {
     "bulk_upload": "Telechaje dosye .csv yo konsa w ap kapab mete ajou gro kantite eleman yon sèl kou",
     "audit_log": "Men ki kote ou ka wè jounal aktivite yo",
-    "whatnow_edit": "Se kote sa ou ap kapab edite kontni WhatNow la",
-    "whatnow_review": "Sa a se kote ou ka revize kontni WhatNow",
-    "whatnow_publish": "  Sa a se kote ou ka edite pibliye kontni Whatnow la",
+    "whatnow_edit": "Se isit la ou ka edite kontni Baz Done Mesaj Sekirite a",
+    "whatnow_review": "Se isit la ou ka revize kontni Baz Done Mesaj Sekirite a",
+    "whatnow_publish": "Se isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a",
     "manage_users": "Se kote sa ou ap ka jere itilizatè yo (kreye, edite epi efase)",
     "api_usage": "Se kote sa ou ap ka wè kiyès k ap itilize API a ak ki aplikasyon ki konstwi avè l.",
     "wellcome": "Akèy",
-    "wellcome_description": "Men ou kapab edite epi pibliye kontni WhatNow lan."
+    "wellcome_description": "Isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a."
   },
   "languages": {
     "am": "አማርኛ",
@@ -259,16 +257,16 @@
   "sidebar": {
     "manage": "Jere kontni itilizatè yo",
     "content_users": "Kontni itilizatè yo",
-    "audit_log": "Jounal verifikasyon",
-    "whatnow": "WhatNow",
-    "bulk": "Telechaje an gwoup",
+    "audit_log": "Istwa Edite",
+    "whatnow": "Editè Atribisyon",
+    "bulk": "Telechaje Dosye Mesaj",
     "content": "Kontni",
     "api": "Itilizasyon API",
     "applications": "Aplikasyon yo",
     "api_stats": "Estatistik API",
     "api_users": "Itilizatè API yo",
     "terms_conditions": "Tèm ak Kondisyon yo",
-    "regions": "Rejyon"
+    "regions": "Sou-rejyon yo"
   },
   "common": {
     "accept": "Aksepte",
@@ -414,7 +412,7 @@
       }
     },
     "slider_2": {
-      "btn": "Mesaj WhatNow",
+      "btn": "Mesaj Sekirite",
       "step_1": {
         "header": "Etap 1: Gade mesaj yo",
         "text": "Vizite baz done mesaj la pou gade mesaj Sosyete Nasyonal Kwa Wouj Kwasan Wouj ki disponib yo."
@@ -446,7 +444,7 @@
     "content": "Kontni",
     "audit_log": {
       "audit_log": "Rejis kontwòl",
-      "my_audit_log": "My Audit Log",
+      "my_audit_log": "Istwa Edite",
       "empty": "Pa jwenn yon istwa kontwòl ki mache ak filtè sa a",
       "soc_label": "Sosyete",
       "select_hazard": "Chwazi kalite danje",
@@ -458,15 +456,15 @@
     "whatnow": {
       "title": "Mesaj",
       "set_attribution": "Mete non sosyete a ak mesaj atribisyon pou pibliye a",
-      "whatnow": "WhatNow",
-      "empty": "Pa gen okenn mesaj  WhatNow pibliye pou Sosyete Nasyonal sa a\n",
+      "whatnow": "Baz Done Mesaj Sekirite",
+      "empty": "Pa gen mesaj Sekirite pibliye pou Sosyete Nasyonal sa a",
       "steps": "Etap yo",
       "publish": "Pibliye",
       "no_publish": "Anyen pou pibliye",
       "published": "Tradiksyon pibliye yo",
       "publishing": "Pibliye",
       "content_to_publish": "Kontni pwojè ki dwe pibliye a",
-      "whatnow_content": "kontni WhatNow",
+      "whatnow_content": "Kontni Baz Done Mesaj Sekirite",
       "choose_hazard": "Chwazi danje",
       "hazard": "Danje",
       "content": "Kontni",
@@ -477,8 +475,8 @@
       "society_name": "Sosyete Nasyonal",
       "attribution_message": "Mesaj atribisyon",
       "no_translation": "Pa gen kontni etabli",
-      "delete_content_translation": "Sa ap elimine kontni whatnow ki nan lang aktyèl la",
-      "messages": "Mesaj WhatNow yo",
+      "delete_content_translation": "Sa pral retire kontni Baz Done Mesaj Sekirite yo chwazi a nan lang aktyèl la",
+      "messages": "Mesaj Sekirite yo nan",
       "add_language": "Ajoute nouvo lang",
       "no_languages": "Chwazi oswa kreye yon lang pou kòmanse",
       "no_soc": "Chwazi yon sosyete",
@@ -506,12 +504,11 @@
       "enter_other_hazard_type": "Antre non kalite danje a",
       "other_hazard_type_label": "Lòt kalite danje",
       "stepped_content": "Eleman kontni youn dèyè lòt",
-      "content_title_description": "Tit pou mesaj WhatNow sa yo",
-      "content_description_description": "Deskripsyon mesaj WhatNow sa yo",
+      "content_title_description": "Tit pou Mesaj Sekirite sa yo",
+      "content_description_description": "Deskripsyon Mesaj Sekirite sa yo",
       "content_label": "Tanpri antre enfòmasyon danje yo",
       "content_url": "URL",
-      "content_url_description": "URL pou plis enfòmasyon sou mesaj WhatNow sa yo. Tanpri mete pwotokòl la, sa vle di http: \/\/ oswa https: \/\/\n",
-      "created": "kreye",
+      "content_url_description": "URL pou plis enfòmasyon sou Mesaj Sekirite sa yo. Tanpri enkli pwotokòl la, sa vle di http:// oswa https://",      "created": "kreye",
       "pieces_edited": " Moso edite",
       "content_placeholder": "Tanpri antre yon mesaj",
       "mitigation": "Alèjman",
@@ -541,7 +538,7 @@
       "download_image": "Telechaje tankou yon imaj",
       "download_image_error": "Erè nan telechaje imaj, tanpri asire ou ke ou te pibliye tout chanjman epi eseye ankò.\n",
       "download_instructions": "Klik dwa epi chwazi 'Anrejistre imaj kòm ...' pou konsève",
-      "downloaded_image_alt": "Enstriksyon WhatNow yo",
+      "downloaded_image_alt": "Enstriksyon Baz Done Mesaj Sekirite",
       "add_key_message": "Ajoute Mesaj Kle",
       "add_supporting_message": "Ajoute Mesaj Sipò",
       "early_warning": "Avètisman Bonè",
@@ -557,7 +554,7 @@
       "supporting_message_label": "Mesaj Sipò"
     },
     "message_editor": {
-      "title": "Editè Mesaj",
+      "title": "Editè Atribisyon",
       "society_name_label": "Non Sosyete Nasyonal",
       "attribution_url_label": "URL Atribisyon",
       "attribution_message_label": "Mesaj Atribisyon",
@@ -569,10 +566,10 @@
       "download_image_error": "Erè telechaje imaj, tanpri eseye ankò.",
       "download_pdf_error": "Erè telechaje PDF, tanpri eseye ankò."
     },
-    "audit": "Rejis kontwol",
+    "audit": "Istwa Edite",
     "export": "Ekspòtasyon\n",
     "bulk_upload": {
-      "bulk_upload": "Telechaje an gwoup",
+      "bulk_upload": "Telechaje Dosye Mesaj",
       "template": "Modèl",
       "export_template": " Modèl Ekspòtasyon",
       "import_data": "Ekspòtasyon done",
@@ -595,7 +592,7 @@
       "submit": "Kontni enpòte",
       "reset": "Telechaje yon lòt",
       "export_template_guide": "Gid modèl ekspòtasyon\n",
-      "export_template_instructions": "Pou enstriksyon yo sou kòman pou sèvi efektivman ak modèl yo telechaje a, tanpri gade gid sa a.\n",
+      "export_template_instructions": "Pou enstriksyon sou fason pou itilize modèl telechaje dosye g sa a efektivman, tanpri gade gid sa a.",
       "refer": "Gade nan",
       "detail": "pou enstriksyon detaye",
       "warnings": {
@@ -673,9 +670,9 @@
   "home": {
     "home": "Kay",
     "welcome": "Akèy",
-    "admin_intro": "Men ou kapab jere itilizatè, edite ak pibliye kontni whatnow ak gade itilizasyon API a.",
-    "ns_admin_intro": "Men  ou kapab edite epi pibliye kontni WhatNow lan",
-    "ns_editor_intro": "Men ou kapab edite kontni WhatNow",
+    "admin_intro": "Isit la ou ka jere itilizatè yo, edite epi pibliye kontni Baz Done Mesaj Sekirite a epi wè itilizasyon API a.",
+    "ns_admin_intro": "Isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a",
+    "ns_editor_intro": "Isit la ou ka edite kontni Baz Done Mesaj Sekirite a",
     "api_user_intro": "La w ap wè app yo epi jere kont ou a.",
     "role_changed_title": "Wòl ou te chanje",
     "role_changed_p": "Yo te ba ou wòl sa a:",
@@ -684,20 +681,58 @@
     "role_changed_dismiss": "Fèmen"
   },
   "landing": {
-    "strapline": "Sèvis WhatNow",
+    "strapline": "Sèvis Baz Done Mesaj Sekirite",
     "strapline_part_2": "Kwa Wouj Global\/ Mesaj Kle yo pou sekirite Kwa Wouj",
+    "head_1": "Sekirite IFRC",
+    "head_2": "Baz Done Mesaj",
+    "head_text_1": "Mesaj Sekirite ki baze sou Konsyantizasyon Piblik IFRC ak",
+    "head_text_2": "Resous Edikasyon Piblik (PAPE)",
+    "head_bottom_1": "Aksede epi pataje mesaj serye Lakwa Wouj Lakwa Kwasan Wouj",
+    "head_bottom_2": "mesaj aksyonab pou ede moun prepare yo an sekirite pou",
+    "head_bottom_3": "epi reponn a danje yo.",
+    "signup": "Enskri",
+    "it_works": "Kijan Li Fonksyone",
+    "works_1_a": "Lakwa Wouj Lakwa Kwasan Wouj Nasyonal",
+    "works_1_b": "Sosyete ak patnè gouvènman yo",
+    "works_1_c": "dakò sou seri mesaj nasyonal yo",
+    "works_2_a": "Sosyete Nasyonal yo pibliye",
+    "works_2_b": "mesaj sekirite yo nan",
+    "works_2_c": "baz done a",
+    "works_3_a": "Ajans chanje yo ak",
+    "works_3_b": "chanèl kominikasyon yo",
+    "works_3_c": "konekte ak API baz done a",
+    "works_4_a": "Patnè yo pataje",
+    "works_4_b": "mesaj yo atravè",
+    "works_4_c": "chanèl yo",
+    "works_5_a": "Kominote yo resevwa",
+    "works_5_b": "mesaj yo epi",
+    "works_5_c": "aji an sekirite",
+    "learn_more": "Aprann Plis",
+    "watch_video": "Gade Videyo a",
+    "example_case": "Egzanp Ka Itilizasyon",
+    "api": "API",
+    "hurricane": "Enkli mesaj ak alèt avètisman bonè siklòn",
+    "warning_alerts": "alèt avètisman",
+    "social_media": "Rezo Sosyal",
+    "post_images": "Pibliye imaj preparasyon pou dife sovaj",
+    "messages_network": "mesaj sou rezo ou",
+    "whatsapp": "WhatsApp",
+    "share_flood": "Pataje aksyon mitigasyon inondasyon ak",
+    "family": "fanmi ak zanmi ou yo",
+    "impact": "Enpak",
+    "sign_up_today": "Enskri Jodi a",
     "developer": {
       "strap_para_one": "Ede kominote yo prepare, reponn, epi retabli de danje ak mesaj kle aksyon lokalize nou yo.",
-      "strap_para_two": "Itilize 4 etap gid fasil pou entegre mesaj WhatNow yo nan aplikasyon w lan Enskri e wè mesaj ki disponib yo."
+      "strap_para_two": "Itilize gid fasil kat etap nou an pou entegre mesaj Sekirite yo nan aplikasyon ou an. Enskri epi gade tout mesaj ki disponib yo."
     },
     "national_society": {
       "strap_para_one": "Pibliye mesaj kle sekirite RCRC Nasyonal sosyete ou a pou global, nasyonal, ak medya lokal yo jwenn aksè ak difizyon.",
       "strap_para_two": "Kontakte nou pou aprann plis sou kòman pou kreye mesaj yo epi konekte ak patnè yo nan medya a."
     },
     "strap_para_one": "Ede kominote yo prepare, reponn, epi retabli de danje ak mesaj kle aksyon lokalize nou yo.",
-    "strap_para_two": "Itilize 4 etap gid fasil pou entegre mesaj WhatNow yo nan aplikasyon w lan Enskri e wè mesaj ki disponib yo.",
+    "strap_para_two": "Itilize gid fasil kat etap nou an pou entegre mesaj Sekirite yo nan aplikasyon ou an. Enskri epi gade tout mesaj ki disponib yo.",
     "view_data": "Gade done a",
-    "view_message_library": "Gade mesaj WhatNow yo",
+    "view_message_library": "Gade Mesaj Sekirite yo",
     "what_now": "WhatNow?",
     "fake_alert_heading": "Avètisman fwa ekstrèm",
     "fake_alert_description": "Men, sa a egzije pou yon distenksyon senp epi fasil. Pou tan lib lè pouvwa nou an.",
@@ -717,10 +752,10 @@
       "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
     },
     "example_alert": {
-      "heading": "Egzanp mesaj fòma WhatNow la",
+      "heading": "Egzanp Fòma Mesaj Sekirite",
       "alert_preview": "Apèsi avètisman",
-      "what_now_info": "Apèsi WhatNow",
-      "example_whatnow_request": "Egzanp repons WhatNow",
+      "what_now_info": "Aperçu Mesaj Sekirite",
+      "example_whatnow_request": "Egzanp Repons Baz Done Mesaj Sekirite",
       "example_alert_request": "Egzanp repons alèt",
       "example_content": "Konseye tan # 3 FINAL kòm 11 AM, Jan. 29, 2018\nPou ke-fen nan yon devan frèt\n\n\n\nEfe a nan Ke-Fen an nan yon Devan Frèt te febli. Kondisyon tanperati amelyore yo pral fè eksperyans sou Nome. Sepandan, douch izole oswa loraj, espesyalman pandan aprèmidi a oswa aswè, yo ta dwe espere nan zòn sa yo akoz lwès la.\n\nAvèk devlòpman sa a, sa a se konseye final la pou sistèm tanperati sa a.",
       "example_content_location_header": "KOTE KI AFEKTE",
@@ -729,9 +764,9 @@
     "example_whatnow": {
       "alert_from": "Avètisman sou:  Kwa Wouj Amerikèn",
       "more_info": "Plis enfòmasyon",
-      "heading": "Mesaj Kle pou Fredi Ekstrèm",
+      "heading": "Mesaj Sekirite pou Fwad Ekstrèm",
       "copy": "Sa yo se aksyon pou w poze pou diminye risk epi pwoteje tèt ou ansanm ak tout fanmi kont fredi ekstrèm.",
-      "what_now": "WhatNow",
+      "what_now": "Baz Done Mesaj Sekirite IFRC",
       "step_1": "Proteje kay ou. Tcheke sou tiyo epi sèvi ak sous chofaj san danje.",
       "step_2": "Rete idrate ak likid cho",
       "step_3": "Pwoteje tèt ou ak rad cho epi kouvri po w ki ekspoze",
@@ -742,7 +777,7 @@
       "heading": "Pare w pou bati app ou?"
     },
     "data_preview": {
-      "heading": "Mesaj WhatNow yo",
+      "heading": "Mesaj Sekirite",
       "sub_heading": "Enskri epi gade mesaj aksyon kle ki soti nan Lakwa Wouj \/ Kwasan Wouj Sosyete Nasyonal atravè monn lan\n"
     },
     "footer": {
@@ -831,8 +866,7 @@
       "heading": "Lisans ak Limit:"
     },
     "overview": {
-      "body": "Sant Mondyal Preparasyon pou Katastwòf Whatnow Sèvis Aplikasyon Entèfas pwogram (\"API a\") sa te fè disponib pou ou pa Lakwa Wouj Nasyonal Amerikèn (\"Lakwa Wouj\"). API a egzije yon kle enskripsyon.  Pandan pwosesis enskripsyon an, ou dwe dakò ak tèm ak kondisyon ki annapre yo, ansanm ak tèm ak kondisyon nan tèm sèvi akò sit entènèt Kwa wouj la ki disponib nan {0} (kolektivman, “Tèm API”). Règleman API yo ap gouvène itilizasyon ou nan API a ak materyèl elektwonik telechajab yo ki disponib nan API a. 1",
-      "cta": "Klike la a pou ou enkri."
+      "body": "Entèfas Pwogram Aplikasyon Sèvis Baz Done Mesaj Sekirite Sant Preparasyon Global pou Katastwòf la (“API”) disponib pou ou pa Lakwa Wouj Nasyonal Ameriken an (“Lakwa Wouj”). API a mande yon kle enskripsyon. Pandan pwosesis enskripsyon an, ou dwe dakò ak tèm ak kondisyon sa yo, ansanm ak tèm ak kondisyon nan Akò Tèm Sèvis Sit Wèb Lakwa Wouj ki disponib nan {0} (ansanm, “Tèm API yo”). Tèm API yo pral gouvène itilizasyon API ou a ak materyèl elektwonik telechaje ki disponib atravè API a. {1}",      "cta": "Klike la a pou ou enkri."
     },
     "privacy_policy": {
       "body": "Ou konprann, ou rekonèt, e ou dakò ak operasyon kèk pwogram, sèvis, zouti, opsyon acha, oswa enfòmasyon nan API a egzije pou ou soumisyon, itilizasyon piblikasyon divès enfòmasyon a karaktè pèsonèl. Pa konsekan, si ou vle gen aksè epi itilize API a, ou rekonèt e ou dakò itilizasyon API a vle di ou aksepte koleksyon enfòmasyon a karaktè pèsonèl ak itilizasyon pratik ki nan politik konfidansyalite ki pibliye yo: {0}",
@@ -863,7 +897,7 @@
   "view_data": {
     "alert_title": "ALÈT:",
     "more_info": "plis enfòmasyon:",
-    "which": "Kisa mesaj WhatNow ou vle wè?",
+    "which": "Ki Mesaj Sekirite ou vle wè?",
     "view_data": "Wè done",
     "alerts": "Alèt yo",
     "alert_preview": "Apèsi alèt",
@@ -874,7 +908,7 @@
     "date": "Dat",
     "headline": "Gran tit",
     "alert": "Alèt",
-    "whatnow_info": "Enfòmasyon Whatnow",
+    "whatnow_info": "Enfòmasyon Baz Done Mesaj Sekirite",
     "alert_detail": "Detay alèt",
     "more": "Plis enfòmasyon",
     "area_affected": "Zòn afekte",
@@ -900,7 +934,7 @@
   },
   "user_agreement": {
     "title": "Akò itilizatè",
-    "para_one": "Anvan ou kapab jwenn aksè nan Pòtal a Whatnow, tanpri ou ka li epi aksepte kondisyon ki nan akò itilizatè a nan telechaje dokiman ki anba a epi klike sou 'Mwen Aksepte' bouton ki anba a.",
+    "para_one": "Anvan ou ka jwenn aksè nan Portal Baz Done Mesaj Sekirite a, tanpri ou ka li epi aksepte tèm ak kondisyon akò itilizatè a lè w telechaje dokiman ki anba a epi klike sou bouton 'Mwen aksepte' ki anba a.",
     "cta": "Mwen aksepte",
     "download": "Klike la a pou ou wè dokiman akò itilizatè yo (105KB)"
   },
@@ -925,7 +959,7 @@
   },
   "regions": {
     "list": {
-      "manage": "Jere Rejyon yo",
+      "manage": "Sou-rejyon yo",
       "create": "Kreye nouvo rejyon",
       "edit": "Edite Rejyon an",
       "add": "Ajoute Rejyon an",
@@ -938,7 +972,7 @@
     "create": "Kreye yon nouvo Rejyon",
     "form": {
       "name": "Non Rejyon an",
-      "name_help": "Nonmen rejyon ou vle kreye mesaj WhatNow pèsonalize.",
+      "name_help": "Bay rejyon ou vle kreye mesaj sekirite pèsonalize pou a non.",
       "description": "Deskripsyon",
       "description_help": "Bay plis enfòmasyon sou rejyon an, pa eganp, San Francisco Bay Area."
     },
@@ -976,6 +1010,6 @@
     "hazardCreate": "Danje Kreye",
     "published": "Pibliye",
     "draft": "Bouyon",
-    "bulkUploadDraft": "Bouyon Telechajman an Gwo"
+    "bulkUploadDraft": "Bouyon Telechaje Dosye Mesaj"
   }
 }
