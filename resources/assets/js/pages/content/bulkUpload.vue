@@ -433,7 +433,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 
 .custom-file-label {
   background: #F7F7F7;
@@ -488,9 +488,9 @@ export default {
     display: flex;
     gap: 5px;
     & label {
-      border-radius: 20px !important;
-      align-content: center !important;
-      justify-content: center !important;
+      border-radius: 20px;
+      align-content: center;
+      justify-content: center;
     }
   }
 }
