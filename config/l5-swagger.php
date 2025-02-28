@@ -58,6 +58,8 @@ return [
 
         'docs' => storage_path('api-docs'),
 
+        'docs' => public_path('api-docs'),
+
         /*
         |--------------------------------------------------------------------------
         | File name of the generated json documentation file
