@@ -23,6 +23,12 @@ use League\Csv\AbstractCsv;
 use League\Csv\CannotInsertRecord;
 use League\Csv\Reader;
 
+/**
+ * @OA\Tag(
+ *     name="WhatNowImport",
+ *     description="Operations about bulk upload"
+ * )
+ */
 final class WhatNowImportController extends ApiController
 {
     
@@ -34,7 +40,53 @@ final class WhatNowImportController extends ApiController
         $this->client = $client->whatnow();
     }
 
-    
+    /**
+     * @OA\Post(
+     *     path="/import/{countryCode}/{languageCode}",
+     *     tags={"WhatNowImport"},
+     *     summary="Import a CSV file",
+     *     description="Imports a CSV file for a specific country and language",
+     *     operationId="importCsv",
+     *     @OA\Parameter(
+     *         name="countryCode",
+     *         in="path",
+     *         required=true,
+     *         description="Country code for the import",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     @OA\Parameter(
+     *         name="languageCode",
+     *         in="path",
+     *         required=true,
+     *         description="Language code for the import",
+     *         @OA\Schema(type="string", example="en")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 required={"csv"},
+     *                 @OA\Property(
+     *                     property="csv",
+     *                     type="string",
+     *                     format="binary",
+     *                     description="CSV file to import"
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function import(Request $request, string $countryCode, string $languageCode)
     {
         try{
@@ -79,6 +131,31 @@ final class WhatNowImportController extends ApiController
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/template/{country_code}",
+     *     tags={"WhatNowImport"},
+     *     summary="Export a blank CSV template",
+     *     description="Exports a blank CSV template for a given country",
+     *     operationId="exportBlankCsvTemplate",
+     *     @OA\Parameter(
+     *         name="country_code",
+     *         in="path",
+     *         required=true,
+     *         description="Country code for which the blank template is generated",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function exportBlank(string $countryCode)
     {
         if (strlen($countryCode) !== 3) {
@@ -94,6 +171,39 @@ final class WhatNowImportController extends ApiController
     }
 
     
+
+    /**
+     * @OA\Get(
+     *     path="/template/{country_code}/{language_code}",
+     *     tags={"WhatNowImport"},
+     *     summary="Export a CSV template",
+     *     description="Exports a CSV template for a given country and language",
+     *     operationId="exportCsvTemplate",
+     *     @OA\Parameter(
+     *         name="country_code",
+     *         in="path",
+     *         required=true,
+     *         description="Country code for which the template is generated",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     @OA\Parameter(
+     *         name="language_code",
+     *         in="path",
+     *         required=true,
+     *         description="Language code for the template",
+     *         @OA\Schema(type="string", example="en")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function export(string $countryCode, string $languageCode)
     {
         if (strlen($countryCode) !== 3) {

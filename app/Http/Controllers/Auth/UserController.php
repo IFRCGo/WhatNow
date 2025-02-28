@@ -22,7 +22,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-
+/**
+ * @OA\Tag(
+ *     name="Users",
+ *     description="Operations about users"
+ * )
+ */
 class UserController extends Controller
 {
     
@@ -43,7 +48,40 @@ class UserController extends Controller
         $this->terms = $terms;
     }
 
-    
+    /**
+     * @OA\Post(
+     *     path="/users",
+     *     tags={"Users"},
+     *     summary="Crear un nuevo usuario",
+     *     description="Crea un nuevo usuario con la información proporcionada.",
+     *     operationId="createUser",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Datos del usuario a crear",
+     *         @OA\JsonContent(
+     *             required={"email", "first_name", "last_name", "country_code", "role_id"},
+     *             @OA\Property(property="email", type="string", format="email", example="john.doe@example.com"),
+     *             @OA\Property(property="first_name", type="string", example="John"),
+     *             @OA\Property(property="last_name", type="string", example="Doe"),
+     *             @OA\Property(property="country_code", type="string", example="US"),
+     *             @OA\Property(property="organisation", type="string", example="Acme Corp"),
+     *             @OA\Property(property="industry_type", type="string", example="Technology"),
+     *             @OA\Property(property="api_used_in", type="string", example="Internal API"),
+     *             @OA\Property(property="role_id", type="integer", example=1)
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     protected function create(Request $request)
     {
         $this->authorize('create', User::class);
@@ -109,7 +147,28 @@ class UserController extends Controller
         }
     }
 
-    
+    /**
+     * @OA\Get(
+     *     path="/users",
+     *     tags={"Users"},
+     *     summary="List all users",
+     *     description="Returns a list of all users",
+     *     operationId="listUsers",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function list(UserListRequest $request)
     {
         $this->authorize('list', User::class);
@@ -120,6 +179,28 @@ class UserController extends Controller
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/users/admins",
+     *     tags={"Users"},
+     *     summary="List all admin users",
+     *     description="Returns a list of all admin users",
+     *     operationId="listAdmins",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function listAdmins(UserListRequest $request)
     {
         $this->authorize('list', User::class);
@@ -133,6 +214,35 @@ class UserController extends Controller
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/users/{id}",
+     *     tags={"Users"},
+     *     summary="Get a specific user by ID",
+     *     description="Returns details of a specific user identified by their ID",
+     *     operationId="viewUser",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID of the user to retrieve",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function view(Request $request, int $userId)
     {
         $user = $this->users->findOrFail($userId, ['organisations', 'roles', 'roles.permissions']);
@@ -143,6 +253,29 @@ class UserController extends Controller
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/users/me",
+     *     tags={"Users"},
+     *     summary="Obtener la información del usuario autenticado",
+     *     description="Retorna la información del usuario autenticado, incluyendo sus organizaciones, roles y permisos.",
+     *     operationId="getAuthenticatedUser",
+     *     security={{"bearerAuth": {}}},
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function me(Request $request)
     {
         $user = $this->users->findOrFail($request->user()->id, ['organisations', 'roles', 'roles.permissions']);
@@ -152,7 +285,54 @@ class UserController extends Controller
         return UserResource::make($user);
     }
 
-    
+    /**
+     * @OA\Patch(
+     *     path="/users/{id}",
+     *     tags={"Users"},
+     *     summary="Update user information",
+     *     description="Updates a user's details with the provided information",
+     *     operationId="updateUser",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="email", type="string", format="email"),
+     *             @OA\Property(property="password", type="string"),
+     *             @OA\Property(property="first_name", type="string", maxLength=191),
+     *             @OA\Property(property="last_name", type="string", maxLength=191),
+     *             @OA\Property(property="country_code", type="string", maxLength=2),
+     *             @OA\Property(property="organisation", type="string", maxLength=191),
+     *             @OA\Property(property="industry_type", type="string", maxLength=191),
+     *             @OA\Property(property="terms_version", type="string", maxLength=10),
+     *             @OA\Property(property="accepted_agreement", type="boolean"),
+     *             @OA\Property(property="api_used_in", type="string", maxLength=255, nullable=true),
+     *             @OA\Property(property="role_id", type="integer"),
+     *             @OA\Property(
+     *                 property="organisations",
+     *                 type="array",
+     *                 @OA\Items(type="string", minLength=3, maxLength=3)
+     *             ),
+     *             @OA\Property(property="confirmed_role", type="boolean", nullable=true)
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function update(Request $request, int $userId)
     {
         
@@ -220,7 +400,31 @@ class UserController extends Controller
         return UserResource::make($user);
     }
 
-    
+    /**
+     * @OA\Delete(
+     *     path="/users/{id}",
+     *     tags={"Users"},
+     *     summary="Delete a user",
+     *     description="Deletes a user by their ID",
+     *     operationId="deleteUser",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function delete(int $userId)
     {
         $user = $this->users->findOrFail($userId);
@@ -234,7 +438,31 @@ class UserController extends Controller
         return new JsonResponse(['message' => 'User deleted'], Response::HTTP_OK);
     }
 
-    
+    /**
+     * @OA\Post(
+     *     path="/users/{id}/deactivate",
+     *     tags={"Users"},
+     *     summary="Deactivate a user",
+     *     description="Deactivates an active user",
+     *     operationId="deactivateUser",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function deactivate(int $userId)
     {
         $user = $this->users->findOrFail($userId);
@@ -248,7 +476,31 @@ class UserController extends Controller
         return new JsonResponse(['message' => 'User deactivated'], Response::HTTP_OK);
     }
 
-    
+    /**
+     * @OA\Post(
+     *     path="/users/{id}/reactivate",
+     *     tags={"Users"},
+     *     summary="Reactivate a user",
+     *     description="Reactivates a deactivated user",
+     *     operationId="reactivateUser",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function reactivate(int $userId)
     {
         $user = $this->users->findOrFail($userId);

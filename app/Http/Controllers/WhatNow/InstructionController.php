@@ -24,7 +24,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Collection;
-
+/**
+ * @OA\Tag(
+ *     name="Instructions",
+ *     description="Operations about Messages/Supporting Messages/Translations"
+ * )
+ */
 final class InstructionController extends ApiController
 {
 
@@ -41,6 +46,44 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Get(
+     *     path="/organisations/{countryCode}/instructions",
+     *     tags={"Instructions"},
+     *     summary="Get instructions by country code",
+     *     description="Returns a list of published instructions filtered by the specified country code",
+     *     operationId="listInstructionsByCountryCode",
+     *     @OA\Parameter(
+     *         name="countryCode",
+     *         in="path",
+     *         description="The country code to filter instructions by",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             ),
+     *             @OA\Property(
+     *                 property="meta",
+     *                 type="object",
+     *                 @OA\Property(
+     *                     property="availableLanguages",
+     *                     type="array",
+     *                     @OA\Items(type="string")
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function listByCountryCode(string $countryCode)
     {
         try {
@@ -74,6 +117,24 @@ final class InstructionController extends ApiController
         }
     }
 
+    /**
+     * @OA\Get(
+     *     path="/organisations/instructions/export",
+     *     tags={"Instructions"},
+     *     summary="Export instructions as CSV",
+     *     description="Exports a CSV file containing instruction data",
+     *     operationId="exportCsv",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function exportCsv()
     {
         $this->authorize('export', Instruction::class);
@@ -126,6 +187,31 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Get(
+     *     path="/organisations/{countryCode}/instructions/revisions/latest",
+     *     tags={"Instructions"},
+     *     summary="List latest draft instructions by country code",
+     *     description="Retrieves the latest draft instructions for a given country code",
+     *     operationId="listLatestDraftsByCountryCode",
+     *     @OA\Parameter(
+     *         name="countryCode",
+     *         in="path",
+     *         required=true,
+     *         description="Country code to filter the latest draft instructions",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function listLatestDraftsByCountryCode(string $countryCode)
     {
         $this->authorize('listDrafts', Instruction::class);
@@ -158,6 +244,31 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Get(
+     *     path="/instructions/{id}",
+     *     tags={"Instructions"},
+     *     summary="Get instruction by ID",
+     *     description="Retrieves a specific instruction by its ID",
+     *     operationId="viewInstruction",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction to retrieve",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function view(int $id)
     {
         try {
@@ -177,6 +288,31 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Get(
+     *     path="/instructions/{id}/revisions/latest",
+     *     tags={"Instructions"},
+     *     summary="Get latest draft revision of an instruction",
+     *     description="Retrieves the latest draft revision of a specific instruction by its ID",
+     *     operationId="viewLatestDraft",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction to retrieve the latest draft revision",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function viewLatestDraft(int $id)
     {
         $this->authorize('viewDrafts', Instruction::class);
@@ -198,6 +334,46 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Post(
+     *     path="/instructions",
+     *     tags={"Instructions"},
+     *     summary="Create a new instruction",
+     *     description="Creates a new instruction with translations",
+     *     operationId="createInstruction",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"countryCode", "eventType", "translations"},
+     *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
+     *             @OA\Property(property="eventType", type="string", maxLength=50, description="Type of event", example="conference"),
+     *             @OA\Property(
+     *                 property="translations",
+     *                 type="array",
+     *                 description="Array of translations",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     required={"lang", "title", "description"},
+     *                     @OA\Property(property="lang", type="string", description="Language code (2-letter ISO format)", example="en"),
+     *                     @OA\Property(property="title", type="string", description="Title of the instruction", example="Safety Guidelines"),
+     *                     @OA\Property(property="description", type="string", description="Description of the instruction", example="Follow these steps to ensure safety."),
+     *                     @OA\Property(property="webUrl", type="string", format="url", nullable=true, description="Optional URL for additional information", example="https://example.com")
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function create(Request $request)
     {
         $this->validate($request, [
@@ -229,6 +405,53 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Put(
+     *     path="/instructions/{id}",
+     *     tags={"Instructions"},
+     *     summary="Update an existing instruction",
+     *     description="Updates an instruction with new data",
+     *     operationId="updateInstruction",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction to update",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"countryCode", "eventType", "translations"},
+     *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
+     *             @OA\Property(property="eventType", type="string", maxLength=50, description="Type of event", example="conference"),
+     *             @OA\Property(
+     *                 property="translations",
+     *                 type="array",
+     *                 description="Array of translations",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     required={"lang", "title", "description"},
+     *                     @OA\Property(property="lang", type="string", description="Language code (2-letter ISO format)", example="en"),
+     *                     @OA\Property(property="title", type="string", description="Title of the instruction", example="Safety Guidelines"),
+     *                     @OA\Property(property="description", type="string", description="Description of the instruction", example="Follow these steps to ensure safety."),
+     *                     @OA\Property(property="webUrl", type="string", format="url", nullable=true, description="Optional URL for additional information", example="https://example.com")
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function update(Request $request, int $id)
     {
         $this->validate($request, [
@@ -260,6 +483,31 @@ final class InstructionController extends ApiController
     }
 
 
+    /**
+     * @OA\Delete(
+     *     path="/instructions/{id}",
+     *     tags={"Instructions"},
+     *     summary="Delete an instruction",
+     *     description="Deletes an instruction by its ID",
+     *     operationId="deleteInstruction",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction to delete",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function delete(int $id)
     {
         try {
@@ -284,6 +532,42 @@ final class InstructionController extends ApiController
         }
     }
 
+    /**
+     * @OA\Post(
+     *     path="/instructions/{id}/revisions/",
+     *     tags={"Instructions"},
+     *     summary="Create a translation for an instruction",
+     *     description="Creates a new translation for a specific instruction by its ID",
+     *     operationId="createTranslation",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"lang", "title", "description"},
+     *             @OA\Property(property="lang", type="string", description="Language code (ISO 639-1, 2 characters)"),
+     *             @OA\Property(property="title", type="string", description="Title of the instruction"),
+     *             @OA\Property(property="description", type="string", description="Description of the instruction"),
+     *             @OA\Property(property="stages", type="array", @OA\Items(type="string"), description="Array of stages")
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function createTranslation(Request $request, int $id)
     {
         try {
@@ -317,6 +601,46 @@ final class InstructionController extends ApiController
         }
     }
 
+    /**
+     * @OA\Patch(
+     *     path="/instructions/{id}/revisions/{translationId}",
+     *     tags={"Instructions"},
+     *     summary="Publish or unpublish a translation",
+     *     description="Updates the publication status of a specific translation for an instruction",
+     *     operationId="publishTranslation",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the instruction",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Parameter(
+     *         name="translationId",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the translation",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"published"},
+     *             @OA\Property(property="published", type="boolean", description="Publication status (true for published, false for unpublished)")
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function publishTranslation(Request $request, int $id, int $translationId)
     {
         try {
@@ -364,6 +688,49 @@ final class InstructionController extends ApiController
         }
     }
 
+    /**
+     * @OA\Post(
+     *     path="/instructions/{countryCode}/publish",
+     *     tags={"Instructions"},
+     *     summary="Publish translations for a given country",
+     *     description="Publishes instruction translations for a specific country code",
+     *     operationId="publishTranslations",
+     *     @OA\Parameter(
+     *         name="countryCode",
+     *         in="path",
+     *         required=true,
+     *         description="Country code for which translations will be published",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"translations"},
+     *             @OA\Property(
+     *                 property="translations",
+     *                 type="array",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     required={"id", "lang", "eventType"},
+     *                     @OA\Property(property="id", type="integer", example=1),
+     *                     @OA\Property(property="lang", type="string", example="en"),
+     *                     @OA\Property(property="eventType", type="string", example="concert")
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function publishTranslations($countryCode, Request $request)
     {
         $this->authorize('publishMultiple', Instruction::class);

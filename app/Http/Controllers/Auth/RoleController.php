@@ -30,6 +30,7 @@ class RoleController extends Controller
      *     summary="List all roles",
      *     description="Retrieves a list of all roles",
      *     operationId="listRoles",
+     *     security={{"bearerAuth": {}}},
      *     @OA\Response(
      *         response=200,
      *         description="Successful response",

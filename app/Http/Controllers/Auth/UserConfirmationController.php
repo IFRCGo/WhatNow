@@ -18,7 +18,31 @@ class UserConfirmationController extends Controller
 {
     use SendsPasswordResetEmails;
 
-    
+    /**
+     * @OA\Get(
+     *     path="/users/{id}/resend",
+     *     tags={"Users"},
+     *     summary="Resend confirmation email",
+     *     description="Sends a confirmation email to the user",
+     *     operationId="resendConfirmationEmail",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="User ID",
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function sendConfirmationEmail(UserRepository $userRepository, $userId)
     {
         $user = $userRepository->findOrFail($userId);
