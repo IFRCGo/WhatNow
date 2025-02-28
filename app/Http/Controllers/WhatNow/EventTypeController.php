@@ -7,11 +7,8 @@ use App\Http\Controllers\ApiController;
 use App\Http\Requests\EventTypeCreateRequest;
 use App\Http\Resources\WhatNow\EventTypeResource;
 use App\Models\EventType;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 /**

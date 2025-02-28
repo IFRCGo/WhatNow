@@ -641,7 +641,6 @@ export default {
             <b-button variant="outline-primary" size="sm" class="mr-2"
               v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
               :disabled="!canEditAttribution" :key="'edit'">
-              <font-awesome-icon :icon="['fas', 'pen']" />
               {{ $t('common.edit') }}
             </b-button>
             <b-button variant="primary" size="sm" class="mr-2" v-if="canEditAttribution && (languageToAdd || editing)"
@@ -779,7 +778,7 @@ export default {
             <div class="whatnow-org-publish-modal-content">
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
                 <h5>National Society</h5>
-                <p>{{ attributionTranslation.name }}</p>	
+                <p>{{ attributionTranslation.name }}</p>
               </div>
 
               <div class="d-flex justify-content-start align-items-center whatnow-org-publish-modal-content-item">
@@ -1218,7 +1217,7 @@ export default {
 
 .whatnow-message-editor-container {
   position: relative;
-  
+
   .publish-bottom-container {
     position: fixed;
     bottom: 0;

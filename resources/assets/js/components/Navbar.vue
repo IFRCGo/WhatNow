@@ -68,12 +68,12 @@
               <avatar v-else class="rounded-circle profile-photo mr-1 rtl-ml-1" :size="32" :username="user.data.user_profile.first_name + ' ' + user.data.user_profile.last_name" :customStyle="{'display': 'inline-block'}"></avatar>
               {{ user.data.user_profile.first_name }}
             </span>
-          <b-dropdown-item :to="{ name: 'settings.profile', params: { id: user.data.id, profile: true } }" class="has-no-underline">
+          <b-dropdown-item :to="{ name: 'settings.profile', params: { id: user.data.id, profile: true } }" class="has-no-underline mt-2 text-center">
             <fa icon="cog" fixed-width/>
             {{ $t('common.my_profile') }}
           </b-dropdown-item>
           <b-dropdown-divider></b-dropdown-divider>
-          <b-dropdown-item @click.prevent="logout" class="has-no-underline">
+          <b-dropdown-item @click.prevent="logout" class="has-no-underline text-center">
             <fa icon="sign-out-alt" fixed-width/>
             {{ $t('logout') }}
           </b-dropdown-item>

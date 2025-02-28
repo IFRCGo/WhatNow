@@ -96,7 +96,7 @@
               <i class="fas fa-check"></i>
               {{ $t(isEdit ? 'update' : 'common.create') }}
             </b-button>
-            <b-button type="button" class="btn btn-primary " @click.prevent="resetModal">
+            <b-button type="button" class="btn btn-outline-primary" @click.prevent="resetModal">
               <i class="fas fa-times"></i>
               {{ $t('common.cancel') }}
             </b-button>

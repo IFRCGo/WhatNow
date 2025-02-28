@@ -43,7 +43,6 @@
             <b-button variant="outline-primary" size="sm" class="mr-2"
               v-if="canEditAttribution && !languageToAdd && !editing" @click="editing = true"
               :disabled="!canEditAttribution" :key="'edit'">
-              <font-awesome-icon :icon="['fas', 'pen']" />
               {{ $t('common.edit') }}
             </b-button>
             <b-button variant="primary" size="sm" class="mr-2" v-if="canEditAttribution && (languageToAdd || editing)"
@@ -768,7 +767,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
         span {
           font-size: 8px;
         }
