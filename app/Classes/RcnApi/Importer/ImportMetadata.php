@@ -12,46 +12,55 @@ class ImportMetadata
         'INVALID_INVALID_DATE' => 40003,
     ];
 
-    
+
     protected $exportDate;
 
-    
+
     protected $countryCode;
 
-    
+
     protected $languageCode;
 
-    
+    protected $region;
+
+
     public function __construct(
 
-        array $metadataLine,
+
         string $countryCode,
-        string $languageCode
+        string $languageCode,
+        string $region
     ) {
         $this->countryCode = $countryCode;
         $this->languageCode = $languageCode;
-        $this->validateMetadata($metadataLine);
+        $this->region = $region;
     }
 
-    
+
     public function getExportDate(): \DateTimeImmutable
     {
         return $this->exportDate;
     }
 
-    
+
     public function getCountryCode(): string
     {
         return $this->countryCode;
     }
 
-    
+
     public function getLanguageCode(): string
     {
         return $this->languageCode;
     }
 
-    
+    public function getRegion(): string
+    {
+        return $this->region;
+    }
+
+
+
     private function validateMetadata(array $metadataLine)
     {
         $header = array_first($metadataLine);

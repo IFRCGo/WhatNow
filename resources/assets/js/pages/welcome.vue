@@ -30,7 +30,9 @@
         <img class="map-img" :src="src('mapImg')">
       </b-col>
     </b-row>
+  <div class="it-works">
     <h2 class="mid-subt">{{ $t('landing.it_works') }}</h2>
+  </div>
     <b-row>
       <b-col>
         <div class="black-band">
@@ -63,7 +65,7 @@
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
               </div>
-              <div class="line-item mb-5">
+              <div class="line-item mb-5 pt-5">
                 <p>
                   {{ $t('landing.works_2_a') }}
                 </p>
@@ -101,7 +103,7 @@
               <div class="red-line-frag">
                 <div class="red-pointer-bottom"></div>
               </div>
-              <div class="line-item mb-5">
+              <div class="line-item mb-5 pt-5">
                 <p>
                   {{ $t('landing.works_4_a') }}
                 </p>
@@ -374,6 +376,10 @@
   width: 100%;
 }
 
+.it-works {
+  margin-top: -15rem;
+}
+
 .bottom-head {
   display: flex;
   flex-direction: column;
@@ -631,6 +637,10 @@
 
   .map-img {
     margin-top: -10rem;
+  }
+
+  .it-works {
+    margin-top: 0;
   }
 
 }

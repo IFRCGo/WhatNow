@@ -20,7 +20,7 @@
                   </p>
                 </div>
                 <div class="button-container">
-                 <img class="img-bottom" src="../..//img/home_page/people.png" alt="people">
+                  <i class="fas fa-users font-icon"></i>
                   <b-button :to="{ name: 'users.list', params: {} }" variant="danger" class="button-go">{{
                       $t('go')
                     }}
@@ -38,7 +38,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
+                  <i class="fas fa-comment-alt font-icon"></i>
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger" class="button-go">{{ $t('go') }}
                   </b-button>
@@ -55,7 +55,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/computer.png" alt="computer">
+                  <i class="fas fa-laptop font-icon"></i>
                   <b-button :to="{ name: 'api-usage.api-users', params: {} }" variant="danger"
                             class="button-go">
                     {{ $t('go') }}
@@ -81,7 +81,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
+                  <i class="fas fa-comment-alt font-icon"></i>
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
@@ -142,7 +142,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
+                  <i class="fas fa-comment-alt font-icon"></i>
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
@@ -199,7 +199,7 @@
                   </p>
                 </div>
                 <div class="pt-5 button-container">
-                  <img class="img-bottom" src="../..//img/home_page/speech.png" alt="speech">
+                  <i class="fas fa-comment-alt font-icon"></i>
                   <b-button :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }"
                             variant="danger"
                             class="button-go">{{ $t('go') }}
@@ -296,16 +296,9 @@ export default {
 }
 
 .font-icon {
-  font-size: 5rem;
+  font-size: 3rem;
   margin-left: 1rem;
   color: #B6B6B6;
 }
 
-.img-bottom {
-  width: 18%;
-}
-
-.card-body {
-  padding-bottom: 0;
-}
 </style>

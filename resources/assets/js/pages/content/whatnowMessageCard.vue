@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="button-container mt-4 mb-4 key-message-item-btn">
-        <b-button variant="danger" class="button-go" @click="openKeyMessageVisualizer()">
+        <b-button variant="outline-primary" @click="openKeyMessageVisualizer()">
           {{ $t('content.whatnow.show_more') }}
         </b-button>
       </div>

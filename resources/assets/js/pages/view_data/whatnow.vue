@@ -15,7 +15,7 @@
       </b-col>
     </page-banner>
 
-    <b-row class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
+    <b-row  v-if="hazardsList" class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
       <b-col cols="auto" class="d-flex align-items-center">
         <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></selectSociety>
         <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
@@ -32,7 +32,7 @@
         </v-select>
       </b-col>
     </b-row>
-    <b-row class="m-3">
+    <b-row  v-if="hazardsList" class="m-3">
       <b-col>
         <b-nav tabs>
           <b-nav-item

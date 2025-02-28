@@ -42,15 +42,15 @@
                 {{ $t('content.edit_whatnow.key_message_label') }}
               </label>
               <div class="mx-5 tooltip-container">
-            <span
-              class="more-info-icon"
-              @mouseover="showTooltip = true"
-              @mouseleave="showTooltip = false"
-            >
-              <fa :icon="['fas', 'info-circle']" />
-            </span>
+                <span
+                  class="more-info-icon"
+                  @mouseover="showTooltip = true"
+                  @mouseleave="showTooltip = false"
+                  >
+                  <fa :icon="['fas', 'info-circle']"/>
+                </span>
                 <div v-if="showTooltip" class="custom-tooltip">
-                  {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+                  {{ $t(`content.edit_whatnow.safety_tool`) }}
                 </div>
               </div>
             </div>
@@ -69,6 +69,18 @@
             <label class="supporting-message-label">
               {{ $t('content.edit_whatnow.supporting_message_label') }}
             </label>
+            <div class="mx-5 tooltip-container">
+                <span
+                  class="more-info-icon"
+                  @mouseover="showTooltip = true"
+                  @mouseleave="showTooltip = false"
+                >
+                  <fa :icon="['fas', 'info-circle']"/>
+                </span>
+              <div v-if="showTooltip" class="custom-tooltip">
+                {{ $t(`content.edit_whatnow.supporting_tool`) }}
+              </div>
+            </div>
           </div>
           <div>
             <b-button size="sm" variant="outline-primary" @click="addSupportingMessage(index)" class="btn mb-2">
@@ -345,7 +357,7 @@ export default {
 
 .custom-tooltip {
   position: absolute;
-  bottom: 120%; /* Posición arriba del icono */
+  bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
   background-color: #E6E6E6;
@@ -357,12 +369,10 @@ export default {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease-in-out;
-
-  /* Ajustes para el tamaño y los saltos de línea */
-  width: 10rem; /* Fijar el ancho */
-  max-width: 10rem; /* Evitar que crezca más */
-  white-space: normal; /* Permitir saltos de línea */
-  word-wrap: break-word; /* Romper palabras largas si es necesario */
+  width: 10rem;
+  max-width: 10rem;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 

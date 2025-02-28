@@ -145,7 +145,7 @@
                 <p v-else>
                   {{ $t('users.status.deactivated') }}
                 </p>
-                <b-button size="sm" variant="dark" class="mt-2 d-block" @click="resendActivation" v-if="!isMe && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))">
+                <b-button  class="mt-2 d-block btn-outline-primary" @click="resendActivation" v-if="!isMe && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))">
                   <fa :icon="['fas', 'spinner']" spin v-show="sendingActivation"/>
                   {{ $t('common.resend_activation') }}
                 </b-button>
@@ -155,7 +155,7 @@
               <b-col cols="6">
               </b-col>
               <b-col cols="6">
-                <b-button type="submit" size="lg" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
+                <b-button type="submit" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
                   <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
                   {{ $t('common.save_changes') }}
                 </b-button>
@@ -165,7 +165,7 @@
               <b-col cols="6">
               </b-col>
               <b-col cols="6">
-                <b-button size="lg" variant="light" class="float-right rtl-float-left" @click="goToUserList" v-if="!isMe">
+                <b-button class="float-right rtl-float-left btn-outline-primary" @click="goToUserList" v-if="!isMe">
                   {{ $t('common.cancel') }}
                 </b-button>
 
@@ -277,7 +277,7 @@
                               <b-button size="sm" class="mr-3 btn-outline-primary" @click="addSociety(societies.selectedSoc)">
                                 {{ $t('common.add') }}
                               </b-button>
-                              <b-button class="cancel-btn" variant="light" @click="societies.isAddSocVisible = false">
+                              <b-button class="mt-2 btn-outline-primary"  @click="societies.isAddSocVisible = false">
                                 {{ $t('common.cancel') }}
                               </b-button>
                            </div>
@@ -293,7 +293,7 @@
         <audit-log v-bind:user-id="user.id" v-if="user.id != null && can(authUser, permissions.CONTENT_CREATE)"></audit-log>
          <b-row>
            <b-col>
-             <b-button size="lg" :variant="user.activated ? 'danger' : 'success'" class="float-right mr-2 mb-4 mt-4" v-if="(!newUser && !isMe) && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))" @click="toggleDeactivate(user)">
+             <b-button  class="float-right mr-2 mb-4 mt-4 btn-outline-primary" v-if="(!newUser && !isMe) && (can(authUser, permissions.USERS_DEACTIVATE) && can(authUser, permissions.USERS_REACTIVATE))" @click="toggleDeactivate(user)">
                {{ user.activated ? $t('common.deactivate_user') : $t('common.reactivate_user') }}
              </b-button>
              <b-button type="submit" size="lg" class="btn-outline-primary float-right mr-2 mb-4 mt-4" @click="reset = false" v-if="newUser && can(authUser, permissions.USERS_CREATE)">
