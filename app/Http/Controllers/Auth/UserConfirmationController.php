@@ -49,7 +49,30 @@ class UserConfirmationController extends Controller
         $user->notify(new UserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code)));
     }
 
-    
+    /**
+     * @OA\Get(
+     *     path="/confirm/{token}",
+     *     tags={"Auth"},
+     *     summary="Confirm user account",
+     *     description="Confirms the user's account using the provided confirmation token",
+     *     operationId="confirm",
+     *     @OA\Parameter(
+     *         name="token",
+     *         in="path",
+     *         required=true,
+     *         description="The user confirmation token",
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function confirm(UserRepository $userRepository, $token, Request $request, PasswordBroker $passwordBroker)
     {
         $user = null;
