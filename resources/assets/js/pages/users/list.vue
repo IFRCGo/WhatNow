@@ -13,51 +13,52 @@
     <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
       <b-col cols="3" xl="2">
         <p class="select-header"> {{ $t('users.list.select_status') }}</p>
-        <b-form-select
+        <v-select
           v-model="activatedFilter"
-          value-field="value"
-          class="v-form-select-custom"
-          text-field="name"
+          class="v-select-custom"
           :options="[
-          {
-            name: 'Status',
-            value: null
-          },
-          {
-            name: 'Activated',
-            value: 1
-          },
-          {
-            name: 'Deactivated',
-            value: 0
-          }]" />
+            { name: 'Status', value: null },
+            { name: 'Activated', value: 1 },
+            { name: 'Deactivated', value: 0 }
+                  ]"
+          label="name"
+          :reduce="option => option.value"
+          placeholder="Select Status">
+        </v-select>
+
       </b-col>
       <b-col cols="3" xl="2" v-if="!apiUsers">
         <p class="select-header"> {{ $t('users.list.select_role') }}</p>
-        <b-form-select
+        <v-select
           v-model="roleFilter"
-          value-field="id"
-          class="v-form-select-custom"
-          text-field="name"
-          :options="roleOptions"/>
+          class="v-select-custom"
+          :options="roleOptions"
+          label="name"
+          :reduce="option => option.id"
+          placeholder="Select Role">
+        </v-select>
       </b-col>
       <b-col cols="3" xl="2" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_country') }}</p>
-        <b-form-select
+        <v-select
           v-model="countryFilter"
-          class="v-form-select-custom"
-          value-field="code"
-          text-field="name"
-          :options="countryList"/>
+          class="v-select-custom"
+          :options="countryList"
+          label="name"
+          :reduce="option => option.id"
+          placeholder="Select Country">
+        </v-select>
       </b-col>
       <b-col cols="3" xl="2" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
-        <b-form-select
+        <v-select
           v-model="termsFilter"
-          class="v-form-select-custom"
-          value-field="version"
-          text-field="version"
-          :options="termsList"/>
+          class="v-select-custom"
+          :options="termsList"
+          label="name"
+          :reduce="option => option.id"
+          placeholder="Select Terms">
+        </v-select>
       </b-col>
       <b-col>
         <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
@@ -471,14 +472,6 @@ export default {
 }
 </script>
 <style scoped>
-  .v-form-select-custom {
-    background: #E9E9E9;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 8px;
-    font-size: 18px;
-
-  }
   .select-header {
     font-size: 1rem;
   }
