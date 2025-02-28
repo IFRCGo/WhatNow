@@ -155,7 +155,7 @@
               <b-col cols="6">
               </b-col>
               <b-col cols="6">
-                <b-button type="submit" size="lg" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
+                <b-button type="submit" class="float-right rtl-float-left mr-2 btn-outline-primary" @click="update = true">
                   <fa :icon="['fas', 'spinner']" spin v-show="updating"/>
                   {{ $t('common.save_changes') }}
                 </b-button>
