@@ -242,7 +242,7 @@
 
 <script>
 import swal from 'sweetalert2'
-import SelectSociety from '~/pages/content/selectSociety'
+import SelectSociety from '~/pages/content/simpleSocietyPicker'
 import SelectRegion from '~/pages/content/regionPicker'
 import WhatnowList from '~/pages/content/whatnowList'
 import PageBanner from '~/components/PageBanner'
