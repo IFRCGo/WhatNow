@@ -583,6 +583,7 @@
     "audit": "Edit history",
     "export": "Export",
     "bulk_upload": {
+      "empty_template": "Empty template",
       "bulk_upload": "Message File Upload",
       "template": "Template",
       "export_template": "Export Template",
