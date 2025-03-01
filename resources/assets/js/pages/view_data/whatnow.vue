@@ -4,7 +4,7 @@
       <b-col class="d-flex flex-column justify-content-center" sm="12" md="10">
         <h1 class="font-weight-bold whatnow-choose-header">{{ $t('view_data.which')}}</h1>
         <div>
-          <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></selectSociety>
+          <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true" :countryCode="countryCode"></selectSociety>
         </div>
       </b-col>
     </b-row>
@@ -17,7 +17,7 @@
 
     <b-row  v-if="hazardsList" class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
       <b-col cols="auto" class="d-flex align-items-center">
-        <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true"></selectSociety>
+        <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true" @optionUpdated="watchOptionUpdated"></selectSociety>
         <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
       </b-col>
       <b-col cols="auto" v-if="hazardsList" class="d-flex align-items-center">
@@ -145,7 +145,13 @@ export default {
           return flattened
         })
       }
-    }
+    },
+    watchOptionUpdated (val) {
+      console.log('watchOptionUpdated', val)
+      if (!val) {
+        this.$router.push({ path: '/data/whatnow' });
+      }
+    },
   },
   metaInfo () {
     return { title: this.$t('content.whatnow.whatnow') }

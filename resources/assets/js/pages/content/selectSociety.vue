@@ -40,7 +40,8 @@ export default {
       handler (val) {
         if (val) {
           this.setLocalStorage()
-        }
+        } 
+        this.$emit('optionUpdated', val)
       },
       deep: true
     }
