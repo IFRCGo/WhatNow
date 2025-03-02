@@ -11,16 +11,84 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-
+/**
+ * @OA\Tag(
+ *     name="EventTypes",
+ *     description="Operations about Event Types"
+ * )
+ */
 final class EventTypeController extends ApiController
 {
 
-
+    /**
+     * @OA\Get(
+     *     path="/event-types/",
+     *     tags={"EventTypes"},
+     *     summary="Get a list of event types",
+     *     description="Returns a list of all event types",
+     *     operationId="listEventTypes",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function list()
     {
         return EventTypeResource::collection(EventType::all());
     }
 
+    /**
+     * @OA\Post(
+     *     path="/event-types/",
+     *     tags={"EventTypes"},
+     *     summary="Create a new event type",
+     *     description="Creates a new event type with the provided name and icon",
+     *     operationId="createEventType",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="multipart/form-data",
+     *             @OA\Schema(
+     *                 required={"name", "icon"},
+     *                 @OA\Property(
+     *                     property="name",
+     *                     type="string",
+     *                     description="The name of the event type"
+     *                 ),
+     *                 @OA\Property(
+     *                     property="icon",
+     *                     type="string",
+     *                     format="binary",
+     *                     description="The icon file for the event type"
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     protected function create(EventTypeCreateRequest $request)
     {
         $name = $request->get('name');

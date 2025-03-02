@@ -10,6 +10,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * @OA\Tag(
+ *     name="Regions",
+ *     description="Operations about Regions"
+ * )
+ */
 final class RegionController extends ApiController
 {
     
@@ -23,6 +29,31 @@ final class RegionController extends ApiController
     }
 
 
+    /**
+     * @OA\Get(
+     *     path="/regions/{country_code}",
+     *     tags={"Regions"},
+     *     summary="Get all regions for an organisation",
+     *     description="Retrieves all regions associated with a given country code",
+     *     operationId="getAllRegionsForOrganisation",
+     *     @OA\Parameter(
+     *         name="country_code",
+     *         in="path",
+     *         required=true,
+     *         description="Country code for which the regions are retrieved",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function getAllForOrganisation($country_code)
     {
         $regions  = $this->client->getAllForOrganisation($country_code);
@@ -34,6 +65,38 @@ final class RegionController extends ApiController
         return new JsonResponse($regions, 200);
     }
 
+    /**
+     * @OA\Get(
+     *     path="/regions/{country_code}/{code}",
+     *     tags={"Regions"},
+     *     summary="Get a specific region by country code and region code",
+     *     description="Retrieves a specific region based on the provided country code and region code",
+     *     operationId="getRegionForCountryCode",
+     *     @OA\Parameter(
+     *         name="country_code",
+     *         in="path",
+     *         required=true,
+     *         description="Country code to filter the region",
+     *         @OA\Schema(type="string", example="USA")
+     *     ),
+     *     @OA\Parameter(
+     *         name="code",
+     *         in="path",
+     *         required=true,
+     *         description="Region code to filter the region",
+     *         @OA\Schema(type="string", example="NY")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function getForCountryCode($country_code, $code)
     {
         $regions = $this->client->getForCountryCode($country_code, $code);
@@ -45,6 +108,46 @@ final class RegionController extends ApiController
         return new JsonResponse($regions, 200);
     }
 
+    /**
+     * @OA\Post(
+     *     path="/regions",
+     *     tags={"Regions"},
+     *     summary="Create a new region",
+     *     description="Creates a new region with the provided details",
+     *     operationId="createRegion",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"countryCode", "title"},
+     *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
+     *             @OA\Property(property="title", type="string", description="Title of the region", example="New York"),
+     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the region", example="new-york"),
+     *             @OA\Property(
+     *                 property="translations",
+     *                 type="array",
+     *                 description="Array of translations",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(property="webUrl", type="string", format="url", nullable=true, description="Optional URL for additional information", example="https://example.com"),
+     *                     @OA\Property(property="lang", type="string", description="Language code (2-letter ISO format)", example="en"),
+     *                     @OA\Property(property="title", type="string", description="Title translation", example="Nueva York"),
+     *                     @OA\Property(property="description", type="string", description="Description translation", example="Región de Nueva York")
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function createRegion(Request $request)
     {
         try {
@@ -71,6 +174,53 @@ final class RegionController extends ApiController
         return new JsonResponse($region, 201);
     }
 
+    /**
+     * @OA\Put(
+     *     path="/regions/region/{regionId}",
+     *     tags={"Regions"},
+     *     summary="Update an existing region",
+     *     description="Updates a region with new data",
+     *     operationId="updateRegion",
+     *     @OA\Parameter(
+     *         name="regionId",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the region to update",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"countryCode", "title"},
+     *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
+     *             @OA\Property(property="title", type="string", description="Title of the region", example="New York"),
+     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the region", example="new-york"),
+     *             @OA\Property(
+     *                 property="translations",
+     *                 type="array",
+     *                 description="Array of translations",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(property="webUrl", type="string", format="url", nullable=true, description="Optional URL for additional information", example="https://example.com"),
+     *                     @OA\Property(property="lang", type="string", description="Language code (2-letter ISO format)", example="en"),
+     *                     @OA\Property(property="title", type="string", description="Title translation", example="Nueva York"),
+     *                     @OA\Property(property="description", type="string", description="Description translation", example="Región de Nueva York")
+     *                 )
+     *             )
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function updateRegion(Request $request, $regionId)
     {
         try {
@@ -97,6 +247,31 @@ final class RegionController extends ApiController
         return new JsonResponse($region, 202);
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/regions/region/{regionId}",
+     *     tags={"Regions"},
+     *     summary="Delete a region",
+     *     description="Deletes a region by its ID",
+     *     operationId="deleteRegion",
+     *     @OA\Parameter(
+     *         name="regionId",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the region to delete",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function deleteRegion( $regionId)
     {
         $this->client->deleteRegion($regionId);

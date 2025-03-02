@@ -11,7 +11,12 @@ use App\Repositories\TermsRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
-
+/**
+ * @OA\Tag(
+ *     name="Terms",
+ *     description="Operations about Terms"
+ * )
+ */
 final class TermsController extends ApiController
 {
     
@@ -27,13 +32,52 @@ final class TermsController extends ApiController
         $this->users = $users;
     }
 
-    
+    /**
+     * @OA\Get(
+     *     path="/terms/latest",
+     *     tags={"Terms"},
+     *     summary="Get the latest terms",
+     *     description="Returns the latest terms and conditions",
+     *     operationId="getLatestTerms",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function latest()
     {
         return TermsResource::make($this->terms->getLatest())->response();
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/terms",
+     *     tags={"Terms"},
+     *     summary="List all terms",
+     *     description="Retrieves a paginated list of all terms ordered by the latest version.",
+     *     operationId="listTerms",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function list()
     {
         $terms = $this->terms->getOrderedByLatest();
@@ -42,12 +86,57 @@ final class TermsController extends ApiController
     }
 
     
+    /**
+     * @OA\Get(
+     *     path="/terms/all",
+     *     tags={"Terms"},
+     *     summary="List all terms",
+     *     description="Retrieves a list of all terms",
+     *     operationId="listAllTerms",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function listAll()
     {
         return TermsResource::collection($this->terms->getOrderedByLatest()->get());
     }
 
     
+    /**
+     * @OA\Post(
+     *     path="/terms",
+     *     tags={"Terms"},
+     *     summary="Create new terms",
+     *     description="Creates a new version of terms and conditions",
+     *     operationId="createTerms",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(
+     *             type="object",
+     *             required={"version", "content"},
+     *             @OA\Property(property="version", type="number", description="Version number of the terms", example=1.0),
+     *             @OA\Property(property="content", type="string", maxLength=65535, description="Content of the terms")
+     *         )
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
     public function create(Request $request): JsonResponse
     {
         $this->authorize('update', Terms::class);

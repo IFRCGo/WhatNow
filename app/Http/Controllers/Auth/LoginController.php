@@ -9,7 +9,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Validation\ValidationException;
-
+/**
+ * @OA\Tag(
+ *     name="Auth",
+ *     description="Operations about authentication"
+ * )
+ */
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -19,6 +24,33 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    /**
+     * @OA\Post(
+     *     path="/login",
+     *     tags={"Auth"},
+     *     summary="Login to get JWT token",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 type="object",
+     *                 required={"email", "password"},
+     *                 @OA\Property(property="email", type="string", example="email@example.com"),
+     *                 @OA\Property(property="password", type="string", example="password123")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successfully authenticated",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="token", type="string", example="your-jwt-token")
+     *         )
+     *     )
+     * )
+     */
+    //login from AuthenticatesUsers trait
     
     protected function attemptLogin(Request $request)
     {

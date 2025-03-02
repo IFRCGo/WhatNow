@@ -13,6 +13,12 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * @OA\Tag(
+ *     name="Organisation",
+ *     description="Operations about Organisations"
+ * )
+ */
 final class OrganisationController extends ApiController
 {
     
@@ -24,7 +30,35 @@ final class OrganisationController extends ApiController
         $this->client = $client->whatnow();
     }
 
-    
+    /**
+     * @OA\Get(
+     *     path="/organisations/{countryCode}",
+     *     tags={"Organisation"},
+     *     summary="Get organisations by country code",
+     *     description="Returns a list of organisations filtered by the specified country code",
+     *     operationId="getOrganisationsByCountryCode",
+     *     @OA\Parameter(
+     *         name="countryCode",
+     *         in="path",
+     *         description="The country code to filter organisations by",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function get(string $countryCode)
     {
         try {
@@ -38,7 +72,28 @@ final class OrganisationController extends ApiController
         }
     }
 
-    
+    /**
+     * @OA\Get(
+     *     path="/organisations",
+     *     tags={"Organisation"},
+     *     summary="List all organisations",
+     *     description="Returns a list of all organisations",
+     *     operationId="listOrganisations",
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(
+     *                 property="data",
+     *                 type="array",
+     *                 @OA\Items(type="object")
+     *             )
+     *         )
+     *     )
+     * )
+     */
     public function list()
     {
         try {
