@@ -114,7 +114,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $sheet->getStyle($row3Range)->applyFromArray($headerStyle);
 
                 $protection = $sheet->getProtection();
-                $protection->setSheet(true);
+                $protection->setSheet(false);
                 $base = new Base64Encoder();
                 $protection->setPassword($base->encode('fsjsD-1FfJTZvs2X'));
 

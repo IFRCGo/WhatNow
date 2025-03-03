@@ -244,7 +244,7 @@ class RcnImporter
         $stages = [];
         foreach ($record['urgencyLevels'] as $stage) { // Parsing stages as the Instruction model requires
                 foreach ($stage['safetyMessages'] as $safetyMessage) {
-                    $stages[strtolower(str_replace("_",'',$stage['urgencyLevel']))][] =
+                    $stages[strtolower(str_replace(" ",'_',$stage['urgencyLevel']))][] =
                         [
                             'title' => $safetyMessage['safetyMessage'],
                             'content' => $safetyMessage['supportingMessages'],
