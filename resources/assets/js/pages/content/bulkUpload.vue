@@ -319,8 +319,8 @@ export default {
       this.uploadResults = null
       this.importForm.file = null
       this.importForm.warnings = true
-      this.importForm.overwrite.value = false
-      this.importForm.overwrite.text = this.$t('content.bulk_upload.overwriting.off')
+      this.importForm.overwrite.value = true
+      this.importForm.overwrite.text = this.$t('content.bulk_upload.overwriting.on')
       this.clearFiles()
     },
     downloadTemplate (extension = 'xlsx') {
