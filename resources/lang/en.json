@@ -82,6 +82,7 @@
     "app_detail": "App Detail",
     "all_terms": "All Terms and Conditions"
   },
+
   "documentation": {
     "heading": "Red Cross API Documentation",
     "sidebar": {
@@ -99,12 +100,12 @@
         "body": "The Red Cross REST API enables developers to access to emergency information and resources issued by international Red Cross Societies.",
         "heading": "Introduction",
         "support_card": {
-          "body": "For questions about the Red Cross API please contact dev@3sidedcube.com",
+          "body": "If you have any questions or need support, please contact us at hello@ifrc.org.",
           "title": "Support & Questions"
         }
       },
       "two": {
-        "body": "All URLs in the API v1.0 documentation have the following base URL:",
+        "body": "All API endpoints are prefixed with this base URL.",
         "heading": "Base URL"
       },
       "three": {
@@ -637,6 +638,7 @@
   "api_stats": {
     "page_title": "API Stats",
     "download_data": "Download Data",
+    "clear_filters": "Clear Filters",
     "start_date": "Start Date",
     "end_date": "End Date",
     "table_select": {

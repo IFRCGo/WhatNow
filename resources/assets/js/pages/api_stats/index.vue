@@ -71,9 +71,14 @@
         <b-form-datepicker id="datepicker-max" v-model="toDate" :disabled="!fromDate" :min="fromDate" :max="today" class="mb-2"></b-form-datepicker>
       </b-col>
       <b-col class="ml-auto" cols="12" sm="2">
-        <b-button size="sm" class="float-right btn-outline-primary" @click="downloadStatsCSV">
-          {{ $t('api_stats.download_data') }}
-        </b-button>
+        <div class="d-flex justify-content-end">
+          <b-button size="sm" class="btn-outline-primary mr-2 text-nowrap" @click="downloadStatsCSV">
+            {{ $t('api_stats.download_data') }}
+          </b-button>
+          <b-button size="sm" class="btn-outline-primary text-nowrap" @click="clearAllFilters">
+            {{ $t('api_stats.clear_filters') }}
+          </b-button>
+        </div>
       </b-col>
     </b-row>
 
@@ -123,6 +128,16 @@ export default {
     selectedLanguage: "fetchCumulativeUsageStats"
   },
   methods: {
+    clearAllFilters() {
+      this.selectedSoc = null;
+      this.selectedRegion = null;
+      this.selectedDate = null;
+      this.selectedLanguage = null;
+      this.selectedHazard = null;
+      this.fromDate = formatDate(new Date((new Date()).getFullYear(), (new Date()).getMonth(), 1));
+      this.toDate = formatDate(new Date());
+      this.fetchCumulativeUsageStats();
+    },
     fetchData () {
       this.fetchOrganisations()
       this.fetchAllHazardTypes()
