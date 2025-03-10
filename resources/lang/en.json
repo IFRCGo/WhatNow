@@ -638,6 +638,7 @@
   "api_stats": {
     "page_title": "API Stats",
     "download_data": "Download Data",
+    "clear_filters": "Clear Filters",
     "start_date": "Start Date",
     "end_date": "End Date",
     "table_select": {
