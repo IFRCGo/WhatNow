@@ -21,9 +21,15 @@
         <section>
           <h2 class="steps" id="introduction">{{ $t('documentation.steps.one.heading') }}</h2>
           <p class="lead">{{ $t('documentation.steps.one.body') }}</p>
-          <b-card :title="$t('documentation.steps.one.support_card.title')" bg-variant="light">
-            <p class="card-text">{{ $t('documentation.steps.one.support_card.body') }}</p>
+          <b-card
+            :title="$t('documentation.steps.one.support_card.title')"
+            class="bg-grey d-inline-block w-auto p-2"
+          >
+            <p class="card-text">
+              {{ $t('documentation.steps.one.support_card.body') }}
+            </p>
           </b-card>
+          <hr>
         </section>
 
         <!-- Base URL Section -->
@@ -36,6 +42,7 @@
           </b-card>
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
+
         <!-- Authentication Section -->
         <section>
           <h2 class="steps" id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
@@ -107,7 +114,9 @@
             <li>recover</li>
           </ul>
           <p><strong>{{ $t('documentation.steps.eight.endpoint') }}</strong></p>
-          <pre>GET /org/{country_code}/whatnow?eventType={eventType}</pre>
+          <b-card class="bg-grey d-inline-block w-auto p-2">
+            <pre>GET /org/{country_code}/whatnow?eventType={eventType}</pre>
+          </b-card>
 
           <!-- Query Parameters Table -->
           <p><strong>{{ $t('documentation.steps.eight.query_params') }}</strong></p>
@@ -138,16 +147,16 @@
 
           <!-- Example Response -->
           <p><strong>{{ $t('documentation.steps.eight.example_response') }}</strong></p>
-          <b-button @click="toggleResponse" variant="outline-primary mb-3">
+          <button @click="toggleResponse" class="show-btn mb-3">
             {{ showResponse ? 'Hide Response' : 'Show Response' }}
-          </b-button>
+          </button>
           <b-collapse :visible="showResponse">
             <pre><code class="language-json">{{ exampleResponse }}</code></pre>
           </b-collapse>
 
           <!-- Response Properties -->
           <p><strong>{{ $t('documentation.steps.eight.response_properties') }}</strong></p>
-          <b-card bg-variant="light">
+          <b-card class="bg-grey d-inline-block w-auto p-2">
             <i18n path="documentation.steps.eight.noteDetails" tag="p" class="card-text">
               <strong>{{ $t('documentation.steps.eight.note') }}</strong>
               <code>data</code>
@@ -430,4 +439,21 @@ body {
   line-height: 34px;
   font: #000000;
 }
+
+.card {
+  font-size: 1rem;
+}
+
+.show-btn {
+  background: transparent;
+  border: none;
+  color: #F6333F;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+code {
+  color: #F6333F;
+}
+
 </style>
