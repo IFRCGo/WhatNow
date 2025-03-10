@@ -24,18 +24,18 @@
           <b-card :title="$t('documentation.steps.one.support_card.title')" bg-variant="light">
             <p class="card-text">{{ $t('documentation.steps.one.support_card.body') }}</p>
           </b-card>
-          <hr>
         </section>
 
         <!-- Base URL Section -->
         <section>
           <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
           <b-card class="bg-light mb-4">
-            <pre>https://api.preparecenter.org/v1</pre>
+            <p><a href="https://api.preparecenter.org/v1" target="_blank">https://api.preparecenter.org/v1</a></p>
+            <p><a href="https://api.whatnow.jazusoft.com/api/documentation" target="_blank">https://api.whatnow.jazusoft.com/api/documentation - Swagger of API</a></p>
+            <p><a href="https://whatnow.jazusoft.com/admin/documentation" target="_blank">https://whatnow.jazusoft.com/admin/documentation - Swagger Admin</a></p>
           </b-card>
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
-
         <!-- Authentication Section -->
         <section>
           <h2 class="steps" id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
