@@ -12,6 +12,9 @@ use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
 use PhpOffice\PhpSpreadsheet\Style\Alignment;
 use PhpOffice\PhpSpreadsheet\Style\Protection;
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+
 class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
 {
     /**
@@ -37,6 +40,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
             }, $eventTypes)) . '"';
         $this->region = $region;
         $this->data = $data;
+        if($maxSupportingMessages <= 0) $maxSupportingMessages = 3;
         for($i = 0; $i< $maxSupportingMessages; $i++){
             $this->headings[] = 'Supporting Message ' . ($i + 1);
         }
@@ -67,26 +71,75 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
         return [
             AfterSheet::class => function (AfterSheet $event) {
                 $sheet = $event->sheet->getDelegate();
+                $sheet->setTitle("Bulk Upload Template");
 
-                $validationUrgency = $sheet->getCell('E4')->getDataValidation();
+                $guideSheet = $sheet->getParent()->createSheet();
+                $guideSheet->setTitle("How template works");
+                $drawing = new Drawing();
+                $drawing->setName('How Template Works');
+                $drawing->setDescription('How Template Works');
+                $drawing->setPath(public_path('images\how_the_template_works.png'));
+                $drawing->setHeight(1080);
+                $drawing->setCoordinates('A1');
+                $drawing->setWorksheet($guideSheet);
+
+                $hiddenSheet = $sheet->getParent()->createSheet();
+                $hiddenSheet->setTitle('DropdownHazardData');
+
+
+                $protection = $sheet->getProtection();
+                $protection->setSheet(false);
+
+                $urgencyLevelsArray = array_map(function ($item) {
+                    return str_replace('"', '', trim($item));
+                }, explode(',', $this->urgencyLevels));
+
+                $eventTypesArray = array_map(function ($item) {
+                    return str_replace('"', '', trim($item));
+                }, explode(',', $this->eventTypesDropdown));
+
+                if (empty($urgencyLevelsArray) || empty($eventTypesArray)) {
+                    throw new \Exception('Dropdown lists cannot be empty.');
+                }
+
+                $row = 1;
+                foreach ($eventTypesArray as $type) {
+                    $hiddenSheet->setCellValue("A{$row}", $type);
+                    $row++;
+                }
+                $eventRange = "DropdownHazardData!A1:A" . ($row - 1);
+                $urgencyFormula = '"' . implode(',', $urgencyLevelsArray) . '"';
+
+                $validationUrgency = new DataValidation();
                 $validationUrgency->setType(DataValidation::TYPE_LIST);
                 $validationUrgency->setErrorStyle(DataValidation::STYLE_STOP);
-                $validationUrgency->setAllowBlank(false);
+                $validationUrgency->setAllowBlank(true);
                 $validationUrgency->setShowInputMessage(true);
                 $validationUrgency->setShowErrorMessage(true);
                 $validationUrgency->setShowDropDown(true);
-                $validationUrgency->setFormula1($this->urgencyLevels);
-                $sheet->getCell('E4')->setDataValidation(clone $validationUrgency);
+                $validationUrgency->setErrorTitle('Select a valid urgency level');
+                $validationUrgency->setError('Value is not in list.');
+                $validationUrgency->setPromptTitle('Pick from list');
+                $validationUrgency->setPrompt('Please pick a Urgency Level from the drop-down list.');
+                $validationUrgency->setFormula1($urgencyFormula);
 
-                $validationEvent = $sheet->getCell('D4')->getDataValidation();
+                $validationEvent = new DataValidation();
                 $validationEvent->setType(DataValidation::TYPE_LIST);
                 $validationEvent->setErrorStyle(DataValidation::STYLE_STOP);
-                $validationEvent->setAllowBlank(false);
+                $validationEvent->setAllowBlank(true);
                 $validationEvent->setShowInputMessage(true);
                 $validationEvent->setShowErrorMessage(true);
                 $validationEvent->setShowDropDown(true);
-                $validationEvent->setFormula1($this->eventTypesDropdown);
-                $sheet->getCell('D4')->setDataValidation(clone $validationEvent);
+                $validationEvent->setErrorTitle('Select a valid hazard level');
+                $validationEvent->setError('Value is not in list.');
+                $validationEvent->setPromptTitle('Pick from list');
+                $validationEvent->setPrompt('Please pick a Hazard from the drop-down list.');
+                $validationEvent->setFormula1($eventRange);
+
+                for ($i = 4; $i <= 100; $i++) {
+                    $event->sheet->getCell("E{$i}")->setDataValidation(clone $validationUrgency);
+                    $event->sheet->getCell("D{$i}")->setDataValidation(clone $validationEvent);
+                }
 
 
                 $maxColumnRow1 = Coordinate::stringFromColumnIndex(2);
@@ -110,20 +163,36 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                     ],
                 ];
 
+
                 $sheet->getStyle($row1Range)->applyFromArray($headerStyle);
                 $sheet->getStyle($row3Range)->applyFromArray($headerStyle);
 
-                $protection = $sheet->getProtection();
-                $protection->setSheet(false);
+                $sheet->getStyle('A1:Z100')->getProtection()->setLocked(Protection::PROTECTION_UNPROTECTED);
+
+                $sheet->getStyle('A1')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('B1')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('A2')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('B2')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('A3')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('B3')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('C3')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('D3')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getStyle('E3')->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
+                $sheet->getProtection()->setSort(true);
+                $sheet->getProtection()->setInsertRows(true);
+                $sheet->getProtection()->setInsertColumns(true);
+                $sheet->getProtection()->setDeleteRows(true);
+                $sheet->getProtection()->setDeleteColumns(true);
+                $sheet->getProtection()->setFormatColumns(false);
+                $sheet->getProtection()->setFormatRows(false);
+                $sheet->getProtection()->setSheet(true);
                 $base = new Base64Encoder();
                 $protection->setPassword($base->encode('fsjsD-1FfJTZvs2X'));
 
-                $sheet->getStyle('A1:Z100')->getProtection()->setLocked(Protection::PROTECTION_UNPROTECTED);
+                $hiddenSheet->setSheetState(Worksheet::SHEETSTATE_HIDDEN);
 
-                $cellsToLock = ['A1', 'B1', 'A2', 'B2', 'A3:F3'];
-                foreach ($cellsToLock as $cell) {
-                    $sheet->getStyle($cell)->getProtection()->setLocked(Protection::PROTECTION_PROTECTED);
-                }
+
+
             }
         ];
     }
