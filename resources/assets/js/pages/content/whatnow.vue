@@ -18,7 +18,7 @@
       <b-col>
         <b-nav tabs class="whatnow-message-editor-tabs">
           <b-nav-item v-for="lang in currentLanguages" :key="lang" class="wn-item" @click="selectedLanguage = lang"
-            :active="selectedLanguage === lang">
+            :active="selectedLanguage === lang" :disabled="addingNewLanguage && selectedLanguage !== lang" :class="{ 'disabled-class': addingNewLanguage && selectedLanguage !== lang }">
             <div class="nav-link-wrapper text-center h-100" v-if="lang">
               {{ lang | uppercase }} -
               <small v-if="languages[lang]">{{ truncate(languages[lang].name, 8) }}</small>
@@ -26,7 +26,7 @@
           </b-nav-item>
           <b-nav-item class="add-lang-btn ml-2" v-b-tooltip.hover
             :title="selectingLanguage ? null : $t('content.whatnow.add_language')" @click="selectingLanguage = true"
-            v-if="can(user, permissions.CONTENT_CREATE)">
+            v-if="can(user, permissions.CONTENT_CREATE)" :disabled="addingNewLanguage" :class="{ 'disabled-class': addingNewLanguage }">
             <fa :icon="['fas', 'plus']" />
           </b-nav-item>
         </b-nav>
@@ -164,7 +164,7 @@
     <b-row>
       <b-col>
         <whatnow-list :selectedSoc="selectedSoc" :selectedRegion="selectedRegion" :selectedLanguage="selectedLanguage"
-          v-if="selectedLanguage && selectedSoc"></whatnow-list>
+          v-if="selectedLanguage && selectedSoc" :disabled="addingNewLanguage"></whatnow-list>
       </b-col>
     </b-row>
 
@@ -189,7 +189,7 @@
         <p v-if="attributionTranslation">
           {{ attributionTranslation.name }} - {{ selectedLanguage | uppercase }}
         </p>
-        <b-card class="whatnow-org-publish-modal">
+        <b-card class="whatnow-org-publish-modal" v-if="attributionTranslation">
           <div class="whatnow-publish-header">
             <h4>{{ attributionTranslation.publish_summary_title }}</h4>
           </div>
@@ -314,7 +314,8 @@ export default {
       }
     },
     selectedSoc() {
-      if (this.countryCode !== this.selectedSoc.countryCode) {
+      console.log('selectedSoc', this.selectedSoc)
+      if (this.countryCode !== this.selectedSoc.countryCode && this.selectedSoc) {
         this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title } })
       }
     },
@@ -400,7 +401,9 @@ export default {
       }
     },
     setLocalStorage() {
-      localStorage.setItem('lang', this.selectedLanguage)
+      if (!this.addingNewLanguage) {
+        localStorage.setItem('lang', this.selectedLanguage)
+      }
     },
     attributionExists(key) {
       const attributionTranslation = this.attribution.translations.find(translation => translation.languageCode === this.selectedLanguage)
@@ -461,12 +464,10 @@ export default {
         this.previousLanguage = this.selectedLanguage
         this.selectedLanguage = this.languageToAdd
         this.addingNewLanguage = true
+        this.setCurrentLanguages([...this.currentLanguages, this.languageToAdd])
         this.showEditAttribution = true
         this.selectingLanguage = false
       }
-
-      this.currentLanguages.push(this.languageToAdd)
-      this.selectingLanguage = false
     },
     async publishAttribution(fireEvent = false) {
       if (fireEvent) {
@@ -838,6 +839,11 @@ export default {
 .whatnow-message-editor-tabs.nav-tabs {
   border-bottom: none;
   position: relative;
+
+  .disabled-class {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
   &::after {
     content: '';

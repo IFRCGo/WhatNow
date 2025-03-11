@@ -77,6 +77,11 @@
   }
 }
 
+.btn-outline-primary.disabled {
+  background-color: $bg-disabled;
+  color: $bg-primary;
+}
+
 .show > .btn-outline-primary.dropdown-toggle {
   background-color: $bg-primary;
   color: $white;
