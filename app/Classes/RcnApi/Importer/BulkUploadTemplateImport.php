@@ -7,7 +7,9 @@ use Maatwebsite\Excel\Concerns\ToCollection;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportException;
 class BulkUploadTemplateImport implements ToCollection
 {
+
     private $data = [];
+    private $dataPageProcessed = false;
 
     /**
      * Process the imported data.
@@ -18,6 +20,8 @@ class BulkUploadTemplateImport implements ToCollection
      */
     public function collection(Collection $rows): array
     {
+        if($this->dataPageProcessed) return [];
+
         $processedData = [
             'nationalSociety' => null,
             'region' => null,
@@ -27,6 +31,7 @@ class BulkUploadTemplateImport implements ToCollection
         $currentHazard = null;
         $currentUrgencyLevel = null;
         $firstRow = false;
+
         foreach ($rows as $index => $row) {
             if (!$firstRow || $index === 2) {
                 $firstRow = true;
@@ -36,6 +41,7 @@ class BulkUploadTemplateImport implements ToCollection
                 if(!$row[0]){
                     throw new RcnImportException("Missing national society");
                 }
+                $this->dataPageProcessed  = true;
                 $processedData['nationalSociety'] = $row[0];
                 $processedData['region'] = $row[1] ?? 'National';
                 continue;
