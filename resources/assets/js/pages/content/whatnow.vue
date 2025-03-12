@@ -314,7 +314,6 @@ export default {
       }
     },
     selectedSoc() {
-      console.log('selectedSoc', this.selectedSoc)
       if (this.countryCode !== this.selectedSoc.countryCode && this.selectedSoc) {
         this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title } })
       }
