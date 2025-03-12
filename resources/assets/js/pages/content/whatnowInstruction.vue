@@ -188,12 +188,12 @@ export default {
     },
     deleteSupportingMessage(key, messageKey) {
       const currentMessage = this.keyMessages.find(message => message.key === messageKey);
-      currentMessage.supportingMessages = currentMessage.supportingMessages.filter(supportingMessage => supportingMessage.key !== key);
-      this.keyMessages = [
-        ...this.keyMessages.filter(message => message.key !== messageKey),
-        currentMessage
-      ]
-      this.instructionChange();
+      
+      if (currentMessage) {
+        currentMessage.supportingMessages = currentMessage.supportingMessages.filter(supportingMessage => supportingMessage.key !== key);
+        this.$set(this.keyMessages, this.keyMessages.indexOf(currentMessage), currentMessage);
+        this.instructionChange();
+      }
     },
     openKeyMessagePreviewer() {
       this.$refs.keyMessagePreviewer.show()
