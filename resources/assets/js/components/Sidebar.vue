@@ -39,7 +39,7 @@
       </b-collapse>
 
       <!-- API usage and management -->
-      <b-nav-item class="pl-1 w-100 nav-toggle" v-if="can(user, permissions.USERS_LIST)" v-b-toggle.collapse3>
+      <b-nav-item class="pl-1 w-100 nav-toggle" v-if="can(user, permissions.USERS_LIST) || can(user, permissions.API_STATS_VIEW)" v-b-toggle.collapse3>
         <div class="d-flex align-items-center">
           <div class="sidebar__icon mr-1 ml-1">
             <svg fill="white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g><path d="M484.6,2H27.4C13.4,2,2,13.4,2,27.4V383c0,14,11.4,25.4,25.4,25.4h116.8c5.6,0,10.2,4.5,10.2,10.2V449   c0,5.6-4.5,10.2-10.2,10.2h-34.4c-3.8,0-7.4,2.2-9.1,5.6l-15.2,30.5c-3.4,6.8,1.5,14.7,9.1,14.7h322.7c7.6,0,12.5-7.9,9.1-14.7   l-15.2-30.5c-1.7-3.4-5.2-5.6-9.1-5.6h-34.4c-5.6,0-10.2-4.5-10.2-10.2v-30.5c0-5.6,4.5-10.2,10.2-10.2h116.8   c14,0,25.4-11.4,25.4-25.4V27.4C510,13.4,498.6,2,484.6,2z M459.2,322c0,5.6-4.5,10.2-10.2,10.2H63c-5.6,0-10.2-4.5-10.2-10.2V63   c0-5.6,4.5-10.2,10.2-10.2H449c5.6,0,10.2,4.5,10.2,10.2V322z"></path><path d="M169.6,205.2h-30.5c-5.6,0-10.2,4.5-10.2,10.2v55.9c0,5.6,4.5,10.2,10.2,10.2h30.5c5.6,0,10.2-4.5,10.2-10.2v-55.9   C179.8,209.7,175.3,205.2,169.6,205.2z"></path><path d="M271.2,154.4h-30.5c-5.6,0-10.2,4.5-10.2,10.2v106.7c0,5.6,4.5,10.2,10.2,10.2h30.5c5.6,0,10.2-4.5,10.2-10.2V164.6   C281.4,158.9,276.9,154.4,271.2,154.4z"></path><path d="M372.8,103.6h-30.5c-5.6,0-10.2,4.5-10.2,10.2v157.5c0,5.6,4.5,10.2,10.2,10.2h30.5c5.6,0,10.2-4.5,10.2-10.2V113.8   C383,108.1,378.5,103.6,372.8,103.6z"></path></g></svg>
@@ -50,7 +50,7 @@
         </div>
       </b-nav-item>
       <b-collapse id="collapse3" visible accordion="my-accordion" role="tabpanel">
-        <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.USERS_LIST)" :to="{ name: 'api-usage.api-stats', params: {} }" exact-active-class>{{ $t('sidebar.api_stats') }}</b-nav-item>
+        <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.API_STATS_VIEW)" :to="{ name: 'api-usage.api-stats', params: {} }" exact-active-class>{{ $t('sidebar.api_stats') }}</b-nav-item>
         <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.USERS_LIST)" :to="{ name: 'api-usage.api-users', params: {} }" exact-active-class>{{ $t('sidebar.api_users') }}</b-nav-item>
         <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.TERMS_UPDATE)" :to="{ name: 'api-usage.terms-conditions', params: {} }" exact-active-class>{{ $t('sidebar.terms_conditions') }}</b-nav-item>
       </b-collapse>

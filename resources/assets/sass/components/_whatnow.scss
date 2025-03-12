@@ -36,7 +36,7 @@
   .vs__search {
     color: #495057;
     line-height: 1.42;
-    font-size: 1em;
+    font-size: 12px;
     font-weight: 400;
   }
 
@@ -201,4 +201,14 @@
 .ns-logo {
   border-radius: em(8.4);
   border: solid 4px rgba(109, 110, 112, 0.3);
+}
+
+.v-select-custom {
+  .vs__search {
+    font-size: 12px;
+
+    &:focus {
+      font-size: 12px;
+    }
+  }
 }

@@ -7,6 +7,7 @@
             size="sm"
             variant="outline-primary"
             v-if="user && can(user, permissions.CONTENT_CREATE) && selectedSoc && !isPromo"
+            :disabled="disabled"
             :to="{ name: 'content.create', params: { organisation: selectedSoc.countryCode, langCode: this.selectedLanguage, regionSlug: this.selectedRegion?.title } }">
             {{ $t('content.message_editor.create_btn') }}
           </b-button>
@@ -44,7 +45,9 @@
             :isPromo="isPromo"
             v-on:languageChange="languageChange"
             :regionSlug="selectedRegion?.title"
-            :selectedSoc="selectedSoc">
+            :selectedSoc="selectedSoc"
+            :disabled="disabled"
+            >
           </whatnow-content-item>
           <whatnow-content-item
             v-for="content in uncreatedTranslations"
@@ -56,7 +59,9 @@
             v-on:languageChange="languageChange"
             :regionSlug="selectedRegion?.title"
             :forceCreate="true"
-            :selectedSoc="selectedSoc">
+            :selectedSoc="selectedSoc"
+            :disabled="disabled"
+            >
           </whatnow-content-item>
         </transition-group>
 
@@ -93,7 +98,7 @@ import * as permissionsList from '../../store/permissions'
 import Spooky from '~/components/global/Spooky'
 
 export default {
-  props: ['selectedSoc', 'selectedLanguage', 'isPromo', 'selectedHazard', 'selectedRegion'],
+  props: ['selectedSoc', 'selectedLanguage', 'isPromo', 'selectedHazard', 'selectedRegion', 'disabled'],
   components: {
     Spooky,
     WhatnowContentItem
