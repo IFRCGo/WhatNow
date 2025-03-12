@@ -78,7 +78,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $drawing = new Drawing();
                 $drawing->setName('How Template Works');
                 $drawing->setDescription('How Template Works');
-                $drawing->setPath(public_path('images\how_the_template_works.png'));
+                $drawing->setPath(base_path('resources\assets\img\how_the_template_works.png'));
                 $drawing->setHeight(1080);
                 $drawing->setCoordinates('A1');
                 $drawing->setWorksheet($guideSheet);
