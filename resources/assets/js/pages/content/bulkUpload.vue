@@ -182,7 +182,7 @@ import PageBanner from '~/components/PageBanner'
 import ImportChangesList from '~/components/ImportChanges/ImportChangesList'
 import * as permissionsList from '../../store/permissions'
 import pdfFile from '../../../pdf/what-now-csv-guide.pdf'
-
+import swal from 'sweetalert2'
 export default {
   components: {
     SelectSociety,
@@ -277,6 +277,7 @@ export default {
     },
 
     async uploadFile (evt) {
+
       this.uploadWarning = null
       this.uploadError = null
       this.isUploading = true
@@ -297,6 +298,12 @@ export default {
               this.uploadWarning = this.$t('content.bulk_upload.errors.warning_update_will_overwrite')
               break
             case 400:
+              swal({
+                icon: 'error',
+                type: 'error',
+                title: 'Message File Upload error',
+                text: error.response.data.message || 'An error occurred'
+              })
               if (error.response.data.errorCode !== undefined) {
                 this.uploadError = this.$t('content.bulk_upload.errors.bad_request_error_codes.' + error.response.data.errorCode)
               } else {

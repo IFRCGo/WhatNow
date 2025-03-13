@@ -39,7 +39,7 @@ class BulkUploadTemplateImport implements ToCollection
             };
             if ($index === 1) {
                 if(!$row[0]){
-                    throw new RcnImportException("Missing national society");
+                    throw new RcnImportException("National society is missing. Please provide the required information and try again.",400);
                 }
                 $this->dataPageProcessed  = true;
                 $processedData['nationalSociety'] = $row[0];
@@ -49,7 +49,7 @@ class BulkUploadTemplateImport implements ToCollection
             // Handle hazards and messages
             if (!empty($row[3])) {
                 if(!$row[0] || !$row[1]){
-                    throw new RcnImportException("Title, description are missing or invalid");
+                    throw new RcnImportException("Title and/or description are missing or invalid. Please verify the information and try again",400);
                 }
                 $currentHazard = [
                     'title' => $row[0],
