@@ -19,7 +19,7 @@
               <p class="bottom-head-text">
                 {{ $t('landing.head_bottom_3') }}
               </p>
-              <b-button class="btn-primary mt-4" @click="$router.push('/register')">
+              <b-button class="btn-primary s-up-btn mt-4" @click="$router.push('/register')">
                 {{ $t('landing.signup') }}
               </b-button>
             </div>
@@ -250,10 +250,10 @@
             </b-row>
           </div>
           <div class="btns-container">
-            <b-button class="btn-primary mr-2">
+            <b-button class="btn-primary mr-2"  @click="goToLink('https://preparecenter.org/activity/whatnow-service/')">
               {{ $t('landing.learn_more') }}
             </b-button>
-            <b-button class="btn-primary ml-2">
+            <b-button class="btn-primary ml-2" @click="goToLink('https://www.youtube.com/watch?v=Tc0P1kX5xJA&embeds_referring_euri=https%3A%2F%2Fpreparecenter.org%2F')">
               {{ $t('landing.watch_video') }}
             </b-button>
           </div>
@@ -342,6 +342,19 @@
   </div>
 </template>
 <script>
+export default {
+  props: {
+    link: {
+      type: String,
+      required: true
+    }
+  },
+  methods: {
+    goToLink (url) {
+      window.open(url, '_blank')
+    }
+  }
+};
 </script>
 <style scoped>
 .top-head {
@@ -502,6 +515,10 @@
   border-radius: 100px;
   margin-right: 3rem;
   position: absolute;
+}
+
+.s-up-btn {
+  font-size: 1.3rem;
 }
 
 
