@@ -620,9 +620,9 @@ export default {
 }
 
 .btn-bottom {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-  font-size: 3rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
   border-radius: 50px;
 }
 
