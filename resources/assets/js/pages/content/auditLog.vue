@@ -56,7 +56,6 @@
                  :perPage="audits.meta.per_page"
                  :show-empty="false"
                  no-local-sorting
-                 :sort-by.sync="orderBy"
                  :sort-desc.sync="sortDesc"
                  @sort-changed="onSortChanged">
           <template #cell(user)="data">
@@ -135,15 +134,14 @@ import * as permissionsList from '../../store/permissions'
 import Avatar from 'vue-avatar'
 import SelectSociety from '~/pages/content/selectSociety'
 import SelectHazardType from '~/pages/content/simpleHazardTypePicker'
-const fetchHandler = {
-  handler (val, oldVal) {
-    if (val !== oldVal) {
-      this.currentPage = 1
-      this.fetchAudits()
-    }
-  },
-  deep: true
-}
+import debounce from 'lodash/debounce'
+
+const fetchHandler = debounce(function(val, oldVal) {
+  if (val !== oldVal) {
+    this.currentPage = 1;
+    this.fetchAudits();
+  }
+}, 300);
 
 export default {
   components: {
@@ -158,11 +156,11 @@ export default {
     return {
       permissions: permissionsList,
       fields: [
-        { key: 'user', sortable: true, tdClass: 'align-middle' },
-        { key: 'country_code', sortable: true, label: this.$t('content.audit_log.soc_label') },
-        { key: 'language_code', sortable: true },
-        { key: 'content', sortable: true },
-        { key: 'action', sortable: true }
+        { key: 'user', tdClass: 'align-middle' },
+        { key: 'country_code', label: this.$t('content.audit_log.soc_label') },
+        { key: 'language_code' },
+        { key: 'content' },
+        { key: 'action', sortable: true, sortBy: 'created_at' }
 
       ],
       currentPage: 1,
@@ -192,10 +190,10 @@ export default {
     orderBy: fetchHandler,
     sortDesc: fetchHandler,
     selectedSoc: {
-      handler (val, oldVal) {
-        this.setLocalStorage()
-        this.fetchAudits()
-      },
+      handler: debounce(function(val, oldVal) {
+        this.setLocalStorage();
+        this.fetchAudits();
+      }, 300),
       deep: true
     }
   },
@@ -225,8 +223,9 @@ export default {
       const filters = {
         content: this.hazardTypeFilter,
         country_code: this.selectedSoc ? this.selectedSoc.countryCode : null,
-        language_code: this.languageFilter
+        language_code: this.languageFilter ? this.languageFilter.value : null
       }
+
       const params = {
         page: this.currentPage,
         filters,
@@ -266,13 +265,11 @@ export default {
     },
     onSortChanged(ctx) {
       if (ctx.sortBy === 'action') {
-        this.orderBy = 'created_at'
-        this.sortDesc = ctx.sortDesc
+        this.orderBy = 'created_at';
       } else {
-        this.orderBy = ctx.sortBy
-        this.sortDesc = ctx.sortDesc
+        this.orderBy = ctx.sortBy;
       }
-      this.fetchAudits()
+      this.sortDesc = ctx.sortDesc;
     },
     setLocalStorage () {
       if (this.selectedSoc) {

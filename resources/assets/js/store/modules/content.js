@@ -79,6 +79,14 @@ export const mutations = {
     state.organisations = state.organisations.filter(o => o.countryCode !== organisation.countryCode)
     state.organisations.push(organisation)
     state.currentOrganisation = organisation
+
+    const organisationLanguages = organisation.translations.map(t => t.languageCode) || []
+
+    if (organisationLanguages.length === 0) {
+      organisationLanguages.push('en')
+    }
+
+    state.currentLanguages = [...new Set([...organisationLanguages])]
   },
   [types.UPDATE_CONTENT_SUCCESS] (state, data) {
     state.currentContent.forEach((whatnow) => {
