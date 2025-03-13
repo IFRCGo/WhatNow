@@ -48,8 +48,8 @@ class BulkUploadTemplateImport implements ToCollection
             }
             // Handle hazards and messages
             if (!empty($row[3])) {
-                if(!$row[0] || !$row[1] || !$row[2]){
-                    throw new RcnImportException("Title, description or url are missing or invalid");
+                if(!$row[0] || !$row[1]){
+                    throw new RcnImportException("Title, description are missing or invalid");
                 }
                 $currentHazard = [
                     'title' => $row[0],
