@@ -24,7 +24,7 @@
               <b-card :class="`hazard-instruction-card hazard-instruction-card-${alert.info.severity.toLowerCase()} px-2`">
                 <b-row align-v="end">
                   <b-col cols="auto">
-                    <b-img :src="hazardIcon(alert.info.event)" class="rounded-circle" width="60" height="60"></b-img>
+                    <b-img :src="hazardIcon(alert.info.event, this.$store)" class="rounded-circle" width="60" height="60"></b-img>
                   </b-col>
                   <b-col class="pl-0">
                     <h3 class="mb-1 text-capitalize">{{ alert.info.event }}</h3>

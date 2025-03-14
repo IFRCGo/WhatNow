@@ -24,24 +24,26 @@
                         :placeholder="$t('hazard_type.create.hazard_name_placeholder')" type="text" id="name"
                         name="name" v-model.trim="newHazard.name"
                         :state="newHazardValidations.validated ? newHazardValidations.title : null" />
-                      <b-form-invalid-feedback id="nameFeedback">
-                        <!-- This will only be shown if the preceeding input has an invalid state -->
-                        {{ $t('common.validations.empty') }}
-                      </b-form-invalid-feedback>
+                        <b-form-invalid-feedback v-if="newHazardValidations.validated && !newHazardValidations.name">
+                            {{ newHazardValidations.nameMessage }}
+                        </b-form-invalid-feedback>
                     </div>
                   </div>
                   <hr>
-                  <div
-                    :class="`c-file-upload ${newHazardValidations.validated && (newHazardValidations.icon === false) ? 'is-invalid' : ''}`">
-                    <b-img :src="hazardIcon('create')" class="c-file-upload__image rounded-circle mr-1" width="60"
-                      height="60" alt="" role="presentation"></b-img>
-                      <b-form-file id="newHazardIcon" accept=".png" v-model="newHazard.icon"></b-form-file>
-                      <b-form-file id="newHazardIcon" accept=".png" v-model="newHazard.icon"
-                        :placeholder="$t('hazard_type.create.icon_requirements')"
-                        :choose-label="$t('hazard_type.create.upload_icon')"></b-form-file>
+                  <div :class="`c-file-upload ${newHazardValidations.validated && (newHazardValidations.icon === false) ? 'is-invalid' : ''}`">
+                    <label for="newHazardIcon" class="upload-label">
+                        <b-img :src="hazardIcon('create', this.$store)" class="upload-icon" width="60" height="60" alt="" role="presentation"></b-img>
+                        <span class="upload-text">{{$t('hazard_type.create.upload_icon')}}</span>
+                    </label>
+
+                    <b-form-file 
+                        id="newHazardIcon" 
+                        accept=".png" 
+                        v-model="newHazard.icon"
+                        class="hidden-file-input"
+                    ></b-form-file>
                   </div>
                   <b-form-invalid-feedback id="newHazardIconFeedback">
-                    <!-- This will only be shown if the preceeding input has an invalid state -->
                     {{ $t('common.validations.hazardIcon') }}
                   </b-form-invalid-feedback>
                 </div>
@@ -493,10 +495,11 @@ export default {
       let isValid = true
 
       if (this.newHazard.name.trim().length === 0) {
-        isValid = false
-        this.newHazardValidations.name = false
+        isValid = false;
+        this.newHazardValidations.name = false;
+        this.newHazardValidations.nameMessage = this.$t('common.validations.empty');
       } else {
-        this.newHazardValidations.name = true
+          this.newHazardValidations.name = true;
       }
 
       if (this.newHazard.icon && this.newHazard.icon.size <= 30000) {
@@ -505,6 +508,14 @@ export default {
         isValid = false
         this.newHazardValidations.icon = false
       }
+
+      const currentHazards = this.hazardsList.map(hazard => hazard.name.toLowerCase());
+      if (currentHazards.includes(this.newHazard.name.toLowerCase())) {
+          isValid = false;
+          this.newHazardValidations.name = false;
+          this.newHazardValidations.nameMessage = this.$t('content.whatnow.hazard_type_duplicated');
+      }
+
       this.newHazardValidations.validated = true
       return isValid
     },
@@ -544,6 +555,7 @@ export default {
         await this.$store.dispatch('content/fetchHazardTypes')
         this.resetHazardCreation()
       } catch (e) {
+        console.log('error', e)
         this.$noty.error(this.$t('error_alert_text'))
       } finally {
         this.newHazardTypeLoading = false

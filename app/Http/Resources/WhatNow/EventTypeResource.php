@@ -12,7 +12,7 @@ class EventTypeResource extends Resource
             'name' => $this->name,
             'icon' => $this->icon,
             'code' => $this->code,
-            'url' => asset('storage/' . $this->icon)
+            'url' => $this->getIconUrl(),
         ];
     }
 }

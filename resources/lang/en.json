@@ -494,6 +494,7 @@
       "date_added": "Date Added",
       "url": "URL",
       "hazard_type": "Hazard Type",
+      "hazard_type_duplicated": "It already exists",
       "show_more": "Show more",
       "early": "Early Warning",
       "disaster": "Disaster Risk Reduction",

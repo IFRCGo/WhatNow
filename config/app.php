@@ -48,7 +48,7 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
-
+    'bucket_url' => env('BUCKET_URL'),
 
 
     'providers' => [
