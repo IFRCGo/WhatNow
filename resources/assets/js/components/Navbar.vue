@@ -155,4 +155,17 @@ export default {
 .nav-icon {
   font-size: 1.5rem;
 }
+
+@media (max-width: 991px) {
+   .navbar-collapse {
+     ul {
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+       justify-content: center;
+       gap: 10px;
+     }
+  }
+}
+
 </style>
