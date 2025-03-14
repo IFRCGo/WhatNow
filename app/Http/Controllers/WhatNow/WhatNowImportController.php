@@ -113,19 +113,20 @@ final class WhatNowImportController extends ApiController
         if ($request->get('warnings') === "false") {
             $importer->turnWarningsOff();
         }
-
         if ($request->get('overwrite') === "true") {
             $importer->turnOverwritingOn();
         }
 
-
-
-
-
         $file = $request->file($fileType);
         try {
             $importer->importFile($file, $countryCode, $languageCode);
-        } catch (RcnImportInvalidFileException $e) {
+        }catch (RcnImportException $e){
+            return new JsonResponse([
+                'message' => $e->getMessage(),
+                'errorCode' => $e->getCode()
+            ], JsonResponse::HTTP_BAD_REQUEST);
+        }
+        catch (RcnImportInvalidFileException $e) {
             return new JsonResponse([
                 'message' => trans('rcnapi.bad_request'),
                 'errorCode' => $e->getErrorCode()
@@ -139,7 +140,7 @@ final class WhatNowImportController extends ApiController
         return new JsonResponse($importer->getReport(), JsonResponse::HTTP_OK);
     }
 
-    
+
     /**
      * @OA\Get(
      *     path="/template/{country_code}",
@@ -181,7 +182,7 @@ final class WhatNowImportController extends ApiController
         }
     }
 
-    
+
 
     /**
      * @OA\Get(

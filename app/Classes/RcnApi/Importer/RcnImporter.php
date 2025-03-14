@@ -132,10 +132,10 @@ class RcnImporter
     {
         $organisation = $this->client->getOrganisationByCountryCode($countryCode);
         if (! $organisation) {
-            throw new RcnApiResourceNotFoundException("Organisation with this country code '{$countryCode}' not found");
+            throw new RcnImportException("No organization found with the country code '{$countryCode}'. Please verify and try again.",400);
         }
         Excel::import($this->bulkUpload,$file);
-        if($organisation->getName() !== $this->bulkUpload->getData()['nationalSociety']) throw new RcnImportException("The national society selected is not equal to the national society in the file");
+        if($organisation->getName() !== $this->bulkUpload->getData()['nationalSociety']) throw new RcnImportException("The selected national society does not match the one specified in the uploaded file. Please verify and correct the data before retrying",400);
         $this->metadata = new ImportMetadata($countryCode, $languageCode,$this->bulkUpload->getData()['region']);
         $this->runInstructionsImport($countryCode,$this->bulkUpload->getData());
     }
@@ -230,7 +230,7 @@ class RcnImporter
             if ($existingInstruction) {
                 $existingTranslation = $existingInstruction->getTranslationsByLanguage($this->metadata->getLanguageCode());
                 if ($existingTranslation){
-                    throw new RcnImportWillOverwriteException('Import will overwrite '.$existingTranslation->getId());
+                    throw new RcnImportWillOverwriteException('Import will overwrite existing translation  '.$existingTranslation->getId(),400);
                 }
 
             }
