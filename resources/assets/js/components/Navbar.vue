@@ -97,7 +97,7 @@ export default {
     return {
       appName: window.config.appName,
       permissions: permissionsList,
-      isMenuOpen: false // Inicialmente el menú está cerrado
+      isMenuOpen: false
     }
   },
   computed: mapGetters({
@@ -213,5 +213,33 @@ export default {
   display: block;
   max-height: 500px;
   opacity: 1;
+}
+@media (max-width: 991px) {
+  .hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .navbar-collapse {
+    display: block;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    box-shadow: none;
+    transition: none;
+  }
 }
 </style>
