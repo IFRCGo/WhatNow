@@ -496,4 +496,9 @@ export default {
   letter-spacing: 0.4px;
   height: 45px;
 }
+.register-form-container {
+  transform: scale(0.7);
+  transform-origin: top center;
+}
+
 </style>
