@@ -555,7 +555,6 @@ export default {
         await this.$store.dispatch('content/fetchHazardTypes')
         this.resetHazardCreation()
       } catch (e) {
-        console.log('error', e)
         this.$noty.error(this.$t('error_alert_text'))
       } finally {
         this.newHazardTypeLoading = false
