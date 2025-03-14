@@ -229,7 +229,7 @@
       </div>
     </b-modal>
 
-    <b-modal v-model="selectingLanguage" id="role-changed" centered :title="'Add new language'" ref="selectLangModal"
+    <b-modal v-model="selectingLanguage" id="role-changed" centered :title="$t('content.whatnow.add_language')" ref="selectLangModal"
       ok-variant="primary" cancel-variant="outline-primary" @ok="addNewLanguage" @cancel="languageToAdd = null"
       :ok-title="$t('common.add')" :cancel-title="$t('common.cancel')">
       <b-form-select v-model="languageToAdd" :options="filteredLanguages" />

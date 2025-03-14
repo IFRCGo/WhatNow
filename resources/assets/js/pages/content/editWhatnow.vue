@@ -2,19 +2,25 @@
     <b-container fluid class="edit-whatnow bg-white">
       <transition name="fade">
         <div v-if="content && !loadingContent">
-          <b-row class="pb-0 pl-4 pr-4 pt-4 pb-0" v-if="isCreateHazardMode">
-            <b-col>
-              <div>
-                <h4 class="text-uppercase text-secondary">
-                  <b>{{ $t('hazard_type.create.title') }}</b>
-                </h4>
-                <b-card class="bg-grey mb-2 pl-3 pr-3 pt-2 pb-2">
-                  <div class="u-flex mb-4 pt-1">
+          <b-modal v-model="isCreateHazardMode" id="create-hazard" centered :title="$t('hazard_type.create.title')" ref="addHazardModal"
+            ok-variant="primary" cancel-variant="outline-primary" @ok="saveHazardType" @cancel="isCreateHazardMode = null"
+            :ok-title="newHazardTypeLoading ? $t('common.loading_button') : $t('common.add')"
+            :cancel-title="$t('common.cancel')"
+            :ok-disabled="newHazardTypeLoading"
+            :cancel-disabled="newHazardTypeLoading"
+            no-close-on-esc
+            no-close-on-backdrop
+            :hide-header-close="newHazardTypeLoading">
+            
+            <b-row class="pb-0 pl-4 pr-4 pt-4 pb-0" v-if="isCreateHazardMode">
+              <b-col>
+                <div>
+                  <div class="mb-4 pt-1">
                     <label for="name"
-                      class="styled-label mb-0 mr-3 rtl-ml-3 mt-2">{{ $t('hazard_type.create.hazard_name') }}</label>
-                    <div class="u-flex-fluid">
+                      class="mb-0 mb-3 rtl-ml-3 mt-2">{{ $t('hazard_type.create.hazard_name') }}</label>
+                    <div>
                       <b-form-input autocomplete="off"
-                        :class="`u-flex-fluid ${newHazardValidations.validated && (newHazardValidations.name === false) ? 'is-invalid' : ''}`"
+                        :class="`form-control form-control hazard-form-input ${newHazardValidations.validated && (newHazardValidations.name === false) ? 'is-invalid' : ''}`"
                         :placeholder="$t('hazard_type.create.hazard_name_placeholder')" type="text" id="name"
                         name="name" v-model.trim="newHazard.name"
                         :state="newHazardValidations.validated ? newHazardValidations.title : null" />
@@ -29,19 +35,19 @@
                     :class="`c-file-upload ${newHazardValidations.validated && (newHazardValidations.icon === false) ? 'is-invalid' : ''}`">
                     <b-img :src="hazardIcon('create')" class="c-file-upload__image rounded-circle mr-1" width="60"
                       height="60" alt="" role="presentation"></b-img>
-                    <b-form-file id="newHazardIcon" accept=".png" v-model="newHazard.icon"
-                      :placeholder="$t('hazard_type.create.icon_requirements')"
-                      :choose-label="$t('hazard_type.create.upload_icon')"></b-form-file>
+                      <b-form-file id="newHazardIcon" accept=".png" v-model="newHazard.icon"></b-form-file>
+                      <b-form-file id="newHazardIcon" accept=".png" v-model="newHazard.icon"
+                        :placeholder="$t('hazard_type.create.icon_requirements')"
+                        :choose-label="$t('hazard_type.create.upload_icon')"></b-form-file>
                   </div>
                   <b-form-invalid-feedback id="newHazardIconFeedback">
                     <!-- This will only be shown if the preceeding input has an invalid state -->
                     {{ $t('common.validations.hazardIcon') }}
                   </b-form-invalid-feedback>
-                </b-card>
-              </div>
-            </b-col>
-          </b-row>
-
+                </div>
+              </b-col>
+            </b-row>
+          </b-modal>
 
           <div :class="{ 'has-semi-opacity': isCreateHazardMode }">
             <b-row class="content-editor-header bg-white">
@@ -365,6 +371,7 @@ export default {
         disaster_risk_reduction: true,
         recovery: true
       },
+      newHazardTypeLoading: false,
     }
   },
   mounted() {
@@ -522,11 +529,30 @@ export default {
         this.saveContent({ isAutoSaving: true })
       }, 5000)
     },
+    async saveHazardType(event) {
+      this.newHazardTypeLoading = true
+      try {
+        event.preventDefault();
+        if (!this.isNewHazardValid()) {
+          return;
+        }
+        const formData = new FormData()
+        formData.append('name', this.newHazard.name)
+        formData.append('icon', this.newHazard.icon)
+        await this.$store.dispatch('content/createHazardType', formData)
+        this.$noty.success(`${this.newHazard.name} ${this.$t('content.edit_whatnow.created')}`)
+        await this.$store.dispatch('content/fetchHazardTypes')
+        this.resetHazardCreation()
+      } catch (e) {
+        this.$noty.error(this.$t('error_alert_text'))
+      } finally {
+        this.newHazardTypeLoading = false
+      }
+    },
     async saveContent({ isAutoSaving = false } = {}) {
       this.savingContent = true
       this.isAutoSavingContent = isAutoSaving
       this.validations.showErrors = !isAutoSaving
-
       if (this.isCreateHazardMode && this.isNewHazardValid()) {
         try {
           const formData = new FormData()
