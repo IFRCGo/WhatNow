@@ -329,7 +329,8 @@
     "download_as_pdf": "Download as a PDF",
     "add_logo": "Add logo",
     "edit_logo": "Edit logo",
-    "loading_image": "Loading..."
+    "loading_image": "Loading...",
+    "preview": "Preview"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
