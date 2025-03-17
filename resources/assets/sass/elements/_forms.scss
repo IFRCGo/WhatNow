@@ -65,3 +65,11 @@ textarea {
   padding: 0.5rem;
   width: 100%;
 }
+
+
+.v-select-custom > div:has(select:disabled),
+.v-select-custom > div:has(input:disabled) {
+  background: #E9E9E9;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
