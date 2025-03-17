@@ -679,6 +679,7 @@
   "applications": {
     "my_apps": "My Apps",
     "new_tc": "New terms and conditions",
+    "terms_conditions_message": "There is already a version published with this number:",
     "build": "Build new app",
     "build_key": "Build new API key",
     "edit": "Edit app",

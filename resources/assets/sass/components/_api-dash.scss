@@ -14,16 +14,6 @@
 }
 
 .api-dash {
-  .terms-notification {
-    background-image: url('../../img/alerts/tc.png');
-    background-size: cover;
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-      background-image: url('../../img/alerts/tc@2x.png');
-    }
-    @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 400dpi) {
-      background-image: url('../../img/alerts/tc@3x.png');
-    }
-  }
   .api-dash-app-card {
     background: #F7F7F7;
 

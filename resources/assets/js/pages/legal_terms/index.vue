@@ -3,7 +3,7 @@
     <div class="tc-page-header d-flex justify-content-between align-items-center">
       <h2 class="tc-page-title">{{ $t('terms_conditions.title') }}</h2>
       <div v-if="latestTerm && user && user?.data?.user_profile?.terms_version !== latestTerm.version">
-        <b-button :disabled="disabled" class="btn-primary btn btn-lg" @click="acceptTerms">
+        <b-button :disabled="disabled" class="btn-primary btn btn-md" @click="acceptTerms">
           {{ $t('terms_conditions.accept') }}
         </b-button>
       </div>
