@@ -5,7 +5,6 @@
     </b-col>
     <b-row class="pl-4 pr-4 pb-4 pt-4">
       <b-col>
-        <!-- TERMS CONDITION NOTI -->
          <div class="terms-notification" visible id="terms" v-if="latestTerms && user.data.user_profile.terms_version !== latestTerms.version">
             <h4 class="alert-heading text-uppercase">{{ $t('applications.new_tc') }}</h4>
             <p>{{ $t('applications.terms_conditions_message') }} <span class="terms-notification-version">{{ latestTerms.version }}</span></p>
@@ -16,7 +15,6 @@
               </b-button>
             </div>
          </div>
-        <!-- END -->
         <b-row class="align-items-baseline">
           <b-col>
           </b-col>
