@@ -189,7 +189,7 @@
             <div class="register_form-bottom">
               <p class="text-center mt-5 mb-0 bottom-text">
                 {{ $t('register_form.sign_up_agreement') }}
-                <b-link :to="{ name: 'legal_.terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
+                <b-link :to="{ name: 'legal_terms', params: {} }" target="_blank" class="underlined-link font-weight-normal">
                   {{ $t('register_form.terms_conditions') }}
                 </b-link>
               </p>
