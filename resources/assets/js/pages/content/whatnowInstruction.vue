@@ -104,8 +104,8 @@
     </b-card>
 
     <b-button variant="outline-primary" size="sm" @click="openKeyMessagePreviewer" class="btn-download btn mb-2">
-    {{ $t('common.download') }}
-      <font-awesome-icon class="ml-2" :icon="['fas', 'download']" />
+    {{ $t('common.preview') }}
+      <font-awesome-icon class="ml-2" :icon="['fas', 'image']" />
     </b-button>
 
     <!-- preview -->
