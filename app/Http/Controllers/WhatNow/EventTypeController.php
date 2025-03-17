@@ -10,6 +10,8 @@ use App\Models\EventType;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Classes\RcnApi\RcnApiClient;
+use PhpParser\Node\Stmt\TryCatch;
 
 /**
  * @OA\Tag(
@@ -19,6 +21,12 @@ use Illuminate\Support\Str;
  */
 final class EventTypeController extends ApiController
 {
+    protected $rcnApiClient;
+
+    public function __construct(RcnApiClient $rcnApiClient)
+    {
+        $this->rcnApiClient = $rcnApiClient;
+    }
 
     /**
      * @OA\Get(
@@ -95,7 +103,13 @@ final class EventTypeController extends ApiController
         $icon = $request->file('icon');
         $code =  Str::slug($name);
         $iconName = $code . '.' . $icon->getClientOriginalExtension();
-        Storage::disk('public')->put($iconName,  File::get($icon));
+        $filePath = $icon->getPathname();
+        
+        try {
+           $this->rcnApiClient->whatnow()->uploadFile($filePath, $iconName);
+        } catch (\Exception $e) {
+            return $this->errorResponse($e->getMessage(), 500);
+        }
 
         $event = EventType::create([
             'name' => $name,

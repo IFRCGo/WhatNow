@@ -11,7 +11,7 @@
           <b-row align-v="center">
             <b-col cols="auto">
               <b-row align-v="center" class="mx-0">
-                <b-img v-bind:class="`alert-icon alert-icon-${alert.info.severity.toLowerCase()}`" :src="hazardIcon(alert.info.event)" height="72px" class="mr-3 rtl-ml-3"></b-img>
+                <b-img v-bind:class="`alert-icon alert-icon-${alert.info.severity.toLowerCase()}`" :src="hazardIcon(alert.info.event, this.$store)" height="72px" class="mr-3 rtl-ml-3"></b-img>
                 <h3 class="mb-0 text-capitalize">{{ alert.info.event }} <br/><span>{{ alert.info.area.area_desc }}</span></h3>
               </b-row>
             </b-col>

@@ -17,7 +17,7 @@
         <div class="card-content">
             <div class="title-section">
             <div class="previsualizer-key-message-icon small-icon icon-spacing">
-              <b-img :src="hazardIcon(eventType)" class="rounded-circle" width="40" height="40"></b-img>
+              <b-img :src="hazardIcon(eventType, this.$store)" class="rounded-circle" width="40" height="40"></b-img>
             </div>
             <h4>{{title}}</h4>
           </div>
