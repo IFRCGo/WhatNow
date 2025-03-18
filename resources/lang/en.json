@@ -303,6 +303,7 @@
     "send_invite": "Send invite",
     "invite_and_create": "Invite and create another",
     "loading": "Loading content",
+    "loading_button": "Loading...",
     "publish_new": "Publish New Version",
     "greeting": "Hi",
     "removed": "Removed",
@@ -328,7 +329,8 @@
     "download_as_pdf": "Download as a PDF",
     "add_logo": "Add logo",
     "edit_logo": "Edit logo",
-    "loading_image": "Loading..."
+    "loading_image": "Loading...",
+    "preview": "Preview"
   },
   "banners": {
     "get_started_create": ", Get Started and Create Your First App",
@@ -493,6 +495,7 @@
       "date_added": "Date Added",
       "url": "URL",
       "hazard_type": "Hazard Type",
+      "hazard_type_duplicated": "It already exists",
       "show_more": "Show more",
       "early": "Early Warning",
       "disaster": "Disaster Risk Reduction",
@@ -676,6 +679,7 @@
   "applications": {
     "my_apps": "My Apps",
     "new_tc": "New terms and conditions",
+    "terms_conditions_message": "There is already a version published with this number:",
     "build": "Build new app",
     "build_key": "Build new API key",
     "edit": "Edit app",

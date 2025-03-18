@@ -38,9 +38,9 @@
     <b-col v-if="content.translations[selectedLanguage]">
       <b-card no-body class="whatnow-collapse-card">
         <b-card-header header-tag="header" class="pl-2 pt-3 pb-3 pr-2 rounded-bottom" role="tab">
-          <div class="d-flex align-items-center">
+          <div class="d-flex justify-content-start align-items-center">
             <div>
-              <b-img :src="hazardIcon(content.eventType)" class="rounded-circle" width="60" height="60"></b-img>
+              <b-img :src="hazardIcon(content.eventType, this.$store)" class="rounded-circle" width="60" height="60"></b-img>
             </div>
             <div class="ml-2 rtl-mr-2">
               <h4 class="subtitle">{{ content.currentTranslation.title }}</h4>
@@ -90,9 +90,9 @@
                     cols="4"
                     v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages)"
                     :key="'stage'+index"
-                    v-if="urgency.stages.includes(stageKey)"
+                    v-if="urgency.stages.includes(stageKey) && content.currentTranslation.stages[stageKey]"
                   >
-                    <whatnow-message-card v-if="content.currentTranslation.stages[stageKey]"
+                    <whatnow-message-card
                       :stage="content.currentTranslation.stages[stageKey]"
                       :stageName="stageKey" :eventType="content.eventType"
                       :title="content.currentTranslation.title"

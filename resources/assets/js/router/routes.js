@@ -7,6 +7,7 @@ export default [
   { path: '/docs', name: 'docs', component: require('~/pages/docs/index').default },
   { path: '/terms-and-conditions', name: 'terms', component: require('~/pages/terms/index').default },
   { path: '/terms-of-service', name: 'terms-service', component: require('~/pages/termsService').default },
+  { path: '/legal/terms', name: 'legal_terms', component: require('~/pages/legal_terms/index').default },
  // { path: '/apiquery', name: 'apiquery', component: require('~/pages/docs/apiquery').default },
   // Authenticated routes.
   ...middleware('auth', [
@@ -185,8 +186,8 @@ export default [
       props: (route) => ({ token: route.params.token, isReset: false }) },
     { path: '/get-started', name: 'get_started', component: require('~/pages/get_started/index').default },
     { path: '/legal/terms', name: 'legal_terms', component: require('~/pages/legal_terms/index').default }
+    { path: '/get-started', name: 'get_started', component: require('~/pages/get_started/index').default }
   ]),
-
   { path: '*', component: require('~/pages/errors/404.vue').default }
 ]
 

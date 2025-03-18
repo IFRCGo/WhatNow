@@ -5,15 +5,16 @@
     </b-col>
     <b-row class="pl-4 pr-4 pb-4 pt-4">
       <b-col>
-        <b-collapse visible id="terms" v-if="latestTerms && user.data.user_profile.terms_version !== latestTerms.version">
-          <b-alert variant="terms" show class="mb-4 terms-notification">
+         <div class="terms-notification" visible id="terms" v-if="latestTerms && user.data.user_profile.terms_version !== latestTerms.version">
             <h4 class="alert-heading text-uppercase">{{ $t('applications.new_tc') }}</h4>
-            <b-btn variant="terms" :to="{ name: 'legal_terms', params: {} }" class="text-uppercase mr-2 rtl-ml-2 mt-2 pl-4 pr-4">{{ $t('View') }}</b-btn>
-            <b-button variant="terms" class="text-uppercase mt-2" @click="acceptTerms" v-b-toggle.terms>
-              {{ $t('common.accept') }}
-            </b-button>
-          </b-alert>
-        </b-collapse>
+            <p>{{ $t('applications.terms_conditions_message') }} <span class="terms-notification-version">{{ latestTerms.version }}</span></p>
+            <div>
+              <b-button variant="outline-primary" :to="{ name: 'legal_terms', params: {} }" class="mr-2">{{ $t('View') }}</b-button>
+              <b-button variant="primary"  @click="acceptTerms" v-b-toggle.terms>
+                {{ $t('common.accept') }}
+              </b-button>
+            </div>
+         </div>
         <b-row class="align-items-baseline">
           <b-col>
           </b-col>
@@ -254,3 +255,29 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+@import '../../../sass/variables.scss';
+.terms-notification {
+  flex-grow: 0;
+  padding: 15.2px 18px 13px;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  margin-bottom: 16px;
+  color: $text-black;
+  font-size: 14px;
+  font-weight: normal;
+
+
+  .terms-notification-version {
+    color: $text-primary;
+  }
+
+  .btn-outline-primary {
+    padding: 2px 16px;
+  }
+
+  .btn-primary  {
+    padding: 4px 16px;
+  }
+}
+</style>
