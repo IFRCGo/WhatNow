@@ -8,9 +8,13 @@
         </h1>
       </router-link>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <div class="hamburger-menu" @click="toggleMenu">
+        <div class="bar" :class="{ 'open': isMenuOpen }"></div>
+        <div class="bar" :class="{ 'open': isMenuOpen }"></div>
+        <div class="bar" :class="{ 'open': isMenuOpen }"></div>
+      </div>
 
-      <b-collapse id="nav-collapse" is-nav>
+      <div class="navbar-collapse" :class="{ 'show': isMenuOpen }">
         <b-navbar-nav class="mt-2 mt-lg-0 header-main-links rtl-mr-auto" v-bind:class="{'ml-auto': true, 'is-logged-in': user}">
           <li>
             <LocaleDropdown />
@@ -57,11 +61,9 @@
             </a>
           </li>
         </b-navbar-nav>
-      </b-collapse>
+      </div>
 
-      <!-- Right aligned nav items -->
       <b-navbar-nav v-if="user" class="ml-2 d-none d-lg-block header-logged-in">
-        <!-- Authenticated -->
         <b-nav-item-dropdown v-if="user" right class="has-no-underline">
             <span slot="button-content" class="text-dark py-0">
               <img v-if="user.data.user_profile.photo_url" :src="user.data.user_profile.photo_url" class="rounded-circle profile-photo mr-1 rtl-ml-1">
@@ -91,30 +93,27 @@ import * as permissionsList from '../store/permissions'
 import Avatar from 'vue-avatar'
 
 export default {
-  data: () => ({
-    appName: window.config.appName,
-    permissions: permissionsList,
-    isMenuOpen: true
-  }),
-
-  props: ['value'],
-
+  data () {
+    return {
+      appName: window.config.appName,
+      permissions: permissionsList,
+      isMenuOpen: false
+    }
+  },
   computed: mapGetters({
     user: 'auth/user'
   }),
-
   components: {
     LocaleDropdown,
     Avatar
   },
-
   methods: {
     async logout () {
-      // Log out the user.
       await this.$store.dispatch('auth/logout')
-
-      // Redirect to login.
       this.$router.push({ name: 'login' })
+    },
+    toggleMenu () {
+      this.isMenuOpen = !this.isMenuOpen
     }
   }
 }
@@ -157,15 +156,89 @@ export default {
 }
 
 @media (max-width: 991px) {
-   .navbar-collapse {
-     ul {
-       display: flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-       justify-content: center;
-       gap: 10px;
-     }
+  .navbar-collapse {
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
   }
 }
 
+.hamburger-menu {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.navbar-collapse {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  max-height: 0;
+  opacity: 0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.navbar-collapse.show {
+  display: block;
+  max-height: 500px;
+  opacity: 1;
+
+  .hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .navbar-collapse {
+    display: block;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    box-shadow: none;
+    transition: none;
+  }
+}
 </style>

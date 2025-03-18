@@ -33,7 +33,7 @@
               <b-col>
                 <selectSociety v-model="selectedSoc" :societyList="filteredSocieties"></selectSociety>
                 <selectRegion v-model="selectedRegion" :socCode="selectedSoc?.countryCode ?? null"></selectRegion>
-                <b-form-datepicker :date-format-options="{ year: 'numeric', month: '2-digit', day: '2-digit' }" v-model="selectedDate" :max="new Date()" class="mb-2"></b-form-datepicker>
+                <b-form-datepicker :date-format-options="{ year: 'numeric', month: '2-digit', day: '2-digit' }" v-model="selectedDate" :max="new Date()" class="stats-date"></b-form-datepicker>
                 <v-select v-model="selectedLanguage" class="w-100 v-select-custom p-0" :options="filteredLanguages" label="name" :disabled="filteredLanguages.length === 0" :placeholder="$t('content.whatnow.select_language')">
                   <template slot="option" slot-scope="option">
                     {{ option.text }}
@@ -311,10 +311,18 @@ export default {
   }
 
   .b-form-datepicker{
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px!important;
+    line-height: 20px!important;
+    border: none !important;
   }
 
+  .stats-date {
+    height: 37px !important;
+    min-height: 28px !important;
+    display: flex;
+    align-items: center;
+  }
 }
+
 
 </style>
