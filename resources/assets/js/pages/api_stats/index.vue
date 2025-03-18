@@ -315,13 +315,14 @@ export default {
     line-height: 20px!important;
     border: none !important;
   }
+
+  .stats-date {
+    height: 37px !important;
+    min-height: 28px !important;
+    display: flex;
+    align-items: center;
+  }
 }
 
-.stats-date {
-  height: 37px !important;
-  min-height: 28px !important;
-  display: flex;
-  align-items: center;
-}
 
 </style>

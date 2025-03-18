@@ -213,8 +213,7 @@ export default {
   display: block;
   max-height: 500px;
   opacity: 1;
-}
-@media (max-width: 991px) {
+
   .hamburger-menu {
     display: inline-block;
   }
