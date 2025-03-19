@@ -32,7 +32,7 @@
                   <hr>
                   <div :class="`c-file-upload ${newHazardValidations.validated && (newHazardValidations.icon === false) ? 'is-invalid' : ''}`">
                     <label for="newHazardIcon" class="upload-label">
-                        <b-img :src="hazardIcon('create', this.$store)" class="upload-icon" width="60" height="60" alt="" role="presentation"></b-img>
+                        <b-img :src="hazardIcon('create', hazardsList)" class="upload-icon" width="60" height="60" alt="" role="presentation"></b-img>
                         <span class="upload-text">{{$t('hazard_type.create.upload_icon')}}</span>
                     </label>
 

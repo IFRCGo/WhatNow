@@ -47,6 +47,7 @@
             :regionSlug="selectedRegion?.title"
             :selectedSoc="selectedSoc"
             :disabled="disabled"
+            :hazardsList="hazardsList"
             >
           </whatnow-content-item>
           <whatnow-content-item
@@ -61,6 +62,7 @@
             :forceCreate="true"
             :selectedSoc="selectedSoc"
             :disabled="disabled"
+            :hazardsList="hazardsList"
             >
           </whatnow-content-item>
         </transition-group>
@@ -112,6 +114,7 @@ export default {
   },
   mounted () {
     this.fetch()
+    this.fetchAllHazardTypes()
   },
   watch: {
     selectedLanguage: {
@@ -171,12 +174,20 @@ export default {
           }
         }
       }
-    }
+    },
+    async fetchAllHazardTypes() {
+      try {
+        await this.$store.dispatch('content/fetchHazardTypes')
+      } catch (e) {
+        this.$noty.error(this.$t('error_alert_text'))
+      }
+    },
   },
   computed: {
     ...mapGetters({
       user: 'auth/user',
-      currentContent: 'content/currentContent'
+      currentContent: 'content/currentContent',
+      hazardsList: 'content/hazardsList',
     }),
     hazardSelected (val) {
       return this.selectedHazard
