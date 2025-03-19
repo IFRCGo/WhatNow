@@ -17,7 +17,6 @@
 
     <b-row  v-if="hazardsList" class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
       <b-col cols="auto" class="d-flex align-items-center">
-        <!-- <SimpleSelectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true" @optionUpdated="watchOptionUpdated"></SimpleSelectSociety> -->
         <SimpleSelectSociety class="mr-3" v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
         </SimpleSelectSociety>
         <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
@@ -185,7 +184,6 @@ export default {
       locale: 'lang/locale',
       user: 'auth/user',
       currentContent: 'content/currentContent',
-      // currentLanguages: 'content/currentLanguages',
       societies: 'content/organisations',
     }),
     hazardsList () {
