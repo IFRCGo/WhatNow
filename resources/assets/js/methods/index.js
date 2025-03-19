@@ -126,14 +126,13 @@ export const methods = {
   },
   markdown: value => markdown.toHTML(value),
   getLangName: value => languages[value] ? languages[value].native : value,
-  hazardIcon (str, store) {
+  hazardIcon (str, hazardsList = []) {
     if (str === 'Create Hazard Type' || str === 'create') {
       return require('../../img/icons/add@3x.png')
     }
 
     let hazardUrl = null
-    if (store) {
-      const hazardsList = store.getters['content/hazardsList']
+    if (hazardsList.length) {
       const hazard = hazardsList.find(h => h.name === str || h.icon === str)
       if (hazard) {
         hazardUrl = hazard.url

@@ -509,6 +509,7 @@ export default {
         this.attributionPublishing = false
         this.addingNewLanguage = false
         this.editing = false
+        this.languageToAdd = null
       } catch (e) {
         // Find index of translation we've just edited so we can find it in the response from the server
         this.updateErrors.indexError = this.attributionToEdit.translations.findIndex(translation => translation.languageCode === this.selectedLanguage)

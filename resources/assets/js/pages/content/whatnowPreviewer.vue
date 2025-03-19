@@ -17,7 +17,7 @@
         <div class="card-content">
             <div class="title-section">
             <div class="previsualizer-key-message-icon small-icon icon-spacing">
-              <b-img :src="hazardIcon(eventType, this.$store)" class="rounded-circle" width="40" height="40"></b-img>
+              <b-img :src="hazardIcon(eventType, hazardsList)" class="rounded-circle" width="40" height="40"></b-img>
             </div>
             <h4>{{title}}</h4>
           </div>
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import html2canvas from 'html2canvas'
 import Loading from '../../components/Loading'
 import jsPDF from 'jspdf'
@@ -55,6 +56,9 @@ export default {
     return {
       loading: false,
     }
+  },
+  mounted() {
+    this.fetchAllHazardTypes()
   },
   methods: {
     async downloadAsPNG() {
@@ -157,8 +161,19 @@ export default {
       } finally {
         this.loading = false;
       }
-    }
-
+    },
+    async fetchAllHazardTypes() {
+      try {
+        await this.$store.dispatch('content/fetchHazardTypes')
+      } catch (e) {
+        this.$noty.error(this.$t('error_alert_text'))
+      }
+    },
+  },
+  computed: {
+    ...mapGetters({
+      hazardsList: 'content/hazardsList',
+    })
   }
 }
 </script>

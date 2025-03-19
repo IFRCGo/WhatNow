@@ -40,7 +40,7 @@
         <b-card-header header-tag="header" class="pl-2 pt-3 pb-3 pr-2 rounded-bottom" role="tab">
           <div class="d-flex justify-content-start align-items-center">
             <div>
-              <b-img :src="hazardIcon(content.eventType, this.$store)" class="rounded-circle" width="60" height="60"></b-img>
+              <b-img :src="hazardIcon(content.eventType, hazardsList)" class="rounded-circle" width="60" height="60"></b-img>
             </div>
             <div class="ml-2 rtl-mr-2">
               <h4 class="subtitle">{{ content.currentTranslation.title }}</h4>
@@ -116,7 +116,7 @@ import swal from 'sweetalert2'
 import WhatnowMessageCard from './whatnowMessageCard'
 
 export default {
-  props: ['selectedLanguage', 'content', 'isPromo', 'regionSlug', 'forceCreate', 'selectedSoc', 'disabled'],
+  props: ['selectedLanguage', 'content', 'isPromo', 'regionSlug', 'forceCreate', 'selectedSoc', 'disabled', 'hazardsList'],
   components: {
     WhatnowMessageCard,
   },
