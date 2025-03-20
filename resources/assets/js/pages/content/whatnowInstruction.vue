@@ -14,11 +14,17 @@
               >
               <fa :icon="['fas', 'info-circle']" />
             </span>
-            <div v-if="showTooltip" class="custom-tooltip">
-              {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
-            </div>
+          </div>
+          <div v-if="showTooltip" class="custom-tooltip">
+            {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
           </div>
         </div>
+        <div v-if="$t(`content.edit_whatnow.${instructionName}_subt`)">
+          <h6>
+            {{ $t(`content.edit_whatnow.${instructionName}_subt`) }}
+          </h6>
+        </div>
+
         <b-collapse id="more">
           <p>
             {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
@@ -188,7 +194,7 @@ export default {
     },
     deleteSupportingMessage(key, messageKey) {
       const currentMessage = this.keyMessages.find(message => message.key === messageKey);
-      
+
       if (currentMessage) {
         currentMessage.supportingMessages = currentMessage.supportingMessages.filter(supportingMessage => supportingMessage.key !== key);
         this.$set(this.keyMessages, this.keyMessages.indexOf(currentMessage), currentMessage);

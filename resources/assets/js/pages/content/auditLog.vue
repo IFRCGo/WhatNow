@@ -3,6 +3,7 @@
     <page-banner>
       <b-col>
         <h1 class="sec-title">{{ $t('content.audit_log.my_audit_log') }}</h1>
+        <h6>{{ $t('content.audit_log.subtitle') }}</h6>
       </b-col>
       <b-col>
         <b-button class="float-right rtl-float-left rtl-ml-2 btn-outline-primary" prop='link' href="/api/organisations/instructions/export" v-if="can(user, permissions.USERS_CREATE)" @click="$fireGTEvent($gtagEvents.DownloadAuditLogReport)">

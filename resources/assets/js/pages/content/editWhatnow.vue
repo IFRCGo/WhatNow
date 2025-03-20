@@ -11,7 +11,7 @@
             no-close-on-esc
             no-close-on-backdrop
             :hide-header-close="newHazardTypeLoading">
-            
+
             <b-row class="pb-0 pl-4 pr-4 pt-4 pb-0" v-if="isCreateHazardMode">
               <b-col>
                 <div>
@@ -36,9 +36,9 @@
                         <span class="upload-text">{{$t('hazard_type.create.upload_icon')}}</span>
                     </label>
 
-                    <b-form-file 
-                        id="newHazardIcon" 
-                        accept=".png" 
+                    <b-form-file
+                        id="newHazardIcon"
+                        accept=".png"
                         v-model="newHazard.icon"
                         class="hidden-file-input"
                     ></b-form-file>
