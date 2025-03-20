@@ -407,25 +407,13 @@ export default {
 .white-subtitle {
   color: white;
   font-size: 3rem;
-  @media screen and (max-width: 1280px) {
-    font-size: 2.6rem;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 2rem;
-  }
+
 }
 
 .white-text {
   color: white;
   line-height: 1rem;
   font-size: 1.2rem;
-
-  @media screen and (max-width: 1280px) {
-    font-size: 1rem;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 0.9rem;
-  }
 
 }
 
@@ -508,14 +496,6 @@ export default {
   display: flex;
   align-items: center;
   gap: 10px;
-  @media screen and (max-width: 1280px) {
-    font-size: 0.8rem;
-    flex-direction: column;
-  }
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    font-size: 0.8rem;
-  }
   & > div {
 
     &:nth-child(1){
@@ -534,10 +514,6 @@ export default {
 .works-img {
   width: 5rem;
   height: 5rem;
-  @media screen and (max-width: 1280px) {
-    width: 4rem;
-    height: 4rem;
-  }
 
 }
 
@@ -545,7 +521,7 @@ export default {
   margin-top: 4rem;
   margin-bottom: 4rem;
   height: 3rem;
-  width: 101%;
+  width: calc(100% + 1px);
   background: #F6333F;
   display: flex;
   align-items: center;
@@ -837,6 +813,43 @@ export default {
   .vertical-item-container {
     height: 15rem;
   }
+
 }
+
+
+
+
+@media screen and (max-width: 1280px) {
+  .white-text {
+    font-size: 1rem;
+  }
+  .white-subtitle {
+    font-size: 2.6rem;
+  }
+  .works-img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .line-item {
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .white-text {
+    font-size: 0.9rem;
+  }
+  .white-subtitle {
+    font-size: 2rem;
+  }
+  .line-item {
+      flex-direction: column;
+      font-size: 0.8rem;
+    }
+}
+
+
 </style>
 
