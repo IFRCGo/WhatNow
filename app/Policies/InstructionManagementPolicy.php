@@ -49,7 +49,7 @@ class InstructionManagementPolicy
 
     public function export(User $user   )
     {
-        return $user->hasRoles(['GDPC Admin']);
+        return $user->hasRoles(['IFRC Admin']);
     }
 
     public function publishMultiple(User $user)

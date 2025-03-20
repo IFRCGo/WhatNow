@@ -11,7 +11,7 @@ export const state = {
   userEdit: null,
   roles: [{
     id: null,
-    name: 'Fetching roles'
+    name: 'Roles'
   }],
   sortDesc: false,
   orderBy: null,
@@ -35,7 +35,7 @@ export const getters = {
   check: state => state.users !== null,
   errors: state => state.errors,
   roles: state => state.roles,
-  rolesEmpty: state => (state.roles[0].name === 'Fetching roles' && state.roles.length === 1),
+  rolesEmpty: state => (state.roles[0].name === 'Roles' && state.roles.length === 1),
   formErrors: state => state.formErrors,
   formErrorsCheck: state => (Object.keys(state.formErrors).length === 0 && state.formErrors.constructor === Object),
   sortDesc: state => state.sortDesc,
