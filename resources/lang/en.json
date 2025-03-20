@@ -229,11 +229,12 @@
     "audit_log": "Here is where you can view a log of activities",
     "whatnow_edit": "This is where you can edit Safety Message Database content",
     "whatnow_review": "This is where you can review Safety Message Database content",
-    "whatnow_publish": "This is where you can edit and publish Safety Message Database content",
+    "whatnow_publish": "Here you can edit and publish your National Society's safety messages.",
     "manage_users": "This is where to manage the users (Create, edit and remove)",
     "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
     "wellcome": "Welcome",
     "wellcome_description": "Here you can edit and publish Safety Message Database content."
+    
   },
   "languages": {
     "am": "አማርኛ",
@@ -534,7 +535,7 @@
       "warning_extra": "The hazardous event has a high probability of occurring within ~24-28 hours. Protective actions should be taken in advance",
       "immediate": "Immediate",
       "immediate_help": "Response actions",
-      "immediate_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous even is occurring",
+      "immediate_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous event is occurring",
       "recover": "Recover",
       "recover_help": "Recovery actions",
       "recover_extra": "These are protective actions to take to reduce risk following a hazardous event.",
@@ -551,7 +552,7 @@
       "add_key_message": "Add Key Message",
       "add_supporting_message": "Add Support Message",
       "early_warning": "Early Warning",
-      "early_warning_description": "Key safety messaging for alerts and early actions",
+      "early_warning_description": "Safety messaging for alerts and early actions",
       "disaster_risk_reduction": "Disaster Risk Reduction",
       "disaster_risk_reduction_description": "Key safety messaging from PAPE",
       "recovery": "Recovery",
@@ -559,7 +560,7 @@
       "hazard_type": "Hazard Type",
       "content_edit_title": "Content Edit",
       "content_add_hazard_title": "Add Hazard",
-      "anticipated_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous even is occurring.",
+      "anticipated_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous event is occurring.",
       "prepare_to_respond_extra": "Develop response capacity by learning skills and storing provisions",
       "assess_and_plan_extra": "Assess risks and plan activities to recognize, reduce, and respond to hazard events",
       "mitigate_risks_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
@@ -573,7 +574,7 @@
     },
     "message_editor": {
       "title": "Attribution Editor",
-      "society_name_label": "National society name",
+      "society_name_label": "National Society Name",
       "attribution_url_label": "Attribution URL",
       "attribution_message_label": "Attribution Message",
       "create_btn": "Add hazard",
@@ -699,7 +700,10 @@
     "role_changed_p": "You have been assigned the following role:",
     "role_changed_p2": "Your permissions are as follows:",
     "role_changed_confirm": "Confirm",
-    "role_changed_dismiss": "Close"
+    "role_changed_dismiss": "Close",
+    "go_publish_safety_messages": "Publish Safety Messages",
+    "go_bulk_upload": "Upload Message File",
+    "go_audit_log": "View Edit History"
   },
   "landing": {
     "strapline": "Safety Message Database Service",
@@ -975,7 +979,7 @@
       "hazard_name_placeholder": "Enter hazard name",
       "upload_icon": "Upload an icon",
       "icon_requirements": "Icons must be a png and below 30kb",
-      "requestLink": "Contact GDPC to request new hazard type",
+      "requestLink": "Contact IFRC to request new hazard type",
       "success": "Hazard type created",
       "error": "Sorry, there was an issue creating your new hazard type."
     }

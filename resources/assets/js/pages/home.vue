@@ -6,7 +6,6 @@
           {{ $t('home_pods.wellcome') }}
           {{ user.data.user_profile.first_name }}!
         </h2>
-        <p>{{ $t('home_pods.wellcome_description') }}</p>
         <div v-if="can(user, permissions.USERS_LIST)">
           <b-row>
             <b-col sm class="mb-5">
@@ -75,7 +74,7 @@
             <b-col sm class="mb-5" v-if="firstSocietyCode">
               <b-card class="h-100 home-card content-card">
                 <div>
-                  <h4 class="card-title">{{ $t('sidebar.content') }}</h4>
+                  <h4 class="card-title">{{ $t('home.go_publish_safety_messages') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.whatnow_publish') }}
                   </p>
@@ -93,7 +92,7 @@
             <b-col sm class="mb-5">
               <b-card class="h-100 home-card api-card">
                 <div>
-                  <h4 class="card-title">{{ $t('sidebar.audit_log') }}</h4>
+                  <h4 class="card-title">{{ $t('home.go_audit_log') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.audit_log') }}
                   </p>
@@ -111,7 +110,7 @@
             <b-col sm class="mb-5">
               <b-card class="h-100 home-card content-card">
                 <div>
-                  <h4 class="card-title">{{ $t('sidebar.bulk') }}</h4>
+                  <h4 class="card-title">{{ $t('home.go_bulk_upload') }}</h4>
                   <p class="card-text">
                     {{ $t('home_pods.bulk_upload') }}
                   </p>

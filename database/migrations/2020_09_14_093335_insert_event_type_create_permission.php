@@ -29,7 +29,7 @@ class InsertEventTypeCreatePermission extends Migration
             $permissions[$name] = $permission->id;
         }
 
-        Role::where('name', 'GDPC Admin')->first()
+        Role::where('name', 'IFRC Admin')->first()
             ->permissions()
             ->attach([
                 $permissions['hz-type-create'],
