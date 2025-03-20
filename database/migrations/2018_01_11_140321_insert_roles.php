@@ -13,7 +13,7 @@ class InsertRoles extends Migration
         $rolesToCreate = [
             'api-user' => 'API User',
             '3sc-admin' => '3SC Admin',
-            'gdpc-admin' => 'GDPC Admin',
+            'gdpc-admin' => 'IFRC Admin',
             'ns-admin' => 'NS Admin',
             'ns-editor' => 'NS Editor',
         ];

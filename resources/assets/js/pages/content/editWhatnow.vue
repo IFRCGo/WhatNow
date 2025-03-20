@@ -32,7 +32,7 @@
                   <hr>
                   <div :class="`c-file-upload ${newHazardValidations.validated && (newHazardValidations.icon === false) ? 'is-invalid' : ''}`">
                     <label for="newHazardIcon" class="upload-label">
-                        <b-img :src="hazardIcon('create', this.$store)" class="upload-icon" width="60" height="60" alt="" role="presentation"></b-img>
+                        <b-img :src="hazardIcon('create', hazardsList)" class="upload-icon" width="60" height="60" alt="" role="presentation"></b-img>
                         <span class="upload-text">{{$t('hazard_type.create.upload_icon')}}</span>
                     </label>
 
@@ -80,7 +80,7 @@
                 </div>
 
                 <div v-if="cannot(user, permissions.HAZARD_TYPE_CREATE)">
-                  <a class="u-link--black mt-2 u-d-block" href="mailto:gdpc@redcross.org?subject=Request for new hazard type">{{$t('hazard_type.create.requestLink')}}</a>
+                  <a class="u-link--black mt-2 u-d-block" href="mailto:im@ifrc.org?subject=Request for new hazard type">{{$t('hazard_type.create.requestLink')}}</a>
                 </div>
               </b-col>
               <b-col class="col-12 hazard-form-input-container">

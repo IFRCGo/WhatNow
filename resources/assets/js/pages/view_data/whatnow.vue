@@ -17,7 +17,8 @@
 
     <b-row  v-if="hazardsList" class="ml-4 mr-4 pl-4 pr-4 pb-3 pt-3 selects-container d-flex align-items-center justify-content-start" v-show="selectedSoc">
       <b-col cols="auto" class="d-flex align-items-center">
-        <selectSociety :selected.sync="selectedSoc" :staynull="true" :dontfilter="true" @optionUpdated="watchOptionUpdated"></selectSociety>
+        <SimpleSelectSociety class="mr-3" v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
+        </SimpleSelectSociety>
         <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
       </b-col>
       <b-col cols="auto" v-if="hazardsList" class="d-flex align-items-center">
@@ -55,12 +56,14 @@
 
 <script>
 import SelectSociety from '~/pages/content/selectSociety'
+import SimpleSelectSociety from '~/pages/content/simpleSocietyPicker'
 import WhatnowList from '~/pages/content/whatnowList'
 import { mapGetters } from 'vuex'
 import Spooky from '~/components/global/Spooky'
 import axios from 'axios'
 import PageBanner from '~/components/PageBanner'
 import { languages } from 'countries-list'
+import * as permissionsList from '../../store/permissions'
 
 export default {
   props: {
@@ -73,7 +76,8 @@ export default {
     SelectSociety,
     Spooky,
     WhatnowList,
-    PageBanner
+    PageBanner,
+    SimpleSelectSociety,
   },
   data () {
     return {
@@ -82,7 +86,8 @@ export default {
       loadingContent: false,
       currentTranslations: null,
       selectedHazard: null,
-      languages
+      languages,
+      currentLanguages: ['en'],
     }
   },
   watch: {
@@ -144,13 +149,19 @@ export default {
           }
           return flattened
         })
+        this.currentLanguages = this.selectedSoc.translations.map((transl) => transl.languageCode)
       }
+
     },
     watchOptionUpdated (val) {
-      console.log('watchOptionUpdated', val)
       if (!val) {
         this.$router.push({ path: '/data/whatnow' });
       }
+    },
+    async getData() {
+      this.$store.dispatch('content/fetchOrganisations').then(() => {
+        this.selectedSoc = this.filteredSocieties.find((soc) => soc.countryCode === this.countryCode)
+      })
     },
   },
   metaInfo () {
@@ -173,11 +184,19 @@ export default {
       locale: 'lang/locale',
       user: 'auth/user',
       currentContent: 'content/currentContent',
-      currentLanguages: 'content/currentLanguages',
-      societies: 'content/organisations'
+      societies: 'content/organisations',
     }),
     hazardsList () {
       return this.currentTranslations
+    },
+    filteredSocieties() {
+      if (this.user) {
+        if (this.can(this.user, permissionsList.ALL_ORGANISATIONS)) {
+          return this.societies
+        }
+        return this.societies.filter(soc => this.user.data.organisations.indexOf(soc.countryCode) !== -1)
+      }
+      return this.societies
     }
   }
 }

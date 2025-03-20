@@ -66,7 +66,7 @@ class EventTypesTest extends TestCase
     public function create_new_event_type_as_gdpc_admin_user()
     {
         $user = factory(User::class)->create();
-        $user->attachRole(Role::where('name', 'GDPC Admin')->first());
+        $user->attachRole(Role::where('name', 'IFRC Admin')->first());
         $this->_create_new_event_type_as_valid_user($user);
     }
 
