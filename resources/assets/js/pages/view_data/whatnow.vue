@@ -19,7 +19,7 @@
       <b-col cols="auto" class="d-flex align-items-center">
         <SimpleSelectSociety class="mr-3" v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
         </SimpleSelectSociety>
-        <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : 'Select a society' }}</p>
+        <p class="ml-2 mb-0">{{ selectedSoc ? selectedSoc.label : $t('view_data.national_society_select_placeholder') }}</p>
       </b-col>
       <b-col cols="auto" v-if="hazardsList" class="d-flex align-items-center">
         <v-select
