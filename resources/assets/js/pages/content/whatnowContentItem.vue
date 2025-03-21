@@ -140,7 +140,7 @@ export default {
         },
         {
           value: 'recovery',
-          text: this.$t('content.edit_whatnow.recovery'),
+          text: this.$t('content.edit_whatnow.recover_title'),
           stages: ['recover'],
           description: this.$t('content.edit_whatnow.recovery_description')
         },
