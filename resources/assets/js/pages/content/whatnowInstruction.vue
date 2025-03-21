@@ -14,9 +14,9 @@
               >
               <fa :icon="['fas', 'info-circle']" />
             </span>
-          </div>
-          <div v-if="showTooltip" class="custom-tooltip">
-            {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            <div v-if="showTooltip" class="custom-tooltip">
+              {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            </div>
           </div>
         </div>
         <div v-if="$t(`content.edit_whatnow.${instructionName}_subt`)">
@@ -224,6 +224,12 @@ export default {
   font-weight: 600;
   color: $text-dark;
   margin-bottom: 3px;
+}
+
+.key-message-subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  color: #000000;
 }
 
 .more-info-icon {
