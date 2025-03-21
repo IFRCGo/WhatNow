@@ -14,9 +14,9 @@
               >
               <fa :icon="['fas', 'info-circle']" />
             </span>
-          </div>
-          <div v-if="showTooltip" class="custom-tooltip">
-            {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            <div v-if="showTooltip" class="custom-tooltip">
+              {{ $t(`content.edit_whatnow.${instructionName}_extra`) }}
+            </div>
           </div>
         </div>
         <div v-if="$t(`content.edit_whatnow.${instructionName}_subt`)">
@@ -56,7 +56,7 @@
                   <fa :icon="['fas', 'info-circle']"/>
                 </span>
                 <div v-if="showTooltip" class="custom-tooltip">
-                  {{ $t(`content.edit_whatnow.${instructionName}_key_message_tootltip`) }}
+                  {{ $t(`content.edit_whatnow.safety_tool`) }}
                 </div>
               </div>
             </div>

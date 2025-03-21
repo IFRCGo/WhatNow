@@ -981,5 +981,4 @@ btn-outline-primary.disabled, .btn-outline-primary:disabled {
   background: grey;
   border: none;
 }
-
 </style>
