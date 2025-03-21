@@ -34,118 +34,15 @@
     <h2 class="mid-subt">{{ $t('landing.it_works') }}</h2>
   </div>
     <b-row>
-      <b-col>
+      <div class="black-band-wrapper">
         <div class="black-band">
           <div class="line-container">
             <div class="line-item-container">
-              <div class="line-item mb-5">
-                <p>
-                  {{ $t('landing.works_1_a') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_1_b') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_1_c') }}
-                </p>
-              </div>
-              <div class="red-line-frag left-radius">
-                <div class="red-pointer-top"></div>
-              </div>
-              <div class="number-line-item mb-5">
+              <div class="line-item ">
                 <div>
                   <img class="works-img" :src="src('works1')">
                 </div>
-              </div>
-            </div>
-            <div class="line-item-container">
-              <div class="number-line-item mb-5">
-                <img class="works-img" :src="src('works2')">
-              </div>
-              <div class="red-line-frag">
-                <div class="red-pointer-bottom"></div>
-              </div>
-              <div class="line-item mb-5 pt-5">
-                <p>
-                  {{ $t('landing.works_2_a') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_2_b') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_2_c') }}
-                </p>
-              </div>
-            </div>
-            <div class="line-item-container">
-              <div class="line-item mb-5">
-                <p>
-                  {{ $t('landing.works_3_a') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_3_b') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_3_c') }}
-                </p>
-              </div>
-              <div class="red-line-frag">
-                <div class="red-pointer-top"></div>
-              </div>
-              <div class="number-line-item mb-5">
-                <img class="works-img" :src="src('works3')">
-              </div>
-            </div>
-            <div class="line-item-container">
-              <div class="number-line-item mb-5">
-                <img class="works-img" :src="src('works4')">
-              </div>
-              <div class="red-line-frag">
-                <div class="red-pointer-bottom"></div>
-              </div>
-              <div class="line-item mb-5 pt-5">
-                <p>
-                  {{ $t('landing.works_4_a') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_4_b') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_4_c') }}
-                </p>
-              </div>
-            </div>
-            <div class="line-item-container">
-              <div class="line-item mb-5">
-                <p>
-                  {{ $t('landing.works_5_a') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_5_b') }}
-                </p>
-                <p>
-                  {{ $t('landing.works_5_c') }}
-                </p>
-              </div>
-              <div class="red-line-frag right-radius">
-                <div class="red-pointer-top"></div>
-              </div>
-              <div class="number-line-item mb-5">
-                <img class="works-img" :src="src('works5')">
-              </div>
-            </div>
-          </div>
-          <div class="line-vertical-container">
-            <b-row class="vertical-item-container">
-              <b-col class="center">
-                <img class="works-img" :src="src('works1')">
-              </b-col>
-              <b-col class="center">
-                <div class="vertical-red-frag top-radius"></div>
-                <div class="red-pointer-right"></div>
-              </b-col>
-              <b-col class="center">
-                <div class="line-item">
+                <div>
                   <p>
                     {{ $t('landing.works_1_a') }}
                   </p>
@@ -156,11 +53,22 @@
                     {{ $t('landing.works_1_c') }}
                   </p>
                 </div>
-              </b-col>
-            </b-row>
-            <b-row class="vertical-item-container">
-              <b-col class="center">
-                <div class="line-item">
+              </div>
+              <div class="red-line-frag left-radius">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div></div>
+            </div>
+            <div class="line-item-container">
+              <div></div>
+              <div class="red-line-frag">
+                <div class="red-pointer-bottom"></div>
+              </div>
+              <div class="line-item ">
+                <div class="number-line-item ">
+                  <img class="works-img" :src="src('works2')">
+                </div>
+                <div>
                   <p>
                     {{ $t('landing.works_2_a') }}
                   </p>
@@ -171,26 +79,14 @@
                     {{ $t('landing.works_2_c') }}
                   </p>
                 </div>
-              </b-col>
-              <b-col class="center">
-                <div class="vertical-red-frag"></div>
-                <div class="red-pointer-left"></div>
-              </b-col>
-              <b-col class="center">
-                <img class="works-img" :src="src('works2')">
-              </b-col>
-            </b-row>
-            <b-row class="vertical-item-container">
-              <b-col class="center">
-                <img class="works-img" :src="src('works3')">
-              </b-col>
-              <b-col class="center">
-                <div class="vertical-red-frag">
-                  <div class="red-pointer-right"></div>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="line-item ">
+                <div class="number-line-item ">
+                  <img class="works-img" :src="src('works3')">
                 </div>
-              </b-col>
-              <b-col class="center">
-                <div class="line-item">
+                <div>
                   <p>
                     {{ $t('landing.works_3_a') }}
                   </p>
@@ -201,11 +97,24 @@
                     {{ $t('landing.works_3_c') }}
                   </p>
                 </div>
-              </b-col>
-            </b-row>
-            <b-row class="vertical-item-container">
-              <b-col class="center">
-                <div class="line-item">
+
+              </div>
+              <div class="red-line-frag">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div></div>
+
+            </div>
+            <div class="line-item-container">
+              <div></div>
+              <div class="red-line-frag">
+                <div class="red-pointer-bottom"></div>
+              </div>
+              <div class="line-item ">
+                <div class="number-line-item ">
+                  <img class="works-img" :src="src('works4')">
+                </div>
+                <div>
                   <p>
                     {{ $t('landing.works_4_a') }}
                   </p>
@@ -216,26 +125,14 @@
                     {{ $t('landing.works_4_c') }}
                   </p>
                 </div>
-              </b-col>
-              <b-col class="center">
-                <div class="vertical-red-frag"></div>
-                <div class="red-pointer-left"></div>
-              </b-col>
-              <b-col class="center">
-                <img class="works-img" :src="src('works4')">
-              </b-col>
-            </b-row>
-            <b-row class="vertical-item-container">
-              <b-col class="center">
-                <img class="works-img" :src="src('works5')">
-              </b-col>
-              <b-col class="center">
-                <div class="vertical-red-frag bottom-radius">
-                  <div class="red-pointer-right"></div>
+              </div>
+            </div>
+            <div class="line-item-container">
+              <div class="line-item ">
+                <div class="number-line-item ">
+                  <img class="works-img" :src="src('works5')">
                 </div>
-              </b-col>
-              <b-col class="center">
-                <div class="line-item">
+                <div>
                   <p>
                     {{ $t('landing.works_5_a') }}
                   </p>
@@ -245,6 +142,149 @@
                   <p>
                     {{ $t('landing.works_5_c') }}
                   </p>
+                </div>
+
+              </div>
+              <div class="red-line-frag right-radius">
+                <div class="red-pointer-top"></div>
+              </div>
+              <div></div>
+
+            </div>
+          </div>
+          <div class="line-vertical-container">
+            <b-row class="vertical-item-container">
+              <b-col class="center">
+
+              </b-col>
+              <b-col class="center">
+                <div class="vertical-red-frag top-radius"></div>
+                <div class="red-pointer-right"></div>
+              </b-col>
+              <b-col class="center">
+                <div class="line-item">
+                  <div>
+                    <img class="works-img" :src="src('works1')">
+                  </div>
+                  <div>
+                    <p>
+                      {{ $t('landing.works_1_a') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_1_b') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_1_c') }}
+                    </p>
+                  </div>
+                </div>
+              </b-col>
+            </b-row>
+            <b-row class="vertical-item-container">
+              <b-col class="center">
+                <div class="line-item">
+                  <div>
+                    <img class="works-img" :src="src('works2')">
+                  </div>
+                  <div>
+                    <p>
+                      {{ $t('landing.works_2_a') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_2_b') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_2_c') }}
+                    </p>
+                  </div>
+                </div>
+              </b-col>
+              <b-col class="center">
+                <div class="vertical-red-frag"></div>
+                <div class="red-pointer-left"></div>
+              </b-col>
+              <b-col class="center">
+
+              </b-col>
+            </b-row>
+            <b-row class="vertical-item-container">
+              <b-col class="center">
+              </b-col>
+              <b-col class="center">
+                <div class="vertical-red-frag">
+                  <div class="red-pointer-right"></div>
+                </div>
+              </b-col>
+              <b-col class="center">
+                <div class="line-item">
+                  <div>
+                    <img class="works-img" :src="src('works3')">
+                  </div>
+                  <div>
+                    <p>
+                      {{ $t('landing.works_3_a') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_3_b') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_3_c') }}
+                    </p>
+                  </div>
+                </div>
+              </b-col>
+            </b-row>
+            <b-row class="vertical-item-container">
+              <b-col class="center">
+                <div class="line-item">
+                  <div>
+                    <img class="works-img" :src="src('works4')">
+
+                  </div>
+                <div>
+                  <p>
+                    {{ $t('landing.works_4_a') }}
+                  </p>
+                  <p>
+                    {{ $t('landing.works_4_b') }}
+                  </p>
+                  <p>
+                    {{ $t('landing.works_4_c') }}
+                  </p>
+                </div>
+                </div>
+              </b-col>
+              <b-col class="center">
+                <div class="vertical-red-frag"></div>
+                <div class="red-pointer-left"></div>
+              </b-col>
+              <b-col class="center">
+              </b-col>
+            </b-row>
+            <b-row class="vertical-item-container">
+              <b-col class="center">
+              </b-col>
+              <b-col class="center">
+                <div class="vertical-red-frag bottom-radius">
+                  <div class="red-pointer-right"></div>
+                </div>
+              </b-col>
+              <b-col class="center">
+                <div class="line-item">
+                  <div>
+                    <img class="works-img" :src="src('works5')">
+                  </div>
+                  <div>
+                    <p>
+                      {{ $t('landing.works_5_a') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_5_b') }}
+                    </p>
+                    <p>
+                      {{ $t('landing.works_5_c') }}
+                    </p>
+                  </div>
                 </div>
               </b-col>
             </b-row>
@@ -258,7 +298,7 @@
             </b-button>
           </div>
         </div>
-      </b-col>
+      </div>
     </b-row>
     <h2 class="mid-subt">{{ $t('landing.example_case') }}</h2>
     <b-row class="usecases">
@@ -357,6 +397,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .top-head {
   position: relative;
   left: 3rem;
@@ -366,12 +407,14 @@ export default {
 .white-subtitle {
   color: white;
   font-size: 3rem;
+
 }
 
 .white-text {
   color: white;
   line-height: 1rem;
   font-size: 1.2rem;
+
 }
 
 .center {
@@ -414,6 +457,10 @@ export default {
   font-size: 3rem;
 }
 
+.black-band-wrapper{
+  width: 100%;
+}
+
 .black-band {
   margin-top: 3rem;
   width: 100%;
@@ -422,28 +469,64 @@ export default {
   color: white;
   padding: 4rem;
 }
+.line-item-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  &:nth-child(odd){
+    & > div:last-child {
+      height: 7rem;
+    }
+  }
+  &:nth-child(even){
+    & > div:first-child {
+      height: 7rem;
+    }
+  }
+
+}
 
 .line-item {
-  font-size: 1rem;
+
+  font-size: 0.85rem;
   line-height: 1rem;
+  height: 7rem;
   text-align: center;
-  height: 5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  & > div {
+
+    &:nth-child(1){
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    & > p{
+      text-align: center;
+      margin: 3px 0px;
+    }
+  }
 }
 
 .works-img {
   width: 5rem;
   height: 5rem;
+
 }
 
 .red-line-frag {
   margin-top: 4rem;
   margin-bottom: 4rem;
   height: 3rem;
-  width: 100%;
+  width: calc(100% + 1px);
   background: #F6333F;
   display: flex;
   align-items: center;
   justify-content: space-around;
+
 }
 
 .vertical-red-frag {
@@ -468,12 +551,7 @@ export default {
   display: none;
 }
 
-.line-item-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .vertical-item-container {
   width: 100%;
@@ -644,7 +722,6 @@ export default {
 
   .top-head {
     position: relative;
-    left: 10rem;
     bottom: 20rem;
   }
 
@@ -736,6 +813,43 @@ export default {
   .vertical-item-container {
     height: 15rem;
   }
+
 }
+
+
+
+
+@media screen and (max-width: 1280px) {
+  .white-text {
+    font-size: 1rem;
+  }
+  .white-subtitle {
+    font-size: 2.6rem;
+  }
+  .works-img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .line-item {
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .white-text {
+    font-size: 0.9rem;
+  }
+  .white-subtitle {
+    font-size: 2rem;
+  }
+  .line-item {
+      flex-direction: column;
+      font-size: 0.8rem;
+    }
+}
+
+
 </style>
 
