@@ -3,6 +3,7 @@
     <page-banner>
       <b-col sm="auto" md="4">
         <h1  class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
+        <h6>{{$t('content.bulk_upload.bulk_subtitle')}}</h6>
       </b-col>
       <b-col sm="auto" md="8">
         <div class="d-flex justify-content-end u-gap-24 flex-wrap">
