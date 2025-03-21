@@ -2,6 +2,9 @@
   <div>
     <!-- Modal -->
     <b-modal v-model="showModal" title="Upload File" @hide="resetModal" hide-footer>
+      <b-form-text class="mb-2 text-muted">
+        {{ $t('upload_modal.allowed_formats_info') }}
+      </b-form-text>
       <div class="upload-area" @click="triggerFileInput" v-if="!file">
         <input type="file" ref="fileInput" @change="handleFileUpload" class="file-input" />
         <p>{{ $t('upload_modal.drag_button_text') }}</p>
