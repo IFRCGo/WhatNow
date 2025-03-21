@@ -31,7 +31,7 @@
               {{ $t('whatnow_content') }}
             </router-link>
           </li>
-          <div v-if="user" class="div-bar"></div>
+          <div v-if="user" class="div-bar"></div> 
           <li v-if="user && can(user, permissions.VIEW_BACKEND)" class="nav-item">
             <router-link :to="{ name: 'home' }" class="nav-link">
               {{ $t('dashboard') }}
@@ -54,7 +54,7 @@
               {{ $t('common.my_profile') }}
             </router-link>
           </li>
-          <div  v-if="user" class="div-bar"></div>
+          <div v-if="user && can(user, permissions.VIEW_BACKEND)" class="div-bar"></div>
           <li class="nav-item d-lg-none" v-if="user">
             <a href="#" @click.prevent="logout" class="nav-link text-uppercase">
               {{ $t('logout') }}
