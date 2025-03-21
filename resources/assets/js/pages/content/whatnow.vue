@@ -97,7 +97,16 @@
               </b-form-group>
             </b-col>
             <b-col lg="12">
-              <b-form-group :label="$t('content.message_editor.attribution_url_label')" label-for="url">
+              <b-form-group :label="$t('content.message_editor')" label-for="url">
+                <template #label>
+                  {{ $t('content.message_editor.attribution_url_label') }}
+                  <span
+                    class="ml-2 more-info-icon"
+                    v-b-tooltip.hover.right="$t('content.message_editor.attribution_url_label_tooltip')"
+                  >
+                    <fa :icon="['fas', 'info-circle']" />
+                  </span>
+                </template>
                 <b-form-input type="url" id="url" name="url" maxlength="255" v-model="attributionToEdit.url"
                   :state="updateErrors.errors.url ? false : null" placeholder="https://" :disabled="isFormDisabled" />
                 <b-form-invalid-feedback id="urlFeedback">
@@ -114,7 +123,16 @@
       </b-col>
 
       <b-col lg="7">
-        <b-form-group :label="$t('content.message_editor.attribution_message_label')" label-for="message">
+        <b-form-group label-for="message">
+          <template #label>
+            {{ $t('content.message_editor.attribution_message_label') }}
+            <span
+              class="ml-2 more-info-icon"
+              v-b-tooltip.hover.right="$t('content.message_editor.attribution_message_label_tooltip')"
+            >
+              <fa :icon="['fas', 'info-circle']" />
+            </span>
+          </template>
           <textarea
             :class="`form-control ${updateErrors.errors[`translations.${updateErrors.indexError}.attributionMessage`] ? 'is-invalid' : ''}`"
             id="message" name="message" maxlength="2048" rows="5"

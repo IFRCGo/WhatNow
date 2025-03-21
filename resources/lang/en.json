@@ -437,7 +437,8 @@
   },
   "upload_modal": {
     "drag_button_text": "Click or drag file to this area to upload",
-    "button_text": "Upload"
+    "button_text": "Upload",
+    "allowed_formats_info": "Only JPG and PNG files are allowed. Max size: 10MB."
   },
   "stages": {
     "immediate": "Immediate",
@@ -541,7 +542,9 @@
       "immediate": "Immediate",
       "immediate_subt": "Hazard is occuring",
       "immediate_help": "Response actions",
+      "immediate_subtitle": "Hazard is occuring",
       "immediate_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous event is occurring",
+      "immediate_key_message_tootltip": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
       "recover": "Recover",
       "recover_help": "Recovery actions",
       "recover_subt": "",
@@ -557,7 +560,7 @@
       "download_instructions": "Right click and select 'Save image as…' to save",
       "downloaded_image_alt": "Safety Message Database Instructions",
       "add_key_message": "Add Key Message",
-      "add_supporting_message": "Add Support Message",
+      "add_supporting_message": "Add supporting message",
       "early_warning": "Early Warning",
       "early_warning_description": "Safety messaging for alerts and early actions",
       "disaster_risk_reduction": "Disaster Risk Reduction",
@@ -590,8 +593,10 @@
       "attribution_url_label": "Attribution URL",
       "attribution_message_label": "Attribution Message",
       "create_btn": "Add hazard",
-      "contributor_name_label": "Contributor Name",
-      "contributor_single": "Contributor"
+      "contributor_name_label": "Collaborator Name",
+      "contributor_single": "Collaborator",
+      "attribution_message_label_tooltip": "Share a one-sentence description of your National Society and the provided messages. (ie: Safety Messages from the Red Cross)",
+      "attribution_url_label_tooltip": "Share your National Society website to provide information on your organization."
     },
     "previewer": {
       "download_image_error": "Error downloading image, please try again.",
