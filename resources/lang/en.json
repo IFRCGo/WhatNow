@@ -225,8 +225,8 @@
     }
   },
   "home_pods": {
-    "bulk_upload": "Upload .csv files so that you can update large amounts of content at once",
-    "audit_log": "Here is where you can view a log of activities",
+    "bulk_upload": "Here you can upload all of your safety messages in one file.",
+    "audit_log": "Here you can view the history of your message edits",
     "whatnow_edit": "This is where you can edit Safety Message Database content",
     "whatnow_review": "This is where you can review Safety Message Database content",
     "whatnow_publish": "Here you can edit and publish your National Society's safety messages.",
@@ -1005,24 +1005,24 @@
   "regions": {
     "list": {
       "manage": "Subnational",
-      "create": "Create new region",
-      "edit": "Edit Region",
-      "add": "Add Region",
-      "empty": "Couldn't find any regions",
+      "create": "Create New Subnational",
+      "edit": "Edit Subnational",
+      "add": "Add Subnational",
+      "empty": "Couldn't find any subnationals",
       "table_header": {
-        "region": "Region"
+        "region": "Subnational"
       }
     },
-    "select_soc": "Select a society to view and add regions",
-    "create": "Create a new Region",
+    "select_soc": "Select a society to view and add subnationals",
+    "create": "Create a new Subnational",
     "form": {
-      "name": "Region Name",
-      "name_help": "Name the region you want to create custom safety messaging for.",
+      "name": "Subnational Name",
+      "name_help": "Name the subnational you want to create custom safety messaging for.",
       "description": "Description",
-      "description_help": "Provide more information about the region, i.e. San Francisco Bay Area."
+      "description_help": "Provide more information about the subnational. i.e. San Francisco Bay Area."
     },
-    "edit": "Edit Region",
-    "delete": "This will delete the region and any content associated with that region."
+    "edit": "Edit Subnational",
+    "delete": "This will delete the region and any content associated with that subnational."
   },
   "table_headers": {
     "profile_pic": "profile pic",
