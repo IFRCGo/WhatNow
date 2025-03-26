@@ -223,7 +223,7 @@ final class WhatNowImportController extends ApiController
     {
         $extension = $request->query('extension', 'xlsx');
         $region = $request->query('subnational', 'National');
-        \Log::info('subnational: ' . $region);
+
 
         if (strlen($countryCode) !== 3) {
             return new JsonResponse(['message' => 'Invalid country code'], JsonResponse::HTTP_BAD_REQUEST);
