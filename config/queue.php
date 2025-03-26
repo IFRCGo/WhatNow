@@ -2,11 +2,11 @@
 
 return [
 
-    
+
 
     'default' => env('QUEUE_DRIVER', 'sync'),
 
-    
+
 
     'connections' => [
 
@@ -34,7 +34,7 @@ return [
             'secret' => 'your-secret-key',
             'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
             'queue' => 'your-queue-name',
-            'region' => 'us-east-1',
+            'subnationals' => 'us-east-1',
         ],
 
         'redis' => [
@@ -46,7 +46,7 @@ return [
 
     ],
 
-    
+
 
     'failed' => [
         'database' => env('DB_CONNECTION', 'mysql'),

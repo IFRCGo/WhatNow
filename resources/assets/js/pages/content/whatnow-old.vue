@@ -313,9 +313,9 @@ export default {
     }
   },
   watch: {
-    regions() {
-      if (this.regions.length && this.regionSlug) {
-        this.selectedRegion = this.regions.find(region => region.title === this.regionSlug) || null
+    subnationals() {
+      if (this.subnationals.length && this.regionSlug) {
+        this.selectedRegion = this.subnationals.find(subnational => subnational.title === this.regionSlug) || null
       }
     },
     selectedSoc() {
@@ -585,7 +585,7 @@ export default {
       currentLanguages: 'content/currentLanguages',
       societies: 'content/organisations',
       lastError: 'generic/lastError',
-      regions: 'content/regionsArray'
+      subnationals: 'content/regionsArray'
     })
   }
 }
@@ -871,9 +871,9 @@ export default {
     }
   },
   watch: {
-    regions() {
-      if (this.regions.length && this.regionSlug) {
-        this.selectedRegion = this.regions.find(region => region.title === this.regionSlug) || null
+    subnationals() {
+      if (this.subnationals.length && this.regionSlug) {
+        this.selectedRegion = this.subnationals.find(subnational => subnational.title === this.regionSlug) || null
       }
     },
     selectedSoc() {
@@ -1206,7 +1206,7 @@ export default {
       currentLanguages: 'content/currentLanguages',
       societies: 'content/organisations',
       lastError: 'generic/lastError',
-      regions: 'content/regionsArray'
+      subnationals: 'content/regionsArray'
     }),
   }
 }

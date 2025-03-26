@@ -271,7 +271,7 @@
     "api_stats": "API Stats",
     "api_users": "API Users",
     "terms_conditions": "Terms and Conditions",
-    "regions": "Subnational"
+    "subnationals": "Subnational"
   },
   "common": {
     "accept": "Accept",
@@ -897,7 +897,7 @@
       "body": "The laws of the District of Columbia shall govern all rights and obligations under this Agreement, without giving effect to any principles of conflicts of laws.",
       "heading": "Applicable Law:"
     },
-    "body": "You are responsible for maintaining the secrecy and security of the registration key provided by Red Cross to You. You are responsible for maintaining compatibility with the API, as updated from time to time, in order to continue to receive the Data Feeds. Red Cross may release updated versions of the API and Data Feeds at its sole discretion. New versions may not be compatible with previous implementations, and You agree to use the most recently updated version of the Data Feeds at all times.\n\nYou agree not to modify, distribute, decompile, disassemble, or reverse engineer any portion of the API or any software of Red Cross.\n\nYou may not use the API or Data Feeds in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage, as determined by Red Cross at its sole discretion.\n\nYou may not use the API or Data Feeds in a manner that is unlawful, misleading, negligent, malicious, intending to cause harm, or that harms Red Cross, its service providers, its content providers, or any other person, as determined by Red Cross at its sole discretion.\n\nRed Cross may monitor your use of the API and Data Feeds. You may not use any technical means to interfere with such monitoring, and Red Cross may use technical means to overcome any such interference.\n\nUse of Prepare, Respond, and Recover Messages shall be presented only as current or updated to the then-current urgency setting of the correlated Event Alert, and you shall update individual Prepare, Respond, and Recover Messages upon any update of the Data Feeds and/or correlated Event Alerts by Red Cross.\n\nIndividual Prepare, Respond, and Recover Messages You use shall be associated only with the geographic region for which it is issued. If a Prepare, Respond, and Recover Messages includes a reference to a source such as American Red Cross or another Red Cross or Red Crescent national society or organization (each a “Source Reference”), You shall include the Source Reference associated with each Prepare, Respond, and Recover Messages in the form provided in the Data Feeds. You shall make   no further use of any Source Reference.\n\nYou may not translate the Data Feeds, Event Alerts, and/or Prepare, Respond, and Recover Messages into any other language, make any use, edits or revisions, or alter(s) the meaning of the Data Feed, Event Alerts and/or Prepare, Respond, and Recover Messages.\n\nYou must ensure that the Data Feeds, remain in your sole possession and/or control.\n\nYou may not permit Event Alerts and Prepare, Respond, and Recover Messages delivered to End Users to incorporate any advertising or sponsorship.\n\nYou may not make any archive of the Data Feeds in whole or in part.",
+    "body": "You are responsible for maintaining the secrecy and security of the registration key provided by Red Cross to You. You are responsible for maintaining compatibility with the API, as updated from time to time, in order to continue to receive the Data Feeds. Red Cross may release updated versions of the API and Data Feeds at its sole discretion. New versions may not be compatible with previous implementations, and You agree to use the most recently updated version of the Data Feeds at all times.\n\nYou agree not to modify, distribute, decompile, disassemble, or reverse engineer any portion of the API or any software of Red Cross.\n\nYou may not use the API or Data Feeds in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage, as determined by Red Cross at its sole discretion.\n\nYou may not use the API or Data Feeds in a manner that is unlawful, misleading, negligent, malicious, intending to cause harm, or that harms Red Cross, its service providers, its content providers, or any other person, as determined by Red Cross at its sole discretion.\n\nRed Cross may monitor your use of the API and Data Feeds. You may not use any technical means to interfere with such monitoring, and Red Cross may use technical means to overcome any such interference.\n\nUse of Prepare, Respond, and Recover Messages shall be presented only as current or updated to the then-current urgency setting of the correlated Event Alert, and you shall update individual Prepare, Respond, and Recover Messages upon any update of the Data Feeds and/or correlated Event Alerts by Red Cross.\n\nIndividual Prepare, Respond, and Recover Messages You use shall be associated only with the geographic subnational for which it is issued. If a Prepare, Respond, and Recover Messages includes a reference to a source such as American Red Cross or another Red Cross or Red Crescent national society or organization (each a “Source Reference”), You shall include the Source Reference associated with each Prepare, Respond, and Recover Messages in the form provided in the Data Feeds. You shall make   no further use of any Source Reference.\n\nYou may not translate the Data Feeds, Event Alerts, and/or Prepare, Respond, and Recover Messages into any other language, make any use, edits or revisions, or alter(s) the meaning of the Data Feed, Event Alerts and/or Prepare, Respond, and Recover Messages.\n\nYou must ensure that the Data Feeds, remain in your sole possession and/or control.\n\nYou may not permit Event Alerts and Prepare, Respond, and Recover Messages delivered to End Users to incorporate any advertising or sponsorship.\n\nYou may not make any archive of the Data Feeds in whole or in part.",
     "contact": "Please contact Red Cross at {0} with any questions regarding the API.",
     "disclaimer": "The API and Data Feeds are provided FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY, AND on an 'as is ' and ' as available ' basis. Red Cross makes no representations or warranties of any kind, express or implied. Red Cross disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose. Red Cross and its employees, officers, governors and agents and licensors will not be liable for damages of any kind arising from the use of the API, Data Feeds, Event Alerts, and/or Prepare, Respond, and Recover Messages including but not limited to direct, indirect, incidental, punitive and consequential damages.\n\nRed Cross does not guarantee the sequence, accuracy, authenticity or completeness of the API, Data Feed, Event Alert and/or Prepare, Respond, and Recover Messages and shall not be held liable in any way to You or your End Users or any third party, including without limitation, for any delays, inaccuracies, errors or omissions, in respect of the API, Data FeedS, Event Alert and/or Prepare, Respond, and Recover Messages provided hereunder.",
     "entire_agreement": {
@@ -1004,7 +1004,7 @@
       "error": "Sorry, there was an issue creating your new hazard type."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Subnational",
       "create": "Create New Subnational",
@@ -1012,7 +1012,7 @@
       "add": "Add Subnational",
       "empty": "Couldn't find any subnationals",
       "table_header": {
-        "region": "Subnational"
+        "subnational": "Subnational"
       }
     },
     "select_soc": "Select a society to view and add subnationals",
@@ -1024,7 +1024,7 @@
       "description_help": "Provide more information about the subnational. i.e. San Francisco Bay Area."
     },
     "edit": "Edit Subnational",
-    "delete": "This will delete the region and any content associated with that subnational."
+    "delete": "This will delete the subnational and any content associated with that subnational."
   },
   "table_headers": {
     "profile_pic": "profile pic",

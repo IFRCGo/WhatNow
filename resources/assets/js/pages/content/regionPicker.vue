@@ -57,8 +57,8 @@ export default {
   },
   computed: {
     list () {
-      if (this.regions) {
-        return this.regions.sort((a, b) => a.title.localeCompare(b.title))
+      if (this.subnationals) {
+        return this.subnationals.sort((a, b) => a.title.localeCompare(b.title))
       }
       return []
     },
@@ -71,7 +71,7 @@ export default {
     },
     ...mapGetters({
       locale: 'lang/locale',
-      regions: 'content/regionsArray'
+      subnationals: 'content/regionsArray'
     })
   }
 }

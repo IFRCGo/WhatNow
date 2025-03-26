@@ -35,7 +35,7 @@
         <b-nav-item class="pl-4 w-100" v-if="firstSocietyCode" :to="{ name: 'content.whatnow', params: { countryCode: firstSocietyCode } }" exact-active-class>{{ $t('sidebar.whatnow') }}</b-nav-item>
         <b-nav-item class="pl-4 w-100" :to="{ name: 'content.audit_log', params: {} }" exact-active-class>{{ $t('sidebar.audit_log') }}</b-nav-item>
         <b-nav-item class="pl-4 w-100" :to="{ name: 'content.bulk_upload', params: {} }" exact-active-class>{{ $t('sidebar.bulk') }}</b-nav-item>
-        <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.CONTENT_CREATE)" :to="{ name: 'content.regions', params: {} }" exact-active-class>{{ $t('sidebar.regions') }}</b-nav-item>
+        <b-nav-item class="pl-4 w-100" v-if="can(user, permissions.CONTENT_CREATE)" :to="{ name: 'content.subnationals', params: {} }" exact-active-class>{{ $t('sidebar.subnationals') }}</b-nav-item>
       </b-collapse>
 
       <!-- API usage and management -->

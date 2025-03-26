@@ -269,7 +269,7 @@
     "api_stats": "API 統計",
     "api_users": "APIユーザー",
     "terms_conditions": "利用規約",
-    "regions": "サブリージョン"
+    "subnationals": "サブリージョン"
   },
   "common": {
     "accept": "承諾",
@@ -962,7 +962,7 @@
       "error": "新しい災害タイプの作成中に問題が発生しました。"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "サブリージョン",
       "create": "新しい地域を作成",
@@ -970,7 +970,7 @@
       "add": "地域を追加",
       "empty": "地域が見つかりませんでした",
       "table_header": {
-        "region": "地域"
+        "subnational": "地域"
       }
     },
     "select_soc": "表示して地域を追加するソサエティを選択してください",

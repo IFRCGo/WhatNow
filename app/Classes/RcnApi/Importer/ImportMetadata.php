@@ -33,7 +33,7 @@ class ImportMetadata
     ) {
         $this->countryCode = $countryCode;
         $this->languageCode = $languageCode;
-        $this->region = $region;
+        $this->subnational = $region;
     }
 
 
@@ -56,7 +56,7 @@ class ImportMetadata
 
     public function getRegion(): string
     {
-        return $this->region;
+        return $this->subnational;
     }
 
 

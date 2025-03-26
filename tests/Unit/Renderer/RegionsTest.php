@@ -26,13 +26,13 @@ class RegionsTest extends TestCase
 
     public function testRegionsForOrganisation()
     {
-       $this->actingAs($this->user)->getJson('api/regions/USA')
+       $this->actingAs($this->user)->getJson('api/subnationals/USA')
             ->assertStatus(200);
     }
 
     public function testGetLaguageSpecificRegionsForOrganisation()
     {
-        $this->actingAs($this->user)->getJson('api/regions/USA/es')
+        $this->actingAs($this->user)->getJson('api/subnationals/USA/es')
             ->assertStatus(200);
     }
 
@@ -41,7 +41,7 @@ class RegionsTest extends TestCase
         $data = [
             "countryCode" => 'USA',
             'title' => 'Test Region 1',
-            'slug' => 'test-region-1',
+            'slug' => 'test-subnationals-1',
             'translations' => [
                 "en" => [
                     'title' => 'Testing 3',
@@ -54,14 +54,14 @@ class RegionsTest extends TestCase
             ]
         ];
 
-        $response = $this->actingAs($this->user)->postJson('api/regions', $data)
+        $response = $this->actingAs($this->user)->postJson('api/subnationals', $data)
             ->assertStatus(201);
         $regionCreated = json_decode($response->getContent());
 
         $data = [
             "countryCode" => 'USA',
             'title' => 'Test Region 1',
-            'slug' => 'test-region-1',
+            'slug' => 'test-subnationals-1',
             'translations' => [
                 "en" => [
                     'title' => 'Testing 4',
@@ -78,12 +78,12 @@ class RegionsTest extends TestCase
             ]
         ];
 
-        $response = $this->actingAs($this->user)->putJson('api/regions/region/' . $regionCreated->id, $data)
+        $response = $this->actingAs($this->user)->putJson('api/subnationals/subnationals/' . $regionCreated->id, $data)
             ->assertStatus(202);
 
         $regionUpdated = json_decode($response->getContent());
 
-        $this->actingAs($this->user)->deleteJson('api/regions/region/' . $regionCreated->id)
+        $this->actingAs($this->user)->deleteJson('api/subnationals/subnationals/' . $regionCreated->id)
             ->assertStatus(202);
     }
 }

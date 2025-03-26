@@ -269,7 +269,7 @@
     "api_stats": "Statistik API",
     "api_users": "Pengguna API",
     "terms_conditions": "Syarat dan Ketentuan",
-    "regions": "Sub-wilayah"
+    "subnationals": "Sub-wilayah"
   },
   "common": {
     "accept": "Terima",
@@ -962,7 +962,7 @@
       "error": "Maaf, ada masalah dalam pembuatan jenis bahaya baru."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Sub-wilayah",
       "create": "Buat wilayah baru",
@@ -970,7 +970,7 @@
       "add": "Tambah Wilayah",
       "empty": "Tidak dapat menemukan wilayah",
       "table_header": {
-        "region": "Wilayah"
+        "subnational": "Wilayah"
       }
     },
     "select_soc": "Pilih masyarakat untuk dilihat dan tambahkan wilayah",

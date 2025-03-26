@@ -269,7 +269,7 @@
     "api_stats": "API-Statistik",
     "api_users": "API-Benutzer",
     "terms_conditions": "Geschäftsbedingungen",
-    "regions": "Teilregionen"
+    "subnationals": "Teilregionen"
   },
   "common": {
     "accept": "Akzeptieren",
@@ -962,7 +962,7 @@
       "error": "Entschuldigung! Beim Erstellen Ihrer Gefährdungsart ist ein Problem aufgetreten."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Teilregionen",
       "create": "Neue Region erstellen",
@@ -970,7 +970,7 @@
       "add": "Region hinzufügen",
       "empty": "Es konnten keine Regionen gefunden werden",
       "table_header": {
-        "region": "Region"
+        "subnational": "Region"
       }
     },
     "select_soc": "Wählen Sie eine anzuzeigende Organisation und fügen Sie Regionen hinzu",

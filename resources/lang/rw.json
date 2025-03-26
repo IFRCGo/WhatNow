@@ -269,7 +269,7 @@
     "api_stats": "Imiterere ya API",
     "api_users": "Abakoresha API",
     "terms_conditions": "Amategeko, n'amabwiriza",
-    "regions": "Intara"
+    "subnationals": "Intara"
   },
   "common": {
     "accept": "Emeza",
@@ -962,7 +962,7 @@
       "error": "Ihangane, hari  ikibazo mu gufungura ubwoko bushya bw'ikiza."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Intara",
       "create": "Shiraho akarere gashya",
@@ -970,7 +970,7 @@
       "add": "Shyiraho akarere",
       "empty": "Ntushoboye kubona uturere twose",
       "table_header": {
-        "region": "Akarere"
+        "subnational": "Akarere"
       }
     },
     "select_soc": "Hitamo umuryango wo kureba no kongeraho uturere",

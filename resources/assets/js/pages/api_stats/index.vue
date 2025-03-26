@@ -164,7 +164,7 @@ export default {
       try {
         const parameters = { society: this.selectedSoc ? this.selectedSoc.countryCode : null,
           hazard: this.selectedHazard ? this.selectedHazard.code : null,
-          region: this.selectedRegion ? this.selectedRegion.id : null,
+          subnational: this.selectedRegion ? this.selectedRegion.id : null,
           date: this.selectedDate ? this.selectedDate.toString() : null,
           language: this.selectedLanguage ? this.selectedLanguage.value : null }
         await this.$store.dispatch('usage/fetchCumulativeUsage', parameters)

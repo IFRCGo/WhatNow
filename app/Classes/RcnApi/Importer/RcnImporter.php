@@ -136,7 +136,7 @@ class RcnImporter
         }
         Excel::import($this->bulkUpload,$file);
         if($organisation->getName() !== $this->bulkUpload->getData()['nationalSociety']) throw new RcnImportException("The selected national society does not match the one specified in the uploaded file. Please verify and correct the data before retrying",400);
-        $this->metadata = new ImportMetadata($countryCode, $languageCode,$this->bulkUpload->getData()['region']);
+        $this->metadata = new ImportMetadata($countryCode, $languageCode,$this->bulkUpload->getData()['subnationals']);
         $this->runInstructionsImport($countryCode,$this->bulkUpload->getData());
     }
 
@@ -224,7 +224,7 @@ class RcnImporter
             $existingInstruction = $this->findExisting(
                 $existingInstructions,
                 $hazard['hazard'],
-                $records['region']
+                $records['subnationals']
             );
 
             if ($existingInstruction) {

@@ -24,7 +24,7 @@ class BulkUploadTemplateImport implements ToCollection
 
         $processedData = [
             'nationalSociety' => null,
-            'region' => null,
+            'subnationals' => null,
             'hazards' => []
         ];
 
@@ -43,7 +43,7 @@ class BulkUploadTemplateImport implements ToCollection
                 }
                 $this->dataPageProcessed  = true;
                 $processedData['nationalSociety'] = $row[0];
-                $processedData['region'] = $row[1] ?? 'National';
+                $processedData['subnationals'] = $row[1] ?? 'National';
                 continue;
             }
             // Handle hazards and messages

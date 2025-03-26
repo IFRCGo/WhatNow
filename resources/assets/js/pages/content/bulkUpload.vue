@@ -2,21 +2,20 @@
   <b-container fluid>
     <page-banner>
       <b-col sm="auto" md="4">
-        <h1  class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
-        <h6>{{$t('content.bulk_upload.bulk_subtitle')}}</h6>
+        <h1 class="sec-title">{{ $t('content.bulk_upload.bulk_upload') }}</h1>
+        <h6>{{ $t('content.bulk_upload.bulk_subtitle') }}</h6>
       </b-col>
-      <b-col sm="auto" md="8">
-        <div class="d-flex justify-content-end u-gap-24 flex-wrap">
-          <selectSociety :selected.sync="selectedSoc"
-                         :staynull="true"></selectSociety>
-          <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" ></selectRegion>
-
+      <b-col sm="auto" md="6">
+        <div class="d-flex justify-content-end u-gap-24 flex-wrap flex-md-nowrap w-100">
+          <selectSociety class="mr-3" v-model="selectedSoc" :societyList="filteredSocieties" :countryCode="countryCode">
+          </selectSociety>
+          <selectRegion v-model="selectedRegion" :socCode="selectedSoc.countryCode" class="flex-grow-1"></selectRegion>
         </div>
       </b-col>
     </page-banner>
 
     <b-row class="pl-4 pr-4 pb-4 bg-white">
-      <b-col cols="7">
+      <b-col cols="4">
         <h1 class="mb-4">{{ $t('content.bulk_upload.export_template') }}</h1>
         <span v-if="isFetchingLangs"><fa class="ml-2" spin :icon="['fas', 'spinner']"/></span>
         <span v-else>
@@ -40,10 +39,10 @@
                     </template>
                </v-select>
           </span>
-        <b-button class="mr-2 mb-2 btn-outline-primary dw-btn" prop='link' @click="downloadTemplate('xlsx')">
-              <span>
-                <i class="fas fa-download"></i>
-              </span>
+        <b-button class="mr-2 mb-4 mt-4 btn-outline-primary dw-btn" prop='link' @click="downloadTemplate('xlsx')">
+            <span>
+              <i class="fas fa-download"></i>
+            </span>
           {{ $t('content.bulk_upload.template') }}
         </b-button>
         <p class="mt-4 bulk-text">
@@ -174,7 +173,7 @@
 </template>
 
 <script>
-import SelectSociety from '~/pages/content/selectSociety'
+import SelectSociety from '~/pages/content/simpleSocietyPicker'
 import { mapGetters } from 'vuex'
 import { languages } from 'countries-list'
 import SelectRegion from '~/pages/content/regionPicker'
@@ -244,6 +243,14 @@ export default {
         }
       },
       deep: true
+    },
+    selectedRegion: {
+      handler (val, oldVal) {
+        if (val !== oldVal) {
+          this.fetchContent()
+        }
+      },
+      deep: true
     }
   },
   methods: {
@@ -269,11 +276,13 @@ export default {
       }
     },
     async fetchContent () {
-      try {
-        await this.$store.dispatch('content/fetchContent', this.selectedSoc.countryCode)
-        this.languageChange()
-      } catch (e) {
-        this.$noty.error(this.$t('error_alert_text'))
+      if (this.selectedSoc) {
+        try {
+          await this.$store.dispatch('content/fetchContent', this.selectedSoc.countryCode)
+          this.languageChange()
+        } catch (e) {
+          this.$noty.error(this.$t('error_alert_text'))
+        }
       }
     },
 
@@ -333,16 +342,17 @@ export default {
     },
     downloadTemplate (extension = 'xlsx') {
       const langEndpoint = this.selectedExportLang ? `/${this.selectedExportLang}` : ''
-      const regionParam = this.selectedRegion ? `&region=${this.selectedRegion.title}` : ''
-      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?extension=${extension}${regionParam}`, {
+      const params = new URLSearchParams()
+      params.append('extension', extension)
+      if (this.selectedRegion) params.append('subnational', this.selectedRegion.title)
+      axios.get(`/api/template/${this.selectedSoc.countryCode}${langEndpoint}?${params.toString()}`, {
         responseType: 'blob'
       })
         .then((response) => {
           var headers = response.headers
           var blob = new Blob([response.data], { type: headers['content-type'] })
 
-          if (window.navigator.msSaveOrOpenBlob) {  // IE hack; see http://msdn.microsoft.com/en-us/library/ie/hh779016.aspx
-            window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.' + extension)
+          if (window.navigator.msSaveOrOpenBlob) {window.navigator.msSaveBlob(blob, this.selectedSoc.countryCode + '.' + extension)
           } else {
             var link = document.createElement('a')
             link.href = window.URL.createObjectURL(blob)
@@ -393,14 +403,7 @@ export default {
   computed: {
     filteredLanguages () {
       const languages = [{ value: null, text: this.$t('content.bulk_upload.empty_template') }]
-      if (this.selectedRegion) {
-        for (const key in this.selectedRegion.translations) {
-          languages.push({
-            value: key,
-            text: `${this.languages[key].name}  (${this.languages[key].native} - ${key})`
-          })
-        }
-      } else if (this.selectedSoc) {
+      if (this.selectedSoc) {
         this.selectedSoc.translations.forEach((translation) => {
           const { languageCode } = translation
           languages.push({

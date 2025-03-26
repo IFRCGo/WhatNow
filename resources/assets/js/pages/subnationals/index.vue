@@ -2,7 +2,7 @@
     <b-container fluid>
       <page-banner>
         <b-col cols="12">
-          <h1 class="sec-title">{{ $t('regions.list.manage') }}</h1>
+          <h1 class="sec-title">{{ $t('subnationals.list.manage') }}</h1>
         </b-col>
         <b-col cols="12">
           <div class="input-section">
@@ -17,10 +17,10 @@
       <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
         <b-col>
           <b-button v-if="selectedSoc" class="float-right btn-outline-primary" v-b-modal.modal-create>
-            {{ $t('regions.list.add') }}
+            {{ $t('subnationals.list.add') }}
             <fa :icon="['fas', 'plus']" />
           </b-button>
-          <p class="text-right" v-else>{{ $t('regions.select_soc') }}</p>
+          <p class="text-right" v-else>{{ $t('subnationals.select_soc') }}</p>
         </b-col>
       </b-row>
       <b-row class="p-4 bg-white">
@@ -28,7 +28,7 @@
           <table-loading :loading="fetchingRegions"></table-loading>
           <div class="table-responsive">
             <b-table hover
-              :items="regions || []"
+              :items="subnationals || []"
               :fields="fields"
               :perPage="20"
               :show-empty="false">
@@ -46,8 +46,8 @@
               </template>
             </b-table>
           </div>
-          <p v-if="regions.length === 0 && !fetchingRegions">
-            {{ $t('regions.list.empty') }}
+          <p v-if="subnationals.length === 0 && !fetchingRegions">
+            {{ $t('subnationals.list.empty') }}
           </p>
         </b-col>
       </b-row>
@@ -57,37 +57,37 @@
         centered
         hide-footer
         ref="modal"
-        :title="$t(isEdit ? 'regions.list.edit' : 'regions.list.create')"
+        :title="$t(isEdit ? 'subnationals.list.edit' : 'subnationals.list.create')"
       >
         <form ref="form" @submit.prevent="handleSubmit" class="px-3">
           <b-form-group
-            :label="$t('regions.form.name')"
+            :label="$t('subnationals.form.name')"
             label-for="name-input"
-            class="add-region-label"
+            class="add-subnational-label"
           >
             <b-form-input
               id="name-input"
               v-model="names[selectedLanguage]"
-              class="new-region-input"
+              class="new-subnational-input"
               required
               aria-describedby="name-input-help"
             ></b-form-input>
-            <b-form-text id="name-input-help">{{ $t('regions.form.name_help') }}</b-form-text>
+            <b-form-text id="name-input-help">{{ $t('subnationals.form.name_help') }}</b-form-text>
 
           </b-form-group>
           <b-form-group
-            :label="$t('regions.form.description')"
+            :label="$t('subnationals.form.description')"
             label-for="description-input"
-            class="add-region-label"
+            class="add-subnational-label"
           >
             <b-form-input
               id="description-input"
               v-model="descriptions[selectedLanguage]"
-              class="new-region-input"
+              class="new-subnational-input"
               required
               aria-describedby="description-input-help"
             ></b-form-input>
-            <b-form-text id="description-input-help">{{ $t('regions.form.description_help') }}</b-form-text>
+            <b-form-text id="description-input-help">{{ $t('subnationals.form.description_help') }}</b-form-text>
 
           </b-form-group>
           <div class="modal-footer pb-0 px-0">
@@ -133,7 +133,7 @@ export default {
       selectedLanguage: null,
       selectedSoc: null,
       fields: [
-        { key: 'title', sortable: true, thClass: 'w-75', label: this.$t("regions.list.table_header.region") },
+        { key: 'title', sortable: true, thClass: 'w-75', label: this.$t("subnationals.list.table_header.subnational") },
         { key: 'actions', thClass: 'text-right', tdClass: 'text-right', label: this.$t("table_headers.actions") }
       ],
       showModal: false,
@@ -172,7 +172,7 @@ export default {
     this.fetchOrganisations()
   },
   metaInfo () {
-    return { title: this.$t('regions.list.manage') }
+    return { title: this.$t('subnationals.list.manage') }
   },
   methods: {
     setLocalStorage () {
@@ -198,13 +198,13 @@ export default {
         // Trigger submit handler
         this.$refs.form.submit()
     },
-    editRegion(region) {
+    editRegion(subnational) {
       this.resetModal();
-      this.regionToEdit = region
-      const langs = Object.keys(region.translations);
+      this.regionToEdit = subnational
+      const langs = Object.keys(subnational.translations);
       langs.forEach(lang => {
-        this.names[lang] = region.translations[lang].title
-        this.descriptions[lang] = region.translations[lang].description
+        this.names[lang] = subnational.translations[lang].title
+        this.descriptions[lang] = subnational.translations[lang].description
       })
       this.$refs['modal'].show()
       this.selectedLanguage = langs[0]
@@ -232,14 +232,14 @@ export default {
         };
 
         if (this.isEdit) {
-          await axios.put(`/api/regions/region/${this.regionToEdit.id}`, {
+          await axios.put(`/api/subnationals/subnational/${this.regionToEdit.id}`, {
             ...this.regionToEdit,
             translations: payload.translations,
             countryCode: this.selectedSoc.countryCode,
             id: undefined
           })
         } else {
-          await axios.post(`/api/regions`, payload)
+          await axios.post(`/api/subnationals`, payload)
         }
         await this.$store.dispatch('content/fetchRegions', this.selectedSoc.countryCode)
         // Hide the modal manually
@@ -255,7 +255,7 @@ export default {
     deleteRegion(id) {
       swal({
         title: this.$t('common.are_you_sure'),
-        text: `${this.$t('regions.delete')}`,
+        text: `${this.$t('subnationals.delete')}`,
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -263,7 +263,7 @@ export default {
         confirmButtonText: this.$t('common.delete')
       }).then(async () => {
         try {
-          await axios.delete(`/api/regions/region/${id}`)
+          await axios.delete(`/api/subnationals/subnational/${id}`)
           await this.$store.dispatch('content/fetchRegions', this.selectedSoc.countryCode) // TODO update to country code
           this.$noty.success(this.$t('common.removed'))
         } catch (e) {
@@ -274,7 +274,7 @@ export default {
   },
   computed: {
     currentPage: {
-      // TODO - update for regions
+      // TODO - update for subnationals
       set: function(newVal) {
         this.$store.dispatch('users/setCurrentPage', newVal)
       },
@@ -304,7 +304,7 @@ export default {
     ...mapGetters({
       user: 'auth/user',
       societies: 'content/organisations',
-      regions: 'content/regionsArray',
+      subnationals: 'content/regionsArray',
       currentLanguages: 'content/currentLanguages',
       cmsLocale: 'lang/locale',
       currentOrganisation: 'content/currentOrganisation',
@@ -330,12 +330,12 @@ export default {
     margin-bottom: 1rem;
     margin-top: -1rem;
   }
-  .new-region-input{
+  .new-subnational-input{
     background: #F7F7F7;
     line-height: 1rem;
     border: none;
   }
-  .add-region-label {
+  .add-subnational-label {
     font-size: 1rem;
   }
   </style>

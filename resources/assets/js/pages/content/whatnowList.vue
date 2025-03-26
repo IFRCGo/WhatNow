@@ -224,14 +224,14 @@ export default {
           return translation.regionName === regionFilter.title
         })
       } else {
-        // Filter by empty region Name
+        // Filter by empty subnationals Name
         filtered = this.nationalTranslations
       }
 
       return filtered
     },
     uncreatedTranslations () {
-      // If there is a region selected, get an empty list of events created from a national level.
+      // If there is a subnationals selected, get an empty list of events created from a national level.
       return this.nationalTranslations.filter((translation) => {
         return this.filteredTranslations.findIndex((fTranslation) => fTranslation.eventType === translation.eventType) === -1
       }).map((translation) => ({...translation, translations: {}, currentTranslation: {}})) || []

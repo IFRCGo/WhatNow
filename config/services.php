@@ -2,7 +2,7 @@
 
 return [
 
-    
+
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -12,7 +12,7 @@ return [
     'ses' => [
         'key' => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
-        'region' => env('SES_REGION','us-west-1')
+        'subnationals' => env('SES_REGION','us-west-1')
     ],
 
     'sparkpost' => [

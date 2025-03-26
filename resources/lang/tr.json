@@ -269,7 +269,7 @@
     "api_stats": "API İstatikleri",
     "api_users": "API Kullanıcıları",
     "terms_conditions": "Hüküm ve Koşullar",
-    "regions": "Alt Bölgeler"
+    "subnationals": "Alt Bölgeler"
   },
   "common": {
     "accept": "Kabul et",
@@ -962,7 +962,7 @@
       "error": "Üzgünüz, yeni tehlike türünüzü oluştururken bir sorun oluştu."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Alt Bölgeler",
       "create": "Yeni bölge oluştur",
@@ -970,7 +970,7 @@
       "add": "Bölge Ekle",
       "empty": "Bölge bulunamadı",
       "table_header": {
-        "region": "Bölge"
+        "subnational": "Bölge"
       }
     },
     "select_soc": "Bölgeleri görüntülemek ve eklemek için bir topluluk seçin",

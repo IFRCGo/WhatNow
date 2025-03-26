@@ -18,11 +18,11 @@ use Illuminate\Validation\ValidationException;
  */
 final class RegionController extends ApiController
 {
-    
+
     private $client;
 
 
-    
+
     public function __construct(RcnApiClient $client)
     {
         $this->client = $client->whatnow();
@@ -31,16 +31,16 @@ final class RegionController extends ApiController
 
     /**
      * @OA\Get(
-     *     path="/regions/{country_code}",
+     *     path="/subnationals/{country_code}",
      *     tags={"Regions"},
-     *     summary="Get all regions for an organisation",
-     *     description="Retrieves all regions associated with a given country code",
+     *     summary="Get all subnationals for an organisation",
+     *     description="Retrieves all subnationals associated with a given country code",
      *     operationId="getAllRegionsForOrganisation",
      *     @OA\Parameter(
      *         name="country_code",
      *         in="path",
      *         required=true,
-     *         description="Country code for which the regions are retrieved",
+     *         description="Country code for which the subnationals are retrieved",
      *         @OA\Schema(type="string", example="USA")
      *     ),
      *     security={{"bearerAuth": {}}},
@@ -59,7 +59,7 @@ final class RegionController extends ApiController
         $regions  = $this->client->getAllForOrganisation($country_code);
 
         if(empty($regions)){
-            return new JsonResponse(['error_message' => 'No regions found'], 404);
+            return new JsonResponse(['error_message' => 'No subnationals found'], 404);
         }
 
         return new JsonResponse($regions, 200);
@@ -67,23 +67,23 @@ final class RegionController extends ApiController
 
     /**
      * @OA\Get(
-     *     path="/regions/{country_code}/{code}",
+     *     path="/subnationals/{country_code}/{code}",
      *     tags={"Regions"},
-     *     summary="Get a specific region by country code and region code",
-     *     description="Retrieves a specific region based on the provided country code and region code",
+     *     summary="Get a specific subnationals by country code and subnationals code",
+     *     description="Retrieves a specific subnationals based on the provided country code and subnationals code",
      *     operationId="getRegionForCountryCode",
      *     @OA\Parameter(
      *         name="country_code",
      *         in="path",
      *         required=true,
-     *         description="Country code to filter the region",
+     *         description="Country code to filter the subnationals",
      *         @OA\Schema(type="string", example="USA")
      *     ),
      *     @OA\Parameter(
      *         name="code",
      *         in="path",
      *         required=true,
-     *         description="Region code to filter the region",
+     *         description="Region code to filter the subnationals",
      *         @OA\Schema(type="string", example="NY")
      *     ),
      *     security={{"bearerAuth": {}}},
@@ -102,7 +102,7 @@ final class RegionController extends ApiController
         $regions = $this->client->getForCountryCode($country_code, $code);
 
         if(empty($regions)){
-            return new JsonResponse(['error_message' => 'No regions found'], 404);
+            return new JsonResponse(['error_message' => 'No subnationals found'], 404);
         }
 
         return new JsonResponse($regions, 200);
@@ -110,10 +110,10 @@ final class RegionController extends ApiController
 
     /**
      * @OA\Post(
-     *     path="/regions",
+     *     path="/subnationals",
      *     tags={"Regions"},
-     *     summary="Create a new region",
-     *     description="Creates a new region with the provided details",
+     *     summary="Create a new subnationals",
+     *     description="Creates a new subnationals with the provided details",
      *     operationId="createRegion",
      *     @OA\RequestBody(
      *         required=true,
@@ -121,8 +121,8 @@ final class RegionController extends ApiController
      *             type="object",
      *             required={"countryCode", "title"},
      *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
-     *             @OA\Property(property="title", type="string", description="Title of the region", example="New York"),
-     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the region", example="new-york"),
+     *             @OA\Property(property="title", type="string", description="Title of the subnationals", example="New York"),
+     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the subnationals", example="new-york"),
      *             @OA\Property(
      *                 property="translations",
      *                 type="array",
@@ -176,16 +176,16 @@ final class RegionController extends ApiController
 
     /**
      * @OA\Put(
-     *     path="/regions/region/{regionId}",
+     *     path="/subnationals/subnationals/{regionId}",
      *     tags={"Regions"},
-     *     summary="Update an existing region",
-     *     description="Updates a region with new data",
+     *     summary="Update an existing subnationals",
+     *     description="Updates a subnationals with new data",
      *     operationId="updateRegion",
      *     @OA\Parameter(
      *         name="regionId",
      *         in="path",
      *         required=true,
-     *         description="ID of the region to update",
+     *         description="ID of the subnationals to update",
      *         @OA\Schema(type="integer", example=1)
      *     ),
      *     @OA\RequestBody(
@@ -194,8 +194,8 @@ final class RegionController extends ApiController
      *             type="object",
      *             required={"countryCode", "title"},
      *             @OA\Property(property="countryCode", type="string", description="Country code (3-letter ISO format)", example="USA"),
-     *             @OA\Property(property="title", type="string", description="Title of the region", example="New York"),
-     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the region", example="new-york"),
+     *             @OA\Property(property="title", type="string", description="Title of the subnationals", example="New York"),
+     *             @OA\Property(property="slug", type="string", nullable=true, description="Slug for the subnationals", example="new-york"),
      *             @OA\Property(
      *                 property="translations",
      *                 type="array",
@@ -249,16 +249,16 @@ final class RegionController extends ApiController
 
     /**
      * @OA\Delete(
-     *     path="/regions/region/{regionId}",
+     *     path="/subnationals/subnationals/{regionId}",
      *     tags={"Regions"},
-     *     summary="Delete a region",
-     *     description="Deletes a region by its ID",
+     *     summary="Delete a subnationals",
+     *     description="Deletes a subnationals by its ID",
      *     operationId="deleteRegion",
      *     @OA\Parameter(
      *         name="regionId",
      *         in="path",
      *         required=true,
-     *         description="ID of the region to delete",
+     *         description="ID of the subnationals to delete",
      *         @OA\Schema(type="integer", example=1)
      *     ),
      *     security={{"bearerAuth": {}}},

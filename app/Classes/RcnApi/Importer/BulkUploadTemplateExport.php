@@ -38,7 +38,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
         $this->eventTypesDropdown = '"' . implode(',', array_map(function ($event) {
                 return "{$event['name']}";
             }, $eventTypes)) . '"';
-        $this->region = $region;
+        $this->subnational = $region;
         $this->data = $data;
         if($maxSupportingMessages <= 0) $maxSupportingMessages = 3;
         for($i = 0; $i< $maxSupportingMessages; $i++){
@@ -56,7 +56,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
         return array_merge(
             [
                 ['National Society', 'Region'],
-                [$this->nationalSociety, $this->region], // Row 1-2
+                [$this->nationalSociety, $this->subnational], // Row 1-2
                 $this->headings // Row 3
             ],
             $this->data
