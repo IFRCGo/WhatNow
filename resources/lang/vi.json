@@ -266,7 +266,7 @@
     "api_stats": "Thống kê Giao diện Lập trình Ứng dụng (API)",
     "api_users": "Người dùng API",
     "terms_conditions": "Điều khoản & Điều kiện",
-    "regions": "Tiểu vùng"
+    "subnationals": "Tiểu vùng"
   },
   "common": {
     "accept": "Chấp nhận",
@@ -959,7 +959,7 @@
       "error": "Xin lỗi, đã có lỗi xảy ra khi tạo loại sự cố rủi ro mới của bạn"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Tiểu vùng",
       "create": "Tạo khu vực mới",
@@ -967,7 +967,7 @@
       "add": "Bổ sung khu vực",
       "empty": "Không tìm thấy bất kỳ khu vực nào",
       "table_header": {
-        "region": "Khu vực"
+        "subnational": "Khu vực"
       }
     },
     "select_soc": "Chọn một cộng đồng để xem và bổ sung khu vực",

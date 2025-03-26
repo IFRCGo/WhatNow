@@ -7,7 +7,7 @@ use League\Csv\Writer;
 
 class UsageResource extends AbstractResource
 {
-    
+
     public function listApplicationRequestCount(string $fromDate, string $toDate, int $page = 0, bool $groupedByUser = false)
     {
         return $this->handleApiCall(function () use ($fromDate, $toDate, $page, $groupedByUser) {
@@ -24,9 +24,9 @@ class UsageResource extends AbstractResource
 
                 $user = \App\Models\Access\User\User::with('userProfile')->find($userId);
 
-                $countryCode = $user ? $user->userProfile->country_code : 'N/A';
-                $organisation = $user ? $user->userProfile->organisation : 'N/A';
-                $username = $user ? $user->userProfile->first_name . ' ' . $user->userProfile->last_name : 'N/A';
+                $countryCode = $user && is_object($user->userProfile) && property_exists($user->userProfile, 'country_code') ? $user->userProfile->country_code : 'N/A';
+                $organisation = $user && is_object($user->userProfile) && property_exists($user->userProfile, 'organisation') ? $user->userProfile->organisation : 'N/A';
+                $username = $user && is_object($user->userProfile) ? $user->userProfile->first_name . ' ' . $user->userProfile->last_name : 'N/A';
 
                 return $applicationsByUser->map(function ($application) use ($countryCode, $organisation, $username) {
                     $application['location'] = $countryCode;
@@ -49,7 +49,7 @@ class UsageResource extends AbstractResource
         });
     }
 
-    
+
     public function listEndpointRequestCount(string $fromDate, string $toDate, int $page = 0)
     {
         return $this->handleApiCall(function () use ($fromDate, $toDate, $page) {
@@ -65,7 +65,7 @@ class UsageResource extends AbstractResource
         });
     }
 
-    
+
     public function exportApplicationUsageCsv(string $fromDate, string $toDate): string
     {
                 $applicationsByUser = $this->listApplicationRequestCount($fromDate, $toDate, 0, true);
@@ -100,7 +100,7 @@ class UsageResource extends AbstractResource
         return $csv->toString();
     }
 
-    
+
     public function exportEndpointUsageCsv(string $fromDate, string $toDate): string
     {
         $endpoints = $this->listEndpointRequestCount($fromDate, $toDate);

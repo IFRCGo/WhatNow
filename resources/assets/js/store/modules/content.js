@@ -13,14 +13,14 @@ export const state = {
   organisations: [],
   currentInstructions: null,
   currentOrganisation: null,
-  regions: {}
+  subnationals: {}
 }
 
 // getters
 export const getters = {
   currentContent: state => state.currentContent,
-  regionsArray: state => Object.values(state.regions),
-  regions: state => state.regions,
+  regionsArray: state => Object.values(state.subnationals),
+  subnationals: state => state.subnationals,
   attr: state => state.attr,
   currentLanguages: (state) => {
     const langs = state.currentLanguages || []
@@ -59,7 +59,7 @@ export const mutations = {
     }
   },
   [types.FETCH_REGIONS_SUCCESS] (state, { content }) {
-    state.regions = content
+    state.subnationals = content
   },
   [types.FETCH_HAZARDS_SUCCESS] (state, { content }) {
     state.hazardsList = content.data
@@ -128,7 +128,7 @@ export const actions = {
   },
   async fetchRegions ({ commit }, societyCode) {
     try {
-      const { data } = await axios.get(`/api/regions/${societyCode}`)
+      const { data } = await axios.get(`/api/subnationals/${societyCode}`)
       commit(types.FETCH_REGIONS_SUCCESS, { content: data })
     } catch (error) {
       if (error.response.status === 404) {

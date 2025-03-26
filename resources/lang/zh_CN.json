@@ -269,7 +269,7 @@
     "api_stats": "API统计",
     "api_users": "API用戶",
     "terms_conditions": "條款及條件",
-    "regions": "次区域"
+    "subnationals": "次区域"
   },
   "common": {
     "accept": "接受",
@@ -962,7 +962,7 @@
       "error": "抱歉，創建您的新風險類型時發生問題。"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "次区域",
       "create": "创建新地区",
@@ -970,7 +970,7 @@
       "add": "添加地区",
       "empty": "找不到任何地区",
       "table_header": {
-        "region": "地区"
+        "subnational": "地区"
       }
     },
     "select_soc": "选择查看一个社团和添加地区",

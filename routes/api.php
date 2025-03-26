@@ -87,11 +87,11 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('terms', 'Terms\TermsController@create'); // Create new terms
 
     // Region management
-    Route::get('regions/{country_code}', 'WhatNow\RegionController@getAllForOrganisation'); // Get all regions for org
-    Route::get('regions/{country_code}/{code}', 'WhatNow\RegionController@getForCountryCode'); // Get specific region
-    Route::post('regions', 'WhatNow\RegionController@createRegion'); // Create region
-    Route::put('regions/region/{regionId}', 'WhatNow\RegionController@updateRegion'); // Update region
-    Route::delete('regions/region/{regionId}', 'WhatNow\RegionController@deleteRegion'); // Delete region
+    Route::get('subnationals/{country_code}', 'WhatNow\RegionController@getAllForOrganisation'); // Get all subnationals for org
+    Route::get('subnationals/{country_code}/{code}', 'WhatNow\RegionController@getForCountryCode'); // Get specific subnationals
+    Route::post('subnationals', 'WhatNow\RegionController@createRegion'); // Create subnationals
+    Route::put('subnationals/subnationals/{regionId}', 'WhatNow\RegionController@updateRegion'); // Update subnationals
+    Route::delete('subnationals/subnationals/{regionId}', 'WhatNow\RegionController@deleteRegion'); // Delete subnationals
 
     //file upload
     Route::post('upload-file', 'FileController@uploadFile');

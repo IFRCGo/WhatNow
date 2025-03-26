@@ -269,7 +269,7 @@
     "api_stats": "Takwimu za API",
     "api_users": "Watumiaji wa API",
     "terms_conditions": "Vigezo na Masharti",
-    "regions": "Mikoa"
+    "subnationals": "Mikoa"
   },
   "common": {
     "accept": "Kubali",
@@ -962,7 +962,7 @@
       "error": "Samahani, kulikuwa na tatizo kuunda aina yako mpya ya hatari."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Mikoa",
       "create": "Unda eneo jipya",
@@ -970,7 +970,7 @@
       "add": "Ongeza Eneo",
       "empty": "Haikuweza kupata maeneo yoyote",
       "table_header": {
-        "region": "Eneo"
+        "subnational": "Eneo"
       }
     },
     "select_soc": "Chagua jumuiya ili kutazama na kuongeza maeneo",

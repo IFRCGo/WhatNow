@@ -16,10 +16,10 @@ use Illuminate\Support\Facades\Response;
  */
 final class UsageController extends ApiController
 {
-    
+
     private $client;
 
-    
+
     public function __construct(RcnApiClient $client)
     {
         $this->client = $client->usage();
@@ -274,7 +274,7 @@ final class UsageController extends ApiController
      *         @OA\JsonContent(
      *             type="object",
      *             @OA\Property(property="society", type="string", example="Ejemplo Sociedad"),
-     *             @OA\Property(property="region", type="integer", example=1),
+     *             @OA\Property(property="subnationals", type="integer", example=1),
      *             @OA\Property(property="hazard", type="string", example="Ejemplo Peligro"),
      *             @OA\Property(property="date", type="string", format="date", example="2023-01-01"),
      *             @OA\Property(property="language", type="string", example="es")
@@ -295,7 +295,7 @@ final class UsageController extends ApiController
     {
         $this->validate($request, [
             'society' => 'sometimes|string',
-            'region' => 'sometimes|int',
+            'subnationals' => 'sometimes|int',
             'hazard' => 'sometimes|string',
             'date' => 'sometimes|date',
             'language' => 'sometimes|string',

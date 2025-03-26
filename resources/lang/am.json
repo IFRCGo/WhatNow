@@ -267,7 +267,7 @@
     "api_stats": "API Stats",
     "api_users": "የኤፒ አይ( API) ተጠቃሚዎች፤",
     "terms_conditions": "ደምቦች አና ሁኔታዎች፤",
-    "regions": "ንዑስ ክልሎች"
+    "subnationals": "ንዑስ ክልሎች"
   },
   "common": {
     "accept": "ይቀበሉ፤",
@@ -959,7 +959,7 @@
       "error": "ይቅርታ ፣ አዲሱን የአደጋ ዐይነትዎን የመፍጠር ችግር ተከስቷል፡፡"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "ንዑስ ክልሎች",
       "create": "አዲስ ክልል ይፍጠሩ",
@@ -967,7 +967,7 @@
       "add": "ክልል ያክሉ",
       "empty": "ምንም ክልሎች ማግኘት አልተቻለም",
       "table_header": {
-        "region": "ክልል"
+        "subnational": "ክልል"
       }
     },
     "select_soc": "ለማየት እና ክልሎች ለማከል ማህበረሰብ ይምረጡ",

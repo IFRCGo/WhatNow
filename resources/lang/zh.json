@@ -269,7 +269,7 @@
     "api_stats": "應用程式介面統計數字",
     "api_users": "API用户",
     "terms_conditions": "条款和细则",
-    "regions": "次区域"
+    "subnationals": "次区域"
   },
   "common": {
     "accept": "接受",
@@ -962,7 +962,7 @@
       "error": "抱歉，创建新的危险类型时出现了问题。"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "次区域",
       "create": "創建新地區",
@@ -970,7 +970,7 @@
       "add": "新增地區",
       "empty": "找不到任何地區",
       "table_header": {
-        "region": "地區"
+        "subnational": "地區"
       }
     },
     "select_soc": "選擇一個社團觀看和增加地區",

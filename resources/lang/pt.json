@@ -269,7 +269,7 @@
     "api_stats": "Estatísticas API",
     "api_users": "Utilizadores API",
     "terms_conditions": "Termos e Condições",
-    "regions": "Sub-regiões"
+    "subnationals": "Sub-regiões"
   },
   "common": {
     "accept": "Aceitar",
@@ -962,7 +962,7 @@
       "error": "Ocorreu um erro ao criar o seu novo tipo de desastre."
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Sub-regiões",
       "create": "Criar nova região",
@@ -970,7 +970,7 @@
       "add": "Adicionar região",
       "empty": "Não foi possível encontrar regiões",
       "table_header": {
-        "region": "Região"
+        "subnational": "Região"
       }
     },
     "select_soc": "Selecione uma sociedade para visualizar e adicionar regiões",

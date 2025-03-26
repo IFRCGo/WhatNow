@@ -199,7 +199,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
     public function getAllForOrganisation(string $country_code)
     {
         return $this->handleApiCall(function () use ($country_code) {
-            $response = $this->http->get('regions/' . $country_code);
+            $response = $this->http->get('subnationals/' . $country_code);
 
             return json_decode($response->getBody()->getContents(), true);
         });
@@ -208,7 +208,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
     public function getForCountryCode(string $country_code, string $code)
     {
         return $this->handleApiCall(function () use ($country_code, $code) {
-            $response = $this->http->get("regions/$country_code/$code");
+            $response = $this->http->get("subnationals/$country_code/$code");
 
             return json_decode($response->getBody()->getContents(), true);
         });
@@ -217,7 +217,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
     public function createRegion(array $input)
     {
         return $this->handleApiCall(function () use ($input) {
-            $response = $this->http->post('regions', ['json' => $input]);
+            $response = $this->http->post('subnationals', ['json' => $input]);
 
             return json_decode($response->getBody()->getContents(), true);
         });
@@ -226,7 +226,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
     public function updateRegion(int $regionId, array $input)
     {
         return $this->handleApiCall(function () use ($regionId, $input) {
-            $response = $this->http->put("regions/region/$regionId", ['json' => $input]);
+            $response = $this->http->put("subnationals/subnationals/$regionId", ['json' => $input]);
 
             return json_decode($response->getBody()->getContents(), true);
         });
@@ -235,7 +235,7 @@ class WhatNowResource extends AbstractResource implements WhatNowResourceInterfa
     public function deleteRegion(int $regionId)
     {
         $this->handleApiCall(function () use ($regionId) {
-            $response = $this->http->delete("regions/region/$regionId");
+            $response = $this->http->delete("subnationals/subnationals/$regionId");
         });
     }
     public function uploadFile($filePath, $fileName)

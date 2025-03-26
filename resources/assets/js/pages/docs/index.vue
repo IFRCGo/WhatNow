@@ -138,8 +138,8 @@
                 <td>Optional language filter. Specify the language code, e.g., <code>?language=en</code></td>
               </tr>
               <tr>
-                <td>region</td>
-                <td>Optional region filter. Specify the region name, e.g., <code>?region=north%20west</code></td>
+                <td>subnational</td>
+                <td>Optional subnational filter. Specify the subnational name, e.g., <code>?subnational=north%20west</code></td>
               </tr>
               </tbody>
             </table>
@@ -342,7 +342,7 @@ export default {
             "countryCode": "USA",
             "eventType": "Earthquake",
             "regionName": "National",
-            "region": null,
+            "subnational": null,
             "attribution": {
               "name": "American Red Cross",
               "countryCode": "USA",

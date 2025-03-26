@@ -310,45 +310,45 @@
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method get">GET</span>
-                            <span class="endpoint-url">/regions/{country_code}</span>
+                            <span class="endpoint-url">/subnationals/{country_code}</span>
                         </div>
-                        <div class="endpoint-description">Retrieves all regions for a specific organisation by country code.</div>
+                        <div class="endpoint-description">Retrieves all subnationals for a specific organisation by country code.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method get">GET</span>
-                            <span class="endpoint-url">/regions/{country_code}/{code}</span>
+                            <span class="endpoint-url">/subnationals/{country_code}/{code}</span>
                         </div>
-                        <div class="endpoint-description">Retrieves a region for a specific country code and region code.</div>
+                        <div class="endpoint-description">Retrieves a subnational for a specific country code and subnational code.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method post">POST</span>
-                            <span class="endpoint-url">/regions</span>
+                            <span class="endpoint-url">/subnationals</span>
                         </div>
-                        <div class="endpoint-description">Creates a new region.</div>
+                        <div class="endpoint-description">Creates a new subnational.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method put">PUT</span>
-                            <span class="endpoint-url">/regions/region/{regionId}</span>
+                            <span class="endpoint-url">/subnationals/subnational/{regionId}</span>
                         </div>
-                        <div class="endpoint-description">Updates a region by ID.</div>
+                        <div class="endpoint-description">Updates a subnational by ID.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method delete">DELETE</span>
-                            <span class="endpoint-url">/regions/region/{regionId}</span>
+                            <span class="endpoint-url">/subnationals/subnational/{regionId}</span>
                         </div>
-                        <div class="endpoint-description">Deletes a region by ID.</div>
+                        <div class="endpoint-description">Deletes a subnational by ID.</div>
                     </div>
                 </li>
             </ul>
@@ -776,45 +776,45 @@
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method get">GET</span>
-                            <span class="endpoint-url">/regions/{country_code}</span>
+                            <span class="endpoint-url">/subnationals/{country_code}</span>
                         </div>
-                        <div class="endpoint-description">Retrieves all regions for a specific organisation by country code.</div>
+                        <div class="endpoint-description">Retrieves all subnationals for a specific organisation by country code.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method get">GET</span>
-                            <span class="endpoint-url">/regions/{country_code}/{code}</span>
+                            <span class="endpoint-url">/subnationals/{country_code}/{code}</span>
                         </div>
-                        <div class="endpoint-description">Retrieves a region for a specific country code and region code.</div>
+                        <div class="endpoint-description">Retrieves a subnational for a specific country code and subnational code.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method post">POST</span>
-                            <span class="endpoint-url">/regions</span>
+                            <span class="endpoint-url">/subnationals</span>
                         </div>
-                        <div class="endpoint-description">Creates a new region.</div>
+                        <div class="endpoint-description">Creates a new subnational.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method put">PUT</span>
-                            <span class="endpoint-url">/regions/region/{regionId}</span>
+                            <span class="endpoint-url">/subnationals/subnational/{regionId}</span>
                         </div>
-                        <div class="endpoint-description">Updates a region by ID.</div>
+                        <div class="endpoint-description">Updates a subnational by ID.</div>
                     </div>
                 </li>
                 <li class="endpoint-item">
                     <div class="endpoint-info">
                         <div>
                             <span class="endpoint-method delete">DELETE</span>
-                            <span class="endpoint-url">/regions/region/{regionId}</span>
+                            <span class="endpoint-url">/subnationals/subnational/{regionId}</span>
                         </div>
-                        <div class="endpoint-description">Deletes a region by ID.</div>
+                        <div class="endpoint-description">Deletes a subnational by ID.</div>
                     </div>
                 </li>
             </ul>

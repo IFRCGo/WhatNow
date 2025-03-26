@@ -111,10 +111,10 @@ export default [
         ]
       },
       {
-        path: `${ADMIN_ROUTE}/regions`,
-        component: require('~/pages/regions/index').default,
+        path: `${ADMIN_ROUTE}/subnationals`,
+        component: require('~/pages/subnationals/index').default,
         meta: { breadcrumb: 'Regions', permission: permissions.CONTENT_CREATE },
-        name: 'content.regions'
+        name: 'content.subnationals'
       },
       {
         path: `${ADMIN_ROUTE}/api-usage`,

@@ -266,7 +266,7 @@
     "api_stats": "Estatistik API",
     "api_users": "Itilizatè API yo",
     "terms_conditions": "Tèm ak Kondisyon yo",
-    "regions": "Sou-rejyon yo"
+    "subnationals": "Sou-rejyon yo"
   },
   "common": {
     "accept": "Aksepte",
@@ -957,7 +957,7 @@
       "error": "Nou regrèt, te gen yon pwoblèm pandan n ap kreye nouvo kalite danje a"
     }
   },
-  "regions": {
+  "subnationals": {
     "list": {
       "manage": "Sou-rejyon yo",
       "create": "Kreye nouvo rejyon",
@@ -965,7 +965,7 @@
       "add": "Ajoute Rejyon an",
       "empty": "Pa kapab jwenn okenn rejyon",
       "table_header": {
-        "region": "Rejyon"
+        "subnational": "Rejyon"
       }
     },
     "select_soc": "Chwazi yon sosyete pou w wè epi ajoute rejyon yo",
