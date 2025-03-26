@@ -143,33 +143,33 @@ export default {
 </script>
 
 <style>
-  @import 'vue-select/dist/vue-select.css';
+@import 'vue-select/dist/vue-select.css';
 
+.new-footer {
+  width: 100%;
+  background: #323232;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  h2 {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+  p {
+    font-size: 0.87rem;
+    line-height: 1;
+  }
+  a {
+    font-size: 0.87rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
   .new-footer {
-    width: 100%;
-    background: #323232;
-    padding: 2rem;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    p {
-      font-size: 1rem;
-      line-height: 1;
-    }
-    a {
-      font-size: 1rem;
-    }
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
-
-  @media screen and (max-width: 850px) {
-    .new-footer {
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-  }
-  }
+}
 </style>

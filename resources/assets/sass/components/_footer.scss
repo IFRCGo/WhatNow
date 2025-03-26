@@ -1,14 +1,14 @@
 .site-footer {
   ul {
-    font-size: em(12);
+    font-size: em(6); // Reduced font size
     li {
-      margin-bottom:0.75rem;
+      margin-bottom: 0.5rem; // Reduced margin
     }
   }
 
   &__heading {
-    font-size: em(18);
-    min-height: 55px;
+    font-size: em(10); // Reduced font size
+    min-height: 45px; // Reduced height
     white-space: nowrap;
   }
 
@@ -17,8 +17,7 @@
     text-decoration: none;
   }
 
-
   &__logo {
-    height: 54px;
+    height: 40px; // Reduced height
   }
 }
