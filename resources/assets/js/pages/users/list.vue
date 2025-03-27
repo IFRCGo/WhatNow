@@ -11,23 +11,22 @@
       </b-col>
     </page-banner>
     <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
-      <b-col cols="3" xl="2">
+      <b-col cols="12" md="6" lg="3" xl="2">
         <p class="select-header"> {{ $t('users.list.select_status') }}</p>
         <v-select
           v-model="activatedFilter"
           class="v-select-custom"
           :options="[
-            { name: 'Status', value: null },
-            { name: 'Activated', value: 1 },
-            { name: 'Deactivated', value: 0 }
-                  ]"
+        { name: 'Status', value: null },
+        { name: 'Activated', value: 1 },
+        { name: 'Deactivated', value: 0 }
+      ]"
           label="name"
           :reduce="option => option.value"
           placeholder="Select Status">
         </v-select>
-
       </b-col>
-      <b-col cols="3" xl="2" v-if="!apiUsers">
+      <b-col cols="12" md="6" lg="3" xl="2" v-if="!apiUsers">
         <p class="select-header"> {{ $t('users.list.select_role') }}</p>
         <v-select
           v-model="roleFilter"
@@ -38,7 +37,7 @@
           placeholder="Select Role">
         </v-select>
       </b-col>
-      <b-col cols="3" xl="2" v-if="apiUsers">
+      <b-col cols="12" md="6" lg="3" xl="2" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_country') }}</p>
         <v-select
           v-model="countryFilter"
@@ -49,18 +48,18 @@
           placeholder="Select Country">
         </v-select>
       </b-col>
-      <b-col cols="3" xl="2" v-if="apiUsers">
+      <b-col cols="12" md="6" lg="4" xl="3" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
         <v-select
           v-model="termsFilter"
-          class="v-select-custom"
+          class="v-select-custom text-nowrap"
           :options="termsList"
-          label="name"
-          :reduce="option => option.id"
+          label="version"
+          :reduce="option => option.version"
           placeholder="Select Terms">
         </v-select>
       </b-col>
-      <b-col>
+      <b-col cols="12" md="6" lg="3" xl="2">
         <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
         <selectSociety
           class="float-right"
@@ -68,8 +67,8 @@
           :staynull="true"
           v-if="!apiUsers"/>
       </b-col>
-      <b-col cols="3">
-        <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary float-right rtl-float-left clear-filter-btn">
+      <b-col class="text-right">
+        <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary clear-filter-btn">
           {{ $t('users.list.clear_filters') }}
         </b-button>
       </b-col>
@@ -489,6 +488,9 @@ export default {
   btn-outline-primary.disabled, .btn-outline-primary:disabled {
     color: white;
     background: grey;
+  }
+  .text-nowrap {
+    white-space: nowrap;
   }
 
 </style>
