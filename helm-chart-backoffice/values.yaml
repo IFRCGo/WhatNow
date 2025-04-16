@@ -47,7 +47,7 @@ env:
     TRANSIFEX_API_TOKEN:
     TRANSIFEX_PROJECT:
     TRANSIFEX_SLUG:
-    BUCKET_URL: https://whatnowimages.blob.core.windows.net/images
+    BUCKET_URL: https://smdbstorageaccount.blob.core.windows.net/images
 
 
 secrets:
