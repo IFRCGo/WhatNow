@@ -97,7 +97,7 @@ class UserController extends Controller
         ]);
 
         $latestTermsVersion = $this->terms->getLatestTermsVersion();
-        if (! $$latestTermsVersion) {
+        if (!$latestTermsVersion) {
             throw new HttpException(Response::HTTP_FORBIDDEN, 'No terms and conditions found');
         }
 
