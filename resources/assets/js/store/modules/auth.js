@@ -1,7 +1,6 @@
 import axios from 'axios'
 import Cookies from 'js-cookie'
 import * as types from '../mutation-types'
-import * as permissionsList from '../permissions'
 
 // state
 export const state = {
@@ -26,7 +25,6 @@ export const mutations = {
   [types.FETCH_USER_SUCCESS] (state, { user }) {
     user.role = []
     user.permissions = null
-    user.role.push(permissionsList.ADMIN)
     var base64Url = state.token.split('.')[1]
     var base64 = base64Url.replace('-', '+').replace('_', '/')
     user.permissions = JSON.parse(window.atob(base64))
