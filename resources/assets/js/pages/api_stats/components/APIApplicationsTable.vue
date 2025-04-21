@@ -8,7 +8,9 @@
       <b-table
         :items="currentRows"
         :fields="fields"
-        :perPage="totalPerPage">
+        :perPage="totalPerPage"
+        @sort-changed="onSortChanged"
+        >
       </b-table>
     </div>
 
@@ -62,7 +64,9 @@ export default {
         await this.$store.dispatch('usage/fetchApplicationUsage', {
           page: page || this.currentPage,
           fromDate: this.fromDate,
-          toDate: this.toDate
+          toDate: this.toDate,
+          orderBy: this.sortBy || 'name',
+          sort: this.sortDesc ? 'desc' : 'asc',
         })
 
         if (page) {
@@ -73,7 +77,15 @@ export default {
       } finally {
         this.isLoading = false
       }
-    }
+    },
+    onSortChanged(ctx) {
+      const { sortBy, sortDesc } = ctx
+      this.sortBy = sortBy
+      this.sortDesc = sortDesc
+      this.loading = true
+      this.currentPage = 1
+      this.fetchData(this.currentPage)
+    },
   },
   computed: {
     ...mapGetters({
@@ -87,13 +99,15 @@ export default {
       isLoading: true,
       currentPage: 1,
       fields: [
-        { key: 'username', sortable: true, tdClass: 'align-middle', thClass: 'align-middle' },
-        { key: 'organisation', sortable: true, tdClass: 'align-middle', thClass: 'align-middle' },
-        { key: 'location', sortable: true, tdClass: 'align-middle', thClass: 'align-middle' },
+        { key: 'username', sortable: false, tdClass: 'align-middle', thClass: 'align-middle' },
+        { key: 'organisation', sortable: false, tdClass: 'align-middle', thClass: 'align-middle' },
+        { key: 'location', sortable: false, tdClass: 'align-middle', thClass: 'align-middle' },
         { key: 'name', label: this.$t('api_stats.field_headers.application_name'), sortable: true, tdClass: 'align-middle', thClass: 'align-middle' },
         { key: 'requestCount', label: this.$t('api_stats.field_headers.number_of_hits'), sortable: true, tdClass: 'align-middle', thClass: 'align-middle' },
         { key: 'estimatedUsers', label: this.$t('api_stats.field_headers.estimated_reach'), sortable: true, tdClass: 'align-middle', thClass: 'align-middle' }
-      ]
+      ],
+      sortBy: null,
+      sortDesc: null
     }
   }
 }

@@ -78,9 +78,11 @@ final class UsageController extends ApiController
             'fromDate' => 'required|date',
             'toDate' => 'required|date',
             'page' => 'sometimes|integer',
+            'orderBy' => 'sometimes|string',
+            'sort' => 'sometimes|string|in:asc,desc',
         ]);
 
-        $response = $this->client->listApplicationRequestCount($request->fromDate, $request->toDate, $request->page ?? 1);
+        $response = $this->client->listApplicationRequestCount($request->fromDate, $request->toDate, $request->page ?? 1, false, $request->orderBy,  $request->sort);
 
         return new JsonResponse($response, 200);
     }

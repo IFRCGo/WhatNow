@@ -36,7 +36,7 @@
         <section>
           <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
           <b-card class="bg-light mb-4">
-            <p><a href="https://api.preparecenter.org/v1" target="_blank">https://api.preparecenter.org/v1</a></p>
+            <p><a href="https://api.preparecenter.org/v2" target="_blank">https://api.preparecenter.org/v2</a></p>
             <p><a href="https://api.whatnow.jazusoft.com/api/documentation" target="_blank">https://api.whatnow.jazusoft.com/api/documentation - Swagger of API</a></p>
             <p><a href="https://whatnow.jazusoft.com/admin/documentation" target="_blank">https://whatnow.jazusoft.com/admin/documentation - Swagger Admin</a></p>
           </b-card>
