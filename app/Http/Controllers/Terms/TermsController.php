@@ -162,6 +162,7 @@ final class TermsController extends ApiController
             $emails,
             $subject,
             $html,
+            true, // Send as bulk email
         );
 
 

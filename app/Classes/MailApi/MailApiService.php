@@ -13,7 +13,7 @@ class MailApiService
         $this->mailApiClient = $mailApiClient;
     }
 
-    public function sendMail($to, $subject, $body)
+    public function sendMail($to, $subject, $body, $isBulk = false  )
     {
         $from = config('mail.mail_from');
 
@@ -22,7 +22,8 @@ class MailApiService
             $to,
             $subject,
             $body,
-            true
+            true,
+            $isBulk
         );
 
         return $this->mailApiClient->send($request);
