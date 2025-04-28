@@ -9,6 +9,8 @@ use Laravel\Dusk\DuskServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\Classes\MailApi\MailApiService;
+use App\Classes\MailApi\MailApiClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -35,5 +37,9 @@ class AppServiceProvider extends ServiceProvider
         if ($this->app->environment('local', 'testing')) {
             $this->app->register(DuskServiceProvider::class);
         }
+
+        $this->app->singleton(MailApiService::class, function ($app) {
+            return new MailApiService($app->make(MailApiClient::class));
+        });
     }
 }

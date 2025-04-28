@@ -37,7 +37,6 @@ return [
     'sendmail' => '/usr/sbin/sendmail -bs',
 
 
-
     'markdown' => [
         'theme' => 'whatnow',
 
@@ -47,6 +46,9 @@ return [
         ],
     ],
 
-    'support_email' => 'hello@ifrc.com'
+    'support_email' => 'hello@ifrc.com',
+
+    'endpoint_url' => env('MAIL_ENDPOINT') . '?apiKey=' . env('MAIL_API_KEY'),
+    'mail_from' => env('MAIL_FROM'),
 
 ];

@@ -6,8 +6,7 @@ use App\Models\Access\User\User;
 use App\Models\Access\User\UserConfirmationToken;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Notifications\Messages\MailMessage;
-
+use App\Classes\MailApi\MailApiService;
 
 class AdminUserNeedsConfirmation extends Notification
 {
@@ -15,17 +14,19 @@ class AdminUserNeedsConfirmation extends Notification
 
     
     protected $confirmationToken;
+    private $mailApiService;
 
     
-    public function __construct(UserConfirmationToken $confirmationToken)
+    public function __construct(UserConfirmationToken $confirmationToken, MailApiService $mailApiService)
     {
+        $this->mailApiService = $mailApiService;
         $this->confirmationToken = $confirmationToken;
     }
 
     
     public function via($notifiable)
     {
-        return ['mail'];
+        return [];
     }
 
     
@@ -35,10 +36,14 @@ class AdminUserNeedsConfirmation extends Notification
             throw new \BadFunctionCallException();
         }
 
-        return (new MailMessage())
-            ->subject(trans('auth.confirmation.admin_welcome.subject', ['app_name' => config('app.name')]))
-            ->greeting(trans('auth.confirmation.admin_welcome.greeting', ['app_name' => config('app.name')]))
-            ->line(trans('auth.confirmation.admin_welcome.email_body'))
-            ->action(trans('auth.confirmation.admin_welcome.confirm'), route('confirm', (string) $this->confirmationToken));
+        $route = route('confirm', (string) $this->confirmationToken);
+        $html = $this->mailApiService->buildConfirmationTemplate($route);
+        $email = $notifiable->email;
+
+        $this->mailApiService->sendMail(
+            $email,
+            trans('auth.confirmation.admin_welcome.subject', ['app_name' => config('app.name')]),
+            $html,
+        );
     }
 }

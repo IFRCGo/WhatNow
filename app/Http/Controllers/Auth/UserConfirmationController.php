@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Classes\MailApi\MailApiService;
 use App\Exceptions\Auth\UserAlreadyConfirmedException;
 use App\Exceptions\Auth\UserConfirmationException;
 use App\Exceptions\Auth\UserConfirmationMismatchException;
@@ -17,6 +18,12 @@ use Illuminate\Http\Request;
 class UserConfirmationController extends Controller
 {
     use SendsPasswordResetEmails;
+    private $mailApiService;
+
+    public function __construct( MailApiService $mailApiService)
+    {
+        $this->mailApiService = $mailApiService;
+    }
 
     /**
      * @OA\Get(
@@ -46,7 +53,8 @@ class UserConfirmationController extends Controller
     public function sendConfirmationEmail(UserRepository $userRepository, $userId)
     {
         $user = $userRepository->findOrFail($userId);
-        $user->notify(new UserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code)));
+        $notification = new UserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code), $this->mailApiService);
+        $notification->toMail($user);
     }
 
     /**
