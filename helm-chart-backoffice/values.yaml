@@ -79,5 +79,5 @@ ingress:
                 pathType: Prefix
     tls:
         - hosts:
-              - "whatnow.jazusoft.com"
+              - "preparemessages-stage.ifrc.org"
           secretName: "your-tls-secret"
