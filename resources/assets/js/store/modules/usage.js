@@ -40,11 +40,13 @@ export const mutations = {
 
 // actions
 export const actions = {
-  async fetchApplicationUsage ({ commit }, { fromDate, toDate, page }) {
+  async fetchApplicationUsage ({ commit }, { fromDate, toDate, page, orderBy, sort }) {
     const queryOptions = {
       page,
       fromDate,
-      toDate
+      toDate,
+      orderBy,
+      sort
     }
 
     try {

@@ -1,5 +1,4 @@
 // role types
-export const ADMIN = '3SC Admin'
 export const GDPC_ADMIN = 'IFRC Admin'
 export const NS_ADMIN = 'NS Admin'
 export const NS_EDITOR = 'NS Editor'

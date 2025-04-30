@@ -8,11 +8,14 @@ use League\Csv\Writer;
 class UsageResource extends AbstractResource
 {
 
-    public function listApplicationRequestCount(string $fromDate, string $toDate, int $page = 0, bool $groupedByUser = false)
+    public function listApplicationRequestCount(string $fromDate, string $toDate, int $page = 0, bool $groupedByUser = false, $orderBy, $sort)
     {
-        return $this->handleApiCall(function () use ($fromDate, $toDate, $page, $groupedByUser) {
-            $url = $page !== 0 ? "usage/applications?fromDate={$fromDate}&toDate={$toDate}&page={$page}" :
-                "usage/applications?fromDate={$fromDate}&toDate={$toDate}";
+        return $this->handleApiCall(function () use ($fromDate, $toDate, $page, $groupedByUser, $orderBy, $sort) {
+            //only name, estimatedUsers, requestCount are used in the sort
+            $orderBy = in_array($orderBy, ['name', 'estimatedUsers', 'requestCount']) ? $orderBy : 'name';
+            $sort = $sort ?? 'asc';
+            $url = $page !== 0 ? "usage/applications?fromDate={$fromDate}&toDate={$toDate}&page={$page}&orderBy={$orderBy}&sort={$sort}" :
+                "usage/applications?fromDate={$fromDate}&toDate={$toDate}&orderBy={$orderBy}&sort={$sort}";
 
             $response = $this->http->get($url);
             $contents = json_decode($response->getBody()->getContents(), true);

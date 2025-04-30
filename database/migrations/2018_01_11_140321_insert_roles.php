@@ -12,7 +12,6 @@ class InsertRoles extends Migration
     {
         $rolesToCreate = [
             'api-user' => 'API User',
-            '3sc-admin' => '3SC Admin',
             'gdpc-admin' => 'IFRC Admin',
             'ns-admin' => 'NS Admin',
             'ns-editor' => 'NS Editor',
@@ -24,7 +23,7 @@ class InsertRoles extends Migration
             $role = new Role();
             $role->name = $roleName;
             $role->sort = $counter;
-            $role->all = ($name === '3sc-admin') ? 1 : 0;
+            $role->all = 0;
             $role->save();
             $roles[$name] = $role;
             $counter++;
