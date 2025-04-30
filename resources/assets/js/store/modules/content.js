@@ -219,7 +219,7 @@ export const actions = {
   },
   async fetchAttribution ({ commit }, societyCode) {
     try {
-      const { data } = await axios.get(`https://api.preparecenter.org/v1/org/${societyCode}`)
+      const { data } = await axios.get(`https://api.preparecenter.org/v2/org/${societyCode}`)
       commit(types.FETCH_ATTR_SUCCESS, { attr: data })
     } catch (error) {
       commit(`generic/${types.NETWORK_FAILURE}`, { error }, { root: true })
