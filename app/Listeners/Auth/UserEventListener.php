@@ -7,14 +7,22 @@ use App\Models\Access\User\User;
 use App\Notifications\Auth\UserPasswordChanged;
 use App\Repositories\Access\UserRepository;
 use Illuminate\Auth\Events\PasswordReset;
-
+use App\Classes\MailApi\MailApiService;
 class UserEventListener
 {
-    public static function onPasswordChanged(PasswordReset $event)
+    private $mailApiService;
+
+    public function __construct(MailApiService $mailApiService)
+    {
+        $this->mailApiService = $mailApiService;
+    }
+
+    public function onPasswordChanged(PasswordReset $event)
     {
         
         $user = $event->user;
-        $user->notify(new UserPasswordChanged());
+        $notification = new UserPasswordChanged($this->mailApiService);
+        $notification->toMail($user);
     }
 
     public static function onLogIn(UserLoggedIn $event)

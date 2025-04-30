@@ -16,12 +16,14 @@ use App\Notifications\Auth\AdminUserNeedsConfirmation;
 use App\Repositories\Access\Role\RoleRepository;
 use App\Repositories\Access\UserRepository;
 use App\Repositories\TermsRepository;
+use App\Classes\MailApi\MailApiService;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+
 /**
  * @OA\Tag(
  *     name="Users",
@@ -39,13 +41,16 @@ class UserController extends Controller
     
     private $terms;
 
+    private $mailApiService;
+
     
-    public function __construct(UserRepository $users, RoleRepository $roles, TermsRepository $terms)
+    public function __construct(UserRepository $users, RoleRepository $roles, TermsRepository $terms, MailApiService $mailApiService)
     {
         $this->middleware('auth:api');
         $this->users = $users;
         $this->roles = $roles;
         $this->terms = $terms;
+        $this->mailApiService = $mailApiService;
     }
 
     /**
@@ -115,7 +120,8 @@ class UserController extends Controller
         ]));
 
 
-        $user->notify(new AdminUserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code)));
+        $notification = new AdminUserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code), $this->mailApiService);
+        $notification->toMail($user);
 
         event(new UserCreated($user));
 

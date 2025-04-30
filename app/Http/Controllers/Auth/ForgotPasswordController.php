@@ -7,14 +7,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Password;
+use App\Classes\MailApi\MailApiService;
+use App\Models\Access\User\User;
 
 class ForgotPasswordController extends Controller
 {
+    protected $mailApiService;
     use SendsPasswordResetEmails;
 
-    public function __construct()
+    public function __construct(MailApiService $mailApiService)
     {
         $this->middleware('guest')->except('sendResetLinkEmail');
+        $this->mailApiService = $mailApiService;
     }
 
     /**
@@ -58,5 +62,36 @@ class ForgotPasswordController extends Controller
 
         return response()->json(['email' => __($response)], Response::HTTP_BAD_REQUEST);
     }
+
+    public function sendResetLinkEmail(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return $this->sendResetLinkFailedResponse($request, Password::INVALID_USER);
+        }
+
+        $token = app('auth.password.broker')->createToken($user);
+
+        $resetLink = url(config('app.url') . route('password.reset', [
+            'token' => $token,
+            'email' => $request->email,
+        ], false));
+
+        $html = $this->mailApiService->buildResetPasswordTemplate($resetLink);
+
+        $this->mailApiService->sendMail(
+            $request->email,
+            'Password Reset Request',
+            $html
+        );
+
+        return $this->sendResetLinkResponse($request, Password::RESET_LINK_SENT);
+    }
+
 
 }

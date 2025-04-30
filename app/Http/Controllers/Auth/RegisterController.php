@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Classes\MailApi\MailApiService;
 use App\Events\Backend\Access\User\UserRegistered;
 use App\Http\Controllers\Controller;
 use App\Models\Access\Role\Role;
@@ -23,6 +24,7 @@ class RegisterController extends Controller
 
     
     private $terms;
+    private $mailApiService;
 
 
     /**
@@ -60,11 +62,12 @@ class RegisterController extends Controller
     //register from RegistersUsers trait
 
     
-    public function __construct(UserRepository $users, TermsRepositoryInterface $terms)
+    public function __construct(UserRepository $users, TermsRepositoryInterface $terms, MailApiService $mailApiService)
     {
         $this->middleware('guest');
         $this->users = $users;
         $this->terms = $terms;
+        $this->mailApiService = $mailApiService;
     }
 
     
@@ -97,7 +100,8 @@ class RegisterController extends Controller
         $user = $this->users->createUser($data);
 
         if (! $user->isConfirmed()) {
-            $user->notify(new UserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code)));
+            $notification = new UserNeedsConfirmation(new UserConfirmationToken($user->confirmation_code), $this->mailApiService);
+            $notification->toMail($user);
         }
 
         event(new UserRegistered($user));

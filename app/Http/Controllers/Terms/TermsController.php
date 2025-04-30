@@ -11,6 +11,7 @@ use App\Repositories\TermsRepositoryInterface;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
+use App\Classes\MailApi\MailApiService;
 /**
  * @OA\Tag(
  *     name="Terms",
@@ -25,11 +26,14 @@ final class TermsController extends ApiController
     
     private $users;
 
+    private $mailApiService;
+
     
-    public function __construct(TermsRepositoryInterface $terms, UserRepository $users)
+    public function __construct(TermsRepositoryInterface $terms, UserRepository $users, MailApiService $mailApiService)
     {
         $this->terms = $terms;
         $this->users = $users;
+        $this->mailApiService = $mailApiService;
     }
 
     /**
@@ -149,7 +153,18 @@ final class TermsController extends ApiController
         $terms = $this->terms->create((string) $request->get('version'), $request->get('content'), auth()->user()->id);
 
         $users = $this->users->allNotifiablePublicUsers();
-        Notification::send($users, new TermsUpdatedNotification());
+        $emails = $users->pluck('email')->implode(',');
+        $route = route('login');
+        $subject = trans('terms.email.subject', ['app_name' => config('app.name')]);
+        $html = $this->mailApiService->buildTermsAndConditionsTemplate($route);
+
+        $this->mailApiService->sendMail(
+            $emails,
+            $subject,
+            $html,
+            true, // Send as bulk email
+        );
+
 
         return TermsResource::make($terms)->response()->setStatusCode(JsonResponse::HTTP_CREATED);
     }
