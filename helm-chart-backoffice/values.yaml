@@ -73,11 +73,11 @@ ingress:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
-        - host: "whatnow.jazusoft.com"
+        - host: "preparemessages-stage.ifrc.org"
           paths:
               - path: /
                 pathType: Prefix
     tls:
         - hosts:
-              - "whatnow.jazusoft.com"
-          secretName: "your-tls-secret"
+              - "preparemessages-stage.ifrc.org"
+          secretName: "ifrc.certificates.secret"
