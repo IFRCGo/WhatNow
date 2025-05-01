@@ -9,7 +9,7 @@ class Kernel extends ConsoleKernel
 {
 
     protected $commands = [
-        \App\Console\Commands\MultiLanguageTranslationCommand::class,
+        \App\Console\Commands\TranslateLanguage::class,
             ];
 
 

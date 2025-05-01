@@ -1,1020 +1,1060 @@
 {
-  "ok": "موافق",
-  "go": "انطلق",
-  "all": "الكل",
-  "cancel": "إلغاء",
-  "error_alert_title": "عذرًا...",
-  "error_alert_text": "لقد حدث خطأ ما! يرجى المحاولة مرة أخرى.",
-  "error_permission_alert_text": "ليس لديك الإذن للقيام بهذا الإجراء",
-  "token_expired_alert_title": "انتهت فترة الجلسة!",
-  "token_expired_alert_text": "الرجاء تسجيل الدخول مرة أخرى للمتابعة.",
-  "login": "تسجيل الدخول",
-  "what_now": "قاعدة بيانات رسائل السلامة في الاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر",
-  "message_portal": "بوابة الرسالة",
-  "register": "اشتراك",
-  "sign_up": "إنشاء حساب جديد",
-  "docs": "مستندات",
-  "my_apps": "تطبيقاتي الخاصة",
-  "number_of_apps": "{0} تطبيقات",
-  "whatnow_content": "الرسائل",
-  "create_key": "إنشاء مفتاح",
-  "alerts": "تنبيهات",
-  "feeds": "تغذية",
-  "get_started": "التسجيل الآن",
-  "page_not_found": "صفحة غير موجودة",
-  "go_home": "اذهب إلى الصفحة الرئيسية",
-  "logout": "تسجيل خروج",
-  "email": "البريد الإلكتروني",
-  "register_success": "شكرا لاشتراكك",
-  "confirm_email": "يرجى التحقق من البريد الوارد الخاص بك للتحقق من البريد الإلكتروني.",
-  "email_confirmed": "شكرًا لتأكيد بريدك الإلكتروني. الرجاء تسجيل الدخول.",
-  "confirmation_failed": "عنوان بريدك الإلكتروني لا يمكن تأكيده، فضلاً اتصل بالفرد المسؤول ثم حاول مرة أخرى.",
-  "home_redirect": "اذهب إلى الصفحة الرئيسية",
-  "status": "الحالة",
-  "remember_me": "ذكرني",
-  "old_password": "كلمة المرور الحالية",
-  "password": "كلمة المرور",
-  "forgot_password": "هل نسيت كلمة المرور؟",
-  "confirm_password": "تأكيد كلمة المرور",
-  "incorrect_password": "كلمة مرور غير صحيحة",
-  "name": "الاسم",
-  "first_name": "الاسم الأول",
-  "last_name": "اسم العائلة",
-  "toggle_navigation": "تبديل التصفح",
-  "you_are_logged_in": "لقد قمت بتسجيل دخولك!",
-  "reset_password": "إعادة تعيين كلمة المرور",
-  "set_password": "تعيين كلمة المرور",
-  "send_password_reset_link": "إرسال رابط لإعادة ضبط كلمة المرور",
-  "settings": "إعدادات",
-  "profile": "الملف الشخصي",
-  "your_info": "معلوماتك",
-  "info_updated": "معلوماتك قد تم تجديدها!",
-  "update": "تحديث",
-  "your_password": "كلمة مرورك",
-  "password_updated": "لقد تم تجديد كلمة المرور الخاصة بك",
-  "new_password": "كلمة المرور الجديدة",
-  "login_with": "تسجيل الدخول بواسطة",
-  "register_with": "الاشتراك بواسطة",
-  "yes": "نعم",
-  "no": "لا",
-  "close": "إغلاق",
-  "dashboard": "لوحة المعلومات",
-  "terms_service": "خيارات الخدمة",
-  "sign_in_with_google": "تسجيل الدخول عبر جوجل",
-  "offline_error": {
-    "title": "لا يوجد اتصال بالإنترنت",
-    "description": "يرجى حفظ التغييرات {time} أو سيتم إلغاء التقدم"
-  },
-  "breadcrumbs": {
-    "applications": "التطبيقات",
-    "admin_users": "المستخدمون المسؤولون",
-    "users": "المستخدمون",
-    "manage_users": "إدارة المستخدمين",
-    "profile": "الملف الشخصي",
-    "terms": "الأحكام والشروط",
-    "edit": "تحرير",
-    "create": "إنشاء",
-    "content": "المحتوى",
-    "what_now_content": "محتوى What Now",
-    "bulk_upload": "تحميل ملفات الرسائل",
-    "audit_log": "سجل التدقيق",
-    "api_usage": "استخدام واجهة برمجة التطبيقات",
-    "app_detail": "تفاصيل التطبيق",
-    "all_terms": "جميع الأحكام والشروط"
-  },
-  "documentation": {
-    "heading": "وثائق واجهة برمجة التطبيقات لدى الصليب الأحمر",
-    "sidebar": {
-      "introduction": "المقدمة",
-      "base_url": "رابط أساسي",
-      "changelog": "سجل التغيير",
-      "authentication": "المصادقة",
-      "response_codes": "رموز الاستجابة",
-      "emergency_alert_feed": "تغذية تنبيه الطوارئ",
-      "cap_alert_document": "مستند بروتوكول التنبيه المشترك",
-      "what_now": "خدمة What Now"
+    "ok": "OK",
+    "go": "GO",
+    "all": "All",
+    "cancel": "Cancel",
+    "error_alert_title": "Oops...",
+    "error_alert_text": "Something went wrong! Please try again.",
+    "error_permission_alert_text": "You do not have permission to make this change",
+    "token_expired_alert_title": "Session Expired!",
+    "token_expired_alert_text": "Please log in again to continue.",
+    "login": "Log In",
+    "what_now": "IFRC Safety Message Database",
+    "message_portal": "Message Portal",
+    "register": "Register",
+    "sign_up": "Sign up",
+    "docs": "Docs",
+    "my_apps": "My apps",
+    "number_of_apps": "{0} Apps",
+    "whatnow_content": "Messages",
+    "create_key": "Create Key",
+    "alerts": "Alerts",
+    "feeds": "Feeds",
+    "get_started": "Sign up now",
+    "page_not_found": "Page Not Found",
+    "go_home": "Go Home",
+    "logout": "Logout",
+    "email": "Email",
+    "register_success": "Thank you for registering",
+    "confirm_email": "Please check your inbox for an email to confirm your account.",
+    "email_confirmed": "Thank you for confirming your email address. Please log in.",
+    "confirmation_failed": "Your email address could not be confirmed, please contact your administrator to try again.",
+    "home_redirect": "Go to home page",
+    "status": "Status",
+    "remember_me": "Remember Me",
+    "old_password": "Current Password",
+    "password": "Password",
+    "forgot_password": "Forgot Your Password?",
+    "confirm_password": "Confirm Password",
+    "incorrect_password": "Incorrect Password",
+    "name": "Name",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "toggle_navigation": "Toggle navigation",
+    "you_are_logged_in": "You are logged in!",
+    "reset_password": "Reset Password",
+    "set_password": "Set Password",
+    "send_password_reset_link": "Send Password Reset Link",
+    "settings": "Settings",
+    "profile": "Profile",
+    "your_info": "Your Info",
+    "info_updated": "Your info has been updated!",
+    "update": "Update",
+    "your_password": "Your Password",
+    "password_updated": "Your password has been updated",
+    "new_password": "New Password",
+    "login_with": "Login with",
+    "register_with": "Register with",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "dashboard": "Dashboard",
+    "terms_service": "Terms of Service",
+    "sign_in_with_google": "Sign In with Google",
+    "offline_error": {
+        "title": "No Internet Connection",
+        "description": "Please save changes within {time} or progress will be lost"
     },
-    "steps": {
-      "one": {
-        "body": "تتيح واجهة برمجة تطبيقات تعليمات الصليب الأحمر للمطورين الوصول إلى معلومات الطوارئ والموارد الصادرة عن جمعيات الصليب الأحمر الدولية.",
-        "heading": "المقدمة",
-        "support_card": {
-          "body": "إذا كانت لديك أسئلة حول واجهة برمجة التطبيقات الخاصة بالصليب الأحمر، يرجى التواصل عبر dev@3sidedcube.com",
-          "title": "الدعم والصيانة"
-        }
-      },
-      "two": {
-        "body": "تحتوي جميع الروابط في مستندات واجهة برمجة التطبيقات v1.0 على عنوان الرابط الأساسي التالي:",
-        "heading": "رابط أساسي"
-      },
-      "three": {
-        "heading": "سجل التغيير",
-        "table": {
-          "headers": {
-            "detail": "الإصدار",
-            "version": "نسخة إصدار واجهة برمجة التطبيقات",
-            "release": "الإصدار",
-            "release_date": "تاريخ الإصدار"
-          }
-        }
-      },
-      "four": {
-        "body": "واجهة برمجة التطبيقات تتطلب المصادقة للوصول إلى جميع الموارد باستخدام مفتاح واجهة برمجة التطبيقات. للحصول على مفتاح واجهة برمجة التطبيقات، أولاً {0}.\n\nيجب أن تتضمن جميع طلبات واجهة برمجة التطبيقات عنوان HTTP التالي:",
-        "create_app_cta": "قم بإنشاء تطبيق",
-        "heading": "المصادقة"
-      },
-      "five": {
-        "heading": "رموز الاستجابة",
-        "table": {
-          "descriptions": {
-            "ok": "نجح الطلب ويحتوي نص الرد على المورد المطلوب",
-            "found": "تشير إلى إعادة التوجيه. قم بإصدار طلب GET إلى عنوان رابط للمورد في الموقع: الترويسة.",
-            "not_found": "لم يتم العثور على الصفحة المطلوبة.",
-            "not_allowed": "يشير إلى أن طريقة HTTP المستخدمة غير مسموح بها على هذا المورد.",
-            "server_error": "حدث خطأ في الخادم وتعذر إرجاع المورد المطلوب.",
-            "unavailable": "يشير إلى أن الخدمة غير متوفرة حاليًا. حاول عن جديد في وقت آخر."
-          },
-          "headers": {
-            "code": "رمز",
-            "name": "الاسم",
-            "description": "الوصف"
-          }
-        }
-      },
-      "six": {
-        "card": {
-          "body": "يجوز لكل جمعية من جمعيات الصليب الأحمر إصدار تنبيهات عامة باستخدام الإصدار {0} v1.2.",
-          "cta": "بروتوكول الإنذار الموحد",
-          "title": "بروتوكول الإنذار الموحد"
+    "breadcrumbs": {
+        "applications": "Applications",
+        "admin_users": "Admin Users",
+        "users": "Users",
+        "manage_users": "Manage Users",
+        "profile": "Profile",
+        "terms": "Terms and Conditions",
+        "edit": "Edit",
+        "create": "Create",
+        "content": "Content",
+        "what_now_content": "What Now Content",
+        "bulk_upload": "Message File Upload",
+        "audit_log": "Audit Log",
+        "api_usage": "API Usage",
+        "app_detail": "App Detail",
+        "all_terms": "All Terms and Conditions"
+    },
+    "documentation": {
+        "heading": "Red Cross API Documentation",
+        "sidebar": {
+            "introduction": "Introduction",
+            "base_url": "Base URL",
+            "changelog": "Changelog",
+            "authentication": "Authentication",
+            "response_codes": "Response codes",
+            "emergency_alert_feed": "Emergency Alert Feed",
+            "cap_alert_document": "CAP Alert Document",
+            "what_now": "What Now"
         },
-        "endpoint": "نقطة النهاية:",
-        "example": "في هذا المثال، يجب استبدال المقطع {0} برمز البلد لمجتمع معين. على سبيل المثال",
-        "feed_intro": "يتم أيضًا توفير موجز لكل مجتمع، مع سرد التنبيهات النشطة التي نشرها مجتمع معين، والتي يتم تحديدها بواسطة",
-        "heading": "تغذية تنبيه الطوارئ",
-        "intro": "يتم نشر تنبيهات بروتوكول التنبيه المشترك التي تصدرها جميع الجمعيات باستخدام موجز موقع RSS. يمكن الوصول إلى هذا عبر نقطة النهاية التالية:"
-      },
-      "seven": {
-        "endpoint": "نقطة النهاية:",
-        "example_response": "مثال على الرد:",
-        "heading": "مستند بروتوكول التنبيه المشترك",
-        "body": "يمكن الوصول إلى مستندات تنبيه بروتوكول التنبيه المشترك عبر الرابط المطلق المحدد في كل عنصر موجز موقع RSS. يستخدم الرابط للتنبيه التنسيق التالي: "
-      },
-      "eight": {
-        "body": "توفر نقاط النهاية التالية بيانات منظمة تنشرها جمعيات الصليب الأحمر للمساعدة في التأهب للكوارث لمجموعة متنوعة من أنواع الأحداث.\n\nيوفر كل إدخال معلومات عن ست مراحل لإدارة الكوارث:",
-        "endpoint": "نقطة النهاية:",
-        "example_response": "مثال على الرد:",
-        "heading": "خدمة What Now",
-        "note": "ملاحظة:",
-        "noteDetails": "{0} تم تضمين جميع الردود في خاصية {1} الأصل.",
-        "query_params": "استعلام المعلمات:",
-        "response_properties": "خصائص الاستجابة:",
-        "structure": "هيكل كائنات What Now:",
-        "stucture_attribution": "هيكل كائن {0}:",
-        "stucture_attribute_translation": "بنية كائن الإحالة {0}:",
-        "stucture_translation": "هيكل كائن {0}:",
-        "table": {
-          "query_params": {
-            "name": "الاسم",
-            "description": "وصف"
-          },
-          "structure": {
-            "property": "خاصية",
-            "data_type": "نوع البيانات",
-            "description": "الوصف"
-          }
+        "steps": {
+            "one": {
+                "body": "The Red Cross REST API enables developers to access to emergency information and resources issued by international Red Cross Societies.",
+                "heading": "Introduction",
+                "support_card": {
+                    "body": "If you have any questions or need support, please contact us at hello@ifrc.org.",
+                    "title": "Support & Questions"
+                }
+            },
+            "two": {
+                "body": "All API endpoints are prefixed with this base URL.",
+                "heading": "Base URL"
+            },
+            "three": {
+                "heading": "Changelog",
+                "table": {
+                    "headers": {
+                        "detail": "Release",
+                        "version": "Api Version",
+                        "release": "Release",
+                        "release_date": "Release Date"
+                    }
+                }
+            },
+            "four": {
+                "body": "The API requires authentication to access all resources using an API key. To obtain an API key, firstly {0}.\n\nAll API requests must include the following HTTP header:",
+                "create_app_cta": "create an application",
+                "heading": "Authentication"
+            },
+            "five": {
+                "heading": "Response codes",
+                "table": {
+                    "descriptions": {
+                        "ok": "The request was successful and the response body contains the requested resource",
+                        "found": "Indicates a redirect. Issue a GET request to the resource URI in the Location: header.",
+                        "not_found": "The requested resource was not found.",
+                        "not_allowed": "Indicates the HTTP method used is not permitted on this resource.",
+                        "server_error": "A server error occurred and the requested resource could not be returned.",
+                        "unavailable": "Indicates the service is not currently available. Try the request again at a later time."
+                    },
+                    "headers": {
+                        "code": "Code",
+                        "name": "Name",
+                        "description": "Description"
+                    }
+                }
+            },
+            "six": {
+                "card": {
+                    "body": "Each Red Cross Society may issue public alerts using the {0} v1.2.",
+                    "cta": "Common Alerting Protocol",
+                    "title": "Common Alerting Protocol"
+                },
+                "endpoint": "Endpoint:",
+                "example": "In this example, the {0} segment should be replaced with the country code of a given society. e.g.",
+                "feed_intro": "A feed for each society is also provided, listing active alerts published by a given society, identified by",
+                "heading": "Emergency Alert Feed",
+                "intro": "CAP alerts issued by all societies are published using an RSS feed. This may be accessed via the following endpoint:"
+            },
+            "seven": {
+                "endpoint": "Endpoint:",
+                "example_response": "Example Response:",
+                "heading": "CAP Alert Document",
+                "body": "CAP alert documents may be accessed via the absolute link specified in each RSS feed item. The URI of an alert uses the following format: "
+            },
+            "eight": {
+                "body": "The following endpoints provide structured data published by Red Cross societies to assist with disaster preparedness for a variety of event types.\n\nEach entry provides information on six stages of disaster management:",
+                "endpoint": "Endpoint:",
+                "example_response": "Example Response:",
+                "heading": "What Now",
+                "note": "Note:",
+                "noteDetails": "{0} all responses are contained within in a parent {1} property.",
+                "query_params": "Query Parameters:",
+                "response_properties": "Response Properties:",
+                "structure": "Structure of What Now Item Objects:",
+                "stucture_attribution": "Structure of an {0} object:",
+                "stucture_attribute_translation": "Structure of an attribution {0} object:",
+                "stucture_translation": "Structure of a {0} object:",
+                "table": {
+                    "query_params": {
+                        "name": "name",
+                        "description": "description"
+                    },
+                    "structure": {
+                        "property": "Property",
+                        "data_type": "Data type",
+                        "description": "Description"
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "get_started_docs": {
-    "title": "ابدأ",
+    },
+    "get_started_docs": {
+        "title": "Get Started",
+        "sidebar": {
+            "create_app": "Create an app",
+            "get_api_key": "Get an API key",
+            "make_request": "Make a request",
+            "sign_up": "Sign up"
+        },
+        "steps": {
+            "one": {
+                "heading": "Step 1 - Sign up",
+                "body": "To get started using data from the Safety Message Database API, firstly {0} to the Safety Message Database Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
+                "create_account_alt": "create account",
+                "existing_account": "If you already have an account, please {0}.",
+                "login_cta": "log in",
+                "sign_up_cta": "sign up"
+            },
+            "two": {
+                "body": "To use the API you must create an application in the Safety Message Database Portal. Tell us a little about what you're building.",
+                "create_app_alt": "create app",
+                "heading": "Step 2 - Create an app"
+            },
+            "three": {
+                "body": "When you have created an app, an API Key will be automatically generated.\n\n{0} Be sure to store this as securely as possible and avoid sharing or otherwise exposing your API key within your own application.",
+                "create_api_key_alt": "Create API key",
+                "heading": "Step 3 - Get an API key",
+                "important": "Important:"
+            },
+            "four": {
+                "api_docs_cta": "API documentation",
+                "body": "The Safety Message Database API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
+                "example_title": "Example Request",
+                "heading": "Step 4 - Make a request",
+                "moreInfo": "For more information on all API endpoints, see the {0}."
+            }
+        }
+    },
+    "home_pods": {
+        "bulk_upload": "Here you can upload all of your safety messages in one file.",
+        "audit_log": "Here you can view the history of your message edits",
+        "whatnow_edit": "This is where you can edit Safety Message Database content",
+        "whatnow_review": "This is where you can review Safety Message Database content",
+        "whatnow_publish": "Here you can edit and publish your National Society's safety messages.",
+        "manage_users": "This is where to manage the users (Create, edit and remove)",
+        "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
+        "wellcome": "Welcome",
+        "wellcome_description": "Here you can edit and publish Safety Message Database content."
+    },
+    "languages": {
+        "am": "አማርኛ",
+        "ar": "عربى",
+        "bn": "বাংলা",
+        "de": "Deutsche",
+        "en": "English",
+        "es": "Español",
+        "fr": "Français",
+        "ht": "Kreyòl",
+        "id": "bahasa Indonesia",
+        "it": "Italiano",
+        "ja": "日本",
+        "my": "ဗမာ",
+        "ne": "नेपाली",
+        "pt": "Português",
+        "ru": "русский",
+        "rw": "Kinyarwanda",
+        "sw": "Kiswahili",
+        "th": "ไทย",
+        "tr": "Türk",
+        "ur": "اردو",
+        "vi": "Tiếng Việt"
+    },
     "sidebar": {
-      "create_app": "إنشاء تطبيق",
-      "get_api_key": "كيفية ادخل مفتاح واجهة برمجة التطبيقات",
-      "make_request": "تقديم الطلب",
-      "sign_up": "إنشاء حساب جديد"
+        "manage": "Manage Content Users",
+        "content_users": "Content Users",
+        "audit_log": "Edit History",
+        "whatnow": "Attribution Editor",
+        "bulk": "Message File Upload",
+        "content": "Content",
+        "api": "API Usage",
+        "applications": "Applications",
+        "api_stats": "API Stats",
+        "api_users": "API Users",
+        "terms_conditions": "Terms and Conditions",
+        "subnationals": "Subnational"
     },
-    "steps": {
-      "one": {
-        "heading": "الخطوة 1 - قم بالاشتراك",
-        "body": "للبدء في استخدام البيانات من واجهة برمجة تطبيقات قاعدة بيانات رسائل السلامة، أولاً {0} إلى بوابة قاعدة بيانات رسائل السلامة.\n\nيمكنك استخدام حسابك على فيسبوك وجوجل، أو عنوان بريد إلكتروني لإنشاء حساب.",
-        "create_account_alt": "أنشأ حسابًا",
-        "existing_account": "إذا كان لديك حساب مسبقًا، رجاءً اضغط {0}.",
-        "login_cta": "تسجيل الدخول",
-        "sign_up_cta": "قم بالتسجيل"
-      },
-      "two": {
-        "body": "لاستخدام واجهة برمجة التطبيقات (API) يجب عليك إنشاء تطبيق في بوابة قاعدة بيانات رسائل السلامة. أخبرنا قليلاً عما تقوم بإنشائه.",
-        "create_app_alt": "إنشاء تطبيق",
-        "heading": "الخطوة 2 - إنشاء تطبيق"
-      },
-      "three": {
-        "body": "عندما تقوم بإنشاء تطبيق، سيتم إنشاء مفتاح واجهة برمجة التطبيقات تلقائياً.\n\n{0} تأكد من تخزين هذا بأمان قدر الإمكان وتجنب مشاركة مفتاح واجهة برمجة التطبيقات أو كشفه بأي طريقة أخرى داخل تطبيقك.",
-        "create_api_key_alt": "إنشاء مفتاح واجهة برمجة التطبيقات",
-        "heading": "خطوة 3 - احصل على عنوان مفتاح واجهة برمجة التطبيقات",
-        "important": "مهم:"
-      },
-      "four": {
-        "api_docs_cta": "الوثائق الخاصة بواجهة برمجة التطبيقات",
-        "body": "تستخدم واجهة برمجة تطبيقات قاعدة بيانات رسائل الأمان HTTP(S) وتوفر نقاط نهاية RESTful للحصول على البيانات المنشورة.\n\nيجب مصادقة كل طلب باستخدام مفتاح API الذي تم إنشاؤه في الخطوة السابقة.",
-        "example_title": "طلب مثال",
-        "heading": "الخطوة 4 - قدم طلباً",
-        "moreInfo": "للحصول على المزيد من المعلومات حول جميع نقاط نهاية واجهة برمجة التطبيقات، انظر علامة الموارد {0}."
-      }
-    }
-  },
-  "home_pods": {
-    "bulk_upload": "قم بتحميل ملفات .csv بحيث يمكنك تحديث كميات كبيرة من المحتوى مرة واحدة",
-    "audit_log": "هنا حيث يمكنك عرض سجل الأنشطة",
-    "whatnow_edit": "هذا هو المكان الذي يمكنك فيه تعديل محتوى قاعدة بيانات رسائل السلامة",
-    "whatnow_review": "هذا هو المكان الذي يمكنك من خلاله مراجعة محتوى قاعدة بيانات رسائل السلامة",
-    "whatnow_publish": "هذا هو المكان الذي يمكنك فيه تحرير محتوى قاعدة بيانات رسائل السلامة ونشره",
-    "manage_users": "هذا هو مكان إدارة المستخدمين (إنشاء وتعديل وإزالة)",
-    "api_usage": "هذا هو المكان الذي يمكنك فيه معرفة من يستخدم واجهة برمجة التطبيقات وما هي التطبيقات التي يتم إنشاؤها باستخدامها.",
-    "wellcome": "مرحبًا",
-    "wellcome_description": "هنا يمكنك تحرير محتوى قاعدة بيانات رسائل السلامة ونشره."
-  },
-  "languages": {
-    "am": "አማርኛ",
-    "ar": "عربى",
-    "bn": "বাংলা",
-    "de": "Deutsch",
-    "en": "English",
-    "es": "‫Español",
-    "fr": "Français",
-    "ht": "Kreyòl",
-    "id": "bahasa Indonesia\n\n",
-    "it": "Italiano",
-    "ja": "日本語",
-    "my": "ဗမာ",
-    "ne": "नेपाली",
-    "pt": "Português (UE)\n\n",
-    "ru": "русский",
-    "rw": "Ikinyarwanda",
-    "sw": "Kiswahili",
-    "th": "ภาษาไทย",
-    "tr": "Türkçe",
-    "ur": "اردو",
-    "vi": "Tiếng Việt"
-  },
-  "sidebar": {
-    "manage": "إدارة مستخدمي المحتوى",
-    "content_users": "مستخدمو المحتوى",
-    "audit_log": "تحرير المحفوظات",
-    "whatnow": "محرر الإسناد",
-    "bulk": "تحميل ملفات الرسائل",
-    "content": "المحتوى",
-    "api": "استخدام واجهة برمجة التطبيقات",
-    "applications": "التطبيقات",
-    "api_stats": "إحصائيات واجهة برمجة التطبيقات",
-    "api_users": "مستخدمو واجهة برمجة التطبيقات",
-    "terms_conditions": "الأحكام والشروط",
-    "subnationals": "المناطق الفرعية"
-  },
-  "common": {
-    "accept": "قبول",
-    "actions": "الإجراءات",
-    "create": "إنشاء",
-    "edit": "تحرير",
-    "save": "حفظ",
-    "deactivate": "تعطيل",
-    "activate": "تفعيل",
-    "are_you_sure": "هل أنت متأكد؟",
-    "yes": "نعم",
-    "title": "العنوان",
-    "description": "الوصف",
-    "unpublished_edits": "تعديلات غير منشورة؟",
-    "published": "نُشرت",
-    "delete": "مسح",
-    "welcome": "مرحبا بكم في",
-    "save_changes": "حفظ التغييرات",
-    "auto_saving": "الحفظ التلقائي",
-    "add": "أضف",
-    "my_profile": "ملفي الشخصي",
-    "cancel": "إلغاء",
-    "view_changes": "عرض التغييرات",
-    "view_content": "عرض المحتوى",
-    "resend_activation": "إعادة إرسال رسالة تفعيل البريد الإلكتروني",
-    "deactivate_user": "قم بإلغاء تفعيل المستخدم",
-    "submit_changes": "إرسال التغييرات",
-    "reactivate_user": "إعادة تفعيل المستخدم",
-    "send_invite": "إرسال دعوة",
-    "invite_and_create": "إنشاء آخر أو إرسال دعوة",
-    "loading": "تحميل المحتوى",
-    "publish_new": "نشر النسخة الجدیدة",
-    "greeting": "مرحباً",
-    "removed": "تم الحذف",
-    "copy": "نسخ",
-    "copied": "منسوخ",
-    "not_empty": "لا يمكن أن تكون فارغة",
-    "name": "الاسم",
-    "webUrl": "الرابط",
-    "learn_more": "لمعرفة المزيد",
-    "validations": {
-      "empty": "هذا الحقل لا يمكن أن يكون فارغًا",
-      "hazardIcon": "يرجى تحديد صورة يقل حجمها عن 30 كيلوبايت"
+    "common": {
+        "accept": "Accept",
+        "actions": "Actions",
+        "create": "Create",
+        "edit": "Edit",
+        "save": "Save",
+        "deactivate": "Deactivate",
+        "activate": "Activate",
+        "are_you_sure": "Are you sure?",
+        "yes": "Yes",
+        "title": "Title",
+        "description": "Description",
+        "unpublished_edits": "Unpublished edits?",
+        "published": "Published",
+        "delete": "Delete",
+        "welcome": "Welcome to the",
+        "save_changes": "Save changes",
+        "auto_saving": "Autosaving",
+        "add": "Add",
+        "reset_password": "Reset Password",
+        "my_profile": "My Profile",
+        "cancel": "Cancel",
+        "view_changes": "View changes",
+        "view_content": "View content",
+        "resend_activation": "Resend activation email",
+        "deactivate_user": "Deactivate user",
+        "submit_changes": "Submit Changes",
+        "reactivate_user": "Reactivate user",
+        "send_invite": "Send invite",
+        "invite_and_create": "Invite and create another",
+        "loading": "Loading content",
+        "loading_button": "Loading...",
+        "publish_new": "Publish New Version",
+        "greeting": "Hi",
+        "removed": "Removed",
+        "copy": "Copy",
+        "copied": "Copied",
+        "not_empty": "Cannot be empty",
+        "name": "Name",
+        "webUrl": "URL",
+        "learn_more": "Learn more",
+        "validations": {
+            "empty": "This cannot be empty",
+            "hazardIcon": "Please select an image that is less than 30kb"
+        },
+        "network_error": "Network error",
+        "network_error_text": "Looks like there has been a network error. Please try again in a few moments",
+        "email_sent": "Email sent",
+        "duplicate_lang_error": "Sorry, the chosen language already exists",
+        "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
+        "estimated_users": "Number of estimated users",
+        "upploading": "Uploading",
+        "download": "Download",
+        "download_as_image": "Download as an image",
+        "download_as_pdf": "Download as a PDF",
+        "add_logo": "Add logo",
+        "edit_logo": "Edit logo",
+        "loading_image": "Loading...",
+        "preview": "Preview"
     },
-    "network_error": "خطأ في الشبكة",
-    "network_error_text": "يبدو أن هناك خطأ في الشبكة. يرجى إعادة المحاولة مرة أخرى في بضع لحظات",
-    "email_sent": "تمّ إرسال البريد الإلكتروني",
-    "duplicate_lang_error": "عذراً، اللغة المختارة موجودة مسبقاً",
-    "duplicate_lang_description": "يرجى إما تعديل اللغة الحالية أو تحديد لغة جديدة من القائمة المنسدلة",
-    "estimated_users": "العدد التقديري للمستخدمين",
-    "upploading": "جاري التحميل",
-    "download": "تنزيل",
-    "download_as_image": "تنزيل كصورة",
-    "download_as_pdf": "تنزيل كـ PDF",
-    "add_logo": "إضافة شعار",
-    "edit_logo": "تحرير الشعار",
-    "loading_image": "جاري التحميل..."
-  },
-  "banners": {
-    "get_started_create": "ابدأ وأنشأ تطبيقك الأول",
-    "create_app": "إنشاء تطبيق",
-    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro.\n\n Hav us singularo propozicio posta.\n\n"
-  },
-  "users": {
-    "user": "المستخدم",
-    "deleted": "المستخدم المحذوف",
-    "list": {
-      "manage": "إدارة المستخدمين",
-      "select_status": "اختر الحالة",
-      "select_role": "اختر دورًا",
-      "select_country": "اختر دولة",
-      "select_terms": "اختر نسخة الشروط",
-      "select_society": "اختر جمعية وطنية",
-      "create": "إنشاء مستخدم جديد",
-      "download_report": "تحميل التقرير",
-      "empty": "تعذر العثور على أي مستخدمين",
-      "detail": "معلومات المستخدم",
-      "clear_filters": "مسح الفلاتر",
-      "table_header": {
-        "user": "المستخدم",
-        "role": "الدور",
-        "society": "المجتمع",
-        "email": "البريد الإلكتروني",
-        "added": "تمت الإضافة",
-        "last_activity": "آخر نشاط",
-        "t_and_c": "نسخة البنود والشروط"
-      },
-      "societies": "مجتمع"
+    "banners": {
+        "get_started_create": ", Get Started and Create Your First App",
+        "create_app": "Create an app",
+        "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
     },
-    "status": {
-      "active": "تفعيل",
-      "deactivated": "غير مفعل"
-    },
-    "edit": {
-      "super_admin_all": "الوصول إلى المجتمعات",
-      "user_details": "معلومات المستخدم",
-      "create_user": "إنشاء مستخدم جديد",
-      "add_society": "+أضف مجتمع ",
-      "societies_heading": "مجتمع",
-      "roles_heading": "الدور والأذونات",
-      "activity_heading": "النشاط",
-      "roles_label": "حدد أدوار وأذونات هذا المستخدم",
-      "activity_link": "عرض جميع الإجراءات من قبل المستخدم",
-      "created": "تم إنشاء المستخدم بنجاح",
-      "updated": "تم تحديث المستخدم بنجاح",
-      "email_update": "لتحديث بريدك الإلكتروني، يرجى إدخال كلمة المرور الخاصة بك",
-      "view": "عرض",
-      "more": "أكثر",
-      "less": "عرض أقل",
-      "user_can_do": "عرض ما يملك المستخدم الإذن للقيام به:",
-      "user_no_permission": "المستخدم ليس لديه أيّ إذن",
-      "soc_already_added": "تم بالفعل تعيين هذا المستخدم لهذا المجتمع"
-    }
-  },
-  "new_welcome": {
-    "title_1": "مرحبًا بكم في",
-    "red_title": "IFRC",
-    "title_2": "قاعدة بيانات",
-    "title_3": "الرسائل الآمنة",
-    "text_header": "الوصول إلى رسائل الصليب الأحمر والهلال الأحمر الآمنة ومشاركتها عبر منصاتك.",
-    "text_header_2": "اتبع الدليل المكون من # خطوات أدناه..",
-    "bottom_subtitle": "اتصل بـ IFRC",
-    "bottom_text": "راسل فريق IFRC إذا كانت لديك أسئلة: im@ifrc.org",
-    "bottom_btn": "اتصل بـ IFRC",
-    "slider_1": {
-      "btn": "إنشاء مفتاح API",
-      "step_1": {
-        "header": "الخطوة 1: إنشاء تطبيق",
-        "text": "قم بإنشاء مفتاح API لاستخدام واجهة برمجة التطبيقات في قاعدة البيانات. أخبرنا عما تقوم ببنائه."
-      },
-      "step_2": {
-        "header": "الخطوة 2: استلام مفتاح API",
-        "text": "عند إنشاء مفتاح API، سيتم إنشاؤه تلقائيًا.",
-        "text_2": "مهم: قم بتخزين مفتاح API بأمان قدر الإمكان. تجنب مشاركة أو كشف مفتاح API داخل تطبيقك."
-      },
-      "step_3": {
-        "header": "الخطوة 3: تقديم طلب",
-        "text": "تستخدم واجهة برمجة التطبيقات قاعدة البيانات HTTP(S) وتوفر نقاط نهاية RESTful للحصول على البيانات المنشورة. يجب أن يتم التحقق من كل طلب باستخدام مفتاح API الذي تم إنشاؤه في الخطوة السابقة. لمزيد من المعلومات حول جميع نقاط نهاية API، راجع وثائق API."
-      },
-      "step_4": {
-        "header": "الخطوة 4: مشاركة الرسائل",
-        "text": "شارك رسائل الصليب الأحمر والهلال الأحمر الآمنة مع الجمهور عند وجود تهديد خطر. يمكنك الاتصال بفريق IFRC إذا كان لديك أي ملاحظات على الرسائل: im@ifrc.org"
-      }
-    },
-    "slider_2": {
-      "btn": "رسائل السلامة",
-      "step_1": {
-        "header": "الخطوة 1: عرض الرسائل",
-        "text": "قم بزيارة قاعدة بيانات الرسائل لعرض رسائل الجمعيات الوطنية للصليب الأحمر والهلال الأحمر المتاحة."
-      },
-      "step_2": {
-        "header": "الخطوة 2: اختر مجموعة الرسائل",
-        "text": "اختر الجمعية الوطنية التي تريد عرضها. ثم اختر نوع الخطر من القائمة المتاحة."
-      },
-      "step_3": {
-        "header": "الخطوة 3: مشاركة الرسائل",
-        "text": "ابحث عن خيار تنزيل الرسائل. يمكنك مشاركة مجموعة الرسائل كصورة أو كـ PDF. قم بالتنزيل والمراجعة للتأكد من أنك تشارك الرسائل الصحيحة."
-      }
-    }
-  },
-  "upload_modal": {
-    "drag_button_text": "انقر أو اسحب الملف إلى هذه المنطقة للتحميل",
-    "button_text": "تحميل"
-  },
-  "stages": {
-    "immediate": "فوري",
-    "warning": "تحذير",
-    "anticipated": "متوقع",
-    "assess_and_plan":"تقييم والتخطيط",
-    "mitigate_risks":"تخفيف المخاطر",
-    "prepare_to_respond":"الاستعداد للاستجابة",
-    "recover": "استعادة"
-  },
-  "content": {
-    "content": "المحتوى",
-    "audit_log": {
-      "audit_log": "سجل التدقيق",
-      "my_audit_log": "تحرير المحفوظات",
-      "empty": "لم يتم العثور على سجل تدقيق يطابق هذا الفلتر",
-      "soc_label": "المجتمع",
-      "select_hazard": "اختر نوع الخطر",
-      "select_language": "اختر لغة",
-      "select_overwrite": "اختر خيار الكتابة فوق",
-      "choose_file": "اختر نوع الملف",
-      "select_soc": "اختر جمعية وطنية"
-    },
-    "whatnow": {
-      "title": "الرسائل",
-      "set_attribution": "تعيين اسم المجتمع ورسالة الإسناد للنشر",
-      "whatnow": "قاعدة بيانات رسائل السلامة",
-      "empty": "لا توجد رسائل سلامة منشورة لهذه الجمعية الوطنية",
-      "steps": "الخطوات",
-      "publish": "نشر",
-      "no_publish": "لا شيء للنّشر",
-      "published": "الترجمات منشورة",
-      "publishing": "جاري النشر",
-      "content_to_publish": "سيتم نشر مسودة المحتوى",
-      "whatnow_content": "محتوى قاعدة بيانات رسائل السلامة",
-      "choose_hazard": "اختر المخاطرة",
-      "hazard": "مخاطرة",
-      "content": "المحتوى",
-      "create": "إضافة المخاطرة",
-      "edit_attribtion": "تعديل الإسْناد",
-      "attribution": "الإسناد- الانتساب",
-      "attribution_url": "إسْناد رابط",
-      "society_name": "جمعية وطنية",
-      "attribution_message": "اسناد رسالة",
-      "no_translation": "لا يوجد محتوى محدد",
-      "delete_content_translation": "سيؤدي ذلك إلى إزالة محتوى قاعدة بيانات رسائل الأمان المحدد من اللغة الحالية",
-      "messages": "رسائل السلامة الخاصة بـ",
-      "add_language": "إضافة لغة جديدة",
-      "no_languages": "حدد أو أنشئ لغة جديدة",
-      "no_soc": "اختر مجتمع",
-      "no_region": "اختر منطقة",
-      "add_language_message": "لإضافة لغة جديدة، يرجى إضافة بعض المحتوى ليتماشى معها",
-      "add_language_attribution": "أنشأ إسنادًا لإضافة لغة جديدة",
-      "select_language": "يرجى اختيار اللغة",
-      "attribution_publish": "ستكون هذه الإسناد متاحة على الفور عند النشر",
-      "date_added": "تاريخ الإضافة",
-      "url": "الرابط",
-      "hazard_type": "نوع الخطر",
-      "show_more": "عرض المزيد",
-      "early": "الإنذار المبكر",
-      "disaster": "تقليل مخاطر الكوارث",
-      "recovery": "استعادة",
-      "publish_summary_title": "الإسناد",
-      "publish_summary_ns": "الجمعية الوطنية",
-      "publish_summary_url": "رابط الإسناد",
-      "publish_summary_message": "رسالة الإسناد"
-    },
-    "edit_whatnow": {
-      "title": "العنوان",
-      "description": "الوصف",
-      "content_piece": "قِسْم المحتوى",
-      "enter_other_hazard_type": "ادخل اسم نوع المخاطرة",
-      "other_hazard_type_label": "نوع مخاطرة أخرى",
-      "stepped_content": "تقدم قسم المحتوى",
-      "content_title_description": "عنوان رسائل السلامة هذه",
-      "content_description_description": "وصف رسائل السلامة هذه",
-      "content_label": "الرجاء إدخال بعض معلومات المخاطرة",
-      "content_url": "الرابط",
-      "content_url_description": "URL لمزيد من المعلومات حول رسائل الأمان هذه. يرجى تضمين البروتوكول، أي http:// أو https://",
-      "created": "تم الانشاء",
-      "pieces_edited": " تم تحرير القطع",
-      "content_placeholder": "الرجاء إدخال رسالة",
-      "mitigation": "التخفيف",
-      "mitigation_help": "إجراءات طويلة المدى لتقليل المخاطر",
-      "mitigation_extra": "التخفيف هو بيان طويل المدى للتنبؤ بحدث خطير. الإجراءات المتخذة هي التقييم والتخطيط وتدابير الحد من المخاطر على المدى الطويل لجعل المنزل والبيئة أكثر أمانًا.",
-      "seasonalForecast": "التوقعات المَوْسِمِيّة",
-      "seasonalForecast_help": "إجراءات قصيرة المدى لتقليل المخاطر",
-      "seasonalForecast_extra": "التنبؤ الموسمي هو بيان للتنبؤ بحدث خطير. الإجراءات المتخذة هي لتقييم المخاطر المحتملة وتخطيط الأنشطة للحد من الخطر ولحماية الأسرة.",
-      "watch": "مشاهدة",
-      "watch_help": "استعد للاستجابة",
-      "watch_extra": "يتم إصدار المراقبة عندما يزداد خطر وقوع حدث خطير بشكل كبير، لكن حدوثه و\/أو موقعه و\/أو توقيته لا يزال غير مؤكد. الغرض منه هو توفير الوقت الكافي لإجراءات الحماية والاستعداد للاستجابة.",
-      "warning": "التحذير",
-      "warning_help": "استعد للاستجابة",
-      "warning_extra": "يتم إصدار تحذير عند وقوع حدث خطير أو وشيك أو وجود احتمالية عالية جدًا لوقوعه. يعني أن الظروف تشكل تهديدًا للحياة أو الممتلكات. يحتاج الأشخاص في مسار هذا الخطر إلى اتخاذ إجراءات وقائية.",
-      "immediate": "عاجل",
-      "immediate_help": "إجراءات الاستجابة",
-      "immediate_extra": "الظروف الحالية تشكل تهديدا للحياة والممتلكات. هذه إجراءات وقائية فورية يجب اتخاذها عند وقوع حدث خطير. هناك حاجة إلى إجراءات الاستجابة لحماية الذات والأسرة.",
-      "recover": "استعادة",
-      "recover_help": "إجراءات الاسترداد",
-      "recover_extra": "هذه إجراءات وقائية يجب اتخاذها لتقليل المخاطر بعد وقوع حدث خطير.",
-      "anticipated": "متوقع",
-      "assess_and_plan": "تقييم والتخطيط",
-      "mitigate_risks": "تخفيف المخاطر",
-      "prepare_to_respond": "الاستعداد للاستجابة",
-      "updated": "تم التحديث",
-      "download_icon": "تحميل الأيقونة",
-      "download_image": "تنزيل كصورة",
-      "download_image_error": "حدث خطأ أثناء تنزيل الصورة، يرجى التأكد من نشر جميع التغييرات والمحاولة مرة أخرى.",
-      "download_instructions": "انقر بزر الفارة الأيمن وحدد \"حفظ الصورة باسم...\" للحفظ",
-      "downloaded_image_alt": "تعليمات قاعدة بيانات رسائل السلامة",
-      "add_key_message": "إضافة رسالة رئيسية",
-      "add_supporting_message": "إضافة رسالة داعمة",
-      "early_warning": "الإنذار المبكر",
-      "early_warning_description": "رسائل السلامة الرئيسية للتنبيهات والإجراءات المبكرة",
-      "disaster_risk_reduction": "تقليل مخاطر الكوارث",
-      "disaster_risk_reduction_description": "رسائل السلامة الرئيسية من PAPE",
-      "recovery": "استعادة",
-      "recovery_description": "رسائل السلامة الرئيسية لإجراءات الاستعادة",
-      "hazard_type": "نوع الخطر",
-      "content_edit_title": "تحرير المحتوى",
-      "content_add_hazard_title": "إضافة خطر",
-      "key_message_label": "عنوان الرسالة الرئيسية",
-      "supporting_message_label": "الرسالة الداعمة"
-    },
-    "message_editor": {
-      "title": "محرر الإسناد",
-      "society_name_label": "اسم الجمعية الوطنية",
-      "attribution_url_label": "رابط الإسناد",
-      "attribution_message_label": "رسالة الإسناد",
-      "create_btn": "إضافة خطر",
-      "contributor_name_label": "اسم المساهم",
-      "contributor_single": "المساهم"
-    },
-    "previewer": {
-      "download_image_error": "خطأ في تنزيل الصورة، يرجى المحاولة مرة أخرى.",
-      "download_pdf_error": "خطأ في تنزيل PDF، يرجى المحاولة مرة أخرى."
-    },
-    "audit": "تحرير التاريخ",
-    "export": "تصدير",
-    "bulk_upload": {
-      "bulk_upload": "تحميل ملفات الرسائل",
-      "template": "نموذج",
-      "export_template": "تصدير قالب",
-      "import_data": "استيراد البيانات",
-      "import_complete": "اكتمل الاستيراد",
-      "import_summary": "أنت تقوم بالتوريد {society}في{lang}.",
-      "import_banner": {
-        "success": "النجاح",
-        "added": "تمت الإضافة",
-        "skipped": "تم التخطي",
-        "denied": "مرفوض",
-        "updated": "مُجدًد",
-        "failed": "فشل",
-        "invalid": "غير صالح",
-        "row": "الصف"
-      },
-      "upload_csv": "إيداع مستند في شكل ملف محدد بفواصل",
-      "language_instructions": "اختر لغات الترجمة التي يتم إدخالها.",
-      "file_instructions": "اسحب ملفا هنا أو اختر من جهازك.",
-      "choose": "اختر",
-      "submit": "أدخل محتوى",
-      "reset": "تحميل آخر",
-      "export_template_guide": "إخراج نموذج مترجم",
-      "export_template_instructions": "للحصول على إرشادات حول كيفية استخدام قالب تحميل الملفات g بفعالية، يرجى الاطلاع على هذا الدليل.",
-      "refer": "راجع",
-      "detail": "للحصول على تعليمات مفصلة",
-      "warnings": {
-        "title": "رفض الإدخال إذا كان أي محتوى سيحل محل الإصدارات الأحدث.",
-        "on": "نعم",
-        "off": "لا"
-      },
-      "overwriting": {
-        "title": "تخطي الإعدادات.",
-        "on": "قم دائماً بالتحديث إلى هذا الإصدار، واستبدل كل المراجعات",
-        "off": "فقط قم بتحديث أنواع الأحداث حيث يكون المحتوى الذي تم إدخاله أحدث"
-      },
-      "errors": {
-        "warning_update_will_overwrite": "سيؤدي هذا الإجراء إلى استبدال التغييرات التي تمت منذ إنشاء هذا الإصدار",
-        "bad_request": "لم يتم تشكيل بيانات الملف بشكل صحيح",
-        "bad_request_error_codes": {
-          "30001": "أرقام التعريف الشخصي غير متطابقة",
-          "30002": "اسم الإسناد أو الرسالة أو عنوان الإنترنت مفقود",
-          "30003": "عنوان الإنترنت غير صالح - يرجى التأكد من وجود البروتوكول، على سبيل المثال \/\/:https",
-          "40001": "رمز البلد المتوفر غير صالح",
-          "40002": "الجهاز المحدد لا يتطابق مع جهاز الملف المحدد",
-          "40003": "تم تعديل تاريخ إخراج الملف المحدد بشكل غير صحيح ولا يمكن إكمال الإدخال"
+    "users": {
+        "user": "User",
+        "deleted": "Deleted user",
+        "list": {
+            "manage": "Manage users",
+            "select_status": "Select status",
+            "select_role": "Select a role",
+            "select_country": "Select a country",
+            "select_terms": "Select a terms version",
+            "select_society": "Select a nacional society",
+            "create": "Create new user",
+            "download_report": "Download report",
+            "empty": "Couldn't find any users",
+            "detail": "User detail",
+            "clear_filters": "Clear filters",
+            "table_header": {
+                "user": "User",
+                "role": "Role",
+                "society": "Society",
+                "email": "Email",
+                "added": "Added",
+                "last_activity": "Last Acitivity",
+                "t_and_c": "T&C Version"
+            },
+            "societies": "Societies"
+        },
+        "status": {
+            "active": "Activated",
+            "deactivated": "Deactivated"
+        },
+        "edit": {
+            "super_admin_all": "Access to all societies",
+            "user_details": "User details",
+            "create_user": "Create new user",
+            "add_society": "Add society + ",
+            "societies_heading": "Societies",
+            "roles_heading": "Role & permissions",
+            "activity_heading": "Activity",
+            "roles_label": "Select roles & permissions for this user",
+            "activity_link": "View all actions by user",
+            "created": "User successfully created",
+            "updated": "User successfully updated",
+            "email_update": "To update your email, please enter your password",
+            "view": "View",
+            "more": "more",
+            "less": "Show less",
+            "user_can_do": "View what user has permission to do:",
+            "user_no_permission": "User has not got any permissions",
+            "soc_already_added": "This user has already been assigned this society"
         }
-      }
+    },
+    "new_welcome": {
+        "title_1": "Welcome to",
+        "red_title": "IFRC",
+        "title_2": "Safety",
+        "title_3": "Message Database",
+        "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
+        "text_header_2": "Follow the #-step guide below..",
+        "bottom_subtitle": "Contact IFRC",
+        "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
+        "bottom_btn": "Contact IFRC",
+        "slider_1": {
+            "btn": "Create an API key",
+            "step_1": {
+                "header": "Step 1: Create an app",
+                "text": "Create an API key to use the API in the database. Tell us about what you're building."
+            },
+            "step_2": {
+                "header": "Step 2: Receive an API key",
+                "text": "When you have create an API key, it will be automatically generated.",
+                "text_2": "Important: Store your API key as securely as possible. Avoid sharing or otherwise exposing your API key within your own application."
+            },
+            "step_3": {
+                "header": "Step 3: Make a request",
+                "text": "The database API uses HTTP(S) and provides RESTful endpoints to obtain published data. Each request must be authenticated using the API key created in the previous step. For more information on all API endpoints, see the API documentation"
+            },
+            "step_4": {
+                "header": "Step 4: Share the messages",
+                "text": "Share the Red Cross Red Crescent safety messages with the public when there is a hazard threat. You can contact the IFRC team if you have any feedback on the messages: im@ifrc.org"
+            }
+        },
+        "slider_2": {
+            "btn": "Safety Messages",
+            "step_1": {
+                "header": "Step 1: View the messages",
+                "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
+            },
+            "step_2": {
+                "header": "Step 2: Select the message set",
+                "text": "Select the National Society you want to view. Then choose a hazard type from the available list."
+            },
+            "step_3": {
+                "header": "Step 3: Share the messages",
+                "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
+            }
+        }
+    },
+    "upload_modal": {
+        "drag_button_text": "Click or drag file to this area to upload",
+        "button_text": "Upload",
+        "allowed_formats_info": "Only JPG and PNG files are allowed. Max size: 10MB."
+    },
+    "stages": {
+        "immediate": "Immediate",
+        "warning": "Warning",
+        "anticipated": "Anticipated",
+        "assess_and_plan": "Assess and Plan",
+        "mitigate_risks": "Mitigate Risks",
+        "prepare_to_respond": "Prepare to Respond",
+        "recover": "Recover"
+    },
+    "content": {
+        "content": "Content",
+        "audit_log": {
+            "audit_log": "Audit Log",
+            "my_audit_log": "Edit History",
+            "subtitle": "Here you can view the history of your message edits.",
+            "empty": "No audit history found which matches this filter",
+            "soc_label": "Society",
+            "select_hazard": "Select hazard type",
+            "select_language": "Select a language",
+            "select_overwrite": "Select overwrite oprion",
+            "choose_file": "Choose file type",
+            "select_soc": "Select a nacional society"
+        },
+        "whatnow": {
+            "title": "Messages",
+            "set_attribution": "Set society name and attribution message to publish",
+            "whatnow": "Safety Message Database",
+            "empty": "There are no published Safety messages for this National Society",
+            "steps": "Steps",
+            "publish": "Publish",
+            "no_publish": "Nothing to publish",
+            "published": "translations published",
+            "publishing": "Publishing",
+            "content_to_publish": "WHAT WILL BE PUBLISHED",
+            "whatnow_content": "Safety Message Database content",
+            "choose_hazard": "Choose Hazard",
+            "hazard": "Hazard",
+            "content": "Content",
+            "create": "Add Hazard",
+            "edit_attribtion": "Edit attribution",
+            "attribution": "Attribution",
+            "attribution_url": "Attribution URL",
+            "society_name": "National Society",
+            "attribution_message": "Attribution message",
+            "no_translation": "No content set",
+            "delete_content_translation": "This will remove the selected Safety Message Database content from the current language",
+            "messages": "Safety messages of the",
+            "add_language": "Add new language",
+            "no_languages": "Select or create a language to get started",
+            "no_soc": "Select a National Society",
+            "no_region": "Subnational",
+            "add_language_message": "To add a new language, please add some content to go along with it",
+            "add_language_attribution": "Create attribution to add a new language",
+            "select_language": "Please select a language",
+            "attribution_publish": "This attribution will be immediately available on publish",
+            "date_added": "Date Added",
+            "url": "URL",
+            "hazard_type": "Hazard Type",
+            "hazard_type_duplicated": "It already exists",
+            "show_more": "Show more",
+            "early": "Early Warning",
+            "disaster": "Disaster Risk Reduction",
+            "recovery": "Recovery",
+            "publish_summary_title": "Attribution",
+            "publish_summary_ns": "National Society",
+            "publish_summary_url": "Attribution URL",
+            "publish_summary_message": "Attribution Message"
+        },
+        "edit_whatnow": {
+            "title": "Title",
+            "description": "Description",
+            "content_piece": "Content piece",
+            "enter_other_hazard_type": "Enter Hazard Type Name",
+            "other_hazard_type_label": "Other Hazard Type",
+            "stepped_content": "Stepped Content Piece",
+            "content_title_description": "Title for these Safety Messages",
+            "content_description_description": "Description of these Safety Messages",
+            "content_label": "Please enter some hazard information",
+            "content_url": "URL",
+            "content_url_description": "URL for more information about these Safety messages. Please include the protocol, i.e. http:\/\/ or https:\/\/",
+            "created": "created",
+            "pieces_edited": " Pieces Edited",
+            "content_placeholder": "Please enter a message",
+            "mitigation": "Mitigation",
+            "mitigation_help": "Longer term actions to reduce risks",
+            "mitigation_subt": "",
+            "mitigation_extra": "A mitigation is a longer-term statement of prediction of a hazardous event. Actions taken are assessment, planning, and longer-term risk reduction measures to make the household and environment safer.",
+            "seasonalForecast": "Seasonal Forecast",
+            "seasonalForecast_help": "Shorter term actions to reduce risks",
+            "seasonalForecast_subt": "",
+            "seasonalForecast_extra": "A seasonal forecast is a statement of prediction of a hazardous event. Actions taken are to assess potential risks and plan activities to reduce risk and protect the household.",
+            "watch": "Watch",
+            "watch_help": "Prepare to respond",
+            "watch_subt": "",
+            "watch_extra": "A watch is issued when the risk of a hazardous event has increased significantly, but its occurrence, location, and\/or timing are still uncertain. It is intended to provide enough time for protective actions and preparation to respond.",
+            "warning": "Warning",
+            "warning_subt": "~24-48 hour lead time",
+            "warning_help": "Prepare to respond",
+            "warning_extra": "The hazardous event has a high probability of occurring within ~24-48 hours. Protective actions should be taken in advance.",
+            "immediate": "Immediate",
+            "immediate_subt": "Hazard is occuring",
+            "immediate_help": "Response actions",
+            "immediate_subtitle": "Hazard is occuring",
+            "immediate_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous event is occurring",
+            "immediate_key_message_tooltip": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
+            "recover": "Recovery",
+            "recover_title": "Recover",
+            "recover_help": "Recovery actions",
+            "recover_subt": "",
+            "recover_extra": "Take these actions after the hazard event to ensure safety.",
+            "anticipated": "Anticipated",
+            "assess_and_plan": "Assess and Plan",
+            "mitigate_risks": "Mitigate Risks",
+            "prepare_to_respond": "Prepare to Respond",
+            "updated": "updated",
+            "download_icon": "Download Icon",
+            "download_image": "Download as an Image",
+            "download_image_error": "Error downloading image, please make sure you have published all changes and try again.",
+            "download_instructions": "Right click and select 'Save image as…' to save",
+            "downloaded_image_alt": "Safety Message Database Instructions",
+            "add_key_message": "Add Key Safety Message",
+            "add_supporting_message": "Add supporting message",
+            "early_warning": "Early Warning",
+            "early_warning_description": "Safety messaging for alerts and early actions",
+            "disaster_risk_reduction": "Disaster Risk Reduction",
+            "disaster_risk_reduction_description": "Safety messages from Public Awareness and Public Education for DRR (PAPE)",
+            "recovery": "Recovery",
+            "recovery_extra": "Take these actions after the hazard event to ensure safety",
+            "recovery_description": "After hazard event",
+            "hazard_type": "Hazard Type",
+            "content_edit_title": "Content Edit",
+            "content_add_hazard_title": "Add Hazard",
+            "anticipated_subt": "3-5 day lead time",
+            "anticipated_extra": "There is a risk of an anticipated event within 3-5 days. Its occurrence, likelihood, or location may be uncertain. It is enouch time to take preparedness and protective measures in anticipation.",
+            "prepare_to_respond_subt": "",
+            "prepare_to_respond_extra": "Develop response capacity by learning skills and storing provisions",
+            "assess_and_plan_subt": "",
+            "assess_and_plan_extra": "Assess risks and plan activities to recognize, reduce, and respond to hazard events",
+            "mitigate_risks_subt": "",
+            "mitigate_risks_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
+            "key_message_label": "Safety Message",
+            "supporting_message_label": "Supporting message",
+            "url_tool": "Link to more safety message information on your National Society or partner website",
+            "desc_tool": "Give a brief description about the hazard and messages. This should be 1-3 sentences long",
+            "title_tool": "For example: Safety messages for Floods",
+            "safety_tool": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
+            "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise."
+        },
+        "message_editor": {
+            "title": "Attribution Editor",
+            "society_name_label": "National Society Name",
+            "attribution_url_label": "Attribution URL",
+            "attribution_message_label": "Attribution Message",
+            "create_btn": "Add hazard",
+            "contributor_name_label": "Collaborator Name",
+            "contributor_single": "Collaborator",
+            "attribution_message_label_tooltip": "Share a one-sentence description of your National Society and the provided messages. (ie: Safety Messages from the Red Cross)",
+            "attribution_url_label_tooltip": "Share your National Society website to provide information on your organization."
+        },
+        "previewer": {
+            "download_image_error": "Error downloading image, please try again.",
+            "download_pdf_error": "Error downloading PDF, please try again."
+        },
+        "audit": "Edit history",
+        "export": "Export",
+        "bulk_upload": {
+            "empty_template": "Empty template",
+            "bulk_upload": "Message File Upload",
+            "bulk_subtitle": "Here you can upload all of your safety messages in one file.",
+            "template": "Template",
+            "export_template": "Export Template",
+            "import_data": "Import Data",
+            "import_complete": "Import Complete",
+            "import_summary": "You are importing under {society} in {lang}.",
+            "import_banner": {
+                "success": "Success",
+                "added": "Added",
+                "skipped": "Skipped",
+                "denied": "Denied",
+                "updated": "Updated",
+                "failed": "Failed",
+                "invalid": "Invalid",
+                "row": "Row"
+            },
+            "upload_csv": "Upload a document in CSV format",
+            "language_instructions": "Select the language of the translations that are being imported.",
+            "file_instructions": "Drag a file or choose from your device.",
+            "choose": "Choose",
+            "submit": "Import Content",
+            "reset": "Upload Another",
+            "export_template_guide": "Export Template Guide",
+            "export_template_instructions": "For instructions on how to use this g file upload template effectively, please view this guide.",
+            "refer": "Refer to",
+            "detail": "for detail instructions",
+            "warnings": {
+                "title": "Reject import if any content will overwrite more recent versions.",
+                "on": "Yes",
+                "off": "No"
+            },
+            "overwriting": {
+                "title": "Overwrite Setting.",
+                "on": "Always update to this version, overwrite all revisions",
+                "off": "Only update event types where the imported content is newer"
+            },
+            "errors": {
+                "warning_update_will_overwrite": "This action will overwrite changes which have been made since this export was created",
+                "bad_request": "File data is not correctly formed",
+                "bad_request_error_codes": {
+                    "30001": "Column headings do not match the template",
+                    "30002": "Attribution name, message or url are missing",
+                    "30003": "Invalid attribution url - please ensure the protocol is present, eg. https:\/\/",
+                    "40001": "Invalid country code provided",
+                    "40002": "Society selected does not match society for the file selected",
+                    "40003": "The date the selected file was exported has been malformed and the import cannot complete"
+                }
+            }
+        }
+    },
+    "api_stats": {
+        "page_title": "API Stats",
+        "download_data": "Download Data",
+        "clear_filters": "Clear Filters",
+        "start_date": "Start Date",
+        "end_date": "End Date",
+        "table_select": {
+            "keys": "API Keys",
+            "routes": "API Routes"
+        },
+        "field_headers": {
+            "application_name": "Application Name",
+            "number_of_hits": "Number of Hits",
+            "estimated_reach": "Estimated Reach",
+            "organisation": "Organisation",
+            "application": "Application"
+        },
+        "cumulative_cards": {
+            "hits": "Total Hits",
+            "accounts": "Total Accounts",
+            "est_impacted_users": "Est. Impacted Users"
+        },
+        "empty": "No stats found for the given date range"
+    },
+    "api_usage": {
+        "applications": "Applications",
+        "view_user": "View user",
+        "reactivate": "Reactivate",
+        "app_detail": "App Detail",
+        "app_details": "App Details",
+        "activity": "Activity",
+        "view_all_activity": "View all activity for this app",
+        "api_users": "API Users",
+        "terms_conditions": "All Terms & Conditions Versions",
+        "view_prev_terms": "View previous versions",
+        "current_version": "Current Version",
+        "version": "Version"
+    },
+    "applications": {
+        "my_apps": "My Apps",
+        "new_tc": "New terms and conditions",
+        "terms_conditions_message": "There is already a version published with this number:",
+        "build": "Build new app",
+        "build_key": "Build new API key",
+        "edit": "Edit app",
+        "building": "Building app",
+        "building_key": "Building API key",
+        "no_apps": "You have no apps, build one to get started.",
+        "api_keys": "API Keys"
+    },
+    "home": {
+        "home": "Home",
+        "welcome": "Welcome",
+        "admin_intro": "Here you can manage users, edit and publish Safety Message Database content and view API usage.",
+        "ns_admin_intro": "Here you can edit and publish Safety Message Database content",
+        "ns_editor_intro": "Here you can edit Safety Message Database content",
+        "api_user_intro": "Here you view your apps and manage your account.",
+        "role_changed_title": "Your role was changed",
+        "role_changed_p": "You have been assigned the following role:",
+        "role_changed_p2": "Your permissions are as follows:",
+        "role_changed_confirm": "Confirm",
+        "role_changed_dismiss": "Close",
+        "go_publish_safety_messages": "Publish Safety Messages",
+        "go_bulk_upload": "Upload Message File",
+        "go_audit_log": "View Edit History"
+    },
+    "landing": {
+        "strapline": "Safety Message Database Service",
+        "strapline_part_2": "Global Red Cross \/ Red Crescent Key Safety Messages",
+        "head_1": "IFRC Safety",
+        "head_2": "Message Database",
+        "head_text_1": "Safety messages based on IFRC Public Awareness and",
+        "head_text_2": "Public Education (PAPE) resource",
+        "head_bottom_1": "Access and share trusted Red Cross Red Crescent",
+        "head_bottom_2": "actionable messages to help people safely prepare for",
+        "head_bottom_3": "and respond to hazards.",
+        "signup": "Sign Up",
+        "it_works": "How It Works",
+        "works_1_a": "Red Cross Red Crescent National",
+        "works_1_b": "Society and government partners",
+        "works_1_c": "agree on national sets of messages",
+        "works_2_a": "National Societies publish",
+        "works_2_b": "safety messages in the",
+        "works_2_c": "database",
+        "works_3_a": "Altering agencies and",
+        "works_3_b": "communication channels",
+        "works_3_c": "connect to the database API",
+        "works_4_a": "Partners share",
+        "works_4_b": "messages through their",
+        "works_4_c": "channels",
+        "works_5_a": "Communities receive",
+        "works_5_b": "the messages and",
+        "works_5_c": "safely act",
+        "learn_more": "Learn more",
+        "watch_video": "Watch video",
+        "example_case": "Example Use Case",
+        "api": "API",
+        "hurricane": "Include messages with hurricane early",
+        "warning_alerts": "warning alerts",
+        "social_media": "Social Media",
+        "post_images": "Post images of wildfire preparedness",
+        "messages_network": "messages to your network",
+        "whatsapp": "WhatsApp",
+        "share_flood": "Share flood mitigation actions with your",
+        "family": "family and friends",
+        "impact": "Impact",
+        "sign_up_today": "Sign up today",
+        "developer": {
+            "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+            "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages."
+        },
+        "national_society": {
+            "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",
+            "strap_para_two": "Contact us to learn more about how to create the messages and connect with media partners."
+        },
+        "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+        "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages.",
+        "view_data": "View the data",
+        "view_message_library": "View Safety Messages",
+        "what_now": "WhatNow?",
+        "fake_alert_heading": "Extreme Cold Warning",
+        "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+        "fake_alert_time": "1HR AGO",
+        "fake_alert_time_exact": "05\/02\/18 at 05:15 CT",
+        "use_cases": {
+            "heading": "Learn More",
+            "first_heading": "How it Works",
+            "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "second_heading": "Use Cases",
+            "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "third_heading": "Implementation Toolkit",
+            "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "fourth_heading": "WhatNow Video",
+            "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "fifth_heading": "Enhance Weather Apps",
+            "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+        },
+        "example_alert": {
+            "heading": "Sample Safety Message Format",
+            "alert_preview": "Alert preview",
+            "what_now_info": "Safety Message Preview",
+            "example_whatnow_request": "Sample Safety Message Database Response",
+            "example_alert_request": "Sample Alert Response",
+            "example_content": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",
+            "example_content_location_header": "AFFECTED LOCATION",
+            "example_content_location": "Nome, Alaska"
+        },
+        "example_whatnow": {
+            "alert_from": "Alert from: American Red Cross",
+            "more_info": "More Info",
+            "heading": "Safety Messages for Extreme Cold",
+            "copy": "These are actions to take to reduce risk and protect you and your household from extreme cold.",
+            "what_now": "IFRC Safety Message Database",
+            "step_1": "Protect your home. Check on pipes and use heating sources safely.",
+            "step_2": "Stay hydrated with warm fluids",
+            "step_3": "Protect yourself with warm clothing and cover exposed skin",
+            "step_4": "Be aware and cautious of icy conditions, especially while driving",
+            "step_5": "Check on neighbors, friends, and those at risk"
+        },
+        "build": {
+            "heading": "Ready to build your app?"
+        },
+        "data_preview": {
+            "heading": "Safety Messages",
+            "sub_heading": "Sign up and view the key action messages from Red Cross \/ Red Crescent National Societies around the world"
+        },
+        "footer": {
+            "terms_conditions": "Terms & Conditions",
+            "about": "About",
+            "privacy": "Privacy",
+            "getting_started": "Getting Started",
+            "docs": "Documentation",
+            "give_feedback": "Give Feedback",
+            "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
+            "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement",
+            "subtitle_1": "About IFRC Key Safety Database",
+            "text_1": "The IFRC Key Safety Database provides access to",
+            "text_2": "Red Cross Red Crescent messages on how people",
+            "text_3": "can safely act in the face of hazards",
+            "subtitle_2": "Find Out More",
+            "email_ifrc": "im@ifrc.org",
+            "web_ifrc": "ifrc.org",
+            "subtitle_3": "Policies",
+            "terms": "Legal Terms",
+            "terms_service": "Terms of Services",
+            "subtitle_4": "Helpful Links",
+            "api_doc": "API Documentation",
+            "faq": "FAQ"
+        }
+    },
+    "register_form": {
+        "heading_1": "Create your free ",
+        "heading_2": "IFRC ",
+        "heading_3": "Safety Message Database",
+        "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
+        "subtitle_2": "If you want to access with the API, sign up and share the messages with the 3 step guide.",
+        "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
+        "who_are_you": "Who are you?",
+        "what_is_your_role": "What is your role?",
+        "description": "COPY PENDING",
+        "national_society_description": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.\nContact us to learn more about how to create the messages and connect with media partners.",
+        "developer": "Developer",
+        "national_society": "National society",
+        "sign_up_with": "Sign up with:",
+        "sign_up_agreement": "By creating your account, you agree to our ",
+        "terms_conditions": "Terms and Conditions ",
+        "facebook": "Sign Up With Facebook",
+        "google": "Sign Up With Google",
+        "email_sign_up": "Sign up with your email:",
+        "mail": "mail",
+        "email_ifrc": "im@ifrc.org",
+        "location": "Country",
+        "organisation": "Organization",
+        "industry": "Industry type",
+        "create_account": "Create Account",
+        "last_name": "Last name",
+        "select_country": "Select a country",
+        "select_industry": "Select industry type",
+        "industries": {
+            "media": "Media",
+            "emergency": "Emergency Management",
+            "non_profit": "Non-Profit\/NGO",
+            "humanitarian": "Humanitarian Organization",
+            "red_cross": "Red Cross\/Red Crescent",
+            "education": "Education\/Academia",
+            "gov": "Government Agency",
+            "other": "Other"
+        },
+        "api_used_in": "Where will this API be used?",
+        "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
+        "welcome": "Welcome {name}, please complete the following information to get started:",
+        "ifrc_note": "For questions or more information, please contact: ",
+        "contact_gdpc": "Contact GDPC"
+    },
+    "terms_service_page": {
+        "applicable_law": {
+            "body": "The laws of the District of Columbia shall govern all rights and obligations under this Agreement, without giving effect to any principles of conflicts of laws.",
+            "heading": "Applicable Law:"
+        },
+        "body": "You are responsible for maintaining the secrecy and security of the registration key provided by Red Cross to You. You are responsible for maintaining compatibility with the API, as updated from time to time, in order to continue to receive the Data Feeds. Red Cross may release updated versions of the API and Data Feeds at its sole discretion. New versions may not be compatible with previous implementations, and You agree to use the most recently updated version of the Data Feeds at all times.\n\nYou agree not to modify, distribute, decompile, disassemble, or reverse engineer any portion of the API or any software of Red Cross.\n\nYou may not use the API or Data Feeds in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage, as determined by Red Cross at its sole discretion.\n\nYou may not use the API or Data Feeds in a manner that is unlawful, misleading, negligent, malicious, intending to cause harm, or that harms Red Cross, its service providers, its content providers, or any other person, as determined by Red Cross at its sole discretion.\n\nRed Cross may monitor your use of the API and Data Feeds. You may not use any technical means to interfere with such monitoring, and Red Cross may use technical means to overcome any such interference.\n\nUse of Prepare, Respond, and Recover Messages shall be presented only as current or updated to the then-current urgency setting of the correlated Event Alert, and you shall update individual Prepare, Respond, and Recover Messages upon any update of the Data Feeds and\/or correlated Event Alerts by Red Cross.\n\nIndividual Prepare, Respond, and Recover Messages You use shall be associated only with the geographic subnational for which it is issued. If a Prepare, Respond, and Recover Messages includes a reference to a source such as American Red Cross or another Red Cross or Red Crescent national society or organization (each a “Source Reference”), You shall include the Source Reference associated with each Prepare, Respond, and Recover Messages in the form provided in the Data Feeds. You shall make   no further use of any Source Reference.\n\nYou may not translate the Data Feeds, Event Alerts, and\/or Prepare, Respond, and Recover Messages into any other language, make any use, edits or revisions, or alter(s) the meaning of the Data Feed, Event Alerts and\/or Prepare, Respond, and Recover Messages.\n\nYou must ensure that the Data Feeds, remain in your sole possession and\/or control.\n\nYou may not permit Event Alerts and Prepare, Respond, and Recover Messages delivered to End Users to incorporate any advertising or sponsorship.\n\nYou may not make any archive of the Data Feeds in whole or in part.",
+        "contact": "Please contact Red Cross at {0} with any questions regarding the API.",
+        "disclaimer": "The API and Data Feeds are provided FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY, AND on an 'as is ' and ' as available ' basis. Red Cross makes no representations or warranties of any kind, express or implied. Red Cross disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose. Red Cross and its employees, officers, governors and agents and licensors will not be liable for damages of any kind arising from the use of the API, Data Feeds, Event Alerts, and\/or Prepare, Respond, and Recover Messages including but not limited to direct, indirect, incidental, punitive and consequential damages.\n\nRed Cross does not guarantee the sequence, accuracy, authenticity or completeness of the API, Data Feed, Event Alert and\/or Prepare, Respond, and Recover Messages and shall not be held liable in any way to You or your End Users or any third party, including without limitation, for any delays, inaccuracies, errors or omissions, in respect of the API, Data FeedS, Event Alert and\/or Prepare, Respond, and Recover Messages provided hereunder.",
+        "entire_agreement": {
+            "body": "The API Terms constitutes the complete and exclusive agreement between Red Cross and You with respect to the subject matter hereof and supersedes all prior oral or written understandings, communications, or agreements not specifically incorporated herein. Red Cross reserves the right to modify or revoke this agreement at any time.",
+            "heading": "Entire Agreement:"
+        },
+        "heading": "API END USER LICENSING AGREEMENT",
+        "intro": "AGREE: BY USING THE SERVICE OR CHECKING THE BOX PROVIDED, USER IS AGREEING TO BE BOUND BY THIS AGREEMENT.\n\nThe API is a tool that allows you(“You”) to retrieve and use data feeds made available by Red Cross including a feed of global weather and disaster event warning and watch notices(“Event Alerts”) and a feed of actionable and contextualized messages on how to prepare to local hazards by hazard type and urgency (“Prepare, Respond, and Recover Messages”, and collectively with the Event Alerts, the“ Data Feeds”). Prepare, Respond, and Recover Messages are intended to accompany Event Alerts or other warning and watch notices associated with weather and disaster event in your own application.Your use of the Data Feeds is governed by the API Terms.",
+        "license_limitations": {
+            "body": "You may use the Data Feeds only in association with your own application subject to the API Terms, and provided You maintain compatibility with the API, as updated from time to time. You are granted a non-exclusive, limited and revocable right to download, use, reproduce and distribute to end users of your own application (“End Users”) Event Alerts and relevant contextualized Prepare, Respond, and Recover Messages in association with the urgency setting of individual Event Alerts from the Data Feeds, subject to the API Terms. You may only use the API to facilitate non-commercial uses of the Data Feeds in accordance with the API Terms. You may not in any event use the API to facilitate commercial uses of the Data Feeds, Event Alerts and\/or Prepare, Respond, and Recover Messages, including without limitation, reselling them, charging to access them, charging to redistribute them, or charging to create derivative works based on them. Red Cross and its licensors maintain all title, ownership, rights and interest in and to the API, Prepare, Respond, and Recover Messages, Event Alerts, Data Feeds and Source References (as defined below) therein. All rights not expressly granted are reserved.",
+            "heading": "License and Limitations:"
+        },
+        "overview": {
+            "body": "The Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
+            "cta": "Click here to register."
+        },
+        "privacy_policy": {
+            "body": "You understand, acknowledge, and agree that the operation of certain programs, services, tools, purchase options, materials, or information in the API requires the submission, use and dissemination of various personal identifying information. Accordingly, if You wish to access and use the API, You acknowledge and agree that Your use of the API will constitute acceptance of the personal identifying information collection and use practices contained in the privacy policy posted: {0}",
+            "heading": "Privacy Policy:"
+        },
+        "prohibited_activities": {
+            "body": "You and your End Users or agents shall not use the API or Data Feeds in the following ways:",
+            "heading": "Prohibited Activities and Conduct:",
+            "prohibited_list": {
+                "one": "To interfere with or disrupt Red Cross services or servers.",
+                "two": "To circumvent or modify any keys or security mechanisms employed by Red Cross or the API, including without limitation any authentication technologies.",
+                "three": "To request, collect, solicit or otherwise obtain access to sign-in names, passwords or other authentication credentials for Red Cross other than what is provided to You for your own account.",
+                "four": "To state or imply affiliation, sponsorship or endorsement by Red Cross or any other Red Cross or Red Crescent national society or organization.",
+                "five": "To state or imply that You own or created the API, Data Feeds, Event Alerts and\/or Prepare, Respond, and Recover Messages.",
+                "six": "To transmit any viruses, worms defects, Trojan horses, or any items of a destructive nature."
+            }
+        },
+        "reserve_rights": "Red Cross reserves the right to alter and\/or no longer provide the API and Data Feeds in whole or in part, either temporarily or permanently, at any time without prior notice. For avoidance of doubt, nothing herein obligates Red Cross to make its API or Data Feeds available to You, and You agrees and acknowledges that any access to is within the sole and absolute discretion of Red Cross.",
+        "severability": {
+            "body": "The invalidity of any term or provision of the API Terms will not affect the validity of any other provision.",
+            "heading": "Severability and Waiver:"
+        },
+        "suspension": {
+            "body": "Red Cross reserves the right to suspend or terminate your access if Red Cross determines, in its sole discretion, that You are engaged in unauthorized use of the API or Data Feed as outlined in the API Terms or that You are using the API or Data Feed in any activity that threatens\/compromises the safety and\/or security of any person or the Red Cross networks.",
+            "heading": "Suspension or Termination:"
+        }
+    },
+    "view_data": {
+        "alert_title": "ALERT:",
+        "more_info": "more info:",
+        "which": "Which Safety Messages do you want to view?",
+        "view_data": "View Data",
+        "alerts": "Alerts",
+        "alert_preview": "Alert preview",
+        "cap_alerts": "CAP Alerts",
+        "onset": "Onset",
+        "severity": "Severity",
+        "title": "Title",
+        "date": "Date",
+        "headline": "Headline",
+        "alert": "Alert",
+        "whatnow_info": "Safety Message Database info",
+        "alert_detail": "Alert Detail",
+        "more": "More info",
+        "area_affected": "Area Affected",
+        "details": "Details",
+        "cap": {
+            "type": "Type",
+            "status": "Status",
+            "urgency": "Urgency",
+            "severity": "Severity",
+            "certainty": "Certainty",
+            "sent": "Sent",
+            "effective": "Effective",
+            "onset": "Onset",
+            "expires": "Expires",
+            "alert_from": "Alert from the",
+            "feed": "Feed",
+            "more": "More info:",
+            "through": "through",
+            "alert_feed": "Alert Feed",
+            "fetching_feed": "Fetching feed",
+            "empty": "There are no current alerts right now"
+        },
+        "national_society_select_placeholder": "Select a National Society"
+    },
+    "user_agreement": {
+        "title": "User agreement",
+        "para_one": "Before you can access the Safety Message Database Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
+        "cta": "I accept",
+        "download": "Click here to view the user agreement document (105KB)"
+    },
+    "hazard_type": {
+        "dropdown": {
+            "select": "Select hazard type",
+            "create": "Create hazard type"
+        },
+        "create": {
+            "title": "Create new hazard type",
+            "request": "request new hazard type",
+            "other": "Other",
+            "email_subject": "Request for new hazard type",
+            "hazard_name": "Hazard name",
+            "hazard_name_placeholder": "Enter hazard name",
+            "upload_icon": "Upload an icon",
+            "icon_requirements": "Icons must be a png and below 30kb",
+            "requestLink": "Contact IFRC to request new hazard type",
+            "success": "Hazard type created",
+            "error": "Sorry, there was an issue creating your new hazard type."
+        }
+    },
+    "subnationals": {
+        "list": {
+            "manage": "Subnational",
+            "create": "Create New Subnational",
+            "edit": "Edit Subnational",
+            "add": "Add Subnational",
+            "empty": "Couldn't find any subnationals",
+            "table_header": {
+                "subnational": "Subnational"
+            }
+        },
+        "select_soc": "Select a society to view and add subnationals",
+        "create": "Create a new Subnational",
+        "form": {
+            "name": "Subnational Name",
+            "name_help": "Name the subnational you want to create custom safety messaging for.",
+            "description": "Description",
+            "description_help": "Provide more information about the subnational. i.e. San Francisco Bay Area."
+        },
+        "edit": "Edit Subnational",
+        "delete": "This will delete the subnational and any content associated with that subnational."
+    },
+    "table_headers": {
+        "profile_pic": "profile pic",
+        "first_name": "Last name",
+        "last_name": "last_name",
+        "role": "role",
+        "society": "society",
+        "date": "Date",
+        "country": "Country",
+        "email": "email",
+        "created_at": "created_at",
+        "last_logged_in_at": "Last Active",
+        "terms_version": "profile",
+        "actions": "Actions",
+        "action": "Action",
+        "content": "Content",
+        "country_code": "Location",
+        "organisation": "organisation",
+        "industry_type": "industry type",
+        "all_roles": "All roles",
+        "version": "Version",
+        "user": "User",
+        "language_code": "Language Code"
+    },
+    "terms_conditions": {
+        "title": "Terms and Conditions",
+        "accept": "Accept"
+    },
+    "badges": {
+        "hazardCreate": "Hazard Created",
+        "published": "Published",
+        "draft": "Draft",
+        "bulkUploadDraft": "Message File Upload Draft"
     }
-  },
-  "api_stats": {
-    "page_title": "إحصائيات واجهة برمجة التطبيقات",
-    "download_data": "تحميل البيانات",
-    "start_date": "تاريخ البدء",
-    "end_date": "تاريخ الانتهاء",
-    "table_select": {
-      "keys": "مفاتيح واجهة برمجة التطبيقات",
-      "routes": "طرق واجهة برمجة التطبيقات"
-    },
-    "field_headers": {
-      "application_name": "Application Name",
-      "number_of_hits": "Number of Hits",
-      "estimated_reach": "Estimated Reach",
-      "organisation": "Organisation",
-      "application": "Application"
-    },
-    "cumulative_cards": {
-      "hits": "إجمالي الضربات",
-      "accounts": "إجمالي الحسابات",
-      "est_impacted_users": "تقديري المستخدمون المتأثرون"
-    },
-    "empty": "لم يتم العثور على إحصائيات للنطاق الزمني المحدد"
-  },
-  "api_usage": {
-    "applications": "التطبيقات",
-    "view_user": "عرض المستخدم",
-    "reactivate": "إعادة تفعيل",
-    "app_detail": "تفاصيل التطبيق",
-    "app_details": "تفاصيل التطبيق",
-    "activity": "النشاط",
-    "view_all_activity": "عرض كل نشاط لهذا التطبيق",
-    "api_users": "مستخدمو واجهة برمجة التطبيقات",
-    "terms_conditions": "جميع إصدارات الشروط والأحكام",
-    "view_prev_terms": "اعرض الإصدارات السابقة",
-    "current_version": "الإصدار الحالي",
-    "version": "الإصدار"
-  },
-  "applications": {
-    "my_apps": "تطبيقاتي",
-    "new_tc": "شروط وأحكام جديدة",
-    "build": "أنشئ تطبيقا جديدا",
-    "build_key": "إنشاء مفتاح API جديد",
-    "edit": "تعديل التطبيق",
-    "building": "إنشاء تطبيق",
-    "building_key": "جاري إنشاء مفتاح API",
-    "no_apps": "ليس لديك تطبيقات، قم بإنشاء واحدٍ لكي تبدأ.",
-    "api_keys": "مفاتيح API"
-  },
-  "home": {
-    "home": "المنزل",
-    "welcome": "أهلا بكم",
-    "admin_intro": "يمكنك هنا إدارة المستخدمين وتحرير ونشر محتوى قاعدة بيانات رسائل الأمان وعرض استخدام واجهة برمجة التطبيقات.",
-    "ns_admin_intro": "هنا يمكنك تحرير محتوى قاعدة بيانات رسائل السلامة ونشرها",
-    "ns_editor_intro": "هنا يمكنك تحرير محتوى قاعدة بيانات رسائل الأمان",
-    "api_user_intro": "يمكنك عرض تطبيقات و إدارة حسابك هنا.",
-    "role_changed_title": "تم تغيير دورك",
-    "role_changed_p": "تم تعيين الدور التالي لك:",
-    "role_changed_p2": "صلاحياتك هي كما يلي:",
-    "role_changed_confirm": "تأكيد",
-    "role_changed_dismiss": "إغلاق"
-  },
-  "landing": {
-    "strapline": "خدمة قاعدة بيانات رسائل السلامة",
-    "strapline_part_2": "رسائل السلامة الأولية للصليب الأحمر\/للهلال الأحمر",
-    "head_1": "سلامة الاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر",
-    "head_2": "قاعدة بيانات الرسائل",
-    "head_text_1": "رسائل السلامة استناداً إلى رسائل التوعية العامة للاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر",
-    "head_text_2": "مورد التعليم العام (PAPE)",
-    "head_bottom_1": "الوصول إلى الهلال الأحمر والصليب الأحمر والهلال الأحمر الموثوق به ومشاركته",
-    "head_bottom_2": "رسائل قابلة للتنفيذ لمساعدة الناس على الاستعداد بأمان ل",
-    "head_bottom_3": "والاستجابة للمخاطر.",
-    "signup": "التسجيل",
-    "it_works": "كيف تعمل",
-    "works_1_a": "الصليب الأحمر والهلال الأحمر الوطني",
-    "works_1_b": "المجتمع والشركاء الحكوميون",
-    "works_1_c": "الاتفاق على مجموعات الرسائل الوطنية",
-    "works_2_a": "الجمعيات الوطنية تنشر",
-    "works_2_b": "رسائل السلامة في",
-    "works_2_c": "قاعدة البيانات",
-    "works_3_a": "تغيير الوكالات و",
-    "works_3_b": "قنوات الاتصال",
-    "works_3_c": "الاتصال بواجهة برمجة تطبيقات قاعدة البيانات",
-    "works_4_a": "مشاركة الشركاء",
-    "works_4_b": "الرسائل من خلال",
-    "works_4_c": "القنوات",
-    "works_5_a": "تتلقى المجتمعات",
-    "works_5_b": "الرسائل و",
-    "works_5_c": "التصرف بأمان",
-    "learn_more": "اعرف المزيد",
-    "watch_video": "شاهد الفيديو",
-    "example_case": "مثال لحالة الاستخدام",
-    "api": "واجهة برمجة التطبيقات",
-    "hurricane": "تضمين رسائل مع الإعصار في وقت مبكر",
-    "warning_alerts": "تنبيهات تحذيرية",
-    "social_media": "وسائل التواصل الاجتماعي",
-    "post_images": "نشر صور التأهب لحرائق الغابات",
-    "messages_network": "الرسائل إلى شبكتك",
-    "whatsapp": "واتساب",
-    "share_flood": "شارك إجراءات التخفيف من آثار الفيضانات مع",
-    "family": "العائلة والأصدقاء",
-    "impact": "التأثير",
-    "sign_up_today": "اشترك اليوم",
-    "developer": {
-      "strap_para_one": "ساعد المجتمعات على الإعداد والاستجابة والتعافي من المخاطر وذلك من خلال رسائل العمل الرئيسية والمحلية الخاصة بنا.",
-      "strap_para_two": "استخدم دليلنا السهل المكون من أربع خطوات لدمج رسائل الأمان في تطبيقك. اشترك واطلع على جميع الرسائل المتاحة."
-    },
-    "national_society": {
-      "strap_para_one": "قم بنشر رسائل السلامة الرئيسية الخاصة بالجمعية الوطنية للصليب والهلال الأحمر للعالم ومحليًا وللإعلام المحلي لكي يسهل الوصول إليها وتنتشر.",
-      "strap_para_two": "تَواصل معنا لتعرف المزيد عن كيفية إنشاء الرسائل والتواصل مع الشركاء الإعلاميين."
-    },
-    "strap_para_one": "ساعد المجتمعات على الإعداد والاستجابة والتعافي من المخاطر وذلك من خلال رسائل العمل الرئيسية والمحلية الخاصة بنا.",
-    "strap_para_two": "استخدم دليلنا السهل المكون من أربع خطوات لدمج رسائل الأمان في تطبيقك. اشترك واطلع على جميع الرسائل المتاحة.",
-    "view_data": "انظر إلى البيانات",
-    "view_message_library": "عرض رسائل السلامة",
-    "what_now": "خدمة WhatNow؟",
-    "fake_alert_heading": "تحذيرات البرد الشديد",
-    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-    "fake_alert_time": "قبل ساعة واحدة",
-    "fake_alert_time_exact": "في تاريخ 05\/02\/18 الساعة 05:15 بالتوقيت الحالي",
-    "use_cases": {
-      "heading": "لمعرفة المزيد",
-      "first_heading": "كيف يعمل",
-      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "second_heading": "حالات الاستخدام",
-      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "third_heading": "القائمة المرجعية للتنفيذ",
-      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fourth_heading": "فيديو عن خدمة WhatNow",
-      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fifth_heading": "تطبيقات لتعزيز حالة الطقس",
-      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-    },
-    "example_alert": {
-      "heading": "نموذج لتنسيق رسالة السلامة",
-      "alert_preview": "معاينة التنبيهات",
-      "what_now_info": "معاينة رسالة السلامة",
-      "example_whatnow_request": "نموذج استجابة قاعدة بيانات رسائل السلامة",
-      "example_alert_request": "إنذار نموذج الاستجابة",
-      "example_content": "#إرشادات الطقس الثلاثة النهائية الساعة 11 صباحًا في يناير\/كانون الثاني. 29, 2018\nنهاية الجبهة الباردة\n\nويعد تأثير نهاية الجبهة الباردة ضعيف. سيتم تجربة تحسين حالات الطقس عن مدينة نوم. وبالرغم من ذلك فإنه ينبغي توقع في هذه المناطق زخات مطر منفصلة وزوابع رعدية عائدةً إلى الغرب وبخاصة أثناء فترة ما بعد الظهيرة أو المساء.\n\nويعد هذا الإرشاد الأخير في نظام الطقس هذا مع هذا التطور.",
-      "example_content_location_header": "الموقع المتأثر",
-      "example_content_location": "مدينة نوم في ألاسكا"
-    },
-    "example_whatnow": {
-      "alert_from": "إنذار من: الصليب الأحمر الأمريكي",
-      "more_info": "المزيد من المعلومات",
-      "heading": "رسائل السلامة من البرد القارس",
-      "copy": "هذه إجراءات لتقليل المخاطر ولحمايتك أنت وعائلتك من البرد الشديد.",
-      "what_now": "قاعدة بيانات رسائل السلامة في الاتحاد الدولي لجمعيات الصليب الأحمر والهلال الأحمر",
-      "step_1": "احم منزلك. تفحص الأنابيب واستخدم موارد التدفئة بحذر.",
-      "step_2": "حافظ على رطوبة جسمك بشرب السوائل الدافئة",
-      "step_3": "احم نفسك بارتداء الملابس المُدفئة وتغطية الجلد المكشوف",
-      "step_4": "كن حذرًا ومنتبهًا في الأحوال الجليدية وخاصة عند القيادة",
-      "step_5": "تفقد الجيران والأصدقاء وهؤلاء الذين يواجهون المخاطر"
-    },
-    "build": {
-      "heading": "هل أنت مستعد لإنشاء تطبيقك؟"
-    },
-    "data_preview": {
-      "heading": "رسائل السلامة",
-      "sub_heading": "قم بالتسجيل وانظر إلى رسائل الإجراء الرئيسي من الجمعيات الوطنية للصليب الأحمر والهلال الأحمر حول العالم"
-    },
-    "footer": {
-      "terms_conditions": "الشروط والأحكام",
-      "about": "نبذة عن",
-      "privacy": "الخصوصية",
-      "getting_started": "البدء",
-      "docs": "التوثيق",
-      "give_feedback": "إعطاء تعليقات",
-      "gdpc_logo": "الشعار الخاص بالمركز العالمي للتأهـب للكوارث",
-      "ifrc_logo": "الشعار الخاص بالحركة الدولية للصليب الأحمر والهلال الأحمر",
-      "subtitle_1": "حول قاعدة بيانات السلامة الرئيسية لـ IFRC",
-      "text_1": "توفر قاعدة بيانات السلامة الرئيسية لـ IFRC الوصول إلى",
-      "text_2": "رسائل الصليب الأحمر والهلال الأحمر حول كيفية",
-      "text_3": "تصرف الناس بأمان في مواجهة المخاطر",
-      "subtitle_2": "اكتشف المزيد",
-      "email_ifrc": "im@ifrc.org",
-      "web_ifrc": "ifrc.org",
-      "subtitle_3": "السياسات",
-      "terms": "الشروط والأحكام",
-      "subtitle_4": "روابط مفيدة",
-      "api_doc": "وثائق API",
-      "faq": "الأسئلة الشائعة (سيتم توفير الرابط)"
-    }
-  },
-  "register_form": {
-    "heading_1": "أنشئ حسابك المجاني في",
-    "heading_2": "IFRC",
-    "heading_3": "قاعدة بيانات الرسائل الآمنة",
-    "subtitle_1": "ساعد المجتمعات على الاستعداد والاستجابة للمخاطر المحلية باستخدام رسائل السلامة القابلة للتنفيذ من الصليب الأحمر والهلال الأحمر.",
-    "subtitle_2": "إذا كنت ترغب في الوصول باستخدام API، قم بالتسجيل وشارك الرسائل باستخدام الدليل المكون من # خطوات.",
-    "subtitle_3": "إذا كنت من الجمعيات الوطنية للصليب الأحمر والهلال الأحمر، قم بالتسجيل وستتلقى تعليمات حول كيفية تكييف ومشاركة رسائل السلامة الخاصة بك.",
-    "who_are_you": "من أنتم؟",
-    "what_is_your_role": "ما هو دورك؟",
-    "description": "COPY PENDING",
-    "national_society_description": "انشر رسائل السلامة الرئيسية لجمعيتك الوطنية للصليب الأحمر والهلال الأحمر للوصول إليها من قبل وسائل الإعلام العالمية والوطنية والمحلية.\nاتصل بنا لمعرفة المزيد حول كيفية إنشاء الرسائل والاتصال بشركاء الإعلام.",
-    "developer": "المطور",
-    "national_society": "الجمعية الوطنية",
-    "sign_up_with": "قم بالتسجيل:",
-    "sign_up_agreement": "من خلال إنشاء حسابك، فإنك توافق على ",
-    "terms_conditions": "الأحكام والشروط ",
-    "facebook": "سجّل بحساب فيسبوك",
-    "google": "سجل بحساب جوجل",
-    "email_sign_up": "أو سجل باستخدام بريدك الإلكتروني:",
-    "mail": "البريد",
-    "email_ifrc": "im@ifrc.org",
-    "location": "الموقع",
-    "organisation": "المنظمة",
-    "industry": "نوع النشاط الصناعي",
-    "create_account": "قم بإنشاء الحساب",
-    "last_name": "اسم العائلة",
-    "select_country": "يُرجى اختيار بلد",
-    "select_industry": "يرجى تحديد نوع النشاط الصناعي",
-    "industries": {
-      "media": "وسائل الإعلام",
-      "emergency": "إدارة حالات الطوارئ",
-      "non_profit": "منظمة غير حكومية\/ غير ربحية",
-      "humanitarian": "مؤسسة خدمات إنسانية",
-      "red_cross": "الصليب الأحمر\/الهلال الأحمر",
-      "education": "التعليم\/الأكاديمية",
-      "gov": "الوكالة الحكومية",
-      "other": "أخرى"
-    },
-    "api_used_in": "أين ستستخدم واجهة برمجة التطبيق هذه؟",
-    "api_used_in_help": "دعنا نعرف كيف تنوي استخدام هذه الخدمة بأقل من ٢٥٥ حرف",
-    "welcome": "مرحبًا {name} يرجى إكمال المعلومات التالية لكي تبدأ:",
-    "ifrc_note": "للأسئلة أو المزيد من المعلومات، يرجى الاتصال بـ: ",
-    "contact_gdpc": "تواصل مع المركز الدولي للتأهب للكوارث"
-  },
-  "terms_service_page": {
-    "applicable_law": {
-      "body": "سوف تحمي القوانين الخاصة بمقاطعة كولومبيا كل الحقوق والالتزامات بموجب هذه الاتفاقية وبدون التأثير على أي من مبادئ تنازع القوانين.",
-      "heading": "القانون المطبق:"
-    },
-    "body": "أنت مسؤول عن الحفاظ على سرية وأمان التسجيل الرئيسي الذي قدمه لك الصليب الأحمر. أنت مسئول عن إبقاء الملائمة مع واجهة برمجة التطبيق كما يتم التحديث من وقتٍ لأخر لكي تستمر في استقبال موجز البيانات. ربما يقوم الصليب الأحمر بإصدار نسخ محدثة من واجهة برمجة التطبيق وموجز البيانات في الجزء المقتصر على حرية التصرف الخاص بها. قد لا تتطابق النسخ الجديدة مع التطبيقات السابقة وأنت تتفق على استخدام آخر النسخ المحدثة وموجز البيانات في كل الأوقات.\n\nأنت توافق على عدم التعديل أو التوزيع أو الحصر أو التجميع أو الهندسة المضادة لأي جزء من واجهة برمجة التطبيق أو أي برامج تابعة للصليب الأحمر.\n\nلا يجوز لك استخدام واجهة برمجة التطبيقات أو موجز البيانات بطريقة تتجاوز حجم الطلب المعقول أو تشكل استخدامًا مفرطًا أو مسيئًا، على النحو الذي يحدده الصليب الأحمر وذلك وفقًا لتقديره وحده.\n\nقد لا يجوز لك استخدام واجهة برمجة التطبيقات أو موجز البيانات بطريقة غير قانونية أو مضللة أو متهاونة أو خبيثة أو تهدف إلى إلحاق الضرر أو تضر بالصليب الأحمر أو مزودي الخدمة أو مزودي المحتوى أو أي شخص آخر، وفقًا لما تحدده منظمة الصليب الأحمر وذلك حسب تقديرها وحدها.\n\nقد يراقب الصليب الأحمر استخدامك لواجهة برمجة التطبيقات وسجل البيانات. لا يجوز لك استخدام أي وسيلة تقنية للتدخل في مثل هذه المراقبة، ويجوز للصليب الأحمر استخدام الوسائل التقنية للتغلب على أي تدخل من هذا القبيل.\n\nيجب تقديم استخدام إعداد الرسائل والرد عليها واستردادها فقط على أنها حالية أو محدثة إلى الإعداد الحالي للحالة العاجلة للتنبيه بالأحداث المرتبطة بذلك، ويجب عليك تحديث إعداد الرسائل الفردية والرد عليها واستعادتها عند أي تحديث لموجز البيانات و\/أو تنبيهات الأحداث المرتبطة بمنظمة الصليب الأحمر.\n\nيجب أن يرتبط التحضير الفردي، والرد، واستعادة الرسائل التي تستخدمها بالمنطقة الجغرافية التي تم إصدارها منها. إذا تضمن إعداد الرسائل والرد عليها واستعادتها إشارة إلى مصدر مثل الصليب الأحمر الأمريكي أو جمعية أو منظمة وطنية أخرى للصليب الأحمر أو الهلال الأحمر (كل منها \"مرجع المصدر\")، فيجب عليك تضمين مرجع المصدر المرتبط بكل إعداد والرد عليها واستردادها في النموذج الموجود في موجز البيانات. لا يجوز لك استخدام أي مرجع مصدر آخر.\n\nلا يجوز لك ترجمة موجز البيانات و\/أو تنبيهات الأحداث و\/أو إعداد الرسائل والرد عليها واستردادها إلى أي لغة أخرى، أو إجراء أي استخدام أو تعديل أو تنقيحات أو تغيير (تغييرات) في معنى موجز البيانات وتنبيهات الأحداث و\/أو تحضير الرسائل والرد عليها واستردادها.\n\nيجب أن تضمن أن موجز البيانات في حوزتك و\/أو تحت سيطرتك وحدك.\n\nلا يجوز لك السماح بتنبيهات الأحداث وإعداد الرسائل التي يتم تسليمها إلى المستخدمين النهائيين والرد عليها واستعادتها لدمج أي إعلان أو رعاية.\n\nلا يجوز لك إنشاء أي أرشيف لموجزات البيانات كليًا أو جزئيًا.",
-    "contact": "يرجى التواصل مع الصليب الأحمر على {0} لطرح أي أسئلة بخصوص واجهة برمجة التطبيقات",
-    "disclaimer": "يتم توفير واجهة برمجة التطبيقات وموجز البيانات للأغراض المعلوماتية والتعليمية فقط، وعلى أساس كونها \"كما هي\" و \"كما هي متاحة\". لا يقدم الصليب الأحمر أي توكيلات أو كفالات صريحة أو ضمنية من أي نوع. يخلي الصليب الأحمر مسؤوليته عن جميع الضمانات سواء كانت صريحة أو ضمنية بما في ذلك، على سبيل المثال لا الحصر، الكفالات الضمنية المتعلقة بالتجارة والملائمة لغرض معين. لن يتحمل الصليب الأحمر والموظفين والمسؤولين والمحافظين والوكلاء والمرخصين لدى الصليب الأحمر أي مسؤولية عن أي أضرار تنشأ عن استخدام واجهة برمجة التطبيقات وموجز البيانات وتنبيهات الأحداث و\/أو تحضير الرسائل والرد عليها واستعادتها، بما في ذلك على سبيل المثال لا الحصر، الأضرار المباشرة أو غير المباشرة أوالطارئة أو التأديبية أو التبعية.\n\nلا يضمن الصليب الأحمر تسلسل ودقة وصحة واكتمال واجهة برمجة التطبيقات (API) و\/أو موجز البيانات و\/أو تنبيه الأحداث و\/أو الإعداد و\/أو الاستجابة واسترداد الرسائل، ولا تتحمل المسؤولية بأي شكل من الأشكال تجاهك أو تجاه المستخدمين النهائيين أو تجاه أي طرف ثالث بما في ذلك على سبيل المثال لا الحصر، أي تأخير أو عدم الدقة أو الأخطاء أو الحذف، فيما يتعلق بـ API و\/أو موجز البيانات و\/أو تنبيه الحدث و\/أو إعداد الرسائل والرد عليها واستردادها المتوفرة أدناه.",
-    "entire_agreement": {
-      "body": "تشكل شروط واجهة برمجة التطبيقات الاتفاقية الكاملة والحصرية بينك وبين الصليب الأحمر في ما يتعلق بموضوع هذه الاتفاقية هنا، وهي تحل محل جميع التفاهمات أو الاتصالات أو الاتفاقيات السابقة الشفهية أو المكتوبة التي لم يتم تضمينها هنا على وجه التحديد. يحتفظ الصليب الأحمر بالحق في تعديل أو إنهاء هذه الاتفاقية في أي وقت.",
-      "heading": "مجمل الاتفاقية:"
-    },
-    "heading": "ترخيص اتفاقية المستخدم النهائي لواجهة برمجة التطبيقات (API)",
-    "intro": "أوافق: باستخدام الخدمة أو التحقق من الصندوق المتوفر، يوافق المستخدم على الالتزام بهذه الاتفاقية.\n\nواجهة برمجة التطبيقات (API) هي أداة تسمح لك (\"أنت\") باسترداد واستخدام موجزات البيانات التي يوفرها الصليب الأحمر، بما في ذلك موجز تحذيري عن أحداث الطقس والكوارث على مستوى العالم وإشعارات المراقبة (\"تنبيهات الأحداث\") فضلاً عن تغذية الرسائل القابلة للتنفيذ والسياقية حول كيفية الاستعداد للمخاطر المحلية حسب نوع الخطر وكم هو مُلِح (\"رسائل الإعدادات والاستجابة والاسترداد\"، وبشكل جماعي باستخدام \"تنبيهات الأحداث\" و\"موجز البيانات\"). تم تصميم رسائل الإعدادات والاستجابة والاسترداد بحيث تصاحب تنبيهات الأحداث أو غيرها من إشعارات التحذير والمشاهدة المرتبطة بأحداث الطقس والكوارث في تطبيقك الخاص. يخضع استخدامك لموجز البيانات لشروط واجهة برمجة التطبيقات (API).",
-    "license_limitations": {
-      "body": "يمكنك استخدام \"موجز البيانات\" فقط مع التطبيق الخاص بك الخاضع لشروط واجهة برمجة التطبيقات، إذ تقدم لك توافق مع واجهة برمجة التطبيقات، كما تم تحديثها من وقت لآخر. يتم منحك حق غير حصري ومحدود قابل للإلغاء لتنزيل واستخدام ونسخ تنبيهات الأحداث وإعادة توزيعها على المستخدمين النهائيين لتطبيقك الخاص (\"المستخدمون النهائيون\") تنبيهات الأحداث ورسائل الإعدادات والاستجابة والاسترداد السياقية ذات الصلة المرتبطة بإعداد الطوارئ لتنبيهات الأحداث الفردية من موجزات البيانات، وفقًا لشروط واجهة برمجة التطبيقات. يمكنك فقط استخدام واجهة برمجة التطبيقات لتسهيل الاستخدامات غير التجارية لموجز البيانات وفقًا لشروط واجهة برمجة التطبيقات. لا يجوز لك على أي حال استخدام واجهة برمجة التطبيقات لتسهيل الاستخدامات التجارية لموجز البيانات و\/أو تنبيهات الأحداث و\/أو رسائل الإعدادات والاستجابة والاسترداد، بما في ذلك على سبيل المثال لا الحصر إعادة بيعها أو فرض رسوم للوصول إليها أو فرض رسوم لإعادة توزيعها أو فرض رسوم لإنشاء أعمال مشتقة منها. يحتفظ الصليب الأحمر والجهات المرخصة له بجميع العناوين والملكية والحقوق والاهتمام من وإلى واجهة برمجة التطبيقات (API) ورسائل الإعدادات والاستجابة والاسترداد، وتنبيهات الأحداث وموجزات البيانات ومراجع المصدر (كما هو محدد أدناه). جميع الحقوق غير الممنوحة صراحة بموجب هذه الاتفاقية محفوظة.",
-      "heading": "الترخيص والقيود:"
-    },
-    "overview": {
-      "body": "تتاح لك واجهة برمجة تطبيقات خدمة قاعدة بيانات رسائل السلامة للمركز العالمي للتأهب للكوارث (\"واجهة برمجة التطبيقات\") من قبل الصليب الأحمر الوطني الأمريكي (\"الصليب الأحمر\"). تتطلب واجهة برمجة التطبيقات مفتاح تسجيل.  أثناء عملية التسجيل، يجب عليك الموافقة على الشروط والأحكام التالية، بالإضافة إلى الشروط والأحكام الواردة في اتفاقية شروط الخدمة الخاصة بموقع الصليب الأحمر على شبكة الإنترنت المتاحة على {0} (يُشار إليها مجتمعةً بـ \"شروط واجهة برمجة التطبيقات\"). ستحكم شروط واجهة برمجة التطبيقات استخدامك لواجهة برمجة التطبيقات والمواد الإلكترونية القابلة للتنزيل المتاحة من خلال واجهة برمجة التطبيقات. {1}",
-      "cta": "اضغط هنا للتسجيل."
-    },
-    "privacy_policy": {
-      "body": "أنت تفهم وتقر وتوافق على أن تشغيل بعض البرامج أو الخدمات أو الأدوات أو خيارات الشراء أو المواد أو المعلومات في واجهة برمجة التطبيقات يتطلب إرسال واستخدام ونشر معلومات تعريف شخصية مختلفة. وبناءً على ذلك، إذا كنت ترغب في الوصول إلى واجهة برمجة التطبيقات واستخدامها، فإنك تقر وتوافق على أن استخدامك لواجهة برمجة التطبيقات سيشكل موافقة على ممارسات جمع واستخدام معلومات التعريف الشخصية المضمنة في سياسة الخصوصية المنشورة: {0}",
-      "heading": "سياسة الخصوصية:"
-    },
-    "prohibited_activities": {
-      "body": "يجب ألا تستخدم أنت ومستخدموك أو وكلاؤك واجهة برمجة التطبيقات أو موجز البيانات بالطرق التالية:",
-      "heading": "السلوك والأنشطة المحظورة:",
-      "prohibited_list": {
-        "one": "التعارض مع خدمات أو خوادم الصليب الأحمر أو تعطّلها.",
-        "two": "التحايل على أي من مفاتيح أو آليات الأمان التي يستخدمها الصليب الأحمر أو واجهة برمجة التطبيقات أو تعديلها، بما في ذلك على سبيل المثال لا الحصر أي تقنيات مصادقة.",
-        "three": "طلب أسماء تسجيل الدخول أو كلمات المرور أو بيانات اعتماد المصادقة الأخرى الخاصة بالصليب الأحمر أو جمعها أوطلب الحصول عليها أو الحصول على مدخل لتسجيل دخول الأسماء وكلمات المرور أو بيانات اعتماد مصادقة أخرى بخلاف ما هو متوفر لحسابك الخاص.",
-        "four": "أن تعلن أو توحي بالانتماء أو الكفالة أو الموافقة من جانب الصليب الأحمر أو أي جمعية أو منظمة وطنية أخرى تابعة للصليب الأحمر أو الهلال الأحمر.",
-        "five": "أن تعلن أو توحي بأنك تمتلك أو أنشأت واجهة برمجة التطبيقات وموجز البيانات و\/أو تنبيهات الأحداث و\/أو رسائل الإعدادات والاستجابة والاسترداد.",
-        "six": "إرسال أي فيروسات أو عيوب برمجية ضارة أو أحصنة طروادة أو أي عناصر ذات طبيعة مدمرة."
-      }
-    },
-    "reserve_rights": "يحتفظ الصليب الأحمر بحقه في تغيير و\/أو عدم توفير واجهة برمجة التطبيقات وموجز البيانات بشكل كامل أو جزئي، إما بشكل مؤقت أو دائم، في أي وقت دون إشعار مسبق. لتجنب الشك، لا شيء في هذا المستند يلزم الصليب الأحمر بتوفير واجهة برمجة التطبيقات الخاصة به أو موجزات البيانات الخاصة به لك، وأنك توافق وتقر بأن أي مدخل إليه يقع ضمن حرية تصرف وحيد ومطلق للصليب الأحمر.",
-    "severability": {
-      "body": "لا يؤثر بطلان أي شرط أو حكم من شروط واجهة برمجة التطبيقات على صلاحية أي حكم آخر.",
-      "heading": "قابلية الفصل والتنازل:"
-    },
-    "suspension": {
-      "body": "يحتفظ الصليب الأحمر بحقه في تعليق أو إنهاء إمكانية وصولك إذا حدد الصليب الأحمر، وفق تقديره وحده، أنك تشارك في استخدام غير مصرح به لواجهة برمجة التطبيقات (API) أو \"موجز البيانات\" كما هو موضح في شروط واجهة برمجة التطبيقات (API)، أو أنك تستخدم واجهة برمجة التطبيقات (API) أو \"موجز البيانات\" في أي نشاط يهدد\/يعرض سلامة و\/أو أمان أي شخص أو شبكات الصليب الأحمر للخطر.",
-      "heading": "التعليق أو الإنهاء:"
-    }
-  },
-  "view_data": {
-    "alert_title": "التنبيهات:",
-    "more_info": "مزيد من المعلومات:",
-    "which": "ما هي رسائل الأمان التي تريد عرضها؟",
-    "view_data": "عرض البيانات",
-    "alerts": "تنبيهات",
-    "alert_preview": "معاينة التنبيهات",
-    "cap_alerts": "تنبيهات بروتوكول التنبيه المشترك",
-    "onset": "البداية",
-    "severity": "الخطورة",
-    "title": "العنوان",
-    "date": "التاريخ",
-    "headline": "العنوان الرئيسي",
-    "alert": "التنبيهات",
-    "whatnow_info": "معلومات قاعدة بيانات رسائل السلامة",
-    "alert_detail": "تفاصيل التنبيهات",
-    "more": "مزيد من المعلومات",
-    "area_affected": "المناطق المتأثرة",
-    "details": "التفاصيل",
-    "cap": {
-      "type": "النوع",
-      "status": "الحالة",
-      "urgency": "الضرورة الملحة",
-      "severity": "الخطورة",
-      "certainty": "درجة التأكد",
-      "sent": "تم الإرسال",
-      "effective": "الفعالية",
-      "onset": "البداية",
-      "expires": "تاريخ الانتهاء",
-      "alert_from": "تنبيه من",
-      "feed": "نتائج",
-      "more": "مزيد من المعلومات:",
-      "through": "من خلال",
-      "alert_feed": "موجز التنبيهات",
-      "fetching_feed": "إحضار التنبيهات",
-      "empty": "لا توجد تنبيهات حالية"
-    }
-  },
-  "user_agreement": {
-    "title": "اتفاقية المستخدم",
-    "para_one": "قبل أن تتمكن من الوصول إلى بوابة قاعدة بيانات رسائل السلامة، يرجى قراءة شروط اتفاقية المستخدم وقبولها من خلال تنزيل المستند أدناه والنقر على زر \"أوافق\" أدناه.",
-    "cta": "موافق",
-    "download": "انقر هنا لعرض مستند اتفاقية المستخدم (105 كيلوبايت)"
-  },
-  "hazard_type": {
-    "dropdown": {
-      "select": "أختر نوع الخطر",
-      "create": "أنشئ نوع الخطر"
-    },
-    "create": {
-      "title": "أنشئ نوع خطر جديد",
-      "request": "طلب نوع خطر جديد",
-      "other": "أخرى",
-      "email_subject": "الطلب لـنوع جديد من الخطر",
-      "hazard_name": "عنوان الخطر",
-      "hazard_name_placeholder": "يرجى إضافة أسماء المخاطر الجديدة",
-      "upload_icon": "تحميل صورة",
-      "icon_requirements": "يجب أن تكون الرموز من رسوم الشبكة المحمولة وأقل من 30 kb",
-      "requestLink": "تواصل مع المركز الدولي للتأهب للكوارث لطلب نوع خطر جديد",
-      "success": "تم إنشاء نوع الخطر",
-      "error": "عذرًا، حدثت مشكلة أثناء إنشاء نوع الخطر الجديد."
-    }
-  },
-  "subnationals": {
-    "list": {
-      "manage": "المناطق الفرعية",
-      "create": "إنشاء منطقة جديدة",
-      "edit": "تعديل منطقة",
-      "add": "إضافة منطقة",
-      "empty": "تعذر العثور على أي مناطق",
-      "table_header": {
-        "subnational": "منطقة"
-      }
-    },
-    "select_soc": "حدد مجتمعا لعرضه وإضافة مناطق",
-    "create": "إنشاء منطقة جديدة",
-    "form": {
-      "name": "اسم المنطقة",
-      "name_help": "قم بتسمية المنطقة التي تريد إنشاء رسائل أمان مخصصة لها.",
-      "description": "الوصف",
-      "description_help": "قدم مزيدًا من المعلومات حول المنطقة، مثل منطقة خليج سان فرانسيسكو."
-    },
-    "edit": "تعديل منطقة",
-    "delete": "سيؤدي هذا إلى حذف المنطقة وأي محتوى مرتبط بتلك المنطقة."
-  },
-  "table_headers": {
-    "profile_pic": "صورة الملف الشخصي",
-    "first_name": "اسم العائلة",
-    "last_name": "اسم العائلة",
-    "role": "الوظيفة",
-    "society": "المجتمع",
-    "date": "التاريخ",
-    "country": "البلد",
-    "email": "البريد الإلكتروني",
-    "created_at": "تاريخ الإنشاء",
-    "last_logged_in_at": "آخر نشاط",
-    "terms_version": "الملف الشخصي",
-    "actions": "الإجراءات",
-    "action": "الإجراء",
-    "content": "المحتوى",
-    "country_code": "الموقع",
-    "organisation": "المؤسسة",
-    "industry_type": "نوع اﻟﺼﻨﺎﻋﺔ",
-    "all_roles": "جميع الوظائف",
-    "version": "الإصدار",
-    "user": "المستخدم",
-    "language_code": "كود اللغة"
-  },
-  "terms_conditions": {
-    "title": "الشروط والأحكام",
-    "accept": "قبول"
-  },
-  "badges": {
-    "hazardCreate": "تم إنشاء الخطر",
-    "published": "تم النشر",
-    "draft": "مسودة",
-    "bulkUploadDraft": "مسودة تحميل ملفات الرسائل"
-  }
 }

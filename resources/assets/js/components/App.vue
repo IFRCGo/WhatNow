@@ -53,7 +53,9 @@
             </h2>
             <router-link class="mb-2" :to="{name: 'docs'}">{{ $t('landing.footer.api_doc') }}</router-link>
             <p>
-              {{ $t('landing.footer.faq') }}
+              <a class="footer-link" href="https://preparecenter.org/activity/whatnow-service/" target="_blank" rel="noopener noreferrer">
+                {{ $t('landing.footer.faq') }}
+              </a>
             </p>
           </div>
         </div>

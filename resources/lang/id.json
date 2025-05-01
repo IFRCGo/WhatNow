@@ -1,1020 +1,1060 @@
 {
-  "ok": "OK",
-  "go": "AYO",
-  "all": "Semua",
-  "cancel": "Batalkan",
-  "error_alert_title": "Upss...",
-  "error_alert_text": "Terjadi kesalahan! Silakan coba lagi.",
-  "error_permission_alert_text": "Anda tidak memiliki izin untuk melakukan perubahan ini",
-  "token_expired_alert_title": "Sesi Berakhir!",
-  "token_expired_alert_text": "Silakan masuk kembali untuk melanjutkan.",
-  "login": "Masuk",
-  "what_now": "Database Pesan Keselamatan IFRC",
-  "message_portal": "Portal Pesan",
-  "register": "Registrasi",
-  "sign_up": "Daftar",
-  "docs": "Dokumen",
-  "my_apps": "Aplikasi saya",
-  "number_of_apps": "{0} Aplikasi",
-  "whatnow_content": "Pesan",
-  "create_key": "Buat Kunci",
-  "alerts": "Peringatan",
-  "feeds": "Umpan",
-  "get_started": "Daftar sekarang",
-  "page_not_found": "Halaman Tidak Ditemukan",
-  "go_home": "Kembali ke Awal",
-  "logout": "Keluar",
-  "email": "Surel",
-  "register_success": "Terima kasih telah mendaftar",
-  "confirm_email": "Silakan periksa kotak masuk surel untuk mengonfirmasi akun Anda.",
-  "email_confirmed": "Terima kasih telah mengonfirmasi alamat surel Anda. Silakan masuk.",
-  "confirmation_failed": "Surel Anda tidak dapat di konfirmasi, mohon hubungi administrator untuk mencoba kembali.",
-  "home_redirect": "Kembali ke Beranda",
-  "status": "Status",
-  "remember_me": "Ingat Saya",
-  "old_password": "Kata Sandi Saat Ini",
-  "password": "Kata Sandi",
-  "forgot_password": "Lupa Kata Sandi?",
-  "confirm_password": "Konfirmasi Kata Sandi",
-  "incorrect_password": "Kata Sandi Salah",
-  "name": "Nama",
-  "first_name": "Nama depan",
-  "last_name": "Nama belakang",
-  "toggle_navigation": "Alihkan navigasi",
-  "you_are_logged_in": "Anda sudah masuk!",
-  "reset_password": "Atur Ulang Kata Sandi",
-  "set_password": "Setel Kata Sandi",
-  "send_password_reset_link": "Kirim Tautan Atur Ulang Kata Sandi",
-  "settings": "Pengaturan",
-  "profile": "Profil",
-  "your_info": "Informasi Anda",
-  "info_updated": "Informasi Anda telah diperbarui!",
-  "update": "Perbarui",
-  "your_password": "Kata Sandi Anda",
-  "password_updated": "Kata Sandi Anda telah diperbarui",
-  "new_password": "Kata Sandi Baru",
-  "login_with": "Masuk dengan",
-  "register_with": "Daftar dengan",
-  "yes": "Ya",
-  "no": "Tidak",
-  "close": "Tutup",
-  "dashboard": "Panel",
-  "terms_service": "Syarat dan Ketentuan",
-  "sign_in_with_google": "Masuk dengan Google",
-  "offline_error": {
-    "title": "Koneksi Internet Tidak Tersedia",
-    "description": "Harap simpan perubahan dalam {time} atau perubahan akan hilang"
-  },
-  "breadcrumbs": {
-    "applications": "Aplikasi",
-    "admin_users": "Pengguna sebagai Admin",
-    "users": "Pengguna",
-    "manage_users": "Kelola Pengguna",
-    "profile": "Profil",
-    "terms": "Syarat dan Ketentuan",
-    "edit": "Edit",
-    "create": "Buat",
-    "content": "Isi",
-    "what_now_content": "Isi WhatNow",
-    "bulk_upload": "Unggah File Pesan",
-    "audit_log": "Log Audit",
-    "api_usage": "Penggunaan API",
-    "app_detail": "Rincian Aplikasi",
-    "all_terms": "Seluruh Syarat dan Ketentuan"
-  },
-  "documentation": {
-    "heading": "Dokumentasi API Palang Merah",
-    "sidebar": {
-      "introduction": "Pendahuluan",
-      "base_url": "URL Dasar",
-      "changelog": "Catatan perubahan",
-      "authentication": "Autentikasi",
-      "response_codes": "Kode tanggapan",
-      "emergency_alert_feed": "Umpan Peringatan Darurat",
-      "cap_alert_document": "Dokumen Peringatan CAP",
-      "what_now": "What Now"
-    },
-    "steps": {
-      "one": {
-        "body": "REST API Palang Merah memungkinkan pengembang untuk mengakses informasi dan sumber daya darurat yang dikeluarkan oleh Perhimpunan Palang Merah internasional.",
-        "heading": "Pendahuluan",
-        "support_card": {
-          "body": "Untuk pertanyaan terkait Red Cross API, mohon hubungi dev@3sidedcube.com",
-          "title": "Dukungan & Pertanyaan"
-        }
-      },
-      "two": {
-        "body": "Semua URL dalam dokumentasi API v1.0 memiliki URL dasar sebagai berikut:",
-        "heading": "URL Dasar"
-      },
-      "three": {
-        "heading": "Catatan perubahan",
-        "table": {
-          "headers": {
-            "detail": "Rilis",
-            "version": "Versi API",
-            "release": "Rilis",
-            "release_date": "Tanggal Rilis"
-          }
-        }
-      },
-      "four": {
-        "body": "API membutuhkan autentikasi untuk mengakses semua sumber daya yang menggunakan kunci API. Untuk memperoleh kunci API, pertama {0}.\n\nSemua permintaan API harus menyertakan judul HTTP sebagai berikut:",
-        "create_app_cta": "membuat aplikasi",
-        "heading": "Autentikasi"
-      },
-      "five": {
-        "heading": "Kode tanggapan",
-        "table": {
-          "descriptions": {
-            "ok": "Permintaan berhasil dan tanggapan berisi sumber daya yang diminta",
-            "found": "Menunjukkan pengalihan. Keluarkan permintaan GET ke sumber URI di Lokasi: judul.",
-            "not_found": "Sumber yang diminta tidak ditemukan.",
-            "not_allowed": "Menunjukkan bahwa metode HTTP yang digunakan tidak diizinkan pada sumber daya ini.",
-            "server_error": "Terjadi kesalahan server dan sumber daya yang diminta tidak dapat dikembalikan.",
-            "unavailable": "Menunjukkan layanan saat ini tidak tersedia. Coba kembali permintaan ini nanti."
-          },
-          "headers": {
-            "code": "Kode",
-            "name": "Nama",
-            "description": "Deskripsi"
-          }
-        }
-      },
-      "six": {
-        "card": {
-          "body": "Setiap Perhimpunan Palang Merah dapat mengeluarkan peringatan publik menggunakan {0} v1.2.",
-          "cta": "Protokol Peringatan Umum",
-          "title": "Protokol Peringatan Umum"
-        },
-        "endpoint": "Titik akhir:",
-        "example": "Dalam contoh ini, segmen {0} harus diganti dengan kode negara dari perhimpunan tertentu, seperti",
-        "feed_intro": "Umpan untuk tiap perhimpunan juga disediakan, mencantumkan peringatan aktif yang dikeluarkan oleh perhimpunan tertentu, yang diidentifikasi oleh",
-        "heading": "Umpan Peringatan Darurat",
-        "intro": "Peringatan CAP yang dikeluarkan oleh semua perhimpunan dipublikasikan menggunakan umpan RSS. Ini dapat diakses melalui titik akhir berikut:"
-      },
-      "seven": {
-        "endpoint": "Titik akhir:",
-        "example_response": "Contoh Tanggapan:",
-        "heading": "Dokumen Peringatan CAP",
-        "body": "Dokumen peringatan CAP dapat diakses melalui tautan mutlak yang terdapat di setiap umpan RSS. URI dari sebuah peringatan menggunakan format sebagai berikut: "
-      },
-      "eight": {
-        "body": "Titik akhir berikut ini menyediakan data terstruktur yang diterbitkan oleh perhimpunan Palang Merah untuk membantu kesiapsiagaan bencana untuk berbagai jenis peristiwa.\n\nSetiap entri berisi informasi tentang enam tahapan manajemen bencana:",
-        "endpoint": "Titik akhir:",
-        "example_response": "Contoh Tanggapan:",
-        "heading": "What Now",
-        "note": "Catatan:",
-        "noteDetails": "{0} semua tanggapan dimuat dalam properti {1} induk.",
-        "query_params": "Parameter Kueri:",
-        "response_properties": "Properti Tanggapan:",
-        "structure": "Struktur Objek Item What Now:",
-        "stucture_attribution": "Struktur sebuah objek {0}:",
-        "stucture_attribute_translation": "Struktur objek {0} atribusi:",
-        "stucture_translation": "Struktur objek {0}:",
-        "table": {
-          "query_params": {
-            "name": "nama",
-            "description": "deskripsi"
-          },
-          "structure": {
-            "property": "Properti",
-            "data_type": "Tipe Data",
-            "description": "Deskripsi"
-          }
-        }
-      }
-    }
-  },
-  "get_started_docs": {
-    "title": "Mulai",
-    "sidebar": {
-      "create_app": "Buat aplikasi",
-      "get_api_key": "Dapatkan kunci API",
-      "make_request": "Buat permintaan",
-      "sign_up": "Daftar"
-    },
-    "steps": {
-      "one": {
-        "heading": "Langkah 1 - Daftar",
-        "body": "Untuk mulai menggunakan data dari API Basis Data Pesan Keselamatan, pertama-tama {0} ke Portal Basis Data Pesan Keselamatan.\n\nAnda dapat menggunakan akun Facebook & Google Anda, atau alamat email untuk membuat akun.",
-        "create_account_alt": "buat akun",
-        "existing_account": "Jika Anda sudah memiliki akun, mohon untuk {0}.",
-        "login_cta": "masuk",
-        "sign_up_cta": "daftar"
-      },
-      "two": {
-        "body": "Untuk menggunakan API, Anda harus membuat aplikasi di Portal Basis Data Pesan Keselamatan. Ceritakan sedikit tentang apa yang sedang Anda buat.",
-        "create_app_alt": "buat aplikasi",
-        "heading": "Langkah 2 - Buat aplikasi"
-      },
-      "three": {
-        "body": "Ketika Anda telah membuat aplikasi, kunci API secara otomatis akan dibuat.\n\n{0} Pastikan untuk menyimpannya dengan aman dan hindari berbagi atau mengekspos kunci API di dalam aplikasi Anda sendiri.",
-        "create_api_key_alt": "Buat kunci API",
-        "heading": "Langkah 3 - Mendapatkan kunci API",
-        "important": "Penting:"
-      },
-      "four": {
-        "api_docs_cta": "Dokumentasi API",
-        "body": "API Basis Data Pesan Keselamatan menggunakan HTTP(S) dan menyediakan titik akhir RESTful untuk mendapatkan data yang dipublikasikan.\n\nSetiap permintaan harus diautentikasi menggunakan kunci API yang dibuat pada langkah sebelumnya.",
-        "example_title": "Contoh Permintaan",
-        "heading": "Langkah 4 - Membuat permintaan",
-        "moreInfo": "Untuk informasi lebih lanjut mengenai semua titik akhir API, lihat {0}."
-      }
-    }
-  },
-  "home_pods": {
-    "bulk_upload": "Unggah berkas .csv agar Anda dapat memperbarui isi dalam jumlah besar sekaligus",
-    "audit_log": "Anda dapat melihat catatan aktivitas di sini",
-    "whatnow_edit": "Di sinilah Anda dapat mengedit konten Basis Data Pesan Keselamatan",
-    "whatnow_review": "Di sinilah Anda dapat meninjau konten Basis Data Pesan Keselamatan",
-    "whatnow_publish": "Di sinilah Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan",
-    "manage_users": "Mengelola pengguna di sini (Buat, edit dan hapus)",
-    "api_usage": "Anda dapat melihat siapa yang menggunakan API dan aplikasi apa yang sedang dibangun di sini.",
-    "wellcome": "Welcome",
-    "wellcome_description": "Di sini Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan."
-  },
-  "languages": {
-    "am": "አማርኛ",
-    "ar": "عربى",
-    "bn": "বাংলা",
-    "de": "Deutsch",
-    "en": "English",
-    "es": "Español",
-    "fr": "Français",
-    "ht": "Kreyòl",
-    "id": "bahasa Indonesia",
-    "it": "Italiano",
-    "ja": "日本語",
-    "my": "ဗမာ",
-    "ne": "नेपाली",
-    "pt": "Português (UE)",
-    "ru": "русский",
-    "rw": "Ikinyarwanda",
-    "sw": "Kiswahili",
-    "th": "ภาษาไทย",
-    "tr": "Türkçe",
-    "ur": "اردو",
-    "vi": "Tiếng Việt"
-  },
-  "sidebar": {
-    "manage": "Mengelola Pengguna Konten",
-    "content_users": "Pengguna Konten",
-    "audit_log": "Edit Riwayat",
-    "whatnow": "Editor Atribusi",
-    "bulk": "Unggah File Pesan",
-    "content": "Isi",
-    "api": "Penggunaan API",
-    "applications": "Aplikasi",
-    "api_stats": "Statistik API",
-    "api_users": "Pengguna API",
-    "terms_conditions": "Syarat dan Ketentuan",
-    "subnationals": "Sub-wilayah"
-  },
-  "common": {
-    "accept": "Terima",
-    "actions": "Tindakan",
-    "create": "Buat",
-    "edit": "Edit",
-    "save": "Save",
-    "deactivate": "Nonaktifkan",
-    "activate": "Aktifkan",
-    "are_you_sure": "Apakah Anda yakin?",
-    "yes": "Ya",
-    "title": "Judul",
-    "description": "Deskripsi",
-    "unpublished_edits": "Hasil edit tidak dipublikasikan?",
-    "published": "Terbitkan",
-    "delete": "Hapus",
-    "welcome": "Selamat datang di",
-    "save_changes": "Simpan perubahan",
-    "auto_saving": "Simpan secara otomatis",
-    "add": "Tambah",
-    "my_profile": "Profil Saya",
-    "cancel": "Batalkan",
-    "view_changes": "Lihat perubahan",
-    "view_content": "Lihat isi",
-    "resend_activation": "Kirim ulang surel aktivasi",
-    "deactivate_user": "Nonaktifkan pengguna",
-    "submit_changes": "Kirim Perubahan",
-    "reactivate_user": "Aktifkan kembali pengguna",
-    "send_invite": "Kirim undangan",
-    "invite_and_create": "Undang dan buat yang lain",
-    "loading": "Memuat isi",
-    "publish_new": "Publikasi Versi Baru",
-    "greeting": "Hai",
-    "removed": "Dihapus",
-    "copy": "Salin",
-    "copied": "Tersalin",
-    "not_empty": "Tidak boleh kosong",
-    "name": "Nama",
-    "webUrl": "URL",
-    "learn_more": "Pelajari selengkapnya",
-    "validations": {
-      "empty": "Tidak boleh kosong",
-      "hazardIcon": "Mohon pilih gambar yang berukuran kurang dari 30kb"
-    },
-    "network_error": "Jaringan bermasalah",
-    "network_error_text": "Sepertinya ada kesalahan jaringan. Silakan coba kembali beberapa saat lagi",
-    "email_sent": "Surel terkirim",
-    "duplicate_lang_error": "Maaf, bahasa yang dipilih sudah ada",
-    "duplicate_lang_description": "Harap edit bahasa yang ada atau pilih bahasa baru dari menu tarik-turun",
-    "estimated_users": "Perkiraan jumlah pengguna",
-    "upploading": "Uploading",
-    "download": "Download",
-    "download_as_image": "Download as an image",
-    "download_as_pdf": "Download as a PDF",
-    "add_logo": "Add logo",
-    "edit_logo": "Edit logo",
-    "loading_image": "Loading..."
-  },
-  "banners": {
-    "get_started_create": ", Mulai dan Buat Aplikasi Pertama Anda",
-    "create_app": "Buat Aplikasi",
-    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
-  },
-  "users": {
-    "user": "Pengguna",
-    "deleted": "Pengguna yang dihapus",
-    "list": {
-      "manage": "Kelola pengguna",
-      "select_status": "Select status",
-      "select_role": "Select a role",
-      "select_country": "Select a country",
-      "select_terms": "Select a terms version",
-      "select_society": "Select a nacional society",
-      "create": "Membuat pengguna baru",
-      "download_report": "Unduh laporan",
-      "empty": "Tidak dapat menemukan pengguna",
-      "detail": "Rincian pengguna",
-      "clear_filters": "Hapus filter",
-      "table_header": {
-        "user": "Pengguna",
-        "role": "Peran",
-        "society": "Perhimpunan",
-        "email": "Surel",
-        "added": "Ditambahkan",
-        "last_activity": "Aktivitas Terakhir",
-        "t_and_c": "Versi S&K"
-      },
-      "societies": "Perhimpunan"
-    },
-    "status": {
-      "active": "Diaktifkan",
-      "deactivated": "Telah dinonaktifkan"
-    },
-    "edit": {
-      "super_admin_all": "Akses ke semua perhimpunan",
-      "user_details": "Rincian pengguna",
-      "create_user": "Membuat pengguna baru",
-      "add_society": "Tambahkan perhimpunan + ",
-      "societies_heading": "Perhimpunan",
-      "roles_heading": "Peran & izin",
-      "activity_heading": "Aktivitas",
-      "roles_label": "Pilih peran & izin untuk pengguna ini",
-      "activity_link": "Lihat semua tindakan pengguna",
-      "created": "Pengguna berhasil dibuat",
-      "updated": "Pengguna berhasil diperbarui",
-      "email_update": "Untuk memperbarui surel Anda, mohon masukkan kata sandi",
-      "view": "Lihat",
-      "more": "selengkapnya",
-      "less": "Tampilkan lebih sedikit",
-      "user_can_do": "Lihat apa yang diizinkan untuk dilakukan pengguna:",
-      "user_no_permission": "Pengguna belum mendapat izin apa pun",
-      "soc_already_added": "Pengguna telah ditugaskan untuk perhimpunan ini"
-    }
-  },
-  "new_welcome": {
-    "title_1": "Welcome to",
-    "red_title": "IFRC",
-    "title_2": "Safety",
-    "title_3": "Message Database",
-    "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
-    "text_header_2": "Follow the #-step guide below..",
-    "bottom_subtitle": "Contact IFRC",
-    "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
-    "bottom_btn": "Contact IFRC",
-    "slider_1": {
-      "btn": "Create an API key",
-      "step_1": {
-        "header": "Step 1: Create an app",
-        "text": "Create an API key to use the API in the database. Tell us about what you're building."
-      },
-      "step_2": {
-        "header": "Step 2: Receive an API key",
-        "text": "When you have create an API key, it will be automatically generated.",
-        "text_2": "Important: Store your API key as securely as possible. Avoid sharing or otherwise exposing your API key within your own application."
-      },
-      "step_3": {
-        "header": "Step 3: Make a request",
-        "text": "The database API uses HTTP(S) and provides RESTful endpoints to obtain published data. Each request must be authenticated using the API key created in the previous step. For more information on all API endpoints, see the API documentation"
-      },
-      "step_4": {
-        "header": "Step 4: Share the messages",
-        "text": "Share the Red Cross Red Crescent safety messages with the public when there is a hazard threat. You can contact the IFRC team if you have any feedback on the messages: im@ifrc.org"
-      }
-    },
-    "slider_2": {
-      "btn": "Pesan Keselamatan",
-      "step_1": {
-        "header": "Step 1: View the messages",
-        "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
-      },
-      "step_2": {
-        "header": "Step 2: Select the message set",
-        "text": "Select the National Society you want to view. Then choose a hazard type from the available list."
-      },
-      "step_3": {
-        "header": "Step 3: Share the messages",
-        "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
-      }
-    }
-  },
-  "upload_modal": {
-    "drag_button_text": "Click or drag file to this area to upload",
-    "button_text": "Upload"
-  },
-  "stages": {
-    "immediate": "Immediate",
-    "warning": "Warning",
-    "anticipated": "Anticipated",
-    "assess_and_plan":"Assess and Plan",
-    "mitigate_risks":"Mitigate Risks",
-    "prepare_to_respond":"Prepare to Respond",
-    "recover": "Recover"
-  },
-  "content": {
-    "content": "Isi",
-    "audit_log": {
-      "audit_log": "Log Audit",
-      "my_audit_log": "Edit Riwayat",
-      "empty": "Tidak ada riwayat audit yang cocok dengan filter ini",
-      "soc_label": "Perhimpunan",
-      "select_hazard": "Select hazard type",
-      "select_language": "Select a language",
-      "select_overwrite": "Select overwrite oprion",
-      "choose_file": "Choose file type",
-      "select_soc": "Select a nacional society"
-    },
-    "whatnow": {
-      "title": "Messages",
-      "set_attribution": "Setel nama perhimpunan dan atribusi pesan untuk diterbitkan",
-      "whatnow": "Basis Data Pesan Keselamatan",
-      "empty": "Tidak ada pesan Keselamatan yang dipublikasikan untuk Perhimpunan Nasional ini",
-      "steps": "Langkah-langkah",
-      "publish": "Terbitkan",
-      "no_publish": "Tidak ada yang diterbitkan",
-      "published": "terjemahan diterbitkan",
-      "publishing": "Penerbitan",
-      "content_to_publish": "Draf Isi yang akan Diterbitkan",
-      "whatnow_content": "Konten Basis Data Pesan Keselamatan",
-      "choose_hazard": "Pilih Bahaya",
-      "hazard": "Bahaya",
-      "content": "Isi",
-      "create": "Tambahkan Bahaya",
-      "edit_attribtion": "Edit Atribusi",
-      "attribution": "Atribusi",
-      "attribution_url": "URL Atribusi",
-      "society_name": "Perhimpunan Nasional",
-      "attribution_message": "Pesan atribusi",
-      "no_translation": "Tidak ada isi yang disetel",
-      "delete_content_translation": "Ini akan menghapus konten Basis Data Pesan Keselamatan yang dipilih dari bahasa saat ini",
-      "messages": "Pesan keselamatan dari",
-      "add_language": "Tambahkan bahasa baru",
-      "no_languages": "Pilih atau buat bahasa untuk memulai",
-      "no_soc": "Pilih perhimpunan",
-      "no_region": "Pilih daerah",
-      "add_language_message": "Untuk menambahkan bahasa baru, tambahkan beberapa isi",
-      "add_language_attribution": "Buat atribusi untuk menambahkan bahasa baru",
-      "select_language": "Silakan pilih bahasa",
-      "attribution_publish": "Atribusi ini akan segera tersedia setelah terbit",
-      "date_added": "Date Added",
-      "url": "URL",
-      "hazard_type": "Hazard Type",
-      "show_more": "Show more",
-      "early": "Early Warning",
-      "disaster": "Disaster Risk Reduction",
-      "recovery": "Recovery",
-      "publish_summary_title": "Attribution",
-      "publish_summary_ns": "National Society",
-      "publish_summary_url": "Attribution URL",
-      "publish_summary_message": "Attribution Message"
-    },
-    "edit_whatnow": {
-      "title": "Judul",
-      "description": "Deskripsi",
-      "content_piece": "Bagian isi",
-      "enter_other_hazard_type": "Masukkan Nama Jenis Bahaya",
-      "other_hazard_type_label": "Jenis Bahaya Lainnya",
-      "stepped_content": "Tingkatan Bagian Isi",
-      "content_title_description": "Judul untuk Pesan Keselamatan ini",
-      "content_description_description": "Deskripsi Pesan Keselamatan ini",
-      "content_label": "Silakan masukkan beberapa informasi bahaya",
-      "content_url": "URL",
-      "content_url_description": "URL untuk informasi lebih lanjut tentang pesan Keamanan ini. Harap sertakan protokolnya, yaitu http:// atau https://",
-      "created": "dibuat",
-      "pieces_edited": " Bagian yang diedit",
-      "content_placeholder": "Masukkan pesan",
-      "mitigation": "Mitigasi",
-      "mitigation_help": "Tindakan jangka panjang untuk mengurangi risiko",
-      "mitigation_extra": "Mitigasi adalah pernyataan prediksi jangka panjang atas peristiwa berbahaya. Tindakan yang dilakukan adalah penilaian, perencanaan, dan langkah-langkah pengurangan risiko jangka panjang untuk menciptakan rumah tangga dan lingkungan yang lebih aman.",
-      "seasonalForecast": "Prakiraan Musiman",
-      "seasonalForecast_help": "Tindakan jangka pendek untuk mengurangi risiko",
-      "seasonalForecast_extra": "Prakiraan iklim musiman merupakan sebuah pernyataan prediksi atas peristiwa berbahaya. Tindakan yang dilakukan adalah menilai potensi risiko dan merencanakan aktivitas untuk mengurangi risiko dan melindungi rumah tangga.",
-      "watch": "Pengawasan",
-      "watch_help": "Bersiap untuk menanggapi",
-      "watch_extra": "Pengawasan dilakukan ketika risiko suatu peristiwa berbahaya telah meningkat secara signifikan, tetapi kemunculannya, lokasi, dan\/atau waktunya masih belum pasti. Tujuannya yaitu menyediakan waktu yang cukup untuk tindakan perlindungan dan persiapan.",
-      "warning": "Peringatan",
-      "warning_help": "Bersiap untuk menanggapi",
-      "warning_extra": "Peringatan dikeluarkan saat peristiwa berbahaya sedang terjadi, akan segera terjadi, atau memiliki kemungkinan yang sangat tinggi untuk terjadi. Ini berarti kondisi yang dapat mengancam nyawa atau harta benda. Orang-orang yang berada di jalur bahaya ini perlu mengambil tindakan perlindungan.",
-      "immediate": "Segera",
-      "immediate_help": "Tindakan tanggapan",
-      "immediate_extra": "Kondisi saat ini mengancam nyawa dan harta benda. Berikut ini adalah tindakan perlindungan yang harus segera dilakukan saat peristiwa berbahaya terjadi. Diperlukan tindakan tanggapan untuk melindungi diri dan rumah tangga.",
-      "recover": "Pulihkan",
-      "recover_help": "Tindakan pemulihan",
-      "recover_extra": "Berikut ini adalah tindakan perlindungan yang harus dilakukan untuk mengurangi risiko setelah terjadi peristiwa berbahaya.",
-      "anticipated": "Anticipated",
-      "assess_and_plan": "Assess and Plan",
-      "mitigate_risks": "Mitigate Risks",
-      "prepare_to_respond": "Prepare to Respond",
-      "updated": "diperbarui",
-      "download_icon": "Unduh Ikon",
-      "download_image": "Unduh sebagai Gambar",
-      "download_image_error": "Terjadi kesalahan saat mengunduh gambar, pastikan Anda telah menerbitkan semua perubahan dan silakan coba lagi.",
-      "download_instructions": "Klik kanan dan pilih 'Simpan gambar sebagai...' untuk menyimpan",
-      "downloaded_image_alt": "Petunjuk Basis Data Pesan Keselamatan",
-      "add_key_message": "Add Key Message",
-      "add_supporting_message": "Add Support Message",
-      "early_warning": "Early Warning",
-      "early_warning_description": "Key safety messaging for alerts and early actions",
-      "disaster_risk_reduction": "Disaster Risk Reduction",
-      "disaster_risk_reduction_description": "Key safety messaging from PAPE",
-      "recovery": "Recovery",
-      "recovery_description": "Key safety for recovery actions",
-      "hazard_type": "Hazard Type",
-      "content_edit_title": "Content Edit",
-      "content_add_hazard_title": "Add Hazard",
-      "key_message_label": "Key message title",
-      "supporting_message_label": "Supporting message"
-    },
-    "message_editor": {
-      "title": "Editor Atribusi",
-      "society_name_label": "National society name",
-      "attribution_url_label": "Attribution URL",
-      "attribution_message_label": "Attribution Message",
-      "create_btn": "Add hazard",
-      "contributor_name_label": "Contributor Name",
-      "contributor_single": "Contributor"
-    },
-    "previewer": {
-      "download_image_error": "Error downloading image, please try again.",
-      "download_pdf_error": "Error downloading PDF, please try again."
-    },
-    "audit": "Edit riwayat",
-    "export": "Ekspor",
-    "bulk_upload": {
-      "bulk_upload": "Unggah File Pesan",
-      "template": "Templat",
-      "export_template": "Ekspor Templat",
-      "import_data": "Impor Data",
-      "import_complete": "Impor Selesai",
-      "import_summary": "Anda mengimpor di bawah{society} dalam {lang}.",
-      "import_banner": {
-        "success": "Sukses",
-        "added": "Ditambahkan",
-        "skipped": "Dilewati",
-        "denied": "Ditolak",
-        "updated": "Diperbarui",
-        "failed": "Gagal",
-        "invalid": "Tidak valid",
-        "row": "Baris"
-      },
-      "upload_csv": "Unggah dokumen dalam format CSV",
-      "language_instructions": "Pilih bahasa terjemahan yang sedang diimpor.",
-      "file_instructions": "Tarik berkas ke sini, atau pilih dari komputer Anda.",
-      "choose": "Pilih",
-      "submit": "Impor Konten",
-      "reset": "Unggah Lainnya",
-      "export_template_guide": "Panduan Ekspor Templat",
-      "export_template_instructions": "Untuk petunjuk tentang cara menggunakan templat unggahan file g ini secara efektif, silakan lihat panduan ini.",
-      "refer": "Refer to",
-      "detail": "for detail instructions",
-      "warnings": {
-        "title": "Tolak impor jika ada konten yang akan menimpa versi terbaru.",
-        "on": "Ya",
-        "off": "Tidak"
-      },
-      "overwriting": {
-        "title": "Pengaturan Timpa.",
-        "on": "Selalu perbarui ke versi ini, timpa semua revisi",
-        "off": "Hanya perbarui jenis peristiwa saat isi yang diimpor lebih baru"
-      },
-      "errors": {
-        "warning_update_will_overwrite": "Tindakan ini akan menimpa perubahan yang telah dibuat sejak ekspor ini dibuat",
-        "bad_request": "Bentuk berkas data tidak sesuai",
-        "bad_request_error_codes": {
-          "30001": "Judul kolom tidak cocok dengan templat",
-          "30002": "Nama atribusi, pesan atau url hilang",
-          "30003": "Url atribusi tidak valid - pastikan protokolnya disertakan, yaitu https:\/\/",
-          "40001": "Kode negara yang disediakan tidak valid",
-          "40002": "Perhimpunan yang dipilih tidak sesuai dengan berkas yang dipilih",
-          "40003": "Tanggal ekspor berkas yang dipilih memiliki format yang salah dan impor tidak dapat diselesaikan"
-        }
-      }
-    }
-  },
-  "api_stats": {
-    "page_title": "Statistik API",
-    "download_data": "Unduh data",
-    "start_date": "Tanggal Mulai",
-    "end_date": "Tanggal Selesai",
-    "table_select": {
-      "keys": "Kunci API",
-      "routes": "Rute API"
-    },
-    "field_headers": {
-      "application_name": "Application Name",
-      "number_of_hits": "Number of Hits",
-      "estimated_reach": "Estimated Reach",
-      "organisation": "Organisation",
-      "application": "Application"
-    },
-    "cumulative_cards": {
-      "hits": "Jumlah Hits",
-      "accounts": "Jumlah Akun",
-      "est_impacted_users": "Estimasi Pengguna Terdampak"
-    },
-    "empty": "Tidak ada statistik yang ditemukan untuk rentang tanggal yang dipilih"
-  },
-  "api_usage": {
-    "applications": "Aplikasi",
-    "view_user": "Lihat pengguna",
-    "reactivate": "Aktifkan kembali",
-    "app_detail": "Rincian Aplikasi",
-    "app_details": "Rincian Aplikasi",
-    "activity": "Aktivitas",
-    "view_all_activity": "Lihat semua aktivitas untuk aplikasi ini",
-    "api_users": "Pengguna API",
-    "terms_conditions": "Seluruh versi Syarat & Ketentuan",
-    "view_prev_terms": "Lihat versi sebelumnya",
-    "current_version": "Versi Saat Ini",
-    "version": "Versi"
-  },
-  "applications": {
-    "my_apps": "Aplikasi Saya",
-    "new_tc": "Syarat dan ketentuan baru",
-    "build": "Buat aplikasi baru",
-    "build_key": "Build new API key",
-    "edit": "Sunting app",
-    "building": "Membuat aplikasi",
-    "building_key": "Building API key",
-    "no_apps": "Anda tidak memiliki aplikasi, buatlah untuk memulai.",
-    "api_keys": "API Keys"
-  },
-  "home": {
-    "home": "Beranda",
-    "welcome": "Selamat Datang",
-    "admin_intro": "Di sini Anda dapat mengelola pengguna, mengedit dan mempublikasikan konten Basis Data Pesan Keselamatan, serta melihat penggunaan API.",
-    "ns_admin_intro": "Di sini Anda dapat mengedit dan menerbitkan konten Basis Data Pesan Keselamatan",
-    "ns_editor_intro": "Di sini Anda dapat mengedit konten Basis Data Pesan Keselamatan",
-    "api_user_intro": "Anda melihat aplikasi dan mengelola akun Anda di sini.",
-    "role_changed_title": "Your role was changed",
-    "role_changed_p": "You have been assigned the following role:",
-    "role_changed_p2": "Your permissions are as follows:",
-    "role_changed_confirm": "Confirm",
-    "role_changed_dismiss": "Close"
-  },
-  "landing": {
-    "strapline": "Layanan Basis Data Pesan Keamanan",
-    "strapline_part_2": "Pesan Keamanan Utama Palang Merah \/ Bulan Sabit Merah Global",
-    "head_1": "Keselamatan IFRC",
-    "head_2": "Basis Data Pesan",
-    "head_text_1": "Pesan keselamatan berdasarkan Kesadaran Publik IFRC dan",
-    "head_text_2": "Sumber daya Pendidikan Publik (PAPE)",
-    "head_bottom_1": "Mengakses dan berbagi Bulan Sabit Merah Palang Merah yang tepercaya",
-    "head_bottom_2": "pesan yang dapat ditindaklanjuti untuk membantu orang mempersiapkan diri dengan aman",
-    "head_bottom_3": "dan merespons bahaya.",
-    "signup": "Daftar",
-    "it_works": "Bagaimana cara kerjanya",
-    "works_1_a": "Palang Merah Bulan Sabit Merah Nasional",
-    "works_1_b": "Mitra masyarakat dan pemerintah",
-    "works_1_c": "menyepakati rangkaian pesan nasional",
-    "works_2_a": "Masyarakat Nasional menerbitkan",
-    "works_2_b": "pesan keselamatan di",
-    "works_2_c": "basis data",
-    "works_3_a": "Mengubah lembaga dan",
-    "works_3_b": "saluran komunikasi",
-    "works_3_c": "menyambung ke API basis data",
-    "works_4_a": "Mitra berbagi",
-    "works_4_b": "pesan melalui",
-    "works_4_c": "saluran",
-    "works_5_a": "Masyarakat menerima",
-    "works_5_b": "pesan-pesan dan",
-    "works_5_c": "bertindak dengan aman",
-    "learn_more": "Pelajari lebih lanjut",
-    "watch_video": "Tonton video",
-    "example_case": "Contoh Kasus Penggunaan",
-    "api": "API",
-    "hurricane": "Sertakan pesan dengan badai lebih awal",
-    "warning_alerts": "peringatan peringatan",
-    "social_media": "Media Sosial",
-    "post_images": "Memposting gambar kesiapsiagaan kebakaran hutan",
-    "messages_network": "pesan ke jaringan Anda",
-    "whatsapp": "WhatsApp",
-    "share_flood": "Bagikan tindakan mitigasi banjir dengan",
-    "family": "keluarga dan teman",
-    "impact": "Dampak",
-    "sign_up_today": "Daftar hari ini",
-    "developer": {
-      "strap_para_one": "Bantu komunitas untuk siap, tanggap, dan pulih dari bahaya dengan pesan tindakan utama kami yang dilokalkan.",
-      "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan Keamanan ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia."
-    },
-    "national_society": {
-      "strap_para_one": "Publikasi pesan keamanan utama Perhimpunan Nasional RCRC Anda agar dapat diakses dan disiarkan media global, nasional, dan lokal.",
-      "strap_para_two": "Hubungi kami untuk mempelajari lebih lanjut tentang cara membuat pesan dan terhubung dengan mitra media."
-    },
-    "strap_para_one": "Bantu komunitas untuk siap, tanggap, dan pulih dari bahaya dengan pesan tindakan utama kami yang dilokalkan.",
-    "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan Keamanan ke dalam aplikasi Anda. Daftar dan lihat semua pesan yang tersedia.",
-    "view_data": "Lihat data",
-    "view_message_library": "Lihat Pesan Keamanan",
-    "what_now": "WhatNow?",
-    "fake_alert_heading": "Peringatan Cuaca Dingin Ekstrim",
-    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-    "fake_alert_time": "1 JAM YANG LALU",
-    "fake_alert_time_exact": "05\/02\/18 jam 05:15 CT",
-    "use_cases": {
-      "heading": "Pelajari Lebih Lanjut",
-      "first_heading": "Cara Kerja",
-      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "second_heading": "Gunakan Kasus",
-      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "third_heading": "Perangkat Implementasi",
-      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fourth_heading": "Video WhatNow",
-      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fifth_heading": "Tingkatkan Aplikasi Cuaca",
-      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-    },
-    "example_alert": {
-      "heading": "Contoh Format Pesan Keselamatan",
-      "alert_preview": "Pratinjau peringatan",
-      "what_now_info": "Pratinjau Pesan Keamanan",
-      "example_whatnow_request": "Contoh Respons Basis Data Pesan Keamanan",
-      "example_alert_request": "Contoh Tanggapan Peringatan",
-      "example_content": "Anjuran Cuaca# 3 FINAL per pukul 11 Pagi, Jan. 29, 2018\nUntuk Bagian paling akhir dari Front Dingin\nPengaruh Bagian paling akhir dari Front Dingin telah melemah. Kondisi cuaca yang lebih baik akan dialami di kota Nome. Namun, hujan lebat atau badai petir lokal, terutama pada sore atau malam hari, dapat terjadi di daerah ini sampai ke barat.\n\nDengan perkembangan tersebut, ini merupakan fungsi anjuran terakhir untuk sistem cuaca ini.",
-      "example_content_location_header": "LOKASI YANG TERDAMPAK",
-      "example_content_location": "Nome, Alaska"
-    },
-    "example_whatnow": {
-      "alert_from": "Peringatan dari: Red Cross America",
-      "more_info": "Info selengkapnya",
-      "heading": "Pesan Keselamatan untuk Suhu Dingin Ekstrem",
-      "copy": "Ini adalah tindakan yang harus diambil untuk mengurangi risiko dan melindungi Anda dan keluarga dari cuaca dingin yang ekstrem.",
-      "what_now": "Basis Data Pesan Keselamatan IFRC",
-      "step_1": "Lindungi rumah Anda. Periksa perpipaan dan gunakan sumber panas dengan aman.",
-      "step_2": "Tetap terhidrasi dengan cairan hangat",
-      "step_3": "Lindungi diri Anda dengan pakaian hangat dan tutupi kulit yang terbuka",
-      "step_4": "Waspada dan berhati-hati terhadap kondisi es, terutama saat mengemudi",
-      "step_5": "Periksa tetangga, teman, dan mereka yang berisiko"
-    },
-    "build": {
-      "heading": "Siap untuk membuat aplikasi Anda?"
-    },
-    "data_preview": {
-      "heading": "Pesan Keselamatan",
-      "sub_heading": "Daftar dan lihat pesan tindakan utama dari Perhimpunan Nasional Palang Merah \/ Bulan Sabit Merah di seluruh dunia"
-    },
-    "footer": {
-      "terms_conditions": "Syarat & Ketentuan",
-      "about": "Perihal",
-      "privacy": "Privasi",
-      "getting_started": "Memulai",
-      "docs": "Dokumentasi",
-      "give_feedback": "Beri Umpan Balik",
-      "gdpc_logo": "Logo Global Disaster Preparedness Center",
-      "ifrc_logo": "Logo International Red Cross and Red Crescent Movement",
-      "subtitle_1": "About IFRC Key Safety Database",
-      "text_1": "The IFRC Key Safety Database provides access to",
-      "text_2": "Red Cross Red Crescent messages on how people",
-      "text_3": "can safely act in the face of hazards",
-      "subtitle_2": "Find Out More",
-      "email_ifrc": "im@ifrc.org",
-      "web_ifrc": "ifrc.org",
-      "subtitle_3": "Policies",
-      "terms": "Terms and Conditions",
-      "subtitle_4": "Helpful Links",
-      "api_doc": "API Documentation",
-      "faq": "FAQ (link to be provided)"
-    }
-  },
-  "register_form": {
-    "heading_1": "Create your free ",
-    "heading_2": "IFRC ",
-    "heading_3": "Safety Message Database",
-    "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
-    "subtitle_2": "If you want to access with the API, sign up and share the messages with the 3 step guide.",
-    "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
-    "who_are_you": "Siapa Anda?",
-    "what_is_your_role": "What is your role?",
-    "description": "COPY PENDING",
-    "national_society_description": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.\nContact us to learn more about how to create the messages and connect with media partners.",
-    "developer": "Pengembang",
-    "national_society": "Perkumpulan Masyarakat Nasional",
-    "sign_up_with": "Daftar dengan:",
-    "sign_up_agreement": "Dengan membuat akun, Anda menyetujui ",
-    "terms_conditions": "Syarat dan Ketentuan ",
-    "facebook": "Daftar dengan Facebook",
-    "google": "Daftar dengan Google",
-    "email_sign_up": "Atau daftar dengan email Anda:",
-    "mail": "mail",
-    "email_ifrc": "im@ifrc.org",
-    "location": "Lokasi",
-    "organisation": "Organisasi",
-    "industry": "Tipe Industri",
-    "create_account": "Buat Akun",
-    "last_name": "Nama belakang",
-    "select_country": "Pilih negara",
-    "select_industry": "Pilih tipe Industri",
-    "industries": {
-      "media": "Media",
-      "emergency": "Manajemen Darurat",
-      "non_profit": "Nirlaba",
-      "humanitarian": "Organisasi Kemanusiaan",
-      "red_cross": "Palang Merah\/Bulan Sabit Merah",
-      "education": "Pendidikan\/Akademik",
-      "gov": "Badan Pemerintahan",
-      "other": "Lainnya"
-    },
-    "api_used_in": "Di mana API ini akan digunakan?",
-    "api_used_in_help": "Ceritakan bagaimana Anda akan menggunakan layanan ini dengan karakter kurang dari 255",
-    "welcome": "Selamat datang {name}, mohon lengkapi informasi berikut untuk memulai:",
-    "ifrc_note": "For questions or more information, please contact: ",
-    "contact_gdpc": "Kontak GDPC"
-  },
-  "terms_service_page": {
-    "applicable_law": {
-      "body": "Undang-undang Distrik Kolombia akan mengatur semua hak dan kewajiban yang terdapat dalam Perjanjian ini, tanpa memengaruhi prinsip-prinsip konflik hukum.",
-      "heading": "Hukum yang berlaku:"
-    },
-    "body": "Anda bertanggung jawab untuk menjaga kerahasiaan dan keamanan kode registrasi yang diberikan oleh Palang Merah kepada Anda. Anda bertanggung jawab untuk menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu, agar terus menerima Umpan Data. Palang Merah dapat merilis versi terbaru dari API dan Umpan Data atas kebijakannya sendiri. Versi baru mungkin tidak kompatibel dengan penerapan sebelumnya, dan Anda setuju untuk menggunakan versi terbaru dari Umpan Data setiap saat.\n\nAnda setuju untuk tidak mengubah, mendistribusikan, mendekompilasi, membongkar, atau merekayasa balik bagian mana pun dari API atau perangkat lunak Palang Merah.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melebihi volume permintaan yang wajar atau penggunaan yang berlebihan atau disalahgunakan, sebagaimana yang telah ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melanggar hukum, menyesatkan, melalaikan, yang bermaksud untuk menyebabkan kerugian, atau merugikan Palang Merah, penyedia layanannya, penyedia kontennya, atau pun pihak lain, sebagaimana ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nPalang Merah dapat memantau penggunaan API dan Umpan Data Anda. Anda tidak boleh menggunakan cara teknis apa pun untuk mengganggu pemantauan tersebut, dan Palang Merah dapat menggunakan cara teknis untuk mengatasi gangguan tersebut.\n\nPenggunaan Pesan Siap, Tanggap dan Pulihkan hanya akan ditampilkan sebagai pengaturan terkini atau terbaru ke pengaturan urgensi terkini dari Peringatan Peristiwa terkait, dan Anda harus memperbarui Pesan Siap, Tanggap dan Pulihkan Perseorangan setelah pemutakhiran Umpan Data dan\/atau terkait Peringatan Peristiwa oleh Palang Merah.\n\nPesan Siap, Tanggap dan Pulihkan perseorangan yang Anda gunakan sebaiknya hanya diasosiasikan dengan letak geografis di mana ia diterbitkan. Apabila Pesan Siap, Tanggap dan Pulihkan menyertakan referensi ke sebuah sumber seperti American Red Cross atau organisasi atau perhimpunan Palang Merah atau Bulan Sabit Merah nasional lainnya (tiap “Referensi Sumber”), Anda harus menyertakan Referensi Sumber yang diasosiasikan dengan tiap Pesan Siap, Tanggap dan Pulihkan dalam formulir yang disediakan di Umpan Data. Anda tidak boleh lagi menggunakan Referensi Sumber lainnya.\n\nAnda tidak boleh menerjemahkan Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan ke dalam bahasa lain, menggunakan, mengedit atau merevisi, apalagi mengubah arti Umpan Data, Peringatan Acara dan\/atau Pesan Siap, Tanggap dan Pulihkan.\n\nAnda harus memastikan Umpan Data, tetap dalam kepemilikan dan\/atau kendali Anda sendiri.\n\nAnda dapat tidak memberikan izin Peringatan Peristiwa dan Pesan Siap, Tanggap dan Pulihkan yang dikirim kepada Pengguna Langsung bersamaan dengan iklan atau sponsor apa pun.\n\nAnda tidak boleh mengarsipkan Umpan Data secara keseluruhan mau pun sebagian.",
-    "contact": "Silakan hubungi Palang Merah di {0} untuk pertanyaan mengenai API.",
-    "disclaimer": "API dan Umpan Data disediakan HANYA UNTUK TUJUAN INFORMASI DAN EDUKASI, dan atas dasar 'sebagaimana adanya' dan 'sebagaimana tersedia'. Palang Merah tidak membuat pernyataan atau jaminan apa pun, tersurat mau pun tersirat. Palang Merah menyangkal semua jaminan, tersurat mau pun tersirat, termasuk namun tidak terbatas pada jaminan tersirat mengenai kelayakan untuk diperdagangkan dan kesesuaian untuk tujuan tertentu. Palang Merah dan para karyawan, pejabat, gubernur dan agen serta pemberi lisensinya tidak akan bertanggung jawab atas kerusakan dalam bentuk apa pun yang timbul dari penggunaan API, Umpan Data, Peringatan Peristiwa, dan\/atau Pesan Siap, Tanggap dan Pulihkan termasuk namun tidak terbatas pada kerusakan langsung, tidak langsung, insidental, punitif dan konsekuensial.\n\nPalang Merah tidak menjamin urutan, keakuratan, keaslian atau kelengkapan API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan serta tidak akan bertanggung jawab dengan cara apa pun kepada Anda atau pun Pengguna Langsung bahkan pihak ketiga mana pun, termasuk namun tidak terbatas pada, keterlambatan, ketidakakuratan, kesalahan atau kelalaian, sehubungan dengan API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan yang disediakan di bawah ini.",
-    "entire_agreement": {
-      "body": "Syarat API merupakan perjanjian lengkap dan eksklusif antara Palang Merah dan Anda sehubungan dengan materi pokok dalam perjanjian ini dan menggantikan semua pemahaman, komunikasi, atau perjanjian lisan mau pun tertulis sebelumnya yang tidak secara khusus dimasukkan dalam perjanjian ini. Palang Merah berhak untuk memodifikasi atau menghentikan perjanjian ini setiap saat.",
-      "heading": "Keseluruhan Perjanjian:"
-    },
-    "heading": "PERJANJIAN LISENSI PENGGUNA LANGSUNG API",
-    "intro": "SETUJU: DENGAN MENGGUNAKAN LAYANAN INI ATAU MENCENTANG KOTAK YANG DISEDIAKAN, PENGGUNA SETUJU UNTUK TERIKAT DALAM PERJANJIAN INI.\n\nAPI merupakan alat yang memungkinkan Anda (“Anda”) untuk mengambil dan menggunakan umpan data yang disediakan oleh Palang Merah termasuk umpan peringatan cuaca dan bencana global dan notifikasi pengawasan (“Peringatan Peristiwa”) serta umpan pesan yang dapat ditindaklanjuti dan kontekstual dengan cara menghadapi bahaya lokal tergantung jenis bahaya dan urgensinya (“Pesan Siap, Tanggap dan Pulihkan”, dan secara kolektif dengan Peringatan Peristiwa, “ Umpan Data”). Pesan Siap, Tanggap dan Pulihkan dimaksudkan untuk menyertakan Peringatan Peristiwa atau peringatan dan notifikasi pengawasan lainnya yang berkaitan dengan peristiwa cuaca dan bencana dalam aplikasi Anda sendiri. Penggunaan Umpan Data diatur oleh Syarat API.",
-    "license_limitations": {
-      "body": "Anda dapat menggunakan Umpan Data hanya terkait dengan aplikasi Anda sendiri yang tunduk pada Syarat API, dan Anda wajib menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu. Anda diberikan hak non-eksklusif, terbatas dan dapat dibatalkan untuk mengunduh, menggunakan, mereproduksi dan mendistribusikan ke pengguna langsung aplikasi Anda sendiri (“Pengguna Langsung”) Peringatan Peristiwa serta Pesan Siap, Tanggap dan Pulihkan yang relevan dan kontekstual dengan pengaturan urgensi pada masing-masing Peringatan Peristiwa dari Umpan Data, tunduk pada Syarat API. Anda hanya dapat menggunakan API untuk memfasilitasi penggunaan non-komersial dari Umpan Data sesuai dengan Syarat API. Anda tidak diperkenankan dalam hal apa pun menggunakan API untuk memfasilitasi penggunaan komersial dari Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan, termasuk namun tidak terbatas pada, menjual ulang, meminta imbalan untuk mengaksesnya, meminta imbalan untuk meredistribusi, atau meminta imbalan untuk membuat karya turunan berdasarkan karya mereka. Palang Merah dan pemberi lisensinya mempertahankan semua hak milik, kepemilikan, hak dan kepentingan dalam dan untuk API, Pesan Siap, Tanggap dan Pulihkan, Peringatan Peristiwa, Umpan Data dan Referensi Sumber (sebagaimana yang didefinisikan berikut) di dalamnya. Semua hak yang tidak diberikan secara tersurat dilindungi.",
-      "heading": "Perizinan dan Pembatasan:"
-    },
-    "overview": {
-      "body": "Antarmuka Program Aplikasi Layanan Basis Data Pesan Keselamatan Pusat Kesiapsiagaan Bencana Global (\"API\") disediakan untuk Anda oleh Palang Merah Nasional Amerika Serikat (\"Palang Merah\"). API memerlukan kunci pendaftaran.  Selama proses pendaftaran, Anda harus menyetujui syarat dan ketentuan berikut ini, bersama dengan syarat dan ketentuan dalam Perjanjian Persyaratan Layanan Situs Web Palang Merah yang tersedia di {0} (secara bersama-sama disebut sebagai \"Persyaratan API\"). Persyaratan API akan mengatur penggunaan API dan materi elektronik yang dapat diunduh yang tersedia melalui API. {1}",
-      "cta": "Klik di sini untuk mendaftar."
-    },
-    "privacy_policy": {
-      "body": "Anda memahami, mengetahui, dan menyetujui bahwa pengoperasian program, layanan, alat, opsi pembelian, materi, atau informasi atas API yang memerlukan penyerahan, penggunaan dan penyebaran berbagai informasi identitas pribadi. Dengan demikian, jika Anda ingin mengakses dan menggunakan API, Anda mengetahui dan menyetujui bahwa penggunaan API merupakan penerimaan atas pengumpulan informasi identitas pribadi dan praktik penggunaan yang terkandung dalam kebijakan privasi yang dipasang: {0}",
-      "heading": "Kebijakan Privasi:"
-    },
-    "prohibited_activities": {
-      "body": "Anda dan Pengguna Langsung atau agen Anda tidak diperkenankan untuk menggunakan API atau Umpan Data dengan cara berikut:",
-      "heading": "Aktivitas dan Kegiatan yang Dilarang:",
-      "prohibited_list": {
-        "one": "Mengganggu atau mengacaukan layanan atau server Palang Merah.",
-        "two": "Menghindari atau memodifikasi kode atau mekanisme keamanan yang digunakan oleh Palang Merah atau API, termasuk namun tidak terbatas pada teknologi autentikasi apa pun.",
-        "three": "Meminta, mengumpulkan, memohon atau mendapatkan akses akun, kata sandi atau pun autentikasi rahasia Palang Merah lainnya selain yang diberikan kepada Anda untuk akun pribadi Anda.",
-        "four": "Menyatakan atau menyiratkan afiliasi, sponsor atau dukungan oleh Palang Merah atau organisasi atau perhimpunan nasional Palang Merah atau Bulan Sabit Merah lainnya.",
-        "five": "Menyatakan atau menyiratkan bahwa Anda yang memiliki dan membuat API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan.",
-        "six": "Menularkan virus, worm, Trojan horse, atau item apa pun yang bersifat destruktif."
-      }
-    },
-    "reserve_rights": "Palang Merah berhak untuk mengubah dan\/atau tidak lagi menyediakan API dan Umpan Data secara keseluruhan atau sebagian, baik untuk sementara atau permanen, kapan pun tanpa pemberitahuan sebelumnya. Untuk menghilangkan keraguan, Palang Merah tidak diwajibkan untuk menyediakan API atau Umpan Data untuk Anda, dan Anda setuju serta mengetahui bahwa tiap akses dalam kebijakan tunggal dan mutlak Palang Merah.",
-    "severability": {
-      "body": "Ketidakabsahan atas tiap syarat atau ketentuan dari Syarat API tidak akan memengaruhi keabsahan ketentuan lainnya.",
-      "heading": "Keterpisahan dan Pengabaian:"
-    },
-    "suspension": {
-      "body": "Palang Merah berhak untuk menangguhkan atau menghentikan akses Anda jika Palang Merah menetapkan, dengan kebijakannya sendiri, bahwa Anda terlibat dalam penggunaan yang tidak sah dari API atau Umpan Data sebagaimana diuraikan dalam Syarat API atau Anda menggunakan API mau pun Umpan Data dalam tiap aktivitas yang mengancam\/membahayakan keselamatan dan\/atau keamanan seseorang atau jaringan Palang Merah.",
-      "heading": "Penangguhan atau Penghentian:"
-    }
-  },
-  "view_data": {
-    "alert_title": "PERINGATAN:",
-    "more_info": "info selengkapnya:",
-    "which": "Pesan Keselamatan mana yang ingin Anda lihat?",
-    "view_data": "Tampilkan Data",
+    "ok": "OKE",
+    "go": "PERGI",
+    "all": "Semua",
+    "cancel": "Membatalkan",
+    "error_alert_title": "Ups ...",
+    "error_alert_text": "Ada yang salah! ",
+    "error_permission_alert_text": "Anda tidak memiliki izin untuk melakukan perubahan ini",
+    "token_expired_alert_title": "Sesi kedaluwarsa!",
+    "token_expired_alert_text": "Harap masuk lagi untuk melanjutkan.",
+    "login": "Masuk",
+    "what_now": "Database Pesan Keselamatan IFRC",
+    "message_portal": "Portal Pesan",
+    "register": "Daftar",
+    "sign_up": "Mendaftar",
+    "docs": "Dokumen",
+    "my_apps": "Aplikasi saya",
+    "number_of_apps": "{0} Aplikasi",
+    "whatnow_content": "Pesan",
+    "create_key": "Buat kunci",
     "alerts": "Peringatan",
-    "alert_preview": "Pratinjau peringatan",
-    "cap_alerts": "Peringatan CAP",
-    "onset": "Permulaan",
-    "severity": "Keparahan",
-    "title": "Judul",
-    "date": "Tanggal",
-    "headline": "Berita Utama",
-    "alert": "Peringatan",
-    "whatnow_info": "Info Basis Data Pesan Keselamatan",
-    "alert_detail": "Rincian Peringatan",
-    "more": "Info lebih lanjut",
-    "area_affected": "Kawasan Terdampak",
-    "details": "Rincian",
-    "cap": {
-      "type": "Tipe",
-      "status": "Status",
-      "urgency": "Urgensi",
-      "severity": "Keparahan",
-      "certainty": "Kepastian",
-      "sent": "Terkirim",
-      "effective": "Efektif",
-      "onset": "Permulaan",
-      "expires": "Kedaluwarsa",
-      "alert_from": "Peringatan dari",
-      "feed": "Umpan",
-      "more": "Info selengkapnya:",
-      "through": "melalui",
-      "alert_feed": "Umpan Peringatan",
-      "fetching_feed": "Mengambil umpan",
-      "empty": "Tidak ada peringatan terkini saat ini"
+    "feeds": "Feed",
+    "get_started": "Daftar sekarang",
+    "page_not_found": "Halaman tidak ditemukan",
+    "go_home": "Pulang",
+    "logout": "Logout",
+    "email": "E-mail",
+    "register_success": "Terima kasih telah mendaftar",
+    "confirm_email": "Silakan periksa kotak masuk Anda untuk email untuk mengonfirmasi akun Anda.",
+    "email_confirmed": "Terima kasih telah mengonfirmasi alamat email Anda. ",
+    "confirmation_failed": "Alamat email Anda tidak dapat dikonfirmasi, silakan hubungi administrator Anda untuk mencoba lagi.",
+    "home_redirect": "Pergi ke Home Page",
+    "status": "Status",
+    "remember_me": "Ingat saya",
+    "old_password": "Kata sandi saat ini",
+    "password": "Kata sandi",
+    "forgot_password": "Lupa kata sandi Anda?",
+    "confirm_password": "Konfirmasi Kata Sandi",
+    "incorrect_password": "Kata sandi yang salah",
+    "name": "Nama",
+    "first_name": "Nama depan",
+    "last_name": "Nama Belakang",
+    "toggle_navigation": "Navigasi beralih",
+    "you_are_logged_in": "Anda masuk!",
+    "reset_password": "Setel ulang kata sandi",
+    "set_password": "Atur kata sandi",
+    "send_password_reset_link": "Kirim Tautan Reset Kata Sandi",
+    "settings": "Pengaturan",
+    "profile": "Profil",
+    "your_info": "Info Anda",
+    "info_updated": "Info Anda telah diperbarui!",
+    "update": "Memperbarui",
+    "your_password": "Kata sandi Anda",
+    "password_updated": "Kata sandi Anda telah diperbarui",
+    "new_password": "Kata sandi baru",
+    "login_with": "Masuk dengan",
+    "register_with": "Mendaftar dengan",
+    "yes": "Ya",
+    "no": "TIDAK",
+    "close": "Menutup",
+    "dashboard": "Dasbor",
+    "terms_service": "Ketentuan Layanan",
+    "sign_in_with_google": "Masuk dengan Google",
+    "offline_error": {
+        "title": "Tidak ada koneksi internet",
+        "description": "Harap simpan perubahan dalam {time} atau kemajuan akan hilang"
+    },
+    "breadcrumbs": {
+        "applications": "Aplikasi",
+        "admin_users": "Pengguna Admin",
+        "users": "Pengguna",
+        "manage_users": "Kelola pengguna",
+        "profile": "Profil",
+        "terms": "syarat dan Ketentuan",
+        "edit": "Edit",
+        "create": "Membuat",
+        "content": "Isi",
+        "what_now_content": "Konten apa sekarang",
+        "bulk_upload": "Unggah file pesan",
+        "audit_log": "Log audit",
+        "api_usage": "Penggunaan API",
+        "app_detail": "Detail Aplikasi",
+        "all_terms": "Semua syarat dan ketentuan"
+    },
+    "documentation": {
+        "heading": "Dokumentasi API Palang Merah",
+        "sidebar": {
+            "introduction": "Perkenalan",
+            "base_url": "URL dasar",
+            "changelog": "Changelog",
+            "authentication": "Otentikasi",
+            "response_codes": "Kode respons",
+            "emergency_alert_feed": "Umpan Peringatan Darurat",
+            "cap_alert_document": "Dokumen Peringatan Cap",
+            "what_now": "Apa sekarang"
+        },
+        "steps": {
+            "one": {
+                "body": "API Palang Merah memungkinkan pengembang untuk mengakses informasi darurat dan sumber daya yang dikeluarkan oleh Masyarakat Palang Merah Internasional.",
+                "heading": "Perkenalan",
+                "support_card": {
+                    "body": "Jika Anda memiliki pertanyaan atau memerlukan dukungan, silakan hubungi kami di hello@ifrc.org.",
+                    "title": "Dukungan & Pertanyaan"
+                }
+            },
+            "two": {
+                "body": "Semua titik akhir API diawali dengan URL dasar ini.",
+                "heading": "URL dasar"
+            },
+            "three": {
+                "heading": "Changelog",
+                "table": {
+                    "headers": {
+                        "detail": "Melepaskan",
+                        "version": "Versi API",
+                        "release": "Melepaskan",
+                        "release_date": "Tanggal rilis"
+                    }
+                }
+            },
+            "four": {
+                "body": "API membutuhkan otentikasi untuk mengakses semua sumber daya menggunakan kunci API. ",
+                "create_app_cta": "Buat aplikasi",
+                "heading": "Otentikasi"
+            },
+            "five": {
+                "heading": "Kode respons",
+                "table": {
+                    "descriptions": {
+                        "ok": "Permintaan berhasil dan badan respons berisi sumber daya yang diminta",
+                        "found": "Menunjukkan pengalihan. ",
+                        "not_found": "Sumber daya yang diminta tidak ditemukan.",
+                        "not_allowed": "Menunjukkan metode HTTP yang digunakan tidak diizinkan pada sumber daya ini.",
+                        "server_error": "Terjadi kesalahan server dan sumber daya yang diminta tidak dapat dikembalikan.",
+                        "unavailable": "Menunjukkan layanan saat ini tidak tersedia. "
+                    },
+                    "headers": {
+                        "code": "Kode",
+                        "name": "Nama",
+                        "description": "Keterangan"
+                    }
+                }
+            },
+            "six": {
+                "card": {
+                    "body": "Setiap Masyarakat Palang Merah dapat mengeluarkan peringatan publik menggunakan {0} v1.2.",
+                    "cta": "Protokol peringatan umum",
+                    "title": "Protokol peringatan umum"
+                },
+                "endpoint": "Titik akhir:",
+                "example": "Dalam contoh ini, segmen {0} harus diganti dengan kode negara dari masyarakat yang diberikan. ",
+                "feed_intro": "Umpan untuk masing -masing masyarakat juga disediakan, mendaftarkan peringatan aktif yang diterbitkan oleh masyarakat tertentu, diidentifikasi oleh",
+                "heading": "Umpan Peringatan Darurat",
+                "intro": "Cap Alerts yang dikeluarkan oleh semua masyarakat diterbitkan menggunakan umpan RSS. "
+            },
+            "seven": {
+                "endpoint": "Titik akhir:",
+                "example_response": "Contoh Respons:",
+                "heading": "Dokumen Peringatan Cap",
+                "body": "Dokumen peringatan CAP dapat diakses melalui tautan absolut yang ditentukan dalam setiap item umpan RSS. "
+            },
+            "eight": {
+                "body": "Titik akhir berikut menyediakan data terstruktur yang diterbitkan oleh masyarakat Palang Merah untuk membantu kesiapsiagaan bencana untuk berbagai jenis acara.\n\n",
+                "endpoint": "Titik akhir:",
+                "example_response": "Contoh Respons:",
+                "heading": "Apa sekarang",
+                "note": "Catatan:",
+                "noteDetails": "{0} Semua tanggapan terkandung dalam properti induk {1}.",
+                "query_params": "Parameter kueri:",
+                "response_properties": "Properti Respons:",
+                "structure": "Struktur objek item yang sekarang:",
+                "stucture_attribution": "Struktur objek {0}:",
+                "stucture_attribute_translation": "Struktur atribusi {0} objek:",
+                "stucture_translation": "Struktur objek {0}:",
+                "table": {
+                    "query_params": {
+                        "name": "nama",
+                        "description": "keterangan"
+                    },
+                    "structure": {
+                        "property": "Milik",
+                        "data_type": "Tipe data",
+                        "description": "Keterangan"
+                    }
+                }
+            }
+        }
+    },
+    "get_started_docs": {
+        "title": "Mulai",
+        "sidebar": {
+            "create_app": "Buat aplikasi",
+            "get_api_key": "Dapatkan Kunci API",
+            "make_request": "Membuat permintaan",
+            "sign_up": "Mendaftar"
+        },
+        "steps": {
+            "one": {
+                "heading": "Langkah 1 - Daftar",
+                "body": "Untuk memulai menggunakan data dari API database pesan keselamatan, pertama {0} ke portal database pesan keselamatan.\n\n",
+                "create_account_alt": "Buat akun",
+                "existing_account": "Jika Anda sudah memiliki akun, silakan {0}.",
+                "login_cta": "Masuk",
+                "sign_up_cta": "mendaftar"
+            },
+            "two": {
+                "body": "Untuk menggunakan API, Anda harus membuat aplikasi di portal database pesan keselamatan. ",
+                "create_app_alt": "Buat aplikasi",
+                "heading": "Langkah 2 - Buat aplikasi"
+            },
+            "three": {
+                "body": "Saat Anda telah membuat aplikasi, kunci API akan dihasilkan secara otomatis.\n\n",
+                "create_api_key_alt": "Buat kunci API",
+                "heading": "Langkah 3 - Dapatkan Kunci API",
+                "important": "Penting:"
+            },
+            "four": {
+                "api_docs_cta": "Dokumentasi API",
+                "body": "API Database Pesan Keselamatan menggunakan HTTP (S) dan menyediakan titik akhir yang tenang untuk mendapatkan data yang dipublikasikan.\n\n",
+                "example_title": "Contoh Permintaan",
+                "heading": "Langkah 4 - Buat permintaan",
+                "moreInfo": "Untuk informasi lebih lanjut tentang semua titik akhir API, lihat {0}."
+            }
+        }
+    },
+    "home_pods": {
+        "bulk_upload": "Di sini Anda dapat mengunggah semua pesan keselamatan Anda dalam satu file.",
+        "audit_log": "Di sini Anda dapat melihat riwayat pengeditan pesan Anda",
+        "whatnow_edit": "Di sinilah Anda dapat mengedit konten database pesan keselamatan",
+        "whatnow_review": "Di sinilah Anda dapat meninjau konten database pesan keselamatan",
+        "whatnow_publish": "Di sini Anda dapat mengedit dan mempublikasikan pesan keselamatan masyarakat nasional Anda.",
+        "manage_users": "Di sinilah mengelola pengguna (buat, edit dan hapus)",
+        "api_usage": "Di sinilah Anda dapat melihat siapa yang menggunakan API dan aplikasi apa yang sedang dibangun dengannya.",
+        "wellcome": "Selamat datang",
+        "wellcome_description": "Di sini Anda dapat mengedit dan mempublikasikan konten database pesan keselamatan."
+    },
+    "languages": {
+        "am": "አማርኛ",
+        "ar": "عربى",
+        "bn": "বাংলা",
+        "de": "Deutsche",
+        "en": "Bahasa inggris",
+        "es": "Español",
+        "fr": "Français",
+        "ht": "Kreyòl",
+        "id": "Bahasa Indonesia",
+        "it": "Italiano",
+        "ja": "日本",
+        "my": "ဗမာ",
+        "ne": "नेपाली",
+        "pt": "Portugu",
+        "ru": "рский",
+        "rw": "Kinyarwanda",
+        "sw": "Kiswahili",
+        "th": "ไทย",
+        "tr": "Türk",
+        "ur": "اردو",
+        "vi": "Tiếng việt"
+    },
+    "sidebar": {
+        "manage": "Kelola Pengguna Konten",
+        "content_users": "Pengguna Konten",
+        "audit_log": "Edit Sejarah",
+        "whatnow": "Editor Atribusi",
+        "bulk": "Unggah file pesan",
+        "content": "Isi",
+        "api": "Penggunaan API",
+        "applications": "Aplikasi",
+        "api_stats": "Statistik API",
+        "api_users": "Pengguna API",
+        "terms_conditions": "syarat dan Ketentuan",
+        "subnationals": "Subnasional"
+    },
+    "common": {
+        "accept": "Menerima",
+        "actions": "Tindakan",
+        "create": "Membuat",
+        "edit": "Edit",
+        "save": "Menyimpan",
+        "deactivate": "Menonaktifkan",
+        "activate": "Mengaktifkan",
+        "are_you_sure": "Apa kamu yakin?",
+        "yes": "Ya",
+        "title": "Judul",
+        "description": "Keterangan",
+        "unpublished_edits": "Edit yang tidak dipublikasikan?",
+        "published": "Diterbitkan",
+        "delete": "Menghapus",
+        "welcome": "Selamat datang di",
+        "save_changes": "Simpan perubahan",
+        "auto_saving": "Autosaving",
+        "add": "Menambahkan",
+        "reset_password": "Setel ulang kata sandi",
+        "my_profile": "Profil saya",
+        "cancel": "Membatalkan",
+        "view_changes": "Lihat perubahan",
+        "view_content": "Lihat Konten",
+        "resend_activation": "Kirim ulang email aktivasi",
+        "deactivate_user": "Nonaktifkan pengguna",
+        "submit_changes": "Mengirimkan perubahan",
+        "reactivate_user": "Mengaktifkan kembali pengguna",
+        "send_invite": "Kirim Undangan",
+        "invite_and_create": "Undang dan buat yang lain",
+        "loading": "Memuat konten",
+        "loading_button": "Memuat...",
+        "publish_new": "Publikasikan versi baru",
+        "greeting": "Hai",
+        "removed": "DIHAPUS",
+        "copy": "Menyalin",
+        "copied": "Disalin",
+        "not_empty": "Tidak bisa kosong",
+        "name": "Nama",
+        "webUrl": "Url",
+        "learn_more": "Pelajari lebih lanjut",
+        "validations": {
+            "empty": "Ini tidak bisa kosong",
+            "hazardIcon": "Pilih gambar yang kurang dari 30kb"
+        },
+        "network_error": "Kesalahan jaringan",
+        "network_error_text": "Sepertinya ada kesalahan jaringan. ",
+        "email_sent": "Email dikirim",
+        "duplicate_lang_error": "Maaf, bahasa yang dipilih sudah ada",
+        "duplicate_lang_description": "Harap edit bahasa yang ada atau pilih bahasa baru dari dropdown",
+        "estimated_users": "Jumlah yang diperkirakan pengguna",
+        "upploading": "Mengunggah",
+        "download": "Unduh",
+        "download_as_image": "Unduh sebagai gambar",
+        "download_as_pdf": "Unduh sebagai pdf",
+        "add_logo": "Tambahkan logo",
+        "edit_logo": "Edit logo",
+        "loading_image": "Memuat...",
+        "preview": "Pratinjau"
+    },
+    "banners": {
+        "get_started_create": ", Mulailah dan buat aplikasi pertama Anda",
+        "create_app": "Buat aplikasi",
+        "get_started_info": "BV Frazo Profitanto BAF, per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro. "
+    },
+    "users": {
+        "user": "Pengguna",
+        "deleted": "Pengguna yang Dihapus",
+        "list": {
+            "manage": "Kelola pengguna",
+            "select_status": "Pilih Status",
+            "select_role": "Pilih peran",
+            "select_country": "Pilih negara",
+            "select_terms": "Pilih Versi Ketentuan",
+            "select_society": "Pilih masyarakat nacional",
+            "create": "Buat pengguna baru",
+            "download_report": "Unduh Laporan",
+            "empty": "Tidak dapat menemukan pengguna",
+            "detail": "Detail Pengguna",
+            "clear_filters": "Filter yang jelas",
+            "table_header": {
+                "user": "Pengguna",
+                "role": "Peran",
+                "society": "Masyarakat",
+                "email": "E-mail",
+                "added": "Ditambahkan",
+                "last_activity": "Akitivitas terakhir",
+                "t_and_c": "Versi T&C"
+            },
+            "societies": "Masyarakat"
+        },
+        "status": {
+            "active": "Diaktifkan",
+            "deactivated": "Dinonaktifkan"
+        },
+        "edit": {
+            "super_admin_all": "Akses ke semua masyarakat",
+            "user_details": "Detail Pengguna",
+            "create_user": "Buat pengguna baru",
+            "add_society": "Tambahkan masyarakat +",
+            "societies_heading": "Masyarakat",
+            "roles_heading": "Peran & Izin",
+            "activity_heading": "Aktivitas",
+            "roles_label": "Pilih peran & izin untuk pengguna ini",
+            "activity_link": "Lihat semua tindakan oleh pengguna",
+            "created": "Pengguna berhasil dibuat",
+            "updated": "Pengguna berhasil diperbarui",
+            "email_update": "Untuk memperbarui email Anda, silakan masukkan kata sandi Anda",
+            "view": "Melihat",
+            "more": "lagi",
+            "less": "Tunjukkan lebih sedikit",
+            "user_can_do": "Lihat apa yang dimiliki pengguna untuk dilakukan:",
+            "user_no_permission": "Pengguna belum mendapat izin",
+            "soc_already_added": "Pengguna ini telah ditugaskan masyarakat ini"
+        }
+    },
+    "new_welcome": {
+        "title_1": "Selamat Datang di",
+        "red_title": "IFRC",
+        "title_2": "Keamanan",
+        "title_3": "Database pesan",
+        "text_header": "Akses dan bagikan pesan keselamatan bulan sabit merah Palang Merah di seluruh platform Anda.",
+        "text_header_2": "Ikuti Panduan #-Sept di bawah ..",
+        "bottom_subtitle": "Hubungi IFRC",
+        "bottom_text": "Email tim IFRC jika Anda memiliki pertanyaan: im@ifrc.org",
+        "bottom_btn": "Hubungi IFRC",
+        "slider_1": {
+            "btn": "Buat kunci API",
+            "step_1": {
+                "header": "Langkah 1: Buat aplikasi",
+                "text": "Buat tombol API untuk menggunakan API di database. "
+            },
+            "step_2": {
+                "header": "Langkah 2: Terima Kunci API",
+                "text": "Ketika Anda telah membuat kunci API, itu akan secara otomatis dihasilkan.",
+                "text_2": "PENTING: Simpan kunci API Anda seening mungkin. "
+            },
+            "step_3": {
+                "header": "Langkah 3: Buat permintaan",
+                "text": "API Basis Data menggunakan HTTP (S) dan menyediakan titik akhir yang tenang untuk mendapatkan data yang dipublikasikan. "
+            },
+            "step_4": {
+                "header": "Langkah 4: Bagikan pesannya",
+                "text": "Bagikan pesan Keselamatan Bulan Sabit Merah Palang Merah dengan publik ketika ada ancaman bahaya. "
+            }
+        },
+        "slider_2": {
+            "btn": "Pesan keselamatan",
+            "step_1": {
+                "header": "Langkah 1: Lihat pesannya",
+                "text": "Kunjungi database pesan untuk melihat pesan National Society Nasional Palang Merah Merah yang tersedia."
+            },
+            "step_2": {
+                "header": "Langkah 2: Pilih Set Pesan",
+                "text": "Pilih masyarakat nasional yang ingin Anda lihat. "
+            },
+            "step_3": {
+                "header": "Langkah 3: Bagikan pesannya",
+                "text": "Cari opsi untuk mengunduh pesan. "
+            }
+        }
+    },
+    "upload_modal": {
+        "drag_button_text": "Klik atau seret file ke area ini untuk diunggah",
+        "button_text": "Mengunggah",
+        "allowed_formats_info": "Hanya file JPG dan PNG yang diizinkan. "
+    },
+    "stages": {
+        "immediate": "Segera",
+        "warning": "Peringatan",
+        "anticipated": "Diantisipasi",
+        "assess_and_plan": "Menilai dan merencanakan",
+        "mitigate_risks": "Mengurangi risiko",
+        "prepare_to_respond": "Bersiaplah untuk merespons",
+        "recover": "Pulih"
+    },
+    "content": {
+        "content": "Isi",
+        "audit_log": {
+            "audit_log": "Log audit",
+            "my_audit_log": "Edit Sejarah",
+            "subtitle": "Di sini Anda dapat melihat sejarah pengeditan pesan Anda.",
+            "empty": "Tidak ada riwayat audit yang ditemukan yang cocok dengan filter ini",
+            "soc_label": "Masyarakat",
+            "select_hazard": "Pilih Jenis Bahaya",
+            "select_language": "Pilih bahasa",
+            "select_overwrite": "Pilih Oprion Timpa",
+            "choose_file": "Pilih jenis file",
+            "select_soc": "Pilih masyarakat nacional"
+        },
+        "whatnow": {
+            "title": "Pesan",
+            "set_attribution": "Tetapkan nama masyarakat dan pesan atribusi untuk menerbitkan",
+            "whatnow": "Database Pesan Keamanan",
+            "empty": "Tidak ada pesan keselamatan yang dipublikasikan untuk masyarakat nasional ini",
+            "steps": "Tangga",
+            "publish": "Menerbitkan",
+            "no_publish": "Tidak ada yang perlu diterbitkan",
+            "published": "terjemahan yang diterbitkan",
+            "publishing": "Penerbitan",
+            "content_to_publish": "Apa yang akan diterbitkan",
+            "whatnow_content": "Konten Database Pesan Keamanan",
+            "choose_hazard": "Pilih Bahaya",
+            "hazard": "Bahaya",
+            "content": "Isi",
+            "create": "Tambahkan bahaya",
+            "edit_attribtion": "Edit atribusi",
+            "attribution": "Atribusi",
+            "attribution_url": "URL atribusi",
+            "society_name": "Masyarakat Nasional",
+            "attribution_message": "Pesan atribusi",
+            "no_translation": "Tidak ada set konten",
+            "delete_content_translation": "Ini akan menghapus konten basis data pesan keselamatan yang dipilih dari bahasa saat ini",
+            "messages": "Pesan keselamatan dari",
+            "add_language": "Tambahkan bahasa baru",
+            "no_languages": "Pilih atau buat bahasa untuk memulai",
+            "no_soc": "Pilih Masyarakat Nasional",
+            "no_region": "Subnasional",
+            "add_language_message": "Untuk menambahkan bahasa baru, silakan tambahkan beberapa konten untuk diikuti",
+            "add_language_attribution": "Buat atribusi untuk menambahkan bahasa baru",
+            "select_language": "Pilih bahasa",
+            "attribution_publish": "Atribusi ini akan segera tersedia di publikasi",
+            "date_added": "Tanggal ditambahkan",
+            "url": "Url",
+            "hazard_type": "Jenis bahaya",
+            "hazard_type_duplicated": "Itu sudah ada",
+            "show_more": "Tunjukkan lebih banyak",
+            "early": "Peringatan Dini",
+            "disaster": "Pengurangan Risiko Bencana",
+            "recovery": "Pemulihan",
+            "publish_summary_title": "Atribusi",
+            "publish_summary_ns": "Masyarakat Nasional",
+            "publish_summary_url": "URL atribusi",
+            "publish_summary_message": "Pesan atribusi"
+        },
+        "edit_whatnow": {
+            "title": "Judul",
+            "description": "Keterangan",
+            "content_piece": "Sepotong konten",
+            "enter_other_hazard_type": "Masukkan Nama Jenis Bahaya",
+            "other_hazard_type_label": "Jenis bahaya lainnya",
+            "stepped_content": "Sepotong konten melangkah",
+            "content_title_description": "Judul untuk pesan keselamatan ini",
+            "content_description_description": "Deskripsi pesan keselamatan ini",
+            "content_label": "Harap masukkan beberapa informasi bahaya",
+            "content_url": "Url",
+            "content_url_description": "URL untuk informasi lebih lanjut tentang pesan keselamatan ini. ",
+            "created": "dibuat",
+            "pieces_edited": "Potongan diedit",
+            "content_placeholder": "Harap masukkan pesan",
+            "mitigation": "Mitigasi",
+            "mitigation_help": "Tindakan jangka panjang untuk mengurangi risiko",
+            "mitigation_subt": "",
+            "mitigation_extra": "Mitigasi adalah pernyataan jangka panjang prediksi peristiwa berbahaya. ",
+            "seasonalForecast": "Prakiraan musiman",
+            "seasonalForecast_help": "Tindakan jangka pendek untuk mengurangi risiko",
+            "seasonalForecast_subt": "",
+            "seasonalForecast_extra": "Prakiraan musiman adalah pernyataan prediksi peristiwa berbahaya. ",
+            "watch": "Jam tangan",
+            "watch_help": "Bersiaplah untuk merespons",
+            "watch_subt": "",
+            "watch_extra": "Sebuah arloji dikeluarkan ketika risiko peristiwa berbahaya telah meningkat secara signifikan, tetapi kemunculannya, lokasi, dan\/atau waktu masih belum pasti. ",
+            "warning": "Peringatan",
+            "warning_subt": "~ 24-48 jam waktu tunggu",
+            "warning_help": "Bersiaplah untuk merespons",
+            "warning_extra": "Peristiwa berbahaya memiliki probabilitas tinggi terjadi dalam ~ 24-48 jam. ",
+            "immediate": "Segera",
+            "immediate_subt": "Hazard sedang terjadi",
+            "immediate_help": "Tindakan respons",
+            "immediate_subtitle": "Hazard sedang terjadi",
+            "immediate_extra": "Peristiwa berbahaya sedang terjadi. ",
+            "immediate_key_message_tooltip": "Ini adalah tindakan prioritas yang harus diambil seseorang untuk tetap aman. ",
+            "recover": "Pemulihan",
+            "recover_title": "Pulih",
+            "recover_help": "Tindakan Pemulihan",
+            "recover_subt": "",
+            "recover_extra": "Ambil tindakan ini setelah acara bahaya untuk memastikan keamanan.",
+            "anticipated": "Diantisipasi",
+            "assess_and_plan": "Menilai dan merencanakan",
+            "mitigate_risks": "Mengurangi risiko",
+            "prepare_to_respond": "Bersiaplah untuk merespons",
+            "updated": "diperbarui",
+            "download_icon": "Ikon Unduh",
+            "download_image": "Unduh sebagai gambar",
+            "download_image_error": "Kesalahan Mengunduh Gambar, Pastikan Anda telah menerbitkan semua perubahan dan coba lagi.",
+            "download_instructions": "Klik kanan dan pilih 'Simpan gambar sebagai ...' untuk menyimpan",
+            "downloaded_image_alt": "Instruksi Database Pesan Keamanan",
+            "add_key_message": "Tambahkan Pesan Keamanan Kunci",
+            "add_supporting_message": "Tambahkan pesan pendukung",
+            "early_warning": "Peringatan Dini",
+            "early_warning_description": "Pesan Keselamatan untuk Peringatan dan Tindakan Awal",
+            "disaster_risk_reduction": "Pengurangan Risiko Bencana",
+            "disaster_risk_reduction_description": "Pesan Keselamatan dari Kesadaran Publik dan Pendidikan Publik untuk DRR (PAPE)",
+            "recovery": "Pemulihan",
+            "recovery_extra": "Ambil tindakan ini setelah acara bahaya untuk memastikan keamanan",
+            "recovery_description": "Setelah acara bahaya",
+            "hazard_type": "Jenis bahaya",
+            "content_edit_title": "Edit konten",
+            "content_add_hazard_title": "Tambahkan bahaya",
+            "anticipated_subt": "Waktu depan 3-5 hari",
+            "anticipated_extra": "Ada risiko peristiwa yang diantisipasi dalam 3-5 hari. ",
+            "prepare_to_respond_subt": "",
+            "prepare_to_respond_extra": "Kembangkan kapasitas respons dengan keterampilan belajar dan menyimpan ketentuan",
+            "assess_and_plan_subt": "",
+            "assess_and_plan_extra": "Menilai risiko dan merencanakan kegiatan untuk mengenali, mengurangi, dan menanggapi peristiwa bahaya",
+            "mitigate_risks_subt": "",
+            "mitigate_risks_extra": "Ambil langkah -langkah mitigasi untuk membuat lingkungan yang dibangun dan alami lebih aman dan membangun sistem peringatan dini",
+            "key_message_label": "Pesan keamanan",
+            "supporting_message_label": "Pesan pendukung",
+            "url_tool": "Tautan ke lebih banyak informasi pesan keselamatan di Situs Web Nasional atau Mitra Anda",
+            "desc_tool": "Berikan deskripsi singkat tentang bahaya dan pesan. ",
+            "title_tool": "Misalnya: Pesan Keselamatan untuk Banjir",
+            "safety_tool": "Ini adalah tindakan prioritas yang harus diambil seseorang untuk tetap aman. ",
+            "supporting_tool": "Ini memberikan detail lebih lanjut untuk mendukung tindakan kunci prioritas. "
+        },
+        "message_editor": {
+            "title": "Editor Atribusi",
+            "society_name_label": "Nama Masyarakat Nasional",
+            "attribution_url_label": "URL atribusi",
+            "attribution_message_label": "Pesan atribusi",
+            "create_btn": "Tambahkan bahaya",
+            "contributor_name_label": "Nama kolaborator",
+            "contributor_single": "Kolaborator",
+            "attribution_message_label_tooltip": "Bagikan deskripsi satu kalimat tentang masyarakat nasional Anda dan pesan yang disediakan. ",
+            "attribution_url_label_tooltip": "Bagikan situs web National Society Anda untuk memberikan informasi tentang organisasi Anda."
+        },
+        "previewer": {
+            "download_image_error": "Kesalahan mengunduh gambar, silakan coba lagi.",
+            "download_pdf_error": "Kesalahan mengunduh pdf, coba lagi."
+        },
+        "audit": "Edit Sejarah",
+        "export": "Ekspor",
+        "bulk_upload": {
+            "empty_template": "Template kosong",
+            "bulk_upload": "Unggah file pesan",
+            "bulk_subtitle": "Di sini Anda dapat mengunggah semua pesan keselamatan Anda dalam satu file.",
+            "template": "Templat",
+            "export_template": "Template Ekspor",
+            "import_data": "Impor data",
+            "import_complete": "Impor Lengkap",
+            "import_summary": "Anda mengimpor di bawah {Society} di {lang}.",
+            "import_banner": {
+                "success": "Kesuksesan",
+                "added": "Ditambahkan",
+                "skipped": "Dilewati",
+                "denied": "Ditolak",
+                "updated": "Diperbarui",
+                "failed": "Gagal",
+                "invalid": "Tidak sah",
+                "row": "Baris"
+            },
+            "upload_csv": "Unggah dokumen dalam format CSV",
+            "language_instructions": "Pilih bahasa terjemahan yang sedang diimpor.",
+            "file_instructions": "Seret file atau pilih dari perangkat Anda.",
+            "choose": "Memilih",
+            "submit": "Impor konten",
+            "reset": "Unggah yang lain",
+            "export_template_guide": "Panduan Template Ekspor",
+            "export_template_instructions": "Untuk instruksi tentang cara menggunakan template unggahan file g ini secara efektif, silakan lihat panduan ini.",
+            "refer": "Merujuk ke",
+            "detail": "untuk instruksi detail",
+            "warnings": {
+                "title": "Tolak impor jika ada konten yang akan menimpa versi yang lebih baru.",
+                "on": "Ya",
+                "off": "TIDAK"
+            },
+            "overwriting": {
+                "title": "Pengaturan Timpa.",
+                "on": "Selalu perbarui untuk versi ini, timpa semua revisi",
+                "off": "Hanya memperbarui jenis acara di mana konten yang diimpor lebih baru"
+            },
+            "errors": {
+                "warning_update_will_overwrite": "Tindakan ini akan menimpa perubahan yang telah dibuat sejak ekspor ini dibuat",
+                "bad_request": "Data file tidak terbentuk dengan benar",
+                "bad_request_error_codes": {
+                    "30001": "Judul kolom tidak cocok dengan template",
+                    "30002": "Nama atribusi, pesan atau URL hilang",
+                    "30003": "URL Atribusi Tidak Valid - Harap pastikan protokolnya hadir, misalnya. ",
+                    "40001": "Kode negara yang tidak valid disediakan",
+                    "40002": "Masyarakat yang dipilih tidak cocok dengan masyarakat untuk file yang dipilih",
+                    "40003": "Tanggal file yang dipilih diekspor telah cacat dan impor tidak dapat diselesaikan"
+                }
+            }
+        }
+    },
+    "api_stats": {
+        "page_title": "Statistik API",
+        "download_data": "Unduh data",
+        "clear_filters": "Filter yang jelas",
+        "start_date": "Tanggal mulai",
+        "end_date": "Tanggal akhir",
+        "table_select": {
+            "keys": "Kunci API",
+            "routes": "Rute API"
+        },
+        "field_headers": {
+            "application_name": "Nama Aplikasi",
+            "number_of_hits": "Jumlah hit",
+            "estimated_reach": "Perkiraan jangkauan",
+            "organisation": "Organisasi",
+            "application": "Aplikasi"
+        },
+        "cumulative_cards": {
+            "hits": "Total hit",
+            "accounts": "Total akun",
+            "est_impacted_users": "Est. "
+        },
+        "empty": "Tidak ada statistik yang ditemukan untuk kisaran tanggal yang diberikan"
+    },
+    "api_usage": {
+        "applications": "Aplikasi",
+        "view_user": "Lihat Pengguna",
+        "reactivate": "Mengaktifkan kembali",
+        "app_detail": "Detail Aplikasi",
+        "app_details": "Detail Aplikasi",
+        "activity": "Aktivitas",
+        "view_all_activity": "Lihat semua aktivitas untuk aplikasi ini",
+        "api_users": "Pengguna API",
+        "terms_conditions": "Semua Versi Syarat & Ketentuan",
+        "view_prev_terms": "Lihat versi sebelumnya",
+        "current_version": "Versi saat ini",
+        "version": "Versi"
+    },
+    "applications": {
+        "my_apps": "Aplikasi saya",
+        "new_tc": "Syarat dan Ketentuan Baru",
+        "terms_conditions_message": "Sudah ada versi yang diterbitkan dengan nomor ini:",
+        "build": "Bangun aplikasi baru",
+        "build_key": "Bangun Kunci API Baru",
+        "edit": "Edit aplikasi",
+        "building": "Aplikasi Bangunan",
+        "building_key": "Membangun Kunci API",
+        "no_apps": "Anda tidak memiliki aplikasi, membangun satu untuk memulai.",
+        "api_keys": "Kunci API"
+    },
+    "home": {
+        "home": "Rumah",
+        "welcome": "Selamat datang",
+        "admin_intro": "Di sini Anda dapat mengelola pengguna, mengedit dan mempublikasikan konten database pesan keselamatan dan melihat penggunaan API.",
+        "ns_admin_intro": "Di sini Anda dapat mengedit dan mempublikasikan konten database pesan keselamatan",
+        "ns_editor_intro": "Di sini Anda dapat mengedit konten database pesan keselamatan",
+        "api_user_intro": "Di sini Anda melihat aplikasi Anda dan mengelola akun Anda.",
+        "role_changed_title": "Peran Anda diubah",
+        "role_changed_p": "Anda telah ditugaskan peran berikut:",
+        "role_changed_p2": "Izin Anda adalah sebagai berikut:",
+        "role_changed_confirm": "Mengonfirmasi",
+        "role_changed_dismiss": "Menutup",
+        "go_publish_safety_messages": "Publikasikan pesan keselamatan",
+        "go_bulk_upload": "Unggah file pesan",
+        "go_audit_log": "Lihat Sejarah Edit"
+    },
+    "landing": {
+        "strapline": "Layanan Database Pesan Keamanan",
+        "strapline_part_2": "Palang Palang Merah Global \/ Pesan Keselamatan Kunci Merah Crescent",
+        "head_1": "Keamanan IFRC",
+        "head_2": "Database pesan",
+        "head_text_1": "Pesan keselamatan berdasarkan kesadaran publik IFRC dan",
+        "head_text_2": "Sumber Daya Pendidikan Publik (PAPE)",
+        "head_bottom_1": "Akses dan Bagikan Palang Merah Red Red Crescent Tepercaya",
+        "head_bottom_2": "pesan yang dapat ditindaklanjuti untuk membantu orang mempersiapkan diri dengan aman",
+        "head_bottom_3": "dan menanggapi bahaya.",
+        "signup": "Mendaftar",
+        "it_works": "Cara kerjanya",
+        "works_1_a": "Palang Merah Nasional Bulan Sabit Merah",
+        "works_1_b": "Masyarakat dan Mitra Pemerintah",
+        "works_1_c": "Setuju dengan set pesan nasional",
+        "works_2_a": "Publikasikan Masyarakat Nasional",
+        "works_2_b": "pesan keselamatan di",
+        "works_2_c": "database",
+        "works_3_a": "Mengubah agensi dan",
+        "works_3_b": "saluran komunikasi",
+        "works_3_c": "Hubungkan ke API Database",
+        "works_4_a": "Mitra berbagi",
+        "works_4_b": "pesan melalui mereka",
+        "works_4_c": "saluran",
+        "works_5_a": "Komunitas menerima",
+        "works_5_b": "pesan dan",
+        "works_5_c": "bertindak dengan aman",
+        "learn_more": "Pelajari lebih lanjut",
+        "watch_video": "Tonton video",
+        "example_case": "Contoh Penggunaan Kasus",
+        "api": "API",
+        "hurricane": "Sertakan pesan dengan badai lebih awal",
+        "warning_alerts": "peringatan peringatan",
+        "social_media": "Media sosial",
+        "post_images": "Posting gambar kesiapan api",
+        "messages_network": "Pesan ke Jaringan Anda",
+        "whatsapp": "Whatsapp",
+        "share_flood": "Bagikan tindakan mitigasi banjir dengan Anda",
+        "family": "keluarga dan teman",
+        "impact": "Dampak",
+        "sign_up_today": "Daftar hari ini",
+        "developer": {
+            "strap_para_one": "Bantu masyarakat mempersiapkan, merespons, dan pulih dari bahaya dengan pesan tindakan utama kami yang terlokalisasi.",
+            "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan keselamatan ke dalam aplikasi Anda. "
+        },
+        "national_society": {
+            "strap_para_one": "Publikasikan pesan keselamatan utama RCRC National Society Anda untuk media global, nasional, dan lokal untuk mengakses dan menyiarkan.",
+            "strap_para_two": "Hubungi kami untuk mempelajari lebih lanjut tentang cara membuat pesan dan terhubung dengan mitra media."
+        },
+        "strap_para_one": "Bantu masyarakat mempersiapkan, merespons, dan pulih dari bahaya dengan pesan tindakan utama kami yang terlokalisasi.",
+        "strap_para_two": "Gunakan panduan empat langkah mudah kami untuk mengintegrasikan pesan keselamatan ke dalam aplikasi Anda. ",
+        "view_data": "Lihat data",
+        "view_message_library": "Lihat Pesan Keselamatan",
+        "what_now": "Apa?",
+        "fake_alert_heading": "Peringatan dingin yang ekstrem",
+        "fake_alert_description": "ET Harum quidem rerum fasilis est et expedita Difistio. ",
+        "fake_alert_time": "1 jam yang lalu",
+        "fake_alert_time_exact": "05\/02\/18 di 05:15 CT",
+        "use_cases": {
+            "heading": "Pelajari lebih lanjut",
+            "first_heading": "Cara kerjanya",
+            "first_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro Hav Us Singularo Propozicio Posta",
+            "second_heading": "Menggunakan kasus",
+            "second_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro Hav Us Singularo Propozicio Posta",
+            "third_heading": "Toolkit Implementasi",
+            "third_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro Hav Us Singularo Propozicio Posta",
+            "fourth_heading": "Video apa pun",
+            "fourth_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro Hav Us Singularo Propozicio Posta",
+            "fifth_heading": "Tingkatkan aplikasi cuaca",
+            "fifth_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezenti Ro Hav Us Singularo Propozicio Posta"
+        },
+        "example_alert": {
+            "heading": "Contoh format pesan keselamatan",
+            "alert_preview": "Pratinjau Peringatan",
+            "what_now_info": "Pratinjau Pesan Keselamatan",
+            "example_whatnow_request": "Contoh respons database pesan keselamatan",
+            "example_alert_request": "Contoh Respons Peringatan",
+            "example_content": "Final Penasihat Cuaca# 3 pada pukul 11 ​​pagi, 29 Januari 2018\n",
+            "example_content_location_header": "Lokasi yang terpengaruh",
+            "example_content_location": "Nome, Alaska"
+        },
+        "example_whatnow": {
+            "alert_from": "Peringatan dari: Palang Merah Amerika",
+            "more_info": "Info lebih lanjut",
+            "heading": "Pesan Keselamatan untuk Dingin Ekstrim",
+            "copy": "Ini adalah tindakan yang harus diambil untuk mengurangi risiko dan melindungi Anda dan rumah tangga Anda dari kedinginan.",
+            "what_now": "Database Pesan Keselamatan IFRC",
+            "step_1": "Lindungi rumah Anda. ",
+            "step_2": "Tetap terhidrasi dengan cairan hangat",
+            "step_3": "Lindungi diri Anda dengan pakaian hangat dan tutupi kulit yang terbuka",
+            "step_4": "Waspada dan berhati -hati dengan kondisi es, terutama saat mengemudi",
+            "step_5": "Periksa tetangga, teman, dan mereka yang berisiko"
+        },
+        "build": {
+            "heading": "Siap Membangun Aplikasi Anda?"
+        },
+        "data_preview": {
+            "heading": "Pesan keselamatan",
+            "sub_heading": "Daftar dan Lihat Pesan Aksi Utama Dari Palang Merah \/ Merah Masyarakat Nasional Nasional di seluruh dunia"
+        },
+        "footer": {
+            "terms_conditions": "Syarat & Ketentuan",
+            "about": "Tentang",
+            "privacy": "Pribadi",
+            "getting_started": "Memulai",
+            "docs": "Dokumentasi",
+            "give_feedback": "Berikan umpan balik",
+            "gdpc_logo": "Logo untuk Pusat Kesiapsiagaan Bencana Global",
+            "ifrc_logo": "Logo untuk Palang Merah Internasional dan Gerakan Bulan Sabit Merah",
+            "subtitle_1": "Tentang database keamanan kunci IFRC",
+            "text_1": "Database Keamanan Kunci IFRC menyediakan akses ke",
+            "text_2": "Pesan Palang Merah Merah Pesan Crescent Tentang Bagaimana Orang",
+            "text_3": "dapat bertindak dengan aman dalam menghadapi bahaya",
+            "subtitle_2": "Cari tahu lebih banyak",
+            "email_ifrc": "im@ifrc.org",
+            "web_ifrc": "ifrc.org",
+            "subtitle_3": "Kebijakan",
+            "terms": "Istilah Hukum",
+            "terms_service": "Ketentuan Layanan",
+            "subtitle_4": "Tautan yang bermanfaat",
+            "api_doc": "Dokumentasi API",
+            "faq": "FAQ (tautan yang disediakan)"
+        }
+    },
+    "register_form": {
+        "heading_1": "Buat gratis Anda",
+        "heading_2": "IFRC",
+        "heading_3": "Database Pesan Keamanan",
+        "subtitle_1": "Bantu masyarakat mempersiapkan dan merespons bahaya lokal dengan pesan keselamatan yang dapat ditindaklanjuti oleh bulan sabit merah.",
+        "subtitle_2": "Jika Anda ingin mengakses dengan API, daftar dan bagikan pesan dengan panduan 3 langkah.",
+        "subtitle_3": "Jika Anda adalah Masyarakat Nasional Palang Merah Merah Merah, daftar dan Anda akan menerima instruksi tentang cara beradaptasi dan berbagi pesan keselamatan Anda.",
+        "who_are_you": "Siapa kamu?",
+        "what_is_your_role": "Apa peranmu?",
+        "description": "Salin tertunda",
+        "national_society_description": "Publikasikan pesan keselamatan utama RCRC National Society Anda untuk media global, nasional, dan lokal untuk mengakses dan menyiarkan.\n",
+        "developer": "Pengembang",
+        "national_society": "Masyarakat Nasional",
+        "sign_up_with": "Daftar dengan:",
+        "sign_up_agreement": "Dengan membuat akun Anda, Anda menyetujui kami",
+        "terms_conditions": "syarat dan Ketentuan",
+        "facebook": "Daftar dengan Facebook",
+        "google": "Daftar dengan Google",
+        "email_sign_up": "Daftar dengan email Anda:",
+        "mail": "surat",
+        "email_ifrc": "im@ifrc.org",
+        "location": "Negara",
+        "organisation": "Organisasi",
+        "industry": "Jenis industri",
+        "create_account": "Buat akun",
+        "last_name": "Nama Belakang",
+        "select_country": "Pilih negara",
+        "select_industry": "Pilih jenis industri",
+        "industries": {
+            "media": "Media",
+            "emergency": "Manajemen darurat",
+            "non_profit": "Nirlaba\/LSM",
+            "humanitarian": "Organisasi Kemanusiaan",
+            "red_cross": "Palang Merah\/Bulan Sabit Merah",
+            "education": "Pendidikan\/Akademisi",
+            "gov": "Agen pemerintah",
+            "other": "Lainnya"
+        },
+        "api_used_in": "Di mana API ini akan digunakan?",
+        "api_used_in_help": "Biarkan kami sekarang bagaimana Anda bermaksud menggunakan layanan ini dalam kurang dari 255 karakter",
+        "welcome": "Selamat datang {name}, silakan lengkapi informasi berikut untuk memulai:",
+        "ifrc_note": "Untuk pertanyaan atau informasi lebih lanjut, silakan hubungi:",
+        "contact_gdpc": "Hubungi GDPC"
+    },
+    "terms_service_page": {
+        "applicable_law": {
+            "body": "Hukum Distrik Columbia akan mengatur semua hak dan kewajiban berdasarkan Perjanjian ini, tanpa memberikan dampak pada prinsip -prinsip konflik hukum apa pun.",
+            "heading": "Hukum yang berlaku:"
+        },
+        "body": "Anda bertanggung jawab untuk menjaga kerahasiaan dan keamanan kunci pendaftaran yang disediakan oleh Palang Merah kepada Anda. ",
+        "contact": "Silakan hubungi Palang Merah di {0} dengan pertanyaan tentang API.",
+        "disclaimer": "API dan feed data disediakan untuk tujuan informasi dan pendidikan saja, dan atas dasar 'apa adanya' dan 'sesuai'. ",
+        "entire_agreement": {
+            "body": "Ketentuan API merupakan perjanjian lengkap dan eksklusif antara Palang Merah dan Anda sehubungan dengan materi pelajaran ini dan menggantikan semua pemahaman, komunikasi, atau perjanjian lisan atau tertulis sebelumnya yang tidak secara khusus dimasukkan di sini. ",
+            "heading": "Seluruh perjanjian:"
+        },
+        "heading": "Perjanjian Lisensi Pengguna Akhir API",
+        "intro": "Setuju: Dengan menggunakan Layanan atau mencentang kotak yang disediakan, pengguna setuju untuk terikat oleh Perjanjian ini.\n\n",
+        "license_limitations": {
+            "body": "Anda dapat menggunakan umpan data hanya dalam hubungan dengan aplikasi Anda sendiri yang tunduk pada ketentuan API, dan asalkan Anda mempertahankan kompatibilitas dengan API, sebagaimana diperbarui dari waktu ke waktu. ",
+            "heading": "Lisensi dan Batasan:"
+        },
+        "overview": {
+            "body": "Pusat Pesan Keselamatan Basis Data Global Pesan Layanan Program Aplikasi Layanan Program (\"API\") disediakan untuk Anda oleh Palang Merah Nasional Amerika (\"Palang Merah\"). ",
+            "cta": "Klik di sini untuk mendaftar."
+        },
+        "privacy_policy": {
+            "body": "Anda memahami, mengakui, dan menyetujui bahwa pengoperasian program, layanan, alat, opsi pembelian, bahan, atau informasi tertentu dalam API memerlukan pengajuan, penggunaan, dan penyebaran berbagai informasi pengidentifikasi pribadi. ",
+            "heading": "Kebijakan Privasi:"
+        },
+        "prohibited_activities": {
+            "body": "Anda dan pengguna akhir atau agen Anda tidak boleh menggunakan API atau feed data dengan cara berikut:",
+            "heading": "Kegiatan dan perilaku yang dilarang:",
+            "prohibited_list": {
+                "one": "Untuk mengganggu atau mengganggu layanan atau server Palang Merah.",
+                "two": "Untuk menghindari atau memodifikasi kunci atau mekanisme keamanan yang digunakan oleh Palang Merah atau API, termasuk tanpa batasan teknologi otentikasi.",
+                "three": "Untuk meminta, mengumpulkan, meminta atau mendapatkan akses ke nama masuk, kata sandi atau kredensial otentikasi lainnya untuk Palang Merah selain dari apa yang diberikan kepada Anda untuk akun Anda sendiri.",
+                "four": "Untuk menyatakan atau menyiratkan afiliasi, sponsor atau dukungan oleh Palang Merah atau Palang Merah lainnya atau Masyarakat atau Organisasi Nasional Bulan Sabit Merah.",
+                "five": "Untuk menyatakan atau menyiratkan bahwa Anda memiliki atau membuat API, umpan data, peringatan acara dan\/atau menyiapkan, menanggapi, dan memulihkan pesan.",
+                "six": "Untuk mentransmisikan virus apa pun, cacat cacing, kuda Trojan, atau item apa pun yang bersifat destruktif."
+            }
+        },
+        "reserve_rights": "Palang Merah berhak untuk mengubah dan\/atau tidak lagi menyediakan API dan umpan data secara keseluruhan atau sebagian, baik sementara atau permanen, kapan saja tanpa pemberitahuan sebelumnya. ",
+        "severability": {
+            "body": "Ketidakabsahan dari istilah atau ketentuan Ketentuan API apa pun tidak akan mempengaruhi validitas ketentuan lainnya.",
+            "heading": "Ketegaran dan pengabaian:"
+        },
+        "suspension": {
+            "body": "Palang Merah berhak untuk menangguhkan atau mengakhiri akses Anda jika Palang Merah menentukan, atas kebijakannya sendiri, bahwa Anda terlibat dalam penggunaan API atau umpan data yang tidak sah seperti yang diuraikan dalam istilah API atau bahwa Anda menggunakan API atau umpan data dalam aktivitas apa pun yang mengancam\/mengkompromikan keselamatan dan\/atau keamanan orang mana pun atau jaringan Palang Red.",
+            "heading": "Penangguhan atau penghentian:"
+        }
+    },
+    "view_data": {
+        "alert_title": "PERINGATAN:",
+        "more_info": "Info lebih lanjut:",
+        "which": "Pesan keselamatan mana yang ingin Anda lihat?",
+        "view_data": "Lihat data",
+        "alerts": "Peringatan",
+        "alert_preview": "Pratinjau Peringatan",
+        "cap_alerts": "Peringatan tutup",
+        "onset": "Serangan",
+        "severity": "Kerasnya",
+        "title": "Judul",
+        "date": "Tanggal",
+        "headline": "Tajuk utama",
+        "alert": "Peringatan",
+        "whatnow_info": "Info Database Pesan Keamanan",
+        "alert_detail": "Detail peringatan",
+        "more": "Info lebih lanjut",
+        "area_affected": "Area terpengaruh",
+        "details": "Detail",
+        "cap": {
+            "type": "Jenis",
+            "status": "Status",
+            "urgency": "Urgensi",
+            "severity": "Kerasnya",
+            "certainty": "Kepastian",
+            "sent": "Terkirim",
+            "effective": "Efektif",
+            "onset": "Serangan",
+            "expires": "Kedaluwarsa",
+            "alert_from": "Waspada dari",
+            "feed": "Memberi makan",
+            "more": "Info lebih lanjut:",
+            "through": "melalui",
+            "alert_feed": "Feed peringatan",
+            "fetching_feed": "Mengambil feed",
+            "empty": "Tidak ada peringatan saat ini sekarang"
+        },
+        "national_society_select_placeholder": "Pilih Masyarakat Nasional"
+    },
+    "user_agreement": {
+        "title": "Perjanjian Pengguna",
+        "para_one": "Sebelum Anda dapat mengakses portal database pesan keselamatan, dapatkah Anda membaca dan menerima ketentuan perjanjian pengguna dengan mengunduh dokumen di bawah ini dan mengklik tombol 'Saya menerima' di bawah ini.",
+        "cta": "Saya menerima",
+        "download": "Klik di sini untuk melihat dokumen Perjanjian Pengguna (105kb)"
+    },
+    "hazard_type": {
+        "dropdown": {
+            "select": "Pilih Jenis Bahaya",
+            "create": "Buat Jenis Bahaya"
+        },
+        "create": {
+            "title": "Buat Jenis Bahaya Baru",
+            "request": "Minta Jenis Bahaya Baru",
+            "other": "Lainnya",
+            "email_subject": "Minta Jenis Bahaya Baru",
+            "hazard_name": "Nama bahaya",
+            "hazard_name_placeholder": "Masukkan nama bahaya",
+            "upload_icon": "Unggah ikon",
+            "icon_requirements": "Ikon harus berupa PNG dan di bawah 30kb",
+            "requestLink": "Hubungi IFRC untuk meminta jenis bahaya baru",
+            "success": "Tipe Bahaya dibuat",
+            "error": "Maaf, ada masalah yang membuat jenis bahaya baru Anda."
+        }
+    },
+    "subnationals": {
+        "list": {
+            "manage": "Subnasional",
+            "create": "Buat subnasional baru",
+            "edit": "Edit Subnasional",
+            "add": "Tambahkan subnasional",
+            "empty": "Tidak dapat menemukan subnasional",
+            "table_header": {
+                "subnational": "Subnasional"
+            }
+        },
+        "select_soc": "Pilih masyarakat untuk melihat dan menambahkan subnasional",
+        "create": "Buat subnasional baru",
+        "form": {
+            "name": "Nama Subnasional",
+            "name_help": "Sebutkan subnasional yang ingin Anda buat pesan keselamatan khusus.",
+            "description": "Keterangan",
+            "description_help": "Berikan informasi lebih lanjut tentang subnasional. "
+        },
+        "edit": "Edit Subnasional",
+        "delete": "Ini akan menghapus subnasional dan konten apa pun yang terkait dengan subnasional itu."
+    },
+    "table_headers": {
+        "profile_pic": "gambar profil",
+        "first_name": "Nama Belakang",
+        "last_name": "last_name",
+        "role": "peran",
+        "society": "masyarakat",
+        "date": "Tanggal",
+        "country": "Negara",
+        "email": "e-mail",
+        "created_at": "create_at",
+        "last_logged_in_at": "Aktif terakhir",
+        "terms_version": "profil",
+        "actions": "Tindakan",
+        "action": "Tindakan",
+        "content": "Isi",
+        "country_code": "Lokasi",
+        "organisation": "organisasi",
+        "industry_type": "jenis industri",
+        "all_roles": "Semua peran",
+        "version": "Versi",
+        "user": "Pengguna",
+        "language_code": "Kode bahasa"
+    },
+    "terms_conditions": {
+        "title": "syarat dan Ketentuan",
+        "accept": "Menerima"
+    },
+    "badges": {
+        "hazardCreate": "Hazard dibuat",
+        "published": "Diterbitkan",
+        "draft": "Draf",
+        "bulkUploadDraft": "Draf unggahan file pesan"
     }
-  },
-  "user_agreement": {
-    "title": "Perjanjian pengguna",
-    "para_one": "Sebelum Anda dapat mengakses Portal Basis Data Pesan Keselamatan, mohon Anda dapat membaca dan menyetujui persyaratan perjanjian pengguna dengan mengunduh dokumen di bawah ini dan mengklik tombol 'Saya setuju' di bawah ini.",
-    "cta": "Saya terima",
-    "download": "Klik di sini untuk melihat dokumen perjanjian pengguna (105KB)"
-  },
-  "hazard_type": {
-    "dropdown": {
-      "select": "Pilih jenis bahaya",
-      "create": "Tentukan jenis bahaya"
-    },
-    "create": {
-      "title": "Tentukan jenis bahaya baru",
-      "request": "minta jenis bahaya baru",
-      "other": "Lainnya",
-      "email_subject": "Permintaan jenis bahaya baru",
-      "hazard_name": "Nama bahaya",
-      "hazard_name_placeholder": "Masukkan nama bahaya",
-      "upload_icon": "Unggah ikon",
-      "icon_requirements": "Ikon harus dalam format png dan berukuran kurang dari 30kb",
-      "requestLink": "Kontak GDPC untuk meminta jenis bahaya baru",
-      "success": "Jenis bahaya yang dibuat",
-      "error": "Maaf, ada masalah dalam pembuatan jenis bahaya baru."
-    }
-  },
-  "subnationals": {
-    "list": {
-      "manage": "Sub-wilayah",
-      "create": "Buat wilayah baru",
-      "edit": "Sunting Wilayah",
-      "add": "Tambah Wilayah",
-      "empty": "Tidak dapat menemukan wilayah",
-      "table_header": {
-        "subnational": "Wilayah"
-      }
-    },
-    "select_soc": "Pilih masyarakat untuk dilihat dan tambahkan wilayah",
-    "create": "Buat Wilayah baru",
-    "form": {
-      "name": "Nama Wilayah",
-      "name_help": "Beri nama wilayah yang ingin Anda buat pesan keamanan khusus.",
-      "description": "Deskripsi",
-      "description_help": "Berikan informasi lebih lanjut mengenai wilayah, mis. Wilayah Pesisir San Francisco."
-    },
-    "edit": "Sunting Wilayah",
-    "delete": "Tindakan ini akan menghapus wilayah dan konten apa pun terkait wilayah tersebut."
-  },
-  "table_headers": {
-    "profile_pic": "foto profil",
-    "first_name": "Nama belakang",
-    "last_name": "nama_belakang",
-    "role": "peran",
-    "society": "masyarakat",
-    "date": "Tanggal",
-    "country": "Negara",
-    "email": "surel",
-    "created_at": "dibuat_pada",
-    "last_logged_in_at": "Aktif Terakhir",
-    "terms_version": "profil",
-    "actions": "Tindakan",
-    "action": "Tindakan",
-    "content": "Isi",
-    "country_code": "Lokasi",
-    "organisation": "organisasi",
-    "industry_type": "tipe industri",
-    "all_roles": "Semua peran",
-    "version": "Versi",
-    "user": "Pengguna",
-    "language_code": "Kode Bahasa"
-  },
-  "terms_conditions": {
-    "title": "Terms and Conditions",
-    "accept": "Accept"
-  },
-  "badges": {
-    "hazardCreate": "Hazard Created",
-    "published": "Published",
-    "draft": "Draft",
-    "bulkUploadDraft": "Draf Unggah File Pesan"
-  }
 }

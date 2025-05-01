@@ -1,1017 +1,1060 @@
 {
-  "ok": "እሺ፤\n",
-  "go": "ሂድ \n",
-  "all": "ሁሉንም",
-  "cancel": "አቋርጥ",
-  "error_alert_title": "ውይ የሆነ ችግር ተከስቷል!",
-  "error_alert_text": "የሆነ ችግር አለ\n\n እባክዎ እንደገና ይሞክሩ።\n",
-  "error_permission_alert_text": "ይቅርታ ይህንን ገጽ ለመቀየር  አልተፈቀደልዎትም ፡፡\n",
-  "token_expired_alert_title": "ጊዜዎ አልቋል!\n",
-  "token_expired_alert_text": "ለመቀጠል እባክዎ እንደገና ይግቡ።\n",
-  "login": "ይግቡ\n",
-  "what_now": "IFRC የደህንነት መልዕክት ዳታቤዝ",
-  "message_portal": "የመልእክት ማስቀመጫ\n",
-  "register": "ይመዝገቡ\n",
-  "sign_up": "አካውንትዎን እዝህ ያሥገቡ።\n",
-  "docs": "\nፍይሎች",
-  "my_apps": "የእኔ መተግበሪያዎች\n",
-  "number_of_apps": "{0} መተግበሪያዎች",
-  "whatnow_content": "መልእክቶች",
-  "create_key": "ቁልፍ ፍጠር",
-  "alerts": "ማስጠንቀቂያዎች",
-  "feeds": "ግብአቶች፤",
-  "get_started": "አሁኑኑ ይመዝገቡ!",
-  "page_not_found": "ይህ ገፅ አልተገኘም!",
-  "go_home": "ወደ ዋናዉ ገጽ ይሂዱ",
-  "logout": "ይዉጡ፤",
-  "email": "ኢሜይል",
-  "register_success": "ስለተመዘገቡ እናመሰግናለን!",
-  "confirm_email": "እባክዎ    የኢሜይል ሣጥንዎትን ከፍተው አካውንትዎትን ያረጋግጡ፤",
-  "email_confirmed": "የኢሜይል አድራሻዎትን ስላረጋገጡ እናመሰግናለን። እባክዎን ይግቡ።",
-  "confirmation_failed": "የኢሜይል አድራሻዎ ሊረጋገጥ አልቻለም፣ እንደገና ለመሞከር እባክዎ የሲስተም ተቆጣጣሪዎን ያናግሩ፤",
-  "home_redirect": "ወደ ዋናው ገጽ ይሂዱ",
-  "status": "ሁኔታ",
-  "remember_me": "አስታዉሰኝ፤",
-  "old_password": "አሁን የሚጠቀሙበት የይለፍ ቃል፤",
-  "password": "የይለፍ ቃል",
-  "forgot_password": "የይለፍ ቃሉን ረስተውታል?",
-  "confirm_password": "የይለፍ ቃልዎትን ያረጋግጡ፤",
-  "incorrect_password": "የተሣሣተ የይለፍ ቃል ተጠቅመዋል፤",
-  "name": "ስም",
-  "first_name": "የእርሠዎ  ስም፦",
-  "last_name": "የአያት ስም፦",
-  "toggle_navigation": "መቀያየሪያዉን ማንቀሳቀሻ፤",
-  "you_are_logged_in": "አሁን ገብተዋል!",
-  "reset_password": "የይለፍ ቃልዎን አንደገና ይቀይሩ፤",
-  "set_password": "የይለፍ ቃልዎን ያሥቀምጡ፤",
-  "send_password_reset_link": "\"የይለፍ ቃል መቀየሪያ ሊንክ ይላክልኝ\" እሚለውን ይምረጡ፤",
-  "settings": "ቅንጅቶች፤",
-  "profile": "አጭር ግለ ታሪክ፤",
-  "your_info": "የእርስዎ መረጃ፤",
-  "info_updated": "መረጃዎት በአዲስ መልክ ተስተካክሏል።",
-  "update": "ማደስ፤",
-  "your_password": "ይህ የይለፍ ቃልዎት ነው፤",
-  "password_updated": "የይለፍ ቃልዎት ታድሷል፤",
-  "new_password": "አዲስ የይለፍ ቃል፤",
-  "login_with": "በሚከተለዉ ይግቡ፤",
-  "register_with": "በሚከተለዉ ይመዝገቡ፤",
-  "yes": "አዎ",
-  "no": "አይ፤",
-  "close": "ዝጋ፤",
-  "dashboard": "የመረጃ ሠሌዳ፤",
-  "terms_service": "የአገልግሎት ውል፤",
-  "sign_in_with_google": "በጎግል ይግቡ፤",
-  "offline_error": {
-    "title": "የበይነ-መረብ ግንኙነት የለም",
-    "description": "እባክዎን ለውጦችን በ{time} ውስጥ ያስቀምጡ አሊያ ሂደቱ ይጠፋል"
-  },
-  "breadcrumbs": {
-    "applications": "መተግበሪያዎች፤",
-    "admin_users": "አስተዳዳሪ ተጠቃሚዎች፤",
-    "users": "ተጠቃሚዎች፤",
-    "manage_users": "ተጠቃሚዎችን ማስተዳደር ፤",
-    "profile": "አጭር ግለ ታሪክ፤",
-    "terms": "ደምቦች አና ሁኔታዎች፤",
-    "edit": "ማሥተካከያ፤",
-    "create": "ፍጠር፤",
-    "content": "ይዘት፤",
-    "what_now_content": "የዋት ናዉ ይዘት፤",
-    "bulk_upload": "የመልዕክት ፋይል ሰቀላ",
-    "audit_log": "መመርመሪያ፤",
-    "api_usage": "የኤፒአይ (API)አጠቃቀም፤",
-    "app_detail": "የመተግበሪያዉ ዝርዝር፤",
-    "all_terms": "ሁሉም  ደምቦች እና ሁኔታዎች፤"
-  },
-  "documentation": {
-    "heading": "የቀይ መስቀል ኤፒአይ ሰነድ አያያዝ፤",
-    "sidebar": {
-      "introduction": "መግቢያ፤",
-      "base_url": "መነሻ ዩ አር ኤል፤",
-      "changelog": "መቀየሪያ ሎግ፤",
-      "authentication": "ማረጋገጫ፤",
-      "response_codes": "የመልስ መለያ፤",
-      "emergency_alert_feed": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
-      "cap_alert_document": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
-      "what_now": "ዋት ናዉ"
+    "ok": "OK",
+    "go": "GO",
+    "all": "All",
+    "cancel": "Cancel",
+    "error_alert_title": "Oops...",
+    "error_alert_text": "Something went wrong! Please try again.",
+    "error_permission_alert_text": "You do not have permission to make this change",
+    "token_expired_alert_title": "Session Expired!",
+    "token_expired_alert_text": "Please log in again to continue.",
+    "login": "Log In",
+    "what_now": "IFRC Safety Message Database",
+    "message_portal": "Message Portal",
+    "register": "Register",
+    "sign_up": "Sign up",
+    "docs": "Docs",
+    "my_apps": "My apps",
+    "number_of_apps": "{0} Apps",
+    "whatnow_content": "Messages",
+    "create_key": "Create Key",
+    "alerts": "Alerts",
+    "feeds": "Feeds",
+    "get_started": "Sign up now",
+    "page_not_found": "Page Not Found",
+    "go_home": "Go Home",
+    "logout": "Logout",
+    "email": "Email",
+    "register_success": "Thank you for registering",
+    "confirm_email": "Please check your inbox for an email to confirm your account.",
+    "email_confirmed": "Thank you for confirming your email address. Please log in.",
+    "confirmation_failed": "Your email address could not be confirmed, please contact your administrator to try again.",
+    "home_redirect": "Go to home page",
+    "status": "Status",
+    "remember_me": "Remember Me",
+    "old_password": "Current Password",
+    "password": "Password",
+    "forgot_password": "Forgot Your Password?",
+    "confirm_password": "Confirm Password",
+    "incorrect_password": "Incorrect Password",
+    "name": "Name",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "toggle_navigation": "Toggle navigation",
+    "you_are_logged_in": "You are logged in!",
+    "reset_password": "Reset Password",
+    "set_password": "Set Password",
+    "send_password_reset_link": "Send Password Reset Link",
+    "settings": "Settings",
+    "profile": "Profile",
+    "your_info": "Your Info",
+    "info_updated": "Your info has been updated!",
+    "update": "Update",
+    "your_password": "Your Password",
+    "password_updated": "Your password has been updated",
+    "new_password": "New Password",
+    "login_with": "Login with",
+    "register_with": "Register with",
+    "yes": "Yes",
+    "no": "No",
+    "close": "Close",
+    "dashboard": "Dashboard",
+    "terms_service": "Terms of Service",
+    "sign_in_with_google": "Sign In with Google",
+    "offline_error": {
+        "title": "No Internet Connection",
+        "description": "Please save changes within {time} or progress will be lost"
     },
-    "steps": {
-      "one": {
-        "body": "የቀይ መስቀል ሬስት ኤፒአይ(REST API)፣ ዴቨሎፐሮች በአለማቀፍ የቀይ መስቀል ማህበራት  የሚወጡ የድንገተኛ አደጋ መረጃዎችን አና  ሃብቶችን እንዲያገኙ ያደርጋል።",
-        "heading": "መግቢያ፤",
-        "support_card": {
-          "body": "ስለ ቀይ መስቀል ኤፒአይ ጥያቄ ካለዎት፣ በ dev@3sidedcube.com  ይላኩ።",
-          "title": "ድጋፍና ጥያቄዎች፤"
-        }
-      },
-      "two": {
-        "body": "ሁሉም በ API v1.0 ሰነድ ላይ ያሉ ዩ አር ኤሎች  የሚከተለዉ መነሻ ዩ አር ኤል አላቸዉ፤",
-        "heading": "መነሻ ዩ አር ኤል፤"
-      },
-      "three": {
-        "heading": "መቀየሪያ ሎግ፤",
-        "table": {
-          "headers": {
-            "detail": "መልቀቅ፤",
-            "version": "የኤፒአይ ስሪት፤",
-            "release": "መልቀቅ፤",
-            "release_date": "የተለቀቀበት ቀን፤"
-          }
-        }
-      },
-      "four": {
-        "body": "ይህ ኤፒ አይ(API)በ ኤፒአይ ቁልፍ በኩል ሁሉንም የመረጃ ሰነዶች ለመጠቀም ማረጋገጫ  ይጠይቃል። የኤፒአይ (API)ቁልፍ ለማግኘት፣መጀመሪያ {0}።\n\nሁሉም የኤፒአይ(API) ጥያቄዎች የሚከተለዉን የ HTTP ህዳግ ማካተት ይኖርባቸዋል።",
-        "create_app_cta": "መተግበሪያ ይፍጠሩ፤",
-        "heading": "ማረጋገጫ፤"
-      },
-      "five": {
-        "heading": "የመልስ መለያ፤",
-        "table": {
-          "descriptions": {
-            "ok": "ጥያቄዎትን በተሣካ መልኩ ልከዋል፤ እንዲሁም ምላሹ  የተጠየቀዉን ሙሉ የመረጃ ሃብት ይዟል።",
-            "found": "ወደሌላ ቦታ መቀየርን ያሳያል። በሎኬሸን ህዳግ (Location header) ወደ  ዩ አር አይ(URI) የሚያስገባዎትንየመግግቢያ ጥያቄ( GET request)ይላኩ፤",
-            "not_found": "የተጠየቀዉ የመረጃ ሃብት አልተገኘም።",
-            "not_allowed": "የተጠቀሙት  የ HTTP ዘዴ በዚህ የመረጃ ሀብት ላይ አልተፈቀደም።",
-            "server_error": "የሰርቨር ችግር   ስለተከሰተ  የጠየቁት  የመረጃ ሃብት መመለስ አልተቻለም፤",
-            "unavailable": "አገልግሎቱን አሁን ማግኜት አንደማይቻል ያሣያል፤ በሌላ ጊዜ ጥያቄዎን እንደገና ይሞክሩ።"
-          },
-          "headers": {
-            "code": "መለያ፤",
-            "name": "ስም",
-            "description": "መግለጫ፤"
-          }
-        }
-      },
-      "six": {
-        "card": {
-          "body": "እያንዳንዱ የቀይ መስቀል ማህበር ❴0❵v1.2 በመጠቀም ለህብረተሠቡ የማስጠንቂያ መልዕክቶችን ሊያሰራጭ ይችላል።",
-          "cta": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤",
-          "title": "የተለመደ የማስጠንቀቂያ ፕሮቶኮል፤"
+    "breadcrumbs": {
+        "applications": "Applications",
+        "admin_users": "Admin Users",
+        "users": "Users",
+        "manage_users": "Manage Users",
+        "profile": "Profile",
+        "terms": "Terms and Conditions",
+        "edit": "Edit",
+        "create": "Create",
+        "content": "Content",
+        "what_now_content": "What Now Content",
+        "bulk_upload": "Message File Upload",
+        "audit_log": "Audit Log",
+        "api_usage": "API Usage",
+        "app_detail": "App Detail",
+        "all_terms": "All Terms and Conditions"
+    },
+    "documentation": {
+        "heading": "Red Cross API Documentation",
+        "sidebar": {
+            "introduction": "Introduction",
+            "base_url": "Base URL",
+            "changelog": "Changelog",
+            "authentication": "Authentication",
+            "response_codes": "Response codes",
+            "emergency_alert_feed": "Emergency Alert Feed",
+            "cap_alert_document": "CAP Alert Document",
+            "what_now": "What Now"
         },
-        "endpoint": "ኢንድፖይንት፡",
-        "example": "በዚህ ምሳሌ፣  \"{0}\" ሚለው ቦታ ማህበሩ በሚገኝበት አገር መለያ ቁጥር  መተካት አለበት። ለምሳሌ፦",
-        "feed_intro": "የእያንዳንዱ ማህበር አዳዲስ መረጃም በሚከተለው አይነት ተዘርዝረዋል ፤",
-        "heading": "የድንገተኛ ማስጠንቀቂያ መልእክት፤",
-        "intro": "በሁሉም ማህበራት  የሚሰጡት የ CAP ማስጠንቀቂያዎች የማሠራጬት በ RSS ግብዓት ሥር  ነዉ። ይህ በሚከተለዉ ኢንድፖይንት ሊገኝ ይችላል፤"
-      },
-      "seven": {
-        "endpoint": "ኢንድፖይንት፡",
-        "example_response": "የምሳሌ መልሥ፤",
-        "heading": "የ CAP(ሲኤፒ) የማስጠንቀቂያ ሰነድ",
-        "body": "የ CAP የማስጠንቀቂያ ሰነዶች፣ በእያንዳንዱ የ RSS መረጃ ቁጥር በተገለጸዉ የአብሶሉት ሊንክ በኩል ሊገኝ ይችላል። የማስጠንቀቂያ URI፣የሚከተለዉን ፎርማት ይጠቀማል፤ "
-      },
-      "eight": {
-        "body": "የሚከተሉት ኢንድፖይንቶች በቀይ መስቀል ማህበራት የወጡ፤ ለተለያዩ አደጋዎች መከላከል  እና ዝግጁነት የሚጠቅሙ የተሠናሠሉ መረጃዎችን ይሠጣሉ።\n\nእያንዳንዱ ግብዓት ስድስት የአደጋ መከላከል ደረጃዎች ያሉበት መረጃ ይዟል፤",
-        "endpoint": "ኢንድፖይንት፡",
-        "example_response": "የሙከራ መልሥ፤",
-        "heading": "ዋት ናዉ",
-        "note": "ያስታዉሱ!",
-        "noteDetails": "{0} ሁሉም ምላሾች በዋናዉ {1} ባለቤትነት ስር ይገኛሉ።",
-        "query_params": "የጥያቄ መለኪያዎች፤",
-        "response_properties": "የምላሽ ባህርያት፤",
-        "structure": "የዋት ናዉ  ንጥል ኦብጀክቶች አቀማመጥ፤",
-        "stucture_attribution": "የ {0} ኦብጀክት አቀማመጥ፤",
-        "stucture_attribute_translation": "የ {0} ኦብጀክት የአቀማመጥ መለያ፤",
-        "stucture_translation": "የ {0} ኦብጀክት አቀማመጥ፤",
-        "table": {
-          "query_params": {
-            "name": "ስም",
-            "description": "መግለጫ፤"
-          },
-          "structure": {
-            "property": "ባህሪ፤",
-            "data_type": "የመረጃ ዓይነት፤",
-            "description": "መግለጫ፤"
-          }
+        "steps": {
+            "one": {
+                "body": "The Red Cross REST API enables developers to access to emergency information and resources issued by international Red Cross Societies.",
+                "heading": "Introduction",
+                "support_card": {
+                    "body": "If you have any questions or need support, please contact us at hello@ifrc.org.",
+                    "title": "Support & Questions"
+                }
+            },
+            "two": {
+                "body": "All API endpoints are prefixed with this base URL.",
+                "heading": "Base URL"
+            },
+            "three": {
+                "heading": "Changelog",
+                "table": {
+                    "headers": {
+                        "detail": "Release",
+                        "version": "Api Version",
+                        "release": "Release",
+                        "release_date": "Release Date"
+                    }
+                }
+            },
+            "four": {
+                "body": "The API requires authentication to access all resources using an API key. To obtain an API key, firstly {0}.\n\nAll API requests must include the following HTTP header:",
+                "create_app_cta": "create an application",
+                "heading": "Authentication"
+            },
+            "five": {
+                "heading": "Response codes",
+                "table": {
+                    "descriptions": {
+                        "ok": "The request was successful and the response body contains the requested resource",
+                        "found": "Indicates a redirect. Issue a GET request to the resource URI in the Location: header.",
+                        "not_found": "The requested resource was not found.",
+                        "not_allowed": "Indicates the HTTP method used is not permitted on this resource.",
+                        "server_error": "A server error occurred and the requested resource could not be returned.",
+                        "unavailable": "Indicates the service is not currently available. Try the request again at a later time."
+                    },
+                    "headers": {
+                        "code": "Code",
+                        "name": "Name",
+                        "description": "Description"
+                    }
+                }
+            },
+            "six": {
+                "card": {
+                    "body": "Each Red Cross Society may issue public alerts using the {0} v1.2.",
+                    "cta": "Common Alerting Protocol",
+                    "title": "Common Alerting Protocol"
+                },
+                "endpoint": "Endpoint:",
+                "example": "In this example, the {0} segment should be replaced with the country code of a given society. e.g.",
+                "feed_intro": "A feed for each society is also provided, listing active alerts published by a given society, identified by",
+                "heading": "Emergency Alert Feed",
+                "intro": "CAP alerts issued by all societies are published using an RSS feed. This may be accessed via the following endpoint:"
+            },
+            "seven": {
+                "endpoint": "Endpoint:",
+                "example_response": "Example Response:",
+                "heading": "CAP Alert Document",
+                "body": "CAP alert documents may be accessed via the absolute link specified in each RSS feed item. The URI of an alert uses the following format: "
+            },
+            "eight": {
+                "body": "The following endpoints provide structured data published by Red Cross societies to assist with disaster preparedness for a variety of event types.\n\nEach entry provides information on six stages of disaster management:",
+                "endpoint": "Endpoint:",
+                "example_response": "Example Response:",
+                "heading": "What Now",
+                "note": "Note:",
+                "noteDetails": "{0} all responses are contained within in a parent {1} property.",
+                "query_params": "Query Parameters:",
+                "response_properties": "Response Properties:",
+                "structure": "Structure of What Now Item Objects:",
+                "stucture_attribution": "Structure of an {0} object:",
+                "stucture_attribute_translation": "Structure of an attribution {0} object:",
+                "stucture_translation": "Structure of a {0} object:",
+                "table": {
+                    "query_params": {
+                        "name": "name",
+                        "description": "description"
+                    },
+                    "structure": {
+                        "property": "Property",
+                        "data_type": "Data type",
+                        "description": "Description"
+                    }
+                }
+            }
         }
-      }
-    }
-  },
-  "get_started_docs": {
-    "title": "ይጀምሩ",
+    },
+    "get_started_docs": {
+        "title": "Get Started",
+        "sidebar": {
+            "create_app": "Create an app",
+            "get_api_key": "Get an API key",
+            "make_request": "Make a request",
+            "sign_up": "Sign up"
+        },
+        "steps": {
+            "one": {
+                "heading": "Step 1 - Sign up",
+                "body": "To get started using data from the Safety Message Database API, firstly {0} to the Safety Message Database Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
+                "create_account_alt": "create account",
+                "existing_account": "If you already have an account, please {0}.",
+                "login_cta": "log in",
+                "sign_up_cta": "sign up"
+            },
+            "two": {
+                "body": "To use the API you must create an application in the Safety Message Database Portal. Tell us a little about what you're building.",
+                "create_app_alt": "create app",
+                "heading": "Step 2 - Create an app"
+            },
+            "three": {
+                "body": "When you have created an app, an API Key will be automatically generated.\n\n{0} Be sure to store this as securely as possible and avoid sharing or otherwise exposing your API key within your own application.",
+                "create_api_key_alt": "Create API key",
+                "heading": "Step 3 - Get an API key",
+                "important": "Important:"
+            },
+            "four": {
+                "api_docs_cta": "API documentation",
+                "body": "The Safety Message Database API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
+                "example_title": "Example Request",
+                "heading": "Step 4 - Make a request",
+                "moreInfo": "For more information on all API endpoints, see the {0}."
+            }
+        }
+    },
+    "home_pods": {
+        "bulk_upload": "Here you can upload all of your safety messages in one file.",
+        "audit_log": "Here you can view the history of your message edits",
+        "whatnow_edit": "This is where you can edit Safety Message Database content",
+        "whatnow_review": "This is where you can review Safety Message Database content",
+        "whatnow_publish": "Here you can edit and publish your National Society's safety messages.",
+        "manage_users": "This is where to manage the users (Create, edit and remove)",
+        "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
+        "wellcome": "Welcome",
+        "wellcome_description": "Here you can edit and publish Safety Message Database content."
+    },
+    "languages": {
+        "am": "አማርኛ",
+        "ar": "عربى",
+        "bn": "বাংলা",
+        "de": "Deutsche",
+        "en": "English",
+        "es": "Español",
+        "fr": "Français",
+        "ht": "Kreyòl",
+        "id": "bahasa Indonesia",
+        "it": "Italiano",
+        "ja": "日本",
+        "my": "ဗမာ",
+        "ne": "नेपाली",
+        "pt": "Português",
+        "ru": "русский",
+        "rw": "Kinyarwanda",
+        "sw": "Kiswahili",
+        "th": "ไทย",
+        "tr": "Türk",
+        "ur": "اردو",
+        "vi": "Tiếng Việt"
+    },
     "sidebar": {
-      "create_app": "መተግበሪያዉን ይፍጠሩ፤",
-      "get_api_key": "የ API ቁልፍ ይውሠዱ፤",
-      "make_request": "ጥያቄ ይላኩ፤",
-      "sign_up": "ይመዝገቡ፤\n"
+        "manage": "Manage Content Users",
+        "content_users": "Content Users",
+        "audit_log": "Edit History",
+        "whatnow": "Attribution Editor",
+        "bulk": "Message File Upload",
+        "content": "Content",
+        "api": "API Usage",
+        "applications": "Applications",
+        "api_stats": "API Stats",
+        "api_users": "API Users",
+        "terms_conditions": "Terms and Conditions",
+        "subnationals": "Subnational"
     },
-    "steps": {
-      "one": {
-        "heading": "ደረጃ 1 - ይመዝገቡ",
-        "body": "ከደህንነት መልዕክት ዳታቤዝ ኤፒአይ መረጃ መጠቀም ለመጀመር በመጀመሪያ {0} ወደ የደህንነት መልዕክት ዳታቤዝ ፖርታል ይግቡ።\n\nፌስቡክ እና ጎግል አካውንትዎን ወይም ኢሜል አድራሻዎን ተጠቅመው አካውንት መፍጠር ይችላሉ።",        "create_account_alt": "አካዉንት ይክፈቱ፤",
-        "existing_account": "ከዚህ ቀደም አካዉንት ካለዎት፣ እባከዎ {0}።",
-        "login_cta": "ይግቡ፤",
-        "sign_up_cta": "ይመዝገቡ፤"
-      },
-      "two": {
-        "body": "ኤፒአይውን ለመጠቀም በደህንነት መልዕክት ዳታቤዝ ፖርታል ውስጥ መተግበሪያ መፍጠር አለብዎት። ስለሚገነቡት ነገር ትንሽ ይንገሩን።",
-        "create_app_alt": "መተግበሪያ ይፍጠሩ",
-        "heading": "ደረጃ ሁለት፦ መተግበሪያ ይፍጠሩ"
-      },
-      "three": {
-        "body": "መተግበሪያ ሲፈጥሩ የኤፒ አይ(API) ቁልፍ ወዲያዉ ይሠጥዎታል፤\n\n{0} ይህን ቁልፍ በተቻለዎት መጠን በጥንቃቄ መያዝዎትን ያረጋግጡ፤ለሌሎች ሰዎች አያጋሩ፤ ያለበለዚያ የኤፒ አይ ቁልፍዎ በራስዎ መተግበሪያ  ተጋላጭ ይሆናል።",
-        "create_api_key_alt": "የ ኤፒ አይ (API) ቁልፍ ይፍጠሩ፤",
-        "heading": "ደረጃ3 -፦የ API(ኤፒ አይ) ቁልፍ ያግኙ፤",
-        "important": "ጠቃሚ ነገር፤"
-      },
-      "four": {
-        "api_docs_cta": "የ ኤፒ አይ (API) ሰነድ፤",
-        "body": "የደህንነት መልዕክት ዳታቤዝ ኤፒአይ HTTP(S) ይጠቀማል እና የታተመ መረጃ ለማግኘት RESTful endpoints ያቀርባል።\n\nእያንዳንዱ ጥያቄ በቀደመው ደረጃ በተፈጠረው ኤፒአይ ቁልፍ መረጋገጥ አለበት።",        "example_title": "የሙከራ ጥያቄ፤",
-        "heading": "ደረጃ4 - ጥያቄ ያቅርቡ",
-        "moreInfo": "ስለሁሉም የ API ኢንድፖይንቶች ተጨማሪ መረጃ ለማግኘት፣{0} ይመልከቱ።"
-      }
-    }
-  },
-  "home_pods": {
-    "bulk_upload": "የ.csv ፋይሎችን በመጫን ፣ ትላልቅ መረጃዎችን በአንድ ጊዜ ማደስ ይችላሉ፤",
-    "audit_log": "የእንቅስቃሴዎችን መዝገብ እዚህ ማየት ይችላሉ፤",
-    "whatnow_edit": "ይህ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል የሚችሉበት ቦታ ነው",
-    "whatnow_review": "ይህ የደህንነት መልዕክት ዳታቤዝ ይዘትን መገምገም የሚችሉበት ቦታ ነው",
-    "whatnow_publish": "ይህ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል እና ማተም የሚችሉበት ቦታ ነው",
-    "manage_users": "እዚህ ተጠቃሚዎችን የሚያስተዳድሩበት(የሚፈጥሩት፣የሚያስተካክሉት እና የሚያስወግዱበት) ቦታ ነዉ፤",
-    "api_usage": "እዚህ  ማን API እየተጠቀመ እንደሆነና ምን አይነት መተግበሪያዎች እየተሰሩበት እንደሆነ ማየት እነችላለን።",
-    "wellcome": "እንኳን ደህና መጣህ",
-    "wellcome_description": "እዚህ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል እና ማተም ይችላሉ።"
-  },
-  "languages": {
-    "am": "አማርኛ",
-    "ar": "አረብኛ",
-    "bn": "বাংলা",
-    "de": "Deutsch",
-    "en": "እንግሊዝኛ",
-    "es": "ስፓኒሽ",
-    "fr": "ፈረንሳይኛ",
-    "ht": "Kreyòl",
-    "id": "ኢንዶኔይዣኛ",
-    "it": "Italiano",
-    "ja": "日本語",
-    "my": "ဗမာ",
-    "ne": "नेपाली",
-    "pt": "ፓርቹጋልኛ(UE)",
-    "ru": "ራሽያኛ",
-    "rw": "Ikinyarwanda",
-    "sw": "Kiswahili",
-    "th": "ภาษาไทย",
-    "tr": "Türkçe",
-    "ur": "ኡርዱኛ",
-    "vi": "Tiếng Việt"
-  },
-  "sidebar": {
-    "manage": "የተጠቃሚዎችን ይዘት ያስተዳድሩ፤",
-    "content_users": "የይዘት ተጠቃሚዎች፤",
-    "audit_log": "የማስተካከያ ታሪክ",
-    "whatnow": "የምክንያት አርታኢ",
-    "bulk": "የመልዕክት ፋይል ሰቀላ",
-    "content": "ይዘት",
-    "api": "የኤፒአይ (API)አጠቃቀም፤",
-    "applications": "መተግበሪያዎች",
-    "api_stats": "API Stats",
-    "api_users": "የኤፒ አይ( API) ተጠቃሚዎች፤",
-    "terms_conditions": "ደምቦች አና ሁኔታዎች፤",
-    "subnationals": "ንዑስ ክልሎች"
-  },
-  "common": {
-    "accept": "ይቀበሉ፤",
-    "actions": "ተግባራት፤",
-    "create": "ፍጠር",
-    "edit": "ማስተካከያ፤",
-    "save": "አስቀምጥ",
-    "deactivate": "ያቋርጡ፤",
-    "activate": "ያስጀምሩ፤",
-    "are_you_sure": "እርግጠኛ ነዎት?",
-    "yes": "አዎ",
-    "title": "ርዕስ፤",
-    "description": "መግለጫ፤",
-    "unpublished_edits": "ያልታተሙ እርማቶች?",
-    "published": "የታተሙ፤",
-    "delete": "ይሰርዙ፤",
-    "welcome": " ወደ.....እንኳን ደህና መጡ፤",
-    "save_changes": "ለዉጦችን ያሰመዝግቡ፤",
-    "auto_saving": "በራስ-ሰር በማስቀመጥ ላይ",
-    "add": "ተጨማሪ፤",
-    "my_profile": "የእኔ የግል መግለጫ፤",
-    "cancel": "ሠርዝ፤",
-    "view_changes": "ለዉጦችን ይመልከቱ፤",
-    "view_content": "ይዘቱን ይመልከቱ፤",
-    "resend_activation": "የማስጀመሪያ ኢሜይል እንደገና ይላኩ፤",
-    "deactivate_user": "ተጠቃሚዉን ያስቁሙ፤",
-    "submit_changes": "ለውጦችን ያስገቡ",
-    "reactivate_user": "ተጠቃሚዉን እንደገና ያስጀምሩ፤",
-    "send_invite": "ግብዣ ይላኩ፤",
-    "invite_and_create": "ግብዣ በመላክ ሌላ ይፍጠሩ፤",
-    "loading": "ይዘት በማስጀመር ላይ ነዉ ፤",
-    "publish_new": "አዲስ ቨርዥን ያሳትሙ፤",
-    "greeting": "ሄሎ!",
-    "removed": "ተወግዷል",
-    "copy": "ቅጂ",
-    "copied": "ተቀድቷል",
-    "not_empty": "ይህ ቦታ ባዶ መሆን አይችልም፤",
-    "name": "ስም",
-    "webUrl": "ዩ አር ኤል፤",
-    "learn_more": "የበለጠ ለማወቅ፤",
-    "validations": {
-      "empty": "ይህ ቦታ ባዶ መሆን  አይችልም",
-      "hazardIcon": "እባክዎን ከ 30 ኪሎ ባይት በታች የሆነ ምስል ይምረጡ፤"
+    "common": {
+        "accept": "Accept",
+        "actions": "Actions",
+        "create": "Create",
+        "edit": "Edit",
+        "save": "Save",
+        "deactivate": "Deactivate",
+        "activate": "Activate",
+        "are_you_sure": "Are you sure?",
+        "yes": "Yes",
+        "title": "Title",
+        "description": "Description",
+        "unpublished_edits": "Unpublished edits?",
+        "published": "Published",
+        "delete": "Delete",
+        "welcome": "Welcome to the",
+        "save_changes": "Save changes",
+        "auto_saving": "Autosaving",
+        "add": "Add",
+        "reset_password": "Reset Password",
+        "my_profile": "My Profile",
+        "cancel": "Cancel",
+        "view_changes": "View changes",
+        "view_content": "View content",
+        "resend_activation": "Resend activation email",
+        "deactivate_user": "Deactivate user",
+        "submit_changes": "Submit Changes",
+        "reactivate_user": "Reactivate user",
+        "send_invite": "Send invite",
+        "invite_and_create": "Invite and create another",
+        "loading": "Loading content",
+        "loading_button": "Loading...",
+        "publish_new": "Publish New Version",
+        "greeting": "Hi",
+        "removed": "Removed",
+        "copy": "Copy",
+        "copied": "Copied",
+        "not_empty": "Cannot be empty",
+        "name": "Name",
+        "webUrl": "URL",
+        "learn_more": "Learn more",
+        "validations": {
+            "empty": "This cannot be empty",
+            "hazardIcon": "Please select an image that is less than 30kb"
+        },
+        "network_error": "Network error",
+        "network_error_text": "Looks like there has been a network error. Please try again in a few moments",
+        "email_sent": "Email sent",
+        "duplicate_lang_error": "Sorry, the chosen language already exists",
+        "duplicate_lang_description": "Please either edit the existing language or select a new language from the dropdown",
+        "estimated_users": "Number of estimated users",
+        "upploading": "Uploading",
+        "download": "Download",
+        "download_as_image": "Download as an image",
+        "download_as_pdf": "Download as a PDF",
+        "add_logo": "Add logo",
+        "edit_logo": "Edit logo",
+        "loading_image": "Loading...",
+        "preview": "Preview"
     },
-    "network_error": "የኔትወርክ ችግር አጋጥሟል!",
-    "network_error_text": "የኔትወርክ ችግር ያጋጠመ ይመሥላል፤ እባክዎ ከትንሽ ጊዜ በኋላ እንደገና ይሞክሩ፤",
-    "email_sent": "ኢሜይሎት ተልኳል፤",
-    "duplicate_lang_error": "ይቅርታ፡የመረጡት  ቋንቋ የነበረ ነው፤",
-    "duplicate_lang_description": " የነበረውን ቋንቋ ያስተካክሉ ወይም ደግሞ  ዝቅ ካለዉ አዝራር ዉስጥ አዲስ ቋንቋ ይምረጡ፤",
-    "estimated_users": "የሚገመቱ ተጠቃሚዎች ብዛት",
-    "upploading": "መጫን",
-    "download": "ማውረድ",
-    "download_as_image": "እንደ ምስል ማውረድ",
-    "download_as_pdf": "እንደ PDF ማውረድ",
-    "add_logo": "ሎጎ ጨምር",
-    "edit_logo": "ሎጎ አርትዕ",
-    "loading_image": "በመጫን ላይ..."
-  },
-  "banners": {
-    "get_started_create": "ይጀምሩና የራስዎትን የመጀመሪያ መተግበሪያ ይፍጠሩ፤",
-    "create_app": "መተግበሪያዉን ይፍጠሩ፤",
-    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. በኋላ ላይ አንድ ነጠላ ዓረፍተ ነገር ይኑረን።"
-  },
-  "users": {
-    "user": "ተጠቃሚ፤",
-    "deleted": "የተሠረዘ ተጠቃሚ፤",
-    "list": {
-      "manage": "ተጠቃሚዎችን ያስተዳድሩ፤",
-      "select_status": "ሁኔታ ምረጥ",
-      "select_role": "ሚና ምረጥ",
-      "select_country": "ሀገር ምረጥ",
-      "select_terms": "የውሎች ስሪት ምረጥ",
-      "select_society": "የብሔራዊ ማህበር ምረጥ",
-      "create": "አዲስ መጠቀሚያ ይፍጠሩ፤",
-      "download_report": "ሪፖርት ያውርዱ፤",
-      "empty": "ምንም መጠቀሚያ  ማግኘት አልተቻለም፤",
-      "detail": "የተጠቃሚ ዝርዝር፤",
-      "clear_filters": "የተጣሩትን ያስወግዱ፤",
-      "table_header": {
-        "user": "ተጠቃሚ፤",
-        "role": "ሚና",
-        "society": "ማህበር፤",
-        "email": "ኢሜይል",
-        "added": "ተጨምሯል፤",
-        "last_activity": "የመጨረሻ ተሣትፎ፤",
-        "t_and_c": "ቲ እናሲ ( T&C) ቨርዥን፤"
-      },
-      "societies": "ማህበራት፤"
+    "banners": {
+        "get_started_create": ", Get Started and Create Your First App",
+        "create_app": "Create an app",
+        "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
     },
-    "status": {
-      "active": "ተጀምሯል፤",
-      "deactivated": "ቆሟል፤"
-    },
-    "edit": {
-      "super_admin_all": "ሁሉምንም ማህበራት ማግኛ፤",
-      "user_details": "የተጠቃሚ ዝርዝር፤",
-      "create_user": "አዲስ መጠቀሚያ ይፍጠሩ፤",
-      "add_society": "ማህበር የክሉ፤ ",
-      "societies_heading": "ማህበራት",
-      "roles_heading": "ሚናና ፈቃድ፤",
-      "activity_heading": "ተግባር",
-      "roles_label": "ለዚህ ተጠቃሚ ሚናዎችንና ፈቃዶችን ይምረጡ፤",
-      "activity_link": "በተጠቃሚዉ የተተገበሩ ሁሉንም ነገሮች ይመልከቱ፤",
-      "created": "መጠቀሚያዎት በተሳካ ሁኔታ ተከፍቷል፤",
-      "updated": "መጠቀሚያዎት  በተሳካ ሁኔታ ታድሷል፤",
-      "email_update": "ኢሜይልዎትን ለማደስ፣ አባክዎ የይለፍ ቃልዎን ያስገቡ፤",
-      "view": "አሳይ",
-      "more": "ተጨማሪ",
-      "less": "ያነሰ አሳይ",
-      "user_can_do": "ተጠቃሚው ምን የማድረግ ፈቃድ እንዳለው ይመልከቱ:",
-      "user_no_permission": "ተጠቃሚው ምንም ፈቃዶች አላገኘም",
-      "soc_already_added": "ይህ ተጠቃሚ አስቀድሞ ለዚህ ማህበር ተመድቧል"
-    }
-  },
-  "new_welcome": {
-    "title_1": "እንኳን ደህና መጣህ",
-    "red_title": "IFRC",
-    "title_2": "ደህንነት",
-    "title_3": "መልእክት ዳታቤዝ",
-    "text_header": "በተለያዩ መድረኮችዎ ላይ የቀይ መስቀል እና የቀይ ጨረቃ ደህንነት መልእክቶችን ይድረሱ እና ያጋሩ።",
-    "text_header_2": "የሚከተለውን #-ደረጃ መመሪያ ይከተሉ..",
-    "bottom_subtitle": "IFRC ን ያግኙ",
-    "bottom_text": "ጥያቄዎች ካሉዎት ለ IFRC ቡድን ኢሜል ይላኩ: im@ifrc.org",
-    "bottom_btn": "IFRC ን ያግኙ",
-    "slider_1": {
-      "btn": "የ API ቁልፍ ይፍጠሩ",
-      "step_1": {
-        "header": "ደረጃ 1: መተግበሪያ ይፍጠሩ",
-        "text": "በዳታቤዝ ውስጥ API ለመጠቀም የ API ቁልፍ ይፍጠሩ። ስለሚገነቡት ነገር ይንገሩን።"
-      },
-      "step_2": {
-        "header": "ደረጃ 2: የ API ቁልፍ ይቀበሉ",
-        "text": "የ API ቁልፍ ሲፈጥሩ፣ በራስ-ሰር ይፈጠራል።",
-        "text_2": "አስፈላጊ: የ API ቁልፍዎን በተቻለ መጠን በደህንነት ያከማቹ። በመተግበሪያዎ ውስጥ የ API ቁልፍዎን ማጋራት ወይም ማቅረብ ያስወግዱ።"
-      },
-      "step_3": {
-        "header": "ደረጃ 3: ጥያቄ ያቅርቡ",
-        "text": "የዳታቤዝ API HTTP(S) ይጠቀማል እና የታተሙ ዳታዎችን ለማግኘት RESTful ነጥቦችን ይሰጣል። እያንዳንዱ ጥያቄ በቀደመው ደረጃ የተፈጠረውን የ API ቁልፍ በመጠቀም ማረጋገጫ ማለት አለበት። ስለሁሉም የ API ነጥቦች ተጨማሪ መረጃ ለማግኘት የ API ሰነዱን ይመልከቱ።"
-      },
-      "step_4": {
-        "header": "ደረጃ 4: መልእክቶችን ያጋሩ",
-        "text": "አደጋ ሲከሰት የቀይ መስቀል እና የቀይ ጨረቃ ደህንነት መልእክቶችን ከህዝብ ጋር ያጋሩ። ስለ መልእክቶቹ አስተያየት ካለዎት ለ IFRC ቡድን �ን ያግኙ: im@ifrc.org"
-      }
-    },
-    "slider_2": {
-      "btn": "የደህንነት መልዕክቶች",
-      "step_1": {
-        "header": "ደረጃ 1: መልእክቶችን ይመልከቱ",
-        "text": "የቀይ መስቀል እና የቀይ ጨረቃ ብሔራዊ ማህበር መልእክቶችን ለማየት የመልእክት ዳታቤዝን ይጎብኙ።"
-      },
-      "step_2": {
-        "header": "ደረጃ 2: የመልእክት ስብስብ ምረጥ",
-        "text": "ለመመልከት የሚፈልጉትን ብሔራዊ ማህበር ይምረጡ። ከዚያም ከሚገኙት ዝርዝሮች ውስጥ የአደጋ አይነት ይምረጡ።"
-      },
-      "step_3": {
-        "header": "ደረጃ 3: መልእክቶችን ያጋሩ",
-        "text": "መልእክቶችን ለማውረድ አማራጭን ይፈልጉ። የመልእክቶችን ስብስብ እንደ ምስል ወይም እንደ PDF ማጋራት ይችላሉ። ትክክለኛውን መልእክቶች እየሰጡ መሆኑን ለማረጋገጥ ያውርዱ እና ይገምግሙ።"
-      }
-    }
-  },
-  "upload_modal": {
-    "drag_button_text": "ለመጫን ፋይልን ይጎትቱ �ይም ጠቅ ያድርጉ",
-    "button_text": "ጫን"
-  },
-  "stages": {
-    "immediate": "ወዲያውኑ",
-    "warning": "ማስጠንቀቂያ",
-    "anticipated": "በቅድሚያ የተጠበቀ",
-    "assess_and_plan":"ግምገማ እና እቅድ",
-    "mitigate_risks":"አደጋዎችን መቀነስ",
-    "prepare_to_respond":"ለመልስ ዝግጁ ይሁኑ",
-    "recover": "መልሶ ማግኛት"
-  },
-  "content": {
-    "content": "ይዘት",
-    "audit_log": {
-      "audit_log": "የኦዲት መዝገብ",
-      "my_audit_log": "የማስተካከያ ታሪክ",
-      "empty": "ከዚህ ማጣሪያ ጋር የሚሄድ ምንም የኦዲት ታሪክ አልተገኘም",
-      "soc_label": "ማህበር",
-      "select_hazard": "የአደጋ አይነት ምረጥ",
-      "select_language": "ቋንቋ ምረጥ",
-      "select_overwrite": "የመተካት አማራጭ ምረጥ",
-      "choose_file": "የፋይል አይነት ምረጥ",
-      "select_soc": "የብሔራዊ ማህበር ምረጥ"
-    },
-    "whatnow": {
-      "title": "መልእክቶች",
-      "set_attribution": "ለማሳተም የማህበሩን ስም እና  መለያ መልእክት ያዘጋጁ",
-      "whatnow": "ደህንነት መልእክት ዳታቤዝ",
-      "empty": "ለዚህ ብሔራዊ ማህበረሰብ የታተሙ የደህንነት መልዕክቶች የሉም",
-      "steps": "እርምጃዎች",
-      "publish": "ማተም",
-      "no_publish": "ምንም የሚታተም የለም",
-      "published": "ትርጉሙ ታትሟል",
-      "publishing": "አታሚ",
-      "content_to_publish": "የሚታተም ረቂቅ ይዘት",
-      "whatnow_content": "የደህንነት መልዕክት ዳታቤዝ ይዘት",
-      "choose_hazard": "አደጋን  ይምረጡ",
-      "hazard": "አደጋ",
-      "content": "ይዘት",
-      "create": "አደጋን  ይጨምሩ",
-      "edit_attribtion": "መለያን ማስተካከል",
-      "attribution": "መለያ",
-      "attribution_url": "የመለያ ዩአራኤል",
-      "society_name": "ብሔራዊ  ማህበር",
-      "attribution_message": "የመለያ መልእክት",
-      "no_translation": "ምንም ይዘት አልተዘጋጀም",
-      "delete_content_translation": "ይህ የተመረጠውን የደህንነት መልዕክት ዳታቤዝ ይዘት ከአሁኑ ቋንቋ ያስወግዳል",
-      "messages": "የደህንነት መልዕክቶች የ",
-      "add_language": "አዲስ  ቋንቋ ጨምር",
-      "no_languages": " ለመጀመር  አንድ ቋንቋ ምረጥ  ወይም ፍጠር",
-      "no_soc": "አንድ ማህበር ምረጥ",
-      "no_region": "ክልል ይምረጡ",
-      "add_language_message": "አዲስ ቋንቋ ለመጨመር፣ እባኮዎን አበረው የሚሄዱ የተወሰኑ ይዘቶችን ይጨምሩ",
-      "add_language_attribution": "አዲስ ቋንቋ ለመጨመር መለያ  ይፍጠሩ",
-      "select_language": "አባኮዎን  አንድ ቋንቋ ይምረጡ",
-      "attribution_publish": "ይህ መለያ ወዲያውኑ ለመታተም ዝግጁ ይሆናል",
-      "date_added": "ቀን ተጨምሯል",
-      "url": "URL",
-      "hazard_type": "የአደጋ አይነት",
-      "show_more": "ተጨማሪ አሳይ",
-      "early": "ቅድመ ማስጠንቀቂያ",
-      "disaster": "የአደጋ አደጋ መቀነስ",
-      "recovery": "መልሶ ማግኛት",
-      "publish_summary_title": "አመልካች",
-      "publish_summary_ns": "ብሔራዊ �ማህበር",
-      "publish_summary_url": "አመልካች URL",
-      "publish_summary_message": "አመልካች መልእክት"
-    },
-    "edit_whatnow": {
-      "title": "ርዕስ",
-      "description": "መግለጫ",
-      "content_piece": "የተወሰነ ይዘት",
-      "enter_other_hazard_type": "የአደጋ አይነት  ስም  ያስገቡ",
-      "other_hazard_type_label": "ሌላ የአደጋ አይነት",
-      "stepped_content": "የተስተካከለ ይዘት",
-      "content_title_description": "ለእነዚህ የደህንነት መልዕክቶች ርዕስ",
-      "content_description_description": "የእነዚህ የደህንነት መልዕክቶች መግለጫ",
-      "content_label": "እባክዎን የተውሰነ  ለአደጋ  መረጃ ያስገቡ",
-      "content_url": "ዩአር ኤል",
-      "content_url_description": "ስለእነዚህ የደህንነት መልዕክቶች ተጨማሪ መረጃ ለማግኘት URL። እባክዎን ፕሮቶኮሉን ያካትቱ፣ ማለትም http:// ወይም https://",
-      "created": "ተፈጥሯል",
-      "pieces_edited": " የተውሰኑ ይዘቶች ላይ አርትዖት ተደርጓል",
-      "content_placeholder": "እባክዎን አንድ መልእክት ያስገቡ",
-      "mitigation": "ማቃለል",
-      "mitigation_help": "አደጋዎችን ለመቀነስ የረጅም ጊዜ እርምጃዎች",
-      "mitigation_extra": "ማቃለል የአደገኛ ክስተት ትንበያ የረጅም ጊዜ መግለጫ ነው። የተወሰዱት እርምጃዎች ቤተሰቡን እና አካባቢውን ደህንነቱ የተጠበቀ ለማድረግ ግምገማ ፣ እቅድ ማውጣት እና የረጅም ጊዜ አደጋ ቅነሳ እርምጃዎች ናቸው ፡፡",
-      "seasonalForecast": "ውቅታዊ ትንበያ",
-      "seasonalForecast_help": "አደጋዎችን ለመቀነስ የአጭር ግዜ እርምጃዎች",
-      "seasonalForecast_extra": "የወቅቱ ትንበያ የአደገኛ ክስተት ትንበያ መግለጫ ነው። የሚወሰዱ እርምጃዎች አደጋዎችን ለመዳሰስ እና አደጋን ለመቀነስ እና ቤተሰቡን ለመጠበቅ የሚረዱ እንቅስቃሴዎችን ለማቀድ ነው ፡፡",
-      "watch": "ማየት",
-      "watch_help": "ለመመለስ  መዘጋጀት",
-      "watch_extra": " ማየት የሚታዘዘው የአደገኛ ክስተት ስጋት በከፍተኛ ሁኔታ ይጨምራል ፣ ግን መከሰቱ  ፣ቦታው ፣ወይም\/ እና  የጊዜ አወጣጥ አሁንም እርግጠኛ አይደሉም። ለመከላከያ እርምጃዎች እና ቅደመ ምላሽ ለመስጠት ዝግጁ ለማድረግ በቂ ጊዜ ለመስጠት የታሰበ ነው ፡፡",
-      "warning": "ማስጠንቀቂያ",
-      "warning_help": "ለመመለስ  መዘጋጀት",
-      "warning_extra": "አደገኛ ክስተት ሲከሰት ፣ ሲቃረብ ወይም በጣም ከፍተኛ የመከሰት  እድሉ ሲኖር ማስጠንቀቂያ ይሰጣል ፡፡ ያ ማለት ለህይወት ወይም ለንብረት አስጊ ሁኔታ ሲፈጠር ማለት ነው። በዚህ አደጋ ጎዳና ላይ ያሉ ሰዎች የመከላከያ እርምጃዎችን መውሰድ አለባቸው ፡፡",
-      "immediate": "አስቸኳይ",
-      "immediate_help": "የመልስ እርምጃዎች",
-      "immediate_extra": "ሁኔታዎች በአሁኑ ጊዜ ለሕይወት እና ለንብረት ስጋት ሲፈጥሩ ፡፡ አደገኛ ክስተት በሚከሰትበት ጊዜ እነዚህ ወዲያውኑ የሚወስዱ የመከላከያ እርምጃዎች ናቸው ፡፡ ራስን እና ቤትን ለመጠበቅ የምላሽ እርምጃዎች ያስፈልጋሉ ፡፡",
-      "recover": "ማገገም",
-      "recover_help": "የማገገሚያ እርምጃዎች",
-      "recover_extra": "እነዚህ አደገኛ ሁኔታን ተከትሎ አደጋን ለመቀነስ የሚወሰዱ የመከላከያ እርምጃዎች ናቸው።",
-      "anticipated": "በቅድሚያ የተጠበቀ",
-      "assess_and_plan": "ግምገማ እና እቅድ",
-      "mitigate_risks": "አደጋዎችን መቀነስ",
-      "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
-      "updated": "የተሻሻለ",
-      "download_icon": "ምልክቶችን ያውርዱ",
-      "download_image": " እንደ  ምስል ይውርዱ",
-      "download_image_error": "ምስልን ሲያወርዱ የተከሰተ ስህተት ፣ እባክዎ ሁሉንም ለውጦች እንዳተሙ ያረጋግጡ እና እንደገና ይሞክሩ።",
-      "download_instructions": "ለማስቀመጥ በቀኝ ጠቅ ያድርጉ እና 'ምስልን እንደ ያስቀምጡ....' ን ይምረጡ",
-      "downloaded_image_alt": "የደህንነት መልዕክት ዳታቤዝ መመሪያዎች",
-      "add_key_message": "ዋና መልእክት ጨምር",
-      "add_supporting_message": "የድጋፍ መልእክት ጨምር",
-      "early_warning": "ቅድመ ማስጠንቀቂያ",
-      "early_warning_description": "ለማስጠንቀቂያዎች እና ቅድመ እርምጃዎች �ዋና ደህንነት መልእክቶች",
-      "disaster_risk_reduction": "የአደጋ አደጋ መቀነስ",
-      "disaster_risk_reduction_description": "ዋና ደህንነት መልእክቶች ከ PAPE",
-      "recovery": "መልሶ ማግኛት",
-      "recovery_description": "ለመልሶ ማግኛት ዋና ደህንነት መልእክቶች",
-      "hazard_type": "የአደጋ አይነት",
-      "content_edit_title": "ይዘት አርትዕ",
-      "content_add_hazard_title": "አደጋ ጨምር",
-      "key_message_label": "ዋና መልእክት ርዕስ",
-      "supporting_message_label": "የድጋፍ መልእክት"
-    },
-    "message_editor": {
-      "title": "የምክንያት አርታኢ",
-      "society_name_label": "የብሔራዊ ማህበር �ስም",
-      "attribution_url_label": "አመልካች URL",
-      "attribution_message_label": "አመልካች መልእክት",
-      "create_btn": "አደጋ ጨምር",
-      "contributor_name_label": "የሰጪ ስም",
-      "contributor_single": "ሰጪ"
-    },
-    "previewer": {
-      "download_image_error": "ምስል ማውረድ ላይ ስህተት፣ እባክዎ እንደገና ይሞክሩ።",
-      "download_pdf_error": "PDF ማውረድ ላይ ስህተት፣ እባክዎ እንደገና ይሞክሩ።"
-    },
-    "audit": "የማስተካከያ ታሪክ",
-    "export": "ወደ ውጭ መላክ",
-    "bulk_upload": {
-      "bulk_upload": "የመልዕክት ፋይል ሰቀላ",
-      "template": "ቅጽ",
-      "export_template": " ቅጹ ወደ ውጪ መላክ",
-      "import_data": "መረጃውን ማምጣት",
-      "import_complete": " ማስገባት ተጠናቀቀ",
-      "import_summary": "እያስመጡ ያሉት{society}በ{lang} ውስጥ ነው።",
-      "import_banner": {
-        "success": "ተሳክቷል",
-        "added": "ተጨምሯል",
-        "skipped": "የተዘለለ",
-        "denied": "የተከለከለ",
-        "updated": "የዘመነ",
-        "failed": "የወደቀ",
-        "invalid": "የማይሰራ",
-        "row": "ተርታ"
-      },
-      "upload_csv": "ሰነዱን እንደ \"CSV\" ፎርማት እኒተርኔት ላይ ይጫኑ",
-      "language_instructions": "ከውጭ እየገቡ ያሉትን የትርጉሞች ቋንቋ ይምረጡ ፡፡",
-      "file_instructions": "ፋይሉን ወደ ዚህ ይጎትቱ፣ወይም ከኮምፒተርዎ ላይ ይምረጡ።",
-      "choose": "ይምረጡ",
-      "submit": "ከውጭ ያስገቡ",
-      "reset": "ሌላ ይጫኑ",
-      "export_template_guide": "የእቅድ ንድፉን መመሪያ ያስወጡ",
-      "export_template_instructions": "ይህን የጂ ፋይል ሰቀላ አብነት እንዴት ውጤታማ በሆነ መንገድ መጠቀም እንደሚችሉ መመሪያዎችን ለማግኘት እባክዎን ይህን መመሪያ ይመልከቱ።",
-      "refer": "ወደ",
-      "detail": "ለዝርዝር መመሪያዎች",
-      "warnings": {
-        "title": " በቅርብ የተጻፉ ይዘቶችን የሚተካ  ማንኛውም ይዘት ካለ ማስመጣት አይቀበሉ።",
-        "on": "አዎ",
-        "off": "አይ"
-      },
-      "overwriting": {
-        "title": "ቁልፉን እንደገና መፃፍ",
-        "on": "ሁልጊዜ ወደዚህ ስሪት ያዘምኑ ፣ ሁሉንም ክለሳዎች ይተኩ",
-        "off": "የመጣው ይዘት አዲስ በሚሆንበት የክስተት ዓይነቶችን ብቻ ያዘምኑ"
-      },
-      "errors": {
-        "warning_update_will_overwrite": "ወደ ውጭ መላክ ከተፈጠረ ወዲህ የተደረጉትን ለውጦች ይህ እርምጃ ይተካዋል",
-        "bad_request": "የፋይል መረጃ በትክክል አልተሰራም",
-        "bad_request_error_codes": {
-          "30001": "የአምድ  ርዕሶች ከእቅድ ንድፍ ጋር አይመሳሰሉም",
-          "30002": " የመለያ ስም፣ መልክዕት ወይም ማስፈንጥሪያው ተዘሏል",
-          "30003": "የማይሰራ  የመለያ ማስፈንጠሪያ እባኮዎን የአሁን ፕሮቶኮል መሆኑን ያረጋግጡ፣ ለምሳሌ https:\/\/",
-          "40001": "የማይሰራ  ያሀገር ኮድ ተሰጥቷል",
-          "40002": "የተመረጠው ማህበረሰብ ከተመረጠው ፋይል ከማህበረሰቡ ጋር አይጣጣምም",
-          "40003": "የተመረጠው ፋይል ወደ ውጭ ሲልክ የተሳሳተ ስለሆነ ማስመጣቱን ማጠናቀቅ አይችልም"
+    "users": {
+        "user": "User",
+        "deleted": "Deleted user",
+        "list": {
+            "manage": "Manage users",
+            "select_status": "Select status",
+            "select_role": "Select a role",
+            "select_country": "Select a country",
+            "select_terms": "Select a terms version",
+            "select_society": "Select a nacional society",
+            "create": "Create new user",
+            "download_report": "Download report",
+            "empty": "Couldn't find any users",
+            "detail": "User detail",
+            "clear_filters": "Clear filters",
+            "table_header": {
+                "user": "User",
+                "role": "Role",
+                "society": "Society",
+                "email": "Email",
+                "added": "Added",
+                "last_activity": "Last Acitivity",
+                "t_and_c": "T&C Version"
+            },
+            "societies": "Societies"
+        },
+        "status": {
+            "active": "Activated",
+            "deactivated": "Deactivated"
+        },
+        "edit": {
+            "super_admin_all": "Access to all societies",
+            "user_details": "User details",
+            "create_user": "Create new user",
+            "add_society": "Add society + ",
+            "societies_heading": "Societies",
+            "roles_heading": "Role & permissions",
+            "activity_heading": "Activity",
+            "roles_label": "Select roles & permissions for this user",
+            "activity_link": "View all actions by user",
+            "created": "User successfully created",
+            "updated": "User successfully updated",
+            "email_update": "To update your email, please enter your password",
+            "view": "View",
+            "more": "more",
+            "less": "Show less",
+            "user_can_do": "View what user has permission to do:",
+            "user_no_permission": "User has not got any permissions",
+            "soc_already_added": "This user has already been assigned this society"
         }
-      }
+    },
+    "new_welcome": {
+        "title_1": "Welcome to",
+        "red_title": "IFRC",
+        "title_2": "Safety",
+        "title_3": "Message Database",
+        "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
+        "text_header_2": "Follow the #-step guide below..",
+        "bottom_subtitle": "Contact IFRC",
+        "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
+        "bottom_btn": "Contact IFRC",
+        "slider_1": {
+            "btn": "Create an API key",
+            "step_1": {
+                "header": "Step 1: Create an app",
+                "text": "Create an API key to use the API in the database. Tell us about what you're building."
+            },
+            "step_2": {
+                "header": "Step 2: Receive an API key",
+                "text": "When you have create an API key, it will be automatically generated.",
+                "text_2": "Important: Store your API key as securely as possible. Avoid sharing or otherwise exposing your API key within your own application."
+            },
+            "step_3": {
+                "header": "Step 3: Make a request",
+                "text": "The database API uses HTTP(S) and provides RESTful endpoints to obtain published data. Each request must be authenticated using the API key created in the previous step. For more information on all API endpoints, see the API documentation"
+            },
+            "step_4": {
+                "header": "Step 4: Share the messages",
+                "text": "Share the Red Cross Red Crescent safety messages with the public when there is a hazard threat. You can contact the IFRC team if you have any feedback on the messages: im@ifrc.org"
+            }
+        },
+        "slider_2": {
+            "btn": "Safety Messages",
+            "step_1": {
+                "header": "Step 1: View the messages",
+                "text": "Visit the message database to view the available Red Cross Red Crescent National Society messages."
+            },
+            "step_2": {
+                "header": "Step 2: Select the message set",
+                "text": "Select the National Society you want to view. Then choose a hazard type from the available list."
+            },
+            "step_3": {
+                "header": "Step 3: Share the messages",
+                "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
+            }
+        }
+    },
+    "upload_modal": {
+        "drag_button_text": "Click or drag file to this area to upload",
+        "button_text": "Upload",
+        "allowed_formats_info": "Only JPG and PNG files are allowed. Max size: 10MB."
+    },
+    "stages": {
+        "immediate": "Immediate",
+        "warning": "Warning",
+        "anticipated": "Anticipated",
+        "assess_and_plan": "Assess and Plan",
+        "mitigate_risks": "Mitigate Risks",
+        "prepare_to_respond": "Prepare to Respond",
+        "recover": "Recover"
+    },
+    "content": {
+        "content": "Content",
+        "audit_log": {
+            "audit_log": "Audit Log",
+            "my_audit_log": "Edit History",
+            "subtitle": "Here you can view the history of your message edits.",
+            "empty": "No audit history found which matches this filter",
+            "soc_label": "Society",
+            "select_hazard": "Select hazard type",
+            "select_language": "Select a language",
+            "select_overwrite": "Select overwrite oprion",
+            "choose_file": "Choose file type",
+            "select_soc": "Select a nacional society"
+        },
+        "whatnow": {
+            "title": "Messages",
+            "set_attribution": "Set society name and attribution message to publish",
+            "whatnow": "Safety Message Database",
+            "empty": "There are no published Safety messages for this National Society",
+            "steps": "Steps",
+            "publish": "Publish",
+            "no_publish": "Nothing to publish",
+            "published": "translations published",
+            "publishing": "Publishing",
+            "content_to_publish": "WHAT WILL BE PUBLISHED",
+            "whatnow_content": "Safety Message Database content",
+            "choose_hazard": "Choose Hazard",
+            "hazard": "Hazard",
+            "content": "Content",
+            "create": "Add Hazard",
+            "edit_attribtion": "Edit attribution",
+            "attribution": "Attribution",
+            "attribution_url": "Attribution URL",
+            "society_name": "National Society",
+            "attribution_message": "Attribution message",
+            "no_translation": "No content set",
+            "delete_content_translation": "This will remove the selected Safety Message Database content from the current language",
+            "messages": "Safety messages of the",
+            "add_language": "Add new language",
+            "no_languages": "Select or create a language to get started",
+            "no_soc": "Select a National Society",
+            "no_region": "Subnational",
+            "add_language_message": "To add a new language, please add some content to go along with it",
+            "add_language_attribution": "Create attribution to add a new language",
+            "select_language": "Please select a language",
+            "attribution_publish": "This attribution will be immediately available on publish",
+            "date_added": "Date Added",
+            "url": "URL",
+            "hazard_type": "Hazard Type",
+            "hazard_type_duplicated": "It already exists",
+            "show_more": "Show more",
+            "early": "Early Warning",
+            "disaster": "Disaster Risk Reduction",
+            "recovery": "Recovery",
+            "publish_summary_title": "Attribution",
+            "publish_summary_ns": "National Society",
+            "publish_summary_url": "Attribution URL",
+            "publish_summary_message": "Attribution Message"
+        },
+        "edit_whatnow": {
+            "title": "Title",
+            "description": "Description",
+            "content_piece": "Content piece",
+            "enter_other_hazard_type": "Enter Hazard Type Name",
+            "other_hazard_type_label": "Other Hazard Type",
+            "stepped_content": "Stepped Content Piece",
+            "content_title_description": "Title for these Safety Messages",
+            "content_description_description": "Description of these Safety Messages",
+            "content_label": "Please enter some hazard information",
+            "content_url": "URL",
+            "content_url_description": "URL for more information about these Safety messages. Please include the protocol, i.e. http:\/\/ or https:\/\/",
+            "created": "created",
+            "pieces_edited": " Pieces Edited",
+            "content_placeholder": "Please enter a message",
+            "mitigation": "Mitigation",
+            "mitigation_help": "Longer term actions to reduce risks",
+            "mitigation_subt": "",
+            "mitigation_extra": "A mitigation is a longer-term statement of prediction of a hazardous event. Actions taken are assessment, planning, and longer-term risk reduction measures to make the household and environment safer.",
+            "seasonalForecast": "Seasonal Forecast",
+            "seasonalForecast_help": "Shorter term actions to reduce risks",
+            "seasonalForecast_subt": "",
+            "seasonalForecast_extra": "A seasonal forecast is a statement of prediction of a hazardous event. Actions taken are to assess potential risks and plan activities to reduce risk and protect the household.",
+            "watch": "Watch",
+            "watch_help": "Prepare to respond",
+            "watch_subt": "",
+            "watch_extra": "A watch is issued when the risk of a hazardous event has increased significantly, but its occurrence, location, and\/or timing are still uncertain. It is intended to provide enough time for protective actions and preparation to respond.",
+            "warning": "Warning",
+            "warning_subt": "~24-48 hour lead time",
+            "warning_help": "Prepare to respond",
+            "warning_extra": "The hazardous event has a high probability of occurring within ~24-48 hours. Protective actions should be taken in advance.",
+            "immediate": "Immediate",
+            "immediate_subt": "Hazard is occuring",
+            "immediate_help": "Response actions",
+            "immediate_subtitle": "Hazard is occuring",
+            "immediate_extra": "A hazardous event is occuring. It may be an immediate threat to life and property. These are protective actions to take as the hazardous event is occurring",
+            "immediate_key_message_tooltip": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
+            "recover": "Recovery",
+            "recover_title": "Recover",
+            "recover_help": "Recovery actions",
+            "recover_subt": "",
+            "recover_extra": "Take these actions after the hazard event to ensure safety.",
+            "anticipated": "Anticipated",
+            "assess_and_plan": "Assess and Plan",
+            "mitigate_risks": "Mitigate Risks",
+            "prepare_to_respond": "Prepare to Respond",
+            "updated": "updated",
+            "download_icon": "Download Icon",
+            "download_image": "Download as an Image",
+            "download_image_error": "Error downloading image, please make sure you have published all changes and try again.",
+            "download_instructions": "Right click and select 'Save image as…' to save",
+            "downloaded_image_alt": "Safety Message Database Instructions",
+            "add_key_message": "Add Key Safety Message",
+            "add_supporting_message": "Add supporting message",
+            "early_warning": "Early Warning",
+            "early_warning_description": "Safety messaging for alerts and early actions",
+            "disaster_risk_reduction": "Disaster Risk Reduction",
+            "disaster_risk_reduction_description": "Safety messages from Public Awareness and Public Education for DRR (PAPE)",
+            "recovery": "Recovery",
+            "recovery_extra": "Take these actions after the hazard event to ensure safety",
+            "recovery_description": "After hazard event",
+            "hazard_type": "Hazard Type",
+            "content_edit_title": "Content Edit",
+            "content_add_hazard_title": "Add Hazard",
+            "anticipated_subt": "3-5 day lead time",
+            "anticipated_extra": "There is a risk of an anticipated event within 3-5 days. Its occurrence, likelihood, or location may be uncertain. It is enouch time to take preparedness and protective measures in anticipation.",
+            "prepare_to_respond_subt": "",
+            "prepare_to_respond_extra": "Develop response capacity by learning skills and storing provisions",
+            "assess_and_plan_subt": "",
+            "assess_and_plan_extra": "Assess risks and plan activities to recognize, reduce, and respond to hazard events",
+            "mitigate_risks_subt": "",
+            "mitigate_risks_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
+            "key_message_label": "Safety Message",
+            "supporting_message_label": "Supporting message",
+            "url_tool": "Link to more safety message information on your National Society or partner website",
+            "desc_tool": "Give a brief description about the hazard and messages. This should be 1-3 sentences long",
+            "title_tool": "For example: Safety messages for Floods",
+            "safety_tool": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
+            "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise."
+        },
+        "message_editor": {
+            "title": "Attribution Editor",
+            "society_name_label": "National Society Name",
+            "attribution_url_label": "Attribution URL",
+            "attribution_message_label": "Attribution Message",
+            "create_btn": "Add hazard",
+            "contributor_name_label": "Collaborator Name",
+            "contributor_single": "Collaborator",
+            "attribution_message_label_tooltip": "Share a one-sentence description of your National Society and the provided messages. (ie: Safety Messages from the Red Cross)",
+            "attribution_url_label_tooltip": "Share your National Society website to provide information on your organization."
+        },
+        "previewer": {
+            "download_image_error": "Error downloading image, please try again.",
+            "download_pdf_error": "Error downloading PDF, please try again."
+        },
+        "audit": "Edit history",
+        "export": "Export",
+        "bulk_upload": {
+            "empty_template": "Empty template",
+            "bulk_upload": "Message File Upload",
+            "bulk_subtitle": "Here you can upload all of your safety messages in one file.",
+            "template": "Template",
+            "export_template": "Export Template",
+            "import_data": "Import Data",
+            "import_complete": "Import Complete",
+            "import_summary": "You are importing under {society} in {lang}.",
+            "import_banner": {
+                "success": "Success",
+                "added": "Added",
+                "skipped": "Skipped",
+                "denied": "Denied",
+                "updated": "Updated",
+                "failed": "Failed",
+                "invalid": "Invalid",
+                "row": "Row"
+            },
+            "upload_csv": "Upload a document in CSV format",
+            "language_instructions": "Select the language of the translations that are being imported.",
+            "file_instructions": "Drag a file or choose from your device.",
+            "choose": "Choose",
+            "submit": "Import Content",
+            "reset": "Upload Another",
+            "export_template_guide": "Export Template Guide",
+            "export_template_instructions": "For instructions on how to use this g file upload template effectively, please view this guide.",
+            "refer": "Refer to",
+            "detail": "for detail instructions",
+            "warnings": {
+                "title": "Reject import if any content will overwrite more recent versions.",
+                "on": "Yes",
+                "off": "No"
+            },
+            "overwriting": {
+                "title": "Overwrite Setting.",
+                "on": "Always update to this version, overwrite all revisions",
+                "off": "Only update event types where the imported content is newer"
+            },
+            "errors": {
+                "warning_update_will_overwrite": "This action will overwrite changes which have been made since this export was created",
+                "bad_request": "File data is not correctly formed",
+                "bad_request_error_codes": {
+                    "30001": "Column headings do not match the template",
+                    "30002": "Attribution name, message or url are missing",
+                    "30003": "Invalid attribution url - please ensure the protocol is present, eg. https:\/\/",
+                    "40001": "Invalid country code provided",
+                    "40002": "Society selected does not match society for the file selected",
+                    "40003": "The date the selected file was exported has been malformed and the import cannot complete"
+                }
+            }
+        }
+    },
+    "api_stats": {
+        "page_title": "API Stats",
+        "download_data": "Download Data",
+        "clear_filters": "Clear Filters",
+        "start_date": "Start Date",
+        "end_date": "End Date",
+        "table_select": {
+            "keys": "API Keys",
+            "routes": "API Routes"
+        },
+        "field_headers": {
+            "application_name": "Application Name",
+            "number_of_hits": "Number of Hits",
+            "estimated_reach": "Estimated Reach",
+            "organisation": "Organisation",
+            "application": "Application"
+        },
+        "cumulative_cards": {
+            "hits": "Total Hits",
+            "accounts": "Total Accounts",
+            "est_impacted_users": "Est. Impacted Users"
+        },
+        "empty": "No stats found for the given date range"
+    },
+    "api_usage": {
+        "applications": "Applications",
+        "view_user": "View user",
+        "reactivate": "Reactivate",
+        "app_detail": "App Detail",
+        "app_details": "App Details",
+        "activity": "Activity",
+        "view_all_activity": "View all activity for this app",
+        "api_users": "API Users",
+        "terms_conditions": "All Terms & Conditions Versions",
+        "view_prev_terms": "View previous versions",
+        "current_version": "Current Version",
+        "version": "Version"
+    },
+    "applications": {
+        "my_apps": "My Apps",
+        "new_tc": "New terms and conditions",
+        "terms_conditions_message": "There is already a version published with this number:",
+        "build": "Build new app",
+        "build_key": "Build new API key",
+        "edit": "Edit app",
+        "building": "Building app",
+        "building_key": "Building API key",
+        "no_apps": "You have no apps, build one to get started.",
+        "api_keys": "API Keys"
+    },
+    "home": {
+        "home": "Home",
+        "welcome": "Welcome",
+        "admin_intro": "Here you can manage users, edit and publish Safety Message Database content and view API usage.",
+        "ns_admin_intro": "Here you can edit and publish Safety Message Database content",
+        "ns_editor_intro": "Here you can edit Safety Message Database content",
+        "api_user_intro": "Here you view your apps and manage your account.",
+        "role_changed_title": "Your role was changed",
+        "role_changed_p": "You have been assigned the following role:",
+        "role_changed_p2": "Your permissions are as follows:",
+        "role_changed_confirm": "Confirm",
+        "role_changed_dismiss": "Close",
+        "go_publish_safety_messages": "Publish Safety Messages",
+        "go_bulk_upload": "Upload Message File",
+        "go_audit_log": "View Edit History"
+    },
+    "landing": {
+        "strapline": "Safety Message Database Service",
+        "strapline_part_2": "Global Red Cross \/ Red Crescent Key Safety Messages",
+        "head_1": "IFRC Safety",
+        "head_2": "Message Database",
+        "head_text_1": "Safety messages based on IFRC Public Awareness and",
+        "head_text_2": "Public Education (PAPE) resource",
+        "head_bottom_1": "Access and share trusted Red Cross Red Crescent",
+        "head_bottom_2": "actionable messages to help people safely prepare for",
+        "head_bottom_3": "and respond to hazards.",
+        "signup": "Sign Up",
+        "it_works": "How It Works",
+        "works_1_a": "Red Cross Red Crescent National",
+        "works_1_b": "Society and government partners",
+        "works_1_c": "agree on national sets of messages",
+        "works_2_a": "National Societies publish",
+        "works_2_b": "safety messages in the",
+        "works_2_c": "database",
+        "works_3_a": "Altering agencies and",
+        "works_3_b": "communication channels",
+        "works_3_c": "connect to the database API",
+        "works_4_a": "Partners share",
+        "works_4_b": "messages through their",
+        "works_4_c": "channels",
+        "works_5_a": "Communities receive",
+        "works_5_b": "the messages and",
+        "works_5_c": "safely act",
+        "learn_more": "Learn more",
+        "watch_video": "Watch video",
+        "example_case": "Example Use Case",
+        "api": "API",
+        "hurricane": "Include messages with hurricane early",
+        "warning_alerts": "warning alerts",
+        "social_media": "Social Media",
+        "post_images": "Post images of wildfire preparedness",
+        "messages_network": "messages to your network",
+        "whatsapp": "WhatsApp",
+        "share_flood": "Share flood mitigation actions with your",
+        "family": "family and friends",
+        "impact": "Impact",
+        "sign_up_today": "Sign up today",
+        "developer": {
+            "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+            "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages."
+        },
+        "national_society": {
+            "strap_para_one": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.",
+            "strap_para_two": "Contact us to learn more about how to create the messages and connect with media partners."
+        },
+        "strap_para_one": "Help communities prepare, respond, and recover from hazards with our localized key action messages.",
+        "strap_para_two": "Use our easy four-step guide to integrate the Safety messages into your application. Sign up and see all available messages.",
+        "view_data": "View the data",
+        "view_message_library": "View Safety Messages",
+        "what_now": "WhatNow?",
+        "fake_alert_heading": "Extreme Cold Warning",
+        "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
+        "fake_alert_time": "1HR AGO",
+        "fake_alert_time_exact": "05\/02\/18 at 05:15 CT",
+        "use_cases": {
+            "heading": "Learn More",
+            "first_heading": "How it Works",
+            "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "second_heading": "Use Cases",
+            "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "third_heading": "Implementation Toolkit",
+            "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "fourth_heading": "WhatNow Video",
+            "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
+            "fifth_heading": "Enhance Weather Apps",
+            "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+        },
+        "example_alert": {
+            "heading": "Sample Safety Message Format",
+            "alert_preview": "Alert preview",
+            "what_now_info": "Safety Message Preview",
+            "example_whatnow_request": "Sample Safety Message Database Response",
+            "example_alert_request": "Sample Alert Response",
+            "example_content": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",
+            "example_content_location_header": "AFFECTED LOCATION",
+            "example_content_location": "Nome, Alaska"
+        },
+        "example_whatnow": {
+            "alert_from": "Alert from: American Red Cross",
+            "more_info": "More Info",
+            "heading": "Safety Messages for Extreme Cold",
+            "copy": "These are actions to take to reduce risk and protect you and your household from extreme cold.",
+            "what_now": "IFRC Safety Message Database",
+            "step_1": "Protect your home. Check on pipes and use heating sources safely.",
+            "step_2": "Stay hydrated with warm fluids",
+            "step_3": "Protect yourself with warm clothing and cover exposed skin",
+            "step_4": "Be aware and cautious of icy conditions, especially while driving",
+            "step_5": "Check on neighbors, friends, and those at risk"
+        },
+        "build": {
+            "heading": "Ready to build your app?"
+        },
+        "data_preview": {
+            "heading": "Safety Messages",
+            "sub_heading": "Sign up and view the key action messages from Red Cross \/ Red Crescent National Societies around the world"
+        },
+        "footer": {
+            "terms_conditions": "Terms & Conditions",
+            "about": "About",
+            "privacy": "Privacy",
+            "getting_started": "Getting Started",
+            "docs": "Documentation",
+            "give_feedback": "Give Feedback",
+            "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
+            "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement",
+            "subtitle_1": "About IFRC Key Safety Database",
+            "text_1": "The IFRC Key Safety Database provides access to",
+            "text_2": "Red Cross Red Crescent messages on how people",
+            "text_3": "can safely act in the face of hazards",
+            "subtitle_2": "Find Out More",
+            "email_ifrc": "im@ifrc.org",
+            "web_ifrc": "ifrc.org",
+            "subtitle_3": "Policies",
+            "terms": "Legal Terms",
+            "terms_service": "Terms of Services",
+            "subtitle_4": "Helpful Links",
+            "api_doc": "API Documentation",
+            "faq": "FAQ"
+        }
+    },
+    "register_form": {
+        "heading_1": "Create your free ",
+        "heading_2": "IFRC ",
+        "heading_3": "Safety Message Database",
+        "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
+        "subtitle_2": "If you want to access with the API, sign up and share the messages with the 3 step guide.",
+        "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
+        "who_are_you": "Who are you?",
+        "what_is_your_role": "What is your role?",
+        "description": "COPY PENDING",
+        "national_society_description": "Publish your RCRC National Society's key safety messages for global, national, and local media to access and broadcast.\nContact us to learn more about how to create the messages and connect with media partners.",
+        "developer": "Developer",
+        "national_society": "National society",
+        "sign_up_with": "Sign up with:",
+        "sign_up_agreement": "By creating your account, you agree to our ",
+        "terms_conditions": "Terms and Conditions ",
+        "facebook": "Sign Up With Facebook",
+        "google": "Sign Up With Google",
+        "email_sign_up": "Sign up with your email:",
+        "mail": "mail",
+        "email_ifrc": "im@ifrc.org",
+        "location": "Country",
+        "organisation": "Organization",
+        "industry": "Industry type",
+        "create_account": "Create Account",
+        "last_name": "Last name",
+        "select_country": "Select a country",
+        "select_industry": "Select industry type",
+        "industries": {
+            "media": "Media",
+            "emergency": "Emergency Management",
+            "non_profit": "Non-Profit\/NGO",
+            "humanitarian": "Humanitarian Organization",
+            "red_cross": "Red Cross\/Red Crescent",
+            "education": "Education\/Academia",
+            "gov": "Government Agency",
+            "other": "Other"
+        },
+        "api_used_in": "Where will this API be used?",
+        "api_used_in_help": "Let us now how you intend to use this service in less than 255 characters",
+        "welcome": "Welcome {name}, please complete the following information to get started:",
+        "ifrc_note": "For questions or more information, please contact: ",
+        "contact_gdpc": "Contact GDPC"
+    },
+    "terms_service_page": {
+        "applicable_law": {
+            "body": "The laws of the District of Columbia shall govern all rights and obligations under this Agreement, without giving effect to any principles of conflicts of laws.",
+            "heading": "Applicable Law:"
+        },
+        "body": "You are responsible for maintaining the secrecy and security of the registration key provided by Red Cross to You. You are responsible for maintaining compatibility with the API, as updated from time to time, in order to continue to receive the Data Feeds. Red Cross may release updated versions of the API and Data Feeds at its sole discretion. New versions may not be compatible with previous implementations, and You agree to use the most recently updated version of the Data Feeds at all times.\n\nYou agree not to modify, distribute, decompile, disassemble, or reverse engineer any portion of the API or any software of Red Cross.\n\nYou may not use the API or Data Feeds in a manner that exceeds reasonable request volume or constitutes excessive or abusive usage, as determined by Red Cross at its sole discretion.\n\nYou may not use the API or Data Feeds in a manner that is unlawful, misleading, negligent, malicious, intending to cause harm, or that harms Red Cross, its service providers, its content providers, or any other person, as determined by Red Cross at its sole discretion.\n\nRed Cross may monitor your use of the API and Data Feeds. You may not use any technical means to interfere with such monitoring, and Red Cross may use technical means to overcome any such interference.\n\nUse of Prepare, Respond, and Recover Messages shall be presented only as current or updated to the then-current urgency setting of the correlated Event Alert, and you shall update individual Prepare, Respond, and Recover Messages upon any update of the Data Feeds and\/or correlated Event Alerts by Red Cross.\n\nIndividual Prepare, Respond, and Recover Messages You use shall be associated only with the geographic subnational for which it is issued. If a Prepare, Respond, and Recover Messages includes a reference to a source such as American Red Cross or another Red Cross or Red Crescent national society or organization (each a “Source Reference”), You shall include the Source Reference associated with each Prepare, Respond, and Recover Messages in the form provided in the Data Feeds. You shall make   no further use of any Source Reference.\n\nYou may not translate the Data Feeds, Event Alerts, and\/or Prepare, Respond, and Recover Messages into any other language, make any use, edits or revisions, or alter(s) the meaning of the Data Feed, Event Alerts and\/or Prepare, Respond, and Recover Messages.\n\nYou must ensure that the Data Feeds, remain in your sole possession and\/or control.\n\nYou may not permit Event Alerts and Prepare, Respond, and Recover Messages delivered to End Users to incorporate any advertising or sponsorship.\n\nYou may not make any archive of the Data Feeds in whole or in part.",
+        "contact": "Please contact Red Cross at {0} with any questions regarding the API.",
+        "disclaimer": "The API and Data Feeds are provided FOR INFORMATIONAL AND EDUCATIONAL PURPOSES ONLY, AND on an 'as is ' and ' as available ' basis. Red Cross makes no representations or warranties of any kind, express or implied. Red Cross disclaims all warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose. Red Cross and its employees, officers, governors and agents and licensors will not be liable for damages of any kind arising from the use of the API, Data Feeds, Event Alerts, and\/or Prepare, Respond, and Recover Messages including but not limited to direct, indirect, incidental, punitive and consequential damages.\n\nRed Cross does not guarantee the sequence, accuracy, authenticity or completeness of the API, Data Feed, Event Alert and\/or Prepare, Respond, and Recover Messages and shall not be held liable in any way to You or your End Users or any third party, including without limitation, for any delays, inaccuracies, errors or omissions, in respect of the API, Data FeedS, Event Alert and\/or Prepare, Respond, and Recover Messages provided hereunder.",
+        "entire_agreement": {
+            "body": "The API Terms constitutes the complete and exclusive agreement between Red Cross and You with respect to the subject matter hereof and supersedes all prior oral or written understandings, communications, or agreements not specifically incorporated herein. Red Cross reserves the right to modify or revoke this agreement at any time.",
+            "heading": "Entire Agreement:"
+        },
+        "heading": "API END USER LICENSING AGREEMENT",
+        "intro": "AGREE: BY USING THE SERVICE OR CHECKING THE BOX PROVIDED, USER IS AGREEING TO BE BOUND BY THIS AGREEMENT.\n\nThe API is a tool that allows you(“You”) to retrieve and use data feeds made available by Red Cross including a feed of global weather and disaster event warning and watch notices(“Event Alerts”) and a feed of actionable and contextualized messages on how to prepare to local hazards by hazard type and urgency (“Prepare, Respond, and Recover Messages”, and collectively with the Event Alerts, the“ Data Feeds”). Prepare, Respond, and Recover Messages are intended to accompany Event Alerts or other warning and watch notices associated with weather and disaster event in your own application.Your use of the Data Feeds is governed by the API Terms.",
+        "license_limitations": {
+            "body": "You may use the Data Feeds only in association with your own application subject to the API Terms, and provided You maintain compatibility with the API, as updated from time to time. You are granted a non-exclusive, limited and revocable right to download, use, reproduce and distribute to end users of your own application (“End Users”) Event Alerts and relevant contextualized Prepare, Respond, and Recover Messages in association with the urgency setting of individual Event Alerts from the Data Feeds, subject to the API Terms. You may only use the API to facilitate non-commercial uses of the Data Feeds in accordance with the API Terms. You may not in any event use the API to facilitate commercial uses of the Data Feeds, Event Alerts and\/or Prepare, Respond, and Recover Messages, including without limitation, reselling them, charging to access them, charging to redistribute them, or charging to create derivative works based on them. Red Cross and its licensors maintain all title, ownership, rights and interest in and to the API, Prepare, Respond, and Recover Messages, Event Alerts, Data Feeds and Source References (as defined below) therein. All rights not expressly granted are reserved.",
+            "heading": "License and Limitations:"
+        },
+        "overview": {
+            "body": "The Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
+            "cta": "Click here to register."
+        },
+        "privacy_policy": {
+            "body": "You understand, acknowledge, and agree that the operation of certain programs, services, tools, purchase options, materials, or information in the API requires the submission, use and dissemination of various personal identifying information. Accordingly, if You wish to access and use the API, You acknowledge and agree that Your use of the API will constitute acceptance of the personal identifying information collection and use practices contained in the privacy policy posted: {0}",
+            "heading": "Privacy Policy:"
+        },
+        "prohibited_activities": {
+            "body": "You and your End Users or agents shall not use the API or Data Feeds in the following ways:",
+            "heading": "Prohibited Activities and Conduct:",
+            "prohibited_list": {
+                "one": "To interfere with or disrupt Red Cross services or servers.",
+                "two": "To circumvent or modify any keys or security mechanisms employed by Red Cross or the API, including without limitation any authentication technologies.",
+                "three": "To request, collect, solicit or otherwise obtain access to sign-in names, passwords or other authentication credentials for Red Cross other than what is provided to You for your own account.",
+                "four": "To state or imply affiliation, sponsorship or endorsement by Red Cross or any other Red Cross or Red Crescent national society or organization.",
+                "five": "To state or imply that You own or created the API, Data Feeds, Event Alerts and\/or Prepare, Respond, and Recover Messages.",
+                "six": "To transmit any viruses, worms defects, Trojan horses, or any items of a destructive nature."
+            }
+        },
+        "reserve_rights": "Red Cross reserves the right to alter and\/or no longer provide the API and Data Feeds in whole or in part, either temporarily or permanently, at any time without prior notice. For avoidance of doubt, nothing herein obligates Red Cross to make its API or Data Feeds available to You, and You agrees and acknowledges that any access to is within the sole and absolute discretion of Red Cross.",
+        "severability": {
+            "body": "The invalidity of any term or provision of the API Terms will not affect the validity of any other provision.",
+            "heading": "Severability and Waiver:"
+        },
+        "suspension": {
+            "body": "Red Cross reserves the right to suspend or terminate your access if Red Cross determines, in its sole discretion, that You are engaged in unauthorized use of the API or Data Feed as outlined in the API Terms or that You are using the API or Data Feed in any activity that threatens\/compromises the safety and\/or security of any person or the Red Cross networks.",
+            "heading": "Suspension or Termination:"
+        }
+    },
+    "view_data": {
+        "alert_title": "ALERT:",
+        "more_info": "more info:",
+        "which": "Which Safety Messages do you want to view?",
+        "view_data": "View Data",
+        "alerts": "Alerts",
+        "alert_preview": "Alert preview",
+        "cap_alerts": "CAP Alerts",
+        "onset": "Onset",
+        "severity": "Severity",
+        "title": "Title",
+        "date": "Date",
+        "headline": "Headline",
+        "alert": "Alert",
+        "whatnow_info": "Safety Message Database info",
+        "alert_detail": "Alert Detail",
+        "more": "More info",
+        "area_affected": "Area Affected",
+        "details": "Details",
+        "cap": {
+            "type": "Type",
+            "status": "Status",
+            "urgency": "Urgency",
+            "severity": "Severity",
+            "certainty": "Certainty",
+            "sent": "Sent",
+            "effective": "Effective",
+            "onset": "Onset",
+            "expires": "Expires",
+            "alert_from": "Alert from the",
+            "feed": "Feed",
+            "more": "More info:",
+            "through": "through",
+            "alert_feed": "Alert Feed",
+            "fetching_feed": "Fetching feed",
+            "empty": "There are no current alerts right now"
+        },
+        "national_society_select_placeholder": "Select a National Society"
+    },
+    "user_agreement": {
+        "title": "User agreement",
+        "para_one": "Before you can access the Safety Message Database Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
+        "cta": "I accept",
+        "download": "Click here to view the user agreement document (105KB)"
+    },
+    "hazard_type": {
+        "dropdown": {
+            "select": "Select hazard type",
+            "create": "Create hazard type"
+        },
+        "create": {
+            "title": "Create new hazard type",
+            "request": "request new hazard type",
+            "other": "Other",
+            "email_subject": "Request for new hazard type",
+            "hazard_name": "Hazard name",
+            "hazard_name_placeholder": "Enter hazard name",
+            "upload_icon": "Upload an icon",
+            "icon_requirements": "Icons must be a png and below 30kb",
+            "requestLink": "Contact IFRC to request new hazard type",
+            "success": "Hazard type created",
+            "error": "Sorry, there was an issue creating your new hazard type."
+        }
+    },
+    "subnationals": {
+        "list": {
+            "manage": "Subnational",
+            "create": "Create New Subnational",
+            "edit": "Edit Subnational",
+            "add": "Add Subnational",
+            "empty": "Couldn't find any subnationals",
+            "table_header": {
+                "subnational": "Subnational"
+            }
+        },
+        "select_soc": "Select a society to view and add subnationals",
+        "create": "Create a new Subnational",
+        "form": {
+            "name": "Subnational Name",
+            "name_help": "Name the subnational you want to create custom safety messaging for.",
+            "description": "Description",
+            "description_help": "Provide more information about the subnational. i.e. San Francisco Bay Area."
+        },
+        "edit": "Edit Subnational",
+        "delete": "This will delete the subnational and any content associated with that subnational."
+    },
+    "table_headers": {
+        "profile_pic": "profile pic",
+        "first_name": "Last name",
+        "last_name": "last_name",
+        "role": "role",
+        "society": "society",
+        "date": "Date",
+        "country": "Country",
+        "email": "email",
+        "created_at": "created_at",
+        "last_logged_in_at": "Last Active",
+        "terms_version": "profile",
+        "actions": "Actions",
+        "action": "Action",
+        "content": "Content",
+        "country_code": "Location",
+        "organisation": "organisation",
+        "industry_type": "industry type",
+        "all_roles": "All roles",
+        "version": "Version",
+        "user": "User",
+        "language_code": "Language Code"
+    },
+    "terms_conditions": {
+        "title": "Terms and Conditions",
+        "accept": "Accept"
+    },
+    "badges": {
+        "hazardCreate": "Hazard Created",
+        "published": "Published",
+        "draft": "Draft",
+        "bulkUploadDraft": "Message File Upload Draft"
     }
-  },
-  "api_stats": {
-    "page_title": "API Stats",
-    "download_data": "ውሂብ አውርድ",
-    "start_date": "የመጀመሪያ ቀን",
-    "end_date": "የመጨረሻ ቀን",
-    "table_select": {
-      "keys": "የAPI ቁልፎች",
-      "routes": "የAPI መንገዶች"
-    },
-    "field_headers": {
-      "application_name": "Application Name",
-      "number_of_hits": "Number of Hits",
-      "estimated_reach": "Estimated Reach",
-      "organisation": "Organisation",
-      "application": "Application"
-    },
-    "cumulative_cards": {
-      "hits": "አጠቃላይ ስኬቶች",
-      "accounts": "ጠቅላላ መለያዎች",
-      "est_impacted_users": "የሚገመተው ተጽዕኖ ያሳደሩ ተጠቃሚዎች"
-    },
-    "empty": "ለተሰጠው የቀን ክልል ምንም ስታቲስቲክስ አልተገኘም"
-  },
-  "api_usage": {
-    "applications": "መተግበሪያዎች",
-    "view_user": "ተጠቃሚን መመልከት",
-    "reactivate": "ዳግም ማንቀሳቀስ",
-    "app_detail": "የመተግበሪያው ዝርዝር",
-    "app_details": "የመተግበሪያው ዝርዝሮች",
-    "activity": "ተግባር",
-    "view_all_activity": "የዚህን መተገበሪያ ሁሉንም እንቅስቃሴ ተመልከት",
-    "api_users": " ኤ ፒ አይ ተጠቃሚዎች",
-    "terms_conditions": "የሁሉም ደንቦች እና መመሪያዎች እትሞች",
-    "view_prev_terms": "የቀደሙ እትሞችን ይመልከቱ",
-    "current_version": " የአሁን ቅጂ",
-    "version": "ቅጂ"
-  },
-  "applications": {
-    "my_apps": "የእኔ መተግበሪያዎች",
-    "new_tc": "አዳዲስ ደንቦች እና መመሪያዎች",
-    "build": "አዲስ መተግበሪያ ይገንቡ",
-    "build_key": "አዲስ �ና መልእክት ይገንቡ",
-    "edit": "መተግበሪያን ያርትዑ",
-    "building": "መተግብሪያ ግንባታ",
-    "building_key": "የ API ቁልፍ መገንባት",
-    "no_apps": "እርሶ መተግበሪያ የሎትም፣ ለመጀመር አንድ ይገንቡ።",
-    "api_keys": "የ API ቁልፎች"
-  },
-  "home": {
-    "home": "መነሻ",
-    "welcome": "እንኳን ደህና መጡ!",
-    "admin_intro": "እዚህ ተጠቃሚዎችን ማስተዳደር፣ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል እና ማተም እና የኤፒአይ አጠቃቀምን ማየት ይችላሉ።",
-    "ns_admin_intro": "እዚህ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል እና ማተም ይችላሉ",
-    "ns_editor_intro": "እዚህ የደህንነት መልዕክት ዳታቤዝ ይዘትን ማስተካከል ይችላሉ",
-    "api_user_intro": "እዚህ  የእርሶን መተግበሪያዎች ይመልከቱ እና አካውንቶን ያስተዳድሩ ።",
-    "role_changed_title": "ሚናዎ ተቀይሯል",
-    "role_changed_p": "የሚከተለው ሚና ተመድቧል:",
-    "role_changed_p2": "ፈቃዶችዎ እንደሚከተለው ናቸው:",
-    "role_changed_confirm": "አረጋግጥ",
-    "role_changed_dismiss": "ዝጋ"
-  },
-  "landing": {
-    "strapline": "የደህንነት መልዕክት ዳታቤዝ አገልግሎት",
-    "strapline_part_2": "የአለም አቀፍ  ቀይ መስቀል \/ ቀይ ጨረቃ ቁልፍ የደህንነት መልዕክቶች",
-    "head_1": "IFRC ደህንነት",
-    "head_2": "የመልዕክት ዳታቤዝ",
-    "head_text_1": "በIFRC የህዝብ ግንዛቤ እና ላይ የተመሰረቱ የደህንነት መልዕክቶች",
-    "head_text_2": "የህዝብ ትምህርት (PAPE) ምንጭ",
-    "head_bottom_1": "ሰዎች ለአደጋዎች በአስተማማኝ ሁኔታ እንዲዘጋጁ ለመርዳት የታመኑ ቀይ መስቀል ቀይ ጨረቃ",
-    "head_bottom_2": "ተግባራዊ መልዕክቶችን ይድረሱ እና ያካፍሉ",
-    "head_bottom_3": "እና ምላሽ ይስጡ።",
-    "signup": "ይመዝገቡ",
-    "it_works": "እንዴት እንደሚሰራ",
-    "works_1_a": "ቀይ መስቀል ቀይ ጨረቃ ብሔራዊ",
-    "works_1_b": "ማህበረሰብ እና የመንግስት አጋሮች",
-    "works_1_c": "በብሔራዊ የመልዕክት ስብስቦች ይስማማሉ",
-    "works_2_a": "ብሔራዊ ማህበረሰቦች ያትማሉ",
-    "works_2_b": "የደህንነት መልዕክቶች በ",
-    "works_2_c": "ዳታቤዝ",
-    "works_3_a": "የመቀየር ኤጀንሲዎች እና",
-    "works_3_b": "የመገናኛ ቻናሎች",
-    "works_3_c": "ከዳታቤዝ ኤፒአይ ጋር ይገናኙ",
-    "works_4_a": "አጋሮች ያካፍላሉ",
-    "works_4_b": "መልዕክቶች በ",
-    "works_4_c": "ቻናሎቻቸው",
-    "works_5_a": "ማህበረሰቦች ይቀበላሉ",
-    "works_5_b": "መልዕክቶቹን እና",
-    "works_5_c": "በአስተማማኝ ሁኔታ እርምጃ ይውሰዱ",
-    "learn_more": "ተጨማሪ ይወቁ",
-    "watch_video": "ቪዲዮ ይመልከቱ",
-    "example_case": "የምሳሌ አጠቃቀም ጉዳይ",
-    "api": "ኤፒአይ",
-    "hurricane": "የአውሎ ንፋስ ቀደምት ጋር መልዕክቶችን ያካትቱ",
-    "warning_alerts": "የማስጠንቀቂያ ማንቂያዎች",
-    "social_media": "ማህበራዊ ሚዲያ",
-    "post_images": "የዱር እሳት ዝግጁነት ምስሎችን ይለጥፉ",
-    "messages_network": "መልዕክቶች ወደ አውታረ መረብዎ",
-    "whatsapp": "ዋትስአፕ",
-    "share_flood": "የጎርፍ ቅነሳ እርምጃዎችን ከእርስዎ ጋር ያካፍሉ",
-    "family": "ቤተሰብ እና ጓደኞች",
-    "impact": "ተፅዕኖ",
-    "sign_up_today": "ዛሬ ይመዝገቡ",
-    "developer": {
-      "strap_para_one": "በአካባቢያችን ባሉ ቁልፍ የድርጊት መልዕክቶቻችን ማህበረሰቦች ከአደጋዎች እንዲዘጋጁ ፣ ምላሽ እንዲሰጡ እና እንዲያገግሙ ያግዙ ፡፡",
-      "strap_para_two": "የደህንነት መልዕክቶችን ወደ መተግበሪያዎ ለማዋሃድ ቀላል የአራት ደረጃ መመሪያችንን ይጠቀሙ። ይመዝገቡ እና ሁሉንም የሚገኙ መልዕክቶች ይመልከቱ።"
-    },
-    "national_society": {
-      "strap_para_one": "ለአለምአቀፍ ፣ ለብሔራዊ እና ለአካባቢያዊ የመገናኛ ብዙሃን ለመድረስ እና ለማሰራጨት የ RCRC ብሔራዊ ማህበርዎን ቁልፍ የደህንነት መልዕክቶች ያትሙ ፡፡",
-      "strap_para_two": "መልእክቶቹን እንዴት መፍጠር እና ከሚዲያ አጋሮች ጋር መገናኘት ስለመቻል የበለጠ ለማወቅ እኛን ያነጋግሩን።"
-    },
-    "strap_para_one": "በአካባቢያችን ባሉ ቁልፍ የድርጊት መልዕክቶቻችን ማህበረሰቦች ከአደጋዎች እንዲዘጋጁ ፣ ምላሽ እንዲሰጡ እና እንዲያገግሙ ያግዙ ፡፡",
-    "strap_para_two": "የደህንነት መልዕክቶችን ወደ መተግበሪያዎ ለማዋሃድ ቀላል የአራት ደረጃ መመሪያችንን ይጠቀሙ። ይመዝገቡ እና ሁሉንም የሚገኙ መልዕክቶች ይመልከቱ።",
-    "view_data": "መረጃውን ይመልከቱ",
-    "view_message_library": "የደህንነት መልዕክቶችን ይመልከቱ",
-    "what_now": "ዋትናው?",
-    "fake_alert_heading": "እጅግ በጣም የቀዘቀዘ ማስጠንቀቂያ",
-    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
-    "fake_alert_time": "አንድ ሰዓት በፊት",
-    "fake_alert_time_exact": "05\/02\/18 at 05:15 CT",
-    "use_cases": {
-      "heading": "የበለጠ ይማሩ",
-      "first_heading": " እንዴት እንደሚሰራ",
-      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "second_heading": "ጉዳዮችን ይጠቀሙ",
-      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "third_heading": "የአፈጻጸም  ስብስብ",
-      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fourth_heading": "ዋትናው ቪድዮ",
-      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fifth_heading": "የአየር ሁኔታ መተግበሪያዎችን ያሻሽሉ",
-      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-    },
-    "example_alert": {
-      "heading": "የናሙና የደህንነት መልዕክት ቅርጸት",
-      "alert_preview": " የማንቂያ ቅድመ ዕይታ",
-      "what_now_info": "የደህንነት መልዕክት ቅድመ እይታ",
-      "example_whatnow_request": "የናሙና የደህንነት መልዕክት ዳታቤዝ ምላሽ",
-      "example_alert_request": "የናሙና የማንቂያ ምላሽ",
-      "example_content": "የአየር ሁኔታ አማካሪ # 3 የመጨረሻ እስከ 11 AM, ጥር 29, 2018 እ.ኤ.አ.\nለቀዝቃዛው ግንባር መጨረሻ\n\nየቀዝቃዛው ግንባር መጨረሻ ውጤት ተዳክሟል ፡፡ የተሻሻሉ የአየር ሁኔታዎች በኖም ላይ ይሞከራሉ ፡፡ ሆኖም ገለልተኛ የሆነ ዝናብ ወይም ነጎድጓድ በተለይም ከሰዓት በኋላ ወይም ምሽት በእነዚህ አካባቢዎች በምዕራቡ ዓለም የሚጠበቅ መሆን አለበት ፡፡\n\nበዚህ ሁኔታ  ይህ የአየር ሁኔታ ስርዓት የመጨረሻ አማካሪ ነው ፡፡",
-      "example_content_location_header": "የተጠቃ አካባቢ",
-      "example_content_location": "ኖሜ ፣ አላስካ"
-    },
-    "example_whatnow": {
-      "alert_from": "ማስጠንቀቂያ ከአሜሪካ ቀይ መስቀል",
-      "more_info": "ተጨማሪ መረጃ",
-      "heading": "ለከባድ ቅዝቃዜ የደህንነት መልዕክቶች",
-      "copy": "እነዚህ አደጋን ለመቀነስ እና እርስዎን እና ቤተሰብዎን ከከባድ ብርድ ለመጠበቅ የሚወሰዱ እርምጃዎች ናቸው።",
-      "what_now": "IFRC የደህንነት መልዕክት ዳታቤዝ",
-      "step_1": "ቤትዎን ይጠብቁ ቧንቧዎችን ይፈትሹ እና የማሞቂያ ምንጮችን ደህንነቱ በተጠበቀ ሁኔታ ይጠቀሙ ፡፡",
-      "step_2": "ሞቃት ፈሳሾች በመውስድ ከድርቀት ይከላከሉ",
-      "step_3": "እራስዎን በሞቀ ልብስ ይከላከሉ እና የተጋለጠ ቆዳን ይሸፍኑ",
-      "step_4": "በተለይም በሚያሽከረክሩበት ጊዜ የበረዷማ ሁኔታዎችን ይወቁ እንዲሁም ጥንቃቄ ያድርጉ::",
-      "step_5": "ጎረቤቶችን ፣ ጓደኞችን እና ለአደጋ የተጋለጡትን ያረጋግጡ::"
-    },
-    "build": {
-      "heading": "መተግበሪያዎን ለመገንባት ዝግጁ ነዎት?"
-    },
-    "data_preview": {
-      "heading": "የደህንነት መልዕክቶች",
-      "sub_heading": "በዓለም ዙርያ ካሉት የቀይ መስቀል\/ቀይ ጨረቃ ብሔራዊ ማኅበራት ቁልፍ የድርጊት መልእክቶችን ለማየት ይመዝገቡ"
-    },
-    "footer": {
-      "terms_conditions": "ውሎች እና ሁኔታዎች",
-      "about": "ስለ",
-      "privacy": "ግላዊነት",
-      "getting_started": "መጀመር",
-      "docs": "ሰነድ",
-      "give_feedback": "ግብረ-መልስ ይስጡ",
-      "gdpc_logo": "የዓለም አቀፍ አደጋ ዝግጅት ማዕከል አርማ",
-      "ifrc_logo": "የዓለም አቀፍ የቀይ መስቀል እና የቀይ ጨረቃ ንቅናቄ አርማ",
-      "subtitle_1": "ስለ IFRC ዋና ደህንነት ዳታቤዝ",
-      "text_1": "IFRC ዋና ደህንነት ዳታቤዝ የሚያቀርበው",
-      "text_2": "የቀይ መስቀል እና የቀይ ጨረቃ መልእክቶችን በአደጋዎች ፊት",
-      "text_3": "ህዝብ በደህንነት እንዴት እንደሚሰራ ይድረሳል።",
-      "subtitle_2": "ተጨማሪ ይወቁ",
-      "email_ifrc": "im@ifrc.org",
-      "web_ifrc": "ifrc.org",
-      "subtitle_3": "ፖሊሲዎች",
-      "terms": "ውሎች እና ሁኔታዎች",
-      "subtitle_4": "ጠቃሚ አገናኞች",
-      "api_doc": "የ API ሰነድ",
-      "faq": "FAQ (አገናኝ ሊሰጥ ይገባል)"
-    }
-  },
-  "register_form": {
-    "heading_1": "ነፃ የ IFRC ደህንነት መልእክት �ና ዳታቤዝ ይፍጠሩ",
-    "heading_2": "IFRC ",
-    "heading_3": "ደህንነት መልእክት ዳታቤዝ",
-    "subtitle_1": "በአካባቢያቸው አደጋዎች ለመዘጋጀት እና ለመልስ ህዝብን ይርዱ።",
-    "subtitle_2": "በ API ለመድረስ ከፈለጉ፣ ይመዝገቡ እና መልእክቶችን በ #-ደረጃ መመሪያ ያጋሩ።",
-    "subtitle_3": "የቀይ መስቀል እና �ና ደህንነት መልእክቶችን ለመላ አለም፣ ለብሔራዊ እና ለአካባቢያዊ ሚዲያ ለማስተዋወቅ ይመዝገቡ።",
-    "who_are_you": "ማን ነዎት?",
-    "what_is_your_role": "ሚናዎ ምንድን ነው?",
-    "description": "COPY PENDING",
-    "national_society_description": "የ RCRC ብሔራዊ ማህበርዎን ዋና ደህንነት መልእክቶችን ለመላ አለም፣ ለብሔራዊ እና ለአካባቢያዊ ሚዲያ ለማስተዋወቅ ይለቅቁ።\nስለ መልእክቶቹ ለመፍጠር እና ከሚዲያ አጋሮች ጋር ለመገናኘት ተጨማሪ ለማወቅ እኛን ያግኙ።",
-    "developer": "ፈጣሪ",
-    "national_society": "ብሔራዊ ማኅበረሰብ",
-    "sign_up_with": "በእነዚህ ይመዝገቡ፡",
-    "sign_up_agreement": "መለያዎን በመፍጠርዎ ",
-    "terms_conditions": "በውሎቻችን እና ግዴታዎቻችን ተስማምተዋል፡፡ ",
-    "facebook": "በፌስቡክ ይመዝገቡ",
-    "google": "በ ጉግል ይመዝገቡ",
-    "email_sign_up": "ወይም በኢሜልዎ ይመዝገቡ:",
-    "mail": "ኢሜል",
-    "email_ifrc": "im@ifrc.org",
-    "location": "መገኛ",
-    "organisation": "ድርጅት",
-    "industry": "የኢንዱስትሪ ዓይነት",
-    "create_account": "መለያ ፍጠር",
-    "last_name": "የአያት ስም",
-    "select_country": "ሀገር ይምረጡ",
-    "select_industry": "የኢንዱስትሪ ዓይነትን ይምረጡ",
-    "industries": {
-      "media": "መገናኛ ዘዴ",
-      "emergency": "የአደጋ ጊዜ አስተዳደር",
-      "non_profit": "ለትርፍ ያልተቋቋመ \/ መንግስታዊ ያልሆነ ድርጅት",
-      "humanitarian": "የሰብአዊ እርዳታ ድርጅት",
-      "red_cross": "ቀይ መስቀል \/ ቀይ ጨረቃ",
-      "education": "ትምህርት \/ አካዳሚ",
-      "gov": "የመንግስት ድርጅት",
-      "other": "ሌላ"
-    },
-    "api_used_in": "ይህ ኤ.ፒ.አይ ጥቅም ላይ የሚውለው የት ነው?",
-    "api_used_in_help": "ይህንን አገልግሎት ከ 255 ባነሱ ካራክተሮች (ቁምፊዎች) ውስጥ ለመጠቀም እንዴት እንደፈለጉ አሁን እንመልከት",
-    "welcome": "እንኳን በደህና መጡ {ስም} ፣ እባክዎን ለመጀመር የሚከተሉትን መረጃዎች ያጠናቅቁ:",
-    "ifrc_note": "ለጥያቄዎች ወይም ተጨማሪ መረጃ፣ እባክዎ ያግኙን: ",
-    "contact_gdpc": "GDPC ን ያነጋግሩ"
-  },
-  "terms_service_page": {
-    "applicable_law": {
-      "body": "የኮሎምቢያ ዲስትሪክት ህጎች በዚህ ስምምነት መሠረት ማንኛውንም የሕግ ግጭቶች መርሆዎች ሳይፈጽሙ ሁሉንም መብቶች እና ግዴታዎች ያስተዳድራሉ ፡፡",
-      "heading": "ተፈጻሚ ህግ:"
-    },
-    "body": "በቀይ መስቀል ለእርስዎ የተሰጠውን የምዝገባ ቁልፍ ምስጥራዊነት እና ደህንነት የመጠበቅ ሃላፊነት የእርስዎ ነው ፡፡ ከጊዜ ወደጊዜ ለማዘመን እና መረጃዎችን (Data Feeds) መቀበልን ለመቀጠል ከኤ.ፒ.አይ ጋር ተጓዳኝነትን ማስቀጠል የእርስዎ ሃላፊነት ነው፡፡ ቀይ መስቀል የዘመኑ የኤፒአይ ስሪቶችን እና መረጃዎችን በራሱ ምርጫ ሊለቅ ይችላል። አዲስ ስሪቶች ከቀደሙት ትግበራዎች ጋር ላይጣጣሙ ይችላሉ ፤ እንዲሁም በጣም በቅርብ ጊዜ የተሻሻለውን የመረጃ መቀበያ ስሪት በማንኛውም ጊዜ ለመጠቀም ተስማምተዋል።\n\nማንኛውንም የኤ.ፒ.አይ ክፍልን ወይም ማንኛውንም የቀይ መስቀልን ሶፍትዌር ላለማሻሻል ፣ ላለማሰራጨት ፣ ላለመበተን ፣ ላለማቀናጀት ወይም ላለመቀልበስ ተስማምተዋል ፡፡\n\nኤ.ፒ.አይ.ውን ወይም የመረጃ መቀበያውን ቀይ መስቀል በወሰነው ውሳኔ መሠረት ከተመጣጣኝ የጥያቄ መጠን በላይ ወይም ከመጠን በላይ ወይም አላግባብ ላይጠቀሙ ይችላሉ::\n\nበቀይ መስቀል ብቸኛ ውሳኔ መሠረት ኤ.ፒ.አይ. ወይም የመረጃ መቀበያዎችን በሕገ-ወጥ ፣ በተሳሳተ ፣ በቸልተኛ ፣ በተንኮል-አዘል መንገድ ቀይ መስቀል፣ የአገልግሎት አቅራቢዎች ፣ የይዘት አቅራቢዎች ወይም ሌላ ሰው ላይ ጉዳት ለማድረስ በማሰብ ወይም በሚጎዳ መንገድ መጠቀም አይችሉም ፡፡\n\nቀይ መስቀል የኤ.ፒ.አይ. እና የመረጃ መቀበያዎች አጠቃቀምዎን ሊከታተል ይችላል። በእንደዚህ ዓይነት ቁጥጥር ውስጥ ጣልቃ ለመግባት ማንኛውንም ቴክኒካዊ ዘዴዎችን አይጠቀሙም ፤ እንዲሁም ቀይ መስቀል ማንኛውንም እንደዚህ ዓይነቱን ጣልቃ ገብነት ለማሸነፍ ቴክኒካዊ መንገዶችን ሊጠቀም ይችላል ፡፡\n\nየዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች (Prepare, Respond, and Recover Messages) መቅረብ ያለባቸው በወቅቱ የክስተት ማንቂያ (Event Alert) አንገብጋቢ መቼት መሰረት ወቅታዊ ወይም የዘመኑ ሲሆኑ ብቻ ነው ፤ እንዲሁም ግለሰብ የዝግጅት ፣ እያንዳንዳቸውን የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች (Prepare, Respond, and Recover Messages) በቀይ መስቀል የሚወጡ የመረጃ መቀበያዎች እና\/ወይም ተያያዥ የክስተት ማንቂያዎች (Event Alert) ወቅታዊ በሚሆኑበት ወቅት ማዘመን አለብዎት፡፡\n\nእያንዳንዱ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክት (Prepare, Respond, and Recover Message) መገናኘት ያለበት ለወጣበት መልክአ-ምድር ብቻ ነው:: የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች እንደ አሜሪካን ቀይ መስቀል ወይም ሌላ የቀይ መስቀልን ወይም የቀይ ጨረቃ ብሔራዊ ማኅበረሰብን ወይም ድርጅትን እንደ ማጣቀሻ ከተጠቀሙ (እያንዳንዱ “ምንጭ ማጣቀሻ”) ለመረጃ መቀበያዎች በተዘጋጀው ፎርም ላይ ከእያንዳንዳቸው የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች ጋር የተገናኘውን ምንጭ ማጣቀሻ መግለፅ አለብዎት፡፡ ማንኛውንም ምንጭ ማጣቀሻ መጠቀም አይቻልም::\n\nየመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ወደ ሌላ ቋንቋ መተርጎም፣ መጠቀም፣ አርትኦት ማድረግ ወይም መከለስ ወይም የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ትርጉም መቀየር አይችሉም ፡፡\n\nየመረጃ መቀበያዎችን  በርስዎ ሀላፊነት ወይም ቁጥጥር ውስጥ መሆናቸውን ማረጋገጥ አለብዎት::\n\nየክስተት ማንቂያዎችን እና  የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን ማንኛውንም ማስታወቂያ ወይም ስፖንሰርሺፕን አካትቶ ለዋና ተጠቃሚዎች እንዲደርሱ ማድረግ አይችሉም ፡፡\n\nበጠቅላላው ወይም በከፊል የመረጃ መቀበያዎችን መዝገብ  መያዝ አይችሉም ፡፡",
-    "contact": "ኤ.ፒ.አይ.ን በተመለከተ ማንኛውም ጥያቄ ካለዎት እባክዎን ቀይ መስቀልን በ {0} ያነጋግሩ ፡፡",
-    "disclaimer": "ኤ.ፒ.አይ እና የመረጃ መቀበያዎች ለመረጃ እና ለትምህርታዊ ዓላማዎች ብቻ በ 'እንደነበረው' እና 'በተገኘው' መሠረት የተሰጡ ናቸው። ቀይ መስቀል በግልጽም ሆነ በተዘዋዋሪ ምንም ዓይነት ውክልና ወይም ዋስትና አይሰጥም ፡፡ በተዘዋዋሪ የተመለከቱ  የመሸጥ ዋስትናዎች እና ብቃት ማረጋገጫዎችን ጨምሮ ቀይ መስቀል ሁሉንም ዋስትናዎች  አይቀበልም፡፡ በቀጥታ፣ በተዘዋዋሪ፣ በአጋጣሚ፣ በቅጣት እና በተከታይነት የሚፈጠሩ ጉዳቶችን ጨምሮ ኤ.ፒ.አይን፣ የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን በመጠቀም ወቅት ለሚደርሱ ጉዳቶች ቀይ መስቀል እና ሰራተኞቹ ፣ መኮንኖች ፣ ገዥዎች እና ወኪሎች እንዲሁም ፈቃድ ሰጪዎች ተጠያቂ አይሆኑም ፡፡\n\nቀይ መስቀል ኤ.ፒ.አይን፣ የመረጃ መቀበያዎችን ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶችን  ቅደም ተከተል ፣ ትክክለኛነት ፣ እውነተኝነት ወይም ሙሉነት ዋስትና አይሰጥም እንዲሁም በምንም መንገድ ለእርስዎ ወይም ለዋና ተጠቃሚዎችዎ ወይም ለማንኛውም ሶስተኛ አካል ማንኛውንም መዘግየቶች ፣ ጉድለቶች፣ ስህተቶች ወይም ግድፈቶችን ጨምሮ ያለምንም ገደብ ቀጥሎ ያሉትን ኤ.ፒ.አይ፣ የመረጃ መቀበያዎች ፣ የክስተት ማንቂያዎችን  እና \/ ወይም የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች በተመለከተ ተጠያቂ አይሆንም፡፡",
-    "entire_agreement": {
-      "body": "የኤ.ፒ.አይ. ውሎች በዚህ ጉዳይ ላይ በቀይ መስቀል እና በርስዎ መካከል የተደረገ የተሟላ እና ብቸኛ ስምምነትን የሚያካትቱ ሲሆን ከዚህ በፊት የተደረጉ የቃል ወይም የጽሑፍ ግንዛቤዎችን ፣ ግንኙነቶችን ወይም በዚህ ውስጥ ያልተካተቱ ስምምነቶችን ሁሉ ይተካሉ ፡፡ ቀይ መስቀል ይህንን ስምምነት በማንኛውም ጊዜ የማሻሻል ወይም የመሻር መብቱ የተጠበቀ ነው ፡፡",
-      "heading": "አጠቃላይ ስምምነት:"
-    },
-    "heading": "የኤ.ፒ.አይ. ዋና ተጠቃሚ ፈቃድ አሰጣጥ ስምምነት",
-    "intro": "እስማማለሁ: አገልግሎቱን በመጠቀም ወይም የቀረበው ሣጥን ላይ ምልክት በማድረግ ተጠቃሚው በዚህ ስምምነት እንዲታሰር እየተስማማ ነው።\n\nኤ.ፒ.አይ.ው እርስዎ (“እርስዎ”) በቀይ መስቀል በኩል የሚቀርቡ የዓለም የአየር ሁኔታ እና የአደጋ ክስተት ማስጠንቀቂያ እና የእይታ ማስታወቂያዎችን (“የክስተት ማንቂያዎች”) እና ተግባራዊ እና አውዳዊ መልእክቶችን ጨምሮ ለአካባቢያዊ አደጋዎች በአደጋው አይነት እና አስቸኳይነት መሰረት መዘጋጀትን ጨምሮ የመረጃ መቀብያዎችን (የዝግጅት ፣ የምላሽ አሰጣጥ እና የመልሶ ማግኛ መልዕክቶች እና በአጠቃላይ የክስተት ማንቂያዎችን እና የመረጃ መቀብያዎችን) ሰርስረው እንዲያወጡ የሚያስችልዎ መሳሪያ ነው፡፡ ተዘጋጅ፣ መልስ እና እንደገና አግኝ የሚሉ መልእክቶች ከዝግጅት ማንቂያዎች ወይም ሌላ ማስጠንቀቂያ ጋር እና በእርስዎ መተግበሪያ ውስጥ ከአየር ንብረት እና የአደጋ ክስተት ጋር  ተያያዥ ከሆኑ የማሳሰቢያ ማስታዎሻዎች  ጋር  አብረው እንዲመጡ የሚታሰቡ ናቸው። የእርስዎ መረጃ አቅርቦት በኤፒአይ ቃላት የሚመራ ነው።",
-    "license_limitations": {
-      "body": "በየጊዜው ከሚታደሰው ከኤፒ አይ ጋር ያለውን ተመጣጣኝነት እስከጠበቁ ድረስ የመረጃ አቅርቦቶችን ለኤፒአይ ውሎች ከሚሆኑ ትግበራዎች ጋር አያይዘው ሊጠቀሙ ይችላሉ። የራስዎን መተግበሪያ (“የመጨረሻ ተጠቃሚዎች”) የክስተት ማስጠንቀቂያዎች እና አግባብነት ያለው ዐውደ-ጽሑፍ የተስተካከለ መልዕክቶችን በአስቸኳይ ፣ በፍጥነት በማደስ ፣ መልሶ የማግኘት ፣ የመጠቀም ፣ የማባዛት እና የማሰራጨት ብቸኛ ያልሆነ ፣ ውስን እና ሊሻር የሚችል መብት ተሰጥቶዎታል ፡፡ በኤፒአይ ውሎች መሠረት ከእያንዳንዱ የውሂብ ምግቦች የግለሰብ የዝግጅት ማስጠንቀቂያዎች ቅንብር።  ኤፒአይን መጠቀም የሚችሉት ከንግድ ጋር ያልተያያዙ በኤፒአይን ውል መሠረት የመረጃ አቅርቦቶችን ለማቃለል ብቻ ነው። የመረጃ አቅርቦቶች፣ የዝግጅት ማስጠንቀቂያዎችን እና \/ ወይም ለማዘጋጀት ፣ ምላሽ ለመስጠት እና መልዕክቶችን ያለገደብ ጨምሮ ፣ መልሶ በመሸጥ ፣ እነሱን ለመድረስ ክፍያ በመጠየቅ ፣ እነሱን እንደገና ለማሰራጨት ክፍያ ለመሙላት ወይም ክፍያ ለመሙላት በማንኛውም ሁኔታ ኤ.ፒ.አይ. መጠቀም አይችሉም ፡፡ በእነሱ ላይ የተመሠረተ የመነሻ ሥራዎችን ለመፍጠር ፡፡ የኤፒአይ ኀላፊነት፣ ባለቤትነት፣ መብትና ትርፍ የቀይ መስቀልና ፈቃድ የሰጡት አካላት ነው። ይህም የሚያካትተው ዝግጅትን፣ ምላሽን፣ የጠፉ መልእክቶችን የመመለስን፣ የኹናት ማስጠንቀቂያዎችን፣ የመረጃ አቅርቦትንና የምንጭ ጣቀሻዎችን ነው። በግልጽ ያልተሰጡ  መብቶች በሙሉ ተጠብቀዋል ፡፡",
-      "heading": "ፈቃድና ገደቦች:-"
-    },
-    "overview": {
-      "body": "ግሎባል የአደጋ ዝግጁነት ማዕከል የደህንነት መልዕክት ዳታቤዝ አገልግሎት መተግበሪያ ፕሮግራም በይነገጽ (“ኤፒአይ”) በአሜሪካ ብሔራዊ ቀይ መስቀል (“ቀይ መስቀል”) ለእርስዎ ይገኛል። ኤፒአይ የምዝገባ ቁልፍ ያስፈልገዋል። በምዝገባ ሂደት ውስጥ፣ ከዚህ በታች ያለውን ሰነድ በማውረድ እና ከታች ያለውን 'ተቀብያለሁ' የሚለውን ቁልፍ በመጫን የተጠቃሚውን ስምምነት ውሎች ከዚህ በታች ካለው ሰነድ በማውረድ እና 'ተቀብያለሁ' የሚለውን ቁልፍ በመጫን በ {0} ላይ ከሚገኘው ቀይ መስቀል ድር ጣቢያ የአገልግሎት ውል ስምምነት ውሎች ጋር (በጋራ “ኤፒአይ ውሎች”) መስማማት አለብዎት። ኤፒአይ ውሎች የእርስዎን የኤፒአይ አጠቃቀም እና በኤፒአይ በኩል የሚገኙትን ሊወርዱ የሚችሉ የኤሌክትሮኒክስ ቁሳቁሶችን ይቆጣጠራሉ። {1}",      "cta": "ለመመዝገብ ይህንን ይጫኑ።"
-    },
-    "privacy_policy": {
-      "body": "ኤፒአይ ውስጥ የተወሰኑ መርሃግብሮች፣ አገልግሎቶች፣  ቈሳቍስ፤ የግዢ አማራጮች፤ ዕቆች፤ ወይም መረጃዎች የሚያስፈልጋቸው እርስዎን ሊያሳውቁ የሚችሉ የግል መረጃዎች አቅርቦትን፣ ተጠቃሚነትንና ሥርጭትን መኾኑን ተረድተዋል፣ ተቀብለዋል እንዲሁም ተስማምተዋል። በዚህ መሠረት ኤ.ፒ.አይን ለመድረስ እና ለመጠቀም ከፈለጉ ኤፒአይው መጠቀሙ በ {0} በተለጠፈው የግላዊነት ፖሊሲ ውስጥ የተካተቱትን የግል መለያ መረጃዎችን የመሰብሰብና የመጠቀም ልምዶችን መቀበልን እንደሚቀበል እውቅና ይሰጡዎታል እንዲሁም ይስማማሉ ፡፡",
-      "heading": "የግላዊነት ፖሊሲ"
-    },
-    "prohibited_activities": {
-      "body": "እርስዎና የመጨረሻ ተጠቃሚዎችዎ ወይም ወኪሎችዎ ኤፒአይ ወይም የመረጃ አቅርቦቶችን በሚከተሉት መንገዶች መጠቀም የለባቸውም፤",
-      "heading": "የተከለከሉ ተግባራትና ሥነ መግባራት:-",
-      "prohibited_list": {
-        "one": "የቀይ መስቀል አገልግሎቶችን ወይም አገልጋዮችን ለማደናቀፍ ወይም ለማስተጓጎል ፡፡",
-        "two": "በቀይ መስቀል ወይም በኤ.ፒ.አይ. የተቀጠሩ ማናቸውንም የማረጋገጫ ቴክኖሎጂዎች ያለ ምንም ገደብ ጨምሮ ማንኛውንም ቁልፍ ወይም የደህንነት ዘዴዎችን ለመከልከል ወይም ለማሻሻል ፡፡",
-        "three": "ለራስዎ መለያ ለእርስዎ ከሚቀርበው በስተቀር ለቀይ መስቀል የመለያ መግቢያ ስሞችን ፣ የይለፍ ቃሎችን ወይም ሌሎች የማረጋገጫ ማስረጃዎችን ለመጠየቅ ፣ ለመሰብሰብ ፣ ለመጠየቅ ወይም በሌላ መንገድ ለማግኘት ፡፡",
-        "four": " በቀይ መስቀል ወይም ከቀይ መስቀል ጋር ተያያዥነት ባላቸው ድርጅቶች ወይም ማኅበራት መዋሃድን፣ መደገፍን ወይም መታገዝን መግለጽ ወይም ማካተት",
-        "five": "ኤፒአዩን፣ የመረጃ አቅርቦቱን፣ የክስተት ማንቂያ እና\/ ወይም የመዘጋጃ፣ የምላሽ መስጫ፣ እና የመመለሻ መልእክቶችን የእርስዎ እንደሆን ወይም እንደፈጠሩት  ለማስቀመጥ ወይም ለማመላከት",
-        "six": "ለጒዳት የሚያጋልጥ ማንኛውንም ዐይነት ቫይረስ፣ እንቅፋት፣ ትሮጃን ሆርስም ሆነ ሌላ ለማስተላለፍ"
-      }
-    },
-    "reserve_rights": "ቀይ መስቀል ኤፒአይ እና የመረጃ ምግቦች ሙሉ በሙሉ ወይም በከፊል ለጊዜው ወይም በቋሚነት በማንኛውም ጊዜ ያለ ቅድመ ማስጠንቀቂያ የመቀየር እና \/ ወይም ከአሁን በኋላ የመቀበል መብቱ የተጠበቀ ነው ፡፡ ጥርጣሬን ለማስቀረት የቀይ መስቀል ኤ.ፒ.አይ. ወይም የውሂብ ምግቦች ለእርስዎ እንዲገኙ በዚህ ውስጥ የሚያስገድድ አንዳችም ነገር የለም ፣ እናም ማንኛውም መዳረሻ በቀይ መስቀል ብቸኛ እና በፍፁም ውሳኔ ውስጥ መሆኑን ይስማማሉ እና ይቀበላሉ ፡፡",
-    "severability": {
-      "body": "የኤ.ፒ.አይ. ውሎች ማንኛውም ቃል ወይም አቅርቦት ዋጋ ቢስነት የሌላ ማንኛውም አቅርቦት ትክክለኛነት ላይ ተጽዕኖ አይኖረውም ፡፡",
-      "heading": "ሊሰበር የሚችልና የሚተው\n"
-    },
-    "suspension": {
-      "body": "ቀይ መስቀሉ በኤፒአይ ውሎች ላይ በተጠቀሰው መሠረት ኤፒአይ ወይም የውሂብ ምግብ ባልተፈቀደ አጠቃቀም ላይ የተሰማሩ እንደሆኑ ወይም ኤ.ፒ.አይ ወይም የውሂብ ምግብን እየተጠቀሙ መሆኑን የሚወስን ከሆነ በቀይ መስቀል ብቸኛ ምርጫው መዳረሻዎን የማገድ ወይም የማቋረጥ መብቱ የተጠበቀ ነው ፡፡ በማንኛውም ሰው ወይም በቀይ መስቀል አውታረመረቦች ደህንነት እና \/ ወይም ደህንነት ላይ አደጋ በሚያደርስ \/ በሚጎዳ እንቅስቃሴ ውስጥ ፡፡",
-      "heading": "እገዳ ወይም ማቋረጥ"
-    }
-  },
-  "view_data": {
-    "alert_title": "ማስጠንቀቂያ",
-    "more_info": "ተጨማሪ መረጃ",
-    "which": "የትኞቹን የደህንነት መልዕክቶች ማየት ይፈልጋሉ?",
-    "view_data": "መረጃ ይመለከቱ",
-    "alerts": "ማስጠንቀቂያዎች",
-    "alert_preview": "የማንቂያ ማሳያ",
-    "cap_alerts": "ካፕ ማንቂያዎች",
-    "onset": "መባቻ",
-    "severity": "ከባድነት",
-    "title": "ርእስ",
-    "date": "ቀን",
-    "headline": "ዋና ርእስ",
-    "alert": "ማንቂያ",
-    "whatnow_info": "የደህንነት መልዕክት ዳታቤዝ መረጃ",
-    "alert_detail": "የማንቂያ ዝርዝር",
-    "more": "ተጨማሪ መረጃ",
-    "area_affected": "የሚነካ አካባቢ",
-    "details": "ዝርዝሮች",
-    "cap": {
-      "type": "ዐይነት",
-      "status": "ሁኔታ",
-      "urgency": "አስቸኳይነት",
-      "severity": "ከባድነት",
-      "certainty": "እርግጠኝነት",
-      "sent": "ተልኳል",
-      "effective": "ውጤታማ",
-      "onset": "መባቻ",
-      "expires": "ጥቅም መስጠቱ ያበቃል",
-      "alert_from": "ማንቂያ ከ",
-      "feed": "አቅርቦት",
-      "more": "ተጨማሪ መረጃ",
-      "through": "በ",
-      "alert_feed": "የማንቂያ አቅርቦት",
-      "fetching_feed": "አቅርቦት ማምጣት",
-      "empty": "በአሁኑ ሰዓት ማንቂያዎች የሉም"
-    }
-  },
-  "user_agreement": {
-    "title": "የተጠቃሚ ስምምነት",
-    "para_one": "ወደ የደህንነት መልዕክት ዳታቤዝ ፖርታል ከመድረስዎ በፊት፣ እባክዎን ከዚህ በታች ያለውን ሰነድ በማውረድ እና 'ተቀብያለሁ' የሚለውን ቁልፍ በመጫን የተጠቃሚውን ስምምነት ውሎች ማንበብ እና መቀበል ይችላሉ።",
-    "cta": "እቀበላለሁ",
-    "download": "የተጠቃሚ ስምምነት ሰነዱን ለማየት ይህን ይጫኑ (105 ኬቢ)"
-  },
-  "hazard_type": {
-    "dropdown": {
-      "select": "የአደጋ ዐይነትን ይምረጡ",
-      "create": "የአደገ ዐይነት ይፍጠሩ"
-    },
-    "create": {
-      "title": "አዲስ የአደጋ ዐይነት ይፍጠሩ",
-      "request": "አዲስ የአደጋ ዐይነት ይጠይቁ",
-      "other": "ሌላ",
-      "email_subject": "አዲስ የአደጋ ዐይነት ይጠይቁ",
-      "hazard_name": "የአደጋ ስም",
-      "hazard_name_placeholder": "የአደጋ ስም ያስገቡ",
-      "upload_icon": "አንድ ምልክት ይጫኑ",
-      "icon_requirements": "ምልክቶቹ ፒኤንጂ እና ከ30 ኬቢ በታች መሆን አለባቸው",
-      "requestLink": "አዲስ የአደጋ ዐይነት ለመጠየቅ GDPC ን ያነጋግሩ",
-      "success": "የአደጋ ዐይነት ተፈጥሯል",
-      "error": "ይቅርታ ፣ አዲሱን የአደጋ ዐይነትዎን የመፍጠር ችግር ተከስቷል፡፡"
-    }
-  },
-  "subnationals": {
-    "list": {
-      "manage": "ንዑስ ክልሎች",
-      "create": "አዲስ ክልል ይፍጠሩ",
-      "edit": "ክልል ያርትዑ",
-      "add": "ክልል ያክሉ",
-      "empty": "ምንም ክልሎች ማግኘት አልተቻለም",
-      "table_header": {
-        "subnational": "ክልል"
-      }
-    },
-    "select_soc": "ለማየት እና ክልሎች ለማከል ማህበረሰብ ይምረጡ",
-    "create": "አዲስ ክልል ይፍጠሩ",
-    "form": {
-      "name": "የክልል ስም",
-      "name_help": "ለብጁ የደህንነት መልዕክት መላላኪያ መፍጠር የሚፈልጉትን ክልል ይሰይሙ።",
-      "description": "መግለጫ",
-      "description_help": "ስለ ክልሉ ተጨማሪ መረጃ ያቅርቡ ማለትም፣ የሳን ፍራንሲስኮ የባህር ወሽመጥ አካባቢ።"
-    },
-    "edit": "ክልል ያርትዑ",
-    "delete": "ይህ ክልሉን እና ከዚያ ክልል ጋር የተገናኘ ማንኛውንም ይዘት ይሰርዛል።"
-  },
-  "table_headers": {
-    "profile_pic": "የመገለጫ ምስል",
-    "first_name": "የአያት ስም",
-    "last_name": "የአያት_ስም",
-    "role": "ኀላፊነት",
-    "society": "ማሕበረሰብ",
-    "date": "ቀን",
-    "country": "አገር",
-    "email": "ኢሜይል",
-    "created_at": "የተፈጠረ_",
-    "last_logged_in_at": "ለመጨረሻ ጊዜ የሠራው",
-    "terms_version": "መገለጫ",
-    "actions": "ተግባራት",
-    "action": "ተግባር",
-    "content": "ይዘት",
-    "country_code": "ቦታ",
-    "organisation": "ድርጅት",
-    "industry_type": "የኢንዱስትሪ ዐይነት",
-    "all_roles": "ሁሉም ሚናዎች",
-    "version": "ቅጂ",
-    "user": "ተጠቃሚ",
-    "language_code": "የቋንቋ ኮድ"
-  },
-  "terms_conditions": {
-    "title": "ውሎች እና ሁኔታዎች",
-    "accept": "ተቀበል"
-  },
-  "badges": {
-    "hazardCreate": "አደጋ ተፈጥሯል",
-    "published": "ታትሟል",
-    "draft": "ረቂቅ",
-    "bulkUploadDraft": "የመልዕክት ፋይል ሰቀላ ረቂቅ"
-  }
 }

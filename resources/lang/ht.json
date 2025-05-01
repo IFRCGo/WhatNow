@@ -1,1015 +1,1060 @@
 {
-  "ok": "Ok",
-  "go": "ALE",
-  "all": "Tout",
-  "cancel": "Anile",
-  "error_alert_title": "Oops...",
-  "error_alert_text": "Gen yon bagay ki te pase mal! Tanpri eseye ankò.",
-  "error_permission_alert_text": "Ou pa gen pèmisyon pou fè chanjman sa a",
-  "token_expired_alert_title": "Sesyon an ekspire!",
-  "token_expired_alert_text": "Silvouplè, konekte ankò pou kontinye.",
-  "login": "Konekte",
-  "what_now": "Baz Done Mesaj Sekirite IFRC",
-  "message_portal": "Paj akèy mesaj",
-  "register": "Anrejistre",
-  "sign_up": "Enskri",
-  "docs": "Dokiman yo",
-  "my_apps": "Aplikasyon mwen yo",
-  "number_of_apps": "{0} Aplikasyon yo",
-  "whatnow_content": "Mesaj",
-  "create_key": "Kreye Kle",
-  "alerts": "Alèt",
-  "feeds": "Dispozif ki fè nouvo enfòmasyon yo parèt",
-  "get_started": "Enskri kounye a",
-  "page_not_found": "Pa jwenn paj la",
-  "go_home": "Ale sou paj prensipal la",
-  "logout": "Dekonekte",
-  "email": "Imel (Kouryel)",
-  "register_success": "Mèsi paske w enskri",
-  "confirm_email": "Tanpri verifye bwat ou pou wè yon imèl pou konfime kont ou.",
-  "email_confirmed": "Mèsi pou konfime adrès imel ou. Silvouplè konekte.",
-  "confirmation_failed": "Adrès imel ou a pa ka konfime, tanpri kontakte administratè ou a pou eseye ankò.",
-  "home_redirect": "Ale sou paj akèy la",
-  "status": "Eta\/Kondisyon",
-  "remember_me": "Sonje m",
-  "old_password": "Modpas ou gen kounye a",
-  "password": "Modpas",
-  "forgot_password": "Èske ou bliye modpas ou?",
-  "confirm_password": "Konfime modpas",
-  "incorrect_password": "Modpas la pa bon",
-  "name": "Non",
-  "first_name": "Prenon",
-  "last_name": "Siyati",
-  "toggle_navigation": "Bouton ki pèmèt ou chanje navigasyon",
-  "you_are_logged_in": "Ou konekte!",
-  "reset_password": "Reyajiste modpas la",
-  "set_password": "Mete modpas la",
-  "send_password_reset_link": "Voye lyen modpass ki reyajiste a",
-  "settings": "Reglaj",
-  "profile": "Pwofil",
-  "your_info": "Enfòmasyon ou yo",
-  "info_updated": "Enfòmasyon ou yo ajou!",
-  "update": "Mete ajou",
-  "your_password": "Modpas ou a",
-  "password_updated": "Modpas ou a te ajou",
-  "new_password": "Nouvo modpas",
-  "login_with": "Konekte avèk",
-  "register_with": "Anrejistre avèk",
-  "yes": "Wi",
-  "no": "Non",
-  "close": "Fèmen",
-  "dashboard": "Tablo kontwòl",
-  "terms_service": "Kondisyon sèvis yo",
-  "sign_in_with_google": "Konekte ak Google",
-  "offline_error": {
-    "title": "Pa gen Koneksyon Entènèt",
-    "description": "Tanpri anrejistre chanjman yo nan {time} oswa pwogresyon an pral pèdi"
-  },
-  "breadcrumbs": {
-    "applications": "Aplikasyon yo",
-    "admin_users": "Itilizatè Administratif",
-    "users": "Itilizatè yo",
-    "manage_users": "Jere itilizatè yo",
-    "profile": "Pwofil",
-    "terms": "Tèm ak Kondisyon yo",
-    "edit": "Modifye",
-    "create": "Kreye",
-    "content": "Kontni",
-    "what_now_content": "Kontni What Now",
-    "bulk_upload": "Telechaje Dosye Mesaj",
-    "audit_log": "Jounal verifikasyon",
-    "api_usage": "Itilizasyon API",
-    "app_detail": "Detay Aplikasyon an",
-    "all_terms": "Tout tèm ak kondisyon yo"
-  },
-  "documentation": {
-    "heading": "Dokiman API Kwa Wouj",
-    "sidebar": {
-      "introduction": "Entwodiksyon",
-      "base_url": "Baz URL",
-      "changelog": "Jounal modifikasyon",
-      "authentication": "Otantifikasyon",
-      "response_codes": "Kòd repons",
-      "emergency_alert_feed": "Dispozitif Alèt Ijans",
-      "cap_alert_document": "Dokiman Alèt CAP",
-      "what_now": "What Now"
-    },
-    "steps": {
-      "one": {
-        "body": "REST API Lakwa Wouj pèmèt devlopè jwenn aksè nan enfòmasyon ak resous ijans ki soti nan sosyete entènasyonal Lakwa Wouj yo.",
-        "heading": "Entwodiksyon",
-        "support_card": {
-          "body": "Pou poze kesyon konsènan API Lakwa Wouj tanpri kontakte dev@3sidedcube.com",
-          "title": "Sipò & Kesyon"
-        }
-      },
-      "two": {
-        "body": "Tout URLs ki nan dokiman API v1.0 gen baz URL sa:",
-        "heading": "Baz URL"
-      },
-      "three": {
-        "heading": "Jounal modifikasyon",
-        "table": {
-          "headers": {
-            "detail": "Pibliye",
-            "version": "Vèsyon Api",
-            "release": "Pibliye",
-            "release_date": "Dat piblikasyon"
-          }
-        }
-      },
-      "four": {
-        "body": "API a egzije validasyon pou jwenn aksè ak tout resous yo lè l sèvi ak yon kle API. Pou jwenn yon kle API, premyèman {0}.\n\nTout demann API yo dwe gen ladan antèt HTTP a:",
-        "create_app_cta": "Kreye yon aplikasyon",
-        "heading": "Otantifikasyon"
-      },
-      "five": {
-        "heading": "Kòd repons",
-        "table": {
-          "descriptions": {
-            "ok": "Demann lan reyisi ak kò repons lan gen resous yo mande a",
-            "found": "Endike yon direksyon Voye yon demann GET bay resous URI nan kote a: antèt la.",
-            "not_found": "Yo pa t jwenn resous yo te mande a.",
-            "not_allowed": "Montre metòd HTTP yo te itilize ki pa gen pèmisyon nan resous sa.",
-            "server_error": "Gen yon erè ki rive nan sèvè a epi resous yo mande a pa ka retounen.",
-            "unavailable": "Montre ke sèvis la pa disponib kounye a. Eseye demann lan ankò nan yon moman pita.."
-          },
-          "headers": {
-            "code": "Kòd",
-            "name": "Non",
-            "description": "Deskripsyon"
-          }
-        }
-      },
-      "six": {
-        "card": {
-          "body": "Chak Sosyete Kwaj Wouj ka voye alèt piblik lè yo itilize {0} v1.2.",
-          "cta": "Pwotokòl Alèt Piblik",
-          "title": "Pwotokòl Alèt Piblik"
-        },
-        "endpoint": "Pwen final:",
-        "example": "Nan egzanp sa a, segman {0} a ta dwe ranplase pa kòd peyi sosyete konsène a. pa egzanp.",
-        "feed_intro": "Yo bay yon ekipman pou chak konpayi, lis la alèt aktif yo pibliye pa yon konpayi ki idantifye pa",
-        "heading": "Dispozitif Alèt Ijans",
-        "intro": " Alèt plafon ki soti nan tout konpayi yo pibliye lè l sèvi avèk yon dispozitif RSS. Aksè a ap posib gras ak pwen final sa a:"
-      },
-      "seven": {
-        "endpoint": "Pwen final:",
-        "example_response": "Repons egzanp:",
-        "heading": "Dokiman Alèt CAP",
-        "body": "Dokiman k ap alèt CAP yo ka jwenn aksè via lyen absoli espesifye nan chak atik dispozitif RSS. URI nan yon alèt itilize fòma sa a: "
-      },
-      "eight": {
-        "body": "Pwen esantyèl sa yo bay done estriktire ki pibliye pa Sosyete Kwa Wouj pou ede nan preparasyon katastwòf pou diferan kalite evènman.\n\nChak anrejistreman bay enfòmasyon sou sis etap nan jesyon katastwòf:",
-        "endpoint": "Pwen final:",
-        "example_response": "Repons egzanp:",
-        "heading": "What Now",
-        "note": "Remak:",
-        "noteDetails": "{0} Tout repons yo regwoupe nan yon pwopriyete {1} paran.",
-        "query_params": "Paramèt demann yo:",
-        "response_properties": "Pwopriyete repons yo:",
-        "structure": "Estrikti objè atik What Now lan:",
-        "stucture_attribution": "Estrikti yon objè {0}:",
-        "stucture_attribute_translation": "Estrikti yon objè atribisyon {0}:",
-        "stucture_translation": "Estrikti yon objè {0}:",
-        "table": {
-          "query_params": {
-            "name": "non",
-            "description": "deskripsyon"
-          },
-          "structure": {
-            "property": "Pwopriyete",
-            "data_type": "Kalite done",
-            "description": "Deskripsyon"
-          }
-        }
-      }
-    }
-  },
-  "get_started_docs": {
-    "title": "Kòmanse",
-    "sidebar": {
-      "create_app": "Kreye yon aplikasyon",
-      "get_api_key": "Jwenn yon kle API",
-      "make_request": "Fè yon demann",
-      "sign_up": "Enskri"
-    },
-    "steps": {
-      "one": {
-        "heading": "Etap 1 - Enskri",
-        "body": "Pou kòmanse itilize done ki soti nan API Baz Done Mesaj Sekirite a, premye {0} nan Portal Baz Done Mesaj Sekirite a.\n\nOu ka itilize kont Facebook ak Google ou, oswa yon adrès imel pou kreye yon kont.",        "create_account_alt": "kreye yon kont",
-        "existing_account": "Si w gen yon kont deja, tanpri {0}.",
-        "login_cta": "konekte",
-        "sign_up_cta": "enskri"
-      },
-      "two": {
-        "body": "Pou itilize API a, ou dwe kreye yon aplikasyon nan Portal Baz Done Mesaj Sekirite a. Di nou yon ti kras sou sa w ap bati a.",        "create_app_alt": "kreye yon aplikasyon",
-        "heading": "Etap 2 - Kreye yon aplikasyon"
-      },
-      "three": {
-        "body": "Lè w kreye yon aplikasyon, yon kle API ap pwodui otomatikman\n\n{0} Asire ou ke ou sere sa a kòm byen ke posib epi evite pataje oswa otreman ekspoze kle API ou an nan pwòp aplikasyon ou an.",
-        "create_api_key_alt": "Kreye yon kle API",
-        "heading": "Etap 3 - Jwenn yon kle API",
-        "important": "Enpòtan:"
-      },
-      "four": {
-        "api_docs_cta": "Dokiman API",
-        "body": "API Baz Done Mesaj Sekirite a itilize HTTP(S) epi li bay pwen final RESTful pou jwenn done pibliye yo.\n\nChak demann dwe otantifye lè l sèvi avèk kle API ki te kreye nan etap anvan an.",        "example_title": "Egzanp demann",
-        "heading": "Etap 4 - Fè yon demann",
-        "moreInfo": "Pou plis enfòmasyon sou tout pwen final API yo, gade {0}."
-      }
-    }
-  },
-  "home_pods": {
-    "bulk_upload": "Telechaje dosye .csv yo konsa w ap kapab mete ajou gro kantite eleman yon sèl kou",
-    "audit_log": "Men ki kote ou ka wè jounal aktivite yo",
-    "whatnow_edit": "Se isit la ou ka edite kontni Baz Done Mesaj Sekirite a",
-    "whatnow_review": "Se isit la ou ka revize kontni Baz Done Mesaj Sekirite a",
-    "whatnow_publish": "Se isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a",
-    "manage_users": "Se kote sa ou ap ka jere itilizatè yo (kreye, edite epi efase)",
-    "api_usage": "Se kote sa ou ap ka wè kiyès k ap itilize API a ak ki aplikasyon ki konstwi avè l.",
-    "wellcome": "Akèy",
-    "wellcome_description": "Isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a."
-  },
-  "languages": {
-    "am": "አማርኛ",
-    "ar": "Arab",
-    "bn": "বাংলা",
-    "de": "Deutsch",
-    "en": "Anglè",
-    "es": "Panyòl",
-    "fr": "Fransè",
-    "ht": "Kreyòl",
-    "id": "Endonezyen",
-    "it": "IItaliano",
-    "ja": "日本語",
-    "my": "ဗမာ",
-    "ne": "नेपाली",
-    "pt": "Pòtigè (UE)",
-    "ru": "Ris",
-    "rw": "Ikinyawanda",
-    "sw": "Kiswahili",
-    "th": "ภาษาไทย",
-    "tr": "Türkçe",
-    "ur": "Oudou",
-    "vi": "Tiếng Việt"
-  },
-  "sidebar": {
-    "manage": "Jere kontni itilizatè yo",
-    "content_users": "Kontni itilizatè yo",
-    "audit_log": "Istwa Edite",
-    "whatnow": "Editè Atribisyon",
-    "bulk": "Telechaje Dosye Mesaj",
-    "content": "Kontni",
-    "api": "Itilizasyon API",
-    "applications": "Aplikasyon yo",
-    "api_stats": "Estatistik API",
-    "api_users": "Itilizatè API yo",
-    "terms_conditions": "Tèm ak Kondisyon yo",
-    "subnationals": "Sou-rejyon yo"
-  },
-  "common": {
-    "accept": "Aksepte",
-    "actions": "Aksyon",
-    "create": "Kreye",
-    "edit": "Modifye",
-    "save": "Sere",
-    "deactivate": "Dezaktive",
-    "activate": "Aktive",
-    "are_you_sure": "Èske w sèten?",
-    "yes": "Wi",
-    "title": "Tit",
-    "description": "Deskripsyon",
-    "unpublished_edits": "Chanjman ki pa pibliye?",
-    "published": "Pibliye",
-    "delete": "Efase",
-    "welcome": "Byenvini nan",
-    "save_changes": "Konsève chanjman yo",
-    "auto_saving": "Anrejistreman otomatik",
-    "add": "Ajoute",
-    "my_profile": "Pwofil mwen",
+    "ok": "Ok",
+    "go": "Ale",
+    "all": "Tout",
     "cancel": "Anile",
-    "view_changes": "Montre chanjman yo",
-    "view_content": "Montre kontni an",
-    "resend_activation": "Revoye aktivasyon imèl la",
-    "deactivate_user": "Dezaktive itilizatè a",
-    "submit_changes": "Soumèt Chanjman yo",
-    "reactivate_user": "Reyaktive itilizatè a",
-    "send_invite": "Voye envitasyon",
-    "invite_and_create": "Envite epi kreye yon lòt",
-    "loading": "Telechaje kontni an",
-    "publish_new": "Pibliye nouvo vèsyon an",
-    "greeting": "Bonjou",
-    "removed": "Efase",
-    "copy": "Kopi",
-    "copied": "Kopye",
-    "not_empty": "Pa ka rete vid",
+    "error_alert_title": "Oops ...",
+    "error_alert_text": "Yon bagay ale mal! ",
+    "error_permission_alert_text": "Ou pa gen pèmisyon pou fè chanjman sa a",
+    "token_expired_alert_title": "Sesyon ekspire!",
+    "token_expired_alert_text": "Tanpri ouvri sesyon an ankò pou kontinye.",
+    "login": "Log in",
+    "what_now": "IFRC Sekirite Mesaj baz done",
+    "message_portal": "Mesaj Portal",
+    "register": "Rejis",
+    "sign_up": "Enskri",
+    "docs": "Docs",
+    "my_apps": "Apps mwen",
+    "number_of_apps": "{0} apps",
+    "whatnow_content": "Mesaj",
+    "create_key": "Kreye kle",
+    "alerts": "Alèt",
+    "feeds": "Manje",
+    "get_started": "Enskri kounye a",
+    "page_not_found": "Paj pa jwenn",
+    "go_home": "Ale lakay ou",
+    "logout": "Logout",
+    "email": "Imèl",
+    "register_success": "Mèsi pou enskri",
+    "confirm_email": "Tanpri tcheke bwat resepsyon ou pou yon imèl pou konfime kont ou.",
+    "email_confirmed": "Mèsi pou konfime adrès imel ou. ",
+    "confirmation_failed": "Adrès imèl ou pa ta ka konfime, tanpri kontakte administratè ou a eseye ankò.",
+    "home_redirect": "Ale nan paj lakay ou",
+    "status": "Kondisyon",
+    "remember_me": "Sonje mwen",
+    "old_password": "Kouran modpas",
+    "password": "Paròl",
+    "forgot_password": "Bliye modpas ou?",
+    "confirm_password": "Konfime modpas",
+    "incorrect_password": "Modpas ki pa kòrèk",
     "name": "Non",
-    "webUrl": "URL",
-    "learn_more": "Aprann plis",
-    "validations": {
-      "empty": "Sa pa ka rete vid",
-      "hazardIcon": "Tanpri chwazi yon imaj ki pi piti ke 30kb"
+    "first_name": "Premye non",
+    "last_name": "Non sa a",
+    "toggle_navigation": "Activer navigasyon",
+    "you_are_logged_in": "Ou louvri sesyon an!",
+    "reset_password": "Reyajiste modpas",
+    "set_password": "Mete modpas",
+    "send_password_reset_link": "Voye lyen modpas Reyajiste",
+    "settings": "Se",
+    "profile": "Profil",
+    "your_info": "Enfòmasyon ou yo",
+    "info_updated": "Enfòmasyon ou te mete ajou!",
+    "update": "Mete",
+    "your_password": "Modpas ou",
+    "password_updated": "Modpas ou te mete ajou",
+    "new_password": "Nouvo modpas",
+    "login_with": "Konekte ak",
+    "register_with": "Enskri ak",
+    "yes": "Wi",
+    "no": "Non",
+    "close": "Fèmen",
+    "dashboard": "Débordan",
+    "terms_service": "Regleman pou Sèvis",
+    "sign_in_with_google": "Siyen ak Google",
+    "offline_error": {
+        "title": "Pa gen koneksyon entènèt",
+        "description": "Tanpri sove chanjman nan {tan} oswa pwogrè yo pral pèdi"
     },
-    "network_error": "Erè rezo",
-    "network_error_text": "Sanble te gen yon erè rezo. Silvouplè eseye ankò nan kèk moman",
-    "email_sent": "Imèl la ale",
-    "duplicate_lang_error": "Dezole, lang ou chwazi a egziste deja",
-    "duplicate_lang_description": "Tanpri chanje lang ki egziste deja a oubyen chwazi yon nouvo lang nan lis k ap dewoule a",
-    "estimated_users": "Kantite itilizatè yo estime",
-    "upploading": "Téléchajman",
-    "download": "Telechaje",
-    "download_as_image": "Telechaje tankou yon imaj",
-    "download_as_pdf": "Telechaje kòm yon PDF",
-    "add_logo": "Ajoute logo",
-    "edit_logo": "Modify logo",
-    "loading_image": "Chaje..."
-  },
-  "banners": {
-    "get_started_create": ", Kòmanse epi Kreye Premye Aplikasyon ou an",
-    "create_app": "Kreye yon aplikasyon",
-    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Fè yon fraz sengilye pou nou pita."
-  },
-  "users": {
-    "user": "Itilizatè",
-    "deleted": "Efase itilizatè a",
-    "list": {
-      "manage": "Jere itilizatè yo",
-      "select_status": "Chwazi estati",
-      "select_role": "Chwazi yon wòl",
-      "select_country": "Chwazi yon peyi",
-      "select_terms": "Chwazi yon vèsyon tèm yo",
-      "select_society": "Chwazi yon sosyete nasyonal",
-      "create": "Kreye nouvo itilizatè",
-      "download_report": "Telechaje rapò",
-      "empty": "Yo pa jwenn itilizatè yo",
-      "detail": "Detay itilizatè a",
-      "clear_filters": "Efase filtè yo",
-      "table_header": {
-        "user": "Itilizatè",
-        "role": "Wòl",
-        "society": "Sosyete",
-        "email": "Imel (Kouryel)",
-        "added": "Ajoute",
-        "last_activity": "Dènye aktivite",
-        "t_and_c": "Vèsyon T&C"
-      },
-      "societies": "Sosyete yo"
+    "breadcrumbs": {
+        "applications": "Aplikasyon",
+        "admin_users": "Admin itilizatè yo",
+        "users": "Itilizatè",
+        "manage_users": "Jere Itilizatè yo",
+        "profile": "Profil",
+        "terms": "Tèm ak Kondisyon yo",
+        "edit": "Redije",
+        "create": "Kreye",
+        "content": "Kontan",
+        "what_now_content": "Ki sa ki kounye a kontni",
+        "bulk_upload": "Dosye mesaj Upload",
+        "audit_log": "Odit Log",
+        "api_usage": "API Itilizasyon",
+        "app_detail": "App detay",
+        "all_terms": "Tout tèm ak kondisyon"
     },
-    "status": {
-      "active": "Aktive",
-      "deactivated": "Dezaktive"
-    },
-    "edit": {
-      "super_admin_all": "Aksè ak tout sosyete yo",
-      "user_details": "Detay itilizatè a",
-      "create_user": "Kreye nouvo itilizatè",
-      "add_society": "Ajoute Sosyete + ",
-      "societies_heading": "Sosyete yo",
-      "roles_heading": "Wòl  & pèmisyon",
-      "activity_heading": "Aktivite",
-      "roles_label": "Chwazi wòl & pèmisyon pou itilizatè sa a",
-      "activity_link": "Montre tout aksyon pa itilizatè a",
-      "created": "Itilizatè kreye avèk siksè",
-      "updated": "Itilizatè mete ajou avèk siksè",
-      "email_update": "Mete ajou imel ou, silvouplè antre modpas ou a",
-      "view": "Wè",
-      "more": "plis",
-      "less": "Montre mwens",
-      "user_can_do": "Wè sa itilizatè gen pèmisyon pou fè:",
-      "user_no_permission": "Itilizatè a pa gen okenn pèmisyon.",
-      "soc_already_added": "Itilizatè sa a te deja asiyen sosyete sa a"
-    }
-  },
-  "new_welcome": {
-    "title_1": "Byenveni nan",
-    "red_title": "IFRC",
-    "title_2": "Sekirite",
-    "title_3": "Baz Done Mesaj",
-    "text_header": "Aksè ak pataje mesaj sekirite Lakwa Wouj Kwoasan Wouj atravè platfòm ou yo.",
-    "text_header_2": "Swiv gid etap ki anba a..",
-    "bottom_subtitle": "Kontakte IFRC",
-    "bottom_text": "Imèl ekip IFRC a si ou gen kesyon: im@ifrc.org",
-    "bottom_btn": "Kontakte IFRC",
-    "slider_1": {
-      "btn": "Kreye yon kle API",
-      "step_1": {
-        "header": "Etap 1: Kreye yon aplikasyon",
-        "text": "Kreye yon kle API pou itilize API a nan baz done a. Di nou sou sa ou ap konstwi."
-      },
-      "step_2": {
-        "header": "Etap 2: Resevwa yon kle API",
-        "text": "Lè ou fin kreye yon kle API, li pral otomatikman pwodui.",
-        "text_2": "Enpòtan: Sere kle API ou an otan ke posib. Evite pataje oswa ekspoze kle API ou an nan aplikasyon ou an."
-      },
-      "step_3": {
-        "header": "Etap 3: Fè yon demann",
-        "text": "API baz done a itilize HTTP(S) epi li bay pwen final RESTful pou jwenn done pibliye. Chak demann dwe otantifye lè l sèvi avèk kle API ki te kreye nan etap anvan an. Pou plis enfòmasyon sou tout pwen final API yo, gade dokiman API a."
-      },
-      "step_4": {
-        "header": "Etap 4: Pataje mesaj yo",
-        "text": "Pataje mesaj sekirite Kwa Wouj Kwasan Wouj yo ak piblik la lè gen yon menas danje. Ou ka kontakte ekip IFRC a si ou gen nenpòt fidbak sou mesaj yo: im@ifrc.org"
-      }
-    },
-    "slider_2": {
-      "btn": "Mesaj Sekirite",
-      "step_1": {
-        "header": "Etap 1: Gade mesaj yo",
-        "text": "Vizite baz done mesaj la pou gade mesaj Sosyete Nasyonal Kwa Wouj Kwasan Wouj ki disponib yo."
-      },
-      "step_2": {
-        "header": "Etap 2: Chwazi seri mesaj la",
-        "text": "Chwazi Sosyete Nasyonal ou vle wè a. Lè sa a, chwazi yon kalite danje nan lis ki disponib la."
-      },
-      "step_3": {
-        "header": "Etap 3: Pataje mesaj yo",
-        "text": "Chèche opsyon pou telechaje mesaj yo. Ou ka pataje seri mesaj yo kòm yon imaj oswa kòm yon PDF. Telechaje epi revize pou asire ou ap pataje mesaj ki kòrèk yo."
-      }
-    }
-  },
-  "upload_modal": {
-    "drag_button_text": "Klike oswa trennen dosye nan zòn sa a pou telechaje",
-    "button_text": "Telechaje"
-  },
-  "stages": {
-    "immediate": "Imedyat",
-    "warning": "Avètisman",
-    "anticipated": "Antisipe",
-    "assess_and_plan":"Evalye epi Planifye",
-    "mitigate_risks":"Diminye Risk yo",
-    "prepare_to_respond":"Prepare pou Reponn",
-    "recover": "Rekipere"
-  },
-  "content": {
-    "content": "Kontni",
-    "audit_log": {
-      "audit_log": "Rejis kontwòl",
-      "my_audit_log": "Istwa Edite",
-      "empty": "Pa jwenn yon istwa kontwòl ki mache ak filtè sa a",
-      "soc_label": "Sosyete",
-      "select_hazard": "Chwazi kalite danje",
-      "select_language": "Chwazi yon lang",
-      "select_overwrite": "Chwazi opsyon ekri sou",
-      "choose_file": "Chwazi kalite dosye",
-      "select_soc": "Chwazi yon sosyete nasyonal"
-    },
-    "whatnow": {
-      "title": "Mesaj",
-      "set_attribution": "Mete non sosyete a ak mesaj atribisyon pou pibliye a",
-      "whatnow": "Baz Done Mesaj Sekirite",
-      "empty": "Pa gen mesaj Sekirite pibliye pou Sosyete Nasyonal sa a",
-      "steps": "Etap yo",
-      "publish": "Pibliye",
-      "no_publish": "Anyen pou pibliye",
-      "published": "Tradiksyon pibliye yo",
-      "publishing": "Pibliye",
-      "content_to_publish": "Kontni pwojè ki dwe pibliye a",
-      "whatnow_content": "Kontni Baz Done Mesaj Sekirite",
-      "choose_hazard": "Chwazi danje",
-      "hazard": "Danje",
-      "content": "Kontni",
-      "create": "Ajoute danje",
-      "edit_attribtion": "Modifye atribisyon",
-      "attribution": "Atribisyon",
-      "attribution_url": "Atribisyon URL",
-      "society_name": "Sosyete Nasyonal",
-      "attribution_message": "Mesaj atribisyon",
-      "no_translation": "Pa gen kontni etabli",
-      "delete_content_translation": "Sa pral retire kontni Baz Done Mesaj Sekirite yo chwazi a nan lang aktyèl la",
-      "messages": "Mesaj Sekirite yo nan",
-      "add_language": "Ajoute nouvo lang",
-      "no_languages": "Chwazi oswa kreye yon lang pou kòmanse",
-      "no_soc": "Chwazi yon sosyete",
-      "no_region": "Seleksyone yon reyon",
-      "add_language_message": "Pou ajoute yon nouvo lang, tanpri ajoute kèk kontni ki ale ansanm ak li.",
-      "add_language_attribution": "Kreye atribisyon pou ajoute yon nouvo lang.",
-      "select_language": "Tanpri chwazi yon lang.",
-      "attribution_publish": "Atribisyon sa pral imedyatman disponib pou pibliye",
-      "date_added": "Dat Ajoute",
-      "url": "URL",
-      "hazard_type": "Kalite Danje",
-      "show_more": "Montre plis",
-      "early": "Avètisman Bonè",
-      "disaster": "Rediksyon Risk Dezas",
-      "recovery": "Rekiperasyon",
-      "publish_summary_title": "Atribisyon",
-      "publish_summary_ns": "Sosyete Nasyonal",
-      "publish_summary_url": "URL Atribisyon",
-      "publish_summary_message": "Mesaj Atribisyon"
-    },
-    "edit_whatnow": {
-      "title": "Tit",
-      "description": "Deskripsyon",
-      "content_piece": "Eleman Kontni an",
-      "enter_other_hazard_type": "Antre non kalite danje a",
-      "other_hazard_type_label": "Lòt kalite danje",
-      "stepped_content": "Eleman kontni youn dèyè lòt",
-      "content_title_description": "Tit pou Mesaj Sekirite sa yo",
-      "content_description_description": "Deskripsyon Mesaj Sekirite sa yo",
-      "content_label": "Tanpri antre enfòmasyon danje yo",
-      "content_url": "URL",
-      "content_url_description": "URL pou plis enfòmasyon sou Mesaj Sekirite sa yo. Tanpri enkli pwotokòl la, sa vle di http:// oswa https://",      "created": "kreye",
-      "pieces_edited": " Moso edite",
-      "content_placeholder": "Tanpri antre yon mesaj",
-      "mitigation": "Alèjman",
-      "mitigation_help": "Aksyon lontèm pou diminye risk yo",
-      "mitigation_extra": "Yon prevansyon se yon eta prediksyon alontèm pou yon evènman danjere. Aksyon yo pran yo se evalyasyon, planifikasyon, ak mezi alontèm pou redwi risk pou fè kay la ak anviwònman an pi an sekirite.\n",
-      "seasonalForecast": "Previzyon sezonye",
-      "seasonalForecast_help": "Aksyon a kout tèm pou diminye risk yo",
-      "seasonalForecast_extra": "Yon previzyon sezonye se yon deklarasyon sou prediksyon yon evènman danjere. Aksyon ki poze yo fèt pou evalye potansyèl risk yo epitou planifye aktivite yo pou diminye oswa pwoteje kay la.",
-      "watch": "Gade",
-      "watch_help": "Prepare pou reponn",
-      "watch_extra": "Yon alèt bay lè gen risk pou yo yon evènman ki gen danje ladan ogmante siyifikativman, men ensidan li yo, kote, ak \/ oswa distribisyon yo toujou ensèten. Li fèt nan entansyon pou bay ase tan pou aksyon pwoteksyon ak preparasyon reponn.",
-      "warning": "Avètisman",
-      "warning_help": "Prepare pou reponn",
-      "warning_extra": "Yon avètisman bay lè yon evènman danjere k ap rive, tou pre, oswa gen trè gwo pwobablite pou l rive. Sa vle di kondisyon yo poze yon menas pou lavi oswa pwopriyete. Moun ki sou chemen danjere sa a bezwen poze aksyon yo k ap pwoteje.",
-      "immediate": "Imedyat",
-      "immediate_help": "aksyon yo pou reponn",
-      "immediate_extra": "Kondisyon yo poze yon menas pou lavi ak pwopriyete. Sa yo se aksyon imedyat pou pwoteje pou pran lè yon evènman danjere ap dewoule. Aksyon yo pou reponn pou pwoteje tèt ou ak fanmi ou nesesè.",
-      "recover": "Refè",
-      "recover_help": "Aksyon yo pou refè",
-      "recover_extra": "Sa yo se aksyon pwotektiv pran pou diminye risk aprè yon evènman danjere.\n",
-      "anticipated": "Antisipe",
-      "assess_and_plan": "Evalye epi Planifye",
-      "mitigate_risks": "Diminye Risk yo",
-      "prepare_to_respond": "Prepare pou Reponn",
-      "updated": "Ajou",
-      "download_icon": "Telechaje ikòn",
-      "download_image": "Telechaje tankou yon imaj",
-      "download_image_error": "Erè nan telechaje imaj, tanpri asire ou ke ou te pibliye tout chanjman epi eseye ankò.\n",
-      "download_instructions": "Klik dwa epi chwazi 'Anrejistre imaj kòm ...' pou konsève",
-      "downloaded_image_alt": "Enstriksyon Baz Done Mesaj Sekirite",
-      "add_key_message": "Ajoute Mesaj Kle",
-      "add_supporting_message": "Ajoute Mesaj Sipò",
-      "early_warning": "Avètisman Bonè",
-      "early_warning_description": "Mesaj sekirite kle pou alèt ak aksyon bonè",
-      "disaster_risk_reduction": "Rediksyon Risk Dezas",
-      "disaster_risk_reduction_description": "Mesaj sekirite kle soti nan PAPE",
-      "recovery": "Rekiperasyon",
-      "recovery_description": "Sekirite kle pou aksyon rekiperasyon",
-      "hazard_type": "Kalite Danje",
-      "content_edit_title": "Edite Kontni",
-      "content_add_hazard_title": "Ajoute Danje",
-      "key_message_label": "Tit Mesaj Kle",
-      "supporting_message_label": "Mesaj Sipò"
-    },
-    "message_editor": {
-      "title": "Editè Atribisyon",
-      "society_name_label": "Non Sosyete Nasyonal",
-      "attribution_url_label": "URL Atribisyon",
-      "attribution_message_label": "Mesaj Atribisyon",
-      "create_btn": "Ajoute Danje",
-      "contributor_name_label": "Non Kontribitè",
-      "contributor_single": "Kontribitè"
-    },
-    "previewer": {
-      "download_image_error": "Erè telechaje imaj, tanpri eseye ankò.",
-      "download_pdf_error": "Erè telechaje PDF, tanpri eseye ankò."
-    },
-    "audit": "Istwa Edite",
-    "export": "Ekspòtasyon\n",
-    "bulk_upload": {
-      "bulk_upload": "Telechaje Dosye Mesaj",
-      "template": "Modèl",
-      "export_template": " Modèl Ekspòtasyon",
-      "import_data": "Ekspòtasyon done",
-      "import_complete": "Ekspòtasyon konplè",
-      "import_summary": "W ap enpòte anba {society} nan {lang}.",
-      "import_banner": {
-        "success": "Siksè",
-        "added": "Ajoute",
-        "skipped": "Inyore",
-        "denied": "Refize",
-        "updated": "Ajou",
-        "failed": "Echwe",
-        "invalid": "Pa valab",
-        "row": "Ranje"
-      },
-      "upload_csv": "Voye yon dokiman sou foma CSV",
-      "language_instructions": "Chwazi lang pou tradiksyon yo ki pral enpòte",
-      "file_instructions": "Deplase yon achiv, oswa chwazi depi nan òdinatè ou a.",
-      "choose": "Chwazi",
-      "submit": "Kontni enpòte",
-      "reset": "Telechaje yon lòt",
-      "export_template_guide": "Gid modèl ekspòtasyon\n",
-      "export_template_instructions": "Pou enstriksyon sou fason pou itilize modèl telechaje dosye g sa a efektivman, tanpri gade gid sa a.",
-      "refer": "Gade nan",
-      "detail": "pou enstriksyon detaye",
-      "warnings": {
-        "title": "Rejte enpòtasyon si nenpòt kontni pral ekri vèsyon ki pi resan.\n",
-        "on": "Wi",
-        "off": "Non"
-      },
-      "overwriting": {
-        "title": "Recouvrir anviwònman.",
-        "on": "Toujou mete ajou vèsyon, kouvri tout revizyon yo",
-        "off": "Sèlman mete ajou kalite evènman yo kote kontni enpòte yo nouvo."
-      },
-      "errors": {
-        "warning_update_will_overwrite": "\nAksyon sa a pral kouvri chanjman ki te fèt depi ekspòtasyon sa a te kreye",
-        "bad_request": "Done nan achiv ki pa korèkman fòme",
-        "bad_request_error_codes": {
-          "30001": "Tit kolòn ki pa mache ak modèl la",
-          "30002": "Non atribisyon, mesaj oswa url ki manke",
-          "30003": "Atribisyon url ki pa valab - tanpri asire pwotokòl la prezan, eg. https:\/\/",
-          "40001": "Kòd peyi ki pa valid yo bay",
-          "40002": "Sosyete chwazi ki pa mache sosyete pou achiv chwazi",
-          "40003": "Done nan achiv chwazi ki te ekspòte e malfòme ak enpòtasyon pa kapab konplè"
+    "documentation": {
+        "heading": "Dokimantasyon Lakwa Wouj",
+        "sidebar": {
+            "introduction": "Prezantasyon",
+            "base_url": "Sèvi URL",
+            "changelog": "Changelog",
+            "authentication": "Otantifikasyon",
+            "response_codes": "Kòd Repons",
+            "emergency_alert_feed": "Feed Alèt Ijans",
+            "cap_alert_document": "Cap Alèt Dokiman",
+            "what_now": "Ki sa ki kounye a"
+        },
+        "steps": {
+            "one": {
+                "body": "Lakwa Wouj REST API la pèmèt devlopè yo gen aksè a enfòmasyon ijans ak resous ki soti nan sosyete entènasyonal Lakwa Wouj yo.",
+                "heading": "Prezantasyon",
+                "support_card": {
+                    "body": "Si ou gen nenpòt kesyon oswa bezwen sipò, tanpri kontakte nou nan hello@ifrc.org.",
+                    "title": "Sipò & Kesyon"
+                }
+            },
+            "two": {
+                "body": "Tout ekstremite API yo prefiks ak URL baz sa a.",
+                "heading": "Sèvi URL"
+            },
+            "three": {
+                "heading": "Changelog",
+                "table": {
+                    "headers": {
+                        "detail": "Emèt",
+                        "version": "API vèsyon",
+                        "release": "Emèt",
+                        "release_date": "Dat lage"
+                    }
+                }
+            },
+            "four": {
+                "body": "API la mande pou otantifikasyon jwenn aksè nan tout resous lè l sèvi avèk yon kle API. ",
+                "create_app_cta": "Kreye yon aplikasyon",
+                "heading": "Otantifikasyon"
+            },
+            "five": {
+                "heading": "Kòd Repons",
+                "table": {
+                    "descriptions": {
+                        "ok": "Demann lan te gen siksè ak kò a repons gen resous la mande yo",
+                        "found": "Endike yon redireksyon. ",
+                        "not_found": "Resous yo mande a pa te jwenn.",
+                        "not_allowed": "Endike metòd HTTP ki itilize a pa pèmèt sou resous sa a.",
+                        "server_error": "Yon erè sèvè ki te fèt ak resous la mande yo pa ta ka retounen.",
+                        "unavailable": "Endike sèvis la pa disponib kounye a. "
+                    },
+                    "headers": {
+                        "code": "Kòd",
+                        "name": "Non",
+                        "description": "Deskripsyon"
+                    }
+                }
+            },
+            "six": {
+                "card": {
+                    "body": "Chak Sosyete Lakwa Wouj ka bay alèt piblik lè l sèvi avèk {0} v1.2 la.",
+                    "cta": "Pwotokòl alèt komen",
+                    "title": "Pwotokòl alèt komen"
+                },
+                "endpoint": "Pwen final:",
+                "example": "Nan egzanp sa a, segman {0} ta dwe ranplase ak kòd peyi a nan yon sosyete bay yo. ",
+                "feed_intro": "Yon manje pou chak sosyete tou bay, lis alèt aktif ki te pibliye pa yon sosyete bay yo, idantifye pa",
+                "heading": "Feed Alèt Ijans",
+                "intro": "Alèt CAP ki soti nan tout sosyete yo pibliye lè l sèvi avèk yon manje RSS. "
+            },
+            "seven": {
+                "endpoint": "Pwen final:",
+                "example_response": "Egzanp Repons:",
+                "heading": "Cap Alèt Dokiman",
+                "body": "Dokiman alèt CAP ka jwenn aksè atravè lyen ki absoli espesifye nan chak atik manje RSS. "
+            },
+            "eight": {
+                "body": "Ekstremite sa yo bay done estriktire pibliye pa Sosyete Lakwa Wouj yo ede ak preparasyon pou dezas pou yon varyete de kalite evènman.\n\n",
+                "endpoint": "Pwen final:",
+                "example_response": "Egzanp Repons:",
+                "heading": "Ki sa ki kounye a",
+                "note": "Remak:",
+                "noteDetails": "{0} Tout repons yo genyen nan nan yon paran {1} pwopriyete.",
+                "query_params": "Paramèt rechèch:",
+                "response_properties": "Pwopriyete repons:",
+                "structure": "Estrikti nan sa ki kounye a atik objè:",
+                "stucture_attribution": "Estrikti nan yon objè {0}:",
+                "stucture_attribute_translation": "Estrikti nan yon atribisyon {0} objè:",
+                "stucture_translation": "Estrikti nan yon objè {0}:",
+                "table": {
+                    "query_params": {
+                        "name": "non",
+                        "description": "deskripsyon"
+                    },
+                    "structure": {
+                        "property": "Posesyon",
+                        "data_type": "Done Kalite",
+                        "description": "Deskripsyon"
+                    }
+                }
+            }
         }
-      }
+    },
+    "get_started_docs": {
+        "title": "Kòmanse",
+        "sidebar": {
+            "create_app": "Kreye yon app",
+            "get_api_key": "Jwenn yon kle API",
+            "make_request": "Fè yon demann",
+            "sign_up": "Enskri"
+        },
+        "steps": {
+            "one": {
+                "heading": "Etap 1 - Enskri",
+                "body": "Pou jwenn te kòmanse lè l sèvi avèk done ki sòti nan API la baz done Sekirite Mesaj, premyèman {0} nan Portal nan baz done Sekirite Sosyal.\n\n",
+                "create_account_alt": "kreye kont",
+                "existing_account": "Si ou deja gen yon kont, tanpri {0}.",
+                "login_cta": "Log in",
+                "sign_up_cta": "Enskri"
+            },
+            "two": {
+                "body": "Pou itilize API la ou dwe kreye yon aplikasyon nan Portal nan baz done Sekirite Sosyal. ",
+                "create_app_alt": "kreye app",
+                "heading": "Etap 2 - Kreye yon app"
+            },
+            "three": {
+                "body": "Lè ou te kreye yon app, yon kle API yo pral otomatikman pwodwi.\n\n",
+                "create_api_key_alt": "Kreye kle API",
+                "heading": "Etap 3 - Jwenn yon kle API",
+                "important": "Enpòtan:"
+            },
+            "four": {
+                "api_docs_cta": "Dokimantasyon API",
+                "body": "Mesaj Sekirite Mesaj API la sèvi ak HTTP (yo) epi li bay ekstremite RESTful jwenn done pibliye.\n\n",
+                "example_title": "Egzanp demann",
+                "heading": "Etap 4 - Fè yon demann",
+                "moreInfo": "Pou plis enfòmasyon sou tout ekstremite API, gade {0} la."
+            }
+        }
+    },
+    "home_pods": {
+        "bulk_upload": "Isit la ou ka Upload tout mesaj sekirite ou nan yon sèl dosye.",
+        "audit_log": "Isit la ou ka wè istwa a nan mesaj mesaj ou a",
+        "whatnow_edit": "Sa a se kote ou ka edite kontni baz done sekirite mesaj",
+        "whatnow_review": "Sa a se kote ou ka revize kontni baz done sekirite mesaj",
+        "whatnow_publish": "Isit la ou ka edite epi pibliye mesaj sekirite sosyete nasyonal ou an.",
+        "manage_users": "Sa a se kote yo jere itilizatè yo (kreye, edite epi retire)",
+        "api_usage": "Sa a se kote ou ka wè ki moun ki lè l sèvi avèk API la ak sa ki aplikasyon pou yo te bati ak li.",
+        "wellcome": "Byenveni",
+        "wellcome_description": "Isit la ou ka edite ak pibliye kontni baz done sekirite mesaj."
+    },
+    "languages": {
+        "am": "አማርኛ",
+        "ar": "عربى",
+        "bn": "বাংলা",
+        "de": "Deutsche",
+        "en": "Angle",
+        "es": "Español",
+        "fr": "Français",
+        "ht": "Kreyòl",
+        "id": "Bahasa Endonezi",
+        "it": "Italiano",
+        "ja": "日本",
+        "my": "ဗမာ",
+        "ne": "ाली",
+        "pt": "Pòtigè",
+        "ru": "русский",
+        "rw": "Kinyarwanda",
+        "sw": "Kiswahili",
+        "th": "ไทย",
+        "tr": "Türk",
+        "ur": "اردو",
+        "vi": "Tiếng việt"
+    },
+    "sidebar": {
+        "manage": "Jere itilizatè kontni",
+        "content_users": "Itilizatè kontni",
+        "audit_log": "Edit Istwa",
+        "whatnow": "Editè atribisyon",
+        "bulk": "Dosye mesaj Upload",
+        "content": "Kontan",
+        "api": "API Itilizasyon",
+        "applications": "Aplikasyon",
+        "api_stats": "API stats",
+        "api_users": "Itilizatè API yo",
+        "terms_conditions": "Tèm ak Kondisyon yo",
+        "subnationals": "Subnational"
+    },
+    "common": {
+        "accept": "Aksepte",
+        "actions": "Aksyon",
+        "create": "Kreye",
+        "edit": "Redije",
+        "save": "Sove",
+        "deactivate": "Dezaktive",
+        "activate": "Aktive",
+        "are_you_sure": "Èske ou sèten?",
+        "yes": "Wi",
+        "title": "Tit",
+        "description": "Deskripsyon",
+        "unpublished_edits": "Edits pibliye?",
+        "published": "Pibliye",
+        "delete": "Efase",
+        "welcome": "Byenveni nan la",
+        "save_changes": "Sove chanjman",
+        "auto_saving": "Autosaving",
+        "add": "Ajoute",
+        "reset_password": "Reyajiste modpas",
+        "my_profile": "Pwofil mwen",
+        "cancel": "Anile",
+        "view_changes": "Gade chanjman",
+        "view_content": "View kontni",
+        "resend_activation": "Reyabilitasyon Imèl Aktivasyon",
+        "deactivate_user": "Dezaktive itilizatè",
+        "submit_changes": "Soumèt chanjman",
+        "reactivate_user": "Reactivate itilizatè",
+        "send_invite": "Voye envite",
+        "invite_and_create": "Envite ak kreye yon lòt",
+        "loading": "Chaje kontni",
+        "loading_button": "Loading ...",
+        "publish_new": "Pibliye nouvo vèsyon",
+        "greeting": "Hi",
+        "removed": "Retire",
+        "copy": "Kopye",
+        "copied": "Kopye",
+        "not_empty": "Pa ka vid",
+        "name": "Non",
+        "webUrl": "Òk",
+        "learn_more": "Aprann plis",
+        "validations": {
+            "empty": "Sa a pa ka vid",
+            "hazardIcon": "Tanpri chwazi yon imaj ki mwens pase 30kb"
+        },
+        "network_error": "Rezo Erè",
+        "network_error_text": "Sanble te gen yon erè rezo. ",
+        "email_sent": "Imèl voye",
+        "duplicate_lang_error": "Padon, lang lan chwazi deja egziste",
+        "duplicate_lang_description": "Tanpri swa edite lang ki egziste a oswa chwazi yon nouvo lang nan deroulan la",
+        "estimated_users": "Nimewo nan itilizatè yo estime",
+        "upploading": "Uploading",
+        "download": "Telechaje",
+        "download_as_image": "Download kòm yon imaj",
+        "download_as_pdf": "Download kòm yon PDF",
+        "add_logo": "Ajoute logo",
+        "edit_logo": "Edit Logo",
+        "loading_image": "Loading ...",
+        "preview": "Apèsi"
+    },
+    "banners": {
+        "get_started_create": ", Jwenn te kòmanse ak kreye premye app ou",
+        "create_app": "Kreye yon app",
+        "get_started_info": "BV FRAZO PRECITO BAF, PER HO DOLOLO FRAKCISTREKO, KUO DRUMO EKSTERNA REZEZENTI RO. "
+    },
+    "users": {
+        "user": "Izaje",
+        "deleted": "Itilizatè efase",
+        "list": {
+            "manage": "Jere Itilizatè yo",
+            "select_status": "Chwazi estati",
+            "select_role": "Chwazi yon wòl",
+            "select_country": "Chwazi yon peyi",
+            "select_terms": "Chwazi yon vèsyon tèm",
+            "select_society": "Chwazi yon sosyete Nacional",
+            "create": "Kreye nouvo itilizatè",
+            "download_report": "Download Rapò",
+            "empty": "Pa t 'kapab jwenn nenpòt itilizatè yo",
+            "detail": "Detay itilizatè",
+            "clear_filters": "Filtè klè",
+            "table_header": {
+                "user": "Izaje",
+                "role": "Wòl",
+                "society": "Sosyete",
+                "email": "Imèl",
+                "added": "Ajoute",
+                "last_activity": "Dènye akitivite",
+                "t_and_c": "T & C vèsyon"
+            },
+            "societies": "Sosyete"
+        },
+        "status": {
+            "active": "Aktive",
+            "deactivated": "Dezaktive"
+        },
+        "edit": {
+            "super_admin_all": "Aksè nan tout sosyete",
+            "user_details": "Itilizatè Detay",
+            "create_user": "Kreye nouvo itilizatè",
+            "add_society": "Ajoute Sosyete +",
+            "societies_heading": "Sosyete",
+            "roles_heading": "Wòl & autorisations",
+            "activity_heading": "Aktivite",
+            "roles_label": "Chwazi wòl & autorisations pou itilizatè sa a",
+            "activity_link": "Wè tout aksyon pa itilizatè",
+            "created": "Itilizatè avèk siksè kreye",
+            "updated": "Itilizatè avèk siksè mete ajou",
+            "email_update": "Pou mete ajou imèl ou, tanpri antre modpas ou",
+            "view": "Vi",
+            "more": "plis",
+            "less": "Montre mwens",
+            "user_can_do": "Gade sa ki itilizatè gen pèmisyon fè:",
+            "user_no_permission": "Itilizatè pa gen okenn autorisations",
+            "soc_already_added": "Itilizatè sa a te deja asiyen sosyete sa a"
+        }
+    },
+    "new_welcome": {
+        "title_1": "Byenveni nan",
+        "red_title": "IFRC",
+        "title_2": "Sekirite",
+        "title_3": "Mesaj baz done",
+        "text_header": "Aksè ak pataje Wouj Lakwa Wouj Kwasan Sekirite Mesaj atravè tribin ou.",
+        "text_header_2": "Swiv gid la #-step anba a ..",
+        "bottom_subtitle": "Kontakte IFRC",
+        "bottom_text": "Imèl ekip la IFRC si ou gen kesyon: im@ifrc.org",
+        "bottom_btn": "Kontakte IFRC",
+        "slider_1": {
+            "btn": "Kreye yon kle API",
+            "step_1": {
+                "header": "Etap 1: Kreye yon app",
+                "text": "Kreye yon kle API yo sèvi ak API la nan baz done a. "
+            },
+            "step_2": {
+                "header": "Etap 2: Resevwa yon kle API",
+                "text": "Lè ou te kreye yon kle API, li pral otomatikman pwodwi.",
+                "text_2": "Enpòtan: Sere kle API ou kòm byen ke posib. "
+            },
+            "step_3": {
+                "header": "Etap 3: Fè yon demann",
+                "text": "API baz done a sèvi ak HTTP (S) epi li bay ekstremite RESTful pou jwenn done pibliye. "
+            },
+            "step_4": {
+                "header": "Etap 4: Pataje mesaj yo",
+                "text": "Pataje Lakwa Wouj Wouj Kwasan Sekirite Sosyal ak piblik la lè gen yon menas danje. "
+            }
+        },
+        "slider_2": {
+            "btn": "Mesaj sekirite",
+            "step_1": {
+                "header": "Etap 1: Gade mesaj yo",
+                "text": "Vizite baz done mesaj la pou wè mesaj Sosyete Nasyonal Lakwa Wouj ki disponib."
+            },
+            "step_2": {
+                "header": "Etap 2: Chwazi Mesaj la mete",
+                "text": "Chwazi sosyete nasyonal la ou vle wè. "
+            },
+            "step_3": {
+                "header": "Etap 3: Pataje mesaj yo",
+                "text": "Gade pou opsyon pou telechaje mesaj yo. "
+            }
+        }
+    },
+    "upload_modal": {
+        "drag_button_text": "Klike sou oswa trennen dosye nan zòn sa a yo Upload",
+        "button_text": "Upload",
+        "allowed_formats_info": "Se sèlman dosye JPG ak PNG yo gen dwa. "
+    },
+    "stages": {
+        "immediate": "Imedia",
+        "warning": "Avètisman",
+        "anticipated": "Antisipe",
+        "assess_and_plan": "Evalye ak plan",
+        "mitigate_risks": "Diminye risk",
+        "prepare_to_respond": "Prepare pou reponn",
+        "recover": "Retabli"
+    },
+    "content": {
+        "content": "Kontan",
+        "audit_log": {
+            "audit_log": "Odit Log",
+            "my_audit_log": "Edit Istwa",
+            "subtitle": "Isit la ou ka wè istwa a nan mesaj mesaj ou a.",
+            "empty": "Pa gen okenn istwa kontwòl kontab yo te jwenn ki matche ak sa a filtre",
+            "soc_label": "Sosyete",
+            "select_hazard": "Chwazi kalite danje",
+            "select_language": "Chwazi yon langaj",
+            "select_overwrite": "Chwazi recouvrir Oprion",
+            "choose_file": "Chwazi kalite dosye",
+            "select_soc": "Chwazi yon sosyete Nacional"
+        },
+        "whatnow": {
+            "title": "Mesaj",
+            "set_attribution": "Mete non sosyete a ak mesaj atribisyon yo pibliye",
+            "whatnow": "Baz done mesaj sekirite",
+            "empty": "Pa gen okenn mesaj sekirite pibliye pou sosyete nasyonal sa a",
+            "steps": "Etap",
+            "publish": "Pibliye",
+            "no_publish": "Pa gen anyen yo pibliye",
+            "published": "Tradiksyon pibliye",
+            "publishing": "Edisyon",
+            "content_to_publish": "Ki sa ki pral pibliye",
+            "whatnow_content": "Mesaj Sekirite Mesaj kontni",
+            "choose_hazard": "Chwazi danje",
+            "hazard": "Aza",
+            "content": "Kontan",
+            "create": "Ajoute danje",
+            "edit_attribtion": "Edit atribisyon",
+            "attribution": "Atribisyon",
+            "attribution_url": "URL atribisyon",
+            "society_name": "Sosyete Nasyonal",
+            "attribution_message": "Mesaj atribisyon",
+            "no_translation": "Pa gen okenn kontni mete",
+            "delete_content_translation": "Sa a pral retire kontni an baz done sekirite chwazi nan lang aktyèl la",
+            "messages": "Mesaj sekirite nan la",
+            "add_language": "Ajoute nouvo lang",
+            "no_languages": "Chwazi oswa kreye yon lang pou kòmanse",
+            "no_soc": "Chwazi yon sosyete nasyonal",
+            "no_region": "Subnational",
+            "add_language_message": "Pou ajoute yon nouvo lang, tanpri ajoute kèk kontni yo ale ansanm ak li",
+            "add_language_attribution": "Kreye atribisyon pou ajoute yon nouvo lang",
+            "select_language": "Tanpri chwazi yon langaj",
+            "attribution_publish": "Atribisyon sa a pral disponib imedyatman sou pibliye",
+            "date_added": "Dat te ajoute",
+            "url": "Òk",
+            "hazard_type": "Kalite danje",
+            "hazard_type_duplicated": "Li deja egziste",
+            "show_more": "Montre plis",
+            "early": "Avètisman Bonè",
+            "disaster": "Rediksyon risk pou dezas",
+            "recovery": "Gaya",
+            "publish_summary_title": "Atribisyon",
+            "publish_summary_ns": "Sosyete Nasyonal",
+            "publish_summary_url": "URL atribisyon",
+            "publish_summary_message": "Mesaj atribisyon"
+        },
+        "edit_whatnow": {
+            "title": "Tit",
+            "description": "Deskripsyon",
+            "content_piece": "Moso kontni",
+            "enter_other_hazard_type": "Mete non kalite danje",
+            "other_hazard_type_label": "Lòt kalite danje",
+            "stepped_content": "Moso kontni te demisyone",
+            "content_title_description": "Tit pou mesaj sekirite sa yo",
+            "content_description_description": "Deskripsyon mesaj sekirite sa yo",
+            "content_label": "Tanpri antre kèk enfòmasyon danje",
+            "content_url": "Òk",
+            "content_url_description": "URL pou plis enfòmasyon sou mesaj sekirite sa yo. ",
+            "created": "kreye",
+            "pieces_edited": "Moso edited",
+            "content_placeholder": "Tanpri antre yon mesaj",
+            "mitigation": "Amelyorasyon",
+            "mitigation_help": "Pi long aksyon tèm diminye risk",
+            "mitigation_subt": "",
+            "mitigation_extra": "Yon alèjman se yon deklarasyon ki dire lontan nan prediksyon nan yon evènman ki gen danje ladan. ",
+            "seasonalForecast": "Sezon pwevwa",
+            "seasonalForecast_help": "Pi kout aksyon tèm diminye risk",
+            "seasonalForecast_subt": "",
+            "seasonalForecast_extra": "Yon pwedi sezon se yon deklarasyon sou prediksyon nan yon evènman ki gen danje ladan. ",
+            "watch": "Gade",
+            "watch_help": "Prepare pou reponn",
+            "watch_subt": "",
+            "watch_extra": "Yon mont bay lè risk pou yon evènman ki gen danje ladan ogmante siyifikativman, men ensidan li yo, kote, ak\/oswa distribisyon yo toujou ensèten. ",
+            "warning": "Avètisman",
+            "warning_subt": "~ 24-48 èdtan plon èdtan",
+            "warning_help": "Prepare pou reponn",
+            "warning_extra": "Evènman danjere a gen yon gwo pwobabilite ki rive nan ~ 24-48 èdtan. ",
+            "immediate": "Imedia",
+            "immediate_subt": "Danje ap fèt",
+            "immediate_help": "Aksyon Repons",
+            "immediate_subtitle": "Danje ap fèt",
+            "immediate_extra": "Yon evènman ki gen danje ladan ap fèt. ",
+            "immediate_key_message_tooltip": "Sa a se yon aksyon priyorite ke yon moun ta dwe pran yo rete an sekirite. ",
+            "recover": "Gaya",
+            "recover_title": "Retabli",
+            "recover_help": "Aksyon Recovery",
+            "recover_subt": "",
+            "recover_extra": "Pran aksyon sa yo apre evènman an danje asire sekirite.",
+            "anticipated": "Antisipe",
+            "assess_and_plan": "Evalye ak plan",
+            "mitigate_risks": "Diminye risk",
+            "prepare_to_respond": "Prepare pou reponn",
+            "updated": "mete ajou",
+            "download_icon": "Download icon",
+            "download_image": "Download kòm yon imaj",
+            "download_image_error": "Erè telechaje imaj, tanpri asire w ke ou te pibliye tout chanjman epi eseye ankò.",
+            "download_instructions": "Dwa klike sou epi chwazi 'Save Imaj kòm ...' pou konsève pou",
+            "downloaded_image_alt": "Enstriksyon baz done sekirite",
+            "add_key_message": "Ajoute mesaj sekirite kle",
+            "add_supporting_message": "Ajoute Sipò Mesaj",
+            "early_warning": "Avètisman Bonè",
+            "early_warning_description": "Mesaj sekirite pou alèt ak aksyon byen bonè",
+            "disaster_risk_reduction": "Rediksyon risk pou dezas",
+            "disaster_risk_reduction_description": "Mesaj sekirite nan konsyantizasyon piblik ak edikasyon piblik pou DRR (PAPE)",
+            "recovery": "Gaya",
+            "recovery_extra": "Pran aksyon sa yo apre evènman an danje asire sekirite",
+            "recovery_description": "Apre evènman danje",
+            "hazard_type": "Kalite danje",
+            "content_edit_title": "Content EDIT",
+            "content_add_hazard_title": "Ajoute danje",
+            "anticipated_subt": "3-5 jou plon tan",
+            "anticipated_extra": "Gen yon risk pou yon evènman antisipe nan 3-5 jou. ",
+            "prepare_to_respond_subt": "",
+            "prepare_to_respond_extra": "Devlope kapasite repons pa aprann ladrès ak estoke dispozisyon",
+            "assess_and_plan_subt": "",
+            "assess_and_plan_extra": "Evalye risk ak aktivite plan yo rekonèt, diminye, epi reponn a evènman danje",
+            "mitigate_risks_subt": "",
+            "mitigate_risks_extra": "Pran mezi alèjman fè anviwònman yo bati ak natirèl pi an sekirite ak etabli sistèm avètisman bonè",
+            "key_message_label": "Mesaj Sekirite",
+            "supporting_message_label": "Sipòte mesaj",
+            "url_tool": "Link nan plis enfòmasyon mesaj sekirite sou sosyete nasyonal ou oswa sit entènèt patnè ou",
+            "desc_tool": "Bay yon deskripsyon tou kout sou danje ak mesaj yo. ",
+            "title_tool": "Pou egzanp: mesaj sekirite pou inondasyon",
+            "safety_tool": "Sa a se yon aksyon priyorite ke yon moun ta dwe pran yo rete an sekirite. ",
+            "supporting_tool": "Sa a bay plis detay pou sipòte aksyon kle priyorite a. "
+        },
+        "message_editor": {
+            "title": "Editè atribisyon",
+            "society_name_label": "Non Sosyete Nasyonal la",
+            "attribution_url_label": "URL atribisyon",
+            "attribution_message_label": "Mesaj atribisyon",
+            "create_btn": "Ajoute danje",
+            "contributor_name_label": "Non kolaboratè",
+            "contributor_single": "Kolabore",
+            "attribution_message_label_tooltip": "Pataje yon deskripsyon yon sèl-fraz nan sosyete nasyonal ou ak mesaj yo bay yo. ",
+            "attribution_url_label_tooltip": "Pataje sit entènèt Sosyete Nasyonal ou a bay enfòmasyon sou òganizasyon ou."
+        },
+        "previewer": {
+            "download_image_error": "Erè telechaje imaj, tanpri eseye ankò.",
+            "download_pdf_error": "Erè telechaje PDF, tanpri eseye ankò."
+        },
+        "audit": "Edit Istwa",
+        "export": "Espòtasyon",
+        "bulk_upload": {
+            "empty_template": "Modèl vid",
+            "bulk_upload": "Dosye mesaj Upload",
+            "bulk_subtitle": "Isit la ou ka Upload tout mesaj sekirite ou nan yon sèl dosye.",
+            "template": "Modèl",
+            "export_template": "Ekspòtasyon modèl",
+            "import_data": "Enpòte done",
+            "import_complete": "Enpòte konplè",
+            "import_summary": "Ou ap enpòte anba {sosyete} nan {lang}.",
+            "import_banner": {
+                "success": "Reisit",
+                "added": "Ajoute",
+                "skipped": "Sote",
+                "denied": "Refize",
+                "updated": "Mete ajou",
+                "failed": "Echwe",
+                "invalid": "Envalid",
+                "row": "Ranje"
+            },
+            "upload_csv": "Voye yon dokiman nan fòma CSV",
+            "language_instructions": "Chwazi lang tradiksyon ke yo te enpòte.",
+            "file_instructions": "Trennen yon dosye oswa chwazi nan aparèy ou an.",
+            "choose": "Chwazi",
+            "submit": "Enpòte kontni",
+            "reset": "Voye yon lòt",
+            "export_template_guide": "Gid Modèl Ekspòtasyon",
+            "export_template_instructions": "Pou enstriksyon sou ki jan yo sèvi ak sa a G dosye Upload modèl efektivman, tanpri wè gid sa a.",
+            "refer": "Gade nan",
+            "detail": "Pou enstriksyon detay",
+            "warnings": {
+                "title": "Rejte enpòte si nenpòt ki kontni pral recouvrir vèsyon ki pi resan yo.",
+                "on": "Wi",
+                "off": "Non"
+            },
+            "overwriting": {
+                "title": "Ranplase anviwònman.",
+                "on": "Toujou mete ajou nan vèsyon sa -a, recouvrir tout revizyon",
+                "off": "Se sèlman kalite evènman aktyalizasyon kote kontni an enpòte se plus"
+            },
+            "errors": {
+                "warning_update_will_overwrite": "Aksyon sa a pral recouvrir chanjman ki te fèt depi sa a ekspòtasyon te kreye",
+                "bad_request": "Done dosye pa kòrèkteman fòme",
+                "bad_request_error_codes": {
+                    "30001": "Tit kolòn pa matche ak modèl la",
+                    "30002": "Non atribisyon, mesaj oswa URL ki manke",
+                    "30003": "URL atribisyon valab - Tanpri asire pwotokòl la prezan, eg. ",
+                    "40001": "Kòd peyi valab bay yo",
+                    "40002": "Sosyete chwazi pa matche ak sosyete a pou dosye a chwazi",
+                    "40003": "Dat la te chwazi dosye a ekspòte te malformed ak enpòte a pa ka ranpli"
+                }
+            }
+        }
+    },
+    "api_stats": {
+        "page_title": "API stats",
+        "download_data": "Download Done",
+        "clear_filters": "Filtè klè",
+        "start_date": "Kòmanse dat",
+        "end_date": "Dat fen",
+        "table_select": {
+            "keys": "Kle API",
+            "routes": "Wout API"
+        },
+        "field_headers": {
+            "application_name": "Non Aplikasyon",
+            "number_of_hits": "Kantite frape",
+            "estimated_reach": "Estimasyon rive",
+            "organisation": "Òganizasyon",
+            "application": "Aplikasyon"
+        },
+        "cumulative_cards": {
+            "hits": "Frape total",
+            "accounts": "Kont Total",
+            "est_impacted_users": "Est. "
+        },
+        "empty": "Pa gen stats yo te jwenn pou dat la dat bay yo"
+    },
+    "api_usage": {
+        "applications": "Aplikasyon",
+        "view_user": "Gade itilizatè",
+        "reactivate": "Ak aktivite",
+        "app_detail": "App detay",
+        "app_details": "Detay app",
+        "activity": "Aktivite",
+        "view_all_activity": "Wè tout aktivite pou app sa a",
+        "api_users": "Itilizatè API yo",
+        "terms_conditions": "Tout Regleman & Kondisyon Vèsyon",
+        "view_prev_terms": "Gade vèsyon anvan yo",
+        "current_version": "Vèsyon aktyèl",
+        "version": "Vèsyon"
+    },
+    "applications": {
+        "my_apps": "Apps mwen",
+        "new_tc": "Nouvo tèm ak kondisyon",
+        "terms_conditions_message": "Gen deja yon vèsyon pibliye ak nimewo sa a:",
+        "build": "Bati nouvo app",
+        "build_key": "Bati nouvo kle API",
+        "edit": "Edit App",
+        "building": "Bati app",
+        "building_key": "Bati API kle",
+        "no_apps": "Ou pa gen okenn apps, bati yon sèl jwenn te kòmanse.",
+        "api_keys": "Kle API"
+    },
+    "home": {
+        "home": "Lakay",
+        "welcome": "Byenveni",
+        "admin_intro": "Isit la ou ka jere itilizatè yo, edite epi pibliye kontni baz done sekirite mesaj ak wè API l '.",
+        "ns_admin_intro": "Isit la ou ka edite epi pibliye kontni baz done sekirite mesaj",
+        "ns_editor_intro": "Isit la ou ka edite kontni baz done sekirite mesaj",
+        "api_user_intro": "Isit la ou wè apps ou ak jere kont ou.",
+        "role_changed_title": "Wòl ou te chanje",
+        "role_changed_p": "Ou te asiyen wòl sa a:",
+        "role_changed_p2": "Otorizasyon ou yo jan sa a:",
+        "role_changed_confirm": "Konfime",
+        "role_changed_dismiss": "Fèmen",
+        "go_publish_safety_messages": "Pibliye mesaj sekirite yo",
+        "go_bulk_upload": "Voye dosye mesaj",
+        "go_audit_log": "View Edit Istwa"
+    },
+    "landing": {
+        "strapline": "Sèvis baz done sekirite",
+        "strapline_part_2": "Global Lakwa Wouj \/ Wouj Kwasan Mesaj Sekirite Kle",
+        "head_1": "Sekirite IFRC",
+        "head_2": "Mesaj baz done",
+        "head_text_1": "Mesaj sekirite ki baze sou konsyantizasyon piblik IFRC ak",
+        "head_text_2": "Resous Edikasyon Piblik (PAPE)",
+        "head_bottom_1": "Aksè ak pataje konfyans Lakwa Wouj Wouj Crescent",
+        "head_bottom_2": "mesaj aksyonab pou ede moun san danje",
+        "head_bottom_3": "epi reponn a danje.",
+        "signup": "Enskri",
+        "it_works": "Ki jan li fonksyone",
+        "works_1_a": "Lakwa Wouj Wouj Kwasan Nasyonal la",
+        "works_1_b": "Sosyete ak patnè gouvènman an",
+        "works_1_c": "dakò sou kouche nasyonal nan mesaj",
+        "works_2_a": "Sosyete Nasyonal Pibliye",
+        "works_2_b": "mesaj sekirite nan la",
+        "works_2_c": "baz done",
+        "works_3_a": "Chanje ajans ak",
+        "works_3_b": "Chanèl Kominikasyon",
+        "works_3_c": "Konekte nan baz done API la",
+        "works_4_a": "Patnè yo pataje",
+        "works_4_b": "mesaj nan yo",
+        "works_4_c": "kanal",
+        "works_5_a": "Kominote yo resevwa",
+        "works_5_b": "mesaj yo ak",
+        "works_5_c": "Aji san danje",
+        "learn_more": "Aprann plis",
+        "watch_video": "Gade videyo",
+        "example_case": "Egzanp itilize ka",
+        "api": "API",
+        "hurricane": "Mete mesaj ak siklòn bonè",
+        "warning_alerts": "Avètisman Alèt",
+        "social_media": "Medya sosyal",
+        "post_images": "Post imaj nan preparasyon dife sovaj",
+        "messages_network": "Mesaj nan rezo ou",
+        "whatsapp": "WhatsApp",
+        "share_flood": "Pataje aksyon alèjman inondasyon ak ou",
+        "family": "Fanmi ak zanmi",
+        "impact": "Repèkisyon",
+        "sign_up_today": "Enskri jodi a",
+        "developer": {
+            "strap_para_one": "Kominote ede yo prepare, reponn, ak retabli de danje ak mesaj lokalize aksyon kle nou yo.",
+            "strap_para_two": "Sèvi ak gid fasil kat-etap nou yo entegre mesaj yo sekirite nan aplikasyon ou an. "
+        },
+        "national_society": {
+            "strap_para_one": "Pibliye mesaj kle sekirite Sosyete Nasyonal RCRC ou a pou medya mondyal, nasyonal, ak lokal pou jwenn ak emisyon.",
+            "strap_para_two": "Kontakte nou pou aprann plis sou fason pou kreye mesaj yo epi konekte ak patnè medya yo."
+        },
+        "strap_para_one": "Kominote ede yo prepare, reponn, ak retabli de danje ak mesaj lokalize aksyon kle nou yo.",
+        "strap_para_two": "Sèvi ak gid fasil kat-etap nou yo entegre mesaj yo sekirite nan aplikasyon ou an. ",
+        "view_data": "Gade done yo",
+        "view_message_library": "Gade mesaj sekirite yo",
+        "what_now": "Kisa?",
+        "fake_alert_heading": "Avètisman ekstrèm frèt",
+        "fake_alert_description": "Et harum quidem rerum facilis est ak expedita distinctio. ",
+        "fake_alert_time": "1hr de sa",
+        "fake_alert_time_exact": "05\/02\/18 nan 05:15 CT",
+        "use_cases": {
+            "heading": "Aprann plis",
+            "first_heading": "Ki jan li fonksyone",
+            "first_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezans ro hav US Singularo Propozio Posta",
+            "second_heading": "Sèvi ak ka yo",
+            "second_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezans ro hav US Singularo Propozio Posta",
+            "third_heading": "Aplikasyon Toolkit",
+            "third_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezans ro hav US Singularo Propozio Posta",
+            "fourth_heading": "Whownow videyo",
+            "fourth_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezans ro hav US Singularo Propozio Posta",
+            "fifth_heading": "Amelyore apps move tan",
+            "fifth_content": "Per Ho Dolaro Frakcistreko, Kuo Drumo Eksterna Reprezans ro hav US Singularo Propozio Posta"
+        },
+        "example_alert": {
+            "heading": "Egzanp fòma mesaj sekirite",
+            "alert_preview": "Alèt Preview",
+            "what_now_info": "Preview Mesaj Sekirite",
+            "example_whatnow_request": "Egzanp Sekirite Sosyal Mesaj Repons",
+            "example_alert_request": "Egzanp repons alèt",
+            "example_content": "Advisory Weather# 3 final kòm nan 11 am, 29 janvye 2018\n",
+            "example_content_location_header": "Ki afekte kote",
+            "example_content_location": "Nome, Alaska"
+        },
+        "example_whatnow": {
+            "alert_from": "Alèt soti nan: Ameriken Lakwa Wouj",
+            "more_info": "Plis enfòmasyon",
+            "heading": "Mesaj sekirite pou frèt ekstrèm",
+            "copy": "Sa yo se aksyon pou pran pou diminye risk ak pwoteje ou ak kay ou soti nan frèt ekstrèm.",
+            "what_now": "IFRC Sekirite Mesaj baz done",
+            "step_1": "Pwoteje kay ou. ",
+            "step_2": "Rete idrate ak likid cho",
+            "step_3": "Pwoteje tèt ou ak rad cho epi kouvri po ekspoze",
+            "step_4": "Fè atansyon ak pridan nan kondisyon glas, espesyalman pandan y ap kondwi",
+            "step_5": "Tcheke sou vwazen, zanmi, ak moun ki nan risk"
+        },
+        "build": {
+            "heading": "Pare yo bati app ou a?"
+        },
+        "data_preview": {
+            "heading": "Mesaj sekirite",
+            "sub_heading": "Enskri ak wè mesaj yo aksyon kle soti nan Lakwa Wouj \/ Wouj Kwasan Sosyete Nasyonal atravè mond lan"
+        },
+        "footer": {
+            "terms_conditions": "Regleman & Kondisyon yo",
+            "about": "De",
+            "privacy": "Entimite",
+            "getting_started": "Pou kòmanse",
+            "docs": "Dokiman",
+            "give_feedback": "Bay fidbak",
+            "gdpc_logo": "Logo pou sant preparasyon pou dezas mondyal la",
+            "ifrc_logo": "Logo pou Lakwa Wouj Entènasyonal ak Wouj Kwasan Mouvman",
+            "subtitle_1": "Sou baz done sekirite kle IFRC",
+            "text_1": "Baz done sekirite kle IFRC a bay aksè a",
+            "text_2": "Lakwa Wouj Wouj Kwasan Mesaj sou ki jan moun",
+            "text_3": "ka aji san danje nan fè fas a danje",
+            "subtitle_2": "Chèche konnen plis",
+            "email_ifrc": "Im@ifrc.org",
+            "web_ifrc": "ifrc.org",
+            "subtitle_3": "Règleman",
+            "terms": "Regleman legal",
+            "terms_service": "Tèm de sèvis yo",
+            "subtitle_4": "Lyen itil",
+            "api_doc": "Dokimantasyon API",
+            "faq": "FAQ (lyen yo dwe bay)"
+        }
+    },
+    "register_form": {
+        "heading_1": "Kreye gratis ou",
+        "heading_2": "IFRC",
+        "heading_3": "Baz done mesaj sekirite",
+        "subtitle_1": "Ede kominote yo prepare pou yo epi reponn a danje lokal yo ak Lakwa Wouj Wouj Kwasan Mesaj sekirite aksyonè.",
+        "subtitle_2": "Si ou vle jwenn aksè ak API la, enskri epi pataje mesaj yo ak 3 etap gid la.",
+        "subtitle_3": "Si ou se yon Lakwa Wouj Wouj Kwasan Sosyete Nasyonal, enskri epi ou pral resevwa enstriksyon sou ki jan yo adapte ak pataje mesaj sekirite ou.",
+        "who_are_you": "Ki moun ou ye?",
+        "what_is_your_role": "Ki wòl ou?",
+        "description": "Kopi dèt",
+        "national_society_description": "Pibliye mesaj kle sekirite Sosyete Nasyonal RCRC ou a pou medya mondyal, nasyonal, ak lokal pou jwenn ak emisyon.\n",
+        "developer": "Pwomotè",
+        "national_society": "Sosyete Nasyonal",
+        "sign_up_with": "Enskri ak:",
+        "sign_up_agreement": "Pa kreye kont ou, ou dakò ak nou an",
+        "terms_conditions": "Tèm ak Kondisyon yo",
+        "facebook": "Enskri ak Facebook",
+        "google": "Enskri ak Google",
+        "email_sign_up": "Enskri ak imèl ou:",
+        "mail": "lapos",
+        "email_ifrc": "Im@ifrc.org",
+        "location": "Kanpay",
+        "organisation": "Òganizasyon",
+        "industry": "Kalite endistri",
+        "create_account": "Kreye kont",
+        "last_name": "Non sa a",
+        "select_country": "Chwazi yon peyi",
+        "select_industry": "Chwazi kalite endistri",
+        "industries": {
+            "media": "Media",
+            "emergency": "Jesyon Ijans",
+            "non_profit": "Ki pa Peye-\/ONG",
+            "humanitarian": "Organizationganizasyon imanitè",
+            "red_cross": "Lakwa Wouj\/Kwasan Wouj",
+            "education": "Edikasyon\/Akademi",
+            "gov": "Ajans Gouvènman",
+            "other": "Lòt"
+        },
+        "api_used_in": "Ki kote yo pral itilize API sa a?",
+        "api_used_in_help": "Se pou nou kounye a ki jan ou gen entansyon itilize sèvis sa a nan mwens pase 255 karaktè",
+        "welcome": "Byenveni {non}, tanpri ranpli enfòmasyon sa yo jwenn te kòmanse:",
+        "ifrc_note": "Pou kesyon oswa plis enfòmasyon, tanpri kontakte:",
+        "contact_gdpc": "Kontakte GDPC"
+    },
+    "terms_service_page": {
+        "applicable_law": {
+            "body": "Lwa yo nan Distri a nan Columbia va gouvène tout dwa ak obligasyon anba Akò sa a, san yo pa bay efè nan nenpòt ki prensip nan konfli nan lwa yo.",
+            "heading": "Lwa ki aplikab:"
+        },
+        "body": "Ou responsab pou kenbe sekrè a ak sekirite nan kle a enskripsyon ki ofri pa Lakwa Wouj ou. ",
+        "contact": "Tanpri kontakte Lakwa Wouj nan {0} ak nenpòt kesyon konsènan API la.",
+        "disclaimer": "API ak done Feeds yo bay pou rezon enfòmasyon ak edikasyon sèlman, ak sou yon 'kòm se' ak 'kòm ki disponib' baz. ",
+        "entire_agreement": {
+            "body": "Tèm yo API konstitye akò a konplè ak san konte ant Lakwa Wouj ak ou ki gen rapò ak matyè a sa a ak ranplase tout anvan oral oswa ekri konpreyansyon, kominikasyon, oswa akò pa espesifikman enkòpore nan dokiman sa a. ",
+            "heading": "Tout akò:"
+        },
+        "heading": "API Fen Itilizatè Licensing Akò",
+        "intro": "Dakò: Lè l sèvi avèk sèvis la oswa tcheke bwat la bay la, itilizatè a dakò yo dwe mare nan akò sa a.\n\n",
+        "license_limitations": {
+            "body": "Ou ka itilize done yo manje sèlman nan asosyasyon avèk pwòp aplikasyon ou sijè a tèm yo API, ak bay ou kenbe konpatibilite ak API la, kòm mete ajou de tan zan tan. ",
+            "heading": "Lisans ak Limitasyon:"
+        },
+        "overview": {
+            "body": "Global Dezas Preparasyon Sant Sekirite Sosyal Database Sèvis Aplikasyon Pwogram Entèfas (\"API la\") se disponib nan ou pa Ameriken Nasyonal Lakwa Wouj la (\"Lakwa Wouj\"). ",
+            "cta": "Klike la a pou enskri."
+        },
+        "privacy_policy": {
+            "body": "Ou konprann, rekonèt, epi mwen dakò ke operasyon sèten pwogram, sèvis, zouti, opsyon achte, materyèl, oswa enfòmasyon nan API la mande pou soumèt, itilize ak difizyon nan divès kalite enfòmasyon pèsonèl idantifikasyon. ",
+            "heading": "Règleman sou enfòmasyon prive:"
+        },
+        "prohibited_activities": {
+            "body": "Ou menm ak itilizatè fen ou oswa ajan pa dwe sèvi ak API la oswa done manje nan fason sa yo:",
+            "heading": "Aktivite entèdi ak kondwit:",
+            "prohibited_list": {
+                "one": "Entèfere ak oswa deranje sèvis Lakwa Wouj oswa serveurs.",
+                "two": "Kontourne oswa modifye nenpòt kle oswa mekanis sekirite travay pa Lakwa Wouj oswa API la, ki gen ladan san limitasyon nenpòt ki teknoloji otantifikasyon.",
+                "three": "Pou mande, kolekte, mande oswa otreman jwenn aksè nan siy-an non, modpas oswa lòt kalifikasyon otantifikasyon pou Lakwa Wouj lòt pase sa ki bay ou pou kont pwòp ou yo.",
+                "four": "Nan eta oswa vle di afilyasyon, parennaj oswa andòsman pa Lakwa Wouj oswa nenpòt ki lòt Lakwa Wouj oswa Wouj Kwasan Sosyete Nasyonal oswa òganizasyon.",
+                "five": "Pou deklare oswa vle di ke ou posede oswa kreye API la, done manje, alèt evènman ak\/oswa prepare, reponn, ak refè mesaj.",
+                "six": "Transmèt nenpòt viris, vè domaj, chwal Trojan, oswa nenpòt ki atik nan yon nati destriktif."
+            }
+        },
+        "reserve_rights": "Lakwa Wouj rezève dwa pou yo chanje ak\/oswa pa bay API la ak manje done an antye oswa an pati, swa pou yon ti tan oswa pou tout tan, nan nenpòt ki lè san avètisman anvan. ",
+        "severability": {
+            "body": "Envalidite nan nenpòt ki tèm oswa pwovizyon nan tèm yo API pa pral afekte validite nan nenpòt ki lòt dispozisyon.",
+            "heading": "Sevabilite ak egzansyon:"
+        },
+        "suspension": {
+            "body": "Lakwa Wouj rezève dwa pou yo sispann oswa mete fen nan aksè ou si Lakwa Wouj detèmine, nan diskresyon sèl li yo, ke ou ap angaje nan itilizasyon san otorizasyon nan API la oswa manje done jan sa dekri nan tèm yo API oswa ke ou ap itilize API la oswa manje done nan nenpòt ki aktivite ki menase\/konpwomi sekirite a ak\/oswa sekirite nan nenpòt ki moun oswa rezo yo Lakwa Wouj.",
+            "heading": "Sispansyon oswa revokasyon:"
+        }
+    },
+    "view_data": {
+        "alert_title": "Alèt:",
+        "more_info": "Plis enfòmasyon:",
+        "which": "Ki mesaj sekirite ou vle wè?",
+        "view_data": "Gade done",
+        "alerts": "Alèt",
+        "alert_preview": "Alèt Preview",
+        "cap_alerts": "Alèt bouchon",
+        "onset": "Kòmansman",
+        "severity": "Gravite",
+        "title": "Tit",
+        "date": "Dat",
+        "headline": "Tit",
+        "alert": "Alète",
+        "whatnow_info": "Enfòmasyon sou baz done sekirite",
+        "alert_detail": "Detay alèt",
+        "more": "Plis enfòmasyon",
+        "area_affected": "Zòn ki afekte yo",
+        "details": "Detay",
+        "cap": {
+            "type": "Lèt",
+            "status": "Kondisyon",
+            "urgency": "Ijans",
+            "severity": "Gravite",
+            "certainty": "Sètitid",
+            "sent": "Voye",
+            "effective": "Efektif",
+            "onset": "Kòmansman",
+            "expires": "Ekspire",
+            "alert_from": "Alèt soti nan la",
+            "feed": "Nouriti",
+            "more": "Plis enfòmasyon:",
+            "through": "pa",
+            "alert_feed": "Alèt manje",
+            "fetching_feed": "Chache manje",
+            "empty": "Pa gen okenn alèt aktyèl kounye a"
+        },
+        "national_society_select_placeholder": "Chwazi yon sosyete nasyonal"
+    },
+    "user_agreement": {
+        "title": "Akò Itilizatè",
+        "para_one": "Anvan ou ka jwenn aksè nan Portal nan baz done Sekirite Sosyal, tanpri ou ka li ak aksepte kondisyon ki nan Akò a Itilizatè pa Téléchargez dokiman ki anba a epi klike sou 'mwen aksepte' bouton ki anba a.",
+        "cta": "Mwen aksepte",
+        "download": "Klike la a pou wè dokiman Akò Itilizatè a (105KB)"
+    },
+    "hazard_type": {
+        "dropdown": {
+            "select": "Chwazi kalite danje",
+            "create": "Kreye kalite danje"
+        },
+        "create": {
+            "title": "Kreye nouvo kalite danje",
+            "request": "Mande nouvo kalite danje",
+            "other": "Lòt",
+            "email_subject": "Demann pou nouvo kalite danje",
+            "hazard_name": "Non danje",
+            "hazard_name_placeholder": "Antre non danje",
+            "upload_icon": "Voye yon icon",
+            "icon_requirements": "Ikon yo dwe yon PNG ak anba a 30kb",
+            "requestLink": "Kontakte IFRC pou mande nouvo kalite danje",
+            "success": "Kalite danje kreye",
+            "error": "Padon, te gen yon pwoblèm pou kreye nouvo kalite danje ou."
+        }
+    },
+    "subnationals": {
+        "list": {
+            "manage": "Subnational",
+            "create": "Kreye nouvo subnational",
+            "edit": "Edit subnational",
+            "add": "Ajoute subnational",
+            "empty": "Pa t 'kapab jwenn nenpòt ki subnationals",
+            "table_header": {
+                "subnational": "Subnational"
+            }
+        },
+        "select_soc": "Chwazi yon sosyete pou wè epi ajoute subnationals",
+        "create": "Kreye yon nouvo subnational",
+        "form": {
+            "name": "Non subnational",
+            "name_help": "Nonmen subnational la ou vle kreye mesaj sekirite koutim pou.",
+            "description": "Deskripsyon",
+            "description_help": "Bay plis enfòmasyon sou subnational la. "
+        },
+        "edit": "Edit subnational",
+        "delete": "Sa a pral efase subnational la ak nenpòt ki kontni ki asosye ak ki subnational."
+    },
+    "table_headers": {
+        "profile_pic": "pwofil pic",
+        "first_name": "Non sa a",
+        "last_name": "LAST_NAME",
+        "role": "wòl",
+        "society": "sosyete",
+        "date": "Dat",
+        "country": "Kanpay",
+        "email": "imèl",
+        "created_at": "kreye_at",
+        "last_logged_in_at": "Dènye aktif",
+        "terms_version": "profil",
+        "actions": "Aksyon",
+        "action": "Aksyon",
+        "content": "Kontan",
+        "country_code": "Anplasman",
+        "organisation": "òganizasyon",
+        "industry_type": "Kalite endistri",
+        "all_roles": "Tout wòl",
+        "version": "Vèsyon",
+        "user": "Izaje",
+        "language_code": "Kòd lang"
+    },
+    "terms_conditions": {
+        "title": "Tèm ak Kondisyon yo",
+        "accept": "Aksepte"
+    },
+    "badges": {
+        "hazardCreate": "Danje kreye",
+        "published": "Pibliye",
+        "draft": "Bouwa",
+        "bulkUploadDraft": "Mesaj dosye Voye bouyon"
     }
-  },
-  "api_stats": {
-    "page_title": "Estatistik API",
-    "download_data": "Telechaje Done",
-    "start_date": "Dat Kòmansman",
-    "end_date": "Dat Fen",
-    "table_select": {
-      "keys": "Kle API",
-      "routes": "Itinerè API"
-    },
-    "field_headers": {
-      "application_name": "Application Name",
-      "number_of_hits": "Number of Hits",
-      "estimated_reach": "Estimated Reach",
-      "organisation": "Organisation",
-      "application": "Application"
-    },
-    "cumulative_cards": {
-      "hits": "Total Vizit",
-      "accounts": "Total kont",
-      "est_impacted_users": "Estime Itilizatè ki afekte yo"
-    },
-    "empty": "Pa gen estatistik yo jwenn pou seri dat yo bay la"
-  },
-  "api_usage": {
-    "applications": "Aplikasyon yo",
-    "view_user": "Wè itilizatè a",
-    "reactivate": "Reaktive",
-    "app_detail": "Detay app",
-    "app_details": "Detay app yo",
-    "activity": "Aktivite",
-    "view_all_activity": "Wè tout aktivite pou app sa a",
-    "api_users": "Itilizatè API yo",
-    "terms_conditions": "Tout vèsyon kondisyon ak tèm yo",
-    "view_prev_terms": "Gade vèsyon anvan yo",
-    "current_version": "Vèsyon kouran",
-    "version": "Vèsyon"
-  },
-  "applications": {
-    "my_apps": "App mwen yo",
-    "new_tc": "Nouvo tèm ak kondisyon yo",
-    "build": "Konstwi nouvo app",
-    "build_key": "Konstwi nouvo kle API",
-    "edit": "Modifye aplikasyon an",
-    "building": "Konstriksyon app",
-    "building_key": "Ap konstwi kle API",
-    "no_apps": "Ou pa gen app yo, konstwi youn pou kòmanse",
-    "api_keys": "Kle API yo"
-  },
-  "home": {
-    "home": "Kay",
-    "welcome": "Akèy",
-    "admin_intro": "Isit la ou ka jere itilizatè yo, edite epi pibliye kontni Baz Done Mesaj Sekirite a epi wè itilizasyon API a.",
-    "ns_admin_intro": "Isit la ou ka edite epi pibliye kontni Baz Done Mesaj Sekirite a",
-    "ns_editor_intro": "Isit la ou ka edite kontni Baz Done Mesaj Sekirite a",
-    "api_user_intro": "La w ap wè app yo epi jere kont ou a.",
-    "role_changed_title": "Wòl ou te chanje",
-    "role_changed_p": "Yo te ba ou wòl sa a:",
-    "role_changed_p2": "Otorizasyon ou yo se jan sa a:",
-    "role_changed_confirm": "Konfime",
-    "role_changed_dismiss": "Fèmen"
-  },
-  "landing": {
-    "strapline": "Sèvis Baz Done Mesaj Sekirite",
-    "strapline_part_2": "Kwa Wouj Global\/ Mesaj Kle yo pou sekirite Kwa Wouj",
-    "head_1": "Sekirite IFRC",
-    "head_2": "Baz Done Mesaj",
-    "head_text_1": "Mesaj Sekirite ki baze sou Konsyantizasyon Piblik IFRC ak",
-    "head_text_2": "Resous Edikasyon Piblik (PAPE)",
-    "head_bottom_1": "Aksede epi pataje mesaj serye Lakwa Wouj Lakwa Kwasan Wouj",
-    "head_bottom_2": "mesaj aksyonab pou ede moun prepare yo an sekirite pou",
-    "head_bottom_3": "epi reponn a danje yo.",
-    "signup": "Enskri",
-    "it_works": "Kijan Li Fonksyone",
-    "works_1_a": "Lakwa Wouj Lakwa Kwasan Wouj Nasyonal",
-    "works_1_b": "Sosyete ak patnè gouvènman yo",
-    "works_1_c": "dakò sou seri mesaj nasyonal yo",
-    "works_2_a": "Sosyete Nasyonal yo pibliye",
-    "works_2_b": "mesaj sekirite yo nan",
-    "works_2_c": "baz done a",
-    "works_3_a": "Ajans chanje yo ak",
-    "works_3_b": "chanèl kominikasyon yo",
-    "works_3_c": "konekte ak API baz done a",
-    "works_4_a": "Patnè yo pataje",
-    "works_4_b": "mesaj yo atravè",
-    "works_4_c": "chanèl yo",
-    "works_5_a": "Kominote yo resevwa",
-    "works_5_b": "mesaj yo epi",
-    "works_5_c": "aji an sekirite",
-    "learn_more": "Aprann Plis",
-    "watch_video": "Gade Videyo a",
-    "example_case": "Egzanp Ka Itilizasyon",
-    "api": "API",
-    "hurricane": "Enkli mesaj ak alèt avètisman bonè siklòn",
-    "warning_alerts": "alèt avètisman",
-    "social_media": "Rezo Sosyal",
-    "post_images": "Pibliye imaj preparasyon pou dife sovaj",
-    "messages_network": "mesaj sou rezo ou",
-    "whatsapp": "WhatsApp",
-    "share_flood": "Pataje aksyon mitigasyon inondasyon ak",
-    "family": "fanmi ak zanmi ou yo",
-    "impact": "Enpak",
-    "sign_up_today": "Enskri Jodi a",
-    "developer": {
-      "strap_para_one": "Ede kominote yo prepare, reponn, epi retabli de danje ak mesaj kle aksyon lokalize nou yo.",
-      "strap_para_two": "Itilize gid fasil kat etap nou an pou entegre mesaj Sekirite yo nan aplikasyon ou an. Enskri epi gade tout mesaj ki disponib yo."
-    },
-    "national_society": {
-      "strap_para_one": "Pibliye mesaj kle sekirite RCRC Nasyonal sosyete ou a pou global, nasyonal, ak medya lokal yo jwenn aksè ak difizyon.",
-      "strap_para_two": "Kontakte nou pou aprann plis sou kòman pou kreye mesaj yo epi konekte ak patnè yo nan medya a."
-    },
-    "strap_para_one": "Ede kominote yo prepare, reponn, epi retabli de danje ak mesaj kle aksyon lokalize nou yo.",
-    "strap_para_two": "Itilize gid fasil kat etap nou an pou entegre mesaj Sekirite yo nan aplikasyon ou an. Enskri epi gade tout mesaj ki disponib yo.",
-    "view_data": "Gade done a",
-    "view_message_library": "Gade Mesaj Sekirite yo",
-    "what_now": "WhatNow?",
-    "fake_alert_heading": "Avètisman fwa ekstrèm",
-    "fake_alert_description": "Men, sa a egzije pou yon distenksyon senp epi fasil. Pou tan lib lè pouvwa nou an.",
-    "fake_alert_time": "1 è PASE",
-    "fake_alert_time_exact": "05\/02\/18 a 5:15 CT",
-    "use_cases": {
-      "heading": "Aprann plis",
-      "first_heading": "kijan li fonksyone",
-      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "second_heading": "Itilize ka yo",
-      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "third_heading": "Aplike bwat zouti.",
-      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fourth_heading": "videyo WhatNow",
-      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fifth_heading": "Amelyore aplikasyon metewolojik yo",
-      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
-    },
-    "example_alert": {
-      "heading": "Egzanp Fòma Mesaj Sekirite",
-      "alert_preview": "Apèsi avètisman",
-      "what_now_info": "Aperçu Mesaj Sekirite",
-      "example_whatnow_request": "Egzanp Repons Baz Done Mesaj Sekirite",
-      "example_alert_request": "Egzanp repons alèt",
-      "example_content": "Konseye tan # 3 FINAL kòm 11 AM, Jan. 29, 2018\nPou ke-fen nan yon devan frèt\n\n\n\nEfe a nan Ke-Fen an nan yon Devan Frèt te febli. Kondisyon tanperati amelyore yo pral fè eksperyans sou Nome. Sepandan, douch izole oswa loraj, espesyalman pandan aprèmidi a oswa aswè, yo ta dwe espere nan zòn sa yo akoz lwès la.\n\nAvèk devlòpman sa a, sa a se konseye final la pou sistèm tanperati sa a.",
-      "example_content_location_header": "KOTE KI AFEKTE",
-      "example_content_location": "Nome, Alaska"
-    },
-    "example_whatnow": {
-      "alert_from": "Avètisman sou:  Kwa Wouj Amerikèn",
-      "more_info": "Plis enfòmasyon",
-      "heading": "Mesaj Sekirite pou Fwad Ekstrèm",
-      "copy": "Sa yo se aksyon pou w poze pou diminye risk epi pwoteje tèt ou ansanm ak tout fanmi kont fredi ekstrèm.",
-      "what_now": "Baz Done Mesaj Sekirite IFRC",
-      "step_1": "Proteje kay ou. Tcheke sou tiyo epi sèvi ak sous chofaj san danje.",
-      "step_2": "Rete idrate ak likid cho",
-      "step_3": "Pwoteje tèt ou ak rad cho epi kouvri po w ki ekspoze",
-      "step_4": "Fè atansyon ak pridans nan kondisyon idantik, espesyalman pandan w ap kondwi",
-      "step_5": "Veye sou vwazen, zanmi ak lòt moun yo ki riske"
-    },
-    "build": {
-      "heading": "Pare w pou bati app ou?"
-    },
-    "data_preview": {
-      "heading": "Mesaj Sekirite",
-      "sub_heading": "Enskri epi gade mesaj aksyon kle ki soti nan Lakwa Wouj \/ Kwasan Wouj Sosyete Nasyonal atravè monn lan\n"
-    },
-    "footer": {
-      "terms_conditions": "Tèm ak kondisyon yo\n",
-      "about": "Anviwon",
-      "privacy": "Vi prive",
-      "getting_started": "Pou kòmanse",
-      "docs": "Dokimantasyon",
-      "give_feedback": "Bay fidbak",
-      "gdpc_logo": "Logo pou Sant Preparasyon pou Katastwòf Global la",
-      "ifrc_logo": "Logo pou Mouvman Entènasyonal Lakwa Wouj ak Kwasan Wouj",
-      "subtitle_1": "Konsènan Baz Done Sekirite Kle IFRC",
-      "text_1": "Baz Done Sekirite Kle IFRC a bay aksè a",
-      "text_2": "Mesaj Kwa Wouj Kwasan Wouj sou fason moun",
-      "text_3": "ka aji an sekirite lè yo fè fas ak danje",
-      "subtitle_2": "Chèche Konnen Plis",
-      "email_ifrc": "im@ifrc.org",
-      "web_ifrc": "ifrc.org",
-      "subtitle_3": "Politik",
-      "terms": "Tèm ak Kondisyon",
-      "subtitle_4": "Lyen Itil",
-      "api_doc": "Dokiman API",
-      "faq": "FAQ (lyen yo dwe bay)"
-    }
-  },
-  "register_form": {
-    "heading_1": "Kreye gratis ou a",
-    "heading_2": "IFRC",
-    "heading_3": "Baz Done Mesaj Sekirite",
-    "subtitle_1": "Ede kominote yo prepare epi reponn a danje lokal yo ak mesaj sekirite Kwa Wouj Kwasan Wouj ki ka pran aksyon yo.",
-    "subtitle_2": "Si ou vle jwenn aksè ak API a, enskri epi pataje mesaj yo ak gid #-etap la.",
-    "subtitle_3": "Si ou se yon Sosyete Nasyonal Kwa Wouj Kwasan Wouj, enskri epi ou pral resevwa enstriksyon sou fason pou adapte epi pataje mesaj sekirite ou yo.",
-    "who_are_you": "Kiyès ou ye?",
-    "what_is_your_role": "Ki wòl ou?",
-    "description": "KOPI ANN TANDE",
-    "national_society_description": "Pibliye mesaj sekirite kle Sosyete Nasyonal RCRC ou a pou medya mondyal, nasyonal ak lokal yo jwenn aksè epi emèt.\nKontakte nou pou aprann plis sou fason pou kreye mesaj yo epi konekte ak patnè medya yo.",
-    "developer": "Devlopè",
-    "national_society": "Sosyete nasyonal la",
-    "sign_up_with": "Enskri avèk:",
-    "sign_up_agreement": "Pa kreye kont ou, ou dakò ak ",
-    "terms_conditions": "Tèm ak Kondisyon yo ",
-    "facebook": "Enskri ak Facebook",
-    "google": "Enskri ak Google",
-    "email_sign_up": "Oubyen ou ka enskri ak imel ou:",
-    "mail": "imèl",
-    "email_ifrc": "im@ifrc.org",
-    "location": "Adrès",
-    "organisation": "Òganizasyon",
-    "industry": "Kalite endistri",
-    "create_account": "Kreye yon kont",
-    "last_name": "Siyati",
-    "select_country": "Chwazi yon peyi",
-    "select_industry": "Chwazi kalite endistri",
-    "industries": {
-      "media": "Medya",
-      "emergency": "Jesyon Ijans",
-      "non_profit": "Òganizasyon Non-gouvènmantal (ONG)\/Ki pa Peye",
-      "humanitarian": "Òganizasyon Imanitè",
-      "red_cross": "Lakwa Wouj\/Kwasan Wouj",
-      "education": "Edikasyon\/Akademi",
-      "gov": "Ajans Gouvènman an",
-      "other": "Lòt"
-    },
-    "api_used_in": "Ki kote yo pral itilize API sa a?",
-    "api_used_in_help": "Fè nou konnen kijan ou gen entansyon itilize sèvis sa a nan mwens pase 255 karaktè",
-    "welcome": "Byenveni {non}, tanpri ranpli enfòmasyon sa yo pou kòmanse:",
-    "ifrc_note": "Pou kesyon oswa plis enfòmasyon, tanpri kontakte: ",
-    "contact_gdpc": "Kontakte GDPC"
-  },
-  "terms_service_page": {
-    "applicable_law": {
-      "body": "Lwa yo nan Distri a nan Kolonbi pral gouvène tout dwa ak obligasyon anba Kontra sa-a, san yo pa bay efè nan nenpòt prensip nan konfli nan lwa yo.",
-      "heading": "Lwa ki aplikab:"
-    },
-    "body": "Ou responsab pou kenbe sekrè ak sekirite kle enskripsyon Lakwa Wouj ba ou an. Ou responsab pou kenbe konpatibilite ak API a, jan yo mete ajou de tanzantan, pou kontinye resevwa Transmisyon Done yo. Lakwa Wouj ka lage vèsyon ki ajou nan API a ak Transmisyon Done yo nan sèl diskresyon li. Nouvo vèsyon yo ka pa konpatib ak aplikasyon anvan yo, epi ou dakò pou itilize vèsyon ki pi resamman mete ajou nan Transmisyon Done yo a toutan.\n\nOu dakò pa modifye, distribye, dekonpilasyon, demonte, oswa ranvèse enjenyè nenpòt pòsyon nan API a oswa nenpòt lojisyèl nan Lakwa Wouj.\n\nOu pa ka sèvi ak API la oswa Transmisyon Done yo nan yon fason ki depase volim demann rezonab oswa konstitye yo oswa itilizasyon abizif, jan yo detèmine pa Lakwa Wouj nan sèl diskresyon li.\n\nOu pa ka sèvi ak API a oswa Transmisyon Done yo nan yon fason ki ilegal, twonpè, neglijan, malveyan, lide lakòz domaj, oswa sa nwi Lakwa Wouj, founisè sèvis li yo, founisè kontni li yo, oswa nenpòt ki lòt moun, tankou detèmine pa Kwasan Wouj nan sèl diskresyon li.\n\nLakwa Wouj ka siveye itilizasyon API a ak Transmisyon Done yo. Ou pa ka itilize okenn mwayen teknik pou entèfere ak siveyans sa yo, epi Lakwa Wouj ka itilize mwayen teknik pou simonte nenpòt entèferans sa yo.\n\nItilizasyon prepasyon an, nan repons lan, ak rekiperasyon an pa dwe prezante sèlman kòm aktyèlman oswa mete ajou sou premye paramèt  lan nan epòk lan, epi pral mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj mizajou a nan transmisyon done yo ak \/ oswa alèt evènman korelate pa Lakwa Wouj la.\n\nPrepare ou, reponn epi rekipere mesaj yo ke ou itilize pa dwe asosye avek rejyon jeyografik la pou li ke yo bay li a. Itilizasyon preparasyon an, nan repons ak rekiperasyon an pa dwe prezante ke kòm aktyèlman oswa mizajou sou paramèt ijans nan epòk la, epi mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj yo nan mizajou transmisyon done yo ak \/ oswa alèt evènman korelate Lakwa Wouj la. Ou pa dwe kontinye sèvi ak nenpòt Sous Referans.\n\nOu pa ka tradui transmisyon done yo, alet evènman yo ak \/ oswa prepare, reponn ak rekipere mesaj yo nan yon lòt lang, pote yon itilizasyon, modifikasyon ak revizyon, oswa modifikasyon siyifikasyon an nan transmisyon done yo, alèt evènman yo ak \/ oswa prepare, reponn ak rekipere mesaj yo.\n\nOu dwe asire ke Transmisyon Done yo rete nan posesyon ak\/oubyen sèl kontwòl ou.\n\nOu pa ka otorize alèt evènman yo epi prepare, reponn, epi rekipere mesaj livre a itilizate final yo pou entegre tout piblisite oswa parenaj.\n\nOu pa ka fè achiv nan oken pati Transmisyon Done yo.",
-    "contact": "Tanpri kontakte Lakwa Rouj nan [nimewo telefòn] avèk nenpòt kesyon ou genyen konsènan API a.",
-    "disclaimer": "API ak Transmisyon Done yo founi inikman pou enfòmasyon ak edikasyon, epi sou yon baz de \" tankou \" epi \"disponib tou\". Lakwa Wouj pa fè okenn reprezantasyon oswa garanti nenpòt kalite, ekspresyon oswa enplisit. Lakwa Wouj refize tout garanti eksprime ni enplisit, tankou garanti enplisit nan komès ak kapasite pou yon rezon patikilye. Lakwa Wouj ak anplwaye li yo, ofisye yo, gouvènè yo ak ajan yo ak lisansye yo p ap responsab pou oken domaj ki rive nan itilizasyon API, Transmisyon Done, Alèt Evènman, ak \/ oubyen mesaj Prepare, Reponn, ak Rekipere, tankou domaj endirèk, ensidan, ak domaj konsekan.\n\nLakwa Wouj pa garanti sekans, presizyon, otantisite oubyen konpletid nan API a, Transmisyon Done yo, Avètisman Evènman ak \/ oubyen mesaj Prepare, Reponn, epi Rekipere epi yo pa dwe responsab nan okenn fason pou ou menm oubyen itilizatè ou oubyen nenpòt twazyèm pati, tankou pou nenpòt ki reta, erè oswa omisyon, ki gen rapò ak API a, Transmisyon Done yo, Evènman Alèt ak \/ oubyen mesaj Prepare, reponn, epi rekipere ki bay.",
-    "entire_agreement": {
-      "body": "Regleman API yo konstitye akò konplè ak eksklizif ant Lakwa Wouj ak ou menm ki gen rapò ak sijè sa a epi ranplase tout konpreyansyon alavans oral oubyen ekri, kominikasyon, oubyen akò ki pa espesyalman enkòpore nan dokiman sa a. Lakwa Wouj rezève dwa pou li modifye oubyen anile akò sa a nenpòt lè.",
-      "heading": "Akò Konplè a:"
-    },
-    "heading": "AKÒ LISANS ITILIZATÈ FINAL API",
-    "intro": "AKÒ: PA ITILIZE SÈVIS LA OUBYEN TCHEKE BWAT YO BAY LA, ITILIZATÈ DAKÒ AK AKÒ SA a.\n\nAPI a se yon zouti ki pèmèt ou (\"Ou\") rekipere epi sèvi ak done ki disponib pa Lakwa Wouj tankou yon rezo nan move tan mondyal ak avètisman evènman dezas epi gade avi (\"Alèt Evènman\") ak yon transmisyon mesaj kontèksyalize aksyonab sou kòman yo prepare danje lokal yo pa kalite danje ak ijans (\"Mesaj Prepare, Reponn, ak Rekipere\", ak kolektivman ak Alèt yo Evènman, \"Transmisyon Done yo\"). Prepare, Reponn, Rejwenn mesaj la pou akonpaye Alèt evènman oswa lòt avètisman epi gade avi ki asosye ak metewo ak katastwòf nan aplikasyon w lan. Se kondisyon API yo ki reglemante itlizasyon w ap fè ak Done yo.",
-    "license_limitations": {
-      "body": "Ou ka itilize Transmisyon Done yo sèlman ak aplikasyon w lan ki reglemante pa kondisyon API yo, e te bay pou kenbe konpatibilte ak API yo, jan mizajou yo fèt detanzantan. Yo ba w dwa (e se pa ou sèl ki genyen l, li limite e w ka pèdi) pou w  telechaje, itilize, repwodui epi distribiye bay itilizatè final yo pwòp aplikasyon w (“End Users”) Alèt evènman e prepare, reponn, ak rejwenn mesaj an kolaborasyon ak paramèt ijans alèt evènman endividyèl ki soti nan  Transmisyon Done yo ki anba tèm API yo. Ou ka sèlman itilize API pou fasilite itilizasyon ki pa komèsyal Transmisyon Done yo annakò ak Tèm API yo. Nan okenn ka ou pa ka itilize API a pou fasilte itilizasyon komèsyal Transmisyon Done yo, Evènman alèt yo ak\/oswa Prepare,repon, ak Rejwenn mesaj, sa gen ladan l, san okenn limit, revann yo, fè peye pou gen aksè ak yo, fè peye pou redistribiye yo, oswa fè peye pou kreye pwodui derive ki soti nan yo. Kwa Wouj ak moun ki bay lisans li yo kenbe tout tit, pwopriyete, dwa ak enterè nan API a, Prepare, reponn, ak Rejwenn mesaj, Transmisyon Done yo, Evènman alèt yo ak sous referans yo (jan yo defini sa anba a) nan dokiman sa a. Tout dwa pa eksprèseman akòde yo rezève.",
-      "heading": "Lisans ak Limit:"
-    },
-    "overview": {
-      "body": "Entèfas Pwogram Aplikasyon Sèvis Baz Done Mesaj Sekirite Sant Preparasyon Global pou Katastwòf la (“API”) disponib pou ou pa Lakwa Wouj Nasyonal Ameriken an (“Lakwa Wouj”). API a mande yon kle enskripsyon. Pandan pwosesis enskripsyon an, ou dwe dakò ak tèm ak kondisyon sa yo, ansanm ak tèm ak kondisyon nan Akò Tèm Sèvis Sit Wèb Lakwa Wouj ki disponib nan {0} (ansanm, “Tèm API yo”). Tèm API yo pral gouvène itilizasyon API ou a ak materyèl elektwonik telechaje ki disponib atravè API a. {1}",      "cta": "Klike la a pou ou enkri."
-    },
-    "privacy_policy": {
-      "body": "Ou konprann, ou rekonèt, e ou dakò ak operasyon kèk pwogram, sèvis, zouti, opsyon acha, oswa enfòmasyon nan API a egzije pou ou soumisyon, itilizasyon piblikasyon divès enfòmasyon a karaktè pèsonèl. Pa konsekan, si ou vle gen aksè epi itilize API a, ou rekonèt e ou dakò itilizasyon API a vle di ou aksepte koleksyon enfòmasyon a karaktè pèsonèl ak itilizasyon pratik ki nan politik konfidansyalite ki pibliye yo: {0}",
-      "heading": "Prensip konfidansyalite:"
-    },
-    "prohibited_activities": {
-      "body": "Ou menm ak Itilizatè final ou yo oswa ajan pa dwe itilize API oswa Transmisyon Done yo nan fason ki annapre yo:",
-      "heading": "Aktivite ak konduit yo entèdi:",
-      "prohibited_list": {
-        "one": "Pètibe oswa entèwonp sèvis oswa sèvè Kwa Wouj yo.",
-        "two": "Kontoune oswa modifye nenpòt kle oswa sekirite mekanism travay pa Lakwa Wouj oswa API a, ki gen ladan san limitasyon teknoloji otantifikasyon yo.",
-        "three": "Pou mande, kolekte, solisite oswa jwenn aksè pou konekte non, modpas oswa lòt idantifyan pou Kwa Wouj ki pa sa yo te ba ou yo pou pwòp kont ou.",
-        "four": "Pou deklare oswa fè konnen yon fason endirèk yon afilyasyon, parenaj oswa apui Sosyete Lakwa wouj oswa Kwasan Wouj bay.",
-        "five": "Pou deklare oswa fè konnen yon fason endirèk ou gen oswa ou te kreye yon API, Transmisyon Done yo, Alèt evènman ak\/oswa Prepare, Reponn oswa rejwenn mesaj yo.",
-        "six": "Transmèt nenpòt viris, viris ki rele Trojan horses la, oswa nenpòt lòt bagay ki ka fè dega enfòmatik."
-      }
-    },
-    "reserve_rights": "Kwa Wouj gen dwa pou l modifye ak\/oswa ba bay API ak Transmisyon Done yo annantye oswa an pati, tanporèman oswa definitivman, nenpòt kilè san avètisman alavans. Pou evite dout, anyen nan dokiman sa a pa oblije Kwa Wouj mete API ak Transmisyon Done li yo disponib pou ou, e ou dakò e ou rekonèt nenpòt aksè avèk yo, se tout responsablite Kwa Wouj pou l deside sa.",
-    "severability": {
-      "body": "Nenpòt tèm oswa dispozisyon nan Tèm API yo p ap afekte validite nenpòt lòt dispozisyon.",
-      "heading": "Diviziblite ak renonsyasyon:"
-    },
-    "suspension": {
-      "body": "Kwa Wouj gen dwa kanpe oswa mete fen nan aksè ou si Kwa Wouj deside sa, sa nan otorite l, si ou kòmanse itilize API oswa Transmisyon Done yo yon fason ki pa otorize jan sa dekri nan Tèm API yo oswa ou ap itilize API oswa Transmisyon Done yo nan nenpòt aktivite ki menase\/mete an danje sekirite nenpòt moun oswa rezo Kwa wouj yo.",
-      "heading": "Sispansyon oswa Revokasyon:"
-    }
-  },
-  "view_data": {
-    "alert_title": "ALÈT:",
-    "more_info": "plis enfòmasyon:",
-    "which": "Ki Mesaj Sekirite ou vle wè?",
-    "view_data": "Wè done",
-    "alerts": "Alèt yo",
-    "alert_preview": "Apèsi alèt",
-    "cap_alerts": "Alèt CAP",
-    "onset": "Kòmansman",
-    "severity": "Gravite",
-    "title": "Tit",
-    "date": "Dat",
-    "headline": "Gran tit",
-    "alert": "Alèt",
-    "whatnow_info": "Enfòmasyon Baz Done Mesaj Sekirite",
-    "alert_detail": "Detay alèt",
-    "more": "Plis enfòmasyon",
-    "area_affected": "Zòn afekte",
-    "details": "Detay",
-    "cap": {
-      "type": "Kalite",
-      "status": "Kondisyon",
-      "urgency": "Ijans",
-      "severity": "Gravite",
-      "certainty": "Sètitid",
-      "sent": "Voye",
-      "effective": "Efektif",
-      "onset": "Kòmansman",
-      "expires": "Ekspire",
-      "alert_from": "Alèt ki soti nan",
-      "feed": "Nouri",
-      "more": "Plis enfòmasyon",
-      "through": "atravè",
-      "alert_feed": "Mesaj alèt",
-      "fetching_feed": "Chèche manje",
-      "empty": "Pa gen okenn alèt kounye a."
-    }
-  },
-  "user_agreement": {
-    "title": "Akò itilizatè",
-    "para_one": "Anvan ou ka jwenn aksè nan Portal Baz Done Mesaj Sekirite a, tanpri ou ka li epi aksepte tèm ak kondisyon akò itilizatè a lè w telechaje dokiman ki anba a epi klike sou bouton 'Mwen aksepte' ki anba a.",
-    "cta": "Mwen aksepte",
-    "download": "Klike la a pou ou wè dokiman akò itilizatè yo (105KB)"
-  },
-  "hazard_type": {
-    "dropdown": {
-      "select": "Seleksyone kalite danje",
-      "create": "Kreye kalite danje"
-    },
-    "create": {
-      "title": "Kreye yon nouvo kalite danje",
-      "request": "mande yon nouvo kalite danje",
-      "other": "Lòt",
-      "email_subject": "Demann pou yon nouvo kalite danje",
-      "hazard_name": "Non danje a",
-      "hazard_name_placeholder": "Antre non danje a",
-      "upload_icon": "Telechaje yon ikòn",
-      "icon_requirements": "Ikòn nan dwe yon fòma png epi piti pase 30kb",
-      "requestLink": "Kontakte GDPC pou kreye yon nouvo kalite danje",
-      "success": "Kalite danje a te kreye",
-      "error": "Nou regrèt, te gen yon pwoblèm pandan n ap kreye nouvo kalite danje a"
-    }
-  },
-  "subnationals": {
-    "list": {
-      "manage": "Sou-rejyon yo",
-      "create": "Kreye nouvo rejyon",
-      "edit": "Edite Rejyon an",
-      "add": "Ajoute Rejyon an",
-      "empty": "Pa kapab jwenn okenn rejyon",
-      "table_header": {
-        "subnational": "Rejyon"
-      }
-    },
-    "select_soc": "Chwazi yon sosyete pou w wè epi ajoute rejyon yo",
-    "create": "Kreye yon nouvo Rejyon",
-    "form": {
-      "name": "Non Rejyon an",
-      "name_help": "Bay rejyon ou vle kreye mesaj sekirite pèsonalize pou a non.",
-      "description": "Deskripsyon",
-      "description_help": "Bay plis enfòmasyon sou rejyon an, pa eganp, San Francisco Bay Area."
-    },
-    "edit": "Edite Rejyon an",
-    "delete": "Sa a pral efase rejyon an ak nenpòt kontni ki asosye ak rejyon sa a."
-  },
-  "table_headers": {
-    "profile_pic": "foto pwofil",
-    "first_name": "Siyati",
-    "last_name": "siyati",
-    "role": "wòl",
-    "society": "sosyete",
-    "date": "Dat",
-    "country": "Peyi",
-    "email": "imel",
-    "created_at": "kreye_nan",
-    "last_logged_in_at": "Dènye fwa ou te aktif",
-    "terms_version": "pwofil",
-    "actions": "Aksyon yo",
-    "action": "Aksyon",
-    "content": "Kontni",
-    "country_code": "Anplasman:",
-    "organisation": "òganizasyon",
-    "industry_type": "kalite endistri",
-    "all_roles": "Tout wòl yo",
-    "version": "Vèsyon",
-    "user": "Itilizatè",
-    "language_code": "Lang kòd la"
-  },
-  "terms_conditions": {
-    "title": "Tèm ak Kondisyon",
-    "accept": "Aksepte"
-  },
-  "badges": {
-    "hazardCreate": "Danje Kreye",
-    "published": "Pibliye",
-    "draft": "Bouyon",
-    "bulkUploadDraft": "Bouyon Telechaje Dosye Mesaj"
-  }
 }

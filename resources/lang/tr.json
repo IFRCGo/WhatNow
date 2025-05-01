@@ -1,1020 +1,1060 @@
 {
-  "ok": "TAMAM",
-  "go": "GO",
-  "all": "Hepsi",
-  "cancel": "İptal Et",
-  "error_alert_title": "Eyvah...",
-  "error_alert_text": "Bir şeyler ters gitti! Lütfen tekrar deneyin.",
-  "error_permission_alert_text": "Bu değişikliği yapmak için yetkiniz yok",
-  "token_expired_alert_title": "Oturum süresi doldu!",
-  "token_expired_alert_text": "Devam etmek için lütfen tekrar giriş yapınız.",
-  "login": "Giriş Yap",
-  "what_now": "IFRC Güvenlik Mesajı Veritabanı",
-  "message_portal": "Mesajlar",
-  "register": "Kayıt ol",
-  "sign_up": "Üye ol",
-  "docs": "Belgeler",
-  "my_apps": "Uygulamalarım",
-  "number_of_apps": "{0} Uygulamalar",
-  "whatnow_content": "Mesajlar",
-  "create_key": "Anahtar Oluştur",
-  "alerts": "Uyarılar",
-  "feeds": "Bildirmeler",
-  "get_started": "Şimdi üye ol",
-  "page_not_found": "Sayfa Bulunamadı",
-  "go_home": "Başa dön",
-  "logout": "Çıkış yap",
-  "email": "E-posta",
-  "register_success": "Kayıt olduğunuz için teşekkürler",
-  "confirm_email": "Hesabınızı doğrulamak için lütfen e-postanızı kontrol edin.",
-  "email_confirmed": "E-posta adresinizi doğruladığınız için teşekkür ederiz. Lütfen giriş yapın.",
-  "confirmation_failed": "E-postanız doğrulanamadı, lütfen yöneticinize başvurup tekrar deneyin.",
-  "home_redirect": "Ana sayfaya git",
-  "status": "Durum",
-  "remember_me": "Beni Hatırla",
-  "old_password": "Geçerli Parola",
-  "password": "Parola",
-  "forgot_password": "Parolanızı mı unuttunuz?",
-  "confirm_password": "Parolayı Doğrula",
-  "incorrect_password": "Hatalı Parola",
-  "name": "Adı",
-  "first_name": "Adı",
-  "last_name": "Soyadı",
-  "toggle_navigation": "Gezinmeyi değiştir",
-  "you_are_logged_in": "Giriş yaptınız!",
-  "reset_password": "Parola Sıfırla",
-  "set_password": "Parola Oluştur",
-  "send_password_reset_link": "Parola Sıfırlama Bağlantısı Gönder",
-  "settings": "Ayarlar",
-  "profile": "Profil",
-  "your_info": "Bilgileriniz",
-  "info_updated": "Bilgileriniz güncellendi!",
-  "update": "Güncelle",
-  "your_password": "Parolanız",
-  "password_updated": "Parolanız güncellendi",
-  "new_password": "Yeni Parola",
-  "login_with": "İle Giriş yap",
-  "register_with": "İle Kayıt ol",
-  "yes": "Evet",
-  "no": "Hayır",
-  "close": "Kapat",
-  "dashboard": "Gösterge",
-  "terms_service": "Kullanım Şartları",
-  "sign_in_with_google": "Google ile Giriş Yap",
-  "offline_error": {
-    "title": "İnternet Bağlantısı Yok",
-    "description": "Lütfen {time} içindeki değişiklikleri kaydedin, aksi takdirde ilerleme kaybedilecek"
-  },
-  "breadcrumbs": {
-    "applications": "Uygulamalar",
-    "admin_users": "Yöneticiler",
-    "users": "Kullanıcılar",
-    "manage_users": "Kullanıcıları Yönet",
-    "profile": "Profil",
-    "terms": "Hüküm ve Koşullar",
-    "edit": "Düzenle",
-    "create": "Oluştur",
-    "content": "İçerik",
-    "what_now_content": "What Now İçeriği",
-    "bulk_upload": "Mesaj Dosyası Yükleme",
-    "audit_log": "Denetim Kaydı",
-    "api_usage": "API Kullanımı",
-    "app_detail": "Uygulama Detayı",
-    "all_terms": "Tüm Şartlar ve Koşullar"
-  },
-  "documentation": {
-    "heading": "Kızılhaç API Belgeler",
-    "sidebar": {
-      "introduction": "Başlangıç",
-      "base_url": "Temel URL",
-      "changelog": "Değişim kaydı",
-      "authentication": "Kimlik Doğrulama",
-      "response_codes": "Yanıt kodları",
-      "emergency_alert_feed": "Acil Durum Uyarı Bildirimi",
-      "cap_alert_document": "CAP Uyarı Belgesi",
-      "what_now": "What Now"
-    },
-    "steps": {
-      "one": {
-        "body": "Kızılhaç REST API yazılım geliştiricilerin acil durum bilgilerine ve uluslararası Kızılhaç dernekleri tarafından yayınlanan kaynaklara erişmesini sağlar.",
-        "heading": "Başlangıç",
-        "support_card": {
-          "body": "Kızılhaç API hakkında sorularınız için iletişim adresi dev@3sidedcube.com",
-          "title": "Destek & Sorular"
-        }
-      },
-      "two": {
-        "body": "API v1.0 belgelendirmesinde bulunan tüm URL'ler şu temel URL'i kullanır:",
-        "heading": "Temel URL"
-      },
-      "three": {
-        "heading": "Değişim kaydı",
-        "table": {
-          "headers": {
-            "detail": "Sürüm",
-            "version": "API Versiyon",
-            "release": "Sürüm",
-            "release_date": "Sürüm Tarihi"
-          }
-        }
-      },
-      "four": {
-        "body": "API, API anahtarı kullanan tüm kaynaklara erişmek için kimlik doğrulaması gerektirir. API anahtarı elde etmek için, önce {0}.\n\nBütün API istekleri şu HTTP bağlantısını içermelidir:",
-        "create_app_cta": "bir uygulama oluştur",
-        "heading": "Kimlik Doğrulama"
-      },
-      "five": {
-        "heading": "Yanıt kodları",
-        "table": {
-          "descriptions": {
-            "ok": "İstek başarılı oldu ve gelen yanıt istenen kaynağı içeriyor",
-            "found": "Yönlendirme belirtir. Bağlantı konumundaki kaynak URI'ye bir GET isteği gönderin.",
-            "not_found": "İstenilen kaynak bulunamadı.",
-            "not_allowed": "Kullanılan HTTP metoduna bu kaynakta izin verilmediğini belirtir.",
-            "server_error": "Bir sunucu hatası oluştu ve istenilen kaynaktan cevap alınamadı.",
-            "unavailable": "Hizmetin şu anda kullanılamadığını belirtir. İsteği daha sonra tekrar deneyin."
-          },
-          "headers": {
-            "code": "Kod",
-            "name": "Adı",
-            "description": "Tanım"
-          }
-        }
-      },
-      "six": {
-        "card": {
-          "body": "Tüm Kızılhaç Dernekleri {0} v1.2 kullanarak genel uyarı bildirebilirler.",
-          "cta": "Yaygın Uyarı Protokolü",
-          "title": "Yaygın Uyarı Protokolü"
-        },
-        "endpoint": "Bitiş Noktası:",
-        "example": "Bu örnekte, {0} bölüm ilgili derneğin ülke kodu ile değiştirilmelidir.",
-        "feed_intro": "İlgili dernek tarafından mevcut uyarıların listelendiği bildirmeler her dernek için sağlanmıştır",
-        "heading": "Acil Durum Uyarı Bildirimi",
-        "intro": "RSS bildirmesi kullanılarak her dernek için CAP uyarıları yayınlanır. Bu duruma şu endpoint ile erişilebilir:"
-      },
-      "seven": {
-        "endpoint": "Bitiş Noktası:",
-        "example_response": "Örnek Yanıt:",
-        "heading": "CAP Uyarı Belgesi",
-        "body": "Her RSS bildirme maddesi ile belirtilen bağlantı yoluyla ilgili CAP uyarı belgelerine ulaşılabilinir. Bir uyarı URI için şu format kullanılır: "
-      },
-      "eight": {
-        "body": "Bu endpointler çeşitli olaylarla afetlere hazırlıklı olma amacıyla destek vermek için Kızılhaç dernekleri tarafından yapılandırılmış verileri sağlar.\n\nHer kayıt afet yönetiminin altı aşaması ile ilgili bilgiler içerir:",
-        "endpoint": "Bitiş Noktası:",
-        "example_response": "Örnek Yanıt:",
-        "heading": "What Now",
-        "note": "Not:",
-        "noteDetails": "{0} bütün yanıtlar üst {1} özelliklerin içinde toplanmıştır.",
-        "query_params": "Sorgu Parametreleri:",
-        "response_properties": "Yanıt Özellikleri:",
-        "structure": "What Now Öğesinin Yapısı:",
-        "stucture_attribution": "Bir {0} öğenin yapısı:",
-        "stucture_attribute_translation": "Öğe {0} özelliğinin yapısı:",
-        "stucture_translation": "Öğenin {0} yapısı:",
-        "table": {
-          "query_params": {
-            "name": "isim",
-            "description": "tanım"
-          },
-          "structure": {
-            "property": "Özellik",
-            "data_type": "Veri tipi",
-            "description": "Tanım"
-          }
-        }
-      }
-    }
-  },
-  "get_started_docs": {
-    "title": "Başlayın",
-    "sidebar": {
-      "create_app": "Bir uygulama oluştur",
-      "get_api_key": "API anahtarı al",
-      "make_request": "İstek gönder",
-      "sign_up": "Üye ol"
-    },
-    "steps": {
-      "one": {
-        "heading": "1. Adım - Üye ol",
-        "body": "Safety Message Database API'sindeki verileri kullanmaya başlamak için öncelikle {0} adresinden Safety Message Database Portalına gidin.\n\nHesap oluşturmak için Facebook ve Google hesaplarınızı veya bir e-posta adresini kullanabilirsiniz.",
-        "create_account_alt": "hesap oluştur",
-        "existing_account": "Zaten hesabınız varsa, lütfen {0}.",
-        "login_cta": "giriş yap",
-        "sign_up_cta": "üye ol"
-      },
-      "two": {
-        "body": "API'yi kullanmak için Safety Message Database Portal'da bir uygulama oluşturmalısınız. Bize ne inşa ettiğinizden biraz bahsedin.",
-        "create_app_alt": "uygulama oluştur",
-        "heading": "2. Adım - Uygulama oluştur"
-      },
-      "three": {
-        "body": "Uygulama oluşturduğunuz zaman API anahtarı otomatik olarak verilir.\n\n{0} Uygulamanızdaki API anahtarını olabildiği kadar güvende saklayınız ve paylaşmayınız.",
-        "create_api_key_alt": "API Anahtarı Oluşturma",
-        "heading": "3. Adım - API anahtarı al",
-        "important": "Önemli:"
-      },
-      "four": {
-        "api_docs_cta": "API belgeler",
-        "body": "Safety Message Database API, HTTP(S) kullanır ve yayınlanan verileri elde etmek için RESTful uç noktaları sağlar.\n\nHer istek için bir önceki adımda oluşturulan API anahtarı kullanılarak kimlik doğrulaması yapılmalıdır.",
-        "example_title": "Örnek İstek",
-        "heading": "4. Adım - İstek yap",
-        "moreInfo": "API bitiş noktaları hakkında daha fazla bilgi için {0}."
-      }
-    }
-  },
-  "home_pods": {
-    "bulk_upload": "Daha fazla miktarda içerik yükleyebilmeniz için dosyaları .csv formatında yükleyin",
-    "audit_log": "Burada tüm kayıt edilen etkinliklerini görebilirsiniz",
-    "whatnow_edit": "Burası Güvenlik Mesajı Veritabanı içeriğini düzenleyebileceğiniz yerdir",
-    "whatnow_review": "Güvenlik Mesajı Veritabanı içeriğini buradan inceleyebilirsiniz",
-    "whatnow_publish": "Burası Güvenlik Mesajı Veritabanı içeriğini düzenleyebileceğiniz ve yayınlayabileceğiniz yerdir",
-    "manage_users": "Burada kullanıcıları yönetebilirsiniz (Oluştur, düzenle ve kaldır)",
-    "api_usage": "Burada hangi kullanıcılar API kullanıyor ve hangi uygulamalar oluşturuluyor görebilirsiniz.",
-    "wellcome": "Hoş Geldiniz",
-    "wellcome_description": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz."
-  },
-  "languages": {
-    "am": "አማርኛ",
-    "ar": "Arapça",
-    "bn": "বাংলা",
-    "de": "Deutsch",
-    "en": "İngilizce",
-    "es": "İspanyolca",
-    "fr": "Fransızca",
-    "ht": "Kreyòl",
-    "id": "Endonezya dili",
-    "it": "Italiano",
-    "ja": "日本語",
-    "my": "ဗမာ",
-    "ne": "नेपाली",
-    "pt": "Portekizce",
-    "ru": "Rusça",
-    "rw": "Ikinyarwanda",
-    "sw": "Kiswahili",
-    "th": "ภาษาไทย",
-    "tr": "Türkçe",
-    "ur": "Urduca",
-    "vi": "Tiếng Việt"
-  },
-  "sidebar": {
-    "manage": "İçerik Kullanıcılarını Yönetin",
-    "content_users": "İçerik kullanıcıları",
-    "audit_log": "Geçmişi Düzenle",
-    "whatnow": "Atıf Editörü",
-    "bulk": "Mesaj Dosyası Yükleme",
-    "content": "İçerik",
-    "api": "API Kullanımı",
-    "applications": "Uygulamalar",
-    "api_stats": "API İstatikleri",
-    "api_users": "API Kullanıcıları",
-    "terms_conditions": "Hüküm ve Koşullar",
-    "subnationals": "Alt Bölgeler"
-  },
-  "common": {
-    "accept": "Kabul et",
-    "actions": "Hareketler",
-    "create": "Oluştur",
-    "edit": "Düzenle",
-    "save": "Kaydet",
-    "deactivate": "Devre dışı bırak",
-    "activate": "Etkinleştir",
-    "are_you_sure": "Emin misiniz?",
-    "yes": "Evet",
-    "title": "Başlık",
-    "description": "Tanım",
-    "unpublished_edits": "Yayınlanmamış düzeltmeler?",
-    "published": "Yayınlandı",
-    "delete": "Sil",
-    "welcome": "Hoş geldiniz",
-    "save_changes": "Değişiklikleri kaydet",
-    "auto_saving": "Otomatik kaydediliyor",
-    "add": "Ekle",
-    "my_profile": "Profilim",
-    "cancel": "İptal Et",
-    "view_changes": "Değişiklikleri görüntüle",
-    "view_content": "İçerik görüntüle",
-    "resend_activation": "Aktivasyon e-postasını yeniden gönder",
-    "deactivate_user": "Kullanıcıyı devre dışı bırak",
-    "submit_changes": "Değişiklikleri Kaydet",
-    "reactivate_user": "Kullanıcıyı tekrar etkinleştir",
-    "send_invite": "Davet gönder",
-    "invite_and_create": "Davet gönder ve başka oluştur",
-    "loading": "İçerik yükleniyor",
-    "publish_new": "Yeni Sürümü Yayınla",
-    "greeting": "Merhaba",
-    "removed": "Kaldırıldı",
-    "copy": "Kopyala",
-    "copied": "Kopyalandı",
-    "not_empty": "Boş olamaz",
-    "name": "Adı",
-    "webUrl": "URL",
-    "learn_more": "Daha fazla öğrenin",
-    "validations": {
-      "empty": "Burası boş olamaz",
-      "hazardIcon": "Lütfen 30 kb'den daha küçük bir resim seçin"
-    },
-    "network_error": "Ağ hatası",
-    "network_error_text": "Bir ağ hatası olmuş gibi görünüyor. Lütfen daha sonra tekrar deneyin",
-    "email_sent": "E-posta gönderildi",
-    "duplicate_lang_error": "Üzgünüm, seçilen dil zaten mevcut",
-    "duplicate_lang_description": "Lütfen mevcut dili değiştirin veya menüden yeni bir dil seçin",
-    "estimated_users": "Tahminî kullanıcıların sayısı",
-    "upploading": "Yükleniyor",
-    "download": "İndir",
-    "download_as_image": "Resim olarak indir",
-    "download_as_pdf": "PDF olarak indir",
-    "add_logo": "Logo ekle",
-    "edit_logo": "Logoyu düzenle",
-    "loading_image": "Yükleniyor..."
-  },
-  "banners": {
-    "get_started_create": ", Başlayın ve ilk uygulamanızı oluşturun",
-    "create_app": "Bir uygulama oluştur",
-    "get_started_info": "Bv frazo profitanto baf, per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro. Hav us singularo propozicio posta."
-  },
-  "users": {
-    "user": "Kullanıcı",
-    "deleted": "Silinmiş kullanıcı",
-    "list": {
-      "manage": "Kullanıcıları Yönet",
-      "select_status": "Durum seçin",
-      "select_role": "Rol seçin",
-      "select_country": "Ülke seçin",
-      "select_terms": "Şartlar sürümü seçin",
-      "select_society": "Ulusal topluluk seçin",
-      "create": "Yeni kullanıcı oluştur",
-      "download_report": "Raporu indir",
-      "empty": "Kullanıcı bulunamadı",
-      "detail": "Kullanıcı detayı",
-      "clear_filters": "Filtreleri kaldır",
-      "table_header": {
-        "user": "Kullanıcı",
-        "role": "Görev",
-        "society": "Dernek",
-        "email": "E-posta",
-        "added": "Eklendi",
-        "last_activity": "Son etkinlik",
-        "t_and_c": "Hüküm & Koşullar versiyon"
-      },
-      "societies": "Dernekler"
-    },
-    "status": {
-      "active": "Etkinleştirildi",
-      "deactivated": "Devre dışı bırakıldı"
-    },
-    "edit": {
-      "super_admin_all": "Tüm derneklere erişim",
-      "user_details": "Kullanıcı ayrıntıları",
-      "create_user": "Yeni kullanıcı oluştur",
-      "add_society": "Dernek ekle + ",
-      "societies_heading": "Dernekler",
-      "roles_heading": "Görev & İzinler",
-      "activity_heading": "Etkinlik",
-      "roles_label": "Bu kullanıcılar için görev & izinleri seç",
-      "activity_link": "Bu kullanıcı için tüm işlemleri görüntüle",
-      "created": "Kullanıcı başarıyla oluşturuldu",
-      "updated": "Kullanıcı başarıyla güncellendi",
-      "email_update": "E-postanızı güncellemek için lütfen parolanızı giriniz",
-      "view": "Görüntüle",
-      "more": "daha fazla",
-      "less": "Daha az göster",
-      "user_can_do": "Kullanıcının izinlerini gör:",
-      "user_no_permission": "Kullanıcının üzerinde izin yok",
-      "soc_already_added": "Kullanıcı bu dernekte zaten kayıtlı"
-    }
-  },
-  "new_welcome": {
-    "title_1": "Hoş Geldiniz",
-    "red_title": "IFRC",
-    "title_2": "Güvenlik",
-    "title_3": "Mesaj Veritabanı",
-    "text_header": "Platformlarınızda Kızılhaç Kızılay güvenlik mesajlarına erişin ve paylaşın.",
-    "text_header_2": "Aşağıdaki #-adımlı kılavuzu izleyin.",
-    "bottom_subtitle": "IFRC ile İletişime Geçin",
-    "bottom_text": "Sorularınız varsa IFRC ekibine e-posta gönderin: im@ifrc.org",
-    "bottom_btn": "IFRC ile İletişime Geçin",
-    "slider_1": {
-      "btn": "API anahtarı oluştur",
-      "step_1": {
-        "header": "Adım 1: Uygulama oluştur",
-        "text": "Veritabanında API'yi kullanmak için bir API anahtarı oluşturun. Ne inşa ettiğinizi bize anlatın."
-      },
-      "step_2": {
-        "header": "Adım 2: API anahtarı alın",
-        "text": "Bir API anahtarı oluşturduğunuzda, otomatik olarak oluşturulacaktır.",
-        "text_2": "Önemli: API anahtarınızı mümkün olduğunca güvenli bir şekilde saklayın. API anahtarınızı kendi uygulamanızda paylaşmaktan veya başka şekilde açığa çıkarmaktan kaçının."
-      },
-      "step_3": {
-        "header": "Adım 3: İstek yapın",
-        "text": "Veritabanı API'si HTTP(S) kullanır ve yayınlanan verileri almak için RESTful uç noktaları sağlar. Her istek, önceki adımda oluşturulan API anahtarı kullanılarak kimliği doğrulanmalıdır. Tüm API uç noktaları hakkında daha fazla bilgi için API belgelerine bakın."
-      },
-      "step_4": {
-        "header": "Adım 4: Mesajları paylaşın",
-        "text": "Bir tehlike tehdidi olduğunda Kızılhaç Kızılay güvenlik mesajlarını halkla paylaşın. Mesajlar hakkında herhangi bir geri bildiriminiz varsa IFRC ekibiyle iletişime geçebilirsiniz: im@ifrc.org"
-      }
-    },
-    "slider_2": {
-      "btn": "Güvenlik Mesajları",
-      "step_1": {
-        "header": "Adım 1: Mesajları görüntüleyin",
-        "text": "Mevcut Kızılhaç Kızılay Ulusal Topluluğu mesajlarını görüntülemek için mesaj veritabanını ziyaret edin."
-      },
-      "step_2": {
-        "header": "Adım 2: Mesaj setini seçin",
-        "text": "Görüntülemek istediğiniz Ulusal Topluluğu seçin. Ardından mevcut listeden bir tehlike türü seçin."
-      },
-      "step_3": {
-        "header": "Adım 3: Mesajları paylaşın",
-        "text": "Mesajları indirme seçeneğini arayın. Mesaj setini resim veya PDF olarak paylaşabilirsiniz. Doğru mesajları paylaştığınızdan emin olmak için indirin ve gözden geçirin."
-      }
-    }
-  },
-  "upload_modal": {
-    "drag_button_text": "Yüklemek için dosyayı bu alana tıklayın veya sürükleyin",
-    "button_text": "Yükle"
-  },
-  "stages": {
-    "immediate": "Acil",
-    "warning": "Uyarı",
-    "anticipated": "Beklenen",
-    "assess_and_plan":"Değerlendirin ve Planlayın",
-    "mitigate_risks":"Riskleri Azaltın",
-    "prepare_to_respond":"Yanıt Vermeye Hazırlanın",
-    "recover": "İyileş"
-  },
-  "content": {
-    "content": "İçerik",
-    "audit_log": {
-      "audit_log": "Denetim Kaydı",
-      "my_audit_log": "Geçmişi Düzenle",
-      "empty": "Bu filtreye uyan denetim kaydı bulunamadı",
-      "soc_label": "Dernek",
-      "select_hazard": "Tehlike türü seçin",
-      "select_language": "Dil seçin",
-      "select_overwrite": "Üzerine yazma seçeneğini seçin",
-      "choose_file": "Dosya türü seçin",
-      "select_soc": "Ulusal topluluk seçin"
-    },
-    "whatnow": {
-      "title": "Mesajlar",
-      "set_attribution": "Yayınlanacak dernek ismi ve ilgili not oluştur",
-      "whatnow": "Güvenlik Mesajı Veritabanı",
-      "empty": "Bu Ulusal Toplum için henüz bir Güvenlik mesajı yayınlanmamıştır",
-      "steps": "Adımlar",
-      "publish": "Yayınla",
-      "no_publish": "Yayınlanacak bir şey yok",
-      "published": "yayınlanan çeviriler",
-      "publishing": "Yayınlanıyor",
-      "content_to_publish": "Yayınlanacak olan taslak içeriği",
-      "whatnow_content": "Güvenlik Mesajı Veritabanı içeriği",
-      "choose_hazard": "Tehlike Seç",
-      "hazard": "Tehlike",
-      "content": "İçerik",
-      "create": "Tehlike Ekle",
-      "edit_attribtion": "Özellik düzenle",
-      "attribution": "Özellik",
-      "attribution_url": "Özellik URL",
-      "society_name": "Ulusal Dernek",
-      "attribution_message": "Özellik mesajı",
-      "no_translation": "İçerik seçili değil",
-      "delete_content_translation": "Bu, seçilen Güvenlik Mesajı Veritabanı içeriğini geçerli dilden kaldıracaktır",
-      "messages": "Güvenlik mesajları",
-      "add_language": "Yeni dil ekle",
-      "no_languages": "Başlamak için bir dil seç veya oluştur",
-      "no_soc": "Bir dernek seç",
-      "no_region": "Bir bölge seçin",
-      "add_language_message": "Yeni bir dil eklemek için, lütfen ona uygun içerik ekleyin",
-      "add_language_attribution": "Yeni bir dil eklemek için yeni bir özellik oluştur",
-      "select_language": "Lütfen bir dil seçin",
-      "attribution_publish": "Bu özellik, yayınlandığında hemen kullanılabilir",
-      "date_added": "Eklenme Tarihi",
-      "url": "URL",
-      "hazard_type": "Tehlike Türü",
-      "show_more": "Daha fazla göster",
-      "early": "Erken Uyarı",
-      "disaster": "Afet Riskini Azaltma",
-      "recovery": "İyileşme",
-      "publish_summary_title": "Atıf",
-      "publish_summary_ns": "Ulusal Topluluk",
-      "publish_summary_url": "Atıf URL'si",
-      "publish_summary_message": "Atıf Mesajı"
-    },
-    "edit_whatnow": {
-      "title": "Başlık",
-      "description": "Tanım",
-      "content_piece": "İçerik parçası",
-      "enter_other_hazard_type": "Tehlike Türü İçin İsim Gir",
-      "other_hazard_type_label": "Diğer Tehlike Türü",
-      "stepped_content": "Kademeli İçerik Parçası",
-      "content_title_description": "Bu Güvenlik Mesajları için Başlık",
-      "content_description_description": "Bu Güvenlik Mesajlarının Açıklaması",
-      "content_label": "Lütfen tehlike bilgisi girin",
-      "content_url": "URL",
-      "content_url_description": "Bu Güvenlik mesajları hakkında daha fazla bilgi için URL. Lütfen protokolü ekleyin, örneğin http:// veya https://",
-      "created": "oluşturuldu",
-      "pieces_edited": " Düzeltilmiş Parçalar",
-      "content_placeholder": "Lütfen bir mesaj girin",
-      "mitigation": "Önlem",
-      "mitigation_help": "Riskleri azaltmak için uzun dönemli önlemler",
-      "mitigation_extra": "Önlem, öngörülen bir tehlike için alınan uzun dönemli beyandır. Çevreyi ve ev halkını güvende kılmak için yapılan eylemler değerlendirme, planlama ve uzun dönemli risk azaltmadır.",
-      "seasonalForecast": "Mevsimsel Tahmin",
-      "seasonalForecast_help": "Riskleri azaltmak için alınacak kısa dönemli eylemler",
-      "seasonalForecast_extra": "Sezonluk tahmin bir tehlikenin öngörülme beyanıdır. Riski azaltma ve ev halkını koruma için yapılan eylemler olası riskleri değerlendirme ve etkinlik planlamadır.",
-      "watch": "İzle",
-      "watch_help": "Karşılamak için hazırlan",
-      "watch_extra": "Tehlikenin olma olasılığı büyük anlamda yükseldiğinde ve nasıl, nerede, ne zaman oluşabileceği henüz belli değilse bir uyarı gönderilir. Amacı korunmak için yapılacak eylemleri zamanlama ve tehlikeyi karşılama adına zaman kazanabilmektir.",
-      "warning": "Uyarı",
-      "warning_help": "Karşılamak için hazırlan",
-      "warning_extra": "Bir tehlike oluştuysa, oluşmak üzereyse veya olasılığı çok yüksek görülüyorsa bir uyarı gönderilir. Koşulların can veya mal kaybına yol açabileceğini bildirir. Bu tehlike altındaki kişilerin koruyucu eylemler alması gerekir.",
-      "immediate": "Hemen",
-      "immediate_help": "Müdahale eylemleri",
-      "immediate_extra": "Mevcut koşullar can veya mal kaybı için tehdit oluşturuyor. Bir tehlike oluştuysa hemen alınması gereken korunma amaçlı eylemler bunlardır. Kendimizi ve ev halkını koruma amaçlı tehlikeyi karşılama eylemleri gerekir.",
-      "recover": "Kurtar",
-      "recover_help": "Kurtarma eylemleri",
-      "recover_extra": "Bir tehlikeden sonra riski azaltma adına korunma eylemleri bunlardır.",
-      "anticipated": "Beklenen",
-      "assess_and_plan": "Değerlendirin ve Planlayın",
-      "mitigate_risks": "Riskleri Azaltın",
-      "prepare_to_respond": "Yanıt Vermeye Hazırlanın",
-      "updated": "güncellendi",
-      "download_icon": "Simge İndir",
-      "download_image": "Resim Olarak İndir",
-      "download_image_error": "Resim indirilemedi. Lütfen bütün değişikliklerin yayınlandığından emin olun ve tekrar deneyin.",
-      "download_instructions": "Kaydetmek için sağ tıklayın ve 'Resmi farklı kaydet...'i seçin",
-      "downloaded_image_alt": "Güvenlik Mesajı Veritabanı Talimatları",
-      "add_key_message": "Anahtar Mesaj Ekle",
-      "add_supporting_message": "Destek Mesajı Ekle",
-      "early_warning": "Erken Uyarı",
-      "early_warning_description": "Uyarılar ve erken eylemler için temel güvenlik mesajları",
-      "disaster_risk_reduction": "Afet Riskini Azaltma",
-      "disaster_risk_reduction_description": "PAPE'den temel güvenlik mesajları",
-      "recovery": "İyileşme",
-      "recovery_description": "İyileşme eylemleri için temel güvenlik",
-      "hazard_type": "Tehlike Türü",
-      "content_edit_title": "İçerik Düzenleme",
-      "content_add_hazard_title": "Tehlike Ekle",
-      "key_message_label": "Anahtar mesaj başlığı",
-      "supporting_message_label": "Destek mesajı"
-    },
-    "message_editor": {
-      "title": "Atıf Editörü",
-      "society_name_label": "Ulusal topluluk adı",
-      "attribution_url_label": "Atıf URL'si",
-      "attribution_message_label": "Atıf Mesajı",
-      "create_btn": "Tehlike ekle",
-      "contributor_name_label": "Katkıda Bulunan Adı",
-      "contributor_single": "Katkıda Bulunan"
-    },
-    "previewer": {
-      "download_image_error": "Resim indirilirken hata oluştu, lütfen tekrar deneyin.",
-      "download_pdf_error": "PDF indirilirken hata oluştu, lütfen tekrar deneyin."
-    },
-    "audit": "Geçmişi düzenle",
-    "export": "Dışa Aktar",
-    "bulk_upload": {
-      "bulk_upload": "Mesaj Dosyası Yükleme",
-      "template": "Şablon",
-      "export_template": "Şablonu Dışa Aktar",
-      "import_data": "Verileri İçe Aktar",
-      "import_complete": "İçe Aktarma Tamamlandı",
-      "import_summary": "{lang} içinde {society} kapsamında içe aktarıyorsunuz.",
-      "import_banner": {
-        "success": "Başarılı",
-        "added": "Eklendi",
-        "skipped": "Atlandı",
-        "denied": "Reddedildi",
-        "updated": "Güncellendi",
-        "failed": "Başarısız",
-        "invalid": "Geçersiz",
-        "row": "Satır"
-      },
-      "upload_csv": "Belgeyi CSV olarak yükle",
-      "language_instructions": "İçe aktarılacak olan çevirilerin dilini seç.",
-      "file_instructions": "Buraya bir dosya sürükle veya bilgisayardan seç.",
-      "choose": "Seç",
-      "submit": "İçeriği İçe Aktar",
-      "reset": "Başka İçerik Yükle",
-      "export_template_guide": "Şablon Rehberini Dışa Aktar",
-      "export_template_instructions": "Bu g dosya yükleme şablonunun nasıl etkili bir şekilde kullanılacağına ilişkin talimatlar için lütfen bu kılavuzu inceleyin.",
-      "refer": "Şuraya bakın",
-      "detail": "ayrıntılı talimatlar için",
-      "warnings": {
-        "title": "Daha önceki sürümde bulunan içerikler değişecekse içe aktarmayı reddet.",
-        "on": "Evet",
-        "off": "Hayır"
-      },
-      "overwriting": {
-        "title": "Ayarı Değiştir.",
-        "on": "Her zaman bu sürüme güncelle, bütün düzeltmelerin üstüne yaz",
-        "off": "Sadece içe aktarılan içeriğin en yeni olduğu olay türlerini güncelle"
-      },
-      "errors": {
-        "warning_update_will_overwrite": "Bu işlem dışa aktarma oluşturulduktan sonra yapılan bütün değişimlerin üzerine yazacaktır",
-        "bad_request": "Dosya bilgisi doğru oluşmadı",
-        "bad_request_error_codes": {
-          "30001": "Sütun başlıkları şablonla eşleşmiyor",
-          "30002": "Özellik adı, mesaj veya URL eksik",
-          "30003": "Özellik adı geçersiz. Lütfen protokolün var olduğunu kontrol edin, https:\/\/ gibi",
-          "40001": "Geçersiz ülke kodu girildi",
-          "40002": "Seçilen dernek seçilen dernek dosyası ile eşleşmiyor",
-          "40003": "Seçilen dosyanın dışa aktarım tarihi hatalı olduğu için içe aktarım tamamlanamadı"
-        }
-      }
-    }
-  },
-  "api_stats": {
-    "page_title": "API İstatikleri",
-    "download_data": "Veri İndir",
-    "start_date": "Başlangıç Tarihi",
-    "end_date": "Bitiş Tarihi",
-    "table_select": {
-      "keys": "API Anahtarları",
-      "routes": "API Rotaları"
-    },
-    "field_headers": {
-      "application_name": "Application Name",
-      "number_of_hits": "Number of Hits",
-      "estimated_reach": "Estimated Reach",
-      "organisation": "Organisation",
-      "application": "Application"
-    },
-    "cumulative_cards": {
-      "hits": "Toplam Tıklanma",
-      "accounts": "Toplam Hesaplar",
-      "est_impacted_users": "Tah. Etkilenen Kullanıcılar"
-    },
-    "empty": "Belirtilen tarih aralığı için istatistik bulunamadı"
-  },
-  "api_usage": {
-    "applications": "Uygulamalar",
-    "view_user": "Kullanıcıyı görüntüle",
-    "reactivate": "Yeniden etkinleştir",
-    "app_detail": "Uygulama Detayı",
-    "app_details": "Uygulama Detayları",
-    "activity": "Etkinlik",
-    "view_all_activity": "Bu uygulama için tüm etkinlikleri görüntüle",
-    "api_users": "API Kullanıcıları",
-    "terms_conditions": "Tüm \"Hüküm ve Koşullar\" Sürümleri",
-    "view_prev_terms": "Önceki sürümleri görüntüle",
-    "current_version": "Güncel Sürüm",
-    "version": "Sürüm"
-  },
-  "applications": {
+    "ok": "TAMAM",
+    "go": "GİTMEK",
+    "all": "Tüm",
+    "cancel": "İptal etmek",
+    "error_alert_title": "Oops ...",
+    "error_alert_text": "Bir şeyler ters gitti! ",
+    "error_permission_alert_text": "Bu değişikliği yapma iznin yok",
+    "token_expired_alert_title": "Oturum süresi doldu!",
+    "token_expired_alert_text": "Devam etmek için lütfen tekrar giriş yapın.",
+    "login": "Giriş yapmak",
+    "what_now": "IFRC Güvenlik Mesaj Veritabanı",
+    "message_portal": "Mesaj portalı",
+    "register": "Kayıt olmak",
+    "sign_up": "Üye olmak",
+    "docs": "Belgeler",
     "my_apps": "Uygulamalarım",
-    "new_tc": "Yeni Hüküm ve Koşullar",
-    "build": "Yeni uygulama oluştur",
-    "build_key": "Yeni API anahtarı oluştur",
-    "edit": "Uygulamayı düzenle",
-    "building": "Uygulama oluşturuluyor",
-    "building_key": "API anahtarı oluşturuluyor",
-    "no_apps": "Uygulamanız yok, başlamak için bir tane oluşturun.",
-    "api_keys": "API Anahtarları"
-  },
-  "home": {
-    "home": "Ana Sayfa",
-    "welcome": "Hoş geldiniz",
-    "admin_intro": "Burada kullanıcıları yönetebilir, Safety Message Database içeriğini düzenleyip yayınlayabilir ve API kullanımını görüntüleyebilirsiniz.",
-    "ns_admin_intro": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz",
-    "ns_editor_intro": "Burada Güvenlik Mesajı Veritabanı içeriğini düzenleyebilirsiniz",
-    "api_user_intro": "Burada uygulamalarınızı görebilir ve hesabınızı yönetebilirsiniz.",
-    "role_changed_title": "Rolünüz değiştirildi",
-    "role_changed_p": "Aşağıdaki rol size atandı:",
-    "role_changed_p2": "İzinleriniz aşağıdaki gibidir:",
-    "role_changed_confirm": "Onayla",
-    "role_changed_dismiss": "Kapat"
-  },
-  "landing": {
-    "strapline": "Güvenlik Mesajı Veritabanı Hizmeti",
-    "strapline_part_2": "Küresel Kızılhaç \/ Kızılay Güvenlik Mesajları",
-    "head_1": "IFRC Güvenlik",
-    "head_2": "Mesaj Veritabanı",
-    "head_text_1": "IFRC Halkı Bilinçlendirme ve Bilinçlendirmeye dayalı güvenlik mesajları",
-    "head_text_2": "Kamu Eğitimi (PAPE) kaynağı",
-    "head_bottom_1": "Güvenilir Kızılhaç Kızılay'a erişin ve paylaşın",
-    "head_bottom_2": "insanların güvenli bir şekilde hazırlanmalarına yardımcı olmak için eyleme geçirilebilir mesajlar",
-    "head_bottom_3": "ve tehlikelere müdahale etmek.",
-    "signup": "Kaydolun",
-    "it_works": "Nasıl Çalışır",
-    "works_1_a": "Kızılhaç Kızılay Ulusal",
-    "works_1_b": "Toplum ve hükümet ortakları",
-    "works_1_c": "ulusal mesaj setleri üzerinde anlaşmak",
-    "works_2_a": "Ulusal Dernekler yayınlıyor",
-    "works_2_b": "güvenlik mesajları",
-    "works_2_c": "veritabanı",
-    "works_3_a": "Ajansların değiştirilmesi ve",
-    "works_3_b": "iletişim kanalları",
-    "works_3_c": "veritabanı API'sine bağlanın",
-    "works_4_a": "Ortaklar paylaşır",
-    "works_4_b": "mesajları aracılığıyla",
-    "works_4_c": "kanallar",
-    "works_5_a": "Topluluklar şunları alır",
-    "works_5_b": "mesajlar ve",
-    "works_5_c": "güvenli̇ bi̇r şeki̇lde hareket edi̇n",
-    "learn_more": "Daha fazla bilgi edinin",
-    "watch_video": "Videoyu izleyin",
-    "example_case": "Örnek Kullanım Örneği",
-    "api": "API",
-    "hurricane": "Kasırga ile ilgili mesajları erkenden ekleyin",
-    "warning_alerts": "uyarı ikazları",
-    "social_media": "Sosyal Medya",
-    "post_images": "Orman yangınına hazırlık görselleri yayınlayın",
-    "messages_network": "ağınıza mesajlar",
-    "whatsapp": "WhatsApp",
-    "share_flood": "Taşkın azaltma eylemlerini sizinle paylaşın",
-    "family": "aile ve arkadaşlar",
-    "impact": "Etki",
-    "sign_up_today": "Bugün kaydolun",
-    "developer": {
-      "strap_para_one": "Yerelleştirilmiş eylem mesajlarımızla toplumların tehlikelere hazırlanmasına, onları karşılamasına ve tehlikelerden kurtulmasına yardımcı olun.",
-      "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için dört adımlı kolay kılavuzumuzu kullanın. Kaydolun ve mevcut tüm mesajları görün."
+    "number_of_apps": "{0} uygulamalar",
+    "whatnow_content": "Mesaj",
+    "create_key": "Anahtar Oluştur",
+    "alerts": "Uyarı",
+    "feeds": "Yemler",
+    "get_started": "Şimdi kaydolun",
+    "page_not_found": "Sayfa bulunamadı",
+    "go_home": "Eve gitmek",
+    "logout": "Oturum açma",
+    "email": "E -posta",
+    "register_success": "Kaydolduğunuz için teşekkürler",
+    "confirm_email": "Hesabınızı onaylamak için lütfen bir e -posta için gelen kutunuzu kontrol edin.",
+    "email_confirmed": "E -posta adresinizi onayladığınız için teşekkür ederiz. ",
+    "confirmation_failed": "E -posta adresiniz onaylanamadı, tekrar denemek için lütfen yöneticinizle iletişime geçin.",
+    "home_redirect": "Ana Sayfaya Git",
+    "status": "Durum",
+    "remember_me": "Beni Hatırla",
+    "old_password": "Mevcut Şifre",
+    "password": "Şifre",
+    "forgot_password": "Şifrenizi mi unuttunuz?",
+    "confirm_password": "Şifreyi onaylayın",
+    "incorrect_password": "Yanlış şifre",
+    "name": "İsim",
+    "first_name": "İlk adı",
+    "last_name": "Soy isim",
+    "toggle_navigation": "Gezinme",
+    "you_are_logged_in": "Giriş yapıyorsunuz!",
+    "reset_password": "Parolayı sıfırla",
+    "set_password": "Şifre Ayarla",
+    "send_password_reset_link": "Parola Sıfırlama Bağlantısı Gönderin",
+    "settings": "Ayarlar",
+    "profile": "Profil",
+    "your_info": "Bilgileriniz",
+    "info_updated": "Bilgileriniz güncellendi!",
+    "update": "Güncelleme",
+    "your_password": "Şifreniz",
+    "password_updated": "Şifreniz güncellendi",
+    "new_password": "Yeni Şifre",
+    "login_with": "Giriş yapmak",
+    "register_with": "Kaydolmak",
+    "yes": "Evet",
+    "no": "HAYIR",
+    "close": "Kapalı",
+    "dashboard": "Gösterge paneli",
+    "terms_service": "Hizmet Şartları",
+    "sign_in_with_google": "Google ile oturum açın",
+    "offline_error": {
+        "title": "İnternet bağlantısı yok",
+        "description": "Lütfen {zaman} içinde değişiklikleri kaydedin veya ilerleme kaybedilecek"
     },
-    "national_society": {
-      "strap_para_one": " Kızılhaç ve Kızılay ulusal dernek güvenlik mesajlarını dünya çapında, ulusal ve yerel medya erişimi için yayınlayın.",
-      "strap_para_two": "Nasıl mesaj oluşturulacağını öğrenmek ve medya ortaklarıyla iletişim için bize ulaşın."
+    "breadcrumbs": {
+        "applications": "Başvuru",
+        "admin_users": "Yönetici kullanıcıları",
+        "users": "Kullanıcılar",
+        "manage_users": "Kullanıcıları Yönetin",
+        "profile": "Profil",
+        "terms": "Şartlar ve koşullar",
+        "edit": "Düzenlemek",
+        "create": "Yaratmak",
+        "content": "İçerik",
+        "what_now_content": "Şimdi ne içerik",
+        "bulk_upload": "Mesaj Dosyası Yükle",
+        "audit_log": "Denetim günlüğü",
+        "api_usage": "API kullanımı",
+        "app_detail": "Uygulama detayı",
+        "all_terms": "Tüm Hüküm ve Koşullar"
     },
-    "strap_para_one": "Yerelleştirilmiş eylem mesajlarımızla toplumların tehlikelere hazırlanmasına, onları karşılamasına ve tehlikelerden kurtulmasına yardımcı olun.",
-    "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için dört adımlı kolay kılavuzumuzu kullanın. Kaydolun ve mevcut tüm mesajları görün.",
-    "view_data": "Verileri gör",
-    "view_message_library": "Güvenlik Mesajlarını Görüntüle",
-    "what_now": "WhatNow?",
-    "fake_alert_heading": "Dondurucu Soğuk Uyarısı",
-    "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero temporare, cum soluta nobis est.",
-    "fake_alert_time": "1 SAAT ÖNCE",
-    "fake_alert_time_exact": "05\/02\/18 saat 05:15 (GMT-5)",
-    "use_cases": {
-      "heading": "Daha Fazla Bilgi",
-      "first_heading": "Nasıl Çalışır",
-      "first_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "second_heading": "Kullanım Senaryoları",
-      "second_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "third_heading": "Uygulama Seti",
-      "third_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fourth_heading": "WhatNow Video",
-      "fourth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta",
-      "fifth_heading": "Hava Durumu uygulamalarını geliştir",
-      "fifth_content": "per ho dolaro frakcistreko, kuo drumo eksterna reprezenti ro hav us singularo propozicio posta"
+    "documentation": {
+        "heading": "Kızıl Haç API belgeleri",
+        "sidebar": {
+            "introduction": "giriiş",
+            "base_url": "Temel url",
+            "changelog": "Değişim yeri",
+            "authentication": "Kimlik doğrulama",
+            "response_codes": "Yanıt Kodları",
+            "emergency_alert_feed": "Acil durum uyarı akışı",
+            "cap_alert_document": "Kapak Uyarı Belgesi",
+            "what_now": "Şimdi ne"
+        },
+        "steps": {
+            "one": {
+                "body": "Kızıl Haç Rest API, geliştiricilerin Uluslararası Kızıl Haç toplumları tarafından verilen acil durum bilgilerine ve kaynaklara erişmelerini sağlar.",
+                "heading": "giriiş",
+                "support_card": {
+                    "body": "Herhangi bir sorunuz varsa veya desteğe ihtiyacınız varsa, lütfen hello@ifrc.org adresinden bize ulaşın.",
+                    "title": "Destek ve Sorular"
+                }
+            },
+            "two": {
+                "body": "Tüm API uç noktaları bu temel URL ile ön eklenmiştir.",
+                "heading": "Temel url"
+            },
+            "three": {
+                "heading": "Değişim yeri",
+                "table": {
+                    "headers": {
+                        "detail": "Serbest bırakmak",
+                        "version": "API sürümü",
+                        "release": "Serbest bırakmak",
+                        "release_date": "Yayın tarihi"
+                    }
+                }
+            },
+            "four": {
+                "body": "API, bir API anahtarı kullanarak tüm kaynaklara erişmek için kimlik doğrulamasını gerektirir. ",
+                "create_app_cta": "Bir Uygulama Oluşturun",
+                "heading": "Kimlik doğrulama"
+            },
+            "five": {
+                "heading": "Yanıt Kodları",
+                "table": {
+                    "descriptions": {
+                        "ok": "Talep başarılı oldu ve yanıt gövdesi istenen kaynağı içeriyor",
+                        "found": "Bir yönlendirmeyi gösterir. ",
+                        "not_found": "Talep edilen kaynak bulunamadı.",
+                        "not_allowed": "Bu kaynakta kullanılan HTTP yöntemine izin verilmediğini gösterir.",
+                        "server_error": "Bir sunucu hatası meydana geldi ve istenen kaynak iade edilemedi.",
+                        "unavailable": "Hizmetin şu anda mevcut olmadığını gösterir. "
+                    },
+                    "headers": {
+                        "code": "Kodlamak",
+                        "name": "İsim",
+                        "description": "Tanım"
+                    }
+                }
+            },
+            "six": {
+                "card": {
+                    "body": "Her Kızıl Haç Topluluğu {0} v1.2'yi kullanarak kamu uyarıları verebilir.",
+                    "cta": "Ortak uyarma protokolü",
+                    "title": "Ortak uyarma protokolü"
+                },
+                "endpoint": "Bitiş noktası:",
+                "example": "Bu örnekte, {0} segmenti, belirli bir toplumun ülke kodu ile değiştirilmelidir. ",
+                "feed_intro": "Belirli bir toplum tarafından yayınlanan aktif uyarıları listeleyen her toplum için bir yem de sağlanır.",
+                "heading": "Acil durum uyarı akışı",
+                "intro": "Tüm toplumlar tarafından verilen CAP uyarıları bir RSS feed kullanılarak yayınlanır. "
+            },
+            "seven": {
+                "endpoint": "Bitiş noktası:",
+                "example_response": "Örnek Yanıt:",
+                "heading": "Kapak Uyarı Belgesi",
+                "body": "Kapak Uyarısı belgelerine, her RSS besleme öğesinde belirtilen mutlak bağlantı aracılığıyla erişilebilir. "
+            },
+            "eight": {
+                "body": "Aşağıdaki uç noktalar, çeşitli etkinlik türlerine afete hazırlıklı olmaya yardımcı olmak için Red Cross Dernekleri tarafından yayınlanan yapılandırılmış veriler sağlar.\n\n",
+                "endpoint": "Bitiş noktası:",
+                "example_response": "Örnek Yanıt:",
+                "heading": "Şimdi ne",
+                "note": "Not:",
+                "noteDetails": "{0} Tüm yanıtlar bir ebeveynin içinde bulunur {1} mülkünde.",
+                "query_params": "Sorgu Parametreleri:",
+                "response_properties": "Yanıt Özellikleri:",
+                "structure": "Şimdi öğe nesnelerinin yapısı:",
+                "stucture_attribution": "{0} nesnesinin yapısı:",
+                "stucture_attribute_translation": "Bir ilişkilendirmenin yapısı {0} nesne:",
+                "stucture_translation": "{0} nesnesinin yapısı:",
+                "table": {
+                    "query_params": {
+                        "name": "isim",
+                        "description": "Tanım"
+                    },
+                    "structure": {
+                        "property": "Mülk",
+                        "data_type": "Veri türü",
+                        "description": "Tanım"
+                    }
+                }
+            }
+        }
     },
-    "example_alert": {
-      "heading": "Örnek Güvenlik Mesajı Formatı",
-      "alert_preview": "Uyarı önizleme",
-      "what_now_info": "Güvenlik Mesajı Önizlemesi",
-      "example_whatnow_request": "Örnek Güvenlik Mesajı Veritabanı Yanıtı",
-      "example_alert_request": "Örnek Uyarı Karşılama",
-      "example_content": "Hava Durumu Bilgilendirme# 3 SON saat 11.00 ÖÖ, Ocak 29, 2018\nSoğuk dalganın devamı\n\nSoğuk dalganın devam özelliği zayıfladı. Nome üzerinde gelişen hava koşulları gözlemlenecek. Ancak, batı taraflarından ötürü bu bölgelerde yer yer sağanaklar veya şiddetli sağanaklar özellikle öğleden sonra veya akşam beklenebilir.\n\nBu gelişmeyi içeren uyarı hava durumu sisteminin son uyarısıdır.",
-      "example_content_location_header": "ETKİLENEN BÖLGE",
-      "example_content_location": "Nome, Alaska"
+    "get_started_docs": {
+        "title": "Başlamak",
+        "sidebar": {
+            "create_app": "Bir uygulama oluştur",
+            "get_api_key": "API Anahtarı Alın",
+            "make_request": "İstekte bulunmak",
+            "sign_up": "Üye olmak"
+        },
+        "steps": {
+            "one": {
+                "heading": "Adım 1 - Kaydol",
+                "body": "Güvenlik Mesajı Veritabanı API'sinden, önce {0} Güvenlik Mesajı veritabanı portalına verileri kullanmaya başlamak için.\n\n",
+                "create_account_alt": "hesap oluşturmak",
+                "existing_account": "Zaten bir hesabınız varsa, lütfen {0}.",
+                "login_cta": "giriş yapmak",
+                "sign_up_cta": "üye olmak"
+            },
+            "two": {
+                "body": "API'yi kullanmak için güvenlik mesajı veritabanı portalında bir uygulama oluşturmanız gerekir. ",
+                "create_app_alt": "Uygulama Oluştur",
+                "heading": "Adım 2 - Bir Uygulama Oluşturun"
+            },
+            "three": {
+                "body": "Bir uygulama oluşturduğunuzda, otomatik olarak bir API anahtarı oluşturulur.\n\n",
+                "create_api_key_alt": "API Anahtarı Oluştur",
+                "heading": "Adım 3 - Bir API Anahtarı Alın",
+                "important": "Önemli:"
+            },
+            "four": {
+                "api_docs_cta": "API belgeleri",
+                "body": "Güvenlik Mesajı Veritabanı API'sı HTTP (S) kullanır ve yayınlanmış verileri elde etmek için dinlendirici uç noktalar sağlar.\n\n",
+                "example_title": "Örnek Talep",
+                "heading": "Adım 4 - Bir Talep Yapın",
+                "moreInfo": "Tüm API uç noktaları hakkında daha fazla bilgi için bkz. {0}."
+            }
+        }
     },
-    "example_whatnow": {
-      "alert_from": "Gelen uyarı: Amerika Kızılhaç",
-      "more_info": "Daha Fazla Bilgi",
-      "heading": "Aşırı Soğuklar için Güvenlik Mesajları",
-      "copy": "Kendinizi ve ev halkını dondurucu soğuklardan koruyup riskleri en aza indirmek için bu eylemleri uygulayın.",
-      "what_now": "IFRC Güvenlik Mesajı Veritabanı",
-      "step_1": "Evinizi koruyun. Su borularını kontrol edin ve ısınma kaynaklarını dikkatli kullanın.",
-      "step_2": "Sıcak içeceklerle vücudun sıvı ihtiyacını giderin",
-      "step_3": "Sıcak tutan giysilerle ve açıkta kalan cildinizi örterek kendinizi koruyun",
-      "step_4": "Özellikle araba kullanırken buzlanmaya karşı hazırlıklı ve temkinli olun",
-      "step_5": "Komşuları, arkadaşları ve risk altındaki kişileri kontrol edin"
+    "home_pods": {
+        "bulk_upload": "Burada tüm güvenlik mesajlarınızı bir dosyaya yükleyebilirsiniz.",
+        "audit_log": "Burada mesaj düzenlemelerinizin geçmişini görüntüleyebilirsiniz",
+        "whatnow_edit": "Güvenlik mesajı veritabanı içeriğini düzenleyebileceğiniz yer burası",
+        "whatnow_review": "Güvenlik mesajı veritabanı içeriğini inceleyebileceğiniz yer burası",
+        "whatnow_publish": "Burada ulusal toplumunuzun güvenlik mesajlarını düzenleyebilir ve yayınlayabilirsiniz.",
+        "manage_users": "Bu, kullanıcıları yöneteceğiniz yerdir (oluşturun, düzenleyin ve kaldırın)",
+        "api_usage": "Burası, API'yı kimin kullandığını ve onunla hangi uygulamaların inşa edildiğini görebileceğiniz yerdir.",
+        "wellcome": "Hoş geldin",
+        "wellcome_description": "Burada güvenlik mesajı veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz."
     },
-    "build": {
-      "heading": "Uygulamanızı oluşturmaya hazır mısınız?"
+    "languages": {
+        "am": "አማርኛ",
+        "ar": "عربى",
+        "bn": "বাংলা",
+        "de": "Deutsche",
+        "en": "İngilizce",
+        "es": "Español",
+        "fr": "Français",
+        "ht": "Kreyòl",
+        "id": "Bahasa Endonezya",
+        "it": "İtalyan",
+        "ja": "日本",
+        "my": "ဗမာ",
+        "ne": "नेपाली",
+        "pt": "Português",
+        "ru": "рck",
+        "rw": "Kindarwanda",
+        "sw": "Kiswahili",
+        "th": "ไทย",
+        "tr": "Türk",
+        "ur": "اردو",
+        "vi": "Tiếng việt"
     },
-    "data_preview": {
-      "heading": "Güvenlik Mesajları",
-      "sub_heading": "Üye Olun ve dünya genelindeki Kızılhaç \/ Kızılay derneklerinden önemli mesajları görüntüleyin"
+    "sidebar": {
+        "manage": "İçerik Kullanıcılarını Yönetin",
+        "content_users": "İçerik Kullanıcıları",
+        "audit_log": "Geçmişi Düzenle",
+        "whatnow": "Atıf editörü",
+        "bulk": "Mesaj Dosyası Yükle",
+        "content": "İçerik",
+        "api": "API kullanımı",
+        "applications": "Başvuru",
+        "api_stats": "API İstatistikleri",
+        "api_users": "API kullanıcıları",
+        "terms_conditions": "Şartlar ve koşullar",
+        "subnationals": "Ulus altı"
     },
-    "footer": {
-      "terms_conditions": "Hüküm ve Koşullar",
-      "about": "Hakkımızda",
-      "privacy": "Gizlilik",
-      "getting_started": "Başlangıç",
-      "docs": "Belgeler",
-      "give_feedback": "Geri Bildirim Verin",
-      "gdpc_logo": "Küresel Afet Hazırlanma Merkezi Logosu",
-      "ifrc_logo": "Uluslararası Kızılhaç ve Kızılay Hareketi Logosu",
-      "subtitle_1": "IFRC Anahtar Güvenlik Veritabanı Hakkında",
-      "text_1": "IFRC Anahtar Güvenlik Veritabanı şunlara erişim sağlar:",
-      "text_2": "İnsanların nasıl olduğuna dair Kızılhaç Kızılay mesajları",
-      "text_3": "tehlikeler karşısında güvenli bir şekilde hareket edebilir",
-      "subtitle_2": "Daha Fazla Bilgi Edinin",
-      "email_ifrc": "im@ifrc.org",
-      "web_ifrc": "ifrc.org",
-      "subtitle_3": "Politikalar",
-      "terms": "Şartlar ve Koşullar",
-      "subtitle_4": "Yardımcı Bağlantılar",
-      "api_doc": "API Belgeleri",
-      "faq": "SSS (bağlantı sağlanacak)"
+    "common": {
+        "accept": "Kabul etmek",
+        "actions": "Eylem",
+        "create": "Yaratmak",
+        "edit": "Düzenlemek",
+        "save": "Kaydetmek",
+        "deactivate": "Devre dışı bırakmak",
+        "activate": "Etkinleştirmek",
+        "are_you_sure": "Emin misin?",
+        "yes": "Evet",
+        "title": "Başlık",
+        "description": "Tanım",
+        "unpublished_edits": "Yayınlanmamış düzenlemeler?",
+        "published": "Yayınlanmış",
+        "delete": "Silmek",
+        "welcome": "Hoş geldiniz",
+        "save_changes": "Değişiklikleri Kaydet",
+        "auto_saving": "Otomatik kaldırma",
+        "add": "Eklemek",
+        "reset_password": "Parolayı sıfırla",
+        "my_profile": "Profilim",
+        "cancel": "İptal etmek",
+        "view_changes": "Değişiklikleri Görüntüle",
+        "view_content": "İçeriği Görüntüle",
+        "resend_activation": "Etkinleştirme e -postasını yeniden paylaş",
+        "deactivate_user": "Kullanıcıyı devre dışı bırak",
+        "submit_changes": "Değişiklikler Gönder",
+        "reactivate_user": "Kullanıcıyı yeniden etkinleştir",
+        "send_invite": "Davet Gönder",
+        "invite_and_create": "Davet et ve başka bir tane yarat",
+        "loading": "İçerik Yükleme",
+        "loading_button": "Yükleme ...",
+        "publish_new": "Yeni sürüm yayınlayın",
+        "greeting": "MERHABA",
+        "removed": "Kaldırıldı",
+        "copy": "Kopya",
+        "copied": "Kopyalanmış",
+        "not_empty": "Boş olamaz",
+        "name": "İsim",
+        "webUrl": "Url",
+        "learn_more": "Daha fazla bilgi edin",
+        "validations": {
+            "empty": "Bu boş olamaz",
+            "hazardIcon": "Lütfen 30KB'den az bir resim seçin"
+        },
+        "network_error": "Ağ hatası",
+        "network_error_text": "Görünüşe göre bir ağ hatası var. ",
+        "email_sent": "E -posta gönderildi",
+        "duplicate_lang_error": "Üzgünüm, seçilen dil zaten var",
+        "duplicate_lang_description": "Lütfen mevcut dili düzenleyin veya açılır listeden yeni bir dil seçin",
+        "estimated_users": "Tahmini kullanıcı sayısı",
+        "upploading": "Yükleme",
+        "download": "İndirmek",
+        "download_as_image": "Resim Olarak İndirin",
+        "download_as_pdf": "PDF olarak indirin",
+        "add_logo": "Logo ekle",
+        "edit_logo": "Logoyu Düzenle",
+        "loading_image": "Yükleme ...",
+        "preview": "Önizleme"
+    },
+    "banners": {
+        "get_started_create": ", Başlayın ve ilk uygulamanızı oluşturun",
+        "create_app": "Bir uygulama oluştur",
+        "get_started_info": "BV Frazo Profteranto Baf, Ho Dolaro Frakcistreko, Kuo Drumo Eksternna Reprezenti Ro. "
+    },
+    "users": {
+        "user": "Kullanıcı",
+        "deleted": "Silinmiş kullanıcı",
+        "list": {
+            "manage": "Kullanıcıları Yönetin",
+            "select_status": "Durumu seçin",
+            "select_role": "Bir Rol Seçin",
+            "select_country": "Bir Ülke Seçin",
+            "select_terms": "Bir Terimler Sürümü Seçin",
+            "select_society": "Nacional bir toplum seçin",
+            "create": "Yeni Kullanıcı Oluştur",
+            "download_report": "Raporu İndir",
+            "empty": "Hiç kullanıcı bulamadım",
+            "detail": "Kullanıcı detayı",
+            "clear_filters": "Temiz filtreler",
+            "table_header": {
+                "user": "Kullanıcı",
+                "role": "Rol",
+                "society": "Toplum",
+                "email": "E -posta",
+                "added": "Eklemek",
+                "last_activity": "Son aciterlik",
+                "t_and_c": "T&C sürümü"
+            },
+            "societies": "Toplumlar"
+        },
+        "status": {
+            "active": "Aktif",
+            "deactivated": "Devre dışı bırakılmış"
+        },
+        "edit": {
+            "super_admin_all": "Tüm toplumlara erişim",
+            "user_details": "Kullanıcı Ayrıntıları",
+            "create_user": "Yeni Kullanıcı Oluştur",
+            "add_society": "Toplum ekleyin +",
+            "societies_heading": "Toplumlar",
+            "roles_heading": "Rol ve İzinler",
+            "activity_heading": "Aktivite",
+            "roles_label": "Bu kullanıcı için Roller ve İzinler Seçin",
+            "activity_link": "Kullanıcı tarafından tüm eylemleri görüntüle",
+            "created": "Kullanıcı başarıyla oluşturuldu",
+            "updated": "Kullanıcı başarıyla güncellendi",
+            "email_update": "E -postanızı güncellemek için lütfen şifrenizi girin",
+            "view": "Görüş",
+            "more": "Daha",
+            "less": "Daha az göster",
+            "user_can_do": "Kullanıcının ne yapmasına izin verdiğini görüntüleyin:",
+            "user_no_permission": "Kullanıcının izni yok",
+            "soc_already_added": "Bu kullanıcıya zaten bu topluma atandı"
+        }
+    },
+    "new_welcome": {
+        "title_1": "Hoş geldiniz",
+        "red_title": "IFRC",
+        "title_2": "Emniyet",
+        "title_3": "Mesaj Veritabanı",
+        "text_header": "Platformlarınızda Red Cross Red Crescent Güvenlik Mesajlarına erişin ve paylaşın.",
+        "text_header_2": "Aşağıdaki #-adım kılavuzunu izleyin ..",
+        "bottom_subtitle": "İletişim IFRC",
+        "bottom_text": "Sorularınız varsa IFRC ekibine e -posta gönderin: im@ifrc.org",
+        "bottom_btn": "İletişim IFRC",
+        "slider_1": {
+            "btn": "API Anahtarı Oluştur",
+            "step_1": {
+                "header": "1. Adım: Bir Uygulama Oluşturun",
+                "text": "Veritabanında API'yi kullanmak için bir API tuşu oluşturun. "
+            },
+            "step_2": {
+                "header": "2. Adım: Bir API Anahtarı Alın",
+                "text": "Bir API anahtarı oluşturduğunuzda otomatik olarak oluşturulur.",
+                "text_2": "Önemli: API anahtarınızı mümkün olduğunca güvenli bir şekilde saklayın. "
+            },
+            "step_3": {
+                "header": "3. Adım: Bir Talep Yapın",
+                "text": "Veritabanı API'sı HTTP (ler) kullanır ve yayınlanmış verileri elde etmek için dinlendirici uç noktalar sağlar. "
+            },
+            "step_4": {
+                "header": "4. Adım: Mesajları Paylaşın",
+                "text": "Tehlike tehdidi olduğunda Kızıl Haç Kızıl Hilal Güvenlik Mesajlarını halkla paylaşın. "
+            }
+        },
+        "slider_2": {
+            "btn": "Güvenlik mesajları",
+            "step_1": {
+                "header": "1. Adım: Mesajları Görüntüle",
+                "text": "Mevcut Red Cross Red Crescent Ulusal Derneği mesajlarını görüntülemek için mesaj veritabanını ziyaret edin."
+            },
+            "step_2": {
+                "header": "2. Adım: Mesaj setini seçin",
+                "text": "Görüntülemek istediğiniz ulusal toplumu seçin. "
+            },
+            "step_3": {
+                "header": "3. Adım: Mesajları Paylaşın",
+                "text": "Mesajları indirme seçeneğini arayın. "
+            }
+        }
+    },
+    "upload_modal": {
+        "drag_button_text": "Yüklemek için bu alana dosyayı tıklayın veya sürükleyin",
+        "button_text": "Yüklemek",
+        "allowed_formats_info": "Yalnızca JPG ve PNG dosyalarına izin verilir. "
+    },
+    "stages": {
+        "immediate": "Hemen",
+        "warning": "Uyarı",
+        "anticipated": "Beklenen",
+        "assess_and_plan": "Değerlendirin ve planlayın",
+        "mitigate_risks": "Riskleri azaltın",
+        "prepare_to_respond": "Yanıt vermeye hazırlanın",
+        "recover": "İyileşmek"
+    },
+    "content": {
+        "content": "İçerik",
+        "audit_log": {
+            "audit_log": "Denetim günlüğü",
+            "my_audit_log": "Geçmişi Düzenle",
+            "subtitle": "Burada mesaj düzenlemelerinizin geçmişini görüntüleyebilirsiniz.",
+            "empty": "Bu filtreye uygun denetim geçmişi bulunamadı",
+            "soc_label": "Toplum",
+            "select_hazard": "Tehlike Türünü Seçin",
+            "select_language": "Bir Dil Seçin",
+            "select_overwrite": "OPRION'un üzerine yazmayı seçin",
+            "choose_file": "Dosya Türünü Seçin",
+            "select_soc": "Nacional bir toplum seçin"
+        },
+        "whatnow": {
+            "title": "Mesaj",
+            "set_attribution": "Toplum adı ve ilişkilendirme mesajını yayınlamak için ayarlayın",
+            "whatnow": "Güvenlik Mesajı Veritabanı",
+            "empty": "Bu ulusal toplum için yayınlanmış güvenlik mesajları yok",
+            "steps": "Adım",
+            "publish": "Yayınlamak",
+            "no_publish": "Yayınlanacak hiçbir şey yok",
+            "published": "Yayınlanan çeviriler",
+            "publishing": "Yayınlama",
+            "content_to_publish": "Ne Yayınlanacak",
+            "whatnow_content": "Güvenlik Mesajı Veritabanı İçeriği",
+            "choose_hazard": "Tehlikeyi Seçin",
+            "hazard": "Tehlike",
+            "content": "İçerik",
+            "create": "Tehlike Ekle",
+            "edit_attribtion": "Atıf Düzenle",
+            "attribution": "Atıf",
+            "attribution_url": "Atıf URL'si",
+            "society_name": "Ulusal Toplum",
+            "attribution_message": "Atıf mesajı",
+            "no_translation": "İçerik seti yok",
+            "delete_content_translation": "Bu, seçilen güvenlik mesajı veritabanı içeriğini geçerli dilden kaldıracaktır",
+            "messages": "Güvenlik mesajları",
+            "add_language": "Yeni Dil Ekle",
+            "no_languages": "Başlamak için bir dil seçin veya oluşturun",
+            "no_soc": "Bir Ulusal Toplum Seçin",
+            "no_region": "Ulus altı",
+            "add_language_message": "Yeni bir dil eklemek için lütfen onunla birlikte gitmek için biraz içerik ekleyin",
+            "add_language_attribution": "Yeni bir dil eklemek için atıf oluşturun",
+            "select_language": "Lütfen bir dil seçin",
+            "attribution_publish": "Bu ilişkilendirme derhal yayıncılıkta mevcut olacak",
+            "date_added": "Tarih eklendi",
+            "url": "Url",
+            "hazard_type": "Tehlike Türü",
+            "hazard_type_duplicated": "Zaten var",
+            "show_more": "Daha Fazla Göster",
+            "early": "Erken uyarı",
+            "disaster": "Afet Riski Azaltma",
+            "recovery": "İyileşmek",
+            "publish_summary_title": "Atıf",
+            "publish_summary_ns": "Ulusal Toplum",
+            "publish_summary_url": "Atıf URL'si",
+            "publish_summary_message": "Atıf mesajı"
+        },
+        "edit_whatnow": {
+            "title": "Başlık",
+            "description": "Tanım",
+            "content_piece": "İçerik parçası",
+            "enter_other_hazard_type": "Tehlike Türü Adını Girin",
+            "other_hazard_type_label": "Diğer Tehlike Türü",
+            "stepped_content": "Basamaklı içerik parçası",
+            "content_title_description": "Bu güvenlik mesajları için başlık",
+            "content_description_description": "Bu güvenlik mesajlarının açıklaması",
+            "content_label": "Lütfen bazı tehlike bilgilerini girin",
+            "content_url": "Url",
+            "content_url_description": "Bu güvenlik mesajları hakkında daha fazla bilgi için URL. ",
+            "created": "yaratılmış",
+            "pieces_edited": "Düzenlenen Parçalar",
+            "content_placeholder": "Lütfen bir mesaj girin",
+            "mitigation": "Azaltma",
+            "mitigation_help": "Riskleri azaltmak için daha uzun vadeli eylemler",
+            "mitigation_subt": "",
+            "mitigation_extra": "Azaltma, tehlikeli bir olayın daha uzun vadeli bir tahmin ifadesidir. ",
+            "seasonalForecast": "Mevsimsel Tahmin",
+            "seasonalForecast_help": "Riskleri azaltmak için daha kısa vadeli eylemler",
+            "seasonalForecast_subt": "",
+            "seasonalForecast_extra": "Mevsimsel bir tahmin, tehlikeli bir olayın tahmin ifadesidir. ",
+            "watch": "Kol saati",
+            "watch_help": "Yanıt vermeye hazırlanın",
+            "watch_subt": "",
+            "watch_extra": "Tehlikeli bir olay riski önemli ölçüde arttığında bir saat yayınlanır, ancak oluşumu, yeri ve\/veya zamanlaması hala belirsizdir. ",
+            "warning": "Uyarı",
+            "warning_subt": "~ 24-48 saatlik teslim süresi",
+            "warning_help": "Yanıt vermeye hazırlanın",
+            "warning_extra": "Tehlikeli olay, ~ 24-48 saat içinde yüksek olma olasılığı yüksektir. ",
+            "immediate": "Hemen",
+            "immediate_subt": "Tehlike meydana geliyor",
+            "immediate_help": "Yanıt Eylemleri",
+            "immediate_subtitle": "Tehlike meydana geliyor",
+            "immediate_extra": "Tehlikeli bir olay meydana geliyor. ",
+            "immediate_key_message_tooltip": "Bu, bir kişinin güvende kalmak için yapması gereken öncelikli bir eylemdir. ",
+            "recover": "İyileşmek",
+            "recover_title": "İyileşmek",
+            "recover_help": "Kurtarma Eylemleri",
+            "recover_subt": "",
+            "recover_extra": "Güvenliği sağlamak için tehlike olayından sonra bu eylemleri gerçekleştirin.",
+            "anticipated": "Beklenen",
+            "assess_and_plan": "Değerlendirin ve planlayın",
+            "mitigate_risks": "Riskleri azaltın",
+            "prepare_to_respond": "Yanıt vermeye hazırlanın",
+            "updated": "güncellenmiş",
+            "download_icon": "Simgeyi İndir",
+            "download_image": "Resim Olarak İndirin",
+            "download_image_error": "Görüntüyü indirme hatası, lütfen tüm değişiklikleri yayınladığınızdan ve tekrar denediğinizden emin olun.",
+            "download_instructions": "Sağ tıklayın ve kaydetmek için 'Resmi Kaydet…' yi seçin",
+            "downloaded_image_alt": "Güvenlik Mesajı Veritabanı Talimatları",
+            "add_key_message": "Anahtar Güvenlik Mesajı Ekle",
+            "add_supporting_message": "Destekleyici mesaj ekleyin",
+            "early_warning": "Erken uyarı",
+            "early_warning_description": "Uyarılar ve erken eylemler için güvenlik mesajları",
+            "disaster_risk_reduction": "Afet Riski Azaltma",
+            "disaster_risk_reduction_description": "DRR için Kamuoyu Bilinci ve Halk Eğitiminden Güvenlik Mesajları (Pape)",
+            "recovery": "İyileşmek",
+            "recovery_extra": "Güvenliği sağlamak için tehlike olayından sonra bu eylemleri yapın",
+            "recovery_description": "Tehlike olayından sonra",
+            "hazard_type": "Tehlike Türü",
+            "content_edit_title": "İçerik Düzenleme",
+            "content_add_hazard_title": "Tehlike Ekle",
+            "anticipated_subt": "3-5 günlük teslim süresi",
+            "anticipated_extra": "3-5 gün içinde beklenen bir olay riski vardır. ",
+            "prepare_to_respond_subt": "",
+            "prepare_to_respond_extra": "Becerileri öğrenerek ve hükümleri saklayarak yanıt kapasitesini geliştirin",
+            "assess_and_plan_subt": "",
+            "assess_and_plan_extra": "Tehlike olaylarını tanımak, azaltmak ve yanıtlamak için riskleri ve planlamaları planlayın",
+            "mitigate_risks_subt": "",
+            "mitigate_risks_extra": "Yapılı ve doğal ortamları daha güvenli hale getirmek ve erken uyarı sistemleri oluşturmak için azaltma önlemleri alın",
+            "key_message_label": "Güvenlik mesajı",
+            "supporting_message_label": "Destekleyici Mesaj",
+            "url_tool": "Ulusal toplumunuzda veya ortak web sitenizde daha fazla güvenlik mesajı bilgilerine bağlantı",
+            "desc_tool": "Tehlike ve mesajlar hakkında kısa bir açıklama yapın. ",
+            "title_tool": "Örneğin: seller için güvenlik mesajları",
+            "safety_tool": "Bu, bir kişinin güvende kalmak için yapması gereken öncelikli bir eylemdir. ",
+            "supporting_tool": "Bu, öncelik anahtar eylemini desteklemek için daha fazla ayrıntı sağlar. "
+        },
+        "message_editor": {
+            "title": "Atıf editörü",
+            "society_name_label": "Ulusal Toplum adı",
+            "attribution_url_label": "Atıf URL'si",
+            "attribution_message_label": "Atıf mesajı",
+            "create_btn": "Tehlike Ekle",
+            "contributor_name_label": "Ortaklık Adı",
+            "contributor_single": "İşbirlikçi",
+            "attribution_message_label_tooltip": "Ulusal toplumunuzun ve verilen mesajların tek cümlelik bir açıklamasını paylaşın. ",
+            "attribution_url_label_tooltip": "Kuruluşunuz hakkında bilgi vermek için Ulusal Toplum web sitenizi paylaşın."
+        },
+        "previewer": {
+            "download_image_error": "Görüntüyü indirme hatası, lütfen tekrar deneyin.",
+            "download_pdf_error": "PDF indirme hatası, lütfen tekrar deneyin."
+        },
+        "audit": "Geçmişi Düzenle",
+        "export": "İhracat",
+        "bulk_upload": {
+            "empty_template": "Boş şablon",
+            "bulk_upload": "Mesaj Dosyası Yükle",
+            "bulk_subtitle": "Burada tüm güvenlik mesajlarınızı bir dosyaya yükleyebilirsiniz.",
+            "template": "Şablon",
+            "export_template": "Dışa Aktarma Şablonu",
+            "import_data": "Verileri İçe Aktar",
+            "import_complete": "İçe Aktar",
+            "import_summary": "{Lang} 'da {toplum} altında içe aktarıyorsunuz.",
+            "import_banner": {
+                "success": "Başarı",
+                "added": "Eklemek",
+                "skipped": "Atlamalı",
+                "denied": "İnkar",
+                "updated": "Güncellenmiş",
+                "failed": "Arızalı",
+                "invalid": "Geçersiz",
+                "row": "Sıra"
+            },
+            "upload_csv": "CSV biçiminde bir belge yükleyin",
+            "language_instructions": "İthal edilen çevirilerin dilini seçin.",
+            "file_instructions": "Bir dosyayı sürükleyin veya cihazınız arasından seçim yapın.",
+            "choose": "Seçmek",
+            "submit": "İçerik İçe Aktar",
+            "reset": "Başka bir yük",
+            "export_template_guide": "İhracat Şablonu Kılavuzu",
+            "export_template_instructions": "Bu G Dosya Yükleme Şablonunu Nasıl Kullanılacağına İlişkin Talimatlar için lütfen bu kılavuzu görüntüleyin.",
+            "refer": "Anmak",
+            "detail": "Ayrıntı Talimatları için",
+            "warnings": {
+                "title": "Herhangi bir içeriğin daha yeni sürümlerin üzerine yazılırsa içe aktarın.",
+                "on": "Evet",
+                "off": "HAYIR"
+            },
+            "overwriting": {
+                "title": "Üzerine yazma.",
+                "on": "Daima bu sürüme güncelleyin, tüm revizyonların üzerine yazın",
+                "off": "Yalnızca içe aktarılan içeriğin daha yeni olduğu olay türlerini güncelleyin"
+            },
+            "errors": {
+                "warning_update_will_overwrite": "Bu eylem, bu ihracatın yaratıldığından beri yapılan değişikliklerin üzerine yazılacak",
+                "bad_request": "Dosya verileri doğru şekilde oluşturulmadı",
+                "bad_request_error_codes": {
+                    "30001": "Sütun başlıkları şablonla eşleşmiyor",
+                    "30002": "Adı, mesaj veya URL eksik",
+                    "30003": "Geçersiz Atıf URL'si - Lütfen protokolün mevcut olduğundan emin olun, örn. ",
+                    "40001": "Geçersiz ülke kodu sağlandı",
+                    "40002": "Seçilen toplum seçilen dosya için toplumu eşleştirmiyor",
+                    "40003": "Seçilen dosyanın dışa aktarıldığı tarih yanlış şekillendirildi ve içe aktarma tamamlanamıyor"
+                }
+            }
+        }
+    },
+    "api_stats": {
+        "page_title": "API İstatistikleri",
+        "download_data": "Verileri İndir",
+        "clear_filters": "Filtreler",
+        "start_date": "Başlangıç ​​Tarihi",
+        "end_date": "Bitiş tarihi",
+        "table_select": {
+            "keys": "API anahtarları",
+            "routes": "API rotaları"
+        },
+        "field_headers": {
+            "application_name": "Uygulama Adı",
+            "number_of_hits": "Hit sayısı",
+            "estimated_reach": "Tahmini Erişim",
+            "organisation": "Organizasyon",
+            "application": "Başvuru"
+        },
+        "cumulative_cards": {
+            "hits": "Toplam hit",
+            "accounts": "Toplam Hesaplar",
+            "est_impacted_users": "Avustralya, Brezilya ve Kuzey Amerika ülkelerinin kullandığı saat uygulaması. "
+        },
+        "empty": "Verilen tarih aralığı için istatistik bulunamadı"
+    },
+    "api_usage": {
+        "applications": "Başvuru",
+        "view_user": "Kullanıcıyı görüntüle",
+        "reactivate": "Yeniden etkinleştirmek",
+        "app_detail": "Uygulama detayı",
+        "app_details": "Uygulama Ayrıntıları",
+        "activity": "Aktivite",
+        "view_all_activity": "Bu uygulama için tüm etkinlikleri görüntüleyin",
+        "api_users": "API kullanıcıları",
+        "terms_conditions": "Tüm Şartlar ve Koşullar Sürümleri",
+        "view_prev_terms": "Önceki sürümleri görüntüle",
+        "current_version": "Mevcut Sürüm",
+        "version": "Versiyon"
+    },
+    "applications": {
+        "my_apps": "Uygulamalarım",
+        "new_tc": "Yeni Şartlar ve Koşullar",
+        "terms_conditions_message": "Zaten bu numarayla yayınlanmış bir sürüm var:",
+        "build": "Yeni Uygulama Oluşturun",
+        "build_key": "Yeni API anahtarı oluşturun",
+        "edit": "Uygulama Düzenle",
+        "building": "Bina Uygulaması",
+        "building_key": "API Anahtarı Oluşturma",
+        "no_apps": "Uygulamanız yok, başlamak için bir tane oluşturun.",
+        "api_keys": "API anahtarları"
+    },
+    "home": {
+        "home": "Ev",
+        "welcome": "Hoş geldin",
+        "admin_intro": "Burada kullanıcıları yönetebilir, güvenlik mesajı veritabanı içeriğini düzenleyebilir ve yayınlayabilir ve API kullanımını görüntüleyebilirsiniz.",
+        "ns_admin_intro": "Burada güvenlik mesajı veritabanı içeriğini düzenleyebilir ve yayınlayabilirsiniz",
+        "ns_editor_intro": "Burada güvenlik mesajı veritabanı içeriğini düzenleyebilirsiniz",
+        "api_user_intro": "Burada uygulamalarınızı görüntüleyecek ve hesabınızı yönetiyorsunuz.",
+        "role_changed_title": "Rolün değiştirildi",
+        "role_changed_p": "Size aşağıdaki rol verilmiştir:",
+        "role_changed_p2": "İzinleriniz aşağıdaki gibidir:",
+        "role_changed_confirm": "Onaylamak",
+        "role_changed_dismiss": "Kapalı",
+        "go_publish_safety_messages": "Güvenlik Mesajları Yayınla",
+        "go_bulk_upload": "Mesaj Dosyasını Yükle",
+        "go_audit_log": "Geçmiş Düzenle görüntüle"
+    },
+    "landing": {
+        "strapline": "Güvenlik Mesajı Veritabanı Hizmeti",
+        "strapline_part_2": "Global Kırmızı Haç \/ Kızıl Hilal Anahtar Güvenlik Mesajları",
+        "head_1": "IFRC Güvenliği",
+        "head_2": "Mesaj Veritabanı",
+        "head_text_1": "IFRC halkın farkındalığına dayalı güvenlik mesajları ve",
+        "head_text_2": "Halk Eğitimi (Pape) Kaynak",
+        "head_bottom_1": "Güvenilir Kızıl Haç Kızılay Erişim ve Paylaşın",
+        "head_bottom_2": "İnsanların güvenli bir şekilde hazırlanmasına yardımcı olacak eyleme geçirilebilir mesajlar",
+        "head_bottom_3": "ve tehlikelere yanıt verin.",
+        "signup": "Üye olmak",
+        "it_works": "Nasıl Çalışır",
+        "works_1_a": "Kızıl Haç Kızıl Crescent National",
+        "works_1_b": "Toplum ve hükümet ortakları",
+        "works_1_c": "Ulusal mesaj kümeleri üzerinde anlaşın",
+        "works_2_a": "Ulusal Toplumlar Yayınlıyor",
+        "works_2_b": "Güvenlik mesajları",
+        "works_2_c": "veritabanı",
+        "works_3_a": "Değiştiren ajanslar ve",
+        "works_3_b": "İletişim Kanalları",
+        "works_3_c": "Veritabanı API'sına bağlanın",
+        "works_4_a": "Ortaklar Paylaşımı",
+        "works_4_b": "onların mesajları",
+        "works_4_c": "kanallar",
+        "works_5_a": "Topluluklar alır",
+        "works_5_b": "Mesajlar ve",
+        "works_5_c": "güvenle hareket etmek",
+        "learn_more": "Daha fazla bilgi edin",
+        "watch_video": "Video izle",
+        "example_case": "Örnek kullanım durumu",
+        "api": "API",
+        "hurricane": "Hurricane ile erken mesajlar ekleyin",
+        "warning_alerts": "Uyarı uyarıları",
+        "social_media": "Sosyal medya",
+        "post_images": "Wildfire Hazırlık Görüntüleri Gönder",
+        "messages_network": "Ağınıza Mesajlar",
+        "whatsapp": "Whatsapp",
+        "share_flood": "Sel hafifletme eylemlerini paylaşın",
+        "family": "Aile ve Arkadaşlar",
+        "impact": "Darbe",
+        "sign_up_today": "Bugün kaydolun",
+        "developer": {
+            "strap_para_one": "Toplulukların yerelleştirilmiş temel eylem mesajlarımızla tehlikelerden hazırlanmasına, yanıt vermesine ve iyileşmesine yardımcı olun.",
+            "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için kolay dört adımlı kılavuzumuzu kullanın. "
+        },
+        "national_society": {
+            "strap_para_one": "RCRC Ulusal Derneği'nin küresel, ulusal ve yerel medya için temel güvenlik mesajlarını erişmek ve yayınlamak için yayınlayın.",
+            "strap_para_two": "Mesajların nasıl oluşturulacağı ve medya ortaklarıyla bağlantı kuracağı hakkında daha fazla bilgi edinmek için bizimle iletişime geçin."
+        },
+        "strap_para_one": "Toplulukların yerelleştirilmiş temel eylem mesajlarımızla tehlikelerden hazırlanmasına, yanıt vermesine ve iyileşmesine yardımcı olun.",
+        "strap_para_two": "Güvenlik mesajlarını uygulamanıza entegre etmek için kolay dört adımlı kılavuzumuzu kullanın. ",
+        "view_data": "Verileri Görüntüle",
+        "view_message_library": "Güvenlik Mesajlarını Görüntüle",
+        "what_now": "Ne?",
+        "fake_alert_heading": "Aşırı soğuk uyarı",
+        "fake_alert_description": "Et harum quidem rerum facilis est et Expedita Doundioio. ",
+        "fake_alert_time": "1 saat önce",
+        "fake_alert_time_exact": "05\/02\/18 at 05:15 ct",
+        "use_cases": {
+            "heading": "Daha fazla bilgi edin",
+            "first_heading": "Nasıl Çalışır",
+            "first_content": "Ho Dolaro Frakcistreko, Kuo Drumo eksternna reprezenti ro Hav ABD singularo propozicio posta",
+            "second_heading": "Kullanım Koşulları",
+            "second_content": "Ho Dolaro Frakcistreko, Kuo Drumo eksternna reprezenti ro Hav ABD singularo propozicio posta",
+            "third_heading": "Uygulama Araç Seti",
+            "third_content": "Ho Dolaro Frakcistreko, Kuo Drumo eksternna reprezenti ro Hav ABD singularo propozicio posta",
+            "fourth_heading": "WhatNow Video",
+            "fourth_content": "Ho Dolaro Frakcistreko, Kuo Drumo eksternna reprezenti ro Hav ABD singularo propozicio posta",
+            "fifth_heading": "Hava durumu uygulamalarını geliştirin",
+            "fifth_content": "Ho Dolaro Frakcistreko, Kuo Drumo eksternna reprezenti ro Hav ABD singularo propozicio posta"
+        },
+        "example_alert": {
+            "heading": "Örnek Güvenlik Mesaj Formatı",
+            "alert_preview": "Uyarı Önizlemesi",
+            "what_now_info": "Güvenlik Mesajı Önizlemesi",
+            "example_whatnow_request": "Örnek Güvenlik Mesajı Veritabanı Yanıtı",
+            "example_alert_request": "Örnek Uyarı Yanıtı",
+            "example_content": "Hava Danışmanlığı# 3 Final 11:00 itibariyle, 29 Ocak 2018\n",
+            "example_content_location_header": "Etkilenen Konum",
+            "example_content_location": "Nome, Alaska"
+        },
+        "example_whatnow": {
+            "alert_from": "Uyarı: Amerikan Kızıl Haçı",
+            "more_info": "Daha Fazla Bilgi",
+            "heading": "Aşırı soğuk için güvenlik mesajları",
+            "copy": "Bunlar, riski azaltmak ve sizi ve evinizi aşırı soğuktan korumak için yapılan eylemlerdir.",
+            "what_now": "IFRC Güvenlik Mesaj Veritabanı",
+            "step_1": "Evinizi koruyun. ",
+            "step_2": "Sıcak sıvılarla sulu kalın",
+            "step_3": "Kendinizi ılık kıyafetlerle koruyun ve maruz kalan cildi örtün",
+            "step_4": "Buzlu koşulların farkında ve dikkatli olun, özellikle sürüş sırasında",
+            "step_5": "Komşuları, arkadaşları ve risk altındaki kişileri kontrol edin"
+        },
+        "build": {
+            "heading": "Uygulamanızı oluşturmaya hazır mısınız?"
+        },
+        "data_preview": {
+            "heading": "Güvenlik mesajları",
+            "sub_heading": "Kaydolun ve dünyanın dört bir yanındaki Kızıl Haç \/ Kızıl Hilal Ulusal Toplumlarından Anahtar Eylem Mesajlarını Görüntüle"
+        },
+        "footer": {
+            "terms_conditions": "Şartlar ve Koşullar",
+            "about": "Hakkında",
+            "privacy": "Mahremiyet",
+            "getting_started": "Başlarken",
+            "docs": "Belgeler",
+            "give_feedback": "Geri Bildirim Ver",
+            "gdpc_logo": "Küresel Afet Hazırlık Merkezi için Logo",
+            "ifrc_logo": "Uluslararası Kızıl Haç ve Kızıl Hilal hareketi için logo",
+            "subtitle_1": "IFRC Anahtar Güvenlik Veritabanı Hakkında",
+            "text_1": "IFRC Anahtar Güvenlik Veritabanı",
+            "text_2": "Kızıl Haçlı Hilal Mesajları",
+            "text_3": "Tehlikeler karşısında güvenle hareket edebilir",
+            "subtitle_2": "Daha Fazla Öğren",
+            "email_ifrc": "im@ifrc.org",
+            "web_ifrc": "ifrc.org",
+            "subtitle_3": "Politikalar",
+            "terms": "Yasal şartlar",
+            "terms_service": "Hizmet Şartları",
+            "subtitle_4": "Yararlı bağlantılar",
+            "api_doc": "API belgeleri",
+            "faq": "SSS (sağlanacak bağlantı)"
+        }
+    },
+    "register_form": {
+        "heading_1": "Ücretinizi Oluşturun",
+        "heading_2": "IFRC",
+        "heading_3": "Güvenlik Mesajı Veritabanı",
+        "subtitle_1": "Toplulukların Red Cross Red Crescent eyleme geçirilebilir güvenlik mesajları ile yerel tehlikelere hazırlanmasına ve bunlara yanıt vermelerine yardımcı olun.",
+        "subtitle_2": "API ile erişmek istiyorsanız, kaydolun ve mesajları 3 adım kılavuzla paylaşın.",
+        "subtitle_3": "Kızıl Haç Red Crescent Ulusal Derneği iseniz, kaydolun ve güvenlik mesajlarınızı nasıl uyarlayacağınız ve paylaşacağınız konusunda talimatlar alacaksınız.",
+        "who_are_you": "Sen kimsin?",
+        "what_is_your_role": "Rolün nedir?",
+        "description": "Beklemede kopya",
+        "national_society_description": "RCRC Ulusal Derneği'nin küresel, ulusal ve yerel medya için temel güvenlik mesajlarını erişmek ve yayınlamak için yayınlayın.\n",
+        "developer": "Geliştirici",
+        "national_society": "Ulusal Toplum",
+        "sign_up_with": "Kaydolun:",
+        "sign_up_agreement": "Hesabınızı oluşturarak,",
+        "terms_conditions": "Şartlar ve koşullar",
+        "facebook": "Facebook ile kaydolun",
+        "google": "Google'a kaydolun",
+        "email_sign_up": "E -postanızla kaydolun:",
+        "mail": "posta",
+        "email_ifrc": "im@ifrc.org",
+        "location": "Ülke",
+        "organisation": "Organizasyon",
+        "industry": "Endüstri türü",
+        "create_account": "Hesap oluşturmak",
+        "last_name": "Soy isim",
+        "select_country": "Bir Ülke Seçin",
+        "select_industry": "Endüstri Türünü Seçin",
+        "industries": {
+            "media": "Medya",
+            "emergency": "Acil durum yönetimi",
+            "non_profit": "Kar amacı gütmeyen\/STK",
+            "humanitarian": "İnsani organizasyon",
+            "red_cross": "Kızıl Haç\/Kızıl Hilal",
+            "education": "Eğitim\/Akademi",
+            "gov": "Devlet kurumu",
+            "other": "Diğer"
+        },
+        "api_used_in": "Bu API nerede kullanılacak?",
+        "api_used_in_help": "Şimdi bu hizmeti 255'den az karakterde nasıl kullanmayı planladığınızı sağlayalım",
+        "welcome": "Hoş geldiniz {name}, başlamak için lütfen aşağıdaki bilgileri doldurun:",
+        "ifrc_note": "Sorular veya daha fazla bilgi için lütfen iletişime geçin:",
+        "contact_gdpc": "GDPC ile iletişime geçin"
+    },
+    "terms_service_page": {
+        "applicable_law": {
+            "body": "Columbia Bölgesi Yasaları, bu Anlaşma kapsamındaki tüm hak ve yükümlülükleri, herhangi bir yasa çatışması ilkelerini yürürlüğe koymadan yönetecektir.",
+            "heading": "Uygulanabilir Yasa:"
+        },
+        "body": "Red Cross tarafından size sağlanan kayıt anahtarının gizliliğini ve güvenliğini korumaktan siz sorumlusunuz. ",
+        "contact": "API ile ilgili sorularınız için lütfen {0} adresinden Red Cross ile iletişime geçin.",
+        "disclaimer": "API ve veri beslemeleri yalnızca bilgilendirici ve eğitim amaçlı ve 'olduğu gibi' ve 'mevcut olarak' temelinde sağlanır. ",
+        "entire_agreement": {
+            "body": "API terimleri, Red Cross ile sizin konuyla ilgili olarak sizin arasındaki eksiksiz ve münhasır bir anlaşmayı oluşturur ve burada özel olarak dahil edilmeyen önceki sözlü veya yazılı anlayışların, iletişimin veya anlaşmaların yerini alır. ",
+            "heading": "Tüm anlaşma:"
+        },
+        "heading": "API Son Kullanıcı Lisans Sözleşmesi",
+        "intro": "Kabul edin: Hizmeti kullanarak veya sağlanan kutuyu kontrol ederek, kullanıcı bu Sözleşmeye bağlı kalmayı kabul eder.\n\n",
+        "license_limitations": {
+            "body": "Veri beslemelerini yalnızca API terimlerine tabi kendi başvurunuzla birlikte kullanabilirsiniz ve zaman zaman güncellendiği gibi API ile uyumluluğu sürdürmeniz şartıyla. ",
+            "heading": "Lisans ve Sınırlamalar:"
+        },
+        "overview": {
+            "body": "Global Felaket Hazırlık Merkezi Güvenlik Mesajı Veritabanı Hizmet Uygulama Programı Arayüzü (“API”) Amerikan Ulusal Kızıl Haç (“Kızıl Haç”) tarafından kullanıma sunulmuştur. ",
+            "cta": "Kaydolmak için buraya tıklayın."
+        },
+        "privacy_policy": {
+            "body": "API'daki belirli programların, hizmetlerin, araçların, satın alma seçeneklerinin, materyallerin veya bilgilerin işletilmesinin çeşitli kişisel tanımlayıcı bilgilerin sunulmasını, kullanılmasını ve yayılmasını gerektirdiğini anlar, kabul eder ve kabul edersiniz. ",
+            "heading": "Gizlilik Politikası:"
+        },
+        "prohibited_activities": {
+            "body": "Siz ve son kullanıcılarınız veya temsilcileriniz API veya veri beslemelerini aşağıdaki şekillerde kullanamazsınız:",
+            "heading": "Yasaklı faaliyetler ve davranışlar:",
+            "prohibited_list": {
+                "one": "Kırmızı haç hizmetlerine veya sunuculara müdahale etmek veya bunları bozmak.",
+                "two": "Herhangi bir kimlik doğrulama teknolojisi de dahil olmak üzere Red Cross veya API tarafından kullanılan anahtarları veya güvenlik mekanizmalarını atlatmak veya değiştirmek.",
+                "three": "Kendi hesabınız için size sağlananlar dışında, Kızıl Haç için oturum açma adlarına, şifrelere veya diğer kimlik doğrulama kimlik bilgilerine talep etmek, toplamak, talep etmek veya başka bir şekilde almak.",
+                "four": "Kızıl Haç veya başka bir Kızıl Haç veya Kızıl Hilal Ulusal Derneği veya Organizasyonu tarafından bağlılık, sponsorluk veya onaylanmayı belirtmek veya ima etmek.",
+                "five": "API, veri beslemeleri, olay uyarıları ve\/veya mesajlar hazırlamak, yanıtlamak ve kurtarmak için API'ye sahip olduğunuzu veya oluşturduğunuzu belirtmek veya ima etmek.",
+                "six": "Herhangi bir virüs, solucan kusurları, Truva atları veya yıkıcı nitelikte herhangi bir öğeyi iletmek için."
+            }
+        },
+        "reserve_rights": "Red Cross, API ve veri beslemelerini kısmen veya kısmen, geçici veya kalıcı olarak, önceden bildirimde bulunmaksızın herhangi bir zamanda değiştirme ve\/veya veri beslemelerini sağlama hakkını saklı tutar. ",
+        "severability": {
+            "body": "API terimlerinin herhangi bir döneminin veya hükmünün geçersiz olması, başka bir hükmün geçerliliğini etkilemez.",
+            "heading": "Koparılabilirlik ve feragat:"
+        },
+        "suspension": {
+            "body": "Red Cross, Red Cross, tamamen kendi takdirine bağlı olarak, API terimlerinde belirtildiği gibi API veya veri akışının yetkisiz kullanımına girdiğinizi veya herhangi bir kişinin veya kırmızı ağın güvenliğini ve\/veya güvenliğini tehdit eden\/veya güvence altına alan herhangi bir faaliyette kullandığınızı belirlerse, erişiminizi askıya alma veya sonlandırma hakkını saklı tutar.",
+            "heading": "Askıya alma veya fesih:"
+        }
+    },
+    "view_data": {
+        "alert_title": "UYARI:",
+        "more_info": "Daha fazla bilgi:",
+        "which": "Hangi güvenlik mesajlarını görüntülemek istiyorsunuz?",
+        "view_data": "Verileri Görüntüle",
+        "alerts": "Uyarı",
+        "alert_preview": "Uyarı Önizlemesi",
+        "cap_alerts": "Kapak uyarıları",
+        "onset": "Başlangıç",
+        "severity": "Şiddet",
+        "title": "Başlık",
+        "date": "Tarih",
+        "headline": "Başlık",
+        "alert": "Uyarı",
+        "whatnow_info": "Güvenlik Mesajı Veritabanı Bilgisi",
+        "alert_detail": "Uyarı Detayı",
+        "more": "Daha Fazla Bilgi",
+        "area_affected": "Etkilenen alan",
+        "details": "Detaylar",
+        "cap": {
+            "type": "Tip",
+            "status": "Durum",
+            "urgency": "Aciliyet",
+            "severity": "Şiddet",
+            "certainty": "Kesinlik",
+            "sent": "Gönderilmiş",
+            "effective": "Etkili",
+            "onset": "Başlangıç",
+            "expires": "Sona erer",
+            "alert_from": "Tetik",
+            "feed": "Beslemek",
+            "more": "Daha fazla bilgi:",
+            "through": "başından sonuna kadar",
+            "alert_feed": "Uyarı beslemesi",
+            "fetching_feed": "Besleme Besleme",
+            "empty": "Şu anda mevcut uyarılar yok"
+        },
+        "national_society_select_placeholder": "Bir Ulusal Toplum Seçin"
+    },
+    "user_agreement": {
+        "title": "Kullanıcı sözleşmesi",
+        "para_one": "Güvenlik mesajı veritabanı portalına erişmeden önce, lütfen aşağıdaki belgeyi indirip aşağıdaki 'Kabul' düğmesini tıklayarak kullanıcı sözleşmesinin şartlarını okuyabilir ve kabul edebilir misiniz?",
+        "cta": "Kabul ediyorum",
+        "download": "Kullanıcı Sözleşmesi belgesini görüntülemek için buraya tıklayın (105KB)"
+    },
+    "hazard_type": {
+        "dropdown": {
+            "select": "Tehlike Türünü Seçin",
+            "create": "Tehlike Türü Oluştur"
+        },
+        "create": {
+            "title": "Yeni tehlike türü oluşturun",
+            "request": "Yeni tehlike türü isteyin",
+            "other": "Diğer",
+            "email_subject": "Yeni Tehlike Türü Talebi",
+            "hazard_name": "Tehlike Adı",
+            "hazard_name_placeholder": "Tehlike Adını Girin",
+            "upload_icon": "Bir simge yükleyin",
+            "icon_requirements": "Simgeler bir PNG ve 30kb'nin altında olmalıdır",
+            "requestLink": "Yeni tehlike türü istemek için IFRC ile iletişime geçin",
+            "success": "Tehlike Türü Oluşturuldu",
+            "error": "Üzgünüm, yeni tehlike türünüzü yaratan bir sorun vardı."
+        }
+    },
+    "subnationals": {
+        "list": {
+            "manage": "Ulus altı",
+            "create": "Yeni subsital oluşturun",
+            "edit": "Alt -Uluslu Düzenle",
+            "add": "Alt -Ulusal ekle",
+            "empty": "Herhangi bir subsational bulamadım",
+            "table_header": {
+                "subnational": "Ulus altı"
+            }
+        },
+        "select_soc": "Subnationals'ı görüntülemek ve eklemek için bir toplum seçin",
+        "create": "Yeni Bir Alt Ulusal Oluşturun",
+        "form": {
+            "name": "Ulus altı isim",
+            "name_help": "Özel güvenlik mesajları yaratmak istediğiniz alt ulusunu adlandırın.",
+            "description": "Tanım",
+            "description_help": "Alt ulus hakkında daha fazla bilgi sağlayın. "
+        },
+        "edit": "Alt -Uluslu Düzenle",
+        "delete": "Bu, ulus altı ve bu ulusal ile ilişkili herhangi bir içeriği siler."
+    },
+    "table_headers": {
+        "profile_pic": "profil fotoğrafı",
+        "first_name": "Soy isim",
+        "last_name": "soy isim",
+        "role": "rol",
+        "society": "toplum",
+        "date": "Tarih",
+        "country": "Ülke",
+        "email": "e -posta",
+        "created_at": "created_at",
+        "last_logged_in_at": "Son aktif",
+        "terms_version": "profil",
+        "actions": "Eylem",
+        "action": "Aksiyon",
+        "content": "İçerik",
+        "country_code": "Konum",
+        "organisation": "organizasyon",
+        "industry_type": "endüstri türü",
+        "all_roles": "Tüm roller",
+        "version": "Versiyon",
+        "user": "Kullanıcı",
+        "language_code": "Dil kodu"
+    },
+    "terms_conditions": {
+        "title": "Şartlar ve koşullar",
+        "accept": "Kabul etmek"
+    },
+    "badges": {
+        "hazardCreate": "Tehlike Oluşturuldu",
+        "published": "Yayınlanmış",
+        "draft": "Taslak",
+        "bulkUploadDraft": "Mesaj Dosyası Yükleme taslağı"
     }
-  },
-  "register_form": {
-    "heading_1": "Ücretsiz hesabınızı oluşturun",
-    "heading_2": "IFRC",
-    "heading_3": "Güvenlik Mesajı Veritabanı",
-    "subtitle_1": "Kızılhaç Kızılay'ın eyleme geçirilebilir güvenlik mesajlarıyla toplulukların yerel tehlikelere hazırlanmasına ve yanıt vermesine yardımcı olun.",
-    "subtitle_2": "API ile erişmek istiyorsanız, kaydolun ve #-adımlı kılavuzla mesajları paylaşın.",
-    "subtitle_3": "Bir Kızılhaç Kızılay Ulusal Topluluğu iseniz, kaydolun ve güvenlik mesajlarınızı nasıl uyarlayıp paylaşacağınıza dair talimatlar alacaksınız.",
-    "who_are_you": "Kimsiniz?",
-    "what_is_your_role": "Rolünüz nedir?",
-    "description": "KOPYA BEKLİYOR",
-    "national_society_description": "RCRC Ulusal Topluluğunuzun temel güvenlik mesajlarını küresel, ulusal ve yerel medyanın erişmesi ve yayınlaması için yayınlayın.\nMesajların nasıl oluşturulacağı ve medya ortaklarıyla nasıl bağlantı kurulacağı hakkında daha fazla bilgi edinmek için bizimle iletişime geçin.",
-    "developer": "Yazılım Geliştirici",
-    "national_society": "Ulusal Topluluk",
-    "sign_up_with": "Üye olun:",
-    "sign_up_agreement": "Hesabınızı oluşturarak, Şartlar ve Koşullarımızı ",
-    "terms_conditions": "Hüküm ve Koşullar ",
-    "facebook": "Facebook ile Kaydolun",
-    "google": "Google ile Kaydolun",
-    "email_sign_up": "Ya da e-posta adresiniz ile kaydolun:",
-    "mail": "posta",
-    "email_ifrc": "im@ifrc.org",
-    "location": "Konum Bilgisi",
-    "organisation": "Kuruluş",
-    "industry": "Sektör",
-    "create_account": "Hesap Oluşturun",
-    "last_name": "Soyadı",
-    "select_country": "Ülke Seçiniz",
-    "select_industry": "Sektör Seçiniz",
-    "industries": {
-      "media": "Medya",
-      "emergency": "Afet ve Acil Durum Yönetimi",
-      "non_profit": "Kar amacı gütmeyen\/Sivil Toplum Kuruluşu",
-      "humanitarian": "İnsani Yardım Kuruluşu",
-      "red_cross": "Kızılhaç\/Kızılay",
-      "education": "Eğitim\/Akademi",
-      "gov": "Devlet kurumu",
-      "other": "Diğer"
-    },
-    "api_used_in": "Bu arayüz nerelerde kullanılacak?",
-    "api_used_in_help": "Bu hizmeti ne şekilde kullanacağınızı 255 karakteri geçmeyecek şekilde anlatınız",
-    "welcome": "Hoş geldiniz {name}, lütfen başlamak için aşağıdaki bilgileri doldurun:",
-    "ifrc_note": "Sorularınız veya daha fazla bilgi için lütfen iletişime geçin:",
-    "contact_gdpc": "İletişim GDPC"
-  },
-  "terms_service_page": {
-    "applicable_law": {
-      "body": "Columbia Bölgesi yasaları, herhangi bir kanun ihtilafı ilkesini yürürlüğe koymaksızın, işbu Sözleşme kapsamındaki tüm hak ve yükümlülükleri yönetecektir.",
-      "heading": "Geçerli Kanun:"
-    },
-    "body": " Kızılhaç'ın size sağladığı giriş anahtarının gizliliği ve güvenliğinden sorumlusunuz. Yüklenen verileri almaya devam etmek için zaman zaman güncellenen arayüzün uyumluluğunu devam ettirmekten sorumlusunuz. Kızıl Haç, arayüz ve verileri güncelleme hakkını saklı tutar. Yeni sürümler önceki uygulamalarla uyumlu olmayabilir, en son güncellenen sürümünü her zaman kullanmayı kabul edersiniz.\n\nArayüzün ve Kızılhaç'ın herhangi bir parçasını ya da yazılımını değiştirmeyeceğinizi, yaymayacağınızı, kaynak koduna dönmeyeceğinizi, parçalarına ayırmayacağınızı ya da tersine mühendislik yapmayacağınızı kabul edersiniz.\n\nArayüzü ya da verileri, makul talep hacmini aşacak şekilde ya da aşırı veya kötüye kullanamazsınız. Kızılhaç bu haklarını saklı tutar.\n\nArayüzü ya da verileri, kanunsuz, yanıltıcı, ihmalkar, kötü niyetli veyahut Kızıl Haç'a ya da sağlayıcılarıcına, içerik üreticilerine, ya da başka kişilere zarar verecek şekilde kullanamazsınız. Kızıl Haç bu haklarını saklı tutar.\n\nKızıl Haç arayüzü ve verileri kullanış biçiminizi denetleyebilir. Bu denetlemeyi herhangi bir teknolojik araç ile engelleyemezsiniz ve Kızılhaç bu tür engelleri aşabilmek için başka teknik araçlar kullanabilir.\n\nHazırlık, Müdahale ve Kurtarma mesajları yalnızca ilişkili olay ikazının bir önceki aciliyet durumuna göre geçerli ya da güncellenmiş olarak sunulur, ve siz de Kızılhaç'tan gelen herhangi bir veri güncellemesi ve\/veya ilişkili olay ikazına göre bireysel olarak Hazırlık, Müdahale ve Kurtarma mesajlarında güncelleme yapmalısınız.\n\nBireysel Hazırlık, Müdahale ve Kurtarma mesajları, yalnızca belirtilen coğrafi bölge ile ilişkilendirilir. Eğer bir Hazırlık, Müdahale ve Kurtarma mesajı, Amerika Kızıl Haç ya da başka bir Kızılhaç ya da Kızılay veyahut bir milli topluluğa dair (hepsi birer \"Kaynak Referansı\"dır) bir referans içerirse, bu Kaynak Referansını her bir Hazırlık, Müdahale ve Kurtarma mesajı ile ilişkilendirerek, verilerde gösterilen şekilde belirtmelisiniz. Bu Kaynak Referansını başka şekillerde kullanamazsınız.\n\nVerileri, olay ikazlarını ve\/veya Hazırlık, Müdahale, Kurtarma mesajlarını başka bir dile çeviremez, kullanamaz, üzerinde düzenleme ya da uyarlama yapamaz, veya anlamlarını değiştiremezsiniz.\n\nVerilerin yalnızca sizin kontrolünüzde olduğundan ve güvenliğinden emin olmalısınız.\n\nOlay ikazlarının ve Hazırlık, Müdahale, Kurtarma mesajlarının, reklam ya da sponsorluk amacı ile son kullanıcıya ulaşmasına izin veremezsiniz.\n\nVerilerin tamamından ya da bir kısmından arşiv oluşturamazsınız.",
-    "contact": "Arayüz ile ilgili sorularınız için lütfen Kızılhaç'a {0} buradan ulaşınız.",
-    "disclaimer": "Arayüz ve veriler YALNIZCA BİLGİ VE EĞİTİM AMAÇLI, 'olduğu gibi' ve 'mevcut olduğu gibi' sağlanmaktadır. Kızıl Haç, açık veya zımni hiçbir tür beyanda bulunmaz veya garanti vermez. Kızıl Haç açık veya zımni tüm garantileri reddeder, buna satılabilirlik ve belirli bir amaca uygunluk ile ilgili zımni garantiler de dahildir ancak bunlarla sınırlı değildir. Kızıl Haç ve çalışanları, memurları, yöneticileri ve acenteleri ve lisans verenleri, arayüzün, verilerin, olay ikazlarının ve\/veya Hazırlık, Müdahale ve Kurtarma mesajları dahil ancak bunlarla sınırlı olmamak üzere kullanımından kaynaklanan herhangi bir doğrudan, dolaylı, arızi, cezai ve sonuç olarak ortaya çıkan zarardan sorumlu olmayacaktır.\n\nKızılhaç, API'nin, Veri Beslemesinin, arayüzün, verilerin, olay ikazlarının ve\/veya Hazırlık, Müdahale ve Kurtarma mesajlarının sırasını, doğruluğunu, orijinalliğini veya eksiksizliğini garanti etmez ve size veya Son Kullanıcılarınıza veya herhangi bir üçüncü kişiye karşı hiçbir şekilde sorumlu tutulamaz. Bunlarla sınırlı olmaksızın, burada belirtildiği üzere, arayüzler, veriler, olay ikazları ve\/veya Hazırlık, Müdahale ve Kurtarma mesajları hususunda, herhangi bir gecikmeden, yanlışlıktan, hatalar ve ihmallerden sorumlu tutulamaz.",
-    "entire_agreement": {
-      "body": "Bu Sözleşme, burada kapsanan konularla ilgili olarak Kızılhaç ile sizin aranızdaki anlaşmanın tamamını teşkil eder ve burada özellikle yer almayan önceki sözlü veya yazılı anlaşmaların, beyanların veya anlayışların yerini alır. Kızılhaç, iş bu sözleşmeyi istediği herhangi bir zamanda herhangi bir gerekçe göstermeksizin feshetme hakkına sahiptir.",
-      "heading": "Sözleşmenin Tamamı:"
-    },
-    "heading": "ARAYÜZ VE KULLANICI LİSANS ANLAŞMASI",
-    "intro": "HİZMET KULLANARAK VEYA KUTUCUĞU İŞARETLEYEREK, BU SÖZLEŞMENİN KAYIT VE KOŞULLARINA BAĞLI KALMAYI KABUL EDERSİNİZ.\n\nArayüz, size (\"Siz\"), küresel hava durumu ve afet olay uyarısı beslemesi ve izleme bildirimleri (\"Olay Uyarıları\") dahil olmak üzere Kızıl Haç tarafından sunulan veri akışlarını almanıza, tehlike türüne, aciliyetine göre yerel tehlikelere nasıl hazırlanılacağına dair eyleme geçirilebilir ve bağlamsallaştırılmış mesajlar beslemesini kullanmanıza olanak tanıyan bir araç sağlayacaktır. (\"Hazırlık, Müdahale ve Kurtarma Mesajları\" ve toplu olarak Olay Uyarıları, \"Veri Beslemeleri\"). Hazırla, Yanıtla ve Kurtar Mesajları, kendi uygulamanızda Etkinlik Uyarılarına veya hava durumu ve felaket olaylarıyla ilişkili diğer uyarılara eşlik etmek ve bildirimleri izlemek için tasarlanmıştır. Veri Beslemelerini kullanımınız API Koşullarına tabidir.",
-    "license_limitations": {
-      "body": "Veri Akışını yalnızca, API hükümlerine bağlı olarak kendi uygulamanız ile zaman zaman güncellenen API'ye uygunluğunuz göz önünde bulundurularak kullanabilirsiniz. Olay ikazlarını ve arayüz şartlarına tabi olarak verilerden gelen bireysel olay ikazlarının aciliyet ayarıyla ilgili, bağlamsal Hazırlık, Müdahale ve Kurtarma mesajlarınızı, son kullanıcılarınıza, özel olmayan, sınırlı ve iptal edilebilir indirme, kullanım, çoğaltma ve dağıtma hakkına sahipsiniz. API'yi yalnızca Veri Akışlarının ticari olmayan kullanımlarını API Koşullarına uygun olarak kolaylaştırmak için kullanabilirsiniz. Veri Beslemelerinin, Olay Uyarılarının ve \/ veya Mesajların Hazırlanması, Yanıtlanması ve Kurtarılması gibi ticari kullanımlarını kolaylaştırmak için arayüzü hiçbir durumda kullanamazsınız; bunlarla sınırlı olmamak kaydı ile, bunları yeniden satmak, bunlara erişmek için ücret almak, yeniden dağıtmak için ücret almak veya bunlara dayalı türev çalışmalar oluşturmak amaçlı ücret almak da dahildir. Kızıl Haç ve lisans verenleri, API, Hazırlama, Yanıtlama ve Kurtarma Mesajları, olay ikazları, Veri Beslemeleri ve Kaynak Referansları (aşağıda tanımlandığı gibi) ile ilgili tüm unvan, mülkiyet, hak ve menfaatleri elinde tutar. Açıkça verilmeyen tüm haklar saklıdır.",
-      "heading": "Müsaade ve Sınırlamalar:"
-    },
-    "overview": {
-      "body": "Küresel Afete Hazırlık Merkezi Güvenlik Mesajı Veritabanı Hizmeti Uygulama Programı Arayüzü (\"API\"), Amerikan Ulusal Kızıl Haçı (\"Kızıl Haç\") tarafından kullanımınıza sunulmuştur. API bir kayıt anahtarı gerektirir.  Kayıt işlemi sırasında, {0} adresinde bulunan Kızıl Haç Web Sitesi Hizmet Koşulları Sözleşmesi'ndeki hüküm ve koşullarla birlikte aşağıdaki hüküm ve koşulları kabul etmeniz gerekir (topluca \"API Koşulları\"). API Koşulları, API'yi ve API aracılığıyla kullanıma sunulan indirilebilir elektronik materyalleri kullanımınızı yönetecektir. {1}",
-      "cta": "Giriş yapmak için tıklayın."
-    },
-    "privacy_policy": {
-      "body": "API'deki belirli programların, hizmetlerin, araçların, satın alma seçeneklerinin, materyallerin veya bilgilerin çalıştırılmasının çeşitli kişisel tanımlama bilgilerinin sunulması, kullanılması ve yayılması gerektirdiğini anlar, onaylar ve kabul edersiniz. Buna göre, API'ye erişmek ve API'yi kullanmak isterseniz, API kullanımınızın aşağıdaki gizlilik politikasında yer alan kişisel tanımlayıcı bilgi toplama ve kullanım uygulamalarının kabulünü teşkil edeceğini kabul etmektesiniz: {0}",
-      "heading": "Gizlilik Politikası:"
-    },
-    "prohibited_activities": {
-      "body": "Siz ve Son Kullanıcılarınız veya aracılarınız arayüz veya veri akışlarını aşağıdaki şekillerde kullanamazsınız:",
-      "heading": "Yasak Faaliyetler ve Yönetim:",
-      "prohibited_list": {
-        "one": "Kızılhaç hizmetlerine veya sunucularına müdahale etmek veya bunları aksatmak.",
-        "two": "Herhangi bir kimlik doğrulama teknolojisi dahil ancak bunlarla sınırlı olmamak üzere Kızılhaç veya API tarafından kullanılan herhangi bir anahtarı veya güvenlik mekanizmasını önlemek veya değiştirmek.",
-        "three": "Kendi hesabınız için size sağlanandan farklı olarak Kızılhaç için oturum adlarına, parolalara veya diğer kimlik doğrulama bilgilerine erişim talep etmek, toplamak, istemek veya başka bir şekilde erişim elde etmek.",
-        "four": "Kızılhaç veya diğer herhangi bir Kızılhaç veya Kızılay ulusal dernek veya kuruluşunun üyeliğini, sponsorluğunu veya onayını belirtmek veya ima etmek.",
-        "five": "Arayüz, veriler, olay ikazları, Hazırlama, Yanıtlama ve Kurtarma Mesajlarına sahip olduğunuzu veya onları oluşturduğunuzu belirtmek veya ima etmek.",
-        "six": "Herhangi bir virüs, truva atı veya yıkıcı nitelikteki bir öğeyi bulaştırmak."
-      }
-    },
-    "reserve_rights": "Kızılhaç, önceden bildirimde bulunmaksızın herhangi bir zamanda geçici veya kalıcı olarak API ve verileri tamamen veya kısmen değiştirme ve \/ veya artık sağlamama hakkını saklı tutar. Şüpheye mahal vermemek adına, buradaki hiçbir şey Kızılhaç'ın API veya verilerini size sunma zorunluluğunu taşımaz ve siz, herhangi bir erişimin Kızılhaç'ın yegane ve mutlak takdir yetkisi dahilinde olduğunu kabul edip onaylarsınız.",
-    "severability": {
-      "body": "API Hükümlerinin herhangi bir şartının veya hükmünün geçersizliği, diğer herhangi bir hükmün geçerliliğini etkilemeyecektir.",
-      "heading": "Bölünebilirlik ve Feragat:"
-    },
-    "suspension": {
-      "body": "Kızılhaç, tamamen kendi takdirine bağlı olarak arayüz koşullarında belirtildiği gibi, herhangi bir kişinin veya Kızılhaç ağlarının güvenliğini ve \/ veya güvenliğini tehdit eden \/ tehlikeye atan herhangi bir faaliyette, arayüz veya verileri yetkisiz olarak kullandığınızı veya arayüz veya verileri kullandığınızı tespit ederse, Kızılhaç erişiminizi askıya alma veya sonlandırma hakkını saklı tutar.",
-      "heading": "Askıya Alma veya Sonlandırma:"
-    }
-  },
-  "view_data": {
-    "alert_title": "UYARI:",
-    "more_info": "daha fazla bilgi:",
-    "which": "Hangi Güvenlik Mesajlarını görüntülemek istiyorsunuz?",
-    "view_data": "Veriyi Görüntüle",
-    "alerts": "Uyarılar",
-    "alert_preview": "Uyarı önizleme",
-    "cap_alerts": "Ortak Uyarı Protokolü Uyarıları",
-    "onset": "Başlangıç",
-    "severity": "Şiddet",
-    "title": "Başlık",
-    "date": "Tarih",
-    "headline": "Başlık",
-    "alert": "Uyarı",
-    "whatnow_info": "Güvenlik Mesajı Veritabanı bilgisi",
-    "alert_detail": "Uyarı Detayları",
-    "more": "Daha fazla bilgi",
-    "area_affected": "Etkilenen Alan",
-    "details": "Ayrıntılar",
-    "cap": {
-      "type": "Türü",
-      "status": "Durum",
-      "urgency": "Aciliyet",
-      "severity": "Şiddet",
-      "certainty": "Kesinlik",
-      "sent": "Gönderildi",
-      "effective": "Etkililik",
-      "onset": "Başlangıç",
-      "expires": "Bitiş Tarihi",
-      "alert_from": "...den Uyarı",
-      "feed": "Akış",
-      "more": "Daha fazla bilgi:",
-      "through": "aracılığıyla",
-      "alert_feed": "Uyarı Akışı",
-      "fetching_feed": "Akış Alınıyor",
-      "empty": "Şu anda gösterilecek uyarı yok"
-    }
-  },
-  "user_agreement": {
-    "title": "Kullanıcı sözleşmesi",
-    "para_one": "Safety Message Database Portalına erişmeden önce, lütfen aşağıdaki belgeyi indirerek ve aşağıdaki 'kabul ediyorum' düğmesine tıklayarak kullanıcı sözleşmesinin şartlarını okuyup kabul edebilir misiniz?",
-    "cta": "Kabul ediyorum",
-    "download": "Kullanıcı sözleşmesi belgesini görüntülemek için buraya tıklayın (105KB)"
-  },
-  "hazard_type": {
-    "dropdown": {
-      "select": "Tehlike türünü seçin",
-      "create": "Tehlike türü oluşturun"
-    },
-    "create": {
-      "title": "Yeni tehlike türü oluşturun",
-      "request": "yeni tehlike türü talep edin",
-      "other": "Diğer",
-      "email_subject": "Yeni tehlike türü talep et",
-      "hazard_name": "Tehlike Adı",
-      "hazard_name_placeholder": "Tehlike ismini giriniz",
-      "upload_icon": "Bir Simge Resmi yükle",
-      "icon_requirements": "Simge .png uzantısında ve 30kb'den küçük olmalıdır",
-      "requestLink": "Yeni tehlike türü talep etmek için GDPC ile iletişime geçin",
-      "success": "Tehlike Türü üretildi",
-      "error": "Üzgünüz, yeni tehlike türünüzü oluştururken bir sorun oluştu."
-    }
-  },
-  "subnationals": {
-    "list": {
-      "manage": "Alt Bölgeler",
-      "create": "Yeni bölge oluştur",
-      "edit": "Bölgeyi Düzenle",
-      "add": "Bölge Ekle",
-      "empty": "Bölge bulunamadı",
-      "table_header": {
-        "subnational": "Bölge"
-      }
-    },
-    "select_soc": "Bölgeleri görüntülemek ve eklemek için bir topluluk seçin",
-    "create": "Yeni Bölge yarat",
-    "form": {
-      "name": "Bölge Adı",
-      "name_help": "Özel güvenlik mesajı oluşturmak istediğiniz bölgeyi adlandırın.",
-      "description": "Tanım",
-      "description_help": "Bölge hakkında daha fazla bilgi verin, ör. San Francisco Körfez Bölgesi."
-    },
-    "edit": "Bölgeyi Düzenle",
-    "delete": "Bu bölgeyi ve bölgeyle ilgili bütün içeriği silecektir."
-  },
-  "table_headers": {
-    "profile_pic": "profil resmi",
-    "first_name": "Soyadı",
-    "last_name": " last_name",
-    "role": "rol",
-    "society": "toplum",
-    "date": "Tarih",
-    "country": "Ülke",
-    "email": "e-posta",
-    "created_at": "oluşturulma",
-    "last_logged_in_at": "Son aktif olma",
-    "terms_version": "profil",
-    "actions": "Hareketler",
-    "action": "Eylem",
-    "content": "İçerik",
-    "country_code": "Konum Bilgisi",
-    "organisation": "organizasyon",
-    "industry_type": "endüstri türü",
-    "all_roles": "Tüm roller",
-    "version": "Sürüm",
-    "user": "Kullanıcı",
-    "language_code": "Dil Kodu"
-  },
-  "terms_conditions": {
-    "title": "Şartlar ve Koşullar",
-    "accept": "Kabul Et"
-  },
-  "badges": {
-    "hazardCreate": "Tehlike Oluşturuldu",
-    "published": "Yayınlandı",
-    "draft": "Taslak",
-    "bulkUploadDraft": "Mesaj Dosyası Yükleme Taslağı"
-  }
 }
