@@ -310,10 +310,7 @@
           <p class="card-txt">
             {{ $t('landing.hurricane') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.warning_alerts') }}
-          </p>
-          <img class="map-img" src="cardImage1">
+          <img class="map-img" :src="src('homeExampleCase1')">
         </div>
       </b-col>
       <b-col class="card-use-container">
@@ -324,10 +321,7 @@
           <p class="card-txt">
             {{ $t('landing.post_images') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.messages_network') }}
-          </p>
-          <img class="map-img" src="cardImage3">
+          <img class="map-img" :src="src('homeExampleCase2')">
         </div>
       </b-col>
       <b-col class="card-use-container">
@@ -338,10 +332,7 @@
           <p class="card-txt">
             {{ $t('landing.share_flood') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.family') }}
-          </p>
-          <img class="map-img" src="cardImage3">
+          <img class="map-img" :src="src('homeExampleCase3')">
         </div>
       </b-col>
     </b-row>
@@ -363,17 +354,9 @@
         <div class="div-white"></div>
         <i class="fas fa-user-circle impact-icon"></i>
         <p class="red-sec-txt">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut elit eget enim semper maximus vitae
-          placerat
-        </p>
-        <p class="red-sec-txt">
-          nulla. Pellentesque vitae metus nunc. Donec dolor elit, gravida vel lectus in, sollicitudin commodo dolor.
-          Cras
-        </p>
-        <p class="red-sec-txt">
-          aliquet interdum sapien at tempor. Integer viverra vulputate posuere. Aliquam tincidunt turpis a mi malesuada.
-        </p>
-
+            {{ $t('landing.quote_description_2') }}
+          </p>
+          <p class="red-sec-txt">— {{ $t('landing.quote_author_2') }}</p>
       </b-col>
     </b-row>
     <div class="btn-bottom-container">
@@ -658,6 +641,8 @@ export default {
 .card-txt {
   font-size: 1.2rem;
   line-height: 1.2rem;
+  font-weight: 300;
+  line-height: 34px;
 }
 
 .red-section {
@@ -688,6 +673,10 @@ export default {
 .red-sec-txt {
   color: white;
   font-size: 1.2rem;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: 600;
 }
 
 .btn-bottom-container {
