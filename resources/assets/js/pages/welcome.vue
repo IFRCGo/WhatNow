@@ -7,17 +7,10 @@
           <div class="top-head">
             <h2 class="white-subtitle">{{ $t('landing.head_1') }}</h2>
             <h2 class="white-subtitle">{{ $t('landing.head_2') }}</h2>
-            <p class="white-text mt-4">{{ $t('landing.head_text_1') }}</p>
-            <p class="white-text">{{ $t('landing.head_text_2') }}</p>
+            <p class="white-text mt-4 pre-line line-height-50">{{ $t('landing.head_text') }}</p>
             <div class="bottom-head">
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_1') }}
-              </p>
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_2') }}
-              </p>
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_3') }}
+              <p class="bottom-head-text pre-line">
+                {{ $t('landing.head_bottom') }}
               </p>
               <b-button class="btn-primary s-up-btn mt-4" @click="$router.push('/register')">
                 {{ $t('landing.signup') }}
@@ -44,13 +37,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_1_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_1_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_1_c') }}
+                    {{ $t('landing.works_1') }}
                   </p>
                 </div>
               </div>
@@ -70,13 +57,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_2_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_2_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_2_c') }}
+                    {{ $t('landing.works_2') }}
                   </p>
                 </div>
               </div>
@@ -88,13 +69,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_3_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_3_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_3_c') }}
+                    {{ $t('landing.works_3') }}
                   </p>
                 </div>
 
@@ -116,13 +91,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_4_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_c') }}
+                    {{ $t('landing.works_4') }}
                   </p>
                 </div>
               </div>
@@ -134,13 +103,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_5_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_5_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_5_c') }}
+                    {{ $t('landing.works_5') }}
                   </p>
                 </div>
 
@@ -168,13 +131,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_1_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_1_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_1_c') }}
+                      {{ $t('landing.works_1') }}
                     </p>
                   </div>
                 </div>
@@ -188,13 +145,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_2_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_2_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_2_c') }}
+                      {{ $t('landing.works_2') }}
                     </p>
                   </div>
                 </div>
@@ -222,13 +173,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_3_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_3_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_3_c') }}
+                      {{ $t('landing.works_3') }}
                     </p>
                   </div>
                 </div>
@@ -243,13 +188,7 @@
                   </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_4_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_c') }}
+                    {{ $t('landing.works_4') }}
                   </p>
                 </div>
                 </div>
@@ -276,13 +215,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_5_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_5_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_5_c') }}
+                      {{ $t('landing.works_5') }}
                     </p>
                   </div>
                 </div>
@@ -381,6 +314,10 @@ export default {
 </script>
 <style scoped>
 
+.pre-line {
+  white-space: pre-line;
+}
+
 .top-head {
   position: relative;
   left: 3rem;
@@ -395,7 +332,7 @@ export default {
 
 .white-text {
   color: white;
-  line-height: 1rem;
+  line-height: 1.5rem;
   font-size: 1.2rem;
 
 }
@@ -431,7 +368,7 @@ export default {
 
 .bottom-head-text {
   font-size: 1.2rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
 }
 
 .mid-subt {
@@ -489,7 +426,7 @@ export default {
 
     & > p{
       text-align: center;
-      margin: 3px 0px;
+      white-space: pre-line;
     }
   }
 }
