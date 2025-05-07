@@ -1,4 +1,4 @@
-name: Staging Pipeline
+name: development-pipeline
 
 on:
     pull_request:
@@ -9,7 +9,6 @@ on:
 
 jobs:
     build-and-deploy:
-        if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
             - name: 'Checkout GitHub Action'
@@ -19,6 +18,10 @@ jobs:
               uses: azure/login@v1
               with:
                   creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+            -   name: 'Copy staging values file'
+                run: |
+                    cp ./helm-chart-backoffice/values-staging.yaml ./helm-chart-backoffice/values.yaml
 
             - name: 'Set up Kubernetes'
               uses: azure/aks-set-context@v2
@@ -35,18 +38,13 @@ jobs:
                   password: ${{ secrets.REGISTRY_PASSWORD }}
             - run: |
                   docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
-                  docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:develop
+                  docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
-                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:develop
-
-            - name: 'Copy staging values file'
-              run: |
-                  cp ./helm-chart-backoffice/values-staging.yaml ./helm-chart-backoffice/values.yaml
-
+                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
             - name: 'Deploy to AKS with Helm'
               run: |
                   helm upgrade --install whatnow-backoffice ./helm-chart-backoffice \
-                    --namespace whatnow-staging \
+                    --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE }} \
                     --create-namespace
