@@ -1,10 +1,16 @@
+apiVersion: v2
+name: helm-chart-backoffice
+namespace: whatnow-cluster
+description: Helm chart to deploy Laravel API - Production Environment
+version: 0.1.0
+appVersion: "1.0.0"
 # Azure Container Registry details
 image:
     repository: ifrcsmdb.azurecr.io/whatnow
-    tag: "latest"
+    tag: "production"
     pullPolicy: Always
 
-replicaCount: 1
+replicaCount: 2
 
 # Kubernetes service configuration
 service:
@@ -14,10 +20,10 @@ service:
 # Environment variables
 env:
     APP_NAME: 'IFRC National Society Preparedness Messages'
-    APP_ENV: testing
-    APP_DEBUG: true
-    APP_LOG_LEVEL: debug
-    APP_URL: http://whatnow.jazusoft.com
+    APP_ENV: production
+    APP_DEBUG: false
+    APP_LOG_LEVEL: info
+    APP_URL: https://preparemessages.ifrc.org
     GOOGLE_MAPS_KEY:
     DB_CONNECTION: mysql
     DB_PORT: 3306
@@ -33,7 +39,7 @@ env:
     MAIL_PORT: 587
     MAIL_ENCRYPTION: tls
     MAIL_USER: Whatnow
-    MAIL_FROM_ADDRESS: DoNotReply@email.whatnow.jazusoft.com
+    MAIL_FROM_ADDRESS: DoNotReply@email.whatnow.ifrc.org
     PUSHER_APP_ID:
     PUSHER_APP_KEY:
     PUSHER_APP_SECRET:
@@ -51,20 +57,20 @@ env:
 
 
 secrets:
-    dbSecretName: backoffice-credentials
+    dbSecretName: backoffice-production-credentials
     variables:
-      DB_HOST: BACKOFFICE_DB_HOST
-      DB_DATABASE: BACKOFFICE_DB_DATABASE
-      DB_USERNAME: BACKOFFICE_DB_USERNAME
-      DB_PASSWORD: BACKOFFICE_DB_PASSWORD
-      APP_KEY: BACKOFFICE_APP_KEY
-      JWT_SECRET: BACKOFFICE_JWT_SECRET
-      RCN_API_URL: BACKOFFICE_RCN_API_URL
-      RCN_API_USER: BACKOFFICE_RCN_API_USER
-      RCN_API_PASSWORD: BACKOFFICE_RCN_API_PASSWORD
-      MAIL_ENDPOINT: MAIL_ENDPOINT
-      MAIL_FROM: MAIL_FROM
-      MAIL_API_KEY: MAIL_API_KEY
+        DB_HOST: BACKOFFICE_DB_HOST_PROD
+        DB_DATABASE: BACKOFFICE_DB_DATABASE_PROD
+        DB_USERNAME: BACKOFFICE_DB_USERNAME_PROD
+        DB_PASSWORD: BACKOFFICE_DB_PASSWORD_PROD
+        APP_KEY: BACKOFFICE_APP_KEY_PROD
+        JWT_SECRET: BACKOFFICE_JWT_SECRET_PROD
+        RCN_API_URL: BACKOFFICE_RCN_API_URL_PROD
+        RCN_API_USER: BACKOFFICE_RCN_API_USER_PROD
+        RCN_API_PASSWORD: BACKOFFICE_RCN_API_PASSWORD_PROD
+        MAIL_ENDPOINT: MAIL_ENDPOINT_PROD
+        MAIL_FROM: MAIL_FROM_PROD
+        MAIL_API_KEY: MAIL_API_KEY_PROD
 
 
 ingress:
@@ -74,11 +80,11 @@ ingress:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
-        - host: "preparemessages-stage.ifrc.org"
+        - host: "preparemessages.ifrc.org"
           paths:
               - path: /
                 pathType: Prefix
     tls:
         - hosts:
-              - "preparemessages-stage.ifrc.org"
+              - "preparemessages.ifrc.org"
           secretName: "ifrc.certificates.secret"
