@@ -53,7 +53,7 @@ class TranslateLanguage extends Command
     {
         $sourceLanguage = $this->option('source');
         $targetLanguages = $this->option('target');
-        $useClient = $this->option('client');
+        $useClient = $this->option('client') ?? false; // Default to false for direct API
 
         // Validate source language file exists
         $sourceFile = resource_path("lang/{$sourceLanguage}.json");
