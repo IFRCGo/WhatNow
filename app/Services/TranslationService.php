@@ -27,7 +27,7 @@ class TranslationService
         // Configure API from environment variables
         $this->apiKey = env('IFRC_TRANSLATION_API_KEY', '');
         $this->applicationId = env('IFRC_TRANSLATION_APP_ID', '12');
-        $this->baseUrl = env('IFRC_TRANSLATION_API_URL', 'https://ifrcumicroservicesapim001.azure-api.net/translation/api');
+        $this->baseUrl = rtrim(env('IFRC_TRANSLATION_API_URL', 'https://ifrc-translationapi-staging.azurewebsites.net/api'), '/');
     }
 
     /**
@@ -236,7 +236,7 @@ class TranslationService
         $data = json_decode($response->getBody(), true);
 
         // Extract translated text from response
-        return $data['translation'] ?? $text;
+        return $data[0]['translations'][0]['text'] ?? $text;
     }
 
     /**

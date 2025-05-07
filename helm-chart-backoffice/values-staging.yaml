@@ -44,7 +44,7 @@ env:
     SENTRY_DSN:
     BUCKET_URL: https://smdbstorageaccount.blob.core.windows.net/images
     IFRC_TRANSLATION_APP_ID: 12
-    IFRC_TRANSLATION_API_URL: https://ifrcumicroservicesapim001.azure-api.net/translation/api
+    IFRC_TRANSLATION_API_URL: https://ifrc-translationapi-staging.azurewebsites.net/api
 
 
 
