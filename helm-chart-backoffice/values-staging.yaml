@@ -45,8 +45,6 @@ env:
     BUCKET_URL: https://smdbstorageaccount.blob.core.windows.net/images
     IFRC_TRANSLATION_APP_ID: 12
     IFRC_TRANSLATION_API_URL: https://ifrcumicroservicesapim001.azure-api.net/translation/api
-    MAIL_FROM: whatnow.staging@ifrc.org
-    MAIL_ENDPOINT: https://microservices-staging.ifrc.org/Email/api/Email
 
 
 
