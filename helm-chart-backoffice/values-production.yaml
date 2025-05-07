@@ -19,7 +19,7 @@ service:
     targetPort: 80
 # Environment variables
 env:
-    APP_NAME: 'IFRC Safety Messages Database'
+    APP_NAME: 'IFRC National Society Preparedness Messages'
     APP_ENV: production
     APP_DEBUG: false
     APP_LOG_LEVEL: info

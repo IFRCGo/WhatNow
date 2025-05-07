@@ -30,11 +30,11 @@ class MailApiService
     }
 
     public function buildMailTemplate(
-        ?string $title = 'IFRC Safety Messages Database',
+        ?string $title = 'IFRC National Society Preparedness Messages',
         array $contentParagraphs,
         ?string $buttonText = null,
         ?string $buttonUrl = null,
-        ?string $footerText = 'IFRC Safety Messages Database'
+        ?string $footerText = 'IFRC National Society Preparedness Messages'
     ): string
     {
         $html = '<!DOCTYPE html>
@@ -54,23 +54,23 @@ class MailApiService
             </tr>
             <tr>
                 <td style="padding: 35px; background-color: #292929;">';
-    
+
         $html .= '<h1 style="color: #d6d9db; font-size: 19px; font-weight: bold; margin-top: 0; text-align: left;">' . htmlspecialchars($title) . '</h1>';
-    
+
         foreach ($contentParagraphs as $paragraph) {
             $html .= '<p style="font-size: 16px; margin-top: 0; text-align: left;">' . nl2br(htmlspecialchars($paragraph)) . '</p>';
         }
-    
+
         if ($buttonText && $buttonUrl) {
             $html .= '
                 <div style="text-align: center; margin: 30px 0;">
-                    <a href="' . htmlspecialchars($buttonUrl) . '" 
+                    <a href="' . htmlspecialchars($buttonUrl) . '"
                        style="background-color: #000000; color: #ffffff; padding: 8px 16px; border-radius: 60px; text-decoration: none; display: inline-block; font-weight: bold;">
                         ' . htmlspecialchars($buttonText) . '
                     </a>
                 </div>';
         }
-    
+
         $html .= '</td>
             </tr>
             <tr>
@@ -81,10 +81,10 @@ class MailApiService
         </table>
     </body>
     </html>';
-    
+
         return $html;
     }
-    
+
     public function buildResetPasswordTemplate(
         string $resetLink
     ): string
@@ -98,7 +98,7 @@ class MailApiService
             ],
             'Reset Password',
             $resetLink,
-            'IFRC Safety Messages Database'
+            'IFRC National Society Preparedness Messages'
         );
     }
 
@@ -115,7 +115,7 @@ class MailApiService
             ],
             'Confirm your Account!',
             $confirmationLink,
-            'IFRC Safety Messages Database'
+            'IFRC National Society Preparedness Messages'
         );
     }
 
@@ -129,7 +129,7 @@ class MailApiService
             ],
             null,
             null,
-            'IFRC Safety Messages Database'
+            'IFRC National Society Preparedness Messages'
         );
     }
 
@@ -144,8 +144,8 @@ class MailApiService
             ],
             'Log in to view the new Terms and Conditions',
             $termsLink,
-            'IFRC Safety Messages Database'
+            'IFRC National Society Preparedness Messages'
         );
     }
-    
+
 }
