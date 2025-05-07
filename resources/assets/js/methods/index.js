@@ -80,6 +80,15 @@ const icons = {
     x1: require('../../img/landing_page/cold.png'),
     x2: require('../../img/landing_page/cold@2x.png'),
     x3: require('../../img/landing_page/cold@3x.png')
+  },
+  'homeExampleCase1': {
+    x1: require('../../img/landing_page/example_case_1.png')
+  },
+  'homeExampleCase2': {
+    x1: require('../../img/landing_page/example_case_2.png')
+  },
+  'homeExampleCase3': {
+    x1: require('../../img/landing_page/example_case_3.png')
   }
 }
 
@@ -101,6 +110,7 @@ export const methods = {
     return `${icons[val].x1} 1x, ${icons[val].x2} 2x, ${icons[val].x3} 3x`
   },
   src (val) {
+    console.log('val', `${icons[val].x1}`)
     return `${icons[val].x1}`
   },
   can (user, permission) {

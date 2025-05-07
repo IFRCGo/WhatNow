@@ -201,7 +201,7 @@ export default {
   background-color: white;
   z-index: 1000;
   display: none;
-  overflow: hidden;
+  overflow: visible;
   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   max-height: 0;
   opacity: 0;

@@ -7,17 +7,10 @@
           <div class="top-head">
             <h2 class="white-subtitle">{{ $t('landing.head_1') }}</h2>
             <h2 class="white-subtitle">{{ $t('landing.head_2') }}</h2>
-            <p class="white-text mt-4">{{ $t('landing.head_text_1') }}</p>
-            <p class="white-text">{{ $t('landing.head_text_2') }}</p>
+            <p class="white-text mt-4 pre-line line-height-50">{{ $t('landing.head_text') }}</p>
             <div class="bottom-head">
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_1') }}
-              </p>
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_2') }}
-              </p>
-              <p class="bottom-head-text">
-                {{ $t('landing.head_bottom_3') }}
+              <p class="bottom-head-text pre-line">
+                {{ $t('landing.head_bottom') }}
               </p>
               <b-button class="btn-primary s-up-btn mt-4" @click="$router.push('/register')">
                 {{ $t('landing.signup') }}
@@ -44,13 +37,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_1_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_1_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_1_c') }}
+                    {{ $t('landing.works_1') }}
                   </p>
                 </div>
               </div>
@@ -70,13 +57,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_2_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_2_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_2_c') }}
+                    {{ $t('landing.works_2') }}
                   </p>
                 </div>
               </div>
@@ -88,13 +69,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_3_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_3_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_3_c') }}
+                    {{ $t('landing.works_3') }}
                   </p>
                 </div>
 
@@ -116,13 +91,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_4_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_c') }}
+                    {{ $t('landing.works_4') }}
                   </p>
                 </div>
               </div>
@@ -134,13 +103,7 @@
                 </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_5_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_5_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_5_c') }}
+                    {{ $t('landing.works_5') }}
                   </p>
                 </div>
 
@@ -168,13 +131,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_1_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_1_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_1_c') }}
+                      {{ $t('landing.works_1') }}
                     </p>
                   </div>
                 </div>
@@ -188,13 +145,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_2_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_2_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_2_c') }}
+                      {{ $t('landing.works_2') }}
                     </p>
                   </div>
                 </div>
@@ -222,13 +173,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_3_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_3_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_3_c') }}
+                      {{ $t('landing.works_3') }}
                     </p>
                   </div>
                 </div>
@@ -243,13 +188,7 @@
                   </div>
                 <div>
                   <p>
-                    {{ $t('landing.works_4_a') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_b') }}
-                  </p>
-                  <p>
-                    {{ $t('landing.works_4_c') }}
+                    {{ $t('landing.works_4') }}
                   </p>
                 </div>
                 </div>
@@ -276,13 +215,7 @@
                   </div>
                   <div>
                     <p>
-                      {{ $t('landing.works_5_a') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_5_b') }}
-                    </p>
-                    <p>
-                      {{ $t('landing.works_5_c') }}
+                      {{ $t('landing.works_5') }}
                     </p>
                   </div>
                 </div>
@@ -310,10 +243,7 @@
           <p class="card-txt">
             {{ $t('landing.hurricane') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.warning_alerts') }}
-          </p>
-          <img class="map-img" src="cardImage1">
+          <img class="map-img" :src="src('homeExampleCase1')">
         </div>
       </b-col>
       <b-col class="card-use-container">
@@ -324,10 +254,7 @@
           <p class="card-txt">
             {{ $t('landing.post_images') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.messages_network') }}
-          </p>
-          <img class="map-img" src="cardImage3">
+          <img class="map-img" :src="src('homeExampleCase2')">
         </div>
       </b-col>
       <b-col class="card-use-container">
@@ -338,10 +265,7 @@
           <p class="card-txt">
             {{ $t('landing.share_flood') }}
           </p>
-          <p class="card-txt">
-            {{ $t('landing.family') }}
-          </p>
-          <img class="map-img" src="cardImage3">
+          <img class="map-img" :src="src('homeExampleCase3')">
         </div>
       </b-col>
     </b-row>
@@ -363,17 +287,9 @@
         <div class="div-white"></div>
         <i class="fas fa-user-circle impact-icon"></i>
         <p class="red-sec-txt">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut elit eget enim semper maximus vitae
-          placerat
-        </p>
-        <p class="red-sec-txt">
-          nulla. Pellentesque vitae metus nunc. Donec dolor elit, gravida vel lectus in, sollicitudin commodo dolor.
-          Cras
-        </p>
-        <p class="red-sec-txt">
-          aliquet interdum sapien at tempor. Integer viverra vulputate posuere. Aliquam tincidunt turpis a mi malesuada.
-        </p>
-
+            {{ $t('landing.quote_description_2') }}
+          </p>
+          <p class="red-sec-txt">— {{ $t('landing.quote_author_2') }}</p>
       </b-col>
     </b-row>
     <div class="btn-bottom-container">
@@ -398,6 +314,10 @@ export default {
 </script>
 <style scoped>
 
+.pre-line {
+  white-space: pre-line;
+}
+
 .top-head {
   position: relative;
   left: 3rem;
@@ -412,7 +332,7 @@ export default {
 
 .white-text {
   color: white;
-  line-height: 1rem;
+  line-height: 1.5rem;
   font-size: 1.2rem;
 
 }
@@ -448,7 +368,7 @@ export default {
 
 .bottom-head-text {
   font-size: 1.2rem;
-  line-height: 1rem;
+  line-height: 1.5rem;
 }
 
 .mid-subt {
@@ -506,7 +426,7 @@ export default {
 
     & > p{
       text-align: center;
-      margin: 3px 0px;
+      white-space: pre-line;
     }
   }
 }
@@ -658,6 +578,8 @@ export default {
 .card-txt {
   font-size: 1.2rem;
   line-height: 1.2rem;
+  font-weight: 300;
+  line-height: 34px;
 }
 
 .red-section {
@@ -688,6 +610,10 @@ export default {
 .red-sec-txt {
   color: white;
   font-size: 1.2rem;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: 600;
 }
 
 .btn-bottom-container {
