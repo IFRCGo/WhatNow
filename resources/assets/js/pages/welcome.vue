@@ -237,35 +237,47 @@
     <b-row class="usecases">
       <b-col class="card-use-container">
         <div class="example-card">
-          <h6 class="card-subt">
-            {{ $t('landing.api') }}
-          </h6>
-          <p class="card-txt">
-            {{ $t('landing.hurricane') }}
-          </p>
-          <img class="map-img" :src="src('homeExampleCase1')">
+          <div>
+            <h6 class="card-subt">
+              {{ $t('landing.api') }}
+            </h6>
+            <p class="card-txt">
+              {{ $t('landing.hurricane') }}
+            </p>
+          </div>
+          <div class="example-card-img-container">
+            <img :src="src('homeExampleCase1')">
+          </div>
         </div>
       </b-col>
       <b-col class="card-use-container">
         <div class="example-card">
-          <h6 class="card-subt">
-            {{ $t('landing.social_media') }}
-          </h6>
-          <p class="card-txt">
-            {{ $t('landing.post_images') }}
-          </p>
-          <img class="map-img" :src="src('homeExampleCase2')">
+          <div>
+            <h6 class="card-subt">
+              {{ $t('landing.social_media') }}
+            </h6>
+            <p class="card-txt">
+              {{ $t('landing.post_images') }}
+            </p>
+          </div>
+          <div class="example-card-img-container">
+            <img :src="src('homeExampleCase2')">
+          </div>
         </div>
       </b-col>
       <b-col class="card-use-container">
         <div class="example-card">
-          <h6 class="card-subt">
-            {{ $t('landing.whatsapp') }}
-          </h6>
-          <p class="card-txt">
-            {{ $t('landing.share_flood') }}
-          </p>
-          <img class="map-img" :src="src('homeExampleCase3')">
+          <div>
+            <h6 class="card-subt">
+              {{ $t('landing.whatsapp') }}
+            </h6>
+            <p class="card-txt">
+              {{ $t('landing.share_flood') }}
+            </p>
+          </div>
+          <div class="example-card-img-container">
+            <img :src="src('homeExampleCase3')">
+          </div>
         </div>
       </b-col>
     </b-row>
@@ -274,22 +286,15 @@
       <b-col class="red-section">
         <i class="fas fa-user-circle impact-icon"></i>
         <p class="red-sec-txt">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut elit eget enim semper maximus vitae
-          placerat
+            {{ $t('landing.quote_description_1') }}
         </p>
-        <p class="red-sec-txt">
-          nulla. Pellentesque vitae metus nunc. Donec dolor elit, gravida vel lectus in, sollicitudin commodo dolor.
-          Cras
-        </p>
-        <p class="red-sec-txt">
-          aliquet interdum sapien at tempor. Integer viverra vulputate posuere. Aliquam tincidunt turpis a mi malesuada.
-        </p>
+        <p class="red-sec-txt">— {{ $t('landing.quote_author_1') }}</p>
         <div class="div-white"></div>
         <i class="fas fa-user-circle impact-icon"></i>
         <p class="red-sec-txt">
             {{ $t('landing.quote_description_2') }}
-          </p>
-          <p class="red-sec-txt">— {{ $t('landing.quote_author_2') }}</p>
+        </p>
+        <p class="red-sec-txt">— {{ $t('landing.quote_author_2') }}</p>
       </b-col>
     </b-row>
     <div class="btn-bottom-container">
@@ -566,6 +571,20 @@ export default {
   border-radius: 20px;
   width: 80%;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.example-card .example-card-img-container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-card .example-card-img-container img {
+  height: 230px;
 }
 
 .card-subt {
