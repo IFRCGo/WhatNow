@@ -47,6 +47,9 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 # Install Composer dependencies
 RUN composer install --prefer-dist --optimize-autoloader
 
+# Generate Swagger documentation
+RUN php artisan l5-swagger:generate
+
 # Set permissions for Laravel storage and cache
 RUN mkdir -p storage/framework/sessions \
     storage/framework/views \
@@ -60,4 +63,3 @@ RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
 
 RUN npm install
 RUN npm run production
-
