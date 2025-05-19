@@ -81,29 +81,28 @@
             </div>
 
             <b-card-body class="whatnow-collapse-card-body" v-for="(urgency, index) in urgencyLevels" :key="'urgency'+index">
-                <b-row class="hazard-cards-container">
-                  <b-col cols="12">
-                    <h4 class="subtitle-card">{{ urgency.text }}</h4>
-                  </b-col>
-                  <b-col
-                    class="hazard-card"
-                    cols="4"
-                    v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages)"
+              <b-row class="hazard-cards-container">
+                <b-col cols="12">
+                  <h4 class="subtitle-card">{{ urgency.text }}</h4>
+                </b-col>
+                <div class="hazard-card-grid">
+                  <div class="hazard-card"
+                  v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages).filter(k => urgency.stages.includes(k) && content.currentTranslation.stages[k]?.length)"
                     :key="'stage'+index"
                   >
-                    <div v-if="urgency.stages.includes(stageKey) && content.currentTranslation.stages[stageKey]?.length">
-                      <whatnow-message-card
-                        :stage="content.currentTranslation.stages[stageKey]"
-                        :stageName="stageKey" :eventType="content.eventType"
-                        :title="content.currentTranslation.title"
-                        :description="content.currentTranslation.description"
-                        :selectedSoc="selectedSoc"
-                        :selectedLanguage="selectedLanguage"
-                      />
-                    </div>
-                  </b-col>
-                </b-row>
-              </b-card-body>
+                    <whatnow-message-card
+                      :stage="content.currentTranslation.stages[stageKey]"
+                      :stageName="stageKey"
+                      :eventType="content.eventType"
+                      :title="content.currentTranslation.title"
+                      :description="content.currentTranslation.description"
+                      :selectedSoc="selectedSoc"
+                      :selectedLanguage="selectedLanguage"
+                    />
+                  </div>
+                </div>
+              </b-row>
+            </b-card-body>
           </b-collapse>
         </b-card-header>
       </b-card>
@@ -245,7 +244,20 @@ export default {
   }
 }
 
+.hazard-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .hazard-card {
+  flex: 1 1 calc(33.333% - 11px);
+  min-width: 250px;
+  max-width: 100%;
+  position: relative;
+
   .key-message-item-btn {
     position: absolute;
     bottom: -14px;
@@ -254,7 +266,7 @@ export default {
     .btn {
       font-size: 14px;
     }
-  }
+  }                   
 }
 
 .hazard-cards-container {
