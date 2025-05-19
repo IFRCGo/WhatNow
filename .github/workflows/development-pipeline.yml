@@ -43,10 +43,6 @@ jobs:
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
-            - name: 'Generate Swagger documentation'
-              run: |
-                  php artisan l5-swagger:generate
-
             - name: 'Deploy to AKS with Helm'
               run: |
                   helm upgrade --install whatnow-backoffice ./helm-chart-backoffice \
