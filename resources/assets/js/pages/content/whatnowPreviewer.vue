@@ -223,6 +223,11 @@ export default {
 .logo-section {
   display: flex;
   align-items: center;
+  font-size: 20px;
+  img {
+    width: 100px;
+    height: auto;
+  }
 }
 
 .logo {

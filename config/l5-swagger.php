@@ -234,6 +234,6 @@ return [
     |--------------------------------------------------------------------------
      */
     'constants' => [
-        'L5_SWAGGER_CONST_HOST' => env('APP_URL', 'https://preparemessages-stage.ifrc.org'),
+        'L5_SWAGGER_CONST_HOST' => env('APP_URL', 'https://preparemessages-stage.ifrc.org') . '/api',
     ],
 ];
