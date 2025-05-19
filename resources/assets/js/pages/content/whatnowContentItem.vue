@@ -90,16 +90,17 @@
                     cols="4"
                     v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages)"
                     :key="'stage'+index"
-                    v-if="urgency.stages.includes(stageKey) && content.currentTranslation.stages[stageKey]"
                   >
-                    <whatnow-message-card
-                      :stage="content.currentTranslation.stages[stageKey]"
-                      :stageName="stageKey" :eventType="content.eventType"
-                      :title="content.currentTranslation.title"
-                      :description="content.currentTranslation.description"
-                      :selectedSoc="selectedSoc"
-                      :selectedLanguage="selectedLanguage"
-                    />
+                    <div v-if="urgency.stages.includes(stageKey) && content.currentTranslation.stages[stageKey]?.length">
+                      <whatnow-message-card
+                        :stage="content.currentTranslation.stages[stageKey]"
+                        :stageName="stageKey" :eventType="content.eventType"
+                        :title="content.currentTranslation.title"
+                        :description="content.currentTranslation.description"
+                        :selectedSoc="selectedSoc"
+                        :selectedLanguage="selectedLanguage"
+                      />
+                    </div>
                   </b-col>
                 </b-row>
               </b-card-body>

@@ -3,7 +3,7 @@
     <div class="modal-content" ref="modalContent">
       <div class="modal-header">
         <div class="logo-section">
-          <img v-if="selectedSoc.imageUrl" :src="selectedSoc.imageUrl" class="logo" />
+          <img v-if="selectedSoc.imageUrl" :src="'https://smdbstorageaccount.blob.core.windows.net/images/AUS_logo.jpeg'" class="logo" />
           <span>{{selectedSoc.name}}</span>
         </div>
         <div v-if="contributors" class="contributors-container">
@@ -223,6 +223,11 @@ export default {
 .logo-section {
   display: flex;
   align-items: center;
+  font-size: 20px;
+  img {
+    width: 100px;
+    height: auto;
+  }
 }
 
 .logo {
