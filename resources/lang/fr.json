@@ -99,7 +99,7 @@
                 "body": "L’API REST de la Croix-Rouge permet aux développeurs d’accéder aux informations et aux ressources d’urgence publiées par les Sociétés internationales de la Croix-Rouge.",
                 "heading": "Introduction",
                 "support_card": {
-                    "body": "Si vous avez des questions ou si vous avez besoin d’aide, veuillez nous contacter au hello@ifrc.org.",
+                    "body": "Si vous avez des questions ou si vous avez besoin d’aide, veuillez nous contacter au im@ifrc.org",
                     "title": "Assistance et questions"
                 }
             },
@@ -834,7 +834,7 @@
             "terms_service": "Conditions d’utilisation",
             "subtitle_4": "Liens utiles",
             "api_doc": "Documentation de l’API",
-            "faq": "FAQ (lien à fournir)"
+            "faq": "FAQ(lien à fournir)"
         }
     },
     "register_form": {
