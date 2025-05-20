@@ -100,7 +100,7 @@
         "body": "The Red Cross REST API enables developers to access to emergency information and resources issued by international Red Cross Societies.",
         "heading": "Introduction",
         "support_card": {
-          "body": "If you have any questions or need support, please contact us at hello@ifrc.org.",
+          "body": "If you have any questions or need support, please contact us at im@ifrc.org",
           "title": "Support & Questions"
         }
       },
@@ -836,7 +836,7 @@
       "terms_service": "Terms of Services",
       "subtitle_4": "Helpful Links",
       "api_doc": "API Documentation",
-      "faq": "FAQ (link to be provided)"
+      "faq": "FAQ"
     }
   },
   "register_form": {

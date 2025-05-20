@@ -29,16 +29,21 @@
               {{ $t('documentation.steps.one.support_card.body') }}
             </p>
           </b-card>
-          <hr>
+        </section>
+
+        <section>
+          <h2 class="steps" id="introduction">Swagger</h2>
+          <b-card class="bg-light mb-4">
+          <p><a :href="adminDocumentationUrl" target="_blank">Swagger Admin</a></p>
+          <p><a :href="apiDocumentationUrl" target="_blank">Swagger of API</a></p>
+          </b-card>
         </section>
 
         <!-- Base URL Section -->
         <section>
           <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
-          <b-card class="bg-light mb-4">
-            <p><a href="https://api.preparecenter.org/v2" target="_blank">https://api.preparecenter.org/v2</a></p>
-            <p><a href="https://api.whatnow.jazusoft.com/api/documentation" target="_blank">https://api.whatnow.jazusoft.com/api/documentation - Swagger of API</a></p>
-            <p><a href="https://whatnow.jazusoft.com/admin/documentation" target="_blank">https://whatnow.jazusoft.com/admin/documentation - Swagger Admin</a></p>
+            <b-card class="bg-light mb-4">
+              <p><a href="https://api-preparemessages-stage.ifrc.org" target="_blank">https://api-preparemessages-stage.ifrc.org/v2</a></p>
           </b-card>
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
@@ -334,6 +339,9 @@
 export default {
   data() {
     return {
+      adminDocumentationUrl: null,
+      apiDocumentationUrl: null,
+      apiPrepareCenterUrl: null,
       showResponse: false,
       exampleResponse: `{
         "data": [
@@ -346,8 +354,8 @@ export default {
             "attribution": {
               "name": "American Red Cross",
               "countryCode": "USA",
-              "url": "https://whatnow.jazusoft.com/admin/content/whatnow/USA",
-              "imageUrl": "https://whatnowimages.blob.core.windows.net/images/USA_logo.jpg",
+              "url": "https://preparemessages.ifrc.org/admin/content/whatnow/USA",
+              "imageUrl": "https://images.blob.core.windows.net/images/USA_logo.jpg",
               "translations": {
                 "de": {
                   "languageCode": "de",
@@ -364,7 +372,7 @@ export default {
                     {
                       "id": 1,
                       "name": "Test",
-                      "logo": "https://whatnowimages.blob.core.windows.net/images/USA_en_contributor_logo0.jpg"
+                      "logo": "https://images.blob.core.windows.net/images/USA_en_contributor_logo0.jpg"
                     }
                   ],
                   "published": true
@@ -421,9 +429,15 @@ export default {
       }`
     }
   },
+  mounted() {
+    const laravelEnv = window.LaravelEnv || {}
+    this.adminDocumentationUrl = `${laravelEnv.APP_URL || ''}/admin/documentation`
+    this.apiDocumentationUrl = `https://api-preparemessages-stage.ifrc.org/api/documentation`
+    this.apiPrepareCenterUrl = laravelEnv.RCN_API_URL || ''
+  },
   methods: {
     toggleResponse() {
-      this.showResponse = !this.showResponse;
+      this.showResponse = !this.showResponse
     }
   }
 }
