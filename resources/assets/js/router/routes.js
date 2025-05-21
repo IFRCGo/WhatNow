@@ -4,7 +4,7 @@ import * as permissions from '../store/permissions'
 export const HomeRoutePageName = 'welcome'
 
 export default [
-  { path: '/docs', name: 'docs', component: require('~/pages/docs/index').default },
+  { path: '/documentation', name: 'docs', component: require('~/pages/docs/index').default },
   { path: '/terms-and-conditions', name: 'terms', component: require('~/pages/terms/index').default },
   { path: '/terms-of-service', name: 'terms-service', component: require('~/pages/termsService').default },
   { path: '/legal/terms', name: 'legal_terms', component: require('~/pages/legal_terms/index').default },
