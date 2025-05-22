@@ -357,18 +357,13 @@ export default {
     },
     async sendResetPasswordEmail(email) {
       try {
+        this.fetchingUsers = true
         const { data } = await axios.post('/api/admin/password/email', { email })
-        swal.fire({
-          icon: 'success',
-          title: 'Success',
-          text: data.status
-        })
+        this.$noty.success(this.$t('users.list.reset_password_email_sent'))
       } catch (error) {
-        swal.fire({
-          icon: 'error',
-          title: 'Error',
-          text: error.response.data.message || 'An error occurred'
-        })
+        this.$noty.error(this.$t('error_alert_text'))
+      } finally {
+        this.fetchingUsers = false
       }
     }
   },

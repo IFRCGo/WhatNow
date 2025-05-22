@@ -353,6 +353,7 @@
       "empty": "Couldn't find any users",
       "detail": "User detail",
       "clear_filters": "Clear filters",
+      "reset_password_email_sent": "Reset password email sent",
       "table_header": {
         "user": "User",
         "role": "Role",
