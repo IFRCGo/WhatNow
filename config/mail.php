@@ -46,7 +46,7 @@ return [
         ],
     ],
 
-    'support_email' => 'hello@ifrc.com',
+    'support_email' => 'im@ifrc.org',
 
     'endpoint_url' => env('MAIL_ENDPOINT') . '?apiKey=' . env('MAIL_API_KEY'),
     'mail_from' => env('MAIL_FROM'),
