@@ -27,7 +27,7 @@
             <h2>
               {{ $t('landing.footer.subtitle_2') }}
             </h2>
-            <b-link :href="`mailto:${$t('landing.footer.email_ifrc')}?Subject=GDPC%20Admin%20Portal`">
+            <b-link :href="`mailto:${$t('landing.footer.email_ifrc')}`">
               {{ $t('landing.footer.email_ifrc') }}
             </b-link>
             <br>

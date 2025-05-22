@@ -47,7 +47,7 @@ class MailApiService
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: auto; background-color: #292929; border-radius: 8px; overflow: hidden;">
             <tr>
                 <td align="center" style="padding: 25px 10px; background-color: #292929;">
-                    <a href="http://whatnow.jazusoft.com" style="text-decoration: none; color: #bbbfc3; font-size: 19px; font-weight: bold;">
+                    <a href="' . config('app.url')  .  '" style="text-decoration: none; color: #bbbfc3; font-size: 19px; font-weight: bold;">
                         IFRC Safety Messages Database
                     </a>
                 </td>

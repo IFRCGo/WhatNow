@@ -83,7 +83,7 @@
         </p>
 
         <i18n path="terms_service_page.contact" tag="p">
-          <b-link href="mailto:Jessica.Robbins@redcross.org?Subject=GDPC%20Admin%20Portal">Jessica.Robbins@redcross.org</b-link>
+          <b-link href="mailto:Jessica.Robbins@redcross.org">Jessica.Robbins@redcross.org</b-link>
         </i18n>
       </b-col>
     </b-row>
