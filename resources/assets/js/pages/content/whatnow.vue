@@ -593,7 +593,7 @@ export default {
         this.updateErrors.errors[`translations.${this.updateErrors.indexError}.attributionMessage`] = true;
       }
       if (!this.attributionToEdit.url) {
-        this.updateErrors.errors.url = ["URL no puede estar vacía"];
+        this.updateErrors.errors.url = [this.$t('content.whatnow.url_required')];
       }
 
       this.attributionEditTranslation.contributors.forEach((contributor, index) => {
