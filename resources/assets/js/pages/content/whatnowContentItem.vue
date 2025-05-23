@@ -87,19 +87,24 @@
                 </b-col>
                 <div class="hazard-card-grid">
                   <div class="hazard-card"
-                  v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages).filter(k => urgency.stages.includes(k) && content.currentTranslation.stages[k]?.length)"
-                    :key="'stage'+index"
-                  >
-                    <whatnow-message-card
-                      :stage="content.currentTranslation.stages[stageKey]"
-                      :stageName="stageKey"
-                      :eventType="content.eventType"
-                      :title="content.currentTranslation.title"
-                      :description="content.currentTranslation.description"
-                      :selectedSoc="selectedSoc"
-                      :selectedLanguage="selectedLanguage"
-                    />
-                  </div>
+                    v-for="(stageKey, index) in Object.keys(content.currentTranslation.stages).filter(k => urgency.stages.includes(k) && content.currentTranslation.stages[k]?.length)"
+                      :key="'stage'+index"
+                    >
+                      <whatnow-message-card
+                        :stage="content.currentTranslation.stages[stageKey]"
+                        :stageName="stageKey"
+                        :eventType="content.eventType"
+                        :title="content.currentTranslation.title"
+                        :description="content.currentTranslation.description"
+                        :selectedSoc="selectedSoc"
+                        :selectedLanguage="selectedLanguage"
+                      />
+                    </div>
+                    <div v-if="Object.keys(content.currentTranslation.stages).filter(k => urgency.stages.includes(k) && content.currentTranslation.stages[k]?.length).length === 0">
+                      <div class="mx-3 hazard-card-content">
+                        <p>{{ $t('content.whatnow.no_key_messages') }}</p>
+                      </div>
+                    </div>
                 </div>
               </b-row>
             </b-card-body>
