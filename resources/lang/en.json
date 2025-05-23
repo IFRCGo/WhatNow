@@ -507,7 +507,9 @@
       "publish_summary_title": "Attribution",
       "publish_summary_ns": "National Society",
       "publish_summary_url": "Attribution URL",
-      "publish_summary_message": "Attribution Message"
+      "publish_summary_message": "Attribution Message",
+      "no_key_messages": "No key messages published",
+      "url_required": "URL is required"
     },
     "edit_whatnow": {
       "title": "Title",
