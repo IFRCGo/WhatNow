@@ -198,14 +198,14 @@
     "steps": {
       "one": {
         "heading": "Step 1 - Sign up",
-        "body": "To get started using data from the Safety Message Database API, firstly {0} to the Safety Message Database Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
+        "body": "To get started using data from the IFRC National Society Preparedness Messages API, firstly {0} to the IFRC National Society Preparedness Messages Portal.\n\nYou can use your Facebook & Google accounts, or an email address to create an account.",
         "create_account_alt": "create account",
         "existing_account": "If you already have an account, please {0}.",
         "login_cta": "log in",
         "sign_up_cta": "sign up"
       },
       "two": {
-        "body": "To use the API you must create an application in the Safety Message Database Portal. Tell us a little about what you're building.",
+        "body": "To use the API you must create an application in the IFRC National Society Preparedness Messages Portal. Tell us a little about what you're building.",
         "create_app_alt": "create app",
         "heading": "Step 2 - Create an app"
       },
@@ -217,7 +217,7 @@
       },
       "four": {
         "api_docs_cta": "API documentation",
-        "body": "The Safety Message Database API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
+        "body": "The IFRC National Society Preparedness Messages API uses HTTP(S) and provides RESTful endpoints to obtain published data.\n\nEach request must be authenticated using the API key created in the previous step.",
         "example_title": "Example Request",
         "heading": "Step 4 - Make a request",
         "moreInfo": "For more information on all API endpoints, see the {0}."
@@ -227,13 +227,13 @@
   "home_pods": {
     "bulk_upload": "Here you can upload all of your safety messages in one file.",
     "audit_log": "Here you can view the history of your message edits",
-    "whatnow_edit": "This is where you can edit Safety Message Database content",
-    "whatnow_review": "This is where you can review Safety Message Database content",
+    "whatnow_edit": "This is where you can edit IFRC National Society Preparedness Messages content",
+    "whatnow_review": "This is where you can review IFRC National Society Preparedness Messages content",
     "whatnow_publish": "Here you can edit and publish your National Society's safety messages.",
     "manage_users": "This is where to manage the users (Create, edit and remove)",
     "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
     "wellcome": "Welcome",
-    "wellcome_description": "Here you can edit and publish Safety Message Database content."
+    "wellcome_description": "Here you can edit and publish IFRC National Society Preparedness Messages content."
 
   },
   "languages": {
@@ -467,7 +467,7 @@
     "whatnow": {
       "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
-      "whatnow": "Safety Message Database",
+      "whatnow": "IFRC National Society Preparedness Messages",
       "empty": "No messages for this National Society",
       "steps": "Steps",
       "publish": "Publish",
@@ -475,7 +475,7 @@
       "published": "translations published",
       "publishing": "Publishing",
       "content_to_publish": "WHAT WILL BE PUBLISHED",
-      "whatnow_content": "Safety Message Database content",
+      "whatnow_content": "IFRC National Society Preparedness Messages content",
       "choose_hazard": "Choose Hazard",
       "hazard": "Hazard",
       "content": "Content",
@@ -486,7 +486,7 @@
       "society_name": "National Society",
       "attribution_message": "Attribution message",
       "no_translation": "No content set",
-      "delete_content_translation": "This will remove the selected Safety Message Database content from the current language",
+      "delete_content_translation": "This will remove the selected IFRC Preparedness Messages content from the current language",
       "messages": "Safety messages of the",
       "add_language": "Add new language",
       "no_languages": "Select or create a language to get started",
@@ -509,7 +509,8 @@
       "publish_summary_url": "Attribution URL",
       "publish_summary_message": "Attribution Message",
       "no_key_messages": "No key messages published",
-      "url_required": "URL is required"
+      "url_required": "URL is required",
+      "upload_logo_tooltip": "Must complete the attribution to upload a logo"
     },
     "edit_whatnow": {
       "title": "Title",
@@ -562,7 +563,7 @@
       "download_image": "Download as an Image",
       "download_image_error": "Error downloading image, please make sure you have published all changes and try again.",
       "download_instructions": "Right click and select 'Save image as…' to save",
-      "downloaded_image_alt": "Safety Message Database Instructions",
+      "downloaded_image_alt": "IFRC Preparedness Messages Instructions",
       "add_key_message": "Add Key Safety Message",
       "add_supporting_message": "Add supporting message",
       "early_warning": "Early Warning",
@@ -714,9 +715,9 @@
   "home": {
     "home": "Home",
     "welcome": "Welcome",
-    "admin_intro": "Here you can manage users, edit and publish Safety Message Database content and view API usage.",
-    "ns_admin_intro": "Here you can edit and publish Safety Message Database content",
-    "ns_editor_intro": "Here you can edit Safety Message Database content",
+    "admin_intro": "Here you can manage users, edit and publish IFRC Preparedness Messages content and view API usage.",
+    "ns_admin_intro": "Here you can edit and publish IFRC Preparedness Messages content",
+    "ns_editor_intro": "Here you can edit IFRC Preparedness Messages content",
     "api_user_intro": "Here you view your apps and manage your account.",
     "role_changed_title": "Your role was changed",
     "role_changed_p": "You have been assigned the following role:",
@@ -728,7 +729,7 @@
     "go_audit_log": "View Edit History"
   },
   "landing": {
-    "strapline": "Safety Message Database Service",
+    "strapline": "IFRC National Society Preparedness Messages Service",
     "strapline_part_2": "Global Red Cross / Red Crescent Key Safety Messages",
     "head_1": "IFRC National Society",
     "head_2": "Preparedness Messages",
@@ -793,7 +794,7 @@
       "heading": "Sample Safety Message Format",
       "alert_preview": "Alert preview",
       "what_now_info": "Safety Message Preview",
-      "example_whatnow_request": "Sample Safety Message Database Response",
+      "example_whatnow_request": "Sample IFRC Preparedness Messages Response",
       "example_alert_request": "Sample Alert Response",
       "example_content": "Weather Advisory# 3 FINAL as of 11 AM, Jan. 29, 2018\nFor Tail-End of A Cold Front \n\nThe effect of the Tail-End of A Cold Front has weakened. Improved weather conditions will be experienced over Nome. However, isolated rain showers or thunderstorms, especially during the afternoon or evening, should be expected in these areas due to the west.\n\nWith this development, this is the final advisory for this weather system.",
       "example_content_location_header": "AFFECTED LOCATION",
@@ -827,8 +828,8 @@
       "give_feedback": "Give Feedback",
       "gdpc_logo": "Logo for the Global Disaster Preparedness Center",
       "ifrc_logo": "Logo for the International Red Cross and Red Crescent Movement",
-      "subtitle_1": "About IFRC Key Safety Database",
-      "text_1": "The IFRC Key Safety Database provides access to",
+      "subtitle_1": "IFRC National Society Preparedness Messages",
+      "text_1": "The IFRC National Society Preparedness Messages provides access to",
       "text_2": "Red Cross Red Crescent messages on how people",
       "text_3": "can safely act in the face of hazards",
       "subtitle_2": "Find Out More",
@@ -845,7 +846,7 @@
   "register_form": {
     "heading_1": "Create your free ",
     "heading_2": "IFRC ",
-    "heading_3": "Safety Message Database",
+    "heading_3": "IFRC National Society Preparedness Messages",
     "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
     "subtitle_2": "If you want to access with the API, sign up and share the messages with the 3 step guide.",
     "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
@@ -905,7 +906,7 @@
       "heading": "License and Limitations:"
     },
     "overview": {
-      "body": "The Global Disaster Preparedness Center Safety Message Database Service Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
+      "body": "The IFRC National Society Preparedness Messages Application Program Interface (the “API”) is made available to you by The American National Red Cross (“Red Cross”). The API requires a registration key.  During the registration process, you must agree to the following terms and conditions, together with the terms and conditions in the Red Cross Web Site Terms of Service Agreement available at {0} (collectively, the “API Terms”). The API Terms will govern your use of the API and the downloadable electronic materials made available through the API. {1}",
       "cta": "Click here to register."
     },
     "privacy_policy": {
@@ -948,7 +949,7 @@
     "date": "Date",
     "headline": "Headline",
     "alert": "Alert",
-    "whatnow_info": "Safety Message Database info",
+    "whatnow_info": "IFRC National Society Preparedness Messages info",
     "alert_detail": "Alert Detail",
     "more": "More info",
     "area_affected": "Area Affected",
@@ -975,7 +976,7 @@
   },
   "user_agreement": {
     "title": "User agreement",
-    "para_one": "Before you can access the Safety Message Database Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
+    "para_one": "Before you can access the IFRC National Society Preparedness Messages Portal, please can you read and accept the terms of the user agreement by downloading the document below and clicking the 'I accept' button below.",
     "cta": "I accept",
     "download": "Click here to view the user agreement document (105KB)"
   },

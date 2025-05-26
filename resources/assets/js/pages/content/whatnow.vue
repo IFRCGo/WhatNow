@@ -71,8 +71,8 @@
         <div class="d-flex justify-content-start align-items-start">
           <!-- NS IMG -->
           <div slot="button-content" class="text-dark py-0 mr-3">
-            <div class="upload-img-button">
-              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled"
+            <div class="upload-img-button" v-b-tooltip.hover.right="this.isNew ? $t('content.whatnow.upload_logo_tooltip') : ''">
+              <b-button :variant="'link'" @click="openUploadModal(logoType.NS)" :disabled="isFormDisabled || isNew"
                 class="p-0 d-flex flex-column align-items-center justify-content-center">
                 <img :src="attributionToEdit.imageUrl" v-if="attributionToEdit.imageUrl" :class="{ 'editing-image': editing }" />
                 <div class="upload-img-button-controls" v-if="editing">
@@ -322,7 +322,8 @@ export default {
       },
       logoTypeSelected: null,
       logoFileName: null,
-      contributorIndex: null
+      contributorIndex: null,
+      isNew: false,
     }
   },
   watch: {
@@ -333,6 +334,7 @@ export default {
     },
     selectedSoc() {
       if (this.countryCode !== this.selectedSoc.countryCode && this.selectedSoc) {
+        this.editing = false
         this.$router.push({ name: 'content.whatnow', params: { countryCode: this.selectedSoc.countryCode, regionSlug: this.selectedRegion?.title } })
       }
     },
@@ -528,6 +530,7 @@ export default {
         this.addingNewLanguage = false
         this.editing = false
         this.languageToAdd = null
+        this.isNew = false
       } catch (e) {
         // Find index of translation we've just edited so we can find it in the response from the server
         this.updateErrors.indexError = this.attributionToEdit.translations.findIndex(translation => translation.languageCode === this.selectedLanguage)
@@ -548,11 +551,13 @@ export default {
             imageUrl: '',
 
           }
+          this.isNew = true
           this.attributionToEdit.translations.push(newTranslation)
           this.attributionEditTranslation = newTranslation
         } else {
           this.attributionEditTranslation = attributionTranslation
           this.contributors = this.attributionEditTranslation.contributors
+          this.isNew = false
         }
       }
     },
