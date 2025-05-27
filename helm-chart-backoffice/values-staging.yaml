@@ -73,11 +73,11 @@ ingress:
         nginx.ingress.kubernetes.io/ssl-redirect: "true"
         nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     hosts:
-        - host: "preparemessages-stage.ifrc.org"
+        - host: "preparemessages-qa.ifrc.org"
           paths:
               - path: /
                 pathType: Prefix
     tls:
         - hosts:
-              - "preparemessages-stage.ifrc.org"
+              - "preparemessages-qa.ifrc.org"
           secretName: "ifrc-qa.certificates.secret"
