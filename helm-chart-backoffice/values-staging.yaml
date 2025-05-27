@@ -1,6 +1,6 @@
 # Azure Container Registry details
 image:
-    repository: ifrcsmdb.azurecr.io/whatnow-staging
+    repository: ifrcsmdb.azurecr.io/whatnow-qa
     tag: "latest"
     pullPolicy: Always
 

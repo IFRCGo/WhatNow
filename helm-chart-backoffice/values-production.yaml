@@ -14,9 +14,9 @@ service:
 # Environment variables
 env:
     APP_NAME: 'IFRC National Society Preparedness Messages'
-    APP_ENV: testing
-    APP_DEBUG: true
-    APP_LOG_LEVEL: debug
+    APP_ENV: production
+    APP_DEBUG: false
+    APP_LOG_LEVEL: info
     APP_URL: https://preparemessages.ifrc.org
     GOOGLE_MAPS_KEY:
     DB_CONNECTION: mysql
