@@ -1,0 +1,52 @@
+name: Staging Pipeline
+
+on:
+    pull_request:
+        types:
+            - closed
+        branches:
+            - 'staging'
+
+jobs:
+    build-and-deploy:
+        if: github.event.pull_request.merged == true
+        runs-on: ubuntu-latest
+        steps:
+            - name: 'Checkout GitHub Action'
+              uses: actions/checkout@main
+
+            - name: 'Login via Azure CLI'
+              uses: azure/login@v1
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+            - name: 'Set up Kubernetes'
+              uses: azure/aks-set-context@v2
+              with:
+                  creds: ${{ secrets.AZURE_CREDENTIALS }}
+                  cluster-name: ${{ secrets.AKS_CLUSTER_NAME }}
+                  resource-group: ${{ secrets.AKS_RESOURCE_GROUP }}
+
+            - name: 'Build and push image'
+              uses: azure/docker-login@v1
+              with:
+                  login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+                  username: ${{ secrets.REGISTRY_USERNAME }}
+                  password: ${{ secrets.REGISTRY_PASSWORD }}
+            - run: |
+                  docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} -f ./docker/Dockerfile .
+                  docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:lastest
+
+                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }}
+                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:lastest
+
+            - name: 'Copy staging values file'
+              run: |
+                  cp ./helm-chart-backoffice/values-staging.yaml ./helm-chart-backoffice/values.yaml
+
+
+            - name: 'Deploy to AKS with Helm'
+              run: |
+                  helm upgrade --install whatnow-backoffice-qa ./helm-chart-backoffice \
+                    --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE_QA }} \
+                    --create-namespace
