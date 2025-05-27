@@ -80,4 +80,4 @@ ingress:
     tls:
         - hosts:
               - "preparemessages-stage.ifrc.org"
-          secretName: "ifrc-qa.certificates.secret"
+          secretName: "ifrc.certificates.secret"
