@@ -1,6 +1,6 @@
 # Azure Container Registry details
 image:
-    repository: ifrcsmdb.azurecr.io/whatnow
+    repository: ifrcsmdb.azurecr.io/whatnow-staging
     tag: "latest"
     pullPolicy: Always
 
@@ -42,14 +42,14 @@ env:
     GOOGLE_CLIENT_SECRET:
     GOOGLE_ANALYTICS_TRACKER_ID:
     SENTRY_DSN:
-    BUCKET_URL: https://smdbstorageaccount.blob.core.windows.net/images
+    BUCKET_URL: https://smdbstorageaccount.blob.core.windows.net/images-stage
     IFRC_TRANSLATION_APP_ID: 12
     IFRC_TRANSLATION_API_URL: https://ifrc-translationapi-staging.azurewebsites.net/api
 
 
 
 secrets:
-    dbSecretName: backoffice-credentials
+    dbSecretName: backoffice-credentials-qa
     variables:
         DB_HOST: BACKOFFICE_DB_HOST
         DB_DATABASE: BACKOFFICE_DB_DATABASE
@@ -80,4 +80,4 @@ ingress:
     tls:
         - hosts:
               - "preparemessages-stage.ifrc.org"
-          secretName: "ifrc.certificates.secret"
+          secretName: "ifrc-qa.certificates.secret"
