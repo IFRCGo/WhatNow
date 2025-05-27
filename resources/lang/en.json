@@ -65,6 +65,9 @@
     "title": "No Internet Connection",
     "description": "Please save changes within {time} or progress will be lost"
   },
+  "app": {
+    "staging_banner": "Staging Site"
+  },
   "breadcrumbs": {
     "applications": "Applications",
     "admin_users": "Admin Users",
@@ -468,7 +471,7 @@
       "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
       "whatnow": "IFRC National Society Preparedness Messages",
-      "empty": "There are not messages for this National Society in this language",
+      "empty": "There are no messages for this National Society in this language",
       "steps": "Steps",
       "publish": "Publish",
       "no_publish": "Nothing to publish",
@@ -846,7 +849,7 @@
   "register_form": {
     "heading_1": "Create your free ",
     "heading_2": "IFRC ",
-    "heading_3": "IFRC National Society Preparedness Messages",
+    "heading_3": "National Society Preparedness Messages",
     "subtitle_1": "Help communities prepare for and respond to local hazards with Red Cross Red Crescent actionable safety messages.",
     "subtitle_2": "If you want to access with the API, sign up and share the messages with the 3 step guide.",
     "subtitle_3": "If you are a Red Cross Red Crescent National Society, sign up and you will receive instructions on how to adapt and share your safety messages.",
