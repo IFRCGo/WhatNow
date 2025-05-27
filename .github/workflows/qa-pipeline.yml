@@ -35,10 +35,10 @@ jobs:
                   password: ${{ secrets.REGISTRY_PASSWORD }}
             - run: |
                   docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} -f ./docker/Dockerfile .
-                  docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:lastest
+                  docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:latest
 
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }}
-                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:lastest
+                  docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:latest
 
             - name: 'Copy staging values file'
               run: |
