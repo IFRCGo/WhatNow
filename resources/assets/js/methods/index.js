@@ -89,6 +89,12 @@ const icons = {
   },
   'homeExampleCase3': {
     x1: require('../../img/landing_page/example_case_3.png')
+  },
+  'quoteAuthor1': {
+    x1: require('../../img/landing_page/xavier-castellanos.png')
+  },
+  'quoteAuthor2': {
+    x1: require('../../img/landing_page/fatos-xhengo.png')
   }
 }
 

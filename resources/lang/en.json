@@ -468,7 +468,7 @@
       "title": "Messages",
       "set_attribution": "Set society name and attribution message to publish",
       "whatnow": "IFRC National Society Preparedness Messages",
-      "empty": "No messages for this National Society",
+      "empty": "There are not messages for this National Society in this language",
       "steps": "Steps",
       "publish": "Publish",
       "no_publish": "Nothing to publish",
