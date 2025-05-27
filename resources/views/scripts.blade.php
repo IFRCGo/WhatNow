@@ -2,6 +2,7 @@
 @php
 $config = [
     'appName' => config('app.name'),
+    'appEnv' => config('app.env'),
     'locale' => $locale = app()->getLocale(),
     'locales' => config('app.locales'),
     'translations' => json_decode(file_get_contents(resource_path("lang/{$locale}.json")), true),

@@ -284,13 +284,17 @@
     <h2 class="mid-subt">{{ $t('landing.impact') }}</h2>
     <b-row>
       <b-col class="red-section">
-        <i class="fas fa-user-circle impact-icon"></i>
+        <div class="quote-author-img">
+          <img class="head-img" :src="src('quoteAuthor1')">
+        </div>
         <p class="red-sec-txt">
             {{ $t('landing.quote_description_1') }}
         </p>
         <p class="red-sec-txt">— {{ $t('landing.quote_author_1') }}</p>
         <div class="div-white"></div>
-        <i class="fas fa-user-circle impact-icon"></i>
+        <div class="quote-author-img quote-author-img-2">
+          <img class="head-img" :src="src('quoteAuthor2')">
+        </div>
         <p class="red-sec-txt">
             {{ $t('landing.quote_description_2') }}
         </p>
@@ -609,6 +613,28 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 4rem;
+}
+
+.quote-author-img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.quote-author-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.quote-author-img-2 img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  object-position: -100px -30px;
 }
 
 .impact-icon {
