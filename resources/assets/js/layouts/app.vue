@@ -11,6 +11,7 @@
         </main>
       </b-row>
     </b-container>
+    <div v-if="showEnvBanner" class="environment-banner-container"><div class="environment-banner">{{ $t('app.staging_banner') }}</div></div>
   </div>
 </template>
 
@@ -27,7 +28,8 @@ export default {
   data () {
     return {
       collapseSidebar: false,
-      permissions: permissionsList
+      permissions: permissionsList,
+      showEnvBanner: window?.config?.appEnv === 'testing'
     }
   },
   components: {
@@ -52,3 +54,22 @@ export default {
   }
 }
 </script>
+
+<style>
+.environment-banner-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.environment-banner {
+  background-color: #FF8000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+</style>

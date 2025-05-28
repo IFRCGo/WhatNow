@@ -22,3 +22,4 @@ helm-chart-backoffice/fullchain.pem
 helm-chart-backoffice/privkey.pem
 helm-chart-backoffice/secrets-qa.yml
 helm-chart-backoffice/secrets-prod.yml
+.DS_Store
