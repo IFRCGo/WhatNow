@@ -43,7 +43,7 @@
         <section>
           <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
             <b-card class="bg-light mb-4">
-              <p><a href="https://api-preparemessages-stage.ifrc.org" target="_blank">https://api-preparemessages-stage.ifrc.org/v2</a></p>
+              <p><a :href="apiPrepareCenterUrl" target="_blank">{{ apiPrepareCenterUrl }}</a></p>
           </b-card>
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
@@ -442,10 +442,10 @@ export default {
     }
   },
   mounted() {
-    const laravelEnv = window.LaravelEnv || {}
-    this.adminDocumentationUrl = `${laravelEnv.APP_URL || ''}/admin/documentation`
-    this.apiDocumentationUrl = `https://api-preparemessages-stage.ifrc.org/api/documentation`
-    this.apiPrepareCenterUrl = laravelEnv.RCN_API_URL || ''
+    const Appconfig = window.config || {}
+    this.adminDocumentationUrl = `${Appconfig.url || ''}/admin/documentation`
+    this.apiDocumentationUrl = `${Appconfig.api_url || ''}/api/documentation`
+    this.apiPrepareCenterUrl = `${Appconfig.api_url || ''}`
   },
   methods: {
     toggleResponse() {

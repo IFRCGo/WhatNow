@@ -2,6 +2,8 @@
 @php
 $config = [
     'appName' => config('app.name'),
+    'url' => config('app.url'),
+    'api_url'=> config('rcnapi.url'),
     'appEnv' => config('app.env'),
     'locale' => $locale = app()->getLocale(),
     'locales' => config('app.locales'),
