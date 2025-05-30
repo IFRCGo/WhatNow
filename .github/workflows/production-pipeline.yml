@@ -35,7 +35,7 @@ jobs:
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
-            - name: 'Copy staging values file'
+            - name: 'Copy production values file'
               run: |
                   cp ./helm-chart-backoffice/values-production.yaml ./helm-chart-backoffice/values.yaml
 
