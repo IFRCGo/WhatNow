@@ -635,7 +635,7 @@ export default {
     filteredRoles () {
       const filteredRoleArray = this.roleOptions
       filteredRoleArray.forEach(function (role, index) {
-        if (role.name === 'API User') {
+        if (role.name === 'IFRC Support') {
           filteredRoleArray.splice(index, 1)
         }
       })
