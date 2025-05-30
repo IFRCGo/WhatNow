@@ -344,89 +344,101 @@ export default {
       apiPrepareCenterUrl: null,
       showResponse: false,
       exampleResponse: `{
-        "data": [
-          {
-            "id": "581",
+    "data": [
+        {
+            "id": "3012",
             "countryCode": "USA",
             "eventType": "Earthquake",
             "regionName": "National",
             "subnational": null,
             "attribution": {
-              "name": "American Red Cross",
-              "countryCode": "USA",
-              "url": "https://preparemessages.ifrc.org/admin/content/whatnow/USA",
-              "imageUrl": "https://images.blob.core.windows.net/images/USA_logo.jpg",
-              "translations": {
-                "de": {
-                  "languageCode": "de",
-                  "name": "Tests",
-                  "attributionMessage": "Testss",
-                  "contributors": [],
-                  "published": false
-                },
-                "en": {
-                  "languageCode": "en",
-                  "name": "International Federation of Red Cross and Red Crescent Societies",
-                  "attributionMessage": "Key Messages from International Federation of Red Cross and Red Crescent Societies. Editado",
-                  "contributors": [
-                    {
-                      "id": 1,
-                      "name": "Test",
-                      "logo": "https://images.blob.core.windows.net/images/USA_en_contributor_logo0.jpg"
+                "name": "American Red Cross",
+                "countryCode": "USA",
+                "url": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/coronavirus-safety/preparing-for-disaster-during-covid-19.html",
+                "imageUrl": "https://smdbstorageaccount.blob.core.windows.net/images-stage/USA_logo.png",
+                "translations": {
+                    "en": {
+                        "languageCode": "en",
+                        "name": "American Red Cross",
+                        "attributionMessage": "Key Messages from American Red Cross",
+                        "contributors": [],
+                        "published": true
                     }
-                  ],
-                  "published": true
-                },
-                "es": {
-                  "languageCode": "es",
-                  "name": "American Red Cross",
-                  "attributionMessage": "Test",
-                  "contributors": [],
-                  "published": false
                 }
-              }
             },
             "translations": {
-              "en": {
-                "id": "3276",
-                "lang": "en",
-                "webUrl": "",
-                "title": "Key Messages for Earthquake",
-                "description": "These are actions to take to reduce risk and protect you and your household from earthquakes.",
-                "published": true,
-                "createdAt": "2017-02-27T19:06:31+00:00",
-                "stages": {
-                  "warning": null,
-                  "immediate": null,
-                  "recover": null,
-                  "anticipated": null,
-                  "assess_and_plan": null,
-                  "mitigate_risks": null,
-                  "prepare_to_respond": null
+                "en": {
+                    "id": "5632",
+                    "lang": "en",
+                    "webUrl": "https://www.redcross.org/get-help/how-to-prepare-for-emergencies/types-of-emergencies/earthquake.html",
+                    "title": "Key Messages for Earthquake",
+                    "description": "Take these actions to prepare for earthquakes so that you and your loved ones can reduce risk, stay safe, and recover quickly. Earthquakes strike suddenly and without warning.\\n\\nEarthquakes can bring mild to violent shaking and can occur anytime, anywhere. Earthquakes can happen at any time of the year and occur without warning. All U.S. states and territories are at some risk for earthquakes. The risk is higher in identified seismic zones. Larger earthquakes may cause deaths, injuries, and extensive property damage. Most casualties and injuries during an earthquake occur when: people fall while trying to walk or run during the shaking; when they are hit by falling, flying, or sliding household items or non-structural debris; and/or when they are struck or trapped by collapsing walls or other parts of the building. Transportation, power, water, gas, and other services may be disrupted. In some areas, shaking can cause liquefaction— when the ground acts more like a liquid. When this happens, the ground can no longer support the weight of a building. In coastal areas, earthquakes under the sea floor can cause tsunamis.\\n\\nThe COVID-19 pandemic continues to pose a serious public health risk. Know how to help protect yourself and others by reviewing safety tips at cdc.gov/coronavirus.",
+                    "published": true,
+                    "createdAt": "2020-08-17T22:50:18+00:00",
+                    "stages": {
+                        "warning": [
+                            {
+                                "title": "Earthquakes strike suddenly and with no warning. There is no way for scientists to predict the magnitude, timing, and location of a future earthquake. Always be prepared to respond at the first signs of shaking.",
+                                "content": []
+                            }
+                        ],
+                        "immediate": [
+                            {
+                                "title": "Drop, Cover, and Hold On when the earth shakes.  Drop: Wherever you are, drop down on to your hands and knees. If you’re using a wheelchair or walker with a seat, make sure your wheels are locked and remain seated until the shaking stops.  Cover: Cover your head and neck with your arms. If a sturdy table or desk is nearby, crawl underneath it for shelter. If no shelter is nearby, crawl next to an interior wall (away from windows). Crawl only if you can reach better cover without going through an area with more debris. Stay on your knees or bent over to protect vital organs.  Hold on: If you are under a table or desk, hold on with one hand and be ready to move with it if it moves. If seated and unable to drop to the floor, bend forward, cover your head with your arms and hold on to your neck with both hands.",
+                                "content": []
+                            },
+                            {
+                                "title": "In bed: Do not get out of bed. Lie face down to protect your vital organs, and Cover your head and neck with a pillow, keeping your arms as close to your head as possible. Hold On to your head and neck with both hands until shaking stops. You are less likely to be injured by fallen and broken objects by staying where you are.",
+                                "content": []
+                            },
+                            {
+                                "title": "In a high-rise: Drop, Cover, and Hold On. Avoid windows and other hazards. Do not use elevators. Do not be surprised if sprinkler systems or fire alarms activate.",
+                                "content": []
+                            },
+                            {
+                                "title": "Outdoors: Move to a clear area if you can safely do so. Avoid power lines, trees, signs, buildings, vehicles, and other hazards. Then, Drop, Cover, and Hold On. This protects you from any objects that may be thrown from the side, even if nothing is directly above you.",
+                                "content": []
+                            },
+                            {
+                                "title": "Driving: Pull over to the side of the road, stop, and set the parking brake. Avoid overpasses, bridges, power lines, signs and other hazards. Stay inside the vehicle until the shaking stops, then proceed carefully by avoiding fallen debris, cracked or shifted pavement, and emergency vehicles. If a power line falls on the car, stay inside until a trained person removes the wire.",
+                                "content": []
+                            },
+                            {
+                                "title": "Near the shore: As soon as the shaking reduces so that you are able to stand, walk quickly to high ground or inland, as a tsunami may arrive soon. Don’t wait for officials to issue a warning. Walk, rather than drive, to avoid traffic, debris, and other hazards.",
+                                "content": []
+                            },
+                            {
+                                "title": "Once the shaking has stopped, wait a minute before getting up and then look around for debris or other dangers. If you are able to safely move to exit the building and there is an open space to go to, exit the building and avoid damaged areas and downed power lines. For buildings in metropolitan areas that do not have nearby open space, it may be safer to remain in the building until you are certain you will avoid additional glass and debris that may fall from nearby buildings. Remember aftershocks may cause further damage to weakened structures and present hazards to those exiting buildings. Drop, Cover, and Hold On whenever you feel shaking.",
+                                "content": []
+                            },
+                            {
+                                "title": "If you are trapped, do not move about or kick up dust. Cover your mouth with a handkerchief or clothing. Shout only as a last resort. Shouting can cause you to inhale dangerous amounts of dust. Use your cell phone to call or text for help. Tap on a pipe or wall, or use a whistle, if available, so rescuers can locate you.",
+                                "content": []
+                            },
+                            {
+                                "title": "If you are in a damaged building and there is a safe way out through the debris, leave and go to an open space outside. If you can do so safely, take a moment to take what you might need immediately and can carry easily, such as a purse or evacuation kit. Once outside, do not re-enter until the building is certified to be safe.",
+                                "content": []
+                            },
+                            {
+                                "title": "Check for injuries and provide assistance if you have training.",
+                                "content": []
+                            },
+                            {
+                                "title": "Once safe, monitor local news reports (battery-operated radio, TV, and cell phone text alerts) for emergency information and instructions.",
+                                "content": []
+                            }
+                        ],
+                        "recover": null,
+                        "anticipated": null,
+                        "assess_and_plan": null,
+                        "mitigate_risks": null,
+                        "prepare_to_respond": null
+                    }
                 }
-              },
-              "es": {
-                "id": "3277",
-                "lang": "es",
-                "webUrl": "",
-                "title": "Mensajes clave para terremoto",
-                "description": "Estas son medidas para reducir el riesgo y proteger a su familia y a usted mismo de los terremotos.",
-                "published": true,
-                "createdAt": "2017-02-27T19:06:31+00:00",
-                "stages": {
-                  "warning": null,
-                  "immediate": null,
-                  "recover": null,
-                  "anticipated": null,
-                  "assess_and_plan": null,
-                  "mitigate_risks": null,
-                  "prepare_to_respond": null
-                }
-              }
             }
-          }
-        ]
-      }`
+        }
+    ]
+}`
     }
   },
   mounted() {
