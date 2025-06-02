@@ -40,9 +40,8 @@
               {{ $t('landing.footer.subtitle_3') }}
             </h2>
             <br>
-
-            <router-link class="footer-link" :to="{ name: 'legal_terms' }">
-              {{ $t('landing.footer.terms') }}
+            <router-link class="footer-link" :to="{ name: 'terms-service' }">
+              {{ $t('landing.footer.terms_service') }}
             </router-link>
           </div>
           <div>
