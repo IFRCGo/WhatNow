@@ -3,7 +3,7 @@
 $config = [
     'appName' => config('app.name'),
     'url' => config('app.url'),
-    'api_url'=> config('rcnapi.url'),
+    'api_url'=> config('app.api_url'),
     'appEnv' => config('app.env'),
     'locale' => $locale = app()->getLocale(),
     'locales' => config('app.locales'),
