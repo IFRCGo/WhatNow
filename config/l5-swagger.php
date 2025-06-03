@@ -234,6 +234,6 @@ return [
     |--------------------------------------------------------------------------
      */
     'constants' => [
-        'L5_SWAGGER_CONST_HOST' => config('app.url') . '/api',
+        'L5_SWAGGER_CONST_HOST' => env('APP_URL', null),
     ],
 ];
