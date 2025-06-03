@@ -18,6 +18,7 @@ env:
     APP_DEBUG: false
     APP_LOG_LEVEL: info
     APP_URL: https://preparemessages.ifrc.org
+    API_URL: https://api-preparemessages.ifrc.org/api
     GOOGLE_MAPS_KEY:
     DB_CONNECTION: mysql
     DB_PORT: 3306
