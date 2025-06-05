@@ -4,6 +4,12 @@ export const NS_ADMIN = 'NS Admin'
 export const NS_EDITOR = 'NS Editor'
 export const API_USER = 'API User'
 
+// role types ID
+export const GDPC_ADMIN_ID = 3
+export const NS_ADMIN_ID = 4
+export const NS_EDITOR_ID = 5
+export const API_USER_ID = 1
+
 // permission types
 export const VIEW_BACKEND = 'view-backend'
 export const USERS_VIEW = 'users-view'

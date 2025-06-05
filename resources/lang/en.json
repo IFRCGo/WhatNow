@@ -396,10 +396,10 @@
   "new_welcome": {
     "title_1": "Welcome to",
     "red_title": "IFRC",
-    "title_2": "Safety",
-    "title_3": "Message Database",
+    "title_2": "National Society",
+    "title_3": "Preparedness Messages",
     "text_header": "Access and share Red Cross Red Crescent safety messages across your platforms.",
-    "text_header_2": "Follow the #-step guide below..",
+    "text_header_2": "Follow the 3-step guide below..",
     "bottom_subtitle": "Contact IFRC",
     "bottom_text": "Email the IFRC team if you have questions: im@ifrc.org",
     "bottom_btn": "Contact IFRC",
@@ -437,6 +437,19 @@
         "header": "Step 3: Share the messages",
         "text": "Look for the option to download the messages. You can share the set of messages as an image or as a PDF. Download and review to ensure you are sharing the right messages."
       }
+    },
+    "skip_btn": "Skip this step",
+    "skip_checkbox": "Don't show this again",
+    "contact_modal": {
+      "title": "ROLE REQUEST",
+      "subtitle": "If you have any questions or need support, please contact us at",
+      "question_1": "What role are you requesting access to?",
+      "question_2": "Which National Society do you want to be part of?",
+      "send": "Send",
+      "error_role": "Role is required",
+      "error_society": "National Society is required",
+      "email_subject": "Role Request for IFRC National Society Preparedness Messages",
+      "email_body_structure": "I would like to request access to the following role: {role}. I would like to be part of the following National Society: {society}."
     }
   },
   "upload_modal": {
@@ -748,10 +761,10 @@
     "learn_more": "Learn more",
     "watch_video": "Watch video",
     "example_case": "Example Use Case",
-    "quote_author_1": " Xavier Castellanos, IFRC Under Secretary General, National Society Development and Operations",
-    "quote_description_1": "Evidence shows that harmonized, action-oriented safety messages from a trusted source enhances household preparedness. The more channels that share the messages, the more people receive guidance in a time of need and feel confident to act safely. This is a life-saving tool free for you to use to support your communities today.",
+    "quote_author_1": "Xavier Castellanos, IFRC Under Secretary General, National Society Development and Operations",
+    "quote_description_1": "❝Evidence shows that harmonized, action-oriented safety messages from a trusted source enhances household preparedness. The more channels that share the messages, the more people receive guidance in a time of need and feel confident to act safely. This is a life-saving tool free for you to use to support your communities today.❞",
     "quote_author_2": "Fatos Xhengo, Coordinator of Disaster Preparedness and Response Programs, Albanian Red Cross",
-    "quote_description_2": "At the Albanian Red Cross, we have seen firsthand how reliable early warning messages can help to protect people and save lives. It is important that we collaborate with government partners to ensure communities receive clear and consistent hazard information they can trust. Strengthening this cooperation enhances public confidence and helps people take the right actions to stay safe.",
+    "quote_description_2": "❝At the Albanian Red Cross, we have seen firsthand how reliable early warning messages can help to protect people and save lives. It is important that we collaborate with government partners to ensure communities receive clear and consistent hazard information they can trust. Strengthening this cooperation enhances public confidence and helps people take the right actions to stay safe.❞",
     "api": "API",
     "hurricane": "Include messages with hurricane early warning alerts",
     "warning_alerts": "warning alerts",
