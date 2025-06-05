@@ -287,22 +287,22 @@
         <div class="quote-author-img">
           <img class="head-img" :src="src('quoteAuthor1')">
         </div>
-        <p class="red-sec-txt">
+        <p class="quote-author-p">
             {{ $t('landing.quote_description_1') }}
         </p>
-        <p class="red-sec-txt">— {{ $t('landing.quote_author_1') }}</p>
+        <p class="quote-author-author">— {{ $t('landing.quote_author_1') }}</p>
         <div class="div-white"></div>
         <div class="quote-author-img quote-author-img-2">
           <img class="head-img" :src="src('quoteAuthor2')">
         </div>
-        <p class="red-sec-txt">
+        <p class="quote-author-p">
             {{ $t('landing.quote_description_2') }}
         </p>
-        <p class="red-sec-txt">— {{ $t('landing.quote_author_2') }}</p>
+        <p class="quote-author-author">— {{ $t('landing.quote_author_2') }}</p>
       </b-col>
     </b-row>
     <div class="btn-bottom-container">
-      <b-button class="btn-primary btn-bottom" @click="$router.push('/register')">Sign up today</b-button>
+      <b-button class="btn-primary btn-bottom" @click="$router.push('/register')">{{ $t('landing.sign_up_today') }}</b-button>
     </div>
   </div>
 </template>
@@ -331,6 +331,7 @@ export default {
   position: relative;
   left: 3rem;
   bottom: 20rem;
+  max-width: 640px;
 }
 
 .white-subtitle {
@@ -652,13 +653,24 @@ export default {
   margin-bottom: 3rem;
 }
 
-.red-sec-txt {
+.quote-author-p {
+  color: white;
+  font-size: 1rem;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 35px;
+  font-weight: 400;
+  text-align: justify;
+}
+
+.quote-author-author {
   color: white;
   font-size: 1.2rem;
   max-width: 1200px;
   text-align: center;
   line-height: 35px;
   font-weight: 600;
+  text-align: end;
 }
 
 .btn-bottom-container {
