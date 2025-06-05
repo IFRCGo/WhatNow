@@ -178,7 +178,6 @@ export default {
         { title: this.$t('new_welcome.slider_1.step_1.header'), text: this.$t('new_welcome.slider_1.step_1.text'), icon: 'fas fa-th' },
         { title: this.$t('new_welcome.slider_1.step_2.header'), text: this.$t('new_welcome.slider_1.step_2.text'), text2: this.$t('new_welcome.slider_1.step_2.text_2'), icon: 'fas fa-shield-alt' },
         { title: this.$t('new_welcome.slider_1.step_3.header'), text: this.$t('new_welcome.slider_1.step_3.text'), icon: 'fas fa-comments' },
-        { title: this.$t('new_welcome.slider_1.step_4.header'), text: this.$t('new_welcome.slider_1.step_4.text'), icon: 'fas fa-share' }
       ],
       interval: null,
       slides2: [
