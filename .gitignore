@@ -18,4 +18,8 @@ yarn-error.log
 /public/mix-manifest.json
 phpunit.dusk.xml
 .php_cs.cache
-helm-chart-backoffice/secrets.yml
+helm-chart-backoffice/fullchain.pem
+helm-chart-backoffice/privkey.pem
+helm-chart-backoffice/secrets-qa.yml
+helm-chart-backoffice/secrets-prod.yml
+.DS_Store

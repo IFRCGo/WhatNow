@@ -1,11 +1,7 @@
-name: development-pipeline
+name: Production Pipeline
 
 on:
-    pull_request:
-        types:
-            - closed
-        branches:
-            - 'develop'
+    workflow_dispatch:  # Allows manual execution
 
 jobs:
     build-and-deploy:
@@ -18,10 +14,6 @@ jobs:
               uses: azure/login@v1
               with:
                   creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-            - name: 'Copy staging values file'
-              run: |
-                  cp ./helm-chart-backoffice/values-staging.yaml ./helm-chart-backoffice/values.yaml
 
             - name: 'Set up Kubernetes'
               uses: azure/aks-set-context@v2
@@ -37,11 +29,17 @@ jobs:
                   username: ${{ secrets.REGISTRY_USERNAME }}
                   password: ${{ secrets.REGISTRY_PASSWORD }}
             - run: |
+                  cp swagger.prod .env
                   docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
                   docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
+
+            - name: 'Copy production values file'
+              run: |
+                  cp ./helm-chart-backoffice/values-production.yaml ./helm-chart-backoffice/values.yaml
+
 
             - name: 'Deploy to AKS with Helm'
               run: |
