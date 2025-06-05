@@ -41,7 +41,8 @@ class UserRepository extends Repository
     {
         $userData = [
             'email' => $input['email'],
-            'confirmation_code' => (string) UserConfirmationToken::generate()
+            'confirmation_code' => (string) UserConfirmationToken::generate(),
+            'confirmed_role' => $input['confirmed_role'] ?? false,
         ];
 
         if (isset($input['password'])) {

@@ -21,7 +21,6 @@ RUN apt-get update && \
     build-essential \
     libssl-dev \
     zlib1g-dev \
-    libpng-dev \
     libjpeg-dev \
     libfreetype6-dev &&\
     apt-get clean
