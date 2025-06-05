@@ -1,4 +1,4 @@
-FROM composer:2 as composer
+FROM composer:2 AS composer
 
 FROM php:7.4-apache
 
@@ -21,7 +21,6 @@ RUN apt-get update && \
     build-essential \
     libssl-dev \
     zlib1g-dev \
-    libpng-dev \
     libjpeg-dev \
     libfreetype6-dev &&\
     apt-get clean
