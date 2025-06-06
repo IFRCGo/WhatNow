@@ -152,6 +152,7 @@ final class TermsController extends ApiController
 
         $terms = $this->terms->create((string) $request->get('version'), $request->get('content'), auth()->user()->id);
 
+        // commented out to avoid sending emails on every terms update
         // $users = $this->users->allNotifiablePublicUsers();
         // $route = route('login');
         // $subject = trans('terms.email.subject', ['app_name' => config('app.name')]);
