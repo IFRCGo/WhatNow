@@ -152,18 +152,22 @@ final class TermsController extends ApiController
 
         $terms = $this->terms->create((string) $request->get('version'), $request->get('content'), auth()->user()->id);
 
-        $users = $this->users->allNotifiablePublicUsers();
-        $emails = $users->pluck('email')->implode(',');
-        $route = route('login');
-        $subject = trans('terms.email.subject', ['app_name' => config('app.name')]);
-        $html = $this->mailApiService->buildTermsAndConditionsTemplate($route);
+        // $users = $this->users->allNotifiablePublicUsers();
+        // $route = route('login');
+        // $subject = trans('terms.email.subject', ['app_name' => config('app.name')]);
+        // $html = $this->mailApiService->buildTermsAndConditionsTemplate($route);
 
-        $this->mailApiService->sendMail(
-            $emails,
-            $subject,
-            $html,
-            true, // Send as bulk email
-        );
+        // $users->pluck('email')
+        // ->chunk(25)
+        // ->each(function ($emailChunk) use ($subject, $html) {
+        //     $emails = $emailChunk->implode(',');
+        //     $this->mailApiService->sendMail(
+        //         $emails,
+        //         $subject,
+        //         $html,
+        //         true
+        //     );
+        // });
 
 
         return TermsResource::make($terms)->response()->setStatusCode(JsonResponse::HTTP_CREATED);
