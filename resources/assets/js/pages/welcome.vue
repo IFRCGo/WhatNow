@@ -3,9 +3,9 @@
     <b-row class="head-component">
       <b-col>
         <div>
-          <img class="head-img" :src="src('landingHead')">
+          <img class="head-img mt-negative-header" :src="src('landingHead')">
           <div class="top-head">
-            <h2 class="white-subtitle">{{ $t('landing.head_1') }}</h2>
+            <h2 class="white-subtitle-top">{{ $t('landing.head_1') }}</h2>
             <h2 class="white-subtitle">{{ $t('landing.head_2') }}</h2>
             <p class="white-text mt-4 pre-line line-height-50">{{ $t('landing.head_text') }}</p>
             <div class="bottom-head">
@@ -19,7 +19,7 @@
           </div>
         </div>
       </b-col>
-      <b-col>
+      <b-col class="map-column">
         <img class="map-img" :src="src('mapImg')">
       </b-col>
     </b-row>
@@ -337,7 +337,14 @@ export default {
 .white-subtitle {
   color: white;
   font-size: 3rem;
-
+  margin-top: 0; /* Asegurarse de que no haya margen en pantallas grandes */
+  margin-bottom: 0; /* Mantener consistencia entre los headings */
+}
+.white-subtitle-top {
+  color: white;
+  font-size: 3rem;
+  margin-top: 0; /* Asegurarse de que no haya margen en pantallas grandes */
+  margin-bottom: 0; /* Mantener consistencia entre los headings */
 }
 
 .white-text {
@@ -698,6 +705,29 @@ export default {
   }
 }
 
+@media screen and (max-width: 1150px) {
+  .head-component {
+    flex-direction: column;
+  }
+
+  .top-head {
+    position: relative;
+    bottom: 20rem;
+  }
+
+  .head-img {
+    width: 80%;
+  }
+
+  .map-column {
+    display: none; /* Oculta el mapa en pantallas menores a 1150px */
+  }
+
+  .it-works {
+    margin-top: 0;
+  }
+}
+
 @media screen and (max-width: 1110px) {
   .head-component {
     flex-direction: column;
@@ -809,6 +839,9 @@ export default {
   .white-subtitle {
     font-size: 2.6rem;
   }
+  .white-subtitle-top {
+    font-size: 2.6rem;
+  }
   .works-img {
     width: 4rem;
     height: 4rem;
@@ -827,12 +860,32 @@ export default {
   .white-subtitle {
     font-size: 2rem;
   }
+  .white-subtitle-top {
+    font-size: 2rem;
+  }
   .line-item {
       flex-direction: column;
       font-size: 0.8rem;
     }
 }
+@media screen and (max-width: 480px) {
+  .white-subtitle-top {
+    font-size: 1.8rem;
+    margin-top: 70px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .white-subtitle {
+    font-size: 1.8rem;
+    margin-top: 0;
+    padding-top: 5px; /* Pequeño espacio para separación visual */
+  }
+}
+
+.mt-negative-header {
+  margin-top: -8.5px;
+}
 
 
 </style>
-
