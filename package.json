@@ -65,5 +65,9 @@
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.7.10",
     "webpack-bundle-analyzer": "^2.9.0"
+  },
+  "overrides": {
+    "cipher-base": "^1.0.5",
+    "sha.js": "^2.4.12"
   }
 }
