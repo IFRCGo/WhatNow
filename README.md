@@ -105,7 +105,7 @@ Ensure the following tools are installed on your system:
 | `php artisan migrate`        | Runs database migrations                         |
 | `php artisan db:seed`        | Seeds the database with sample data              |
 | `php artisan make:model`     | Creates a new Eloquent model                     |
-| `php artisan make:controller`| Creates a new controller                         |
+| `php artisan make:controller`| Creates a new controller                         | 
 
 ## Documentation
 

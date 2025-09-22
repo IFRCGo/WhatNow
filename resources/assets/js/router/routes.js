@@ -50,9 +50,9 @@ export default [
       component: require('~/pages/home').default
     },
     {
-      path: '/new-welcome',
-      name: 'new-welcome',
-      component: require('~/pages/new-welcome').default
+      path: '/get-started',
+      name: 'get-started',
+      component: require('~/pages/get-started').default
     },
     {
       path: '/user-agreement',

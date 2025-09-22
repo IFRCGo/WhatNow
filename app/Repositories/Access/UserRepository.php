@@ -41,7 +41,8 @@ class UserRepository extends Repository
     {
         $userData = [
             'email' => $input['email'],
-            'confirmation_code' => (string) UserConfirmationToken::generate()
+            'confirmation_code' => (string) UserConfirmationToken::generate(),
+            'confirmed_role' => $input['confirmed_role'] ?? false,
         ];
 
         if (isset($input['password'])) {
@@ -235,10 +236,15 @@ class UserRepository extends Repository
 
     public function allNotifiablePublicUsers()
     {
-        return $this->query()->whereHas('roles', function ($query) {
-            $query->where('all', '=', 0);
-            $query->doesntHave('permissions');         })->whereHas('userProfile', function ($query) {
-            $query->where('notifications_enabled', '=', 1);
-        })->get();
+        return $this->query()
+            ->where('activated', true)
+            ->whereHas('roles', function ($query) {
+                $query->where('all', '=', 0)
+                    ->doesntHave('permissions');
+            })
+            ->whereHas('userProfile', function ($query) {
+                $query->where('notifications_enabled', '=', 1);
+            })
+            ->get();
     }
 }

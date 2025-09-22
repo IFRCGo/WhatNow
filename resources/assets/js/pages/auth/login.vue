@@ -60,6 +60,7 @@
 <script>
 import Form from 'vform'
 import PreviousRoute from '~/utils/previousRoute'
+import { API_USER_ID } from '../../store/permissions'
 
 export default {
   props: ['confirmed', 'confirmFailed'],
@@ -70,7 +71,7 @@ export default {
   data: () => ({
     form: new Form({
       email: '',
-      password: ''
+      password: '',
     }),
     showPassword: false
   }),
@@ -87,6 +88,16 @@ export default {
 
       localStorage.removeItem('soc')
       localStorage.removeItem('lang')
+
+      const user = this.$store.getters['auth/user'];
+      const role = user?.data?.role?.id;
+      const confirmedRole = user?.data?.confirmed_role;
+
+      if (role === API_USER_ID && !confirmedRole) {
+        console.log('navigate to get-started')
+        this.$router.push({ name: 'get-started' })
+        return
+      }
 
       if (PreviousRoute.hasRoute) {
         this.$router.push(PreviousRoute.route)

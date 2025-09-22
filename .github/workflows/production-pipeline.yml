@@ -29,6 +29,7 @@ jobs:
                   username: ${{ secrets.REGISTRY_USERNAME }}
                   password: ${{ secrets.REGISTRY_PASSWORD }}
             - run: |
+                  cp swagger.prod .env
                   docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
                   docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 

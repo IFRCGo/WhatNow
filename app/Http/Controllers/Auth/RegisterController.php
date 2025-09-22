@@ -97,6 +97,8 @@ class RegisterController extends Controller
 
                 $data['terms_version'] = $this->terms->getLatestTermsVersion();
 
+                $data['confirmed_role'] = false;
+
         $user = $this->users->createUser($data);
 
         if (! $user->isConfirmed()) {
