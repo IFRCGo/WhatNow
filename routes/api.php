@@ -70,6 +70,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('apps/{id}', 'WhatNow\ApplicationController@get'); // Get specific app
     Route::delete('apps/{id}', 'WhatNow\ApplicationController@delete'); // Delete app
     Route::patch('apps/{id}', 'WhatNow\ApplicationController@update'); // Update app
+    Route::patch('apps/{id}/activate', 'WhatNow\ApplicationController@activate'); // Activate app
+    Route::patch('apps/{id}/deactivate', 'WhatNow\ApplicationController@deactivate'); // Deactivate app
 
     // Audit and history
     Route::get('history', 'Audit\HistoryController@list'); // List all history
