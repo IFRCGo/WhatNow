@@ -21,10 +21,10 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
  */
 final class ApplicationController extends ApiController
 {
-    
+
     private $client;
 
-    
+
     public function __construct(RcnApiClient $client)
     {
         $this->client = $client->application();
@@ -207,6 +207,82 @@ final class ApplicationController extends ApiController
              return $this->respondWithError($e);
          }
      }
+
+    /**
+     * @OA\Patch(
+     *     path="/apps/{id}/activate",
+     *     tags={"Applications"},
+     *     summary="Activate an application",
+     *     description="Activates a specific application by its ID",
+     *     operationId="activateApplication",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the application to activate",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
+    public function activate(Request $request, int $id)
+    {
+        try {
+            $application = $this->client->activateApplication($id);
+
+            return ApplicationResource::make($application);
+        } catch (RcnApiResourceNotFoundException $e) {
+            return $this->respondWithNotFound($e);
+        } catch (RcnApiException $e) {
+            return $this->respondWithError($e);
+        }
+    }
+
+    /**
+     * @OA\Patch(
+     *     path="/apps/{id}/deactivate",
+     *     tags={"Applications"},
+     *     summary="Deactivate an application",
+     *     description="Deactivates a specific application by its ID",
+     *     operationId="deactivateApplication",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         description="ID of the application to deactivate",
+     *         @OA\Schema(type="integer", example=1)
+     *     ),
+     *     security={{"bearerAuth": {}}},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful response",
+     *         @OA\JsonContent(
+     *             type="object",
+     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
+     *         )
+     *     )
+     * )
+     */
+    public function deactivate(Request $request, int $id)
+    {
+        try {
+            $application = $this->client->deactivateApplication($id);
+
+            return ApplicationResource::make($application);
+        } catch (RcnApiResourceNotFoundException $e) {
+            return $this->respondWithNotFound($e);
+        } catch (RcnApiException $e) {
+            return $this->respondWithError($e);
+        }
+    }
 
     /**
      * @OA\Delete(
