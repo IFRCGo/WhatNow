@@ -7,8 +7,6 @@
     "hot": "mix watch --hot",
     "production": "mix --production",
     "lint": "eslint resources/assets/js",
-    "transifex:push": "tx push -s",
-    "transifex:pull": "tx pull -a"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.0.0",
