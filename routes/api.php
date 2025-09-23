@@ -15,7 +15,6 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('terms/latest', 'Terms\TermsController@latest'); // Get latest terms version
 
     // Instructions and event types
-    Route::get('instructions/{id}/{translation}/{stage}/download', 'WhatNow\InstructionController@renderImage'); // Download instruction image
     Route::get('event-types/', 'WhatNow\EventTypeController@list'); // List all event types
     Route::post('event-types/', 'WhatNow\EventTypeController@create'); // Create new event type
     Route::post('admin/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

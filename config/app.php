@@ -90,7 +90,6 @@ return [
 
 
         App\Classes\RcnApi\RcnApiServiceProvider::class,
-        App\Providers\ImageClientServiceProvider::class,
     ],
 
 
