@@ -2,12 +2,6 @@ FROM composer:2 AS composer
 
 FROM php:7.4-apache
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-RUN php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-RUN php composer-setup.php
-RUN php -r "unlink('composer-setup.php');"
-RUN mv composer.phar /usr/local/bin/composer
-
 RUN apt-get update && \
     apt-get install -y \
     libzip-dev \
@@ -22,43 +16,42 @@ RUN apt-get update && \
     libssl-dev \
     zlib1g-dev \
     libjpeg-dev \
-    libfreetype6-dev &&\
-    apt-get clean
+    libfreetype6-dev \
+    nodejs \
+    npm && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install \
-    pdo \
-    pdo_mysql \
-    zip \
-    gd && \
+RUN docker-php-ext-install pdo pdo_mysql zip gd && \
     a2enmod rewrite
 
-COPY ./docker/vhost.conf /etc/apache2/sites-available/000-default.conf
-COPY ./ /var/www/html
 
-# Set working directory
+COPY --from=composer /usr/bin/composer /usr/local/bin/composer
+
 WORKDIR /var/www/html
 
-# Set correct permissions for Laravel
-RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public
-RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public
+COPY composer.json composer.lock ./
+RUN composer install --prefer-dist --no-scripts --no-autoloader
+
+COPY package.json package-lock.json ./
+
+RUN npm install
+
+COPY . .
 
 
-# Install Composer dependencies
-RUN composer install --prefer-dist --optimize-autoloader
+RUN composer dump-autoload --optimize
 
-# Generate Swagger documentation
-RUN php artisan l5-swagger:generate
 
-# Set permissions for Laravel storage and cache
+RUN npm run production
+
+COPY ./docker/vhost.conf /etc/apache2/sites-available/000-default.conf
+
+
 RUN mkdir -p storage/framework/sessions \
     storage/framework/views \
     storage/framework/cache \
-    && chmod -R 775 storage bootstrap/cache \
-    && chown -R www-data:www-data storage bootstrap/cache
+    && chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs && \
-    node -v && npm -v
-
-RUN npm install
-RUN npm run production
+RUN php artisan l5-swagger:generate
