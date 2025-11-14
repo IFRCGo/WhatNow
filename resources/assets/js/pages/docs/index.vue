@@ -47,7 +47,7 @@
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
 
-        <!-- Authentication Section -->
+        <!-- Authentication Section --> 
         <section>
           <h2 class="steps" id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
           <i18n path="documentation.steps.four.body" tag="p" class="u-text-wrap">
