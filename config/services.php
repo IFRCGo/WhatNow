@@ -4,26 +4,6 @@ return [
 
 
 
-    'mailgun' => [
-        'domain' => env('MAILGUN_DOMAIN'),
-        'secret' => env('MAILGUN_SECRET'),
-    ],
-
-    'ses' => [
-        'key' => env('SES_KEY'),
-        'secret' => env('SES_SECRET'),
-        'subnationals' => env('SES_REGION','us-west-1')
-    ],
-
-    'sparkpost' => [
-        'secret' => env('SPARKPOST_SECRET'),
-    ],
-
-    'stripe' => [
-        'model' => \App\Models\Access\User\User::class,
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
-    ],
 
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),

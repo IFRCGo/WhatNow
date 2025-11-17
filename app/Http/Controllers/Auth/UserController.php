@@ -17,6 +17,7 @@ use App\Repositories\Access\Role\RoleRepository;
 use App\Repositories\Access\UserRepository;
 use App\Repositories\TermsRepository;
 use App\Classes\MailApi\MailApiService;
+use App\Classes\RcnApi\RcnApiClient;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -32,25 +33,28 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
  */
 class UserController extends Controller
 {
-    
+
     private $users;
 
-    
+
     private $roles;
 
-    
+
     private $terms;
 
     private $mailApiService;
 
-    
-    public function __construct(UserRepository $users, RoleRepository $roles, TermsRepository $terms, MailApiService $mailApiService)
+    private $rcnApiClient;
+
+
+    public function __construct(UserRepository $users, RoleRepository $roles, TermsRepository $terms, MailApiService $mailApiService, RcnApiClient $rcnApiClient)
     {
         $this->middleware('auth:api');
         $this->users = $users;
         $this->roles = $roles;
         $this->terms = $terms;
         $this->mailApiService = $mailApiService;
+        $this->rcnApiClient = $rcnApiClient;
     }
 
     /**
@@ -107,9 +111,9 @@ class UserController extends Controller
         }
 
         $adminUser = $request->user();
-        
+
         $adminRole = $adminUser->roles->first();
-        
+
         $role = $this->roles->findOrFail($request->get('role_id'));
 
         $this->checkRoleCanBeAssigned($adminRole, $role);
@@ -128,7 +132,7 @@ class UserController extends Controller
         return $user;
     }
 
-    
+
     private function checkRoleCanBeAssigned(Role $adminRole, Role $roleToBeAssigned, Role $currentRole = null)
     {
         if (! $adminRole->hasAll()) {
@@ -219,7 +223,7 @@ class UserController extends Controller
         return UserResource::collection($users->paginate());
     }
 
-    
+
     /**
      * @OA\Get(
      *     path="/users/{id}",
@@ -258,7 +262,7 @@ class UserController extends Controller
         return UserResource::make($user);
     }
 
-    
+
     /**
      * @OA\Get(
      *     path="/users/me",
@@ -341,7 +345,7 @@ class UserController extends Controller
      */
     public function update(Request $request, int $userId)
     {
-        
+
         $user = $this->users->findOrFail($userId);
 
         $this->authorize('update', $user);
@@ -363,7 +367,7 @@ class UserController extends Controller
             'confirmed_role' => 'nullable|boolean',
         ]);
 
-        
+
         $adminUser = $request->user();
 
         if (! is_null($request->get('role_id')) && ! $adminUser->hasAll()) {
@@ -371,11 +375,11 @@ class UserController extends Controller
                 throw new HttpException(Response::HTTP_FORBIDDEN, 'You cannot change your own role');
             }
 
-            
+
             $adminRole = $adminUser->roles->first();
-            
+
             $role = $this->roles->findOrFail($request->get('role_id'));
-            
+
             $currentRole = $user->roles->first();
             $this->checkRoleCanBeAssigned($adminRole, $role, $currentRole);
             $user->confirmed_role = false;
@@ -477,6 +481,12 @@ class UserController extends Controller
 
         $this->users->deactivate($user);
 
+        try {
+            $this->rcnApiClient->application()->deactivateApplication($userId);
+        } catch (\Exception $e) {
+            Log::error('Failed to deactivate applications for user ' . $userId . ': ' . $e->getMessage());
+        }
+
         event(new UserDeactivated($user));
 
         return new JsonResponse(['message' => 'User deactivated'], Response::HTTP_OK);
@@ -514,6 +524,12 @@ class UserController extends Controller
         $this->authorize('reactivate', $user);
 
         $this->users->reactivate($user);
+
+        try {
+            $this->rcnApiClient->application()->activateApplication($userId);
+        } catch (\Exception $e) {
+            Log::error('Failed to activate applications for user ' . $userId . ': ' . $e->getMessage());
+        }
 
         event(new UserDeactivated($user));
 

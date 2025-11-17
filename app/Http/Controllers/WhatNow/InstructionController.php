@@ -9,9 +9,6 @@ use App\Classes\RcnApi\Exceptions\RcnApiResourceConflictException;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
 use App\Classes\RcnApi\RcnApiClient;
 use App\Classes\RcnApi\Resources\WhatNowResource;
-use App\Classes\Renderer\Entities\ImageFile;
-use App\Classes\Renderer\Services\ImageService;
-use App\Classes\Renderer\Services\ImageServiceException;
 use App\Events\WhatNow\InstructionCreated;
 use App\Events\WhatNow\InstructionDeleted;
 use App\Events\WhatNow\InstructionTranslationCreated;
@@ -36,13 +33,9 @@ final class InstructionController extends ApiController
     private $client;
 
 
-    private $image;
-
-
-    public function __construct(RcnApiClient $client, ImageService $image)
+    public function __construct(RcnApiClient $client)
     {
         $this->client = $client->whatnow();
-        $this->image = $image;
     }
 
 
@@ -768,24 +761,4 @@ final class InstructionController extends ApiController
         }
     }
 
-    public function renderImage(Request $request, $instructionId, $translationCode, $stageRef)
-    {
-        try {
-            $revision = $request->query('revision') == 'true';
-            $image = $this->image->createFromArray([
-                'instructionId' => $instructionId,
-                'translationCode' => $translationCode,
-                'stageRef' => $stageRef,
-                'revision' => $revision
-            ]);
-        } catch (ImageServiceException $e) {
-            return $this->respondWithNotFound($e, $e->getMessage());
-        }
-
-        $filename = $instructionId . '_' . $translationCode . '_' . $stageRef . '.jpg';
-        $imageFile = new ImageFile(config('whatnowimage.directory'), $filename);
-        $path = $this->image->render($image, $imageFile);
-
-        return response()->file($path);
-    }
 }

@@ -6,9 +6,7 @@
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "hot": "mix watch --hot",
     "production": "mix --production",
-    "lint": "eslint resources/assets/js",
-    "transifex:push": "tx push -s",
-    "transifex:pull": "tx pull -a"
+    "lint": "eslint resources/assets/js"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.0.0",
@@ -65,5 +63,9 @@
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.7.10",
     "webpack-bundle-analyzer": "^2.9.0"
+  },
+  "overrides": {
+    "cipher-base": "^1.0.5",
+    "sha.js": "^2.4.12"
   }
 }

@@ -34,21 +34,20 @@
         <section>
           <h2 class="steps" id="introduction">Swagger</h2>
           <b-card class="bg-light mb-4">
-          <p><a :href="adminDocumentationUrl" target="_blank">Swagger Admin</a></p>
-          <p><a :href="apiDocumentationUrl" target="_blank">Swagger of API</a></p>
+            <p><a :href="apiDocumentationUrl" target="_blank">Swagger of API</a></p>
           </b-card>
         </section>
 
         <!-- Base URL Section -->
         <section>
           <h2 class="steps" id="base-url">{{ $t('documentation.steps.two.heading') }}</h2>
-            <b-card class="bg-light mb-4">
-              <p><a :href="apiPrepareCenterUrl" target="_blank">{{ apiPrepareCenterUrl }}</a></p>
+          <b-card class="bg-light mb-4">
+            <p><a :href="apiPrepareCenterUrl" target="_blank">{{ apiPrepareCenterUrl }}</a></p>
           </b-card>
           <p>{{ $t('documentation.steps.two.body') }}</p>
         </section>
 
-        <!-- Authentication Section -->
+        <!-- Authentication Section --> 
         <section>
           <h2 class="steps" id="authentication">{{ $t('documentation.steps.four.heading') }}</h2>
           <i18n path="documentation.steps.four.body" tag="p" class="u-text-wrap">
@@ -120,7 +119,7 @@
           </ul>
           <p><strong>{{ $t('documentation.steps.eight.endpoint') }}</strong></p>
           <b-card class="bg-grey d-inline-block w-auto p-2">
-            <pre>GET /org/{country_code}/whatnow?eventType={eventType}</pre>
+            <pre>GET org/{country_code}/whatnow?eventType={eventType}&language={language}&subnational={subnational}</pre>
           </b-card>
 
           <!-- Query Parameters Table -->
@@ -149,6 +148,8 @@
               </tbody>
             </table>
           </div>
+
+
 
           <!-- Example Response -->
           <p><strong>{{ $t('documentation.steps.eight.example_response') }}</strong></p>
@@ -277,24 +278,9 @@
               </thead>
               <tbody>
               <tr>
-                <td>mitigation</td>
-                <td>array of strings</td>
-                <td>Mitigation preparation steps</td>
-              </tr>
-              <tr>
-                <td>seasonalForecast</td>
-                <td>array of strings</td>
-                <td>Seasonal Forecast preparation steps</td>
-              </tr>
-              <tr>
                 <td>warning</td>
                 <td>array of strings</td>
                 <td>Warning preparation steps</td>
-              </tr>
-              <tr>
-                <td>watch</td>
-                <td>array of strings</td>
-                <td>Watch preparation steps</td>
               </tr>
               <tr>
                 <td>immediate</td>
@@ -336,13 +322,30 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  data() {
+  data () {
     return {
       adminDocumentationUrl: null,
       apiDocumentationUrl: null,
       apiPrepareCenterUrl: null,
+      prepareCenterUrl: null,
       showResponse: false,
+      // --- API Tester Data ---
+      apiKey: '',
+      isLoading: false,
+      isTesting: false,
+      dataLoaded: false,
+      organizations: [],
+      eventTypes: [],
+      selectedOrganization: null,
+      selectedEventType: null,
+      languageParam: '',
+      subnationalParam: '',
+      testResponse: null,
+      testError: null,
+      // --- End API Tester Data ---
       exampleResponse: `{
     "data": [
         {
@@ -441,15 +444,83 @@ export default {
 }`
     }
   },
-  mounted() {
+  computed: {
+    organizationOptions () {
+      return this.organizations.map(org => ({ value: org.countryCode, text: org.name }))
+    },
+    eventTypeOptions () {
+      return this.eventTypes.map(event => ({ value: event.code, text: event.name }))
+    },
+    finalUrl () {
+      if (!this.selectedOrganization) {
+        return ''
+      }
+      const url = `${this.apiPrepareCenterUrl}/org/${this.selectedOrganization}/whatnow`
+      const params = new URLSearchParams()
+      if (this.selectedEventType) {
+        params.append('eventType', this.selectedEventType)
+      }
+      if (this.languageParam) {
+        params.append('language', this.languageParam)
+      }
+      if (this.subnationalParam) {
+        params.append('subnational', this.subnationalParam)
+      }
+      const queryString = params.toString()
+      return queryString ? `${url}?${queryString}` : url
+    },
+    formattedResponse () {
+      return JSON.stringify(this.testResponse, null, 2)
+    }
+  },
+  mounted () {
     const Appconfig = window.config || {}
     this.adminDocumentationUrl = `${Appconfig.url || ''}/admin/documentation`
     this.apiDocumentationUrl = `${Appconfig.api_url || ''}/api/documentation`
-    this.apiPrepareCenterUrl = `${Appconfig.api_url || ''}`
+    this.apiPrepareCenterUrl = `${Appconfig.api_url || ''}/v2`
+    this.prepareCenterUrl = `${Appconfig.url || ''}`
   },
   methods: {
-    toggleResponse() {
+    toggleResponse () {
       this.showResponse = !this.showResponse
+    },
+
+    async loadInitialData () {
+      this.isLoading = true
+      this.testError = null
+      this.dataLoaded = false
+      try {
+
+        const orgsResponse = await axios.get(`${this.apiPrepareCenterUrl}/v2/org`, {
+          headers: { 'x-api-key': this.apiKey }
+        })
+        this.organizations = orgsResponse.data.data
+
+        const eventTypesResponse = await axios.get(`${this.apiPrepareCenterUrl}/event-types/`)
+        this.eventTypes = eventTypesResponse.data.data
+
+        this.dataLoaded = true
+      } catch (error) {
+        this.testError = `Error al cargar los datos iniciales: ${error.response ? `${error.response.status} - ${error.response.statusText}` : error.message}`
+      } finally {
+        this.isLoading = false
+      }
+    },
+
+    async testWhatNowEndpoint () {
+      this.isTesting = true
+      this.testResponse = null
+      this.testError = null
+      try {
+        const response = await axios.get(this.finalUrl, {
+          headers: { 'x-api-key': this.apiKey }
+        })
+        this.testResponse = response.data
+      } catch (error) {
+        this.testError = `Error al probar el endpoint: ${error.response ? `${error.response.status} - ${error.response.statusText}` : error.message}`
+      } finally {
+        this.isTesting = false
+      }
     }
   }
 }
@@ -463,7 +534,7 @@ body {
   font-weight: 400;
   font-size: 36px;
   line-height: 34px;
-  font: #000000;
+  font-color: #000000;
 }
 
 .card {
@@ -480,6 +551,14 @@ body {
 
 code {
   color: #F6333F;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
 }
 
 </style>

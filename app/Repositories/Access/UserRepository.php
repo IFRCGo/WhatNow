@@ -20,23 +20,23 @@ use Illuminate\Support\Str;
 
 class UserRepository extends Repository
 {
-    
+
     const MODEL = User::class;
 
-    
+
     protected $userProfiles;
 
-    
+
     protected $roles;
 
-    
+
     public function __construct(UserProfileRepository $userProfiles, RoleRepository $roles)
     {
         $this->userProfiles = $userProfiles;
         $this->roles = $roles;
     }
 
-    
+
     public function createUser($input): User
     {
         $userData = [
@@ -55,7 +55,7 @@ class UserRepository extends Repository
 
         DB::transaction(function () use ($user, $input) {
 
-            
+
             $user->saveOrFail();
             $this->userProfiles->create($user->id, $input);
 
@@ -69,7 +69,7 @@ class UserRepository extends Repository
 
             if (isset($input['role_id'])) {
 
-                
+
                 $role = $this->roles->findOrFail($input['role_id']);
                 $user->attachRoles([$role]);
                 $user->save();
@@ -105,7 +105,7 @@ class UserRepository extends Repository
 
         if (isset($input['role_id'])) {
 
-            
+
             $role = $this->roles->findOrFail($input['role_id']);
             $user->detachRoles($user->roles);
             $user->attachRoles([$role]);
@@ -115,7 +115,7 @@ class UserRepository extends Repository
         return $user;
     }
 
-    
+
     public function confirmAccount(UserConfirmationToken $token)
     {
         $user = $this->findByToken($token);
@@ -143,7 +143,7 @@ class UserRepository extends Repository
         throw new UserConfirmationMismatchException();
     }
 
-    
+
     public function updatePassword(User $user, $input)
     {
         $user->password = bcrypt($input['password']);
@@ -153,26 +153,24 @@ class UserRepository extends Repository
         }
     }
 
-    
+
     public function findByToken(UserConfirmationToken $token)
     {
         return $this->query()->where('confirmation_code', (string) $token)->first();
     }
 
-    
+
     public function findByEmail($email)
     {
         return $this->query()->where('email', (string)$email)->first();
     }
 
-    
+
     public function queryUsers(UserQuery $userQuery): Builder
     {
         $builder = $this->query()->with(['roles', 'roles.permissions', 'userProfile', 'organisations']);
 
-        $builder->join('user_profiles', 'users.id', '=', 'user_profiles.user_id');
-
-        $builder->select('users.*');
+        $builder->whereNull('users.deleted_at');
 
         $userQuery->getFilters()->only(['activated', 'confirmed'])->each(function ($value, $column) use ($builder) {
             $builder->where($column, $value);
@@ -211,13 +209,12 @@ class UserRepository extends Repository
                 $query->whereNotIn('roles.id', [Role::ROLE_DEFAULT]);
             });
         }
-
         if (in_array($userQuery->getOrderBy(), ['created_at', 'last_logged_in_at'])) {
             $builder->orderBy('users.'.$userQuery->getOrderBy(), $userQuery->getSort());
         }
 
         if (in_array($userQuery->getOrderBy(), ['first_name', 'last_name',  'organisation', 'industry_type'])) {
-            $builder->orderByRaw('user_profiles.'.$userQuery->getOrderBy().' '.$userQuery->getSort());
+            $builder->orderByRaw('(SELECT ' . $userQuery->getOrderBy() . ' FROM user_profiles WHERE user_profiles.user_id = users.id) ' . $userQuery->getSort());
         }
 
         return $builder;

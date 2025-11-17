@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\Resource;
 
 class RoleResource extends Resource
 {
-    
+
     public function toArray($request)
     {
         return [

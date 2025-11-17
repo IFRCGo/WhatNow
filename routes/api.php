@@ -15,7 +15,6 @@ Route::group(['middleware' => 'api'], function () {
     Route::get('terms/latest', 'Terms\TermsController@latest'); // Get latest terms version
 
     // Instructions and event types
-    Route::get('instructions/{id}/{translation}/{stage}/download', 'WhatNow\InstructionController@renderImage'); // Download instruction image
     Route::get('event-types/', 'WhatNow\EventTypeController@list'); // List all event types
     Route::post('event-types/', 'WhatNow\EventTypeController@create'); // Create new event type
     Route::post('admin/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
@@ -70,6 +69,8 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('apps/{id}', 'WhatNow\ApplicationController@get'); // Get specific app
     Route::delete('apps/{id}', 'WhatNow\ApplicationController@delete'); // Delete app
     Route::patch('apps/{id}', 'WhatNow\ApplicationController@update'); // Update app
+    Route::patch('apps/{id}/activate', 'WhatNow\ApplicationController@activate'); // Activate app
+    Route::patch('apps/{id}/deactivate', 'WhatNow\ApplicationController@deactivate'); // Deactivate app
 
     // Audit and history
     Route::get('history', 'Audit\HistoryController@list'); // List all history
