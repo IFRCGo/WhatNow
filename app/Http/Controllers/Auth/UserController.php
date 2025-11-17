@@ -23,6 +23,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
@@ -136,8 +137,8 @@ class UserController extends Controller
     private function checkRoleCanBeAssigned(Role $adminRole, Role $roleToBeAssigned, Role $currentRole = null)
     {
         if (! $adminRole->hasAll()) {
-            
-            
+
+
             $permissions = $roleToBeAssigned->permissions;
             $diff = $permissions->diff($adminRole->permissions);
             if ($diff->isNotEmpty()) {
@@ -145,8 +146,8 @@ class UserController extends Controller
             }
 
             if ($currentRole) {
-                
-                
+
+
                 $permissions = $currentRole->permissions;
                 $diff = $permissions->diff($adminRole->permissions);
 
@@ -188,7 +189,7 @@ class UserController extends Controller
         return UserResource::collection($users->paginate());
     }
 
-    
+
     /**
      * @OA\Get(
      *     path="/users/admins",
