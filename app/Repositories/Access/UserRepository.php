@@ -209,8 +209,6 @@ class UserRepository extends Repository
                 $query->whereNotIn('roles.id', [Role::ROLE_DEFAULT]);
             });
         }
-
-        // Optimizar ordenamiento por campos del perfil sin join
         if (in_array($userQuery->getOrderBy(), ['created_at', 'last_logged_in_at'])) {
             $builder->orderBy('users.'.$userQuery->getOrderBy(), $userQuery->getSort());
         }
