@@ -381,7 +381,10 @@
       "less": "Daha az göster",
       "user_can_do": "Kullanıcının izinlerini gör:",
       "user_no_permission": "Kullanıcının üzerinde izin yok",
-      "soc_already_added": "Kullanıcı bu dernekte zaten kayıtlı"
+      "soc_already_added": "Kullanıcı bu dernekte zaten kayıtlı",
+      "access_permissions": "Erişim İzinleri",
+      "can_access_legacy_whatnow": "Eski WhatNow'a erişebilir",
+      "can_access_preparedness_v2": "Preparedness v2'ye erişebilir"
     }
   },
   "new_welcome": {

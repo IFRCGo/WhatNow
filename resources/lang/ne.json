@@ -378,7 +378,10 @@
       "less": "कम देखाउनुहोस्",
       "user_can_do": "प्रयोगकर्ताकालाई के के गर्ने अनुमति छ देखाउनुहोस्\n",
       "user_no_permission": "प्रयोगकर्तासित कुनै पनि अनुमतिहरू छैन |",
-      "soc_already_added": "यो प्रयोगकर्तालाई पहिला नै यो सोसाइटी निर्धारीत भैसकेको छ ।"
+      "soc_already_added": "यो प्रयोगकर्तालाई पहिला नै यो सोसाइटी निर्धारीत भैसकेको छ ।",
+      "access_permissions": "पहुँच अनुमतिहरू",
+      "can_access_legacy_whatnow": "पुरानो WhatNow पहुँच गर्न सक्छ",
+      "can_access_preparedness_v2": "Preparedness v2 पहुँच गर्न सक्छ"
     }
   },
   "new_welcome": {

@@ -381,7 +381,10 @@
       "less": "Tampilkan lebih sedikit",
       "user_can_do": "Lihat apa yang diizinkan untuk dilakukan pengguna:",
       "user_no_permission": "Pengguna belum mendapat izin apa pun",
-      "soc_already_added": "Pengguna telah ditugaskan untuk perhimpunan ini"
+      "soc_already_added": "Pengguna telah ditugaskan untuk perhimpunan ini",
+      "access_permissions": "Izin akses",
+      "can_access_legacy_whatnow": "Dapat mengakses WhatNow lama",
+      "can_access_preparedness_v2": "Dapat mengakses Preparedness v2"
     }
   },
   "new_welcome": {

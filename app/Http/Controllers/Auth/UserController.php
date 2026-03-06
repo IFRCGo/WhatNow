@@ -366,6 +366,9 @@ class UserController extends Controller
             'organisations' => 'array',
             'organisations.*' => 'string|distinct|min:3|max:3',
             'confirmed_role' => 'nullable|boolean',
+
+            'can_access_legacy_whatnow' => 'nullable|boolean',
+            'can_access_preparedness_v2' => 'nullable|boolean',
         ]);
 
 
@@ -402,11 +405,33 @@ class UserController extends Controller
             'terms_version' => $termsVersion ?? null,
         ]);
 
+        // Track if access flags are being changed
+        $rulesChanged = $request->has('can_access_legacy_whatnow') || $request->has('can_access_preparedness_v2');
+
+        // Apply access flags directly to user model before saving
+        if ($request->has('can_access_legacy_whatnow')) {
+            $user->can_access_legacy_whatnow = (bool) $request->get('can_access_legacy_whatnow');
+        }
+        if ($request->has('can_access_preparedness_v2')) {
+            $user->can_access_preparedness_v2 = (bool) $request->get('can_access_preparedness_v2');
+        }
+
         $user = $this->users->updateUser($user, $input);
         $user->load('organisations');
 
         event(new UserUpdated($user));
 
+        // Call external API if access flags changed
+        if ($rulesChanged) {
+            try {
+                $this->rcnApiClient->application()->updateRules($user->id, [
+                    'can_access_legacy_whatnow' => (bool) $user->can_access_legacy_whatnow,
+                    'can_access_preparedness_v2' => (bool) $user->can_access_preparedness_v2,
+                ]);
+            } catch (\Exception $e) {
+                Log::error('Failed to update rules for user ' . $user->id . ': ' . $e->getMessage());
+            }
+        }
 
         return UserResource::make($user);
     }

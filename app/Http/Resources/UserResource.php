@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class UserResource extends Resource
 {
-    
+
     public function toArray($request)
     {
         $user = [
@@ -20,6 +20,8 @@ class UserResource extends Resource
             'created_at' => $this->created_at->format('c'),
             'user_profile' => UserProfileResource::make($this->userProfile),
             'confirmed_role' => $this->confirmed_role,
+            'can_access_legacy_whatnow' => (bool) $this->can_access_legacy_whatnow,
+            'can_access_preparedness_v2' => (bool) $this->can_access_preparedness_v2,
         ];
 
         $roles = $this->whenLoaded('roles');

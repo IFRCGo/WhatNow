@@ -378,7 +378,10 @@
       "less": "Montre mwens",
       "user_can_do": "Wè sa itilizatè gen pèmisyon pou fè:",
       "user_no_permission": "Itilizatè a pa gen okenn pèmisyon.",
-      "soc_already_added": "Itilizatè sa a te deja asiyen sosyete sa a"
+      "soc_already_added": "Itilizatè sa a te deja asiyen sosyete sa a",
+      "access_permissions": "Pèmisyon aksè",
+      "can_access_legacy_whatnow": "Ka accede WhatNow ansyen",
+      "can_access_preparedness_v2": "Ka accede Preparedness v2"
     }
   },
   "new_welcome": {

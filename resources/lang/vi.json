@@ -378,7 +378,10 @@
       "less": "Thu gọn",
       "user_can_do": "Xem người dùng nào có quyền hạn làm:",
       "user_no_permission": "Người dùng không có quyền hạn nào",
-      "soc_already_added": "Người dùng đã được gán hội này"
+      "soc_already_added": "Người dùng đã được gán hội này",
+      "access_permissions": "Quyền truy cập",
+      "can_access_legacy_whatnow": "Có thể truy cập WhatNow phiên bản cũ",
+      "can_access_preparedness_v2": "Có thể truy cập Preparedness v2"
     }
   },
   "new_welcome": {
