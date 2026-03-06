@@ -93,4 +93,17 @@ class ApplicationResource extends AbstractResource
             $this->http->delete('apps/' . $id);
         });
     }
+
+    public function updateRules(int $tenantUserId, array $rules)
+    {
+        return $this->handleApiCall(function () use ($tenantUserId, $rules) {
+            $response = $this->http->post('applications/rules', [
+                'json' => [
+                    'tenant_user_id' => (string) $tenantUserId,
+                    'rules' => $rules,
+                ],
+            ]);
+            return json_decode($response->getBody()->getContents(), true);
+        });
+    }
 }

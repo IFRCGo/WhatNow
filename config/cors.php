@@ -1,13 +1,9 @@
 <?php
 
 return [
-
-    
     'cors_profile' => Spatie\Cors\CorsProfile\DefaultProfile::class,
 
-    
     'default_profile' => [
-
         'allow_origins' => [
             '*',
         ],
@@ -26,9 +22,10 @@ return [
             'X-Auth-Token',
             'Origin',
             'Authorization',
+            'x-api-key',
         ],
 
-        
+
         'max_age' => 60 * 60 * 24,
     ],
 ];

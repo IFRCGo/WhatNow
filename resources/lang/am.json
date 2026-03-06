@@ -379,7 +379,10 @@
       "less": "ያነሰ አሳይ",
       "user_can_do": "ተጠቃሚው ምን የማድረግ ፈቃድ እንዳለው ይመልከቱ:",
       "user_no_permission": "ተጠቃሚው ምንም ፈቃዶች አላገኘም",
-      "soc_already_added": "ይህ ተጠቃሚ አስቀድሞ ለዚህ ማህበር ተመድቧል"
+      "soc_already_added": "ይህ ተጠቃሚ አስቀድሞ ለዚህ ማህበር ተመድቧል",
+      "access_permissions": "የመዳረሻ ፈቃዶች",
+      "can_access_legacy_whatnow": "ቀደምት WhatNow መዳረስ ይችላል",
+      "can_access_preparedness_v2": "Preparedness v2 መዳረስ ይችላል"
     }
   },
   "new_welcome": {

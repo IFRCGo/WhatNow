@@ -381,7 +381,10 @@
       "less": "顯示部分",
       "user_can_do": "查看用戶有哪些權限可操作：",
       "user_no_permission": "用戶沒有獲得任何權限",
-      "soc_already_added": "該用戶已經被分配了這個社群"
+      "soc_already_added": "該用戶已經被分配了這個社群",
+      "access_permissions": "訪問權限",
+      "can_access_legacy_whatnow": "可以訪問舊版 WhatNow",
+      "can_access_preparedness_v2": "可以訪問 Preparedness v2"
     }
   },
   "new_welcome": {

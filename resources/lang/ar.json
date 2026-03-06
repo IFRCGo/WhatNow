@@ -388,7 +388,10 @@
       "less": "عرض أقل",
       "user_can_do": "عرض الصلاحيات الممنوحة للمستخدم:",
       "user_no_permission": "المستخدم ليس لديه أي صلاحيات",
-      "soc_already_added": "تم تعيين هذه الجمعية لهذا المستخدم بالفعل"
+      "soc_already_added": "تم تعيين هذه الجمعية لهذا المستخدم بالفعل",
+      "access_permissions": "أذونات الوصول",
+      "can_access_legacy_whatnow": "يمكن الوصول إلى WhatNow القديم",
+      "can_access_preparedness_v2": "يمكن الوصول إلى Preparedness v2"
     }
   },
   "new_welcome": {

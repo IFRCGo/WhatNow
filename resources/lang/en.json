@@ -390,7 +390,10 @@
       "less": "Show less",
       "user_can_do": "View what user has permission to do:",
       "user_no_permission": "User has not got any permissions",
-      "soc_already_added": "This user has already been assigned this society"
+      "soc_already_added": "This user has already been assigned this society",
+      "access_permissions": "Access Permissions",
+      "can_access_legacy_whatnow": "Can access legacy WhatNow",
+      "can_access_preparedness_v2": "Can access Preparedness v2"
     }
   },
   "new_welcome": {
