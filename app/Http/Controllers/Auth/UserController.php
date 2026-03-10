@@ -423,11 +423,16 @@ class UserController extends Controller
 
         // Call external API if access flags changed
         if ($rulesChanged) {
+            $user_rules = [
+                'can_access_legacy_whatnow' => (bool) $user->can_access_legacy_whatnow,
+                'can_access_preparedness_v2' => (bool) $user->can_access_preparedness_v2,
+            ];
+            $newRole = $role ?? $this->roles->findOrFail($request->get('role_id'));
+            if(!$newRole->api_full_access){
+                $user_rules['allowed_country_code'] = $request->get('organisations');
+            }
             try {
-                $this->rcnApiClient->application()->updateRules($user->id, [
-                    'can_access_legacy_whatnow' => (bool) $user->can_access_legacy_whatnow,
-                    'can_access_preparedness_v2' => (bool) $user->can_access_preparedness_v2,
-                ]);
+                $this->rcnApiClient->application()->updateRules($user->id, $user_rules);
             } catch (\Exception $e) {
                 Log::error('Failed to update rules for user ' . $user->id . ': ' . $e->getMessage());
             }
