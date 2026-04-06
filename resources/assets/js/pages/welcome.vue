@@ -326,7 +326,7 @@ export default {
 
 .whatnow-tag {
   color: white;
-  font-size: 1.1rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
