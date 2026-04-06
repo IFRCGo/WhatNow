@@ -2,6 +2,7 @@
   <b-container fluid class="home-page">
     <b-row class="p-4" v-if="user">
       <b-col cols="12">
+        <p class="whatnow-tag">#WhatNow</p>
         <h2 class="mb-3">
           {{ $t('home_pods.wellcome') }}
           {{ user.data.user_profile.first_name }}!
@@ -287,6 +288,13 @@ export default {
 }
 </script>
 <style>
+.whatnow-tag {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E8473F;
+  margin-bottom: 0.25rem;
+}
+
 .button-container {
   display: flex;
   justify-content: space-between;
