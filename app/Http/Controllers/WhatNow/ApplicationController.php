@@ -11,6 +11,7 @@ use App\Http\Resources\WhatNow\ApplicationResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Log;
 
 
 /**
@@ -142,10 +143,27 @@ final class ApplicationController extends ApiController
         $description = $request->get('description');
         $estimatedUsers = $request->get('estimatedUsers', 0);
 
-        $userId = $request->user()->id;
+        $user = $request->user()->loadMissing('roles', 'organisations');
+        $userId = $user->id;
 
         try {
             $application = $this->client->createApplication($name, $description, $estimatedUsers, $userId);
+
+            $userRules = [
+                'can_access_legacy_whatnow' => (bool) $user->can_access_legacy_whatnow,
+                'can_access_preparedness_v2' => (bool) $user->can_access_preparedness_v2,
+            ];
+
+            $currentRole = $user->roles->first();
+            if ($currentRole && ! $currentRole->api_full_access) {
+                $userRules['allowed_country_code'] = $user->organisations->pluck('organisation_code')->values()->all();
+            }
+
+            try {
+                $this->client->updateRules($userId, $userRules);
+            } catch (\Exception $e) {
+                Log::error('Failed to update rules for user ' . $userId . ': ' . $e->getMessage());
+            }
 
             return ApplicationResource::make($application);
         } catch (RcnApiResourceNotFoundException $e) {

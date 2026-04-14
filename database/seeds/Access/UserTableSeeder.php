@@ -400,6 +400,19 @@ class UserTableSeeder extends Seeder
             if ($userProfile['user_id'] == 8 || $userProfile['user_id'] == 9) {
                 $up->user->organisations()->save(factory(App\Models\Access\User\UserOrganisation::class)->make());
             }
+            $fixedOrgs = [
+                3 => ['IND'],  // IRCS WhatNow Messages app
+                4 => ['USA'],  // Test App - USA
+                6 => ['USA'],  // Test App - USA (api user)
+            ];
+
+            if (isset($fixedOrgs[$userProfile['user_id']])) {
+                foreach ($fixedOrgs[$userProfile['user_id']] as $code) {
+                    $up->user->organisations()->save(
+                        new \App\Models\Access\User\UserOrganisation(['organisation_code' => $code])
+                    );
+                }
+            }
         }
 
         DB::table('user_roles')->insert($userRoles);
