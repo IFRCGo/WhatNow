@@ -23,6 +23,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
@@ -136,8 +137,8 @@ class UserController extends Controller
     private function checkRoleCanBeAssigned(Role $adminRole, Role $roleToBeAssigned, Role $currentRole = null)
     {
         if (! $adminRole->hasAll()) {
-            
-            
+
+
             $permissions = $roleToBeAssigned->permissions;
             $diff = $permissions->diff($adminRole->permissions);
             if ($diff->isNotEmpty()) {
@@ -145,8 +146,8 @@ class UserController extends Controller
             }
 
             if ($currentRole) {
-                
-                
+
+
                 $permissions = $currentRole->permissions;
                 $diff = $permissions->diff($adminRole->permissions);
 
@@ -188,7 +189,7 @@ class UserController extends Controller
         return UserResource::collection($users->paginate());
     }
 
-    
+
     /**
      * @OA\Get(
      *     path="/users/admins",
@@ -365,6 +366,9 @@ class UserController extends Controller
             'organisations' => 'array',
             'organisations.*' => 'string|distinct|min:3|max:3',
             'confirmed_role' => 'nullable|boolean',
+
+            'can_access_legacy_whatnow' => 'nullable|boolean',
+            'can_access_preparedness_v2' => 'nullable|boolean',
         ]);
 
 
@@ -401,11 +405,38 @@ class UserController extends Controller
             'terms_version' => $termsVersion ?? null,
         ]);
 
+        // Track if access flags are being changed
+        $rulesChanged = $request->has('can_access_legacy_whatnow') || $request->has('can_access_preparedness_v2');
+
+        // Apply access flags directly to user model before saving
+        if ($request->has('can_access_legacy_whatnow')) {
+            $user->can_access_legacy_whatnow = (bool) $request->get('can_access_legacy_whatnow');
+        }
+        if ($request->has('can_access_preparedness_v2')) {
+            $user->can_access_preparedness_v2 = (bool) $request->get('can_access_preparedness_v2');
+        }
+
         $user = $this->users->updateUser($user, $input);
         $user->load('organisations');
 
         event(new UserUpdated($user));
 
+        // Call external API if access flags changed
+        if ($rulesChanged) {
+            $user_rules = [
+                'can_access_legacy_whatnow' => (bool) $user->can_access_legacy_whatnow,
+                'can_access_preparedness_v2' => (bool) $user->can_access_preparedness_v2,
+            ];
+            $newRole = $role ?? $this->roles->findOrFail($request->get('role_id'));
+            if(!$newRole->api_full_access){
+                $user_rules['allowed_country_code'] = $request->get('organisations');
+            }
+            try {
+                $this->rcnApiClient->application()->updateRules($user->id, $user_rules);
+            } catch (\Exception $e) {
+                Log::error('Failed to update rules for user ' . $user->id . ': ' . $e->getMessage());
+            }
+        }
 
         return UserResource::make($user);
     }

@@ -381,7 +381,10 @@
       "less": "Garagaza bike",
       "user_can_do": "Reba ibyo umukoresha afitiye uburenganzira bwo gukora:",
       "user_no_permission": "Umukoresha nta ruhushya afite",
-      "soc_already_added": "Uyu mukoresha asanzwe yarashyizwe kuri iyi sosiyete"
+      "soc_already_added": "Uyu mukoresha asanzwe yarashyizwe kuri iyi sosiyete",
+      "access_permissions": "Uburenganzira bwo kwinjira",
+      "can_access_legacy_whatnow": "Ashobora kwinjira kuri WhatNow ya kera",
+      "can_access_preparedness_v2": "Ashobora kwinjira kuri Preparedness v2"
     }
   },
   "new_welcome": {

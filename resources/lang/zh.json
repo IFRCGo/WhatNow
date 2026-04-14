@@ -381,7 +381,10 @@
       "less": "收起",
       "user_can_do": "查看用户权限：",
       "user_no_permission": "用户尚未获得权限",
-      "soc_already_added": "此用户已分配至该红十字会"
+      "soc_already_added": "此用户已分配至该红十字会",
+      "access_permissions": "访问权限",
+      "can_access_legacy_whatnow": "可以访问旧版 WhatNow",
+      "can_access_preparedness_v2": "可以访问 Preparedness v2"
     }
   },
   "new_welcome": {

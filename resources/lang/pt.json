@@ -381,7 +381,10 @@
       "less": "Mostrar menos",
       "user_can_do": "Ver o que o utilizador tem permissão para fazer:",
       "user_no_permission": "O utilizador não tem nenhuma permissão",
-      "soc_already_added": "Este utilizador já foi atribuído a esta sociedade"
+      "soc_already_added": "Este utilizador já foi atribuído a esta sociedade",
+      "access_permissions": "Permissões de acesso",
+      "can_access_legacy_whatnow": "Pode aceder ao WhatNow legado",
+      "can_access_preparedness_v2": "Pode aceder ao Preparedness v2"
     }
   },
   "new_welcome": {

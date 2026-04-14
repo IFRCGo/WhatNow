@@ -388,7 +388,10 @@
       "less": "Afficher moins",
       "user_can_do": "Voir ce que l'utilisateur a la permission de faire :",
       "user_no_permission": "L'utilisateur n'a aucune permission",
-      "soc_already_added": "Cet utilisateur a déjà été assigné à cette société"
+      "soc_already_added": "Cet utilisateur a déjà été assigné à cette société",
+      "access_permissions": "Permissions d'accès",
+      "can_access_legacy_whatnow": "Peut accéder à WhatNow hérité",
+      "can_access_preparedness_v2": "Peut accéder à Preparedness v2"
     }
   },
   "new_welcome": {

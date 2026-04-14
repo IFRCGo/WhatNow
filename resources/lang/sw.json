@@ -381,7 +381,10 @@
       "less": "Onyesha kidogo",
       "user_can_do": "Tazama ni nini mtumiaji ana ruhusa ya kufanya:",
       "user_no_permission": "Mtumiaji hana ruhusa yoyote",
-      "soc_already_added": "Mtumiaji huyu tayari amepewa jamii hii"
+      "soc_already_added": "Mtumiaji huyu tayari amepewa jamii hii",
+      "access_permissions": "Ruhusa za ufikiaji",
+      "can_access_legacy_whatnow": "Anaweza kufikia WhatNow ya zamani",
+      "can_access_preparedness_v2": "Anaweza kufikia Preparedness v2"
     }
   },
   "new_welcome": {

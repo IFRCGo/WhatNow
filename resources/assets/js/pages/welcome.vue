@@ -5,6 +5,7 @@
         <div>
           <img class="head-img mt-negative-header" :src="src('landingHead')">
           <div class="top-head">
+            <p class="whatnow-tag">#WhatNow</p>
             <h2 class="white-subtitle-top">{{ $t('landing.head_1') }}</h2>
             <h2 class="white-subtitle">{{ $t('landing.head_2') }}</h2>
             <p class="white-text mt-4 pre-line line-height-50">{{ $t('landing.head_text') }}</p>
@@ -322,6 +323,13 @@ export default {
 };
 </script>
 <style scoped>
+
+.whatnow-tag {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
 
 .pre-line {
   white-space: pre-line;

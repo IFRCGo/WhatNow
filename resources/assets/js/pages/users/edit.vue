@@ -228,6 +228,42 @@
         </b-col>
          </b-row>
       <hr>
+         <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="!isMe && can(authUser, permissions.USERS_EDIT)">
+            <b-col>
+              <h3 class="styled-heading text-uppercase">
+                {{ $t('users.edit.access_permissions') }}
+              </h3>
+              <b-card class="bg-grey">
+                <b-row class="mb-3">
+                  <b-col cols="12">
+                    <div class="d-flex align-items-center mb-3">
+                      <b-form-checkbox
+                        v-model="user.can_access_legacy_whatnow"
+                        switch
+                        size="lg"
+                        class="mr-3"
+                        :class="{ 'switch-active': user.can_access_legacy_whatnow }"
+                      >
+                        <strong>{{ $t('users.edit.can_access_legacy_whatnow') }}</strong>
+                      </b-form-checkbox>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <b-form-checkbox
+                        v-model="user.can_access_preparedness_v2"
+                        switch
+                        size="lg"
+                        class="mr-3"
+                        :class="{ 'switch-active': user.can_access_preparedness_v2 }"
+                      >
+                        <strong>{{ $t('users.edit.can_access_preparedness_v2') }}</strong>
+                      </b-form-checkbox>
+                    </div>
+                  </b-col>
+                </b-row>
+              </b-card>
+            </b-col>
+         </b-row>
+      <hr>
          <b-row class="pl-4 pr-4 pb-4 pt-3 bg-white" v-if="can(authUser, permissions.CONTENT_EDIT)">
             <b-col>
               <h3 class="styled-heading text-uppercase">
@@ -390,7 +426,9 @@ export default {
         activated: null,
         organisations: [],
         permissions: [],
-        api_used_in: ''
+        api_used_in: '',
+        can_access_legacy_whatnow: false,
+        can_access_preparedness_v2: false
       },
       societies: {
         selectedSoc: null,
@@ -484,7 +522,9 @@ export default {
         const changes = {
           first_name: this.user.first_name,
           last_name: this.user.last_name,
-          organisations: this.user.organisations
+          organisations: this.user.organisations,
+          can_access_legacy_whatnow: this.user.can_access_legacy_whatnow,
+          can_access_preparedness_v2: this.user.can_access_preparedness_v2
         }
 
         if (this.user.api_used_in && this.user.api_used_in.length > 0) {
@@ -544,7 +584,9 @@ export default {
         id: user.id,
         organisations: user.organisations,
         permissions: user.role.permissions,
-        api_used_in: user.user_profile.api_used_in
+        api_used_in: user.user_profile.api_used_in,
+        can_access_legacy_whatnow: !!user.can_access_legacy_whatnow,
+        can_access_preparedness_v2: !!user.can_access_preparedness_v2
       }
     },
     async resendActivation () {
@@ -684,5 +726,10 @@ export default {
   border: none;
   border-radius: 10px;
   padding: 0.5rem;
+}
+
+.switch-active >>> .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #f6333f;
+  border-color: #f6333f;
 }
 </style>

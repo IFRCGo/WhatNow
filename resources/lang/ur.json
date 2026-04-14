@@ -381,7 +381,10 @@
       "less": "کم دکھائیں",
       "user_can_do": "استعمال کنندہ کو جتنی اجازت ہے دیکھے:",
       "user_no_permission": "صارف کو کوئی اجازت نہیں ملی ہے",
-      "soc_already_added": "اس استعمال کنندہ کو پہلے ہی یہ سوسائٹی دی جا چکی ہے"
+      "soc_already_added": "اس استعمال کنندہ کو پہلے ہی یہ سوسائٹی دی جا چکی ہے",
+      "access_permissions": "رسائی کی اجازتیں",
+      "can_access_legacy_whatnow": "پرانے WhatNow تک رسائی حاصل کر سکتا ہے",
+      "can_access_preparedness_v2": "Preparedness v2 تک رسائی حاصل کر سکتا ہے"
     }
   },
   "new_welcome": {

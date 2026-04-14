@@ -17,61 +17,64 @@ class User extends Authenticatable implements JWTSubject
         SoftDeletes,
         UserAccess,
         UserRelationship;
-    
-    
+
+
     protected $fillable = [
-        'email', 'password', 'confirmation_code', 'confirmed_role'
+        'email', 'password', 'confirmation_code', 'confirmed_role',
+        'can_access_legacy_whatnow', 'can_access_preparedness_v2',
     ];
 
-    
+
     protected $casts = [
         'activated' => 'boolean',
         'confirmed' => 'boolean',
         'confirmed_role' => 'boolean',
+        'can_access_legacy_whatnow' => 'boolean',
+        'can_access_preparedness_v2' => 'boolean',
     ];
 
-    
+
     protected $attributes = [
         'activated' => true
     ];
 
-    
+
     protected $dates = ['deleted_at', 'password_updated_at', 'created_at', 'updated_at', 'last_logged_in_at'];
 
-    
+
     protected $hidden = [
         'password', 'remember_token',
     ];
 
-    
+
     protected $appends = [
         'photo_url',
     ];
 
-    
+
     protected $with = [
         'userProfile'
     ];
 
-    
+
     public function getPhotoUrlAttribute()
     {
         return 'https://www.gravatar.com/avatar/'.md5(strtolower($this->email)).'.jpg?s=200&d=mm';
     }
 
-    
+
     public function oauthProviders()
     {
         return $this->hasMany(OAuthProvider::class);
     }
 
-    
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
-    
+
     public function getJWTCustomClaims()
     {
         return [
@@ -79,7 +82,7 @@ class User extends Authenticatable implements JWTSubject
         ];
     }
 
-    
+
     public function hasSetOwnPassword()
     {
         return !is_null($this->password_updated_at);
@@ -97,13 +100,13 @@ class User extends Authenticatable implements JWTSubject
         $this->save();
     }
 
-    
+
     public function isConfirmed()
     {
         return $this->confirmed === true;
     }
 
-    
+
     public function isActive()
     {
         return $this->activated === true;

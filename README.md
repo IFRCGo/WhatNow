@@ -28,6 +28,7 @@ Ensure the following tools are installed on your system:
   ```bash
   mysql --version
   ```
+  
 
 ## Project Installation
 

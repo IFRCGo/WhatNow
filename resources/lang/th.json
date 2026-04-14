@@ -381,7 +381,10 @@
       "less": "แสดงน้อยลง",
       "user_can_do": "ดูว่าบัญชีผู้ใช้ไหนได้รับอนุญาตในการดำเนินการ",
       "user_no_permission": "ผู้ใช้งานรายนี้ไม่ได้รับสิทธิ์ใดๆ",
-      "soc_already_added": "บัญชีผู้ใช้ผู้ใช้งานนี้ถูกจัดไว้ให้แก่สมาคมนี้แล้ว"
+      "soc_already_added": "บัญชีผู้ใช้ผู้ใช้งานนี้ถูกจัดไว้ให้แก่สมาคมนี้แล้ว",
+      "access_permissions": "สิทธิ์การเข้าถึง",
+      "can_access_legacy_whatnow": "สามารถเข้าถึง WhatNow เวอร์ชันเก่าได้",
+      "can_access_preparedness_v2": "สามารถเข้าถึง Preparedness v2 ได้"
     }
   },
   "new_welcome": {

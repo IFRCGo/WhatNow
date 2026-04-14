@@ -381,7 +381,10 @@
       "less": "Weniger anzeigen",
       "user_can_do": "Anzeigen, wozu der Benutzer berechtigt ist:",
       "user_no_permission": "Der Benutzer hat keine Berechtigungen",
-      "soc_already_added": "Dieser Benutzer hat diese Gesellschaft bereits zugewiesen bekommen"
+      "soc_already_added": "Dieser Benutzer hat diese Gesellschaft bereits zugewiesen bekommen",
+      "access_permissions": "Zugriffsberechtigungen",
+      "can_access_legacy_whatnow": "Kann auf das alte WhatNow zugreifen",
+      "can_access_preparedness_v2": "Kann auf Preparedness v2 zugreifen"
     }
   },
   "new_welcome": {

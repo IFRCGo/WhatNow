@@ -381,7 +381,10 @@
       "less": "少なく表示",
       "user_can_do": "権限のあるユーザーを表示：",
       "user_no_permission": "ユーザーには権限がありません",
-      "soc_already_added": "このユーザーは既に組織に割り当てられています"
+      "soc_already_added": "このユーザーは既に組織に割り当てられています",
+      "access_permissions": "アクセス権限",
+      "can_access_legacy_whatnow": "レガシーWhatNowにアクセスできます",
+      "can_access_preparedness_v2": "Preparedness v2にアクセスできます"
     }
   },
   "new_welcome": {

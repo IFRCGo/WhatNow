@@ -381,7 +381,10 @@
       "less": "Показать меньше",
       "user_can_do": "Просмотреть права доступа пользователя:",
       "user_no_permission": "У пользователя нет прав доступа",
-      "soc_already_added": "Пользователь уже включен в данное сообщество"
+      "soc_already_added": "Пользователь уже включен в данное сообщество",
+      "access_permissions": "Разрешения доступа",
+      "can_access_legacy_whatnow": "Может получить доступ к устаревшему WhatNow",
+      "can_access_preparedness_v2": "Может получить доступ к Preparedness v2"
     }
   },
   "new_welcome": {
