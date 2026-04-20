@@ -442,7 +442,7 @@
     "warning": "Warning",
     "anticipated": "Anticipated",
     "assess_and_plan":"Assess and Plan",
-    "mitigate_risks":"Mitigate Risks",
+    "mitigate_risks":"Mitigate Risk",
     "prepare_to_respond":"Prepare to Respond",
     "recover": "Recover"
   },
@@ -538,7 +538,7 @@
       "recover_extra": "Berikut ini adalah tindakan perlindungan yang harus dilakukan untuk mengurangi risiko setelah terjadi peristiwa berbahaya.",
       "anticipated": "Anticipated",
       "assess_and_plan": "Assess and Plan",
-      "mitigate_risks": "Mitigate Risks",
+      "mitigate_risks": "Mitigate Risk",
       "prepare_to_respond": "Prepare to Respond",
       "updated": "diperbarui",
       "download_icon": "Unduh Ikon",
