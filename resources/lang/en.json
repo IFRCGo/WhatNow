@@ -85,7 +85,6 @@
     "app_detail": "App Detail",
     "all_terms": "All Terms and Conditions"
   },
-
   "documentation": {
     "heading": "IFRC NS Preparedness Messages API Documentation",
     "sidebar": {
@@ -237,7 +236,6 @@
     "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
     "wellcome": "Welcome",
     "wellcome_description": "Here you can edit and publish IFRC National Society Preparedness Messages content."
-
   },
   "languages": {
     "am": "አማርኛ",
@@ -464,9 +462,9 @@
     "immediate": "Immediate",
     "warning": "Warning",
     "anticipated": "Anticipated",
-    "assess_and_plan":"Assess and Plan",
-    "mitigate_risks":"Mitigate Risks",
-    "prepare_to_respond":"Prepare to Respond",
+    "assess_and_plan": "Assess and Plan",
+    "mitigate_risks": "Mitigate Risk",
+    "prepare_to_respond": "Prepare to Respond",
     "recover": "Recover"
   },
   "content": {
@@ -575,7 +573,7 @@
       "recover_extra": "Take these actions after the hazard event to ensure safety.",
       "anticipated": "Anticipated",
       "assess_and_plan": "Assess and Plan",
-      "mitigate_risks": "Mitigate Risks",
+      "mitigate_risks": "Mitigate Risk",
       "prepare_to_respond": "Prepare to Respond",
       "updated": "updated",
       "download_icon": "Download Icon",

@@ -12,7 +12,7 @@ class InstructionTranslation implements \JsonSerializable, Arrayable
         'warning',
         'anticipated',
         'assess_and_plan',
-        'mitigate_risks',
+        'mitigate_risk',
         'prepare_to_respond',
         'recover'
     ];
@@ -47,11 +47,11 @@ class InstructionTranslation implements \JsonSerializable, Arrayable
     public static function createFromRequest(array $array)
     {
         $translation = new self();
-        $translation->lang          = $array['lang'];
-        $translation->webUrl        = $array['webUrl'];
-        $translation->title         = $array['title'];
-        $translation->description   = $array['description'];
-        $translation->stages        = new Collection($array['stages']);
+        $translation->lang = $array['lang'];
+        $translation->webUrl = $array['webUrl'];
+        $translation->title = $array['title'];
+        $translation->description = $array['description'];
+        $translation->stages = new Collection($array['stages']);
         return $translation;
     }
 
@@ -60,12 +60,12 @@ class InstructionTranslation implements \JsonSerializable, Arrayable
     {
         $translation = new self();
 
-        $translation->id            = $array['id'];
-        $translation->lang          = $array['lang'];
-        $translation->webUrl        = $array['webUrl'];
-        $translation->title         = $array['title'];
-        $translation->description   = $array['description'];
-        $translation->stages        = new Collection($array['stages']);
+        $translation->id = $array['id'];
+        $translation->lang = $array['lang'];
+        $translation->webUrl = $array['webUrl'];
+        $translation->title = $array['title'];
+        $translation->description = $array['description'];
+        $translation->stages = new Collection($array['stages']);
         $translation->createdAt = new \DateTimeImmutable($array['createdAt']);
         $translation->published = $array['published'];
         return $translation;
