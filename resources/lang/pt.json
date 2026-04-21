@@ -441,9 +441,9 @@
     "immediate": "Imediata",
     "warning": "Aviso",
     "anticipated": "Antecipado",
-    "assess_and_plan": "Avaliar e Planejar",
-    "mitigate_risks": "Mitigar Risco",
-    "prepare_to_respond": "Preparar para responder",
+    "assess_and_plan":"Avaliar e Planejar",
+    "mitigate_risks":"Mitigar Risco",
+    "prepare_to_respond":"Preparar para responder",
     "recover": "Recuperar"
   },
   "content": {
@@ -526,7 +526,7 @@
       "seasonalForecast_extra": "Uma previsão sazonal é uma declaração de previsão de um incidente desastroso. As ações são tomadas para avaliar potenciais riscos e planificar atividades para reduzir o risco e para proteger as habitações.",
       "watch": "Vigilância",
       "watch_help": "Preparar para responder",
-      "watch_extra": "É emitida a vigilância quando o risco de um incidente desastroso aumenta significativamente, mas a sua ocorrência, localização e/ou momento ainda são incertos. É suposto dar tempo suficiente para ações de proteção e preparação para reagir.",
+      "watch_extra": "É emitida a vigilância quando o risco de um incidente desastroso aumenta significativamente, mas a sua ocorrência, localização e\/ou momento ainda são incertos. É suposto dar tempo suficiente para ações de proteção e preparação para reagir.",
       "warning": "Aviso",
       "warning_help": "Preparar para responder",
       "warning_extra": "Um aviso é emitido quando um incidente desastroso está a ocorrer, está iminente ou tem uma grande probabilidade de ocorrer. Isso significa condições que são uma ameaça à vida ou propriedade. As pessoas na trajetória deste perigo precisam de tomar precauções.",
@@ -558,8 +558,7 @@
       "content_edit_title": "Edição de Conteúdo",
       "content_add_hazard_title": "Adicionar Desastre",
       "key_message_label": "Título da mensagem principal",
-      "supporting_message_label": "Mensagem de apoio",
-      "mitigate_risk": "Mitigar Risco"
+      "supporting_message_label": "Mensagem de apoio"
     },
     "message_editor": {
       "title": "Editor de Atribuição",
@@ -619,7 +618,7 @@
         "bad_request_error_codes": {
           "30001": "Os cabeçalhos das colunas não correspondem ao modelo",
           "30002": "Falta o nome da atribuição, mensagem ou url",
-          "30003": "URL de atribuição inválido - por favor assegure-se de que o protocolo está presente, e.g. https: //",
+          "30003": "URL de atribuição inválido - por favor assegure-se de que o protocolo está presente, e.g. https: \/\/",
           "40001": "Código de país fornecido inválido",
           "40002": "A sociedade selecionada não corresponde à sociedade do ficheiro selecionado",
           "40003": "A data em que o ficheiro selecionado foi exportado foi deformada e a importação não pode ser concluída"
@@ -690,7 +689,7 @@
   },
   "landing": {
     "strapline": "Serviço de base de dados de mensagens de segurança",
-    "strapline_part_2": "Mensagens Principais de Segurança da Cruz Vermelha Internacional / Crescente Vermelho",
+    "strapline_part_2": "Mensagens Principais de Segurança da Cruz Vermelha Internacional \/ Crescente Vermelho",
     "head_1": "Segurança da FICV",
     "head_2": "Base de dados de mensagens",
     "head_text_1": "Mensagens de segurança baseadas na sensibilização do público e na",
@@ -842,10 +841,10 @@
     "industries": {
       "media": "Meios de Comunicação",
       "emergency": "Gestão de Emergências",
-      "non_profit": "Sem fins lucrativos/ONG",
+      "non_profit": "Sem fins lucrativos\/ONG",
       "humanitarian": "Organização Humanitária",
-      "red_cross": "Cruz Vermelha/Crescente Vermelho",
-      "education": "Educação/Académica",
+      "red_cross": "Cruz Vermelha\/Crescente Vermelho",
+      "education": "Educação\/Académica",
       "gov": "Agência Governamental",
       "other": "Outros"
     },
@@ -860,9 +859,9 @@
       "body": "As leis do Distrito de Colúmbia regerão todos os direitos e obrigações ao abrigo deste Acordo, sem dar efeito a quaisquer princípios de conflitos de leis.",
       "heading": "Lei Aplicável:"
     },
-    "body": "O Utilizador é responsável por manter o segredo e a segurança da chave de registo que lhe foi fornecida pela Cruz Vermelha. É responsável por manter a compatibilidade com a API, tal como atualizado de tempos a tempos, a fim de continuar a receber os Data Feeds. A Cruz Vermelha pode lançar versões atualizadas da API e dos Data Feeds a seu exclusivo critério. As novas versões podem não ser compatíveis com implementações anteriores, e O Utilizador concorda em utilizar a versão atualizada mais recente dos Data Feeds em qualquer altura.\n\nO Utilizador concorda em não modificar, distribuir, descompilar, desmontar, ou fazer engenharia inversa de qualquer parte da API ou de qualquer software da Cruz Vermelha.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de uma forma que exceda o volume razoável do pedido ou que constitua uma utilização excessiva ou abusiva, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de forma ilegal, enganosa, negligente, maliciosa, com intenção de causar danos, ou que prejudique a Cruz Vermelha, os seus fornecedores de serviços, os seus fornecedores de conteúdos, ou qualquer outra pessoa, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nA Cruz Vermelha pode monitorizar a sua utilização da API e dos Data Feeds. O Utilizador não pode utilizar quaisquer meios técnicos para interferir com tal monitorização, e a Cruz Vermelha pode utilizar meios técnicos para ultrapassar qualquer interferência deste tipo.\n\nA utilização de Mensagens de Preparação, Resposta e Recuperação será apresentada apenas como atual ou atualizada à configuração de urgência então vigente do Alerta de Evento correlacionado, e o Utilizador deverá atualizar Mensagens individuais de Preparação, Resposta e Recuperação após qualquer atualização dos Data Feeds e/ou Alertas de Evento correlacionados pela Cruz Vermelha.\n\nAs Mensagens de Preparação, Resposta e Recuperação Individuais que utiliza devem ser associadas apenas à região geográfica para a qual são emitidas. Se uma Mensagem de Preparação, Resposta e Recuperação incluir uma referência a uma fonte como a Cruz Vermelha Americana ou outra sociedade ou organização nacional da Cruz Vermelha ou do Crescente Vermelho (cada uma delas uma \"Referência de Fonte\"), o Utilizador deve incluir a Referência de Fonte associada a cada Mensagem de Preparação, Resposta e Recuperação no formulário fornecido nos Data Feeds. O Utilizador não deverá fazer mais uso de qualquer Referência de Fonte.\n\nO Utilizador não pode traduzir os Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação para qualquer outra língua, fazer qualquer uso, edição ou revisão, ou alterar o significado dos Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação.\n\nO Utilizador deve assegurar-se de que os Data Feeds permanecem na sua posse e/ou controlo exclusivo.\n\nO Utilizador não pode permitir que Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação entregues a Utilizadores Finais incorporem qualquer publicidade ou patrocínio.\n\nO Utilizador não pode ficar com qualquer arquivo ou Data Feeds no todo ou em parte.",
+    "body": "O Utilizador é responsável por manter o segredo e a segurança da chave de registo que lhe foi fornecida pela Cruz Vermelha. É responsável por manter a compatibilidade com a API, tal como atualizado de tempos a tempos, a fim de continuar a receber os Data Feeds. A Cruz Vermelha pode lançar versões atualizadas da API e dos Data Feeds a seu exclusivo critério. As novas versões podem não ser compatíveis com implementações anteriores, e O Utilizador concorda em utilizar a versão atualizada mais recente dos Data Feeds em qualquer altura.\n\nO Utilizador concorda em não modificar, distribuir, descompilar, desmontar, ou fazer engenharia inversa de qualquer parte da API ou de qualquer software da Cruz Vermelha.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de uma forma que exceda o volume razoável do pedido ou que constitua uma utilização excessiva ou abusiva, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nO Utilizador não poderá utilizar a API ou Data Feeds de forma ilegal, enganosa, negligente, maliciosa, com intenção de causar danos, ou que prejudique a Cruz Vermelha, os seus fornecedores de serviços, os seus fornecedores de conteúdos, ou qualquer outra pessoa, conforme determinado pela Cruz Vermelha ao seu exclusivo critério.\n\nA Cruz Vermelha pode monitorizar a sua utilização da API e dos Data Feeds. O Utilizador não pode utilizar quaisquer meios técnicos para interferir com tal monitorização, e a Cruz Vermelha pode utilizar meios técnicos para ultrapassar qualquer interferência deste tipo.\n\nA utilização de Mensagens de Preparação, Resposta e Recuperação será apresentada apenas como atual ou atualizada à configuração de urgência então vigente do Alerta de Evento correlacionado, e o Utilizador deverá atualizar Mensagens individuais de Preparação, Resposta e Recuperação após qualquer atualização dos Data Feeds e\/ou Alertas de Evento correlacionados pela Cruz Vermelha.\n\nAs Mensagens de Preparação, Resposta e Recuperação Individuais que utiliza devem ser associadas apenas à região geográfica para a qual são emitidas. Se uma Mensagem de Preparação, Resposta e Recuperação incluir uma referência a uma fonte como a Cruz Vermelha Americana ou outra sociedade ou organização nacional da Cruz Vermelha ou do Crescente Vermelho (cada uma delas uma \"Referência de Fonte\"), o Utilizador deve incluir a Referência de Fonte associada a cada Mensagem de Preparação, Resposta e Recuperação no formulário fornecido nos Data Feeds. O Utilizador não deverá fazer mais uso de qualquer Referência de Fonte.\n\nO Utilizador não pode traduzir os Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação para qualquer outra língua, fazer qualquer uso, edição ou revisão, ou alterar o significado dos Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação.\n\nO Utilizador deve assegurar-se de que os Data Feeds permanecem na sua posse e\/ou controlo exclusivo.\n\nO Utilizador não pode permitir que Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação entregues a Utilizadores Finais incorporem qualquer publicidade ou patrocínio.\n\nO Utilizador não pode ficar com qualquer arquivo ou Data Feeds no todo ou em parte.",
     "contact": "Por favor contacte a Cruz Vermelha em {0} com quaisquer questões sobre a API.",
-    "disclaimer": "A API e os Data Feeds são fornecidos APENAS PARA FINS INFORMATIVOS E EDUCACIONAIS E numa base de \"no estado em que se encontram\" ou \"conforme disponíveis\". A Cruz Vermelha não faz representações ou garantias expressas ou implícitas de nenhum género. A Cruz Vermelha nega todas as garantias, expressas ou implícitas, incluindo mas não limitando-se a garantias de comercialização e de adequação para nenhum fim em particular. A Cruz Vermelha e os seus colaboradores, oficiais, governadores e agentes e licenciadores não serão responsáveis por nenhuma forma de dano resultante do uso da API, Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a danos diretos, indiretos, incidentais, punitivos e consequentes.\n\nA Cruz Vermelha não garante a ordem, precisão, autenticidade ou a integralidade da API, Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação e não será considerada responsável de nenhuma forma quanto ao Utilizador ou os seus Utilizadores Finais ou a terceiros, incluindo mas não limitando-se a quaisquer atrasos, imprecisões, erros ou omissões quanto à API, Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação fornecidas a seguir.",
+    "disclaimer": "A API e os Data Feeds são fornecidos APENAS PARA FINS INFORMATIVOS E EDUCACIONAIS E numa base de \"no estado em que se encontram\" ou \"conforme disponíveis\". A Cruz Vermelha não faz representações ou garantias expressas ou implícitas de nenhum género. A Cruz Vermelha nega todas as garantias, expressas ou implícitas, incluindo mas não limitando-se a garantias de comercialização e de adequação para nenhum fim em particular. A Cruz Vermelha e os seus colaboradores, oficiais, governadores e agentes e licenciadores não serão responsáveis por nenhuma forma de dano resultante do uso da API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a danos diretos, indiretos, incidentais, punitivos e consequentes.\n\nA Cruz Vermelha não garante a ordem, precisão, autenticidade ou a integralidade da API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação e não será considerada responsável de nenhuma forma quanto ao Utilizador ou os seus Utilizadores Finais ou a terceiros, incluindo mas não limitando-se a quaisquer atrasos, imprecisões, erros ou omissões quanto à API, Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação fornecidas a seguir.",
     "entire_agreement": {
       "body": "Os Termos da API constituem o acordo completo e exclusivo entre a Cruz Vermelha e o Utilizador com respeito ao presente assunto e substitui todos os acordos orais ou escritos, comunicações ou contratos precedentes não incorporados aqui especificamente. A Cruz Vermelha reserva o direito de modificar ou revogar este acordo a qualquer momento.",
       "heading": "Contrato Integral:"
@@ -870,7 +869,7 @@
     "heading": "CONTRATO DE LICENCIAMENTO DE USUÁRIO FINAL DA API",
     "intro": "ACEITAR: ATRAVÉS DO USO DO SERVIÇO OU DA MARCAÇÃO DA CAIXA APRESENTADA, O USUÁRIO ESTÁ A CONCORDAR COM O QUE É ESTABELECIDO NESTE CONTRATO.\n\nA API é uma ferramenta que te permite (\"O Usuário\") recolher e usar data feeds disponibilizados pela Cruz Vermelha, incluindo um feed meteorológico de notificações de aviso e vigilância de eventos de desastre global (\"Alertas de Eventos\") e um feed de mensagens úteis e contextuais sobre como se preparar para desastres locais de acordo com o tipo e urgência do desastre (\"Mensagens de Preparação, Resposta e Recuperação\", juntamente aos Alertas de Eventos e os \"Data Feeds\"). As Mensagens de Preparação, Resposta e Recuperação têm como objetivo acompanhar os Alertas de Eventos e outras notificações de aviso e vigilância associadas a eventos de desastre na sua própria aplicação. O uso dos Data Feeds pelo Usuário é regulado pelos Termos da API.",
     "license_limitations": {
-      "body": "O Utilizador pode usar os Data Feeds apenas em associação com a sua aplicação sujeita aos Termos da API e desde que O Usuário mantenha a compatibilidade com a API, de acordo com as atualizações periódicas. É garantido ao Usuário um direito não-exclusivo, limitado e revogável para descarregar, usar, reproduzir e distribuir para usuários finais da sua própria aplicação (\"Usuários Finais\") Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação relevantes e contextuais em associação com a configuração de urgência de Alertas de Evento individuais dos Data Feeds, sujeito aos Termos da API. O Usuário pode apenas utilizar a API para usos não comerciais dos Data Feeds de acordo com os Termos da API. O Usuário não pode, a nenhum momento, utilizar a API para meios comerciais dos Data Feeds, Alertas de Eventos e/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a revenda, cobrar o seu acesso, cobrar para os redistribuir ou cobrar para criar trabalhos derivados com base neles. A Cruz Vermelha e os seus licenciadores preservam todos os títulos, propriedade, direitos e garantias e interesses da API, Mensagens de Preparação, Resposta e Recuperação, Alertas de Eventos, Data Feeds e Fontes de Referência (como definidas abaixo). Todos os direitos não concedidos expressamente estão reservados.",
+      "body": "O Utilizador pode usar os Data Feeds apenas em associação com a sua aplicação sujeita aos Termos da API e desde que O Usuário mantenha a compatibilidade com a API, de acordo com as atualizações periódicas. É garantido ao Usuário um direito não-exclusivo, limitado e revogável para descarregar, usar, reproduzir e distribuir para usuários finais da sua própria aplicação (\"Usuários Finais\") Alertas de Eventos e Mensagens de Preparação, Resposta e Recuperação relevantes e contextuais em associação com a configuração de urgência de Alertas de Evento individuais dos Data Feeds, sujeito aos Termos da API. O Usuário pode apenas utilizar a API para usos não comerciais dos Data Feeds de acordo com os Termos da API. O Usuário não pode, a nenhum momento, utilizar a API para meios comerciais dos Data Feeds, Alertas de Eventos e\/ou Mensagens de Preparação, Resposta e Recuperação, incluindo mas não limitando-se a revenda, cobrar o seu acesso, cobrar para os redistribuir ou cobrar para criar trabalhos derivados com base neles. A Cruz Vermelha e os seus licenciadores preservam todos os títulos, propriedade, direitos e garantias e interesses da API, Mensagens de Preparação, Resposta e Recuperação, Alertas de Eventos, Data Feeds e Fontes de Referência (como definidas abaixo). Todos os direitos não concedidos expressamente estão reservados.",
       "heading": "Licença e Limitações:"
     },
     "overview": {
@@ -893,13 +892,13 @@
         "six": "Transmitir quaisquer vírus, vermes, cavalos de Troia ou quaisquer itens de natureza destrutiva."
       }
     },
-    "reserve_rights": "A Cruz Vermelha reserva o direito de alterar e/ou parar de fornecer a API e os Data Feeds na sua totalidade ou em parte, provisoriamente ou permanentemente, a qualquer momento e sem aviso prévio. A fim de evitar incertezas, nada aqui presente obriga a Cruz Vermelha a tornar a API e Data Feeds disponíveis para O Usuário e O Usuário concorda e reconhece que qualquer acesso está ao critério exclusivo e absoluto da Cruz Vermelha.",
+    "reserve_rights": "A Cruz Vermelha reserva o direito de alterar e\/ou parar de fornecer a API e os Data Feeds na sua totalidade ou em parte, provisoriamente ou permanentemente, a qualquer momento e sem aviso prévio. A fim de evitar incertezas, nada aqui presente obriga a Cruz Vermelha a tornar a API e Data Feeds disponíveis para O Usuário e O Usuário concorda e reconhece que qualquer acesso está ao critério exclusivo e absoluto da Cruz Vermelha.",
     "severability": {
       "body": "A invalidade ou ilegalidade de qualquer disposição deste documento não deverá afetar a validade de qualquer outra disposição.",
       "heading": "Disjunção e Renúncia:"
     },
     "suspension": {
-      "body": "A Cruz Vermelha reserva o direito de suspender ou cancelar o acesso do Usuário se a Cruz Vermelha determinar, a seu exclusivo critério, que O Usuário está envolvido na utilização não autorizada da API ou do Data Feed como descrito nos Termos da API ou que O Usuário está a utilizar a API ou o Data Feed em qualquer atividade que ameaça/põe em risco a segurança e/ou proteção de qualquer pessoa ou das redes da Cruz Vermelha.",
+      "body": "A Cruz Vermelha reserva o direito de suspender ou cancelar o acesso do Usuário se a Cruz Vermelha determinar, a seu exclusivo critério, que O Usuário está envolvido na utilização não autorizada da API ou do Data Feed como descrito nos Termos da API ou que O Usuário está a utilizar a API ou o Data Feed em qualquer atividade que ameaça\/põe em risco a segurança e\/ou proteção de qualquer pessoa ou das redes da Cruz Vermelha.",
       "heading": "Suspensão e Cancelamento:"
     }
   },
@@ -959,7 +958,7 @@
       "email_subject": "Requerer um novo tipo de desastre",
       "hazard_name": "Nome do desastre",
       "hazard_name_placeholder": "Introduza o nome do desastre",
-      "upload_icon": "Carregar/Adicionar imagem",
+      "upload_icon": "Carregar\/Adicionar imagem",
       "icon_requirements": "Imagens devem estar em formato .png e terem um tamanho abaixo de 30kb",
       "requestLink": "Contactar o CGPD para requerer um novo tipo de desastre",
       "success": "Tipo de desastre criado",

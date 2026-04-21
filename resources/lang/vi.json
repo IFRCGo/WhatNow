@@ -40,7 +40,7 @@
   "name": "Tên",
   "first_name": "Tên",
   "last_name": "Họ",
-  "toggle_navigation": "Bật/tắt điều hướng",
+  "toggle_navigation": "Bật\/tắt điều hướng",
   "you_are_logged_in": "Bạn đã đăng nhập!",
   "reset_password": "Cài lại mật khẩu",
   "set_password": "Cài mật khẩu",
@@ -197,15 +197,13 @@
     "steps": {
       "one": {
         "heading": "Bước 1: Đăng ký",
-        "body": "Để bắt đầu sử dụng dữ liệu từ API Cơ sở dữ liệu Tin nhắn An toàn, trước tiên {0} vào Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn.\n\nBạn có thể sử dụng tài khoản Facebook & Google hoặc địa chỉ email để tạo tài khoản.",
-        "create_account_alt": "tạo tài khoản",
+        "body": "Để bắt đầu sử dụng dữ liệu từ API Cơ sở dữ liệu Tin nhắn An toàn, trước tiên {0} vào Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn.\n\nBạn có thể sử dụng tài khoản Facebook & Google hoặc địa chỉ email để tạo tài khoản.",        "create_account_alt": "tạo tài khoản",
         "existing_account": "Nếu bạn đã có tài khoản, hãy {0}.",
         "login_cta": "đăng nhập",
         "sign_up_cta": "đăng ký"
       },
       "two": {
-        "body": "Để sử dụng API, bạn phải tạo một ứng dụng trong Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn. Hãy cho chúng tôi biết một chút về những gì bạn đang xây dựng.",
-        "create_app_alt": "tạo ứng dụng",
+        "body": "Để sử dụng API, bạn phải tạo một ứng dụng trong Cổng thông tin Cơ sở dữ liệu Tin nhắn An toàn. Hãy cho chúng tôi biết một chút về những gì bạn đang xây dựng.",        "create_app_alt": "tạo ứng dụng",
         "heading": "Bước 2: Tạo ứng dụng"
       },
       "three": {
@@ -216,8 +214,7 @@
       },
       "four": {
         "api_docs_cta": "Tài liệu API",
-        "body": "API Cơ sở dữ liệu Tin nhắn An toàn sử dụng HTTP(S) và cung cấp các điểm cuối RESTful để lấy dữ liệu đã xuất bản.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ở bước trước.",
-        "example_title": "Ví dụ yêu cầu",
+        "body": "API Cơ sở dữ liệu Tin nhắn An toàn sử dụng HTTP(S) và cung cấp các điểm cuối RESTful để lấy dữ liệu đã xuất bản.\n\nMỗi yêu cầu phải được xác thực bằng khóa API được tạo ở bước trước.",        "example_title": "Ví dụ yêu cầu",
         "heading": "Bước 4: Làm yêu cầu",
         "moreInfo": "Xem {0} để biết thêm thông tin về tất cả điểm cuối API."
       }
@@ -441,9 +438,9 @@
     "immediate": "Ngay lập tức",
     "warning": "Cảnh báo",
     "anticipated": "Dự kiến",
-    "assess_and_plan": "Đánh giá và Lập kế hoạch",
-    "mitigate_risks": "Giảm thiểu Rủi ro",
-    "prepare_to_respond": "Chuẩn bị ứng phó",
+    "assess_and_plan":"Đánh giá và Lập kế hoạch",
+    "mitigate_risks":"Giảm thiểu Rủi ro",
+    "prepare_to_respond":"Chuẩn bị ứng phó",
     "recover": "Phục hồi"
   },
   "content": {
@@ -558,8 +555,7 @@
       "content_edit_title": "Chỉnh sửa nội dung",
       "content_add_hazard_title": "Thêm nguy hiểm",
       "key_message_label": "Tiêu đề tin nhắn chính",
-      "supporting_message_label": "Tin nhắn hỗ trợ",
-      "mitigate_risk": "Giảm thiểu Rủi ro"
+      "supporting_message_label": "Tin nhắn hỗ trợ"
     },
     "message_editor": {
       "title": "Trình chỉnh sửa Ghi công",
@@ -619,7 +615,7 @@
         "bad_request_error_codes": {
           "30001": "Tiêu đề cột không khớp với tiêu bản",
           "30002": "Tên đặc tính, tin nhắn hoặc url bị thiếu",
-          "30003": "Đặc tính Url không hợp lệ - hãy đảm bảo rằng giao thức có sẵn, ví dụ: https: //",
+          "30003": "Đặc tính Url không hợp lệ - hãy đảm bảo rằng giao thức có sẵn, ví dụ: https: \/\/",
           "40001": "Mã quốc gia không hợp lệ",
           "40002": "Hiệp hội được chọn không khớp với hiệp hội trong tệp đã chọn",
           "40003": "Ngày xuất tệp đã chọn không đúng nên không thể hoàn tất việc nhập vào"
@@ -690,7 +686,7 @@
   },
   "landing": {
     "strapline": "Dịch vụ Cơ sở dữ liệu Tin nhắn An toàn",
-    "strapline_part_2": "Thông điệp an toàn chính của hội Chữ thập đỏ / Trăng lưỡi liềm đỏ toàn cầu",
+    "strapline_part_2": "Thông điệp an toàn chính của hội Chữ thập đỏ \/ Trăng lưỡi liềm đỏ toàn cầu",
     "head_1": "An toàn IFRC",
     "head_2": "Cơ sở dữ liệu Tin nhắn",
     "head_text_1": "Tin nhắn an toàn dựa trên Nhận thức Cộng đồng của IFRC và",
@@ -745,7 +741,7 @@
     "fake_alert_heading": "Cảnh báo cực lạnh",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
     "fake_alert_time": "CÁCH ĐÂY 1 GIỜ",
-    "fake_alert_time_exact": "05/02/2018 lúc 05:15 CT",
+    "fake_alert_time_exact": "05\/02\/2018 lúc 05:15 CT",
     "use_cases": {
       "heading": "Tìm hiểu thêm",
       "first_heading": "Cách nó hoạt động",
@@ -786,7 +782,7 @@
     },
     "data_preview": {
       "heading": "Tin nhắn An toàn",
-      "sub_heading": "Đăng ký và xem các thông điệp hành động chính của các Hiệp hội quốc gia Chữ thập đỏ / Trăng lưỡi liềm đỏ trên toàn thế giới"
+      "sub_heading": "Đăng ký và xem các thông điệp hành động chính của các Hiệp hội quốc gia Chữ thập đỏ \/ Trăng lưỡi liềm đỏ trên toàn thế giới"
     },
     "footer": {
       "terms_conditions": "Điều khoản & điều kiện",
@@ -842,10 +838,10 @@
     "industries": {
       "media": "Đa phương tiện",
       "emergency": "Quản lý khẩn cấp",
-      "non_profit": "Phi lợi nhuận / NGO",
+      "non_profit": "Phi lợi nhuận \/ NGO",
       "humanitarian": "Tổ chức Nhân đạo",
-      "red_cross": "Chữ thập đỏ / Trăng lưỡi liềm đỏ",
-      "education": "Giáo dục / Học viện",
+      "red_cross": "Chữ thập đỏ \/ Trăng lưỡi liềm đỏ",
+      "education": "Giáo dục \/ Học viện",
       "gov": "Cơ quan chính phủ",
       "other": "Khác"
     },
@@ -860,9 +856,9 @@
       "body": "Luật của Đặc khu Columbia sẽ điều chỉnh tất cả các quyền và nghĩa vụ theo Thỏa thuận này, mà không ảnh hưởng đến bất kỳ nguyên tắc xung đột pháp luật nào.",
       "heading": "Luật áp dụng:"
     },
-    "body": "Bạn có trách nhiệm duy trì tính bí mật và bảo mật của khóa đăng ký do Hội Chữ thập Đỏ cung cấp cho Bạn. Bạn chịu trách nhiệm duy trì khả năng tương thích với API, được cập nhật theo thời gian, để tiếp tục nhận được Nguồn cấp dữ liệu. Hội Chữ thập Đỏ có thể phát hành các phiên bản cập nhật của API và Nguồn cấp dữ liệu theo quyết định riêng của mình. Các phiên bản mới có thể không tương thích với các triển khai trước đó và Bạn đồng ý sử dụng phiên bản cập nhật gần đây nhất của Nguồn cấp dữ liệu.\n\nBạn đồng ý không sửa đổi, phân phối, dịch ngược, tháo rời hoặc thiết kế đối chiếu bất kỳ phần nào của API hoặc bất kỳ phần mềm nào của Hội Chữ thập Đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách vượt quá khối lượng yêu cầu hợp lý hoặc cấu thành việc sử dụng quá mức hoặc lạm dụng, theo quyết định riêng của Hội Chữ thập đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách bất hợp pháp, gây hiểu lầm, cẩu thả, độc hại, có ý định gây hại hoặc gây hại cho Hội Chữ thập đỏ, các nhà cung cấp dịch vụ, nhà cung cấp nội dung của Hội chữ thập đỏ hoặc bất kỳ người nào khác, theo quyết định của Hội Chữ thập Đỏ theo quyết định của riêng mình.\n\n\nChữ thập đỏ có thể giám sát việc sử dụng API và Nguồn cấp dữ liệu của bạn. Bạn không được sử dụng bất kỳ phương tiện kỹ thuật nào để can thiệp vào việc giám sát đó, và Hội Chữ thập đỏ có thể sử dụng các phương tiện kỹ thuật để khắc phục bất kỳ sự can thiệp nào như vậy.\n\nViệc sử dụng các Thông báo Chuẩn bị, Trả lời và Khôi phục sẽ chỉ được trình bày dưới dạng hiện tại hoặc được cập nhật theo cài đặt khẩn cấp hiện tại của Cảnh báo sự kiện tương ứng và bạn sẽ cập nhật các Thông báo Chuẩn bị, Trả lời và Khôi phục riêng lẻ khi có bất kỳ bản cập nhật nào của Nguồn cấp dữ liệu và / hoặc Cảnh báo sự kiện tương quan của Hội Chữ thập đỏ.\n\nCác Tin nhắn Soạn thảo, Trả lời và Khôi phục Cá nhân Bạn sử dụng sẽ chỉ được liên kết với khu vực địa lý mà nó được phát hành. Nếu một Thông báo Chuẩn bị, Trả lời và Phục hồi bao gồm tham chiếu đến một nguồn như Hội Chữ thập đỏ Hoa Kỳ hoặc một tổ chức hoặc xã hội quốc gia Chữ thập đỏ hoặc Trăng lưỡi liềm đỏ khác (mỗi một \"Nguồn tham khảo\"), Bạn sẽ bao gồm Tham chiếu Nguồn được liên kết với mỗi Chuẩn bị, Trả lời và Khôi phục Thư ở dạng được cung cấp trong Nguồn cấp dữ liệu. Bạn sẽ không sử dụng thêm bất kỳ Tham chiếu Nguồn nào.\n\nBạn không được dịch Nguồn cấp dữ liệu, Cảnh báo sự kiện và / hoặc Chuẩn bị, Trả lời và Khôi phục thông báo sang bất kỳ ngôn ngữ nào khác, sử dụng, chỉnh sửa hoặc sửa đổi hoặc thay đổi (các) ý nghĩa của Nguồn cấp dữ liệu, Cảnh báo sự kiện và / hoặc Chuẩn bị, Trả lời và Khôi phục Tin nhắn.\n\nBạn phải đảm bảo rằng Nguồn cấp dữ liệu, vẫn thuộc quyền sở hữu và / hoặc quyền kiểm soát duy nhất của bạn.\n\nBạn không thể cho phép Thông báo Sự kiện và Chuẩn bị, Trả lời và Khôi phục Thông báo được gửi đến Người dùng Cuối để kết hợp bất kỳ quảng cáo hoặc tài trợ nào.\n\nBạn không được phép lưu trữ toàn bộ hoặc một phần Nguồn cấp dữ liệu.",
+    "body": "Bạn có trách nhiệm duy trì tính bí mật và bảo mật của khóa đăng ký do Hội Chữ thập Đỏ cung cấp cho Bạn. Bạn chịu trách nhiệm duy trì khả năng tương thích với API, được cập nhật theo thời gian, để tiếp tục nhận được Nguồn cấp dữ liệu. Hội Chữ thập Đỏ có thể phát hành các phiên bản cập nhật của API và Nguồn cấp dữ liệu theo quyết định riêng của mình. Các phiên bản mới có thể không tương thích với các triển khai trước đó và Bạn đồng ý sử dụng phiên bản cập nhật gần đây nhất của Nguồn cấp dữ liệu.\n\nBạn đồng ý không sửa đổi, phân phối, dịch ngược, tháo rời hoặc thiết kế đối chiếu bất kỳ phần nào của API hoặc bất kỳ phần mềm nào của Hội Chữ thập Đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách vượt quá khối lượng yêu cầu hợp lý hoặc cấu thành việc sử dụng quá mức hoặc lạm dụng, theo quyết định riêng của Hội Chữ thập đỏ.\n\nBạn không được sử dụng API hoặc Nguồn cấp dữ liệu theo cách bất hợp pháp, gây hiểu lầm, cẩu thả, độc hại, có ý định gây hại hoặc gây hại cho Hội Chữ thập đỏ, các nhà cung cấp dịch vụ, nhà cung cấp nội dung của Hội chữ thập đỏ hoặc bất kỳ người nào khác, theo quyết định của Hội Chữ thập Đỏ theo quyết định của riêng mình.\n\n\nChữ thập đỏ có thể giám sát việc sử dụng API và Nguồn cấp dữ liệu của bạn. Bạn không được sử dụng bất kỳ phương tiện kỹ thuật nào để can thiệp vào việc giám sát đó, và Hội Chữ thập đỏ có thể sử dụng các phương tiện kỹ thuật để khắc phục bất kỳ sự can thiệp nào như vậy.\n\nViệc sử dụng các Thông báo Chuẩn bị, Trả lời và Khôi phục sẽ chỉ được trình bày dưới dạng hiện tại hoặc được cập nhật theo cài đặt khẩn cấp hiện tại của Cảnh báo sự kiện tương ứng và bạn sẽ cập nhật các Thông báo Chuẩn bị, Trả lời và Khôi phục riêng lẻ khi có bất kỳ bản cập nhật nào của Nguồn cấp dữ liệu và \/ hoặc Cảnh báo sự kiện tương quan của Hội Chữ thập đỏ.\n\nCác Tin nhắn Soạn thảo, Trả lời và Khôi phục Cá nhân Bạn sử dụng sẽ chỉ được liên kết với khu vực địa lý mà nó được phát hành. Nếu một Thông báo Chuẩn bị, Trả lời và Phục hồi bao gồm tham chiếu đến một nguồn như Hội Chữ thập đỏ Hoa Kỳ hoặc một tổ chức hoặc xã hội quốc gia Chữ thập đỏ hoặc Trăng lưỡi liềm đỏ khác (mỗi một \"Nguồn tham khảo\"), Bạn sẽ bao gồm Tham chiếu Nguồn được liên kết với mỗi Chuẩn bị, Trả lời và Khôi phục Thư ở dạng được cung cấp trong Nguồn cấp dữ liệu. Bạn sẽ không sử dụng thêm bất kỳ Tham chiếu Nguồn nào.\n\nBạn không được dịch Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục thông báo sang bất kỳ ngôn ngữ nào khác, sử dụng, chỉnh sửa hoặc sửa đổi hoặc thay đổi (các) ý nghĩa của Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Tin nhắn.\n\nBạn phải đảm bảo rằng Nguồn cấp dữ liệu, vẫn thuộc quyền sở hữu và \/ hoặc quyền kiểm soát duy nhất của bạn.\n\nBạn không thể cho phép Thông báo Sự kiện và Chuẩn bị, Trả lời và Khôi phục Thông báo được gửi đến Người dùng Cuối để kết hợp bất kỳ quảng cáo hoặc tài trợ nào.\n\nBạn không được phép lưu trữ toàn bộ hoặc một phần Nguồn cấp dữ liệu.",
     "contact": "Vui lòng liên hệ với Hội Chữ thập đỏ tại {0} nếu có bất kỳ câu hỏi nào liên quan đến API.",
-    "disclaimer": "API và Nguồn cấp dữ liệu được cung cấp CHỈ CHO CÁC MỤC ĐÍCH VỀ THÔNG TIN VÀ GIÁO DỤC VÀ trên cơ sở 'nguyên trạng' và 'nếu có'. Hội Chữ thập Đỏ không tuyên bố hoặc bảo đảm dưới bất kỳ hình thức nào, rõ ràng hay ngụ ý. Hội chữ thập đỏ từ chối mọi bảo đảm, rõ ràng hay ngụ ý, bao gồm nhưng không giới hạn ở những bảo đảm ngụ ý về khả năng bán được và tính phù hợp cho một mục đích cụ thể. Hội Chữ thập Đỏ và các nhân viên, viên chức, thống đốc và các đại lý và người cấp phép sẽ không chịu trách nhiệm về những thiệt hại dưới bất kỳ hình thức nào phát sinh từ việc sử dụng API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và / hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo bao gồm nhưng không giới hạn đối với các thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, trừng phạt và do hậu quả.\n\nHội Chữ thập Đỏ không đảm bảo trình tự, độ chính xác, tính xác thực hoặc tính hoàn chỉnh của API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và / hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo và sẽ không chịu trách nhiệm pháp lý dưới bất kỳ hình thức nào đối với Bạn hoặc Người dùng cuối của bạn hoặc bất kỳ bên thứ ba nào bên, bao gồm nhưng không giới hạn, đối với bất kỳ sự chậm trễ, không chính xác, lỗi hoặc thiếu sót nào, liên quan đến API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và / hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo được cung cấp dưới đây.",
+    "disclaimer": "API và Nguồn cấp dữ liệu được cung cấp CHỈ CHO CÁC MỤC ĐÍCH VỀ THÔNG TIN VÀ GIÁO DỤC VÀ trên cơ sở 'nguyên trạng' và 'nếu có'. Hội Chữ thập Đỏ không tuyên bố hoặc bảo đảm dưới bất kỳ hình thức nào, rõ ràng hay ngụ ý. Hội chữ thập đỏ từ chối mọi bảo đảm, rõ ràng hay ngụ ý, bao gồm nhưng không giới hạn ở những bảo đảm ngụ ý về khả năng bán được và tính phù hợp cho một mục đích cụ thể. Hội Chữ thập Đỏ và các nhân viên, viên chức, thống đốc và các đại lý và người cấp phép sẽ không chịu trách nhiệm về những thiệt hại dưới bất kỳ hình thức nào phát sinh từ việc sử dụng API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo bao gồm nhưng không giới hạn đối với các thiệt hại trực tiếp, gián tiếp, ngẫu nhiên, trừng phạt và do hậu quả.\n\nHội Chữ thập Đỏ không đảm bảo trình tự, độ chính xác, tính xác thực hoặc tính hoàn chỉnh của API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo và sẽ không chịu trách nhiệm pháp lý dưới bất kỳ hình thức nào đối với Bạn hoặc Người dùng cuối của bạn hoặc bất kỳ bên thứ ba nào bên, bao gồm nhưng không giới hạn, đối với bất kỳ sự chậm trễ, không chính xác, lỗi hoặc thiếu sót nào, liên quan đến API, Nguồn cấp dữ liệu, Cảnh báo sự kiện và \/ hoặc Chuẩn bị, Trả lời và Khôi phục Thông báo được cung cấp dưới đây.",
     "entire_agreement": {
       "body": "Các Điều Khoản này là thỏa thuận cuối cùng, đầy đủ và độc quyền của các bên liên quan đến vấn đề này và thay thế và hợp nhất tất cả các thảo luận trước đó giữa các bên liên quan đến vấn đề này. Hội Chữ thập đỏ có quyền sửa đổi hoặc thu hồi thỏa thuận này bất kỳ lúc nào.",
       "heading": "Toàn bộ thỏa thuận:"
@@ -870,7 +866,7 @@
     "heading": "API KẾT THÚC THỎA THUẬN CẤP PHÉP NGƯỜI DÙNG",
     "intro": "THỎA THUẬN: BẰNG CÁCH SỬ DỤNG DỊCH VỤ HOẶC KIỂM TRA HỘP ĐƯỢC CUNG CẤP, NGƯỜI DÙNG ĐỒNG Ý BỊ TRẢ LẠI THEO THỎA THUẬN NÀY.\n\nAPI là một công cụ cho phép bạn (“Bạn”) truy xuất và sử dụng nguồn cấp dữ liệu do Hội Chữ Thập Đỏ cung cấp, bao gồm nguồn cấp dữ liệu về cảnh báo thời tiết và thảm họa toàn cầu và thông báo xem (“Cảnh báo sự kiện”) và nguồn cấp dữ liệu có thể hành động và theo ngữ cảnh thông báo về cách chuẩn bị đối phó với các mối nguy hiểm cục bộ theo loại nguy cơ và mức độ khẩn cấp (“Chuẩn bị, Phản hồi và Khôi phục Thông báo” và gọi chung là Cảnh báo Sự kiện, “Nguồn cấp dữ liệu”). Thông báo Chuẩn bị, Phản hồi và Khôi phục được tạo ra nhằm mục đích đi kèm với Cảnh báo sự kiện hoặc các cảnh báo và theo dõi khác có kiên quan đến thời tiết hoặc thảm hoạ trong ứng dụng riêng của bạn. Việc sử dụng Nguồn cấp dữ liệu của bạn được quản lý bởi các điều khoản API.",
     "license_limitations": {
-      "body": "Bạn chỉ có thể sử dụng Nguồn cấp dữ liệu liên quan đến ứng dụng của bạn được quản lý bới các điều khoản API, và miễn là bạn duy trì khả năng tương thích với API được cập nhật theo thời gian. \nBạn được cấp một quyền không độc quyền, có giới hạn và có thể thu hồi để tải về, sử dụng và phân phát đến người dùng ứng dụng chính của bạn (\"Người dùng chính\") những Thông tin Cảnh báo và những ngữ cảnh có liên quan đến việc Chuẩn bị, Phản hồi và Khôi phục liên quan đến thiết lập khẩn cấp của Cảnh báo Sự kiện cá nhân từ Nguồn cung cấp dữ liệu, tuân theo điểu khoản API. Bạn chỉ có thể sử dụng API để sử dụng Nguồn cung cấp dữ liệu cho các mục đích phi thương mại phù hợp với các điều khoản của API. Trong bất kỳ trường hợp nào, bạn không được dùng API để sử dụng Nguồn cung cấp dữ liệu, Thông tin cảnh báo, hoặc/và tin nhắn Chuẩn bị, Phản hồi và Khôi phục cho mục đích thương mại, bao gồm nhưng không giới hạn, bán lại, tính phí để truy cập, phân phối hoặc tạo ra các tác phẩm khác dựa nào nó. Hội Chữ Thập Đỏ và người cấp phép của Hội duy trì tất cả chứng thư, quyền sở hữu, quyền và lợi ích trong và đối với API, tin nhắn Chuẩn bị, Phản hồi và Khôi phục, Thông tin cảnh báo, Nguồn cung cấp dữ liệu, và Nguồn Tham Khảo (như được định nghĩa bên dưới). \nTất cả các quyền không được cung cấp rõ ràng đều được bảo lưu.",
+      "body": "Bạn chỉ có thể sử dụng Nguồn cấp dữ liệu liên quan đến ứng dụng của bạn được quản lý bới các điều khoản API, và miễn là bạn duy trì khả năng tương thích với API được cập nhật theo thời gian. \nBạn được cấp một quyền không độc quyền, có giới hạn và có thể thu hồi để tải về, sử dụng và phân phát đến người dùng ứng dụng chính của bạn (\"Người dùng chính\") những Thông tin Cảnh báo và những ngữ cảnh có liên quan đến việc Chuẩn bị, Phản hồi và Khôi phục liên quan đến thiết lập khẩn cấp của Cảnh báo Sự kiện cá nhân từ Nguồn cung cấp dữ liệu, tuân theo điểu khoản API. Bạn chỉ có thể sử dụng API để sử dụng Nguồn cung cấp dữ liệu cho các mục đích phi thương mại phù hợp với các điều khoản của API. Trong bất kỳ trường hợp nào, bạn không được dùng API để sử dụng Nguồn cung cấp dữ liệu, Thông tin cảnh báo, hoặc\/và tin nhắn Chuẩn bị, Phản hồi và Khôi phục cho mục đích thương mại, bao gồm nhưng không giới hạn, bán lại, tính phí để truy cập, phân phối hoặc tạo ra các tác phẩm khác dựa nào nó. Hội Chữ Thập Đỏ và người cấp phép của Hội duy trì tất cả chứng thư, quyền sở hữu, quyền và lợi ích trong và đối với API, tin nhắn Chuẩn bị, Phản hồi và Khôi phục, Thông tin cảnh báo, Nguồn cung cấp dữ liệu, và Nguồn Tham Khảo (như được định nghĩa bên dưới). \nTất cả các quyền không được cung cấp rõ ràng đều được bảo lưu.",
       "heading": "Giấy phép và những điều khoản hạn chế:"
     },
     "overview": {
@@ -889,17 +885,17 @@
         "two": "Phá vỡ hoặc sửa đổi bất kỳ mã khóa hoặc cơ chế bảo mật được sử dụng bởi Hội Chữ Thập Đỏ hoặc API, bao gồm nhưng không giới hạn bất kỳ công nghệ xác thực nào.",
         "three": "Yêu cầu, thu thập, gạ gẫm để có được quyền truy cập vào tên đăng nhập, mật khẩu và những thông tin xác thực khác của Hội Chữ Thập Đỏ ngoài những gì được cung cấp cho Bạn và tài khoản của bạn.",
         "four": "Tuyên bố hoặc ngụ ý rằng bạn có liên kết, được tài trợ hoặc ủng hội bởi Hội Chữ Thập Đỏ hoặc những cộng đồng quốc qua và tổ chức của Hội Chữ Thập Đỏ và Trăng Lưỡi Liềm.",
-        "five": "Tuyên bố hoặc ngụ ý rằng bạn sở hữu hoặc tạo ra API, Nguồn cấp dữ liệu, Cảnh báo sự kiện hoặc/và những tin nhắn Chuẩn bị, Phản hồi và Khôi phục.",
+        "five": "Tuyên bố hoặc ngụ ý rằng bạn sở hữu hoặc tạo ra API, Nguồn cấp dữ liệu, Cảnh báo sự kiện hoặc\/và những tin nhắn Chuẩn bị, Phản hồi và Khôi phục.",
         "six": "Truyền tải virus, sâu máy tính, Trojan, hoặc bất kỳ phần tử có tính chất gây hại nào."
       }
     },
-    "reserve_rights": "Hội Chữ Thập Đỏ có quyền thay đổi hoặc/và ngừng cung cấp một phần hoặc toàn bộ API và Nguồn cấp dữ liệu, tạm thời hoặc vĩnh viễn mà không cần thông báo trước. Để tránh nghi ngờ, Hội Chữ Thập Đỏ không có nghĩa vụ phải cung cấp API và Nguồn cấp dữ liệu cho Bạn, và Bạn hiểu và chấp thuận rằng quyền truy cập thuộc quyền quyết định duy nhất và tuyệt đối của Hội Chữ Thập Đỏ",
+    "reserve_rights": "Hội Chữ Thập Đỏ có quyền thay đổi hoặc\/và ngừng cung cấp một phần hoặc toàn bộ API và Nguồn cấp dữ liệu, tạm thời hoặc vĩnh viễn mà không cần thông báo trước. Để tránh nghi ngờ, Hội Chữ Thập Đỏ không có nghĩa vụ phải cung cấp API và Nguồn cấp dữ liệu cho Bạn, và Bạn hiểu và chấp thuận rằng quyền truy cập thuộc quyền quyết định duy nhất và tuyệt đối của Hội Chữ Thập Đỏ",
     "severability": {
       "body": "\nTính không hợp lệ của bất kỳ điều khoản nào của Điều khoản API sẽ không ảnh hưởng đến hiệu lực của bất kỳ điều khoản nào khác",
       "heading": "Hiệu lực pháp lý và Quyền tự bỏ kiện tụng:"
     },
     "suspension": {
-      "body": "Hội Chữ Thập Đỏ có quyền đình chỉ hoặc chấm dứt quyền truy cập của bạn nếu Hội Chữ Thập Đỏ xác định, quyền quyết địch duy nhất của Hội Chữ Thập Đỏ, là Bạn đang tham gia vào việc sử dụng trái phép các API hoặc Nguồn cung cấp dữ liệu như được nêu trong các điều khoản API hoặc Bạn đang sử dụng API hoặc Nguồn cung cấp dữ liệu trong bất kỳ hoạt động đe dọa / xâm phạm đến sự an toàn hoặc/và bảo mật của bất kỳ người nào hoặc của mạng lưới Chữ Thập Đỏ",
+      "body": "Hội Chữ Thập Đỏ có quyền đình chỉ hoặc chấm dứt quyền truy cập của bạn nếu Hội Chữ Thập Đỏ xác định, quyền quyết địch duy nhất của Hội Chữ Thập Đỏ, là Bạn đang tham gia vào việc sử dụng trái phép các API hoặc Nguồn cung cấp dữ liệu như được nêu trong các điều khoản API hoặc Bạn đang sử dụng API hoặc Nguồn cung cấp dữ liệu trong bất kỳ hoạt động đe dọa \/ xâm phạm đến sự an toàn hoặc\/và bảo mật của bất kỳ người nào hoặc của mạng lưới Chữ Thập Đỏ",
       "heading": "Quyền đình chỉ hoặc thu hồi giấy phép:"
     }
   },

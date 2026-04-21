@@ -441,9 +441,9 @@
     "immediate": "即時",
     "warning": "警告",
     "anticipated": "予測",
-    "assess_and_plan": "評価と計画",
-    "mitigate_risks": "リスク軽減",
-    "prepare_to_respond": "対応準備",
+    "assess_and_plan":"評価と計画",
+    "mitigate_risks":"リスク軽減",
+    "prepare_to_respond":"対応準備",
     "recover": "復旧"
   },
   "content": {
@@ -558,8 +558,7 @@
       "content_edit_title": "コンテンツ編集",
       "content_add_hazard_title": "危険を追加",
       "key_message_label": "主要メッセージのタイトル",
-      "supporting_message_label": "サポートメッセージ",
-      "mitigate_risk": "リスク軽減"
+      "supporting_message_label": "サポートメッセージ"
     },
     "message_editor": {
       "title": "アトリビューション・エディター",
@@ -619,7 +618,7 @@
         "bad_request_error_codes": {
           "30001": "列見出しがテンプレートと一致しません",
           "30002": "組織名、メッセージ、またはURLがありません",
-          "30003": "組織名のURLが無効です。https://などのプロトコルが存在することを確認してください",
+          "30003": "組織名のURLが無効です。https:\/\/などのプロトコルが存在することを確認してください",
           "40001": "不正な国コードが入力されました",
           "40002": "選択した組織は、選択したファイルの組織と一致しません",
           "40003": "選択したファイルがエクスポートされた日付は不正に作成され、インポートが完了していません"
