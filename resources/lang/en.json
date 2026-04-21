@@ -607,7 +607,8 @@
       "desc_tool": "Give a brief description about the hazard and messages. This should be 1-3 sentences long",
       "title_tool": "For example: Safety messages for Floods",
       "safety_tool": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
-      "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise."
+      "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise.",
+      "mitigate_risk": "Mitigate Risk"
     },
     "message_editor": {
       "title": "Attribution Editor",

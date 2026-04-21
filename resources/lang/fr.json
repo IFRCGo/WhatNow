@@ -594,7 +594,8 @@
       "desc_tool": "Donnez une brève description du danger et des messages. Cela devrait faire 1 à 3 phrases.",
       "title_tool": "Par exemple : Messages de sécurité pour les Inondations",
       "safety_tool": "Ceci est une action prioritaire qu'une personne devrait entreprendre pour rester en sécurité. Le message doit être orienté vers l'action, concis et faire moins de 50 caractères.",
-      "supporting_tool": "Ceci fournit plus de détails pour soutenir l'action clé prioritaire. Le message doit être orienté vers l'action et concis."
+      "supporting_tool": "Ceci fournit plus de détails pour soutenir l'action clé prioritaire. Le message doit être orienté vers l'action et concis.",
+      "mitigate_risk": "Atténuer le Risque"
     },
     "message_editor": {
       "title": "Éditeur d'Attribution",
