@@ -441,9 +441,9 @@
     "immediate": "Ako kanya",
     "warning": "Iburira",
     "anticipated": "Byitezwe",
-    "assess_and_plan": "Gusesengura no Gushyira mu bikorwa gahunda",
-    "mitigate_risks": "Gukumira Ingaruka mbi",
-    "prepare_to_respond": "Itegure guhangana n'ibiza",
+    "assess_and_plan":"Gusesengura no Gushyira mu bikorwa gahunda",
+    "mitigate_risks":"Gukumira Ingaruka mbi",
+    "prepare_to_respond":"Itegure guhangana n'ibiza",
     "recover": "Gukira"
   },
   "content": {
@@ -558,8 +558,7 @@
       "content_edit_title": "Guhindura Ibirimo",
       "content_add_hazard_title": "Ongeraho Ikiza",
       "key_message_label": "Ubutumwa bw'ingenzi",
-      "supporting_message_label": "Ubutumwa bushyigikira",
-      "mitigate_risk": "Gabanya ibyago"
+      "supporting_message_label": "Ubutumwa bushyigikira"
     },
     "message_editor": {
       "title": "Umuhinduzi w'Ibitekerezo",
@@ -619,7 +618,7 @@
         "bad_request_error_codes": {
           "30001": "Imitwengaruka y'inkingi ntabwo ihura n'inyandikorugero",
           "30002": "Amazina bijyanye, ubutumwa cyangwa url ntibihari",
-          "30003": "Url bijyanye si yo; reba neza niba porotokore ihari, urug.: https://",
+          "30003": "Url bijyanye si yo; reba neza niba porotokore ihari, urug.: https:\/\/",
           "40001": "Hatanzwe kode y'igihugu itari yo",
           "40002": "Ishyirahamwe ryatoranyijwe ntabwo rihura n'ishyirahamwe rya dosiye yatoranyijwe",
           "40003": "Itariki dosiye yatoranyijwe yasohoreweho yanditse nabi kandi kuyizana ntibishobora kurangira"
@@ -690,7 +689,7 @@
   },
   "landing": {
     "strapline": "Serivisi y'Ububiko bw'Ubutumwa bwo Kwirinda",
-    "strapline_part_2": "Ubutumwa bw'umutekano wa Global Red Cross / Red Crescent",
+    "strapline_part_2": "Ubutumwa bw'umutekano wa Global Red Cross \/ Red Crescent",
     "head_1": "IFRC Kwirinda",
     "head_2": "Ububiko bw'amakuru y'ubutumwa",
     "head_text_1": "Ubutumwa bwo kwirinda bushingiye ku IFRC Kumenyesha Abaturage no",
@@ -745,7 +744,7 @@
     "fake_alert_heading": "Imbuzi y'ubukonje bukabije",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
     "fake_alert_time": "HASHIZE ISAHA 1",
-    "fake_alert_time_exact": "05/02/18 saa 05:15 CT",
+    "fake_alert_time_exact": "05\/02\/18 saa 05:15 CT",
     "use_cases": {
       "heading": "Menya ibindi",
       "first_heading": "Uburyo bikora",
@@ -786,7 +785,7 @@
     },
     "data_preview": {
       "heading": "Ubutumwa bwo Kwirinda",
-      "sub_heading": "Iyandikishe unarebe ubutumwa  bw'amasosiyete ya Kuruwa Ruje/Kuruwasa Ruje ku isi hose"
+      "sub_heading": "Iyandikishe unarebe ubutumwa  bw'amasosiyete ya Kuruwa Ruje\/Kuruwasa Ruje ku isi hose"
     },
     "footer": {
       "terms_conditions": "Amategeko n'amabwiriza",
@@ -842,10 +841,10 @@
     "industries": {
       "media": "Itangazamakuru",
       "emergency": "Igenzurwa ry'ibiza",
-      "non_profit": "Umuryango udaharanira inyungu/utegamiye kuri leta",
+      "non_profit": "Umuryango udaharanira inyungu\/utegamiye kuri leta",
       "humanitarian": "Umuryango wita ku kiremwamuntu",
-      "red_cross": "Kuruwa Ruje/Kuruwasa Ruje",
-      "education": "Uburezi/Amashuli",
+      "red_cross": "Kuruwa Ruje\/Kuruwasa Ruje",
+      "education": "Uburezi\/Amashuli",
       "gov": "Ikigo cya Leta",
       "other": "Ibindi"
     },
@@ -870,7 +869,7 @@
     "heading": "ISOZWA RY'AMASEZERANO K'URUHUSA RWO GUKORESHA API",
     "intro": "EMERA: MUGKORESHA IYI SERIVISE CYANGWA KUREBA MUGASANDUGU BAGUHAYE, UMUKORESHA YEMERA KUBA AFATANYE NAYA MASEZERANO.\n\nAPI ni igikoresho kigufasha ( Wowe) mukubona no gukoresha amakuru mashya ahari ya Kuruwa Ruje harimo namakuru y'ikirere n'ibiza bimenyeshwa no gukurikira amabwiriza (Amamenyesha y’Ibikorwa) amakuru y'ibikorwa by'ubutumwa bwanditse  kuburyo bwo gutegura kubishobora gutera impanuka, ibyihutirwa ( Itegurwa, Isubizwa n’Igarurabutumwa, byose hamwe n'Amamenyesha y’Ibikorwa,n'Ikigega cy’amakuru). Itegurwa, Isubizwa n'Igarurabutumwa  biteganyijwe guherekeza Amamenyesha y'Ibikorwa cyangwa indi mburira ndetse n'ibyitonderwa bigaragara bifitanye isano n'ibyerekeye ikirere n'ibiza muri porogaramu yawe y'ubusabe. Ikoreshwa ry'ikigega cy'amakuru yawe rigengwa n'amahame ya API.",
     "license_limitations": {
-      "body": "Ushobora gukoresha ikigega cy'amakuru gusa mu gihe bihuye n'impamvu y'ubusabe bwawe ku mahame ya API, bikanaguha guhama mu bijyanye na API nk'uko byakomeje kugenda bivugururwa. Wizejwe uburenganzira bwo gukura ibyo ushaka ku rubuga, nta guhezwa, kubuzwa cyangwa guhagarikwa, ukabikoresha, ukabibyaza umusaruro ndetse ukabisakaza ku bakoresha porogaramu yawe y'ubusabe (\"Abakoresha porogaramu ba nyuma\") ku Bikorwa by'Imenyesha bifitanye isano n'inyandiko zanditswe zitegura, zigasubiza zikanagarura ubutumwa, bigahura n'igenamiterere ryihuta y'ibikorwa bya muntu biburira bituruka mu makuru, bijyanye n'amahame ya API. Ushobora gukoresha API mu gufasha ku mpamvu zitari iz'ubucuruzi, bijyanye n'amahame ya API. Ntabwo wemerewe gukoresha API mu gufasha mu ikoreshwa ry'ikigega cy'amakuru mu buryo bwo gucuruza, Amamenyesha y'ibikorwa ndetse/cyangwa Itegurwa, Isubizwa n'Igarurabutumwa, harimo nta rutangira, kongera kugurisha amakuru, gusaba ikiguzi abayakoresha n'abayakwirakwiza cyangwa guca ikiguzi kuri gahunda yo kuyabyaza umusaruro. Kuruwa Ruje n'abatanga uburenganzira babungabunga umutwe wose, ubu nyirubwite, uburenganzira n'inyungu muri no kuri API, Itegurwa, Isubizwa n'Igarurabutumwa, Amamenyesha y'ibikorwa, Ikigega cy'amakuru n'inkomoko y'amakuru (nkuko byasobanuwe hasi). Uburenganzira bwose butagaragajwe burashinganye.",
+      "body": "Ushobora gukoresha ikigega cy'amakuru gusa mu gihe bihuye n'impamvu y'ubusabe bwawe ku mahame ya API, bikanaguha guhama mu bijyanye na API nk'uko byakomeje kugenda bivugururwa. Wizejwe uburenganzira bwo gukura ibyo ushaka ku rubuga, nta guhezwa, kubuzwa cyangwa guhagarikwa, ukabikoresha, ukabibyaza umusaruro ndetse ukabisakaza ku bakoresha porogaramu yawe y'ubusabe (\"Abakoresha porogaramu ba nyuma\") ku Bikorwa by'Imenyesha bifitanye isano n'inyandiko zanditswe zitegura, zigasubiza zikanagarura ubutumwa, bigahura n'igenamiterere ryihuta y'ibikorwa bya muntu biburira bituruka mu makuru, bijyanye n'amahame ya API. Ushobora gukoresha API mu gufasha ku mpamvu zitari iz'ubucuruzi, bijyanye n'amahame ya API. Ntabwo wemerewe gukoresha API mu gufasha mu ikoreshwa ry'ikigega cy'amakuru mu buryo bwo gucuruza, Amamenyesha y'ibikorwa ndetse\/cyangwa Itegurwa, Isubizwa n'Igarurabutumwa, harimo nta rutangira, kongera kugurisha amakuru, gusaba ikiguzi abayakoresha n'abayakwirakwiza cyangwa guca ikiguzi kuri gahunda yo kuyabyaza umusaruro. Kuruwa Ruje n'abatanga uburenganzira babungabunga umutwe wose, ubu nyirubwite, uburenganzira n'inyungu muri no kuri API, Itegurwa, Isubizwa n'Igarurabutumwa, Amamenyesha y'ibikorwa, Ikigega cy'amakuru n'inkomoko y'amakuru (nkuko byasobanuwe hasi). Uburenganzira bwose butagaragajwe burashinganye.",
       "heading": "Uruhushya n'imbibi:"
     },
     "overview": {

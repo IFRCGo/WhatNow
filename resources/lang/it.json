@@ -441,9 +441,9 @@
     "immediate": "Immediato",
     "warning": "Avviso",
     "anticipated": "Previsto",
-    "assess_and_plan": "Valuta e Pianifica",
-    "mitigate_risks": "Mitiga il Rischio",
-    "prepare_to_respond": "Preparati a Rispondere",
+    "assess_and_plan":"Valuta e Pianifica",
+    "mitigate_risks":"Mitiga il Rischio",
+    "prepare_to_respond":"Preparati a Rispondere",
     "recover": "Recupera"
   },
   "content": {
@@ -526,7 +526,7 @@
       "seasonalForecast_extra": "Una previsione stagionale è la previsione di un evento pericoloso. Le azioni intraprese servono a valutare i potenziali rischi e pianificare le attività per ridurre i rischi e proteggere la famiglia.",
       "watch": "Periodo di osservazione",
       "watch_help": "Preparati a rispondere",
-      "watch_extra": "Un periodo di osservazione inizia quando il rischio di un evento pericoloso è aumentato in modo significativo, ma il suo avvenimento, l'ubicazione e / o la tempistica sono ancora incerti. Si prevede di fornire tempo sufficiente per azioni protettive e la preparazione a rispondere.",
+      "watch_extra": "Un periodo di osservazione inizia quando il rischio di un evento pericoloso è aumentato in modo significativo, ma il suo avvenimento, l'ubicazione e \/ o la tempistica sono ancora incerti. Si prevede di fornire tempo sufficiente per azioni protettive e la preparazione a rispondere.",
       "warning": "Avviso",
       "warning_help": "Preparati a rispondere",
       "warning_extra": "Viene emesso un avviso quando un evento pericoloso è in corso, è imminente o la probabilità che si verifichi è elevata. Indica che le condizioni dell'evento rappresentano una minaccia per la vita o la proprietà. Le persone che si trovino nel raggio d'azione di questo pericolo necessitano di azioni protettive.",
@@ -558,8 +558,7 @@
       "content_edit_title": "Modifica Contenuto",
       "content_add_hazard_title": "Aggiungi Pericolo",
       "key_message_label": "Titolo del messaggio chiave",
-      "supporting_message_label": "Messaggio di supporto",
-      "mitigate_risk": "Mitiga il Rischio"
+      "supporting_message_label": "Messaggio di supporto"
     },
     "message_editor": {
       "title": "Attribuzione dell'editore",
@@ -619,7 +618,7 @@
         "bad_request_error_codes": {
           "30001": "I titoli delle colonne non corrispondono al modello",
           "30002": "Unità, messaggi o URL assenti",
-          "30003": "URL unità non valido - assicurati che sia presente il protocollo, es. https://",
+          "30003": "URL unità non valido - assicurati che sia presente il protocollo, es. https:\/\/",
           "40001": "Codice paese non valido",
           "40002": "La società selezionata non corrisponde alla società per il file selezionato",
           "40003": "La data in cui è stato esportato il file selezionato non è valida e l'importazione non può essere completata"
@@ -745,7 +744,7 @@
     "fake_alert_heading": "Avviso di freddo estremo",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
     "fake_alert_time": "1H FA",
-    "fake_alert_time_exact": "05/02/18 alle 05:15 CT",
+    "fake_alert_time_exact": "05\/02\/18 alle 05:15 CT",
     "use_cases": {
       "heading": "Scopri di più",
       "first_heading": "Come funziona",
@@ -842,10 +841,10 @@
     "industries": {
       "media": "Contenuto multimediale",
       "emergency": "Gestione delle Emergenze",
-      "non_profit": "Non-profit/Organizzazione Non Governativa",
+      "non_profit": "Non-profit\/Organizzazione Non Governativa",
       "humanitarian": "Organizzazione umanitaria",
-      "red_cross": "Croce Rossa/Mezzaluna Rossa",
-      "education": "Istruzione / Università",
+      "red_cross": "Croce Rossa\/Mezzaluna Rossa",
+      "education": "Istruzione \/ Università",
       "gov": "Agenzia governativa",
       "other": "Altro"
     },
@@ -860,9 +859,9 @@
       "body": "Le leggi del Distretto della Columbia regolano tutti i diritti e gli obblighi del presente accordo, senza dare effetto a nessun principio di conflitto legislativo.",
       "heading": "Legge vigente:"
     },
-    "body": "L'utente è l'unico responsabile del mantenimento della riservatezza e della sicurezza della chiave di accesso fornita dalla Croce Rossa. L'utente è responsabile del mantenimento della compatibilità con l'API, aggiornandolo di volta in volta, al fine di continuare a ricevere i Feed di Dati. Croce Rossa può rilasciare versioni aggiornate dell'API e dei Feed di Dati a sua esclusiva discrezione. Le nuove versioni potrebbero non essere compatibili con precedenti implementazioni e l'utente accetta di usare la versione più aggiornata dei Feed dei Dati ogni volta.\n\nL'utente accetta di non copiare, distribuire, vendere, modificare, decompilare, decodificare, disassemblare o creare opere derivate da qualsiasi Software.\n\nL'utente non può utilizzare l'API o il Feed di Dati in maniera tale da superare un volume ragionevole di richieste o da costituire un uso eccessivo o abusivo, come determinato da Croce Rossa a sua esclusiva discrezione.\n\nL'utente non può utilizzare l'API o i Feed di Dati in modo illegale, fuorviante, negligente, malevolo, con l'intenzione di causare danni o che danneggi Croce Rossa, i suoi fornitori di servizi, i suoi fornitori di contenuti o qualsiasi altra persona, come stabilito da Croce Rossa a sua esclusiva discrezione.\n\nCroce Rossa potrebbe controllare l'uso da parte dell'utente dell'Api e dei Feed di Dati. L'utente non può utilizzare alcun mezzo tecnico per interferire con tale monitoraggio e Croce Rossa può utilizzare mezzi tecnici per superare tali interferenze.\n\nL'uso dei messaggi Preparazione, Risposta e Recupero sarà presentato solo come attuale o aggiornato all'impostazione di urgenza attuale dell'Avviso di evento correlato e l'utente dovrà aggiornare i singoli messaggi di preparazione, risposta e recupero in seguito a qualsiasi aggiornamento dei Feed di Dati e/o degli avvisi di evento correlati da parte di Croce Rossa.\n\n I messaggi individuali Preparazione, Risposta e Recupero sono associati solo alla regione geografica per la quale sono stati emessi. Se un Messaggio Preparazione, Risposta e Recupero include un riferimento a una fonte come la Croce Rossa Americana o un'altra società o organizzazione nazionale della Croce Rossa o della Mezzaluna Rossa (ognuno un \"Riferimento alla Fonte\"), l'utente dovrà includere il Riferimento alla Fonte associato a ciascun Messaggio Preparazione, Risposta e Recupero nella forma fornita nei Feed di Dati. L'utente non farà più alcun uso di nessun Riferimento alla Fonte.\n\nL'utente non può tradurre i Feed di Dati, gli Avvisi di eventi e/o i Messaggi Preparazione, Risposta e Recupero in qualsiasi altra lingua, fare qualsiasi uso, modifica o revisione, o alterare il significato dei Feed di Dati degli Avvisi di eventi e/o dei Messaggi Preparazione, Risposta e Recupero.\n\nL'utente deve assicurarsi che i Feed di Dati rimangano esclusivamente in proprio possesso e sotto il proprio controllo.\n\nL'utente non può permettere che gli Avvisi di Eventi e i Messaggi Preparazione, Risposta e Recupero inviati all'Utente Finale contengano qualche pubblicità o sponsorizzazione.\n\nL'utente non può archiviare né interamente né parzialmente i Feed di Dati.",
+    "body": "L'utente è l'unico responsabile del mantenimento della riservatezza e della sicurezza della chiave di accesso fornita dalla Croce Rossa. L'utente è responsabile del mantenimento della compatibilità con l'API, aggiornandolo di volta in volta, al fine di continuare a ricevere i Feed di Dati. Croce Rossa può rilasciare versioni aggiornate dell'API e dei Feed di Dati a sua esclusiva discrezione. Le nuove versioni potrebbero non essere compatibili con precedenti implementazioni e l'utente accetta di usare la versione più aggiornata dei Feed dei Dati ogni volta.\n\nL'utente accetta di non copiare, distribuire, vendere, modificare, decompilare, decodificare, disassemblare o creare opere derivate da qualsiasi Software.\n\nL'utente non può utilizzare l'API o il Feed di Dati in maniera tale da superare un volume ragionevole di richieste o da costituire un uso eccessivo o abusivo, come determinato da Croce Rossa a sua esclusiva discrezione.\n\nL'utente non può utilizzare l'API o i Feed di Dati in modo illegale, fuorviante, negligente, malevolo, con l'intenzione di causare danni o che danneggi Croce Rossa, i suoi fornitori di servizi, i suoi fornitori di contenuti o qualsiasi altra persona, come stabilito da Croce Rossa a sua esclusiva discrezione.\n\nCroce Rossa potrebbe controllare l'uso da parte dell'utente dell'Api e dei Feed di Dati. L'utente non può utilizzare alcun mezzo tecnico per interferire con tale monitoraggio e Croce Rossa può utilizzare mezzi tecnici per superare tali interferenze.\n\nL'uso dei messaggi Preparazione, Risposta e Recupero sarà presentato solo come attuale o aggiornato all'impostazione di urgenza attuale dell'Avviso di evento correlato e l'utente dovrà aggiornare i singoli messaggi di preparazione, risposta e recupero in seguito a qualsiasi aggiornamento dei Feed di Dati e\/o degli avvisi di evento correlati da parte di Croce Rossa.\n\n I messaggi individuali Preparazione, Risposta e Recupero sono associati solo alla regione geografica per la quale sono stati emessi. Se un Messaggio Preparazione, Risposta e Recupero include un riferimento a una fonte come la Croce Rossa Americana o un'altra società o organizzazione nazionale della Croce Rossa o della Mezzaluna Rossa (ognuno un \"Riferimento alla Fonte\"), l'utente dovrà includere il Riferimento alla Fonte associato a ciascun Messaggio Preparazione, Risposta e Recupero nella forma fornita nei Feed di Dati. L'utente non farà più alcun uso di nessun Riferimento alla Fonte.\n\nL'utente non può tradurre i Feed di Dati, gli Avvisi di eventi e\/o i Messaggi Preparazione, Risposta e Recupero in qualsiasi altra lingua, fare qualsiasi uso, modifica o revisione, o alterare il significato dei Feed di Dati degli Avvisi di eventi e\/o dei Messaggi Preparazione, Risposta e Recupero.\n\nL'utente deve assicurarsi che i Feed di Dati rimangano esclusivamente in proprio possesso e sotto il proprio controllo.\n\nL'utente non può permettere che gli Avvisi di Eventi e i Messaggi Preparazione, Risposta e Recupero inviati all'Utente Finale contengano qualche pubblicità o sponsorizzazione.\n\nL'utente non può archiviare né interamente né parzialmente i Feed di Dati.",
     "contact": "Per favore, contattare Croce Rossa al {0} per qualsiasi domanda riguardo all'API.",
-    "disclaimer": "L'API e i Feed di Dati sono forniti SOLO PER SCOPI INFORMATIVI ED EDUCATIVI, E su una base \"come è\" e \"come disponibile\". Croce Rossa non rilascia dichiarazioni o garanzie di alcun tipo, esplicite o implicite. Croce Rossa declina ogni altra garanzia, esplicita o implicita, tra cui, a titolo esemplificativo, garanzie implicite di commerciabilità e idoneità per uno scopo particolare. Croce Rossa e i suoi dipendenti, funzionari, governatori, agenti e licenziatari non saranno responsabili per danni di qualsiasi tipo derivanti dall'uso dell'API, dei Feed di Dati, degli Avvisi di Eventi e/o dei messaggi di Preparazione, Risposta e Recupero, compresi, ma non solo, i danni diretti, indiretti, incidentali, punitivi e consequenziali.\n\nCroce Rossa non garantisce la sequenza, l'accuratezza, l'autenticità o la completezza dell'API, dei Feed di Dati, degli Avvisi degli Eventi e/o dei messaggi di Preparazione, Risposta e Recupero e non sarà ritenuta responsabile in alcun modo nei confronti dell'utente o dei suoi Utenti Finali o di terzi, inclusi, senza limitazione, eventuali ritardi, imprecisioni, errori o omissioni, relativamente alle API, ai Feed di Dati, agli Avvisi di Eventi e/o ai messaggi di Preparazione, Risposta e Recupero forniti nel presente documento.",
+    "disclaimer": "L'API e i Feed di Dati sono forniti SOLO PER SCOPI INFORMATIVI ED EDUCATIVI, E su una base \"come è\" e \"come disponibile\". Croce Rossa non rilascia dichiarazioni o garanzie di alcun tipo, esplicite o implicite. Croce Rossa declina ogni altra garanzia, esplicita o implicita, tra cui, a titolo esemplificativo, garanzie implicite di commerciabilità e idoneità per uno scopo particolare. Croce Rossa e i suoi dipendenti, funzionari, governatori, agenti e licenziatari non saranno responsabili per danni di qualsiasi tipo derivanti dall'uso dell'API, dei Feed di Dati, degli Avvisi di Eventi e\/o dei messaggi di Preparazione, Risposta e Recupero, compresi, ma non solo, i danni diretti, indiretti, incidentali, punitivi e consequenziali.\n\nCroce Rossa non garantisce la sequenza, l'accuratezza, l'autenticità o la completezza dell'API, dei Feed di Dati, degli Avvisi degli Eventi e\/o dei messaggi di Preparazione, Risposta e Recupero e non sarà ritenuta responsabile in alcun modo nei confronti dell'utente o dei suoi Utenti Finali o di terzi, inclusi, senza limitazione, eventuali ritardi, imprecisioni, errori o omissioni, relativamente alle API, ai Feed di Dati, agli Avvisi di Eventi e\/o ai messaggi di Preparazione, Risposta e Recupero forniti nel presente documento.",
     "entire_agreement": {
       "body": "I Termini dell'API costituiscono l'accordo completo ed esclusivo tra Croce Rossa e l'utente in relazione all'oggetto del presente documento e sostituiscono tutte le precedenti intese, comunicazioni o accordi orali o scritti non specificamente incorporati nel presente documento. Croce Rossa si riserva il diritto di modificare o revocare tale accordo in qualsiasi momento.",
       "heading": "Intero accordo:"
@@ -870,7 +869,7 @@
     "heading": "ACCORDO DI LICENZA PER UTENTE FINALE DELL'API",
     "intro": "ACCORDO: UTILIZZANDO IL SERVIZIO O SELEZIONANDO LA CASELLA FORNITA, L'UTENTE ACCETTA DI ESSERE VINCOLATO A QUESTO ACCORDO.\n\nL'API è uno strumento che ti permette (\"Tu\") di recuperare e utilizzare i feed di dati messi a disposizione da Croce Rossa, tra cui un feed di avvisi di eventi meteorologici e catastrofici globali (\"Avvisi di Eventi\") e un feed di messaggi attuabili e contestualizzati su come prepararsi ai rischi locali per tipo di pericolo e urgenza (\"Messaggi di Preparazione, Risposta e Recupero\" e collettivamente con gli Avvisi di Eventi, i \"Feed di Dati\"). I messaggi di Preparazione, Risposta e Recupero sono destinati ad accompagnare gli Avvisi di Eventi o altri avvisi di allerta e vigilanza associati a eventi meteorologici e disastri nella tua applicazione. L'uso dei feed di dati da parte dell'utente è regolato dai Termini API.",
     "license_limitations": {
-      "body": "L'utente può utilizzare i Feed di Dati solo in associazione con la sua applicazione soggetta ai Termini API, e a condizione che mantenga la compatibilità con l'API, come aggiornato di volta in volta. All'utente viene concesso un diritto non esclusivo, limitato e revocabile di scaricare, utilizzare, riprodurre e distribuire agli utenti finali della propria applicazione (\"End Users\") gli avvisi di eventi e i relativi messaggi contestualizzati di Preparazione, Risposta e Recupero in associazione all'impostazione di urgenza dei singoli avvisi di eventi dai Feed di Dati, in base ai Termini API. L'utente può utilizzare l'API solo per facilitare gli usi non commerciali dei Feed di Dati in conformità con i Termini API. L'utente non può in nessun caso utilizzare l'API per facilitare gli usi commerciali dei Feed di Dati, degli Avvisi di eventi e/o dei Messaggi di Preparazione, Risposta e Recupero, compresi, senza limitazione, la rivendita, l'addebito per accedervi, l'addebito per ridistribuirli o l'addebito per creare opere derivate basate su di essi. La Croce Rossa e i suoi concessori di licenza mantengono tutti i titoli, la proprietà, i diritti e gli interessi in e verso l'API, i messaggi di Preparazione, Risposta e Recupero, gli avvisi di eventi, i Feed di Dati e i riferimenti alla fonte (come definiti di seguito) in essi contenuti. Tutti i diritti non espressamente concessi sono riservati.",
+      "body": "L'utente può utilizzare i Feed di Dati solo in associazione con la sua applicazione soggetta ai Termini API, e a condizione che mantenga la compatibilità con l'API, come aggiornato di volta in volta. All'utente viene concesso un diritto non esclusivo, limitato e revocabile di scaricare, utilizzare, riprodurre e distribuire agli utenti finali della propria applicazione (\"End Users\") gli avvisi di eventi e i relativi messaggi contestualizzati di Preparazione, Risposta e Recupero in associazione all'impostazione di urgenza dei singoli avvisi di eventi dai Feed di Dati, in base ai Termini API. L'utente può utilizzare l'API solo per facilitare gli usi non commerciali dei Feed di Dati in conformità con i Termini API. L'utente non può in nessun caso utilizzare l'API per facilitare gli usi commerciali dei Feed di Dati, degli Avvisi di eventi e\/o dei Messaggi di Preparazione, Risposta e Recupero, compresi, senza limitazione, la rivendita, l'addebito per accedervi, l'addebito per ridistribuirli o l'addebito per creare opere derivate basate su di essi. La Croce Rossa e i suoi concessori di licenza mantengono tutti i titoli, la proprietà, i diritti e gli interessi in e verso l'API, i messaggi di Preparazione, Risposta e Recupero, gli avvisi di eventi, i Feed di Dati e i riferimenti alla fonte (come definiti di seguito) in essi contenuti. Tutti i diritti non espressamente concessi sono riservati.",
       "heading": "Licenza e Limitazioni:"
     },
     "overview": {
@@ -889,17 +888,17 @@
         "two": "Eludere o modificare qualsiasi chiave o meccanismo di sicurezza impiegato dalla Croce Rossa o dall'API, compresa, senza limitazione, qualsiasi tecnologia di autenticazione.",
         "three": "Richiedere, raccogliere, sollecitare o ottenere in altro modo l'accesso a utenti, password o altre credenziali di autenticazione per accedere alla Croce Rossa diverse da quelle fornite all'utente per il proprio account.",
         "four": "Affermare o implicare l'affiliazione, il patrocinio o l'approvazione da parte della Croce Rossa o di qualsiasi altra società o organizzazione nazionale della Croce Rossa o della Mezzaluna Rossa.",
-        "five": "Affermare o sottintendere che l'utente possiede o ha creato l'API, i Feed di Dati, gli avvisi di eventi e/o i messaggi di preparazione, risposta e recupero.",
+        "five": "Affermare o sottintendere che l'utente possiede o ha creato l'API, i Feed di Dati, gli avvisi di eventi e\/o i messaggi di preparazione, risposta e recupero.",
         "six": "Trasmettere qualsiasi virus, worms, cavalli di Troia, o qualsiasi elemento progettato per danneggiare."
       }
     },
-    "reserve_rights": "La Croce Rossa si riserva il diritto di modificare e/o non fornire più l'API e i feed di dati in tutto o in parte, temporaneamente o permanentemente, in qualsiasi momento e senza preavviso. A scanso di equivoci, nulla nel presente documento obbliga la Croce Rossa a rendere disponibili all'utente le sue API o i suoi feed di dati e l'utente accetta e riconosce che qualsiasi accesso è a sola e assoluta discrezione della Croce Rossa.",
+    "reserve_rights": "La Croce Rossa si riserva il diritto di modificare e\/o non fornire più l'API e i feed di dati in tutto o in parte, temporaneamente o permanentemente, in qualsiasi momento e senza preavviso. A scanso di equivoci, nulla nel presente documento obbliga la Croce Rossa a rendere disponibili all'utente le sue API o i suoi feed di dati e l'utente accetta e riconosce che qualsiasi accesso è a sola e assoluta discrezione della Croce Rossa.",
     "severability": {
       "body": "L'invalidità di una qualsiasi disposizione dei Termini Api non influirà sulla validità di qualsiasi altra disposizione.",
       "heading": "Divisibilità e Rinuncia:"
     },
     "suspension": {
-      "body": "La Croce Rossa si riserva il diritto di sospendere o terminare l'accesso dell'utente se stabilisce, a sua esclusiva discrezione, che l'utente è impegnato in un uso non autorizzato dell'API o del Feed di Dati come indicato nei Termini API o che l'utente sta usando l'API o il Feed di Dati in attività che minacciano/compromettono la sicurezza di qualsiasi persona o della rete della Croce Rossa.",
+      "body": "La Croce Rossa si riserva il diritto di sospendere o terminare l'accesso dell'utente se stabilisce, a sua esclusiva discrezione, che l'utente è impegnato in un uso non autorizzato dell'API o del Feed di Dati come indicato nei Termini API o che l'utente sta usando l'API o il Feed di Dati in attività che minacciano\/compromettono la sicurezza di qualsiasi persona o della rete della Croce Rossa.",
       "heading": "Sospensione o Risoluzione:"
     }
   },

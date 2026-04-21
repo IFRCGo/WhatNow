@@ -30,7 +30,7 @@
   "email_confirmed": "Mèsi pou konfime adrès imel ou. Silvouplè konekte.",
   "confirmation_failed": "Adrès imel ou a pa ka konfime, tanpri kontakte administratè ou a pou eseye ankò.",
   "home_redirect": "Ale sou paj akèy la",
-  "status": "Eta/Kondisyon",
+  "status": "Eta\/Kondisyon",
   "remember_me": "Sonje m",
   "old_password": "Modpas ou gen kounye a",
   "password": "Modpas",
@@ -197,15 +197,13 @@
     "steps": {
       "one": {
         "heading": "Etap 1 - Enskri",
-        "body": "Pou kòmanse itilize done ki soti nan API Baz Done Mesaj Sekirite a, premye {0} nan Portal Baz Done Mesaj Sekirite a.\n\nOu ka itilize kont Facebook ak Google ou, oswa yon adrès imel pou kreye yon kont.",
-        "create_account_alt": "kreye yon kont",
+        "body": "Pou kòmanse itilize done ki soti nan API Baz Done Mesaj Sekirite a, premye {0} nan Portal Baz Done Mesaj Sekirite a.\n\nOu ka itilize kont Facebook ak Google ou, oswa yon adrès imel pou kreye yon kont.",        "create_account_alt": "kreye yon kont",
         "existing_account": "Si w gen yon kont deja, tanpri {0}.",
         "login_cta": "konekte",
         "sign_up_cta": "enskri"
       },
       "two": {
-        "body": "Pou itilize API a, ou dwe kreye yon aplikasyon nan Portal Baz Done Mesaj Sekirite a. Di nou yon ti kras sou sa w ap bati a.",
-        "create_app_alt": "kreye yon aplikasyon",
+        "body": "Pou itilize API a, ou dwe kreye yon aplikasyon nan Portal Baz Done Mesaj Sekirite a. Di nou yon ti kras sou sa w ap bati a.",        "create_app_alt": "kreye yon aplikasyon",
         "heading": "Etap 2 - Kreye yon aplikasyon"
       },
       "three": {
@@ -216,8 +214,7 @@
       },
       "four": {
         "api_docs_cta": "Dokiman API",
-        "body": "API Baz Done Mesaj Sekirite a itilize HTTP(S) epi li bay pwen final RESTful pou jwenn done pibliye yo.\n\nChak demann dwe otantifye lè l sèvi avèk kle API ki te kreye nan etap anvan an.",
-        "example_title": "Egzanp demann",
+        "body": "API Baz Done Mesaj Sekirite a itilize HTTP(S) epi li bay pwen final RESTful pou jwenn done pibliye yo.\n\nChak demann dwe otantifye lè l sèvi avèk kle API ki te kreye nan etap anvan an.",        "example_title": "Egzanp demann",
         "heading": "Etap 4 - Fè yon demann",
         "moreInfo": "Pou plis enfòmasyon sou tout pwen final API yo, gade {0}."
       }
@@ -441,9 +438,9 @@
     "immediate": "Imedyat",
     "warning": "Avètisman",
     "anticipated": "Antisipe",
-    "assess_and_plan": "Evalye epi Planifye",
-    "mitigate_risks": "Diminye Risk",
-    "prepare_to_respond": "Prepare pou Reponn",
+    "assess_and_plan":"Evalye epi Planifye",
+    "mitigate_risks":"Diminye Risk",
+    "prepare_to_respond":"Prepare pou Reponn",
     "recover": "Rekipere"
   },
   "content": {
@@ -514,8 +511,7 @@
       "content_description_description": "Deskripsyon Mesaj Sekirite sa yo",
       "content_label": "Tanpri antre enfòmasyon danje yo",
       "content_url": "URL",
-      "content_url_description": "URL pou plis enfòmasyon sou Mesaj Sekirite sa yo. Tanpri enkli pwotokòl la, sa vle di http:// oswa https://",
-      "created": "kreye",
+      "content_url_description": "URL pou plis enfòmasyon sou Mesaj Sekirite sa yo. Tanpri enkli pwotokòl la, sa vle di http:// oswa https://",      "created": "kreye",
       "pieces_edited": " Moso edite",
       "content_placeholder": "Tanpri antre yon mesaj",
       "mitigation": "Alèjman",
@@ -526,7 +522,7 @@
       "seasonalForecast_extra": "Yon previzyon sezonye se yon deklarasyon sou prediksyon yon evènman danjere. Aksyon ki poze yo fèt pou evalye potansyèl risk yo epitou planifye aktivite yo pou diminye oswa pwoteje kay la.",
       "watch": "Gade",
       "watch_help": "Prepare pou reponn",
-      "watch_extra": "Yon alèt bay lè gen risk pou yo yon evènman ki gen danje ladan ogmante siyifikativman, men ensidan li yo, kote, ak / oswa distribisyon yo toujou ensèten. Li fèt nan entansyon pou bay ase tan pou aksyon pwoteksyon ak preparasyon reponn.",
+      "watch_extra": "Yon alèt bay lè gen risk pou yo yon evènman ki gen danje ladan ogmante siyifikativman, men ensidan li yo, kote, ak \/ oswa distribisyon yo toujou ensèten. Li fèt nan entansyon pou bay ase tan pou aksyon pwoteksyon ak preparasyon reponn.",
       "warning": "Avètisman",
       "warning_help": "Prepare pou reponn",
       "warning_extra": "Yon avètisman bay lè yon evènman danjere k ap rive, tou pre, oswa gen trè gwo pwobablite pou l rive. Sa vle di kondisyon yo poze yon menas pou lavi oswa pwopriyete. Moun ki sou chemen danjere sa a bezwen poze aksyon yo k ap pwoteje.",
@@ -558,8 +554,7 @@
       "content_edit_title": "Edite Kontni",
       "content_add_hazard_title": "Ajoute Danje",
       "key_message_label": "Tit Mesaj Kle",
-      "supporting_message_label": "Mesaj Sipò",
-      "mitigate_risk": "Diminye Risk"
+      "supporting_message_label": "Mesaj Sipò"
     },
     "message_editor": {
       "title": "Editè Atribisyon",
@@ -619,7 +614,7 @@
         "bad_request_error_codes": {
           "30001": "Tit kolòn ki pa mache ak modèl la",
           "30002": "Non atribisyon, mesaj oswa url ki manke",
-          "30003": "Atribisyon url ki pa valab - tanpri asire pwotokòl la prezan, eg. https://",
+          "30003": "Atribisyon url ki pa valab - tanpri asire pwotokòl la prezan, eg. https:\/\/",
           "40001": "Kòd peyi ki pa valid yo bay",
           "40002": "Sosyete chwazi ki pa mache sosyete pou achiv chwazi",
           "40003": "Done nan achiv chwazi ki te ekspòte e malfòme ak enpòtasyon pa kapab konplè"
@@ -690,7 +685,7 @@
   },
   "landing": {
     "strapline": "Sèvis Baz Done Mesaj Sekirite",
-    "strapline_part_2": "Kwa Wouj Global/ Mesaj Kle yo pou sekirite Kwa Wouj",
+    "strapline_part_2": "Kwa Wouj Global\/ Mesaj Kle yo pou sekirite Kwa Wouj",
     "head_1": "Sekirite IFRC",
     "head_2": "Baz Done Mesaj",
     "head_text_1": "Mesaj Sekirite ki baze sou Konsyantizasyon Piblik IFRC ak",
@@ -745,7 +740,7 @@
     "fake_alert_heading": "Avètisman fwa ekstrèm",
     "fake_alert_description": "Men, sa a egzije pou yon distenksyon senp epi fasil. Pou tan lib lè pouvwa nou an.",
     "fake_alert_time": "1 è PASE",
-    "fake_alert_time_exact": "05/02/18 a 5:15 CT",
+    "fake_alert_time_exact": "05\/02\/18 a 5:15 CT",
     "use_cases": {
       "heading": "Aprann plis",
       "first_heading": "kijan li fonksyone",
@@ -786,7 +781,7 @@
     },
     "data_preview": {
       "heading": "Mesaj Sekirite",
-      "sub_heading": "Enskri epi gade mesaj aksyon kle ki soti nan Lakwa Wouj / Kwasan Wouj Sosyete Nasyonal atravè monn lan\n"
+      "sub_heading": "Enskri epi gade mesaj aksyon kle ki soti nan Lakwa Wouj \/ Kwasan Wouj Sosyete Nasyonal atravè monn lan\n"
     },
     "footer": {
       "terms_conditions": "Tèm ak kondisyon yo\n",
@@ -842,10 +837,10 @@
     "industries": {
       "media": "Medya",
       "emergency": "Jesyon Ijans",
-      "non_profit": "Òganizasyon Non-gouvènmantal (ONG)/Ki pa Peye",
+      "non_profit": "Òganizasyon Non-gouvènmantal (ONG)\/Ki pa Peye",
       "humanitarian": "Òganizasyon Imanitè",
-      "red_cross": "Lakwa Wouj/Kwasan Wouj",
-      "education": "Edikasyon/Akademi",
+      "red_cross": "Lakwa Wouj\/Kwasan Wouj",
+      "education": "Edikasyon\/Akademi",
       "gov": "Ajans Gouvènman an",
       "other": "Lòt"
     },
@@ -860,9 +855,9 @@
       "body": "Lwa yo nan Distri a nan Kolonbi pral gouvène tout dwa ak obligasyon anba Kontra sa-a, san yo pa bay efè nan nenpòt prensip nan konfli nan lwa yo.",
       "heading": "Lwa ki aplikab:"
     },
-    "body": "Ou responsab pou kenbe sekrè ak sekirite kle enskripsyon Lakwa Wouj ba ou an. Ou responsab pou kenbe konpatibilite ak API a, jan yo mete ajou de tanzantan, pou kontinye resevwa Transmisyon Done yo. Lakwa Wouj ka lage vèsyon ki ajou nan API a ak Transmisyon Done yo nan sèl diskresyon li. Nouvo vèsyon yo ka pa konpatib ak aplikasyon anvan yo, epi ou dakò pou itilize vèsyon ki pi resamman mete ajou nan Transmisyon Done yo a toutan.\n\nOu dakò pa modifye, distribye, dekonpilasyon, demonte, oswa ranvèse enjenyè nenpòt pòsyon nan API a oswa nenpòt lojisyèl nan Lakwa Wouj.\n\nOu pa ka sèvi ak API la oswa Transmisyon Done yo nan yon fason ki depase volim demann rezonab oswa konstitye yo oswa itilizasyon abizif, jan yo detèmine pa Lakwa Wouj nan sèl diskresyon li.\n\nOu pa ka sèvi ak API a oswa Transmisyon Done yo nan yon fason ki ilegal, twonpè, neglijan, malveyan, lide lakòz domaj, oswa sa nwi Lakwa Wouj, founisè sèvis li yo, founisè kontni li yo, oswa nenpòt ki lòt moun, tankou detèmine pa Kwasan Wouj nan sèl diskresyon li.\n\nLakwa Wouj ka siveye itilizasyon API a ak Transmisyon Done yo. Ou pa ka itilize okenn mwayen teknik pou entèfere ak siveyans sa yo, epi Lakwa Wouj ka itilize mwayen teknik pou simonte nenpòt entèferans sa yo.\n\nItilizasyon prepasyon an, nan repons lan, ak rekiperasyon an pa dwe prezante sèlman kòm aktyèlman oswa mete ajou sou premye paramèt  lan nan epòk lan, epi pral mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj mizajou a nan transmisyon done yo ak / oswa alèt evènman korelate pa Lakwa Wouj la.\n\nPrepare ou, reponn epi rekipere mesaj yo ke ou itilize pa dwe asosye avek rejyon jeyografik la pou li ke yo bay li a. Itilizasyon preparasyon an, nan repons ak rekiperasyon an pa dwe prezante ke kòm aktyèlman oswa mizajou sou paramèt ijans nan epòk la, epi mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj yo nan mizajou transmisyon done yo ak / oswa alèt evènman korelate Lakwa Wouj la. Ou pa dwe kontinye sèvi ak nenpòt Sous Referans.\n\nOu pa ka tradui transmisyon done yo, alet evènman yo ak / oswa prepare, reponn ak rekipere mesaj yo nan yon lòt lang, pote yon itilizasyon, modifikasyon ak revizyon, oswa modifikasyon siyifikasyon an nan transmisyon done yo, alèt evènman yo ak / oswa prepare, reponn ak rekipere mesaj yo.\n\nOu dwe asire ke Transmisyon Done yo rete nan posesyon ak/oubyen sèl kontwòl ou.\n\nOu pa ka otorize alèt evènman yo epi prepare, reponn, epi rekipere mesaj livre a itilizate final yo pou entegre tout piblisite oswa parenaj.\n\nOu pa ka fè achiv nan oken pati Transmisyon Done yo.",
+    "body": "Ou responsab pou kenbe sekrè ak sekirite kle enskripsyon Lakwa Wouj ba ou an. Ou responsab pou kenbe konpatibilite ak API a, jan yo mete ajou de tanzantan, pou kontinye resevwa Transmisyon Done yo. Lakwa Wouj ka lage vèsyon ki ajou nan API a ak Transmisyon Done yo nan sèl diskresyon li. Nouvo vèsyon yo ka pa konpatib ak aplikasyon anvan yo, epi ou dakò pou itilize vèsyon ki pi resamman mete ajou nan Transmisyon Done yo a toutan.\n\nOu dakò pa modifye, distribye, dekonpilasyon, demonte, oswa ranvèse enjenyè nenpòt pòsyon nan API a oswa nenpòt lojisyèl nan Lakwa Wouj.\n\nOu pa ka sèvi ak API la oswa Transmisyon Done yo nan yon fason ki depase volim demann rezonab oswa konstitye yo oswa itilizasyon abizif, jan yo detèmine pa Lakwa Wouj nan sèl diskresyon li.\n\nOu pa ka sèvi ak API a oswa Transmisyon Done yo nan yon fason ki ilegal, twonpè, neglijan, malveyan, lide lakòz domaj, oswa sa nwi Lakwa Wouj, founisè sèvis li yo, founisè kontni li yo, oswa nenpòt ki lòt moun, tankou detèmine pa Kwasan Wouj nan sèl diskresyon li.\n\nLakwa Wouj ka siveye itilizasyon API a ak Transmisyon Done yo. Ou pa ka itilize okenn mwayen teknik pou entèfere ak siveyans sa yo, epi Lakwa Wouj ka itilize mwayen teknik pou simonte nenpòt entèferans sa yo.\n\nItilizasyon prepasyon an, nan repons lan, ak rekiperasyon an pa dwe prezante sèlman kòm aktyèlman oswa mete ajou sou premye paramèt  lan nan epòk lan, epi pral mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj mizajou a nan transmisyon done yo ak \/ oswa alèt evènman korelate pa Lakwa Wouj la.\n\nPrepare ou, reponn epi rekipere mesaj yo ke ou itilize pa dwe asosye avek rejyon jeyografik la pou li ke yo bay li a. Itilizasyon preparasyon an, nan repons ak rekiperasyon an pa dwe prezante ke kòm aktyèlman oswa mizajou sou paramèt ijans nan epòk la, epi mete ajou preparasyon endividyèl la, reponn epi rekipere mesaj yo nan mizajou transmisyon done yo ak \/ oswa alèt evènman korelate Lakwa Wouj la. Ou pa dwe kontinye sèvi ak nenpòt Sous Referans.\n\nOu pa ka tradui transmisyon done yo, alet evènman yo ak \/ oswa prepare, reponn ak rekipere mesaj yo nan yon lòt lang, pote yon itilizasyon, modifikasyon ak revizyon, oswa modifikasyon siyifikasyon an nan transmisyon done yo, alèt evènman yo ak \/ oswa prepare, reponn ak rekipere mesaj yo.\n\nOu dwe asire ke Transmisyon Done yo rete nan posesyon ak\/oubyen sèl kontwòl ou.\n\nOu pa ka otorize alèt evènman yo epi prepare, reponn, epi rekipere mesaj livre a itilizate final yo pou entegre tout piblisite oswa parenaj.\n\nOu pa ka fè achiv nan oken pati Transmisyon Done yo.",
     "contact": "Tanpri kontakte Lakwa Rouj nan [nimewo telefòn] avèk nenpòt kesyon ou genyen konsènan API a.",
-    "disclaimer": "API ak Transmisyon Done yo founi inikman pou enfòmasyon ak edikasyon, epi sou yon baz de \" tankou \" epi \"disponib tou\". Lakwa Wouj pa fè okenn reprezantasyon oswa garanti nenpòt kalite, ekspresyon oswa enplisit. Lakwa Wouj refize tout garanti eksprime ni enplisit, tankou garanti enplisit nan komès ak kapasite pou yon rezon patikilye. Lakwa Wouj ak anplwaye li yo, ofisye yo, gouvènè yo ak ajan yo ak lisansye yo p ap responsab pou oken domaj ki rive nan itilizasyon API, Transmisyon Done, Alèt Evènman, ak / oubyen mesaj Prepare, Reponn, ak Rekipere, tankou domaj endirèk, ensidan, ak domaj konsekan.\n\nLakwa Wouj pa garanti sekans, presizyon, otantisite oubyen konpletid nan API a, Transmisyon Done yo, Avètisman Evènman ak / oubyen mesaj Prepare, Reponn, epi Rekipere epi yo pa dwe responsab nan okenn fason pou ou menm oubyen itilizatè ou oubyen nenpòt twazyèm pati, tankou pou nenpòt ki reta, erè oswa omisyon, ki gen rapò ak API a, Transmisyon Done yo, Evènman Alèt ak / oubyen mesaj Prepare, reponn, epi rekipere ki bay.",
+    "disclaimer": "API ak Transmisyon Done yo founi inikman pou enfòmasyon ak edikasyon, epi sou yon baz de \" tankou \" epi \"disponib tou\". Lakwa Wouj pa fè okenn reprezantasyon oswa garanti nenpòt kalite, ekspresyon oswa enplisit. Lakwa Wouj refize tout garanti eksprime ni enplisit, tankou garanti enplisit nan komès ak kapasite pou yon rezon patikilye. Lakwa Wouj ak anplwaye li yo, ofisye yo, gouvènè yo ak ajan yo ak lisansye yo p ap responsab pou oken domaj ki rive nan itilizasyon API, Transmisyon Done, Alèt Evènman, ak \/ oubyen mesaj Prepare, Reponn, ak Rekipere, tankou domaj endirèk, ensidan, ak domaj konsekan.\n\nLakwa Wouj pa garanti sekans, presizyon, otantisite oubyen konpletid nan API a, Transmisyon Done yo, Avètisman Evènman ak \/ oubyen mesaj Prepare, Reponn, epi Rekipere epi yo pa dwe responsab nan okenn fason pou ou menm oubyen itilizatè ou oubyen nenpòt twazyèm pati, tankou pou nenpòt ki reta, erè oswa omisyon, ki gen rapò ak API a, Transmisyon Done yo, Evènman Alèt ak \/ oubyen mesaj Prepare, reponn, epi rekipere ki bay.",
     "entire_agreement": {
       "body": "Regleman API yo konstitye akò konplè ak eksklizif ant Lakwa Wouj ak ou menm ki gen rapò ak sijè sa a epi ranplase tout konpreyansyon alavans oral oubyen ekri, kominikasyon, oubyen akò ki pa espesyalman enkòpore nan dokiman sa a. Lakwa Wouj rezève dwa pou li modifye oubyen anile akò sa a nenpòt lè.",
       "heading": "Akò Konplè a:"
@@ -870,12 +865,11 @@
     "heading": "AKÒ LISANS ITILIZATÈ FINAL API",
     "intro": "AKÒ: PA ITILIZE SÈVIS LA OUBYEN TCHEKE BWAT YO BAY LA, ITILIZATÈ DAKÒ AK AKÒ SA a.\n\nAPI a se yon zouti ki pèmèt ou (\"Ou\") rekipere epi sèvi ak done ki disponib pa Lakwa Wouj tankou yon rezo nan move tan mondyal ak avètisman evènman dezas epi gade avi (\"Alèt Evènman\") ak yon transmisyon mesaj kontèksyalize aksyonab sou kòman yo prepare danje lokal yo pa kalite danje ak ijans (\"Mesaj Prepare, Reponn, ak Rekipere\", ak kolektivman ak Alèt yo Evènman, \"Transmisyon Done yo\"). Prepare, Reponn, Rejwenn mesaj la pou akonpaye Alèt evènman oswa lòt avètisman epi gade avi ki asosye ak metewo ak katastwòf nan aplikasyon w lan. Se kondisyon API yo ki reglemante itlizasyon w ap fè ak Done yo.",
     "license_limitations": {
-      "body": "Ou ka itilize Transmisyon Done yo sèlman ak aplikasyon w lan ki reglemante pa kondisyon API yo, e te bay pou kenbe konpatibilte ak API yo, jan mizajou yo fèt detanzantan. Yo ba w dwa (e se pa ou sèl ki genyen l, li limite e w ka pèdi) pou w  telechaje, itilize, repwodui epi distribiye bay itilizatè final yo pwòp aplikasyon w (“End Users”) Alèt evènman e prepare, reponn, ak rejwenn mesaj an kolaborasyon ak paramèt ijans alèt evènman endividyèl ki soti nan  Transmisyon Done yo ki anba tèm API yo. Ou ka sèlman itilize API pou fasilite itilizasyon ki pa komèsyal Transmisyon Done yo annakò ak Tèm API yo. Nan okenn ka ou pa ka itilize API a pou fasilte itilizasyon komèsyal Transmisyon Done yo, Evènman alèt yo ak/oswa Prepare,repon, ak Rejwenn mesaj, sa gen ladan l, san okenn limit, revann yo, fè peye pou gen aksè ak yo, fè peye pou redistribiye yo, oswa fè peye pou kreye pwodui derive ki soti nan yo. Kwa Wouj ak moun ki bay lisans li yo kenbe tout tit, pwopriyete, dwa ak enterè nan API a, Prepare, reponn, ak Rejwenn mesaj, Transmisyon Done yo, Evènman alèt yo ak sous referans yo (jan yo defini sa anba a) nan dokiman sa a. Tout dwa pa eksprèseman akòde yo rezève.",
+      "body": "Ou ka itilize Transmisyon Done yo sèlman ak aplikasyon w lan ki reglemante pa kondisyon API yo, e te bay pou kenbe konpatibilte ak API yo, jan mizajou yo fèt detanzantan. Yo ba w dwa (e se pa ou sèl ki genyen l, li limite e w ka pèdi) pou w  telechaje, itilize, repwodui epi distribiye bay itilizatè final yo pwòp aplikasyon w (“End Users”) Alèt evènman e prepare, reponn, ak rejwenn mesaj an kolaborasyon ak paramèt ijans alèt evènman endividyèl ki soti nan  Transmisyon Done yo ki anba tèm API yo. Ou ka sèlman itilize API pou fasilite itilizasyon ki pa komèsyal Transmisyon Done yo annakò ak Tèm API yo. Nan okenn ka ou pa ka itilize API a pou fasilte itilizasyon komèsyal Transmisyon Done yo, Evènman alèt yo ak\/oswa Prepare,repon, ak Rejwenn mesaj, sa gen ladan l, san okenn limit, revann yo, fè peye pou gen aksè ak yo, fè peye pou redistribiye yo, oswa fè peye pou kreye pwodui derive ki soti nan yo. Kwa Wouj ak moun ki bay lisans li yo kenbe tout tit, pwopriyete, dwa ak enterè nan API a, Prepare, reponn, ak Rejwenn mesaj, Transmisyon Done yo, Evènman alèt yo ak sous referans yo (jan yo defini sa anba a) nan dokiman sa a. Tout dwa pa eksprèseman akòde yo rezève.",
       "heading": "Lisans ak Limit:"
     },
     "overview": {
-      "body": "Entèfas Pwogram Aplikasyon Sèvis Baz Done Mesaj Sekirite Sant Preparasyon Global pou Katastwòf la (“API”) disponib pou ou pa Lakwa Wouj Nasyonal Ameriken an (“Lakwa Wouj”). API a mande yon kle enskripsyon. Pandan pwosesis enskripsyon an, ou dwe dakò ak tèm ak kondisyon sa yo, ansanm ak tèm ak kondisyon nan Akò Tèm Sèvis Sit Wèb Lakwa Wouj ki disponib nan {0} (ansanm, “Tèm API yo”). Tèm API yo pral gouvène itilizasyon API ou a ak materyèl elektwonik telechaje ki disponib atravè API a. {1}",
-      "cta": "Klike la a pou ou enkri."
+      "body": "Entèfas Pwogram Aplikasyon Sèvis Baz Done Mesaj Sekirite Sant Preparasyon Global pou Katastwòf la (“API”) disponib pou ou pa Lakwa Wouj Nasyonal Ameriken an (“Lakwa Wouj”). API a mande yon kle enskripsyon. Pandan pwosesis enskripsyon an, ou dwe dakò ak tèm ak kondisyon sa yo, ansanm ak tèm ak kondisyon nan Akò Tèm Sèvis Sit Wèb Lakwa Wouj ki disponib nan {0} (ansanm, “Tèm API yo”). Tèm API yo pral gouvène itilizasyon API ou a ak materyèl elektwonik telechaje ki disponib atravè API a. {1}",      "cta": "Klike la a pou ou enkri."
     },
     "privacy_policy": {
       "body": "Ou konprann, ou rekonèt, e ou dakò ak operasyon kèk pwogram, sèvis, zouti, opsyon acha, oswa enfòmasyon nan API a egzije pou ou soumisyon, itilizasyon piblikasyon divès enfòmasyon a karaktè pèsonèl. Pa konsekan, si ou vle gen aksè epi itilize API a, ou rekonèt e ou dakò itilizasyon API a vle di ou aksepte koleksyon enfòmasyon a karaktè pèsonèl ak itilizasyon pratik ki nan politik konfidansyalite ki pibliye yo: {0}",
@@ -889,17 +883,17 @@
         "two": "Kontoune oswa modifye nenpòt kle oswa sekirite mekanism travay pa Lakwa Wouj oswa API a, ki gen ladan san limitasyon teknoloji otantifikasyon yo.",
         "three": "Pou mande, kolekte, solisite oswa jwenn aksè pou konekte non, modpas oswa lòt idantifyan pou Kwa Wouj ki pa sa yo te ba ou yo pou pwòp kont ou.",
         "four": "Pou deklare oswa fè konnen yon fason endirèk yon afilyasyon, parenaj oswa apui Sosyete Lakwa wouj oswa Kwasan Wouj bay.",
-        "five": "Pou deklare oswa fè konnen yon fason endirèk ou gen oswa ou te kreye yon API, Transmisyon Done yo, Alèt evènman ak/oswa Prepare, Reponn oswa rejwenn mesaj yo.",
+        "five": "Pou deklare oswa fè konnen yon fason endirèk ou gen oswa ou te kreye yon API, Transmisyon Done yo, Alèt evènman ak\/oswa Prepare, Reponn oswa rejwenn mesaj yo.",
         "six": "Transmèt nenpòt viris, viris ki rele Trojan horses la, oswa nenpòt lòt bagay ki ka fè dega enfòmatik."
       }
     },
-    "reserve_rights": "Kwa Wouj gen dwa pou l modifye ak/oswa ba bay API ak Transmisyon Done yo annantye oswa an pati, tanporèman oswa definitivman, nenpòt kilè san avètisman alavans. Pou evite dout, anyen nan dokiman sa a pa oblije Kwa Wouj mete API ak Transmisyon Done li yo disponib pou ou, e ou dakò e ou rekonèt nenpòt aksè avèk yo, se tout responsablite Kwa Wouj pou l deside sa.",
+    "reserve_rights": "Kwa Wouj gen dwa pou l modifye ak\/oswa ba bay API ak Transmisyon Done yo annantye oswa an pati, tanporèman oswa definitivman, nenpòt kilè san avètisman alavans. Pou evite dout, anyen nan dokiman sa a pa oblije Kwa Wouj mete API ak Transmisyon Done li yo disponib pou ou, e ou dakò e ou rekonèt nenpòt aksè avèk yo, se tout responsablite Kwa Wouj pou l deside sa.",
     "severability": {
       "body": "Nenpòt tèm oswa dispozisyon nan Tèm API yo p ap afekte validite nenpòt lòt dispozisyon.",
       "heading": "Diviziblite ak renonsyasyon:"
     },
     "suspension": {
-      "body": "Kwa Wouj gen dwa kanpe oswa mete fen nan aksè ou si Kwa Wouj deside sa, sa nan otorite l, si ou kòmanse itilize API oswa Transmisyon Done yo yon fason ki pa otorize jan sa dekri nan Tèm API yo oswa ou ap itilize API oswa Transmisyon Done yo nan nenpòt aktivite ki menase/mete an danje sekirite nenpòt moun oswa rezo Kwa wouj yo.",
+      "body": "Kwa Wouj gen dwa kanpe oswa mete fen nan aksè ou si Kwa Wouj deside sa, sa nan otorite l, si ou kòmanse itilize API oswa Transmisyon Done yo yon fason ki pa otorize jan sa dekri nan Tèm API yo oswa ou ap itilize API oswa Transmisyon Done yo nan nenpòt aktivite ki menase\/mete an danje sekirite nenpòt moun oswa rezo Kwa wouj yo.",
       "heading": "Sispansyon oswa Revokasyon:"
     }
   },

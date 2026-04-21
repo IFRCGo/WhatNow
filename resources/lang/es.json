@@ -594,8 +594,7 @@
       "desc_tool": "Proporciona una breve descripción sobre el peligro y los mensajes. Debe tener de 1 a 3 frases.",
       "title_tool": "Por ejemplo: Mensajes de seguridad para Inundaciones",
       "safety_tool": "Esta es una acción prioritaria que una persona debe tomar para mantenerse segura. El mensaje debe estar orientado a la acción, ser conciso y tener menos de 50 caracteres.",
-      "supporting_tool": "Esto proporciona más detalles para apoyar la acción clave prioritaria. El mensaje debe estar orientado a la acción y ser conciso.",
-      "mitigate_risk": "Mitigar Riesgo"
+      "supporting_tool": "Esto proporciona más detalles para apoyar la acción clave prioritaria. El mensaje debe estar orientado a la acción y ser conciso."
     },
     "message_editor": {
       "title": "Editor de Atribución",
