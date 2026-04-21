@@ -441,9 +441,9 @@
     "immediate": "Immediate",
     "warning": "Warning",
     "anticipated": "Anticipated",
-    "assess_and_plan":"Assess and Plan",
-    "mitigate_risks":"Mitigate Risk",
-    "prepare_to_respond":"Prepare to Respond",
+    "assess_and_plan": "Assess and Plan",
+    "mitigate_risks": "Mitigate Risk",
+    "prepare_to_respond": "Prepare to Respond",
     "recover": "Recover"
   },
   "content": {
@@ -526,7 +526,7 @@
       "seasonalForecast_extra": "Prakiraan iklim musiman merupakan sebuah pernyataan prediksi atas peristiwa berbahaya. Tindakan yang dilakukan adalah menilai potensi risiko dan merencanakan aktivitas untuk mengurangi risiko dan melindungi rumah tangga.",
       "watch": "Pengawasan",
       "watch_help": "Bersiap untuk menanggapi",
-      "watch_extra": "Pengawasan dilakukan ketika risiko suatu peristiwa berbahaya telah meningkat secara signifikan, tetapi kemunculannya, lokasi, dan\/atau waktunya masih belum pasti. Tujuannya yaitu menyediakan waktu yang cukup untuk tindakan perlindungan dan persiapan.",
+      "watch_extra": "Pengawasan dilakukan ketika risiko suatu peristiwa berbahaya telah meningkat secara signifikan, tetapi kemunculannya, lokasi, dan/atau waktunya masih belum pasti. Tujuannya yaitu menyediakan waktu yang cukup untuk tindakan perlindungan dan persiapan.",
       "warning": "Peringatan",
       "warning_help": "Bersiap untuk menanggapi",
       "warning_extra": "Peringatan dikeluarkan saat peristiwa berbahaya sedang terjadi, akan segera terjadi, atau memiliki kemungkinan yang sangat tinggi untuk terjadi. Ini berarti kondisi yang dapat mengancam nyawa atau harta benda. Orang-orang yang berada di jalur bahaya ini perlu mengambil tindakan perlindungan.",
@@ -558,7 +558,8 @@
       "content_edit_title": "Content Edit",
       "content_add_hazard_title": "Add Hazard",
       "key_message_label": "Key message title",
-      "supporting_message_label": "Supporting message"
+      "supporting_message_label": "Supporting message",
+      "mitigate_risk": "Mitigate Risk"
     },
     "message_editor": {
       "title": "Editor Atribusi",
@@ -618,7 +619,7 @@
         "bad_request_error_codes": {
           "30001": "Judul kolom tidak cocok dengan templat",
           "30002": "Nama atribusi, pesan atau url hilang",
-          "30003": "Url atribusi tidak valid - pastikan protokolnya disertakan, yaitu https:\/\/",
+          "30003": "Url atribusi tidak valid - pastikan protokolnya disertakan, yaitu https://",
           "40001": "Kode negara yang disediakan tidak valid",
           "40002": "Perhimpunan yang dipilih tidak sesuai dengan berkas yang dipilih",
           "40003": "Tanggal ekspor berkas yang dipilih memiliki format yang salah dan impor tidak dapat diselesaikan"
@@ -689,7 +690,7 @@
   },
   "landing": {
     "strapline": "Layanan Basis Data Pesan Keamanan",
-    "strapline_part_2": "Pesan Keamanan Utama Palang Merah \/ Bulan Sabit Merah Global",
+    "strapline_part_2": "Pesan Keamanan Utama Palang Merah / Bulan Sabit Merah Global",
     "head_1": "Keselamatan IFRC",
     "head_2": "Basis Data Pesan",
     "head_text_1": "Pesan keselamatan berdasarkan Kesadaran Publik IFRC dan",
@@ -744,7 +745,7 @@
     "fake_alert_heading": "Peringatan Cuaca Dingin Ekstrim",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est.",
     "fake_alert_time": "1 JAM YANG LALU",
-    "fake_alert_time_exact": "05\/02\/18 jam 05:15 CT",
+    "fake_alert_time_exact": "05/02/18 jam 05:15 CT",
     "use_cases": {
       "heading": "Pelajari Lebih Lanjut",
       "first_heading": "Cara Kerja",
@@ -785,7 +786,7 @@
     },
     "data_preview": {
       "heading": "Pesan Keselamatan",
-      "sub_heading": "Daftar dan lihat pesan tindakan utama dari Perhimpunan Nasional Palang Merah \/ Bulan Sabit Merah di seluruh dunia"
+      "sub_heading": "Daftar dan lihat pesan tindakan utama dari Perhimpunan Nasional Palang Merah / Bulan Sabit Merah di seluruh dunia"
     },
     "footer": {
       "terms_conditions": "Syarat & Ketentuan",
@@ -843,8 +844,8 @@
       "emergency": "Manajemen Darurat",
       "non_profit": "Nirlaba",
       "humanitarian": "Organisasi Kemanusiaan",
-      "red_cross": "Palang Merah\/Bulan Sabit Merah",
-      "education": "Pendidikan\/Akademik",
+      "red_cross": "Palang Merah/Bulan Sabit Merah",
+      "education": "Pendidikan/Akademik",
       "gov": "Badan Pemerintahan",
       "other": "Lainnya"
     },
@@ -859,9 +860,9 @@
       "body": "Undang-undang Distrik Kolombia akan mengatur semua hak dan kewajiban yang terdapat dalam Perjanjian ini, tanpa memengaruhi prinsip-prinsip konflik hukum.",
       "heading": "Hukum yang berlaku:"
     },
-    "body": "Anda bertanggung jawab untuk menjaga kerahasiaan dan keamanan kode registrasi yang diberikan oleh Palang Merah kepada Anda. Anda bertanggung jawab untuk menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu, agar terus menerima Umpan Data. Palang Merah dapat merilis versi terbaru dari API dan Umpan Data atas kebijakannya sendiri. Versi baru mungkin tidak kompatibel dengan penerapan sebelumnya, dan Anda setuju untuk menggunakan versi terbaru dari Umpan Data setiap saat.\n\nAnda setuju untuk tidak mengubah, mendistribusikan, mendekompilasi, membongkar, atau merekayasa balik bagian mana pun dari API atau perangkat lunak Palang Merah.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melebihi volume permintaan yang wajar atau penggunaan yang berlebihan atau disalahgunakan, sebagaimana yang telah ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melanggar hukum, menyesatkan, melalaikan, yang bermaksud untuk menyebabkan kerugian, atau merugikan Palang Merah, penyedia layanannya, penyedia kontennya, atau pun pihak lain, sebagaimana ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nPalang Merah dapat memantau penggunaan API dan Umpan Data Anda. Anda tidak boleh menggunakan cara teknis apa pun untuk mengganggu pemantauan tersebut, dan Palang Merah dapat menggunakan cara teknis untuk mengatasi gangguan tersebut.\n\nPenggunaan Pesan Siap, Tanggap dan Pulihkan hanya akan ditampilkan sebagai pengaturan terkini atau terbaru ke pengaturan urgensi terkini dari Peringatan Peristiwa terkait, dan Anda harus memperbarui Pesan Siap, Tanggap dan Pulihkan Perseorangan setelah pemutakhiran Umpan Data dan\/atau terkait Peringatan Peristiwa oleh Palang Merah.\n\nPesan Siap, Tanggap dan Pulihkan perseorangan yang Anda gunakan sebaiknya hanya diasosiasikan dengan letak geografis di mana ia diterbitkan. Apabila Pesan Siap, Tanggap dan Pulihkan menyertakan referensi ke sebuah sumber seperti American Red Cross atau organisasi atau perhimpunan Palang Merah atau Bulan Sabit Merah nasional lainnya (tiap “Referensi Sumber”), Anda harus menyertakan Referensi Sumber yang diasosiasikan dengan tiap Pesan Siap, Tanggap dan Pulihkan dalam formulir yang disediakan di Umpan Data. Anda tidak boleh lagi menggunakan Referensi Sumber lainnya.\n\nAnda tidak boleh menerjemahkan Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan ke dalam bahasa lain, menggunakan, mengedit atau merevisi, apalagi mengubah arti Umpan Data, Peringatan Acara dan\/atau Pesan Siap, Tanggap dan Pulihkan.\n\nAnda harus memastikan Umpan Data, tetap dalam kepemilikan dan\/atau kendali Anda sendiri.\n\nAnda dapat tidak memberikan izin Peringatan Peristiwa dan Pesan Siap, Tanggap dan Pulihkan yang dikirim kepada Pengguna Langsung bersamaan dengan iklan atau sponsor apa pun.\n\nAnda tidak boleh mengarsipkan Umpan Data secara keseluruhan mau pun sebagian.",
+    "body": "Anda bertanggung jawab untuk menjaga kerahasiaan dan keamanan kode registrasi yang diberikan oleh Palang Merah kepada Anda. Anda bertanggung jawab untuk menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu, agar terus menerima Umpan Data. Palang Merah dapat merilis versi terbaru dari API dan Umpan Data atas kebijakannya sendiri. Versi baru mungkin tidak kompatibel dengan penerapan sebelumnya, dan Anda setuju untuk menggunakan versi terbaru dari Umpan Data setiap saat.\n\nAnda setuju untuk tidak mengubah, mendistribusikan, mendekompilasi, membongkar, atau merekayasa balik bagian mana pun dari API atau perangkat lunak Palang Merah.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melebihi volume permintaan yang wajar atau penggunaan yang berlebihan atau disalahgunakan, sebagaimana yang telah ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nAnda tidak boleh menggunakan API atau Umpan Data dengan cara yang melanggar hukum, menyesatkan, melalaikan, yang bermaksud untuk menyebabkan kerugian, atau merugikan Palang Merah, penyedia layanannya, penyedia kontennya, atau pun pihak lain, sebagaimana ditentukan oleh Palang Merah atas kebijakannya sendiri.\n\nPalang Merah dapat memantau penggunaan API dan Umpan Data Anda. Anda tidak boleh menggunakan cara teknis apa pun untuk mengganggu pemantauan tersebut, dan Palang Merah dapat menggunakan cara teknis untuk mengatasi gangguan tersebut.\n\nPenggunaan Pesan Siap, Tanggap dan Pulihkan hanya akan ditampilkan sebagai pengaturan terkini atau terbaru ke pengaturan urgensi terkini dari Peringatan Peristiwa terkait, dan Anda harus memperbarui Pesan Siap, Tanggap dan Pulihkan Perseorangan setelah pemutakhiran Umpan Data dan/atau terkait Peringatan Peristiwa oleh Palang Merah.\n\nPesan Siap, Tanggap dan Pulihkan perseorangan yang Anda gunakan sebaiknya hanya diasosiasikan dengan letak geografis di mana ia diterbitkan. Apabila Pesan Siap, Tanggap dan Pulihkan menyertakan referensi ke sebuah sumber seperti American Red Cross atau organisasi atau perhimpunan Palang Merah atau Bulan Sabit Merah nasional lainnya (tiap “Referensi Sumber”), Anda harus menyertakan Referensi Sumber yang diasosiasikan dengan tiap Pesan Siap, Tanggap dan Pulihkan dalam formulir yang disediakan di Umpan Data. Anda tidak boleh lagi menggunakan Referensi Sumber lainnya.\n\nAnda tidak boleh menerjemahkan Umpan Data, Peringatan Peristiwa dan/atau Pesan Siap, Tanggap dan Pulihkan ke dalam bahasa lain, menggunakan, mengedit atau merevisi, apalagi mengubah arti Umpan Data, Peringatan Acara dan/atau Pesan Siap, Tanggap dan Pulihkan.\n\nAnda harus memastikan Umpan Data, tetap dalam kepemilikan dan/atau kendali Anda sendiri.\n\nAnda dapat tidak memberikan izin Peringatan Peristiwa dan Pesan Siap, Tanggap dan Pulihkan yang dikirim kepada Pengguna Langsung bersamaan dengan iklan atau sponsor apa pun.\n\nAnda tidak boleh mengarsipkan Umpan Data secara keseluruhan mau pun sebagian.",
     "contact": "Silakan hubungi Palang Merah di {0} untuk pertanyaan mengenai API.",
-    "disclaimer": "API dan Umpan Data disediakan HANYA UNTUK TUJUAN INFORMASI DAN EDUKASI, dan atas dasar 'sebagaimana adanya' dan 'sebagaimana tersedia'. Palang Merah tidak membuat pernyataan atau jaminan apa pun, tersurat mau pun tersirat. Palang Merah menyangkal semua jaminan, tersurat mau pun tersirat, termasuk namun tidak terbatas pada jaminan tersirat mengenai kelayakan untuk diperdagangkan dan kesesuaian untuk tujuan tertentu. Palang Merah dan para karyawan, pejabat, gubernur dan agen serta pemberi lisensinya tidak akan bertanggung jawab atas kerusakan dalam bentuk apa pun yang timbul dari penggunaan API, Umpan Data, Peringatan Peristiwa, dan\/atau Pesan Siap, Tanggap dan Pulihkan termasuk namun tidak terbatas pada kerusakan langsung, tidak langsung, insidental, punitif dan konsekuensial.\n\nPalang Merah tidak menjamin urutan, keakuratan, keaslian atau kelengkapan API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan serta tidak akan bertanggung jawab dengan cara apa pun kepada Anda atau pun Pengguna Langsung bahkan pihak ketiga mana pun, termasuk namun tidak terbatas pada, keterlambatan, ketidakakuratan, kesalahan atau kelalaian, sehubungan dengan API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan yang disediakan di bawah ini.",
+    "disclaimer": "API dan Umpan Data disediakan HANYA UNTUK TUJUAN INFORMASI DAN EDUKASI, dan atas dasar 'sebagaimana adanya' dan 'sebagaimana tersedia'. Palang Merah tidak membuat pernyataan atau jaminan apa pun, tersurat mau pun tersirat. Palang Merah menyangkal semua jaminan, tersurat mau pun tersirat, termasuk namun tidak terbatas pada jaminan tersirat mengenai kelayakan untuk diperdagangkan dan kesesuaian untuk tujuan tertentu. Palang Merah dan para karyawan, pejabat, gubernur dan agen serta pemberi lisensinya tidak akan bertanggung jawab atas kerusakan dalam bentuk apa pun yang timbul dari penggunaan API, Umpan Data, Peringatan Peristiwa, dan/atau Pesan Siap, Tanggap dan Pulihkan termasuk namun tidak terbatas pada kerusakan langsung, tidak langsung, insidental, punitif dan konsekuensial.\n\nPalang Merah tidak menjamin urutan, keakuratan, keaslian atau kelengkapan API, Umpan Data, Peringatan Peristiwa dan/atau Pesan Siap, Tanggap dan Pulihkan serta tidak akan bertanggung jawab dengan cara apa pun kepada Anda atau pun Pengguna Langsung bahkan pihak ketiga mana pun, termasuk namun tidak terbatas pada, keterlambatan, ketidakakuratan, kesalahan atau kelalaian, sehubungan dengan API, Umpan Data, Peringatan Peristiwa dan/atau Pesan Siap, Tanggap dan Pulihkan yang disediakan di bawah ini.",
     "entire_agreement": {
       "body": "Syarat API merupakan perjanjian lengkap dan eksklusif antara Palang Merah dan Anda sehubungan dengan materi pokok dalam perjanjian ini dan menggantikan semua pemahaman, komunikasi, atau perjanjian lisan mau pun tertulis sebelumnya yang tidak secara khusus dimasukkan dalam perjanjian ini. Palang Merah berhak untuk memodifikasi atau menghentikan perjanjian ini setiap saat.",
       "heading": "Keseluruhan Perjanjian:"
@@ -869,7 +870,7 @@
     "heading": "PERJANJIAN LISENSI PENGGUNA LANGSUNG API",
     "intro": "SETUJU: DENGAN MENGGUNAKAN LAYANAN INI ATAU MENCENTANG KOTAK YANG DISEDIAKAN, PENGGUNA SETUJU UNTUK TERIKAT DALAM PERJANJIAN INI.\n\nAPI merupakan alat yang memungkinkan Anda (“Anda”) untuk mengambil dan menggunakan umpan data yang disediakan oleh Palang Merah termasuk umpan peringatan cuaca dan bencana global dan notifikasi pengawasan (“Peringatan Peristiwa”) serta umpan pesan yang dapat ditindaklanjuti dan kontekstual dengan cara menghadapi bahaya lokal tergantung jenis bahaya dan urgensinya (“Pesan Siap, Tanggap dan Pulihkan”, dan secara kolektif dengan Peringatan Peristiwa, “ Umpan Data”). Pesan Siap, Tanggap dan Pulihkan dimaksudkan untuk menyertakan Peringatan Peristiwa atau peringatan dan notifikasi pengawasan lainnya yang berkaitan dengan peristiwa cuaca dan bencana dalam aplikasi Anda sendiri. Penggunaan Umpan Data diatur oleh Syarat API.",
     "license_limitations": {
-      "body": "Anda dapat menggunakan Umpan Data hanya terkait dengan aplikasi Anda sendiri yang tunduk pada Syarat API, dan Anda wajib menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu. Anda diberikan hak non-eksklusif, terbatas dan dapat dibatalkan untuk mengunduh, menggunakan, mereproduksi dan mendistribusikan ke pengguna langsung aplikasi Anda sendiri (“Pengguna Langsung”) Peringatan Peristiwa serta Pesan Siap, Tanggap dan Pulihkan yang relevan dan kontekstual dengan pengaturan urgensi pada masing-masing Peringatan Peristiwa dari Umpan Data, tunduk pada Syarat API. Anda hanya dapat menggunakan API untuk memfasilitasi penggunaan non-komersial dari Umpan Data sesuai dengan Syarat API. Anda tidak diperkenankan dalam hal apa pun menggunakan API untuk memfasilitasi penggunaan komersial dari Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan, termasuk namun tidak terbatas pada, menjual ulang, meminta imbalan untuk mengaksesnya, meminta imbalan untuk meredistribusi, atau meminta imbalan untuk membuat karya turunan berdasarkan karya mereka. Palang Merah dan pemberi lisensinya mempertahankan semua hak milik, kepemilikan, hak dan kepentingan dalam dan untuk API, Pesan Siap, Tanggap dan Pulihkan, Peringatan Peristiwa, Umpan Data dan Referensi Sumber (sebagaimana yang didefinisikan berikut) di dalamnya. Semua hak yang tidak diberikan secara tersurat dilindungi.",
+      "body": "Anda dapat menggunakan Umpan Data hanya terkait dengan aplikasi Anda sendiri yang tunduk pada Syarat API, dan Anda wajib menjaga kompatibilitas dengan API, yang diperbarui dari waktu ke waktu. Anda diberikan hak non-eksklusif, terbatas dan dapat dibatalkan untuk mengunduh, menggunakan, mereproduksi dan mendistribusikan ke pengguna langsung aplikasi Anda sendiri (“Pengguna Langsung”) Peringatan Peristiwa serta Pesan Siap, Tanggap dan Pulihkan yang relevan dan kontekstual dengan pengaturan urgensi pada masing-masing Peringatan Peristiwa dari Umpan Data, tunduk pada Syarat API. Anda hanya dapat menggunakan API untuk memfasilitasi penggunaan non-komersial dari Umpan Data sesuai dengan Syarat API. Anda tidak diperkenankan dalam hal apa pun menggunakan API untuk memfasilitasi penggunaan komersial dari Umpan Data, Peringatan Peristiwa dan/atau Pesan Siap, Tanggap dan Pulihkan, termasuk namun tidak terbatas pada, menjual ulang, meminta imbalan untuk mengaksesnya, meminta imbalan untuk meredistribusi, atau meminta imbalan untuk membuat karya turunan berdasarkan karya mereka. Palang Merah dan pemberi lisensinya mempertahankan semua hak milik, kepemilikan, hak dan kepentingan dalam dan untuk API, Pesan Siap, Tanggap dan Pulihkan, Peringatan Peristiwa, Umpan Data dan Referensi Sumber (sebagaimana yang didefinisikan berikut) di dalamnya. Semua hak yang tidak diberikan secara tersurat dilindungi.",
       "heading": "Perizinan dan Pembatasan:"
     },
     "overview": {
@@ -888,17 +889,17 @@
         "two": "Menghindari atau memodifikasi kode atau mekanisme keamanan yang digunakan oleh Palang Merah atau API, termasuk namun tidak terbatas pada teknologi autentikasi apa pun.",
         "three": "Meminta, mengumpulkan, memohon atau mendapatkan akses akun, kata sandi atau pun autentikasi rahasia Palang Merah lainnya selain yang diberikan kepada Anda untuk akun pribadi Anda.",
         "four": "Menyatakan atau menyiratkan afiliasi, sponsor atau dukungan oleh Palang Merah atau organisasi atau perhimpunan nasional Palang Merah atau Bulan Sabit Merah lainnya.",
-        "five": "Menyatakan atau menyiratkan bahwa Anda yang memiliki dan membuat API, Umpan Data, Peringatan Peristiwa dan\/atau Pesan Siap, Tanggap dan Pulihkan.",
+        "five": "Menyatakan atau menyiratkan bahwa Anda yang memiliki dan membuat API, Umpan Data, Peringatan Peristiwa dan/atau Pesan Siap, Tanggap dan Pulihkan.",
         "six": "Menularkan virus, worm, Trojan horse, atau item apa pun yang bersifat destruktif."
       }
     },
-    "reserve_rights": "Palang Merah berhak untuk mengubah dan\/atau tidak lagi menyediakan API dan Umpan Data secara keseluruhan atau sebagian, baik untuk sementara atau permanen, kapan pun tanpa pemberitahuan sebelumnya. Untuk menghilangkan keraguan, Palang Merah tidak diwajibkan untuk menyediakan API atau Umpan Data untuk Anda, dan Anda setuju serta mengetahui bahwa tiap akses dalam kebijakan tunggal dan mutlak Palang Merah.",
+    "reserve_rights": "Palang Merah berhak untuk mengubah dan/atau tidak lagi menyediakan API dan Umpan Data secara keseluruhan atau sebagian, baik untuk sementara atau permanen, kapan pun tanpa pemberitahuan sebelumnya. Untuk menghilangkan keraguan, Palang Merah tidak diwajibkan untuk menyediakan API atau Umpan Data untuk Anda, dan Anda setuju serta mengetahui bahwa tiap akses dalam kebijakan tunggal dan mutlak Palang Merah.",
     "severability": {
       "body": "Ketidakabsahan atas tiap syarat atau ketentuan dari Syarat API tidak akan memengaruhi keabsahan ketentuan lainnya.",
       "heading": "Keterpisahan dan Pengabaian:"
     },
     "suspension": {
-      "body": "Palang Merah berhak untuk menangguhkan atau menghentikan akses Anda jika Palang Merah menetapkan, dengan kebijakannya sendiri, bahwa Anda terlibat dalam penggunaan yang tidak sah dari API atau Umpan Data sebagaimana diuraikan dalam Syarat API atau Anda menggunakan API mau pun Umpan Data dalam tiap aktivitas yang mengancam\/membahayakan keselamatan dan\/atau keamanan seseorang atau jaringan Palang Merah.",
+      "body": "Palang Merah berhak untuk menangguhkan atau menghentikan akses Anda jika Palang Merah menetapkan, dengan kebijakannya sendiri, bahwa Anda terlibat dalam penggunaan yang tidak sah dari API atau Umpan Data sebagaimana diuraikan dalam Syarat API atau Anda menggunakan API mau pun Umpan Data dalam tiap aktivitas yang mengancam/membahayakan keselamatan dan/atau keamanan seseorang atau jaringan Palang Merah.",
       "heading": "Penangguhan atau Penghentian:"
     }
   },

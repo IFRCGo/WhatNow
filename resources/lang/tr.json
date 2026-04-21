@@ -441,9 +441,9 @@
     "immediate": "Acil",
     "warning": "Uyarı",
     "anticipated": "Beklenen",
-    "assess_and_plan":"Değerlendirin ve Planlayın",
-    "mitigate_risks":"Riski Azaltın",
-    "prepare_to_respond":"Yanıt Vermeye Hazırlanın",
+    "assess_and_plan": "Değerlendirin ve Planlayın",
+    "mitigate_risks": "Riski Azaltın",
+    "prepare_to_respond": "Yanıt Vermeye Hazırlanın",
     "recover": "İyileş"
   },
   "content": {
@@ -558,7 +558,8 @@
       "content_edit_title": "İçerik Düzenleme",
       "content_add_hazard_title": "Tehlike Ekle",
       "key_message_label": "Anahtar mesaj başlığı",
-      "supporting_message_label": "Destek mesajı"
+      "supporting_message_label": "Destek mesajı",
+      "mitigate_risk": "Riski Azaltın"
     },
     "message_editor": {
       "title": "Atıf Editörü",
@@ -618,7 +619,7 @@
         "bad_request_error_codes": {
           "30001": "Sütun başlıkları şablonla eşleşmiyor",
           "30002": "Özellik adı, mesaj veya URL eksik",
-          "30003": "Özellik adı geçersiz. Lütfen protokolün var olduğunu kontrol edin, https:\/\/ gibi",
+          "30003": "Özellik adı geçersiz. Lütfen protokolün var olduğunu kontrol edin, https:// gibi",
           "40001": "Geçersiz ülke kodu girildi",
           "40002": "Seçilen dernek seçilen dernek dosyası ile eşleşmiyor",
           "40003": "Seçilen dosyanın dışa aktarım tarihi hatalı olduğu için içe aktarım tamamlanamadı"
@@ -689,7 +690,7 @@
   },
   "landing": {
     "strapline": "Güvenlik Mesajı Veritabanı Hizmeti",
-    "strapline_part_2": "Küresel Kızılhaç \/ Kızılay Güvenlik Mesajları",
+    "strapline_part_2": "Küresel Kızılhaç / Kızılay Güvenlik Mesajları",
     "head_1": "IFRC Güvenlik",
     "head_2": "Mesaj Veritabanı",
     "head_text_1": "IFRC Halkı Bilinçlendirme ve Bilinçlendirmeye dayalı güvenlik mesajları",
@@ -744,7 +745,7 @@
     "fake_alert_heading": "Dondurucu Soğuk Uyarısı",
     "fake_alert_description": "Et harum quidem rerum facilis est et expedita distinctio. Nam libero temporare, cum soluta nobis est.",
     "fake_alert_time": "1 SAAT ÖNCE",
-    "fake_alert_time_exact": "05\/02\/18 saat 05:15 (GMT-5)",
+    "fake_alert_time_exact": "05/02/18 saat 05:15 (GMT-5)",
     "use_cases": {
       "heading": "Daha Fazla Bilgi",
       "first_heading": "Nasıl Çalışır",
@@ -785,7 +786,7 @@
     },
     "data_preview": {
       "heading": "Güvenlik Mesajları",
-      "sub_heading": "Üye Olun ve dünya genelindeki Kızılhaç \/ Kızılay derneklerinden önemli mesajları görüntüleyin"
+      "sub_heading": "Üye Olun ve dünya genelindeki Kızılhaç / Kızılay derneklerinden önemli mesajları görüntüleyin"
     },
     "footer": {
       "terms_conditions": "Hüküm ve Koşullar",
@@ -841,10 +842,10 @@
     "industries": {
       "media": "Medya",
       "emergency": "Afet ve Acil Durum Yönetimi",
-      "non_profit": "Kar amacı gütmeyen\/Sivil Toplum Kuruluşu",
+      "non_profit": "Kar amacı gütmeyen/Sivil Toplum Kuruluşu",
       "humanitarian": "İnsani Yardım Kuruluşu",
-      "red_cross": "Kızılhaç\/Kızılay",
-      "education": "Eğitim\/Akademi",
+      "red_cross": "Kızılhaç/Kızılay",
+      "education": "Eğitim/Akademi",
       "gov": "Devlet kurumu",
       "other": "Diğer"
     },
@@ -859,9 +860,9 @@
       "body": "Columbia Bölgesi yasaları, herhangi bir kanun ihtilafı ilkesini yürürlüğe koymaksızın, işbu Sözleşme kapsamındaki tüm hak ve yükümlülükleri yönetecektir.",
       "heading": "Geçerli Kanun:"
     },
-    "body": " Kızılhaç'ın size sağladığı giriş anahtarının gizliliği ve güvenliğinden sorumlusunuz. Yüklenen verileri almaya devam etmek için zaman zaman güncellenen arayüzün uyumluluğunu devam ettirmekten sorumlusunuz. Kızıl Haç, arayüz ve verileri güncelleme hakkını saklı tutar. Yeni sürümler önceki uygulamalarla uyumlu olmayabilir, en son güncellenen sürümünü her zaman kullanmayı kabul edersiniz.\n\nArayüzün ve Kızılhaç'ın herhangi bir parçasını ya da yazılımını değiştirmeyeceğinizi, yaymayacağınızı, kaynak koduna dönmeyeceğinizi, parçalarına ayırmayacağınızı ya da tersine mühendislik yapmayacağınızı kabul edersiniz.\n\nArayüzü ya da verileri, makul talep hacmini aşacak şekilde ya da aşırı veya kötüye kullanamazsınız. Kızılhaç bu haklarını saklı tutar.\n\nArayüzü ya da verileri, kanunsuz, yanıltıcı, ihmalkar, kötü niyetli veyahut Kızıl Haç'a ya da sağlayıcılarıcına, içerik üreticilerine, ya da başka kişilere zarar verecek şekilde kullanamazsınız. Kızıl Haç bu haklarını saklı tutar.\n\nKızıl Haç arayüzü ve verileri kullanış biçiminizi denetleyebilir. Bu denetlemeyi herhangi bir teknolojik araç ile engelleyemezsiniz ve Kızılhaç bu tür engelleri aşabilmek için başka teknik araçlar kullanabilir.\n\nHazırlık, Müdahale ve Kurtarma mesajları yalnızca ilişkili olay ikazının bir önceki aciliyet durumuna göre geçerli ya da güncellenmiş olarak sunulur, ve siz de Kızılhaç'tan gelen herhangi bir veri güncellemesi ve\/veya ilişkili olay ikazına göre bireysel olarak Hazırlık, Müdahale ve Kurtarma mesajlarında güncelleme yapmalısınız.\n\nBireysel Hazırlık, Müdahale ve Kurtarma mesajları, yalnızca belirtilen coğrafi bölge ile ilişkilendirilir. Eğer bir Hazırlık, Müdahale ve Kurtarma mesajı, Amerika Kızıl Haç ya da başka bir Kızılhaç ya da Kızılay veyahut bir milli topluluğa dair (hepsi birer \"Kaynak Referansı\"dır) bir referans içerirse, bu Kaynak Referansını her bir Hazırlık, Müdahale ve Kurtarma mesajı ile ilişkilendirerek, verilerde gösterilen şekilde belirtmelisiniz. Bu Kaynak Referansını başka şekillerde kullanamazsınız.\n\nVerileri, olay ikazlarını ve\/veya Hazırlık, Müdahale, Kurtarma mesajlarını başka bir dile çeviremez, kullanamaz, üzerinde düzenleme ya da uyarlama yapamaz, veya anlamlarını değiştiremezsiniz.\n\nVerilerin yalnızca sizin kontrolünüzde olduğundan ve güvenliğinden emin olmalısınız.\n\nOlay ikazlarının ve Hazırlık, Müdahale, Kurtarma mesajlarının, reklam ya da sponsorluk amacı ile son kullanıcıya ulaşmasına izin veremezsiniz.\n\nVerilerin tamamından ya da bir kısmından arşiv oluşturamazsınız.",
+    "body": " Kızılhaç'ın size sağladığı giriş anahtarının gizliliği ve güvenliğinden sorumlusunuz. Yüklenen verileri almaya devam etmek için zaman zaman güncellenen arayüzün uyumluluğunu devam ettirmekten sorumlusunuz. Kızıl Haç, arayüz ve verileri güncelleme hakkını saklı tutar. Yeni sürümler önceki uygulamalarla uyumlu olmayabilir, en son güncellenen sürümünü her zaman kullanmayı kabul edersiniz.\n\nArayüzün ve Kızılhaç'ın herhangi bir parçasını ya da yazılımını değiştirmeyeceğinizi, yaymayacağınızı, kaynak koduna dönmeyeceğinizi, parçalarına ayırmayacağınızı ya da tersine mühendislik yapmayacağınızı kabul edersiniz.\n\nArayüzü ya da verileri, makul talep hacmini aşacak şekilde ya da aşırı veya kötüye kullanamazsınız. Kızılhaç bu haklarını saklı tutar.\n\nArayüzü ya da verileri, kanunsuz, yanıltıcı, ihmalkar, kötü niyetli veyahut Kızıl Haç'a ya da sağlayıcılarıcına, içerik üreticilerine, ya da başka kişilere zarar verecek şekilde kullanamazsınız. Kızıl Haç bu haklarını saklı tutar.\n\nKızıl Haç arayüzü ve verileri kullanış biçiminizi denetleyebilir. Bu denetlemeyi herhangi bir teknolojik araç ile engelleyemezsiniz ve Kızılhaç bu tür engelleri aşabilmek için başka teknik araçlar kullanabilir.\n\nHazırlık, Müdahale ve Kurtarma mesajları yalnızca ilişkili olay ikazının bir önceki aciliyet durumuna göre geçerli ya da güncellenmiş olarak sunulur, ve siz de Kızılhaç'tan gelen herhangi bir veri güncellemesi ve/veya ilişkili olay ikazına göre bireysel olarak Hazırlık, Müdahale ve Kurtarma mesajlarında güncelleme yapmalısınız.\n\nBireysel Hazırlık, Müdahale ve Kurtarma mesajları, yalnızca belirtilen coğrafi bölge ile ilişkilendirilir. Eğer bir Hazırlık, Müdahale ve Kurtarma mesajı, Amerika Kızıl Haç ya da başka bir Kızılhaç ya da Kızılay veyahut bir milli topluluğa dair (hepsi birer \"Kaynak Referansı\"dır) bir referans içerirse, bu Kaynak Referansını her bir Hazırlık, Müdahale ve Kurtarma mesajı ile ilişkilendirerek, verilerde gösterilen şekilde belirtmelisiniz. Bu Kaynak Referansını başka şekillerde kullanamazsınız.\n\nVerileri, olay ikazlarını ve/veya Hazırlık, Müdahale, Kurtarma mesajlarını başka bir dile çeviremez, kullanamaz, üzerinde düzenleme ya da uyarlama yapamaz, veya anlamlarını değiştiremezsiniz.\n\nVerilerin yalnızca sizin kontrolünüzde olduğundan ve güvenliğinden emin olmalısınız.\n\nOlay ikazlarının ve Hazırlık, Müdahale, Kurtarma mesajlarının, reklam ya da sponsorluk amacı ile son kullanıcıya ulaşmasına izin veremezsiniz.\n\nVerilerin tamamından ya da bir kısmından arşiv oluşturamazsınız.",
     "contact": "Arayüz ile ilgili sorularınız için lütfen Kızılhaç'a {0} buradan ulaşınız.",
-    "disclaimer": "Arayüz ve veriler YALNIZCA BİLGİ VE EĞİTİM AMAÇLI, 'olduğu gibi' ve 'mevcut olduğu gibi' sağlanmaktadır. Kızıl Haç, açık veya zımni hiçbir tür beyanda bulunmaz veya garanti vermez. Kızıl Haç açık veya zımni tüm garantileri reddeder, buna satılabilirlik ve belirli bir amaca uygunluk ile ilgili zımni garantiler de dahildir ancak bunlarla sınırlı değildir. Kızıl Haç ve çalışanları, memurları, yöneticileri ve acenteleri ve lisans verenleri, arayüzün, verilerin, olay ikazlarının ve\/veya Hazırlık, Müdahale ve Kurtarma mesajları dahil ancak bunlarla sınırlı olmamak üzere kullanımından kaynaklanan herhangi bir doğrudan, dolaylı, arızi, cezai ve sonuç olarak ortaya çıkan zarardan sorumlu olmayacaktır.\n\nKızılhaç, API'nin, Veri Beslemesinin, arayüzün, verilerin, olay ikazlarının ve\/veya Hazırlık, Müdahale ve Kurtarma mesajlarının sırasını, doğruluğunu, orijinalliğini veya eksiksizliğini garanti etmez ve size veya Son Kullanıcılarınıza veya herhangi bir üçüncü kişiye karşı hiçbir şekilde sorumlu tutulamaz. Bunlarla sınırlı olmaksızın, burada belirtildiği üzere, arayüzler, veriler, olay ikazları ve\/veya Hazırlık, Müdahale ve Kurtarma mesajları hususunda, herhangi bir gecikmeden, yanlışlıktan, hatalar ve ihmallerden sorumlu tutulamaz.",
+    "disclaimer": "Arayüz ve veriler YALNIZCA BİLGİ VE EĞİTİM AMAÇLI, 'olduğu gibi' ve 'mevcut olduğu gibi' sağlanmaktadır. Kızıl Haç, açık veya zımni hiçbir tür beyanda bulunmaz veya garanti vermez. Kızıl Haç açık veya zımni tüm garantileri reddeder, buna satılabilirlik ve belirli bir amaca uygunluk ile ilgili zımni garantiler de dahildir ancak bunlarla sınırlı değildir. Kızıl Haç ve çalışanları, memurları, yöneticileri ve acenteleri ve lisans verenleri, arayüzün, verilerin, olay ikazlarının ve/veya Hazırlık, Müdahale ve Kurtarma mesajları dahil ancak bunlarla sınırlı olmamak üzere kullanımından kaynaklanan herhangi bir doğrudan, dolaylı, arızi, cezai ve sonuç olarak ortaya çıkan zarardan sorumlu olmayacaktır.\n\nKızılhaç, API'nin, Veri Beslemesinin, arayüzün, verilerin, olay ikazlarının ve/veya Hazırlık, Müdahale ve Kurtarma mesajlarının sırasını, doğruluğunu, orijinalliğini veya eksiksizliğini garanti etmez ve size veya Son Kullanıcılarınıza veya herhangi bir üçüncü kişiye karşı hiçbir şekilde sorumlu tutulamaz. Bunlarla sınırlı olmaksızın, burada belirtildiği üzere, arayüzler, veriler, olay ikazları ve/veya Hazırlık, Müdahale ve Kurtarma mesajları hususunda, herhangi bir gecikmeden, yanlışlıktan, hatalar ve ihmallerden sorumlu tutulamaz.",
     "entire_agreement": {
       "body": "Bu Sözleşme, burada kapsanan konularla ilgili olarak Kızılhaç ile sizin aranızdaki anlaşmanın tamamını teşkil eder ve burada özellikle yer almayan önceki sözlü veya yazılı anlaşmaların, beyanların veya anlayışların yerini alır. Kızılhaç, iş bu sözleşmeyi istediği herhangi bir zamanda herhangi bir gerekçe göstermeksizin feshetme hakkına sahiptir.",
       "heading": "Sözleşmenin Tamamı:"
@@ -869,7 +870,7 @@
     "heading": "ARAYÜZ VE KULLANICI LİSANS ANLAŞMASI",
     "intro": "HİZMET KULLANARAK VEYA KUTUCUĞU İŞARETLEYEREK, BU SÖZLEŞMENİN KAYIT VE KOŞULLARINA BAĞLI KALMAYI KABUL EDERSİNİZ.\n\nArayüz, size (\"Siz\"), küresel hava durumu ve afet olay uyarısı beslemesi ve izleme bildirimleri (\"Olay Uyarıları\") dahil olmak üzere Kızıl Haç tarafından sunulan veri akışlarını almanıza, tehlike türüne, aciliyetine göre yerel tehlikelere nasıl hazırlanılacağına dair eyleme geçirilebilir ve bağlamsallaştırılmış mesajlar beslemesini kullanmanıza olanak tanıyan bir araç sağlayacaktır. (\"Hazırlık, Müdahale ve Kurtarma Mesajları\" ve toplu olarak Olay Uyarıları, \"Veri Beslemeleri\"). Hazırla, Yanıtla ve Kurtar Mesajları, kendi uygulamanızda Etkinlik Uyarılarına veya hava durumu ve felaket olaylarıyla ilişkili diğer uyarılara eşlik etmek ve bildirimleri izlemek için tasarlanmıştır. Veri Beslemelerini kullanımınız API Koşullarına tabidir.",
     "license_limitations": {
-      "body": "Veri Akışını yalnızca, API hükümlerine bağlı olarak kendi uygulamanız ile zaman zaman güncellenen API'ye uygunluğunuz göz önünde bulundurularak kullanabilirsiniz. Olay ikazlarını ve arayüz şartlarına tabi olarak verilerden gelen bireysel olay ikazlarının aciliyet ayarıyla ilgili, bağlamsal Hazırlık, Müdahale ve Kurtarma mesajlarınızı, son kullanıcılarınıza, özel olmayan, sınırlı ve iptal edilebilir indirme, kullanım, çoğaltma ve dağıtma hakkına sahipsiniz. API'yi yalnızca Veri Akışlarının ticari olmayan kullanımlarını API Koşullarına uygun olarak kolaylaştırmak için kullanabilirsiniz. Veri Beslemelerinin, Olay Uyarılarının ve \/ veya Mesajların Hazırlanması, Yanıtlanması ve Kurtarılması gibi ticari kullanımlarını kolaylaştırmak için arayüzü hiçbir durumda kullanamazsınız; bunlarla sınırlı olmamak kaydı ile, bunları yeniden satmak, bunlara erişmek için ücret almak, yeniden dağıtmak için ücret almak veya bunlara dayalı türev çalışmalar oluşturmak amaçlı ücret almak da dahildir. Kızıl Haç ve lisans verenleri, API, Hazırlama, Yanıtlama ve Kurtarma Mesajları, olay ikazları, Veri Beslemeleri ve Kaynak Referansları (aşağıda tanımlandığı gibi) ile ilgili tüm unvan, mülkiyet, hak ve menfaatleri elinde tutar. Açıkça verilmeyen tüm haklar saklıdır.",
+      "body": "Veri Akışını yalnızca, API hükümlerine bağlı olarak kendi uygulamanız ile zaman zaman güncellenen API'ye uygunluğunuz göz önünde bulundurularak kullanabilirsiniz. Olay ikazlarını ve arayüz şartlarına tabi olarak verilerden gelen bireysel olay ikazlarının aciliyet ayarıyla ilgili, bağlamsal Hazırlık, Müdahale ve Kurtarma mesajlarınızı, son kullanıcılarınıza, özel olmayan, sınırlı ve iptal edilebilir indirme, kullanım, çoğaltma ve dağıtma hakkına sahipsiniz. API'yi yalnızca Veri Akışlarının ticari olmayan kullanımlarını API Koşullarına uygun olarak kolaylaştırmak için kullanabilirsiniz. Veri Beslemelerinin, Olay Uyarılarının ve / veya Mesajların Hazırlanması, Yanıtlanması ve Kurtarılması gibi ticari kullanımlarını kolaylaştırmak için arayüzü hiçbir durumda kullanamazsınız; bunlarla sınırlı olmamak kaydı ile, bunları yeniden satmak, bunlara erişmek için ücret almak, yeniden dağıtmak için ücret almak veya bunlara dayalı türev çalışmalar oluşturmak amaçlı ücret almak da dahildir. Kızıl Haç ve lisans verenleri, API, Hazırlama, Yanıtlama ve Kurtarma Mesajları, olay ikazları, Veri Beslemeleri ve Kaynak Referansları (aşağıda tanımlandığı gibi) ile ilgili tüm unvan, mülkiyet, hak ve menfaatleri elinde tutar. Açıkça verilmeyen tüm haklar saklıdır.",
       "heading": "Müsaade ve Sınırlamalar:"
     },
     "overview": {
@@ -892,13 +893,13 @@
         "six": "Herhangi bir virüs, truva atı veya yıkıcı nitelikteki bir öğeyi bulaştırmak."
       }
     },
-    "reserve_rights": "Kızılhaç, önceden bildirimde bulunmaksızın herhangi bir zamanda geçici veya kalıcı olarak API ve verileri tamamen veya kısmen değiştirme ve \/ veya artık sağlamama hakkını saklı tutar. Şüpheye mahal vermemek adına, buradaki hiçbir şey Kızılhaç'ın API veya verilerini size sunma zorunluluğunu taşımaz ve siz, herhangi bir erişimin Kızılhaç'ın yegane ve mutlak takdir yetkisi dahilinde olduğunu kabul edip onaylarsınız.",
+    "reserve_rights": "Kızılhaç, önceden bildirimde bulunmaksızın herhangi bir zamanda geçici veya kalıcı olarak API ve verileri tamamen veya kısmen değiştirme ve / veya artık sağlamama hakkını saklı tutar. Şüpheye mahal vermemek adına, buradaki hiçbir şey Kızılhaç'ın API veya verilerini size sunma zorunluluğunu taşımaz ve siz, herhangi bir erişimin Kızılhaç'ın yegane ve mutlak takdir yetkisi dahilinde olduğunu kabul edip onaylarsınız.",
     "severability": {
       "body": "API Hükümlerinin herhangi bir şartının veya hükmünün geçersizliği, diğer herhangi bir hükmün geçerliliğini etkilemeyecektir.",
       "heading": "Bölünebilirlik ve Feragat:"
     },
     "suspension": {
-      "body": "Kızılhaç, tamamen kendi takdirine bağlı olarak arayüz koşullarında belirtildiği gibi, herhangi bir kişinin veya Kızılhaç ağlarının güvenliğini ve \/ veya güvenliğini tehdit eden \/ tehlikeye atan herhangi bir faaliyette, arayüz veya verileri yetkisiz olarak kullandığınızı veya arayüz veya verileri kullandığınızı tespit ederse, Kızılhaç erişiminizi askıya alma veya sonlandırma hakkını saklı tutar.",
+      "body": "Kızılhaç, tamamen kendi takdirine bağlı olarak arayüz koşullarında belirtildiği gibi, herhangi bir kişinin veya Kızılhaç ağlarının güvenliğini ve / veya güvenliğini tehdit eden / tehlikeye atan herhangi bir faaliyette, arayüz veya verileri yetkisiz olarak kullandığınızı veya arayüz veya verileri kullandığınızı tespit ederse, Kızılhaç erişiminizi askıya alma veya sonlandırma hakkını saklı tutar.",
       "heading": "Askıya Alma veya Sonlandırma:"
     }
   },
