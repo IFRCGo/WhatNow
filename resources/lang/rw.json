@@ -443,6 +443,7 @@
     "anticipated": "Byitezwe",
     "assess_and_plan": "Gusesengura no Gushyira mu bikorwa gahunda",
     "mitigate_risks": "Gabanya ibyago",
+    "mitigate_risk": "Gabanya ibyago",
     "prepare_to_respond": "Itegure guhangana n'ibiza",
     "recover": "Gukira"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Byitezwe",
       "assess_and_plan": "Gusesengura no Gushyira mu bikorwa gahunda",
       "mitigate_risks": "Gabanya ibyago",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Fata ingamba zo kugabanya ibyago kugira ngo ibidukikije byubatswe n’ibisanzwe birusheho kugira umutekano no gushyiraho uburyo bwo kuburira hakiri kare",
       "prepare_to_respond": "Itegure guhangana n'ibiza",
       "updated": "ibyavuguruwe",
       "download_icon": "Agashushondanga ko gukurura",

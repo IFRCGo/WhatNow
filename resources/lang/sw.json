@@ -443,6 +443,7 @@
     "anticipated": "Inatarajiwa",
     "assess_and_plan": "Tathmini na Panga",
     "mitigate_risks": "Punguza Hatari",
+    "mitigate_risk": "Punguza Hatari",
     "prepare_to_respond": "Jitayarishe Kujibu",
     "recover": "Pona"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Inatarajiwa",
       "assess_and_plan": "Tathmini na Panga",
       "mitigate_risks": "Punguza Hatari",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Chukua hatua za kupunguza hatari ili kufanya mazingira yaliyojengwa na ya asili kuwa salama zaidi na kuanzisha mifumo ya tahadhari ya mapema",
       "prepare_to_respond": "Jitayarishe Kujibu",
       "updated": "imesasishwa",
       "download_icon": "Ikoni ya kupakua",

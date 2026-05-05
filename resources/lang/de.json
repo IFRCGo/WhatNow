@@ -443,6 +443,7 @@
     "anticipated": "Erwartet",
     "assess_and_plan": "Bewerten und planen",
     "mitigate_risks": "Risiko mindern",
+    "mitigate_risk": "Risiko mindern",
     "prepare_to_respond": "Auf die Reaktion vorbereiten",
     "recover": "Wiederherstellen"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Erwartet",
       "assess_and_plan": "Bewerten und planen",
       "mitigate_risks": "Risiko mindern",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Ergreifen Sie Minderungsmaßnahmen, um bebaute und natürliche Umgebungen sicherer zu machen und Frühwarnsysteme einzurichten",
       "prepare_to_respond": "Auf die Reaktion vorbereiten",
       "updated": "aktualisiert",
       "download_icon": "Icon herunterladen",

@@ -443,6 +443,7 @@
     "anticipated": "প্রত্যাশিত",
     "assess_and_plan": "মূল্যায়ন এবং পরিকল্পনা",
     "mitigate_risks": "ঝুঁকি হ্রাস করুন",
+    "mitigate_risk": "ঝুঁকি হ্রাস করুন",
     "prepare_to_respond": "সাড়া দিতে প্রস্তুত",
     "recover": "পুনরুদ্ধার"
   },
@@ -539,6 +540,8 @@
       "anticipated": "প্রত্যাশিত",
       "assess_and_plan": "মূল্যায়ন এবং পরিকল্পনা",
       "mitigate_risks": "ঝুঁকি হ্রাস করুন",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "নির্মিত ও প্রাকৃতিক পরিবেশকে আরও নিরাপদ করতে এবং আগাম সতর্কতা ব্যবস্থা স্থাপন করতে ঝুঁকি প্রশমনমূলক ব্যবস্থা নিন",
       "prepare_to_respond": "সাড়া দিতে প্রস্তুত",
       "updated": "হালনাগাদকৃত",
       "download_icon": "ডাউনলোডের চিহ্ন",

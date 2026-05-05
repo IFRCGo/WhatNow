@@ -2,6 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const mix = require('laravel-mix')
 
+mix.disableNotifications()
+
 if (mix.inProduction()) {
   mix.version()
   mix.extract([
@@ -31,7 +33,6 @@ if (mix.inProduction()) {
     '@fortawesome/vue-fontawesome',
     'vue-simplemde'
   ])
-  mix.disableNotifications()
 }
 
 mix.webpackConfig({
@@ -64,6 +65,24 @@ mix.webpackConfig({
         ]
       }
     ]
+  },
+  devServer: {
+    host: '127.0.0.1',
+    port: 8080,
+    allowedHosts: 'all',
+    client: {
+      webSocketURL: 'ws://127.0.0.1:8080/ws'
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  }
+})
+
+mix.options({
+  hmrOptions: {
+    host: '127.0.0.1',
+    port: 8080
   }
 })
 
@@ -71,4 +90,3 @@ mix
   .js('resources/assets/js/app.js', 'public/js').vue({ version: 2 })
   .sass('resources/assets/sass/app.scss', 'public/css')
   .sourceMaps()
-

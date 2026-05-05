@@ -443,6 +443,7 @@
     "anticipated": "คาดการณ์",
     "assess_and_plan": "ประเมินและวางแผน",
     "mitigate_risks": "ลดความเสี่ยง",
+    "mitigate_risk": "ลดความเสี่ยง",
     "prepare_to_respond": "เตรียมพร้อมตอบสนอง",
     "recover": "ฟื้นฟู"
   },
@@ -539,6 +540,8 @@
       "anticipated": "คาดการณ์",
       "assess_and_plan": "ประเมินและวางแผน",
       "mitigate_risks": "ลดความเสี่ยง",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "ใช้มาตรการลดความเสี่ยงเพื่อทำให้สภาพแวดล้อมที่มนุษย์สร้างขึ้นและตามธรรมชาติปลอดภัยยิ่งขึ้น และจัดตั้งระบบเตือนภัยล่วงหน้า",
       "prepare_to_respond": "เตรียมพร้อมตอบสนอง",
       "updated": "อัพเดท",
       "download_icon": "ไอคอนดาวน์โหลด",

@@ -451,6 +451,7 @@
     "anticipated": "Anticipado",
     "assess_and_plan": "Evaluar y Planificar",
     "mitigate_risks": "Mitigar Riesgo",
+    "mitigate_risk": "Mitigar Riesgo",
     "prepare_to_respond": "Prepararse para Responder",
     "recover": "Recuperación"
   },
@@ -587,7 +588,9 @@
       "assess_and_plan_subt": "",
       "assess_and_plan_extra": "Evaluar riesgos y planificar actividades para reconocer, reducir y responder a eventos de peligro",
       "mitigate_risks_subt": "",
+      "mitigate_risk_subt": "",
       "mitigate_risks_extra": "Tomar medidas de mitigación para hacer más seguros los entornos construidos y naturales y establecer sistemas de alerta temprana",
+      "mitigate_risk_extra": "Tomar medidas de mitigación para hacer más seguros los entornos construidos y naturales y establecer sistemas de alerta temprana",
       "key_message_label": "Mensaje de Seguridad",
       "supporting_message_label": "Mensaje de apoyo",
       "url_tool": "Enlace a más información sobre mensajes de seguridad en el sitio web de tu Sociedad Nacional o socio",

@@ -443,6 +443,7 @@
     "anticipated": "Beklenen",
     "assess_and_plan": "Değerlendirin ve Planlayın",
     "mitigate_risks": "Riski Azaltın",
+    "mitigate_risk": "Riski Azaltın",
     "prepare_to_respond": "Yanıt Vermeye Hazırlanın",
     "recover": "İyileş"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Beklenen",
       "assess_and_plan": "Değerlendirin ve Planlayın",
       "mitigate_risks": "Riski Azaltın",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Yapılı ve doğal çevreleri daha güvenli hale getirmek ve erken uyarı sistemleri kurmak için risk azaltma önlemleri alın",
       "prepare_to_respond": "Yanıt Vermeye Hazırlanın",
       "updated": "güncellendi",
       "download_icon": "Simge İndir",

@@ -443,6 +443,7 @@
     "anticipated": "预期",
     "assess_and_plan": "评估与计划",
     "mitigate_risks": "降低风险",
+    "mitigate_risk": "降低风险",
     "prepare_to_respond": "准备回应",
     "recover": "恢复"
   },
@@ -539,6 +540,8 @@
       "anticipated": "预期",
       "assess_and_plan": "评估与计划",
       "mitigate_risks": "降低风险",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "采取减灾措施，使人工和自然环境更加安全，并建立早期预警系统",
       "prepare_to_respond": "准备回应",
       "updated": "已更新",
       "download_icon": "下載圖示",
