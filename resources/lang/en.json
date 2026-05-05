@@ -464,6 +464,7 @@
     "anticipated": "Anticipated",
     "assess_and_plan": "Assess and Plan",
     "mitigate_risks": "Mitigate Risk",
+    "mitigate_risk": "Mitigate Risk",
     "prepare_to_respond": "Prepare to Respond",
     "recover": "Recover"
   },
@@ -600,7 +601,9 @@
       "assess_and_plan_subt": "",
       "assess_and_plan_extra": "Assess risks and plan activities to recognize, reduce, and respond to hazard events",
       "mitigate_risks_subt": "",
+      "mitigate_risk_subt": "",
       "mitigate_risks_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
+      "mitigate_risk_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
       "key_message_label": "Safety Message",
       "supporting_message_label": "Supporting message",
       "url_tool": "Link to more safety message information on your National Society or partner website",

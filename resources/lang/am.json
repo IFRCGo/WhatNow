@@ -443,6 +443,7 @@
     "anticipated": "በቅድሚያ የተጠበቀ",
     "assess_and_plan": "ግምገማ እና እቅድ",
     "mitigate_risks": "አደጋን መቀነስ",
+    "mitigate_risk": "አደጋን መቀነስ",
     "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
     "recover": "መልሶ ማግኛት"
   },
@@ -539,6 +540,8 @@
       "anticipated": "በቅድሚያ የተጠበቀ",
       "assess_and_plan": "ግምገማ እና እቅድ",
       "mitigate_risks": "አደጋን መቀነስ",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "የተገነቡ እና ተፈጥሯዊ አካባቢዎችን ይበልጥ ደህና ለማድረግ እና ቀደምት የማስጠንቀቂያ ስርዓቶችን ለመመስረት የመቀነሻ እርምጃዎችን ይውሰዱ",
       "prepare_to_respond": "ለመልስ ዝግጁ ይሁኑ",
       "updated": "የተሻሻለ",
       "download_icon": "ምልክቶችን ያውርዱ",

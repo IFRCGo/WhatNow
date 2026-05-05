@@ -451,6 +451,7 @@
     "anticipated": "Anticipé",
     "assess_and_plan": "Évaluer et Planifier",
     "mitigate_risks": "Atténuer le Risque",
+    "mitigate_risk": "Atténuer le Risque",
     "prepare_to_respond": "Se Préparer à Réagir",
     "recover": "Rétablissement"
   },
@@ -587,7 +588,9 @@
       "assess_and_plan_subt": "",
       "assess_and_plan_extra": "Évaluer les risques et planifier les activités pour reconnaître, réduire et répondre aux événements dangereux",
       "mitigate_risks_subt": "",
+      "mitigate_risk_subt": "",
       "mitigate_risks_extra": "Prendre des mesures d'atténuation pour rendre les environnements bâtis et naturels plus sûrs et établir des systèmes d'alerte précoce",
+      "mitigate_risk_extra": "Prendre des mesures d'atténuation pour rendre les environnements bâtis et naturels plus sûrs et établir des systèmes d'alerte précoce",
       "key_message_label": "Message de Sécurité",
       "supporting_message_label": "Message de soutien",
       "url_tool": "Lien vers plus d'informations sur les messages de sécurité sur le site web de votre Société Nationale ou partenaire",

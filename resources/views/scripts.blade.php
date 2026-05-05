@@ -55,7 +55,7 @@ $polyfills = [
     'String.prototype.endsWith',
 ];
 @endphp
-<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features={{ implode(',', $polyfills) }}"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features={{ implode(',', $polyfills) }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_web_api_key') }}"></script>
 
 {{-- Load the application scripts --}}

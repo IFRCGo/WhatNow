@@ -443,6 +443,7 @@
     "anticipated": "Antecipado",
     "assess_and_plan": "Avaliar e Planejar",
     "mitigate_risks": "Mitigar Risco",
+    "mitigate_risk": "Mitigar Risco",
     "prepare_to_respond": "Preparar para responder",
     "recover": "Recuperar"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Previsto",
       "assess_and_plan": "Avaliar e Planejar",
       "mitigate_risks": "Mitigar Risco",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Tomar medidas de mitigação para tornar os ambientes construídos e naturais mais seguros e estabelecer sistemas de alerta precoce",
       "prepare_to_respond": "Preparar para responder",
       "updated": "atualizado",
       "download_icon": "Descarregar Ícone",

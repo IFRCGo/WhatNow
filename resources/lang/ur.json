@@ -443,6 +443,7 @@
     "anticipated": "متوقع",
     "assess_and_plan": "جائزہ لیں اور منصوبہ بنائیں",
     "mitigate_risks": "خطرے کو کم کریں",
+    "mitigate_risk": "خطرے کو کم کریں",
     "prepare_to_respond": "جواب دینے کے لیے تیار رہیں",
     "recover": "بحال کریں"
   },
@@ -539,6 +540,8 @@
       "anticipated": "متوقع",
       "assess_and_plan": "جائزہ لیں اور منصوبہ بنائیں",
       "mitigate_risks": "خطرے کو کم کریں",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "تعمیر شدہ اور قدرتی ماحول کو زیادہ محفوظ بنانے اور ابتدائی انتباہی نظام قائم کرنے کے لیے خطرے میں کمی کے اقدامات کریں",
       "prepare_to_respond": "جواب دینے کے لیے تیار رہیں",
       "updated": "تازہ ترین",
       "download_icon": "ڈاؤن لوڈ نشان",

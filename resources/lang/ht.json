@@ -443,6 +443,7 @@
     "anticipated": "Antisipe",
     "assess_and_plan": "Evalye epi Planifye",
     "mitigate_risks": "Diminye Risk",
+    "mitigate_risk": "Diminye Risk",
     "prepare_to_respond": "Prepare pou Reponn",
     "recover": "Rekipere"
   },
@@ -539,6 +540,8 @@
       "anticipated": "Antisipe",
       "assess_and_plan": "Evalye epi Planifye",
       "mitigate_risks": "Diminye Risk",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Pran mezi mitigasyon pou rann anviwònman bati ak natirèl yo pi an sekirite epi mete sistèm avètisman bonè an plas",
       "prepare_to_respond": "Prepare pou Reponn",
       "updated": "Ajou",
       "download_icon": "Telechaje ikòn",
