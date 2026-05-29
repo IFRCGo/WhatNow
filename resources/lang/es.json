@@ -349,6 +349,8 @@
       "select_country": "Seleccionar un país",
       "select_terms": "Seleccionar una versión de términos",
       "select_society": "Seleccionar una sociedad nacional",
+      "search": "Buscar",
+      "search_placeholder": "Nombre, correo u organización (mín. 3 caracteres)",
       "create": "Crear nuevo usuario",
       "download_report": "Descargar informe",
       "empty": "No se encontraron usuarios",

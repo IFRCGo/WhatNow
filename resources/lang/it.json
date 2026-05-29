@@ -343,6 +343,8 @@
       "select_country": "Seleziona un paese",
       "select_terms": "Seleziona una versione dei termini",
       "select_society": "Seleziona una società nazionale",
+      "search": "Cerca",
+      "search_placeholder": "Nome, email o organizzazione (min. 3 caratteri)",
       "create": "Crea nuovo utente",
       "download_report": "Scarica il report",
       "empty": "Non siamo riusciti a trovare alcun utente",
