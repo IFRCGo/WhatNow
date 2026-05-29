@@ -343,6 +343,8 @@
       "select_country": "Ülke seçin",
       "select_terms": "Şartlar sürümü seçin",
       "select_society": "Ulusal topluluk seçin",
+      "search": "Ara",
+      "search_placeholder": "Ad veya e-posta (en az 3 karakter)",
       "create": "Yeni kullanıcı oluştur",
       "download_report": "Raporu indir",
       "empty": "Kullanıcı bulunamadı",

@@ -21,7 +21,8 @@ class UserListRequest extends FormRequest
     {
         return [
             'orderBy' => 'in:first_name,last_name,organisation,industry_type,created_at,last_logged_in_at',
-            'sort' => 'in:asc,desc'
+            'sort' => 'in:asc,desc',
+            'filters.search' => 'nullable|string|min:3|max:191'
         ];
     }
 
@@ -36,8 +37,10 @@ class UserListRequest extends FormRequest
         $userQuery->setOrderBy($orderBy);
         $userQuery->setSort($sort);
 
-        foreach ($this->get('filters', []) as $column => $value) {
-            $userQuery->addFilter($column, $value);
+        $filters = $this->get('filters', $this->get('filters\\', []));
+
+        foreach ($filters as $column => $value) {
+            $userQuery->addFilter(rtrim($column, '\\'), $value);
         }
 
         return $userQuery;
