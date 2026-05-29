@@ -227,14 +227,16 @@ class UserRepository extends Repository
 
     private function applySearchFilter(Builder $builder, string $search)
     {
-        $profileMatch = 'MATCH(user_profiles.first_name, user_profiles.last_name) AGAINST (? IN NATURAL LANGUAGE MODE)';
+        $firstNameMatch = 'MATCH(user_profiles.first_name) AGAINST (? IN NATURAL LANGUAGE MODE)';
+        $lastNameMatch = 'MATCH(user_profiles.last_name) AGAINST (? IN NATURAL LANGUAGE MODE)';
+        $profileScoreMatch = "({$firstNameMatch} + {$lastNameMatch})";
         $emailMatch = 'MATCH(users.email) AGAINST (? IN NATURAL LANGUAGE MODE)';
-        $profileScore = "(SELECT {$profileMatch} FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL ORDER BY user_profiles.id DESC LIMIT 1)";
+        $profileScore = "(SELECT {$profileScoreMatch} FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL ORDER BY user_profiles.id DESC LIMIT 1)";
         $score = "({$emailMatch} + COALESCE({$profileScore}, 0))";
 
         $builder->select('users.*')
-            ->selectRaw("{$score} as search_score", [$search, $search])
-            ->whereRaw("({$emailMatch} > 0 OR EXISTS (SELECT 1 FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL AND {$profileMatch} > 0))", [$search, $search])
+            ->selectRaw("{$score} as search_score", [$search, $search, $search])
+            ->whereRaw("({$emailMatch} > 0 OR EXISTS (SELECT 1 FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL AND ({$firstNameMatch} > 0 OR {$lastNameMatch} > 0)))", [$search, $search, $search])
             ->orderBy('search_score', 'desc');
     }
 

@@ -353,7 +353,7 @@
       "search_placeholder": "Name or email (min. 3 characters)",
       "create": "Create new user",
       "download_report": "Download report",
-      "empty": "Couldn't find any users",
+      "empty": "No users found",
       "detail": "User detail",
       "clear_filters": "Clear filters",
       "reset_password_email_sent": "Reset password email sent",
