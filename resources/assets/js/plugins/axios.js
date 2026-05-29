@@ -23,10 +23,6 @@ axios.interceptors.request.use(request => {
 
 // Response interceptor
 axios.interceptors.response.use(response => response, error => {
-  if (axios.isCancel(error)) {
-    return Promise.reject(error)
-  }
-
   if (error.response && error.response.status) {
     const { status } = error.response
 

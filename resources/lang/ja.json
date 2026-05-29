@@ -343,8 +343,6 @@
       "select_country": "国を選択",
       "select_terms": "利用規約のバージョンを選択",
       "select_society": "国内協会を選択",
-      "search": "検索",
-      "search_placeholder": "名前、メール、または組織（3文字以上）",
       "create": "新規ユーザーの作成",
       "download_report": "レポートをダウンロード",
       "empty": "ユーザーが見つかりません",

@@ -349,8 +349,6 @@
       "select_country": "Select a country",
       "select_terms": "Select a terms version",
       "select_society": "Select a nacional society",
-      "search": "Search",
-      "search_placeholder": "Name, email or organization (min. 3 characters)",
       "create": "Create new user",
       "download_report": "Download report",
       "empty": "Couldn't find any users",

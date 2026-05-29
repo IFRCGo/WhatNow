@@ -67,16 +67,6 @@
           :staynull="true"
           v-if="!apiUsers"/>
       </b-col>
-      <b-col cols="12" md="6" lg="4" xl="3" class="ml-lg-auto">
-        <p class="select-header"> {{ $t('users.list.search') }}</p>
-        <b-form-input
-          v-model.trim="searchFilter"
-          class="search-filter-input"
-          type="text"
-          :disabled="fetchingUsers"
-          :placeholder="$t('users.list.search_placeholder')">
-        </b-form-input>
-      </b-col>
       <b-col class="text-right">
         <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary clear-filter-btn">
           {{ $t('users.list.clear_filters') }}
@@ -236,7 +226,6 @@ export default {
       fetchingUsers: false,
       roles: null,
       locationOptions: null,
-      searchDebounce: null,
       countries: require('country-list')()
     }
   },
@@ -250,21 +239,6 @@ export default {
       deep: true
     },
     activatedFilter: fetchHandler,
-    searchFilter: {
-      handler (val, oldVal) {
-        if (val !== oldVal) {
-          clearTimeout(this.searchDebounce)
-          const search = val ? val.trim() : ''
-          if (search.length > 0 && search.length < 3) {
-            return
-          }
-          this.searchDebounce = setTimeout(() => {
-            this.currentPage = 1
-            this.fetchUsers()
-          }, 350)
-        }
-      }
-    },
     roleFilter: fetchHandler,
     countryFilter: fetchHandler,
     termsFilter: fetchHandler,
@@ -285,9 +259,6 @@ export default {
     this.fetchUsers()
     this.fetchTerms()
   },
-  beforeDestroy () {
-    clearTimeout(this.searchDebounce)
-  },
   metaInfo () {
     return { title: this.$t('users.list.manage') }
   },
@@ -297,7 +268,6 @@ export default {
       this.roleFilter = null
       this.countryFilter = null
       this.selectedSoc = null
-      this.searchFilter = ''
       this.termsFilter = termsDefault
     },
     getSocietyByCode (code) {
@@ -340,14 +310,12 @@ export default {
     },
     async fetchUsers () {
       this.fetchingUsers = true
-      if (this.rolesEmpty) {
-        await this.fetchRoles()
-      }
+      await this.fetchRoles()
 
-      const apiUserRole = this.roleOptions.find(role => role.name === 'API User')
+      let apiUserRole = this.roleOptions.find(role => role.name === 'API User')
       let filterRoleId = this.roleFilter
       if (filterRoleId === null) {
-        filterRoleId = this.apiUsers && apiUserRole ? apiUserRole.id : null
+        filterRoleId = this.apiUsers ? apiUserRole.id : null
       }
 
       if (!apiUserRole && this.apiUsers) {
@@ -362,7 +330,6 @@ export default {
               role: filterRoleId,
               society: this.selectedSoc ? this.selectedSoc.countryCode : null,
               country_code: this.countryFilter,
-              search: this.searchFilter,
               terms_version: this.termsFilter === termsDefault ? null : this.termsFilter
             },
             admin: !this.apiUsers && filterRoleId === null,
@@ -441,14 +408,6 @@ export default {
         return this.$store.state.users.filters.roleFilter
       }
     },
-    searchFilter: {
-      set: function (newVal) {
-        this.$store.dispatch('users/setFilter', { searchFilter: newVal })
-      },
-      get: function () {
-        return this.$store.state.users.filters.searchFilter
-      }
-    },
     countryFilter: {
       set: function(newVal) {
         this.$store.dispatch('users/setFilter', { countryFilter: newVal })
@@ -492,7 +451,6 @@ export default {
         this.roleFilter === null &&
         this.countryFilter === null &&
         this.selectedSoc === null &&
-        !this.searchFilter &&
         this.termsFilter === termsDefault
     },
     ...mapGetters({
@@ -528,12 +486,6 @@ export default {
   }
   .text-nowrap {
     white-space: nowrap;
-  }
-  .search-filter-input {
-    background: #E9E9E9;
-    border: none;
-    border-radius: 10px;
-    height: 2.45rem;
   }
 
 </style>

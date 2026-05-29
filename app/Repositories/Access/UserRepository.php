@@ -186,11 +186,6 @@ class UserRepository extends Repository
             });
         });
 
-        $search = trim($userQuery->getFilters()->get('search', ''));
-        if (mb_strlen($search) >= 3) {
-            $this->applySearchFilter($builder, $search);
-        }
-
         $society = $userQuery->getFilters()->only(['society'])->first();
         if ($society) {
             $builder->whereHas('organisations', function ($query) use ($society) {
@@ -219,23 +214,10 @@ class UserRepository extends Repository
         }
 
         if (in_array($userQuery->getOrderBy(), ['first_name', 'last_name',  'organisation', 'industry_type'])) {
-            $builder->orderByRaw('(SELECT ' . $userQuery->getOrderBy() . ' FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL ORDER BY user_profiles.id DESC LIMIT 1) ' . $userQuery->getSort());
+            $builder->orderByRaw('(SELECT ' . $userQuery->getOrderBy() . ' FROM user_profiles WHERE user_profiles.user_id = users.id) ' . $userQuery->getSort());
         }
 
         return $builder;
-    }
-
-    private function applySearchFilter(Builder $builder, string $search)
-    {
-        $profileMatch = 'MATCH(user_profiles.first_name, user_profiles.last_name, user_profiles.organisation) AGAINST (? IN NATURAL LANGUAGE MODE)';
-        $emailMatch = 'MATCH(users.email) AGAINST (? IN NATURAL LANGUAGE MODE)';
-        $profileScore = "(SELECT {$profileMatch} FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL ORDER BY user_profiles.id DESC LIMIT 1)";
-        $score = "({$emailMatch} + COALESCE({$profileScore}, 0))";
-
-        $builder->select('users.*')
-            ->selectRaw("{$score} as search_score", [$search, $search])
-            ->whereRaw("({$emailMatch} > 0 OR EXISTS (SELECT 1 FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL AND {$profileMatch} > 0))", [$search, $search])
-            ->orderBy('search_score', 'desc');
     }
 
     public function deactivate(User $user)

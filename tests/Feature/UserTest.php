@@ -180,55 +180,6 @@ class UserTest extends TestCase
     }
 
     /** @test */
-    public function get_admin_user_list_can_sort_by_profile_last_name()
-    {
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make([
-            'first_name' => 'Able',
-            'last_name' => 'Zed',
-        ]));
-
-        $duplicateProfile = factory(UserProfile::class)->make([
-            'first_name' => 'Able',
-            'last_name' => 'Aardvark',
-        ]);
-        $duplicateProfile->user_id = $adminUser->id;
-        $duplicateProfile->save();
-
-        $role = Role::create(['name' => 'Super Admin']);
-        $role->permissions()
-            ->sync([
-                Permission::where('name', '=', 'users-list')->first()->id,
-            ]);
-        $adminUser->roles()->attach($role->id);
-
-        $this->actingAs($adminUser)
-            ->getJson('/api/users/admins?page=1&orderBy=last_name&sort=asc')
-            ->assertSuccessful()
-            ->assertJsonCount(1, 'data')
-            ->assertJsonStructure([
-                'data' => [
-                    '*' => $this->getUserJsonStructure()
-                ],
-                'links' => [
-                    'first',
-                    'last',
-                    'prev',
-                    'next'
-                ],
-                'meta' => [
-                    'current_page',
-                    'from',
-                    'last_page',
-                    'path',
-                    'per_page',
-                    'to',
-                    'total'
-                ]
-            ]);
-    }
-
-    /** @test */
     public function get_user_list_with_pagination()
     {
         // Occurs on CI server

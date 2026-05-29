@@ -2,8 +2,6 @@ import axios from 'axios'
 import * as types from '../mutation-types'
 import querystring from 'querystring'
 
-let latestFetchUsersRequest = 0
-
 // state
 export const state = {
   users: {
@@ -26,7 +24,6 @@ export const state = {
     roleFilter: null,
     countryFilter: null,
     selectedSoc: null,
-    searchFilter: '',
     termsFilter: 'Terms and Conditions'
   }
 }
@@ -107,7 +104,6 @@ export const actions = {
       roleFilter: null,
       countryFilter: null,
       selectedSoc: null,
-      searchFilter: '',
       termsFilter: 'Terms and Conditions'
     })
     commit(types.SET_ORDER_BY, null)
@@ -124,7 +120,6 @@ export const actions = {
     commit(types.SET_SORT_DESC, sortDesc)
   },
   async fetchUsers ({ commit }, { page, filters, excludes, admin, orderBy, sort }) {
-    const requestId = ++latestFetchUsersRequest
     const queryOptions = { page }
     if (orderBy !== null) {
       queryOptions.orderBy = orderBy
@@ -136,19 +131,11 @@ export const actions = {
       filterString += filters.society !== null ? `&filters[society]=${filters.society}` : ''
       filterString += filters.country_code !== null ? `&filters[country_code]=${filters.country_code}` : ''
       filterString += filters.terms_version !== null ? `&filters[terms_version]=${filters.terms_version}` : ''
-      const search = filters.search ? filters.search.trim() : ''
-      filterString += search.length >= 3 ? `&filters[search]=${encodeURIComponent(search)}` : ''
 
       const url = admin ? '/api/users/admins' : '/api/users'
       const { data } = await axios.get(`${url}?${querystring.stringify(queryOptions)}${filterString}`)
-      if (requestId !== latestFetchUsersRequest) {
-        return
-      }
       commit(types.FETCH_USERS_SUCCESS, { users: data })
     } catch (e) {
-      if (requestId !== latestFetchUsersRequest) {
-        return
-      }
       commit(types.FETCH_USERS_FAILURE, { error: e })
     }
   },
