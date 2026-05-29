@@ -136,6 +136,7 @@ export const actions = {
       filterString += filters.society !== null ? `&filters[society]=${filters.society}` : ''
       filterString += filters.country_code !== null ? `&filters[country_code]=${filters.country_code}` : ''
       filterString += filters.terms_version !== null ? `&filters[terms_version]=${filters.terms_version}` : ''
+      filterString += filters.exclude_role != null ? `&filters[exclude_role]=${filters.exclude_role}` : ''
       const search = filters.search ? filters.search.trim() : ''
       filterString += search.length >= 3 ? `&filters[search]=${encodeURIComponent(search)}` : ''
 
