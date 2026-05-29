@@ -4,7 +4,7 @@
     v-model="selectedSoc"
     class="w-100 v-select-custom"
     :options="listOfSocieties"
-    label="name" :disabled="listOfSocieties.length === 0"
+    label="name" :disabled="disabled || listOfSocieties.length === 0"
     :placeholder="$t('content.whatnow.no_soc')">
     <template slot="option" slot-scope="option">
       <div class="ml-2 rtl-mr-2 dropdown-option">
@@ -23,7 +23,7 @@ import { mapGetters } from 'vuex'
 import * as permissionsList from '../../store/permissions'
 
 export default {
-  props: ['selected', 'staynull', 'dontfilter', 'countryCode'],
+  props: ['selected', 'staynull', 'dontfilter', 'countryCode', 'disabled'],
   async mounted () {
     this.loading = true
     await this.fetchOrganisations()
