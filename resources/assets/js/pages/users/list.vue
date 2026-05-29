@@ -217,8 +217,7 @@ const apiUserFields = [
 const fetchHandler = {
   handler (val, oldVal) {
     if (val !== oldVal) {
-      this.currentPage = 1
-      this.fetchUsers()
+      this.queueUsersFetch()
     }
   },
   deep: true
@@ -242,7 +241,9 @@ export default {
       locationOptions: null,
       searchDebounce: null,
       localSearchFilter: '',
-      pendingSearchFetch: false,
+      pendingUsersFetch: false,
+      pendingUsersFetchResetPage: false,
+      usersFetchRequest: 0,
       countries: require('country-list')()
     }
   },
@@ -250,7 +251,7 @@ export default {
     currentPage: {
       handler (val, oldVal) {
         if (val !== oldVal) {
-          this.fetchUsers()
+          this.queueCurrentPageFetch()
         }
       },
       deep: true
@@ -287,7 +288,7 @@ export default {
       handler (val, oldVal) {
         if (!this.apiUsers) {
           this.setLocalStorage()
-          this.fetchUsers()
+          this.queueUsersFetch()
         }
       },
       deep: true
@@ -359,21 +360,29 @@ export default {
         return
       }
       this.searchFilter = search
+      this.queueUsersFetch()
+    },
+    queueUsersFetch (resetPage = true) {
       if (this.fetchingUsers) {
-        this.pendingSearchFetch = true
+        this.pendingUsersFetch = true
+        this.pendingUsersFetchResetPage = this.pendingUsersFetchResetPage || resetPage
         return
       }
-      if (this.currentPage !== 1) {
+      if (resetPage && this.currentPage !== 1) {
         this.currentPage = 1
       } else {
         this.fetchUsers()
       }
+    },
+    queueCurrentPageFetch () {
+      this.queueUsersFetch(false)
     },
     async fetchUsers () {
       const search = this.searchFilter ? this.searchFilter.trim() : ''
       if (search.length > 0 && search.length < 3) {
         return
       }
+      const requestId = ++this.usersFetchRequest
       this.fetchingUsers = true
       if (this.rolesEmpty) {
         await this.fetchRoles()
@@ -410,10 +419,15 @@ export default {
         this.$noty.error(this.$t('error_alert_text'))
       }
 
+      if (requestId !== this.usersFetchRequest) {
+        return
+      }
       this.fetchingUsers = false
-      if (this.pendingSearchFetch) {
-        this.pendingSearchFetch = false
-        this.queueSearchFetch()
+      if (this.pendingUsersFetch) {
+        const resetPage = this.pendingUsersFetchResetPage
+        this.pendingUsersFetch = false
+        this.pendingUsersFetchResetPage = false
+        this.queueUsersFetch(resetPage)
       }
     },
     async fetchRoles () {
