@@ -227,7 +227,7 @@ class UserRepository extends Repository
 
     private function applySearchFilter(Builder $builder, string $search)
     {
-        $profileMatch = 'MATCH(user_profiles.first_name, user_profiles.last_name, user_profiles.organisation) AGAINST (? IN NATURAL LANGUAGE MODE)';
+        $profileMatch = 'MATCH(user_profiles.first_name, user_profiles.last_name) AGAINST (? IN NATURAL LANGUAGE MODE)';
         $emailMatch = 'MATCH(users.email) AGAINST (? IN NATURAL LANGUAGE MODE)';
         $profileScore = "(SELECT {$profileMatch} FROM user_profiles WHERE user_profiles.user_id = users.id AND user_profiles.deleted_at IS NULL ORDER BY user_profiles.id DESC LIMIT 1)";
         $score = "({$emailMatch} + COALESCE({$profileScore}, 0))";

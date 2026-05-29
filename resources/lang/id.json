@@ -344,7 +344,7 @@
       "select_terms": "Select a terms version",
       "select_society": "Select a nacional society",
       "search": "Cari",
-      "search_placeholder": "Nama, email, atau organisasi (min. 3 karakter)",
+      "search_placeholder": "Nama atau email (min. 3 karakter)",
       "create": "Membuat pengguna baru",
       "download_report": "Unduh laporan",
       "empty": "Tidak dapat menemukan pengguna",

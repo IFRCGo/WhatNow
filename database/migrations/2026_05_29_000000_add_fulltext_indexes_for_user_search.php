@@ -17,7 +17,7 @@ class AddFulltextIndexesForUserSearch extends Migration
         }
 
         $this->dropIndexIfExists('user_profiles', 'user_profiles_search_fulltext');
-        DB::statement('ALTER TABLE user_profiles ADD FULLTEXT user_profiles_search_fulltext(first_name, last_name, organisation)');
+        DB::statement('ALTER TABLE user_profiles ADD FULLTEXT user_profiles_search_fulltext(first_name, last_name)');
     }
 
     

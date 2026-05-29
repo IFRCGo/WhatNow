@@ -344,7 +344,7 @@
       "select_terms": "选择条款版本",
       "select_society": "选择国家协会",
       "search": "搜索",
-      "search_placeholder": "姓名、电子邮件或组织（至少 3 个字符）",
+      "search_placeholder": "姓名或电子邮件（至少 3 个字符）",
       "create": "创建新用户",
       "download_report": "下载报告",
       "empty": "找不到用户",

@@ -350,7 +350,7 @@
       "select_terms": "Sélectionner une version des conditions",
       "select_society": "Sélectionner une société nationale",
       "search": "Rechercher",
-      "search_placeholder": "Nom, e-mail ou organisation (3 caractères min.)",
+      "search_placeholder": "Nom ou e-mail (3 caractères min.)",
       "create": "Créer un nouvel utilisateur",
       "download_report": "Télécharger le rapport",
       "empty": "Aucun utilisateur trouvé",

@@ -344,7 +344,7 @@
       "select_terms": "Version der Bedingungen auswählen",
       "select_society": "Nationale Gesellschaft auswählen",
       "search": "Suchen",
-      "search_placeholder": "Name, E-Mail oder Organisation (mind. 3 Zeichen)",
+      "search_placeholder": "Name oder E-Mail (mind. 3 Zeichen)",
       "create": "Neuen Benutzer anlegen",
       "download_report": "Bericht herunterladen",
       "empty": "Es konnten keine Benutzer gefunden werden",
