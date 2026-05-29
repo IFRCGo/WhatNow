@@ -85,7 +85,6 @@
     "app_detail": "App Detail",
     "all_terms": "All Terms and Conditions"
   },
-
   "documentation": {
     "heading": "IFRC NS Preparedness Messages API Documentation",
     "sidebar": {
@@ -237,7 +236,6 @@
     "api_usage": "This is where you can see who is using the API and what applications are being built with it.",
     "wellcome": "Welcome",
     "wellcome_description": "Here you can edit and publish IFRC National Society Preparedness Messages content."
-
   },
   "languages": {
     "am": "አማርኛ",
@@ -351,6 +349,8 @@
       "select_country": "Select a country",
       "select_terms": "Select a terms version",
       "select_society": "Select a nacional society",
+      "search": "Search",
+      "search_placeholder": "Name or email (min. 3 characters)",
       "create": "Create new user",
       "download_report": "Download report",
       "empty": "Couldn't find any users",
@@ -464,9 +464,10 @@
     "immediate": "Immediate",
     "warning": "Warning",
     "anticipated": "Anticipated",
-    "assess_and_plan":"Assess and Plan",
-    "mitigate_risks":"Mitigate Risks",
-    "prepare_to_respond":"Prepare to Respond",
+    "assess_and_plan": "Assess and Plan",
+    "mitigate_risks": "Mitigate Risk",
+    "mitigate_risk": "Mitigate Risk",
+    "prepare_to_respond": "Prepare to Respond",
     "recover": "Recover"
   },
   "content": {
@@ -575,7 +576,7 @@
       "recover_extra": "Take these actions after the hazard event to ensure safety.",
       "anticipated": "Anticipated",
       "assess_and_plan": "Assess and Plan",
-      "mitigate_risks": "Mitigate Risks",
+      "mitigate_risks": "Mitigate Risk",
       "prepare_to_respond": "Prepare to Respond",
       "updated": "updated",
       "download_icon": "Download Icon",
@@ -602,14 +603,17 @@
       "assess_and_plan_subt": "",
       "assess_and_plan_extra": "Assess risks and plan activities to recognize, reduce, and respond to hazard events",
       "mitigate_risks_subt": "",
+      "mitigate_risk_subt": "",
       "mitigate_risks_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
+      "mitigate_risk_extra": "Take mitigation measures to make the built and natural environments safer and establishing early warning systems",
       "key_message_label": "Safety Message",
       "supporting_message_label": "Supporting message",
       "url_tool": "Link to more safety message information on your National Society or partner website",
       "desc_tool": "Give a brief description about the hazard and messages. This should be 1-3 sentences long",
       "title_tool": "For example: Safety messages for Floods",
       "safety_tool": "This is a priority action that a person should take to stay safe. The message should be action-oriented, concise, and under 50 characters.",
-      "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise."
+      "supporting_tool": "This provides more detail to support the priority key action. The message should be action-oriented and concise.",
+      "mitigate_risk": "Mitigate Risk"
     },
     "message_editor": {
       "title": "Attribution Editor",

@@ -36,7 +36,7 @@ export default {
         'warning',
         'anticipated',
         'assess_and_plan',
-        'mitigate_risks',
+        'mitigate_risk',
         'prepare_to_respond',
         'recover'
       ],
@@ -50,7 +50,7 @@ export default {
         {
           value: 'disaster_risk_reduction',
           text: this.$t('content.edit_whatnow.disaster_risk_reduction'),
-          stages: ['assess_and_plan', 'mitigate_risks', 'prepare_to_respond'],
+          stages: ['assess_and_plan', 'mitigate_risk', 'prepare_to_respond'],
           description: this.$t('content.edit_whatnow.disaster_risk_reduction_description')
         },
         {

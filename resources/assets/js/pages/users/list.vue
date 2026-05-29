@@ -10,8 +10,8 @@
         </b-button>
       </b-col>
     </page-banner>
-    <b-row class="pb-2 px-4 pt-4 bg-white" align-v="center">
-      <b-col cols="12" md="6" lg="3" xl="2">
+    <b-row class="users-filter-row pb-2 px-4 pt-4 bg-white" align-v="end">
+      <b-col cols="12" md="6" lg="2" xl="2" class="users-filter-col">
         <p class="select-header"> {{ $t('users.list.select_status') }}</p>
         <v-select
           v-model="activatedFilter"
@@ -23,10 +23,11 @@
       ]"
           label="name"
           :reduce="option => option.value"
+          :disabled="fetchingUsers"
           placeholder="Select Status">
         </v-select>
       </b-col>
-      <b-col cols="12" md="6" lg="3" xl="2" v-if="!apiUsers">
+      <b-col cols="12" md="6" lg="2" xl="2" class="users-filter-col" v-if="!apiUsers">
         <p class="select-header"> {{ $t('users.list.select_role') }}</p>
         <v-select
           v-model="roleFilter"
@@ -34,10 +35,11 @@
           :options="roleOptions"
           label="name"
           :reduce="option => option.id"
+          :disabled="fetchingUsers"
           placeholder="Select Role">
         </v-select>
       </b-col>
-      <b-col cols="12" md="6" lg="3" xl="2" v-if="apiUsers">
+      <b-col cols="12" md="6" lg="2" xl="2" class="users-filter-col" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_country') }}</p>
         <v-select
           v-model="countryFilter"
@@ -45,10 +47,11 @@
           :options="countryList"
           label="name"
           :reduce="option => option.id"
+          :disabled="fetchingUsers"
           placeholder="Select Country">
         </v-select>
       </b-col>
-      <b-col cols="12" md="6" lg="4" xl="3" v-if="apiUsers">
+      <b-col cols="12" md="6" lg="4" xl="3" class="users-filter-col" v-if="apiUsers">
         <p class="select-header"> {{ $t('users.list.select_terms') }}</p>
         <v-select
           v-model="termsFilter"
@@ -56,19 +59,30 @@
           :options="termsList"
           label="version"
           :reduce="option => option.version"
+          :disabled="fetchingUsers"
           placeholder="Select Terms">
         </v-select>
       </b-col>
-      <b-col cols="12" md="6" lg="3" xl="2">
-        <p class="select-header" v-if="!apiUsers"> {{ $t('users.list.select_society') }}</p>
+      <b-col cols="12" md="6" lg="2" xl="2" class="users-filter-col" v-if="!apiUsers">
+        <p class="select-header"> {{ $t('users.list.select_society') }}</p>
         <selectSociety
-          class="float-right"
+          class="users-society-filter"
           :selected.sync="selectedSoc"
-          :staynull="true"
-          v-if="!apiUsers"/>
+          :disabled="fetchingUsers"
+          :staynull="true"/>
       </b-col>
-      <b-col class="text-right">
-        <b-button @click="clearFilters" :disabled="noFilters" class="btn-outline-primary clear-filter-btn">
+      <b-col cols="12" md="6" lg="3" xl="3" class="users-filter-col users-search-filter-col" :class="{ 'ml-lg-auto': !apiUsers }">
+        <p class="select-header"> {{ $t('users.list.search') }}</p>
+        <b-form-input
+          v-model.trim="localSearchFilter"
+          class="search-filter-input"
+          type="text"
+          :disabled="fetchingUsers"
+          :placeholder="$t('users.list.search_placeholder')">
+        </b-form-input>
+      </b-col>
+      <b-col cols="12" md="6" lg="auto" xl="auto" class="users-filter-col users-clear-filter-col text-lg-right">
+        <b-button @click="clearFilters" :disabled="fetchingUsers || noFilters" class="btn-outline-primary clear-filter-btn">
           {{ $t('users.list.clear_filters') }}
         </b-button>
       </b-col>
@@ -203,8 +217,7 @@ const apiUserFields = [
 const fetchHandler = {
   handler (val, oldVal) {
     if (val !== oldVal) {
-      this.currentPage = 1
-      this.fetchUsers()
+      this.queueUsersFetch()
     }
   },
   deep: true
@@ -226,6 +239,11 @@ export default {
       fetchingUsers: false,
       roles: null,
       locationOptions: null,
+      searchDebounce: null,
+      localSearchFilter: '',
+      pendingUsersFetch: false,
+      pendingUsersFetchResetPage: false,
+      usersFetchRequest: 0,
       countries: require('country-list')()
     }
   },
@@ -233,12 +251,34 @@ export default {
     currentPage: {
       handler (val, oldVal) {
         if (val !== oldVal) {
-          this.fetchUsers()
+          this.queueCurrentPageFetch()
         }
       },
       deep: true
     },
     activatedFilter: fetchHandler,
+    localSearchFilter: {
+      handler (val, oldVal) {
+        if (val !== oldVal) {
+          clearTimeout(this.searchDebounce)
+          const search = val ? val.trim() : ''
+          if (search.length > 0 && search.length < 3) {
+            return
+          }
+          this.searchDebounce = setTimeout(() => {
+            this.queueSearchFetch()
+          }, 350)
+        }
+      }
+    },
+    searchFilter: {
+      handler (val) {
+        const search = val || ''
+        if (search !== this.localSearchFilter) {
+          this.localSearchFilter = search
+        }
+      }
+    },
     roleFilter: fetchHandler,
     countryFilter: fetchHandler,
     termsFilter: fetchHandler,
@@ -248,7 +288,7 @@ export default {
       handler (val, oldVal) {
         if (!this.apiUsers) {
           this.setLocalStorage()
-          this.fetchUsers()
+          this.queueUsersFetch()
         }
       },
       deep: true
@@ -256,8 +296,12 @@ export default {
   },
   mounted () {
     this.fetchOrganisations()
+    this.localSearchFilter = this.searchFilter
     this.fetchUsers()
     this.fetchTerms()
+  },
+  beforeDestroy () {
+    clearTimeout(this.searchDebounce)
   },
   metaInfo () {
     return { title: this.$t('users.list.manage') }
@@ -268,6 +312,8 @@ export default {
       this.roleFilter = null
       this.countryFilter = null
       this.selectedSoc = null
+      this.localSearchFilter = ''
+      this.searchFilter = ''
       this.termsFilter = termsDefault
     },
     getSocietyByCode (code) {
@@ -308,15 +354,46 @@ export default {
     async fetchOrganisations () {
       await this.$store.dispatch('content/fetchOrganisations')
     },
+    queueSearchFetch () {
+      const search = this.localSearchFilter ? this.localSearchFilter.trim() : ''
+      if (search.length > 0 && search.length < 3) {
+        return
+      }
+      this.searchFilter = search
+      this.queueUsersFetch()
+    },
+    queueUsersFetch (resetPage = true) {
+      if (this.fetchingUsers) {
+        this.pendingUsersFetch = true
+        this.pendingUsersFetchResetPage = this.pendingUsersFetchResetPage || resetPage
+        return
+      }
+      if (resetPage && this.currentPage !== 1) {
+        this.currentPage = 1
+      } else {
+        this.fetchUsers()
+      }
+    },
+    queueCurrentPageFetch () {
+      this.queueUsersFetch(false)
+    },
     async fetchUsers () {
+      const search = this.searchFilter ? this.searchFilter.trim() : ''
+      if (search.length > 0 && search.length < 3) {
+        return
+      }
+      const requestId = ++this.usersFetchRequest
       this.fetchingUsers = true
-      await this.fetchRoles()
+      if (this.rolesEmpty) {
+        await this.fetchRoles()
+      }
 
-      let apiUserRole = this.roleOptions.find(role => role.name === 'API User')
+      const apiUserRole = this.roleOptions.find(role => role.name === 'API User')
       let filterRoleId = this.roleFilter
       if (filterRoleId === null) {
-        filterRoleId = this.apiUsers ? apiUserRole.id : null
+        filterRoleId = this.apiUsers && apiUserRole ? apiUserRole.id : null
       }
+      const excludeRoleId = !this.apiUsers && filterRoleId === null && apiUserRole ? apiUserRole.id : null
 
       if (!apiUserRole && this.apiUsers) {
         console.warn('Could not find API User in the role list')
@@ -330,9 +407,11 @@ export default {
               role: filterRoleId,
               society: this.selectedSoc ? this.selectedSoc.countryCode : null,
               country_code: this.countryFilter,
-              terms_version: this.termsFilter === termsDefault ? null : this.termsFilter
+              search: this.searchFilter,
+              terms_version: this.termsFilter === termsDefault ? null : this.termsFilter,
+              exclude_role: excludeRoleId
             },
-            admin: !this.apiUsers && filterRoleId === null,
+            admin: !this.apiUsers && filterRoleId === null && !apiUserRole,
             orderBy: this.orderBy,
             sort: this.sortDesc ? 'desc' : 'asc'
           })
@@ -340,7 +419,16 @@ export default {
         this.$noty.error(this.$t('error_alert_text'))
       }
 
+      if (requestId !== this.usersFetchRequest) {
+        return
+      }
       this.fetchingUsers = false
+      if (this.pendingUsersFetch) {
+        const resetPage = this.pendingUsersFetchResetPage
+        this.pendingUsersFetch = false
+        this.pendingUsersFetchResetPage = false
+        this.queueUsersFetch(resetPage)
+      }
     },
     async fetchRoles () {
       this.roles = this.roleOptions
@@ -408,6 +496,14 @@ export default {
         return this.$store.state.users.filters.roleFilter
       }
     },
+    searchFilter: {
+      set: function (newVal) {
+        this.$store.dispatch('users/setFilter', { searchFilter: newVal })
+      },
+      get: function () {
+        return this.$store.state.users.filters.searchFilter
+      }
+    },
     countryFilter: {
       set: function(newVal) {
         this.$store.dispatch('users/setFilter', { countryFilter: newVal })
@@ -451,6 +547,7 @@ export default {
         this.roleFilter === null &&
         this.countryFilter === null &&
         this.selectedSoc === null &&
+        !this.localSearchFilter &&
         this.termsFilter === termsDefault
     },
     ...mapGetters({
@@ -477,8 +574,28 @@ export default {
     color: #FFFFFF !important;
   }
 
+  .users-filter-row {
+    row-gap: 1rem;
+  }
+  .users-filter-col {
+    margin-bottom: 0.75rem;
+  }
+  .users-society-filter {
+    width: 100%;
+  }
+  .users-search-filter-col {
+    padding-right: 0.5rem;
+  }
+  .users-clear-filter-col {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 0.25rem;
+  }
   .clear-filter-btn {
-    margin-top: 2.5rem;
+    align-self: flex-end;
+    margin-top: 0;
+    min-height: 2rem;
+    white-space: nowrap;
   }
   btn-outline-primary.disabled, .btn-outline-primary:disabled {
     color: white;
@@ -486,6 +603,18 @@ export default {
   }
   .text-nowrap {
     white-space: nowrap;
+  }
+  .search-filter-input {
+    background: #E9E9E9;
+    border: none;
+    border-radius: 10px;
+    height: 2.45rem;
+  }
+
+  @media (max-width: 991.98px) {
+    .users-clear-filter-col {
+      justify-content: flex-start;
+    }
   }
 
 </style>
