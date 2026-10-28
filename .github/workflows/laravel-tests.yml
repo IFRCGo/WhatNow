@@ -22,6 +22,8 @@ jobs:
             SESSION_DRIVER: array
             QUEUE_CONNECTION: sync
             MAIL_MAILER: array
+            RCN_API_URL: http://127.0.0.1:8001
+            RCN_API_VERSION: v1
         steps:
             - uses: actions/checkout@v4
             - uses: shivammathur/setup-php@v2
