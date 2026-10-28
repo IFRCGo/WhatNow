@@ -33,10 +33,11 @@ RUN composer dump-autoload --no-dev --optimize \
     && composer check-platform-reqs --no-dev
 
 FROM dependencies AS application
-ARG SWAGGER_URL=https://preparemessages.ifrc.org/api
+ARG SWAGGER_URL
 ENV APP_ENV=production APP_DEBUG=false
 COPY --from=frontend /app/public ./public
-RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache/data storage/logs bootstrap/cache \
+RUN : "${SWAGGER_URL:?SWAGGER_URL build argument is required}" \
+    && mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache/data storage/logs bootstrap/cache \
     && SWAGGER_URL="$SWAGGER_URL" php artisan l5-swagger:generate \
     && chmod -R 775 storage bootstrap/cache public \
     && chown -R www-data:www-data storage bootstrap/cache public \

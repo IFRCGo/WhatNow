@@ -55,7 +55,8 @@ These checks are not an exhaustive exploit assessment or a full application test
 Then build and test the complete application:
 
 ```sh
-docker build --pull -f docker/Dockerfile -t whatnow:php-security-20261022 .
+: "${SWAGGER_URL:?Set the public API URL before building}"
+docker build --pull --build-arg "SWAGGER_URL=$SWAGGER_URL" -f docker/Dockerfile -t whatnow:php-security-20261022 .
 bash docker/test-php-runtime.sh whatnow:php-security-20261022
 docker run --rm --network none --entrypoint composer whatnow:php-security-20261022 check-platform-reqs --no-dev
 ```
@@ -63,7 +64,11 @@ docker run --rm --network none --entrypoint composer whatnow:php-security-202610
 Application dependencies remain on the existing Composer lockfile. The final
 build also verifies the runtime and production platform requirements. `.env`,
 local dependencies and certificate/secret files are excluded from the build
-context. Swagger's public URL is supplied with `--build-arg SWAGGER_URL=...`.
+context. Swagger's public URL must be supplied with `--build-arg SWAGGER_URL=...`.
+Configure the `SWAGGER_URL_QA` and `SWAGGER_URL_PROD` GitHub Actions repository
+variables with the full public API URL for each deployment. The workflows pass
+the corresponding value to Docker and stop if it is missing. The Dockerfile has
+no default deployment URL.
 
 The full application build retains the existing Node 16/package installation
 steps. Failures in those legacy dependencies must be resolved before deployment;

@@ -41,8 +41,12 @@ jobs:
                   login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
                   username: ${{ secrets.REGISTRY_USERNAME }}
                   password: ${{ secrets.REGISTRY_PASSWORD }}
-            - run: |
-                  docker build --pull -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
+            - name: Build, verify and push image
+              env:
+                  SWAGGER_URL: ${{ vars.SWAGGER_URL_PROD }}
+              run: |
+                  : "${SWAGGER_URL:?Set the SWAGGER_URL_PROD repository variable}"
+                  docker build --pull --build-arg "SWAGGER_URL=$SWAGGER_URL" -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
                   bash docker/test-php-runtime.sh ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
                   docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
