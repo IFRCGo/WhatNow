@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function can_register()
     {
         Notification::fake();

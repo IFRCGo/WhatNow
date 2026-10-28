@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders\Access;
+
 use App\Models\Access\Role\Role;
 use App\Models\Access\User\User;
 use App\Models\Access\User\UserConfirmationToken;
@@ -398,7 +400,7 @@ class UserTableSeeder extends Seeder
             $up->user()->associate($userProfile['user_id']);
             $up->save();
             if ($userProfile['user_id'] == 8 || $userProfile['user_id'] == 9) {
-                $up->user->organisations()->save(factory(App\Models\Access\User\UserOrganisation::class)->make());
+                $up->user->organisations()->save(\Database\Factories\UserOrganisationFactory::new()->make());
             }
             $fixedOrgs = [
                 3 => ['IND'],  // IRCS WhatNow Messages app
@@ -417,11 +419,11 @@ class UserTableSeeder extends Seeder
 
         DB::table('user_roles')->insert($userRoles);
 
-        factory(User::class, 400)->create()
+        \Database\Factories\UserFactory::new()->count(400)->create()
             ->each(
                 function (User $u) {
                     $u->attachRole(Role::find(1));
-                    $u->userProfile()->save(factory(App\Models\Access\User\UserProfile::class)->states('notifications_off')->make());
+                    $u->userProfile()->save(\Database\Factories\UserProfileFactory::new()->notificationsOff()->make());
                     $u->save();
                 }
             );

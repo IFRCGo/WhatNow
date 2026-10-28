@@ -8,6 +8,8 @@ return [
 
     
 
+    'serialization' => 'json',
+
     'lifetime' => 120,
 
     'expire_on_close' => false,
@@ -40,7 +42,7 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        str_slug(env('APP_NAME', 'laravel'), '_').'_session'
+        Illuminate\Support\Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
     ),
 
     

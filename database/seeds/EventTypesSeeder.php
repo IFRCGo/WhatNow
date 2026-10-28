@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\EventType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;

@@ -33,8 +33,8 @@ class TermsTest extends TestCase
             'user_id' => 1
         ]);
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $this->actingAs($user);
         $this->getJson('/api/terms/latest')->assertSuccessful()->assertJsonStructure(['data' => ['version', 'content', 'createdAt']]);
     }
@@ -55,8 +55,8 @@ class TermsTest extends TestCase
             'user_id' => 1
         ]);
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $this->actingAs($user);
         $this->getJson('/api/terms')->assertSuccessful()->assertJsonStructure(['data' => ['*' => ['version', 'content', 'createdAt']]]);
     }
@@ -67,16 +67,16 @@ class TermsTest extends TestCase
 
         $basicRole = Role::create(['name' => 'Basic User']);
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach($basicRole->id);
 
-        $user2 = factory(User::class)->create();
-        $user2->userProfile()->save(factory(UserProfile::class)->states(['notifications_off'])->make());
+        $user2 = \Database\Factories\UserFactory::new()->create();
+        $user2->userProfile()->save(\Database\Factories\UserProfileFactory::new()->notificationsOff()->make());
         $user2->roles()->attach($basicRole->id);
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -111,8 +111,8 @@ class TermsTest extends TestCase
             'user_id' => 1
         ]);
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([

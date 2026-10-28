@@ -20,7 +20,7 @@ class RegisterTest extends DuskTestCase
         static::closeAll();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function register_with_valid_data()
     {
         $this->browse(function ($browser) {
@@ -42,11 +42,11 @@ class RegisterTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function can_not_register_with_the_same_twice()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {

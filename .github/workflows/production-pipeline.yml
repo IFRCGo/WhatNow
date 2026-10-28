@@ -4,11 +4,24 @@ on:
     workflow_dispatch:  # Allows manual execution
 
 jobs:
+    validate:
+        uses: ./.github/workflows/laravel-tests.yml
+
     build-and-deploy:
+        needs: validate
         runs-on: ubuntu-latest
         steps:
             - name: 'Checkout GitHub Action'
               uses: actions/checkout@main
+
+            - name: Validate Laravel 13 lockfile
+              run: |
+                  python3 - <<'PYTHON'
+                  import json
+                  data = json.load(open('composer.lock'))
+                  framework = next(p for p in data['packages'] if p['name'] == 'laravel/framework')
+                  assert framework['version'].lstrip('v').startswith('13.'), 'Resolve and commit the Laravel 13 composer.lock before deploying'
+                  PYTHON
 
             - name: 'Login via Azure CLI'
               uses: azure/login@v1
@@ -29,8 +42,8 @@ jobs:
                   username: ${{ secrets.REGISTRY_USERNAME }}
                   password: ${{ secrets.REGISTRY_PASSWORD }}
             - run: |
-                  cp swagger.prod .env
-                  docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
+                  docker build --pull -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} -f ./docker/Dockerfile .
+                  bash docker/test-php-runtime.sh ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
                   docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:latest
 
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow:${{ github.sha }}
@@ -45,4 +58,6 @@ jobs:
               run: |
                   helm upgrade --install whatnow-backoffice ./helm-chart-backoffice \
                     --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE }} \
-                    --create-namespace
+                    --create-namespace \
+                    --set-string image.tag=${{ github.sha }} \
+                    --wait --timeout 10m

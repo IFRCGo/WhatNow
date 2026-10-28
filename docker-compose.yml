@@ -1,7 +1,7 @@
 version: "3.5"
 services:
     db:
-        image: mariadb:latest
+        image: mariadb:10.11
         platform: linux/amd64
         restart: always
         env_file:
@@ -36,7 +36,7 @@ services:
             DB_HOST: db # Cambiamos a 'db' en lugar de 'localhost'
 
     redis:
-        image: redis:5.0-alpine
+        image: redis:7-alpine
         ports:
             - "6379:6379"
         networks:
@@ -47,7 +47,7 @@ services:
         platform: linux/amd64
         ports:
             - "1025:1025"
-            - "8025:8025" # La interfaz web estará en el puerto 8025
+            - "8025:8025" # The web interface is available on port 8025
         networks:
             - shared_network
 

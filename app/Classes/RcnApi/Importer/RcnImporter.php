@@ -140,7 +140,7 @@ class RcnImporter
         $this->runInstructionsImport($countryCode,$this->bulkUpload->getData());
     }
 
-    private function saveAttributionData(string $languageCode, string $countryCode, string $name = null, string $message = null, string $url = null)
+    private function saveAttributionData(string $languageCode, string $countryCode, ?string $name = null, ?string $message = null, ?string $url = null)
     {
         if (! $name || ! $message) {
             return;
@@ -239,7 +239,7 @@ class RcnImporter
     }
 
 
-    private function importInstructionRecord($record, Instruction $existingInstruction = null)
+    private function importInstructionRecord($record, ?Instruction $existingInstruction = null)
     {
         $stages = [];
         foreach ($record['urgencyLevels'] as $stage) { // Parsing stages as the Instruction model requires

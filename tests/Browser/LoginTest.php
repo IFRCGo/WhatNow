@@ -21,11 +21,11 @@ class LoginTest extends DuskTestCase
         static::closeAll();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function login_with_valid_credentials()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -36,7 +36,7 @@ class LoginTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function login_with_invalid_credentials()
     {
         $this->browse(function ($browser) {
@@ -47,11 +47,11 @@ class LoginTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function log_out_the_user()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -66,11 +66,11 @@ class LoginTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function forgot_password_flow()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {

@@ -19,11 +19,11 @@ class SettingsTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function update_profile_info()
     {
         $this->actingAs($this->user)
@@ -48,7 +48,7 @@ class SettingsTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function updating_email_without_password()
     {
         $this->actingAs($this->user)
@@ -69,7 +69,7 @@ class SettingsTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function updating_email_with_password()
     {
         Mail::fake();
@@ -90,7 +90,7 @@ class SettingsTest extends TestCase
     }
 
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function updating_email_with_wrong_password()
     {
         $this->user->password = Hash::make('1234');
@@ -104,12 +104,12 @@ class SettingsTest extends TestCase
             ->assertStatus(403);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_updating_another_user_profile()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $adminUser->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->actingAs($adminUser)
@@ -134,12 +134,12 @@ class SettingsTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_updating_another_users_email_without_password()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $adminUser->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->actingAs($adminUser)
@@ -160,12 +160,12 @@ class SettingsTest extends TestCase
         ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_promoting_users_role_to_higher_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -189,12 +189,12 @@ class SettingsTest extends TestCase
             ->assertStatus(403);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_promoting_users_role_to_equal_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -218,12 +218,12 @@ class SettingsTest extends TestCase
     }
 
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_promoting_users_role_to_lesser_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -245,12 +245,12 @@ class SettingsTest extends TestCase
             ->assertSuccessful();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_demoting_users_role_from_a_higher_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -286,12 +286,12 @@ class SettingsTest extends TestCase
             ->assertStatus(403);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_demoting_users_role_form_an_equal_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -319,12 +319,12 @@ class SettingsTest extends TestCase
     }
 
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_demoting_users_role_from_a_lesser_role_than_your_own()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([
@@ -349,12 +349,12 @@ class SettingsTest extends TestCase
             ->assertSuccessful();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function admin_delete_user()
     {
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $adminUser->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->actingAs($adminUser);

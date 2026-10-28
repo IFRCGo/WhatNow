@@ -8,7 +8,7 @@ use League\Csv\Writer;
 class UsageResource extends AbstractResource
 {
 
-    public function listApplicationRequestCount(string $fromDate, string $toDate, int $page = 0, bool $groupedByUser = false, $orderBy, $sort)
+    public function listApplicationRequestCount(string $fromDate, string $toDate, int $page = 0, bool $groupedByUser = false, $orderBy = null, $sort = null)
     {
         return $this->handleApiCall(function () use ($fromDate, $toDate, $page, $groupedByUser, $orderBy, $sort) {
             //only name, estimatedUsers, requestCount are used in the sort

@@ -30,7 +30,7 @@ class MailApiService
     }
 
     public function buildMailTemplate(
-        ?string $title = 'IFRC National Society Preparedness Messages',
+        ?string $title,
         array $contentParagraphs,
         ?string $buttonText = null,
         ?string $buttonUrl = null,

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\WhatNow;
 
+use OpenApi\Attributes as OA;
+
 use App\Classes\RcnApi\Entities\Organisation;
 use App\Classes\RcnApi\RcnApiClient;
 use App\Classes\RcnApi\Exceptions\RcnApiException;
@@ -13,12 +15,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-/**
- * @OA\Tag(
- *     name="Organisation",
- *     description="Operations about Organisations"
- * )
- */
+#[OA\Tag(
+    name: 'Organisation',
+    description: 'Operations about Organisations',
+)]
 final class OrganisationController extends ApiController
 {
     
@@ -30,35 +30,37 @@ final class OrganisationController extends ApiController
         $this->client = $client->whatnow();
     }
 
-    /**
-     * @OA\Get(
-     *     path="/organisations/{countryCode}",
-     *     tags={"Organisation"},
-     *     summary="Get organisations by country code",
-     *     description="Returns a list of organisations filtered by the specified country code",
-     *     operationId="getOrganisationsByCountryCode",
-     *     @OA\Parameter(
-     *         name="countryCode",
-     *         in="path",
-     *         description="The country code to filter organisations by",
-     *         required=true,
-     *         @OA\Schema(type="string")
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(
-     *                 property="data",
-     *                 type="array",
-     *                 @OA\Items(type="object")
-     *             )
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/organisations/{countryCode}',
+        tags: ['Organisation'],
+        summary: 'Get organisations by country code',
+        description: 'Returns a list of organisations filtered by the specified country code',
+        operationId: 'getOrganisationsByCountryCode',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'countryCode',
+            in: 'path',
+            description: 'The country code to filter organisations by',
+            required: true,
+            schema: new OA\Schema(
+                type: 'string',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function get(string $countryCode)
     {
         try {
@@ -72,28 +74,28 @@ final class OrganisationController extends ApiController
         }
     }
 
-    /**
-     * @OA\Get(
-     *     path="/organisations",
-     *     tags={"Organisation"},
-     *     summary="List all organisations",
-     *     description="Returns a list of all organisations",
-     *     operationId="listOrganisations",
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(
-     *                 property="data",
-     *                 type="array",
-     *                 @OA\Items(type="object")
-     *             )
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/organisations',
+        tags: ['Organisation'],
+        summary: 'List all organisations',
+        description: 'Returns a list of all organisations',
+        operationId: 'listOrganisations',
+        security: [['bearerAuth' => []]],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function list()
     {
         try {

@@ -20,8 +20,8 @@ class RegionsTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
     }
 
     public function testRegionsForOrganisation()

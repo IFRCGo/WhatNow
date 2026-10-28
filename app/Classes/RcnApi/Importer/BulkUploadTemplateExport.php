@@ -6,7 +6,6 @@ use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
-use Namshi\JOSE\Base64\Base64Encoder;
 use PhpOffice\PhpSpreadsheet\Cell\DataValidation;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
@@ -21,7 +20,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
      * Constructor to initialize the export template
      */
     private $nationalSociety;
-    private $region;
+    private $subnational;
     private $headings = [
         'Title',
         'Description',
@@ -192,8 +191,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $sheet->getProtection()->setFormatColumns(false);
                 $sheet->getProtection()->setFormatRows(false);
                 $sheet->getProtection()->setSheet(true);
-                $base = new Base64Encoder();
-                $protection->setPassword($base->encode('fsjsD-1FfJTZvs2X'));
+                $protection->setPassword(base64_encode('fsjsD-1FfJTZvs2X'));
 
                 $hiddenSheet->setSheetState(Worksheet::SHEETSTATE_HIDDEN);
 

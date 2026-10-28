@@ -17,11 +17,11 @@ class UserPasswordTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function test_it_requires_existing_and_new_password()
     {
         $this->actingAs($this->user)
@@ -31,7 +31,7 @@ class UserPasswordTest extends TestCase
             ->assertStatus(422);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function test_it_returns_forbidden_if_existing_password_does_not_match()
     {
         $this->actingAs($this->user)
@@ -44,7 +44,7 @@ class UserPasswordTest extends TestCase
 
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function test_it_updates_new_password()
     {
         $token = JWTAuth::fromUser($this->user);

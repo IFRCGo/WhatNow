@@ -19,7 +19,7 @@ class EventTypeTest extends TestCase
 
     public function test_it_returns_correct_icon_name()
     {
-        $event =  factory(\App\Models\EventType::class)->create();
+        $event =  \Database\Factories\EventTypesFactory::new()->create();
         $eventType = new EventType($event->name);
         $this->assertEquals($event->icon, $eventType->getIconName());
     }

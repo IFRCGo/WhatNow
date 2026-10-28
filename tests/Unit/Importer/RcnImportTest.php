@@ -381,8 +381,8 @@ class RcnImportTest extends \Tests\TestCase
 
     public function test_import_attribution_import_with_valid_data()
     {
-        $adminUser = factory(\App\Models\Access\User\User::class)->create();
-        $adminUser->userProfile()->save(factory(\App\Models\Access\User\UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = App\Models\Access\Role\Role::create(['name' => 'Basic Admin']);
         $role->permissions()
             ->sync([

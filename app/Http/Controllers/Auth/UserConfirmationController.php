@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use OpenApi\Attributes as OA;
+
 use App\Classes\MailApi\MailApiService;
 use App\Exceptions\Auth\UserAlreadyConfirmedException;
 use App\Exceptions\Auth\UserConfirmationException;
@@ -25,31 +27,37 @@ class UserConfirmationController extends Controller
         $this->mailApiService = $mailApiService;
     }
 
-    /**
-     * @OA\Get(
-     *     path="/users/{id}/resend",
-     *     tags={"Users"},
-     *     summary="Resend confirmation email",
-     *     description="Sends a confirmation email to the user",
-     *     operationId="resendConfirmationEmail",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="User ID",
-     *         @OA\Schema(type="integer")
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/users/{id}/resend',
+        tags: ['Users'],
+        summary: 'Resend confirmation email',
+        description: 'Sends a confirmation email to the user',
+        operationId: 'resendConfirmationEmail',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'User ID',
+            schema: new OA\Schema(
+                type: 'integer',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function sendConfirmationEmail(UserRepository $userRepository, $userId)
     {
         $user = $userRepository->findOrFail($userId);
@@ -57,30 +65,36 @@ class UserConfirmationController extends Controller
         $notification->toMail($user);
     }
 
-    /**
-     * @OA\Get(
-     *     path="/confirm/{token}",
-     *     tags={"Auth"},
-     *     summary="Confirm user account",
-     *     description="Confirms the user's account using the provided confirmation token",
-     *     operationId="confirm",
-     *     @OA\Parameter(
-     *         name="token",
-     *         in="path",
-     *         required=true,
-     *         description="The user confirmation token",
-     *         @OA\Schema(type="string")
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/confirm/{token}',
+        tags: ['Auth'],
+        summary: 'Confirm user account',
+        description: 'Confirms the user\'s account using the provided confirmation token',
+        operationId: 'confirm',
+        parameters: [new OA\Parameter(
+            name: 'token',
+            in: 'path',
+            required: true,
+            description: 'The user confirmation token',
+            schema: new OA\Schema(
+                type: 'string',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function confirm(UserRepository $userRepository, $token, Request $request, PasswordBroker $passwordBroker)
     {
         $user = null;

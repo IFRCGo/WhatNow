@@ -15,10 +15,10 @@ class EventTypesTest extends TestCase
 {
     use DatabaseTransactions;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_event_types()
     {
-        $events = factory(EventType::class, 2)->create();
+        $events = \Database\Factories\EventTypesFactory::new()->count(2)->create();
 
         $response = $this->getJson('/api/event-types/');
 
@@ -50,33 +50,27 @@ class EventTypesTest extends TestCase
         ]);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function create_new_event_type_as_3sc_admin_user()
     {
-        $user = factory(User::class)->create();
+        $user = \Database\Factories\UserFactory::new()->create();
         $user->attachRole(Role::where('name', '3SC Admin')->first());
         $this->_create_new_event_type_as_valid_user($user);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function create_new_event_type_as_gdpc_admin_user()
     {
-        $user = factory(User::class)->create();
+        $user = \Database\Factories\UserFactory::new()->create();
         $user->attachRole(Role::where('name', 'IFRC Admin')->first());
         $this->_create_new_event_type_as_valid_user($user);
     }
 
-    /**
-     * @test
-     */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function create_new_event_type_as_invalid_user_fails()
     {
         // test user with invalid roles
-        $user = factory(User::class)->create();
+        $user = \Database\Factories\UserFactory::new()->create();
         $user->attachRole(Role::where('name', 'API User')->first());
         $user->attachRole(Role::where('name', 'NS Admin')->first());
         $user->attachRole(Role::where('name', 'NS Editor')->first());
@@ -86,7 +80,7 @@ class EventTypesTest extends TestCase
         $this->_create_new_event_type_as_invalid_user(null);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function create_a_new_event_type_validations()
     {
         $request = new EventTypeCreateRequest();
@@ -143,7 +137,7 @@ class EventTypesTest extends TestCase
     /**
      * @param  \Illuminate\Database\Eloquent\Model  $user
      */
-    private function _create_new_event_type_as_invalid_user(\Illuminate\Database\Eloquent\Model $user = null)
+    private function _create_new_event_type_as_invalid_user(?\Illuminate\Database\Eloquent\Model $user = null)
     {
         if ($user !== null) {
             $this->actingAs($user);

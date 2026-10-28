@@ -19,15 +19,15 @@ class UserTest extends TestCase
     /** @var \App\Models\Access\User\User */
     protected $user;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_user()
     {
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
-        $this->user->organisations()->save(factory(UserOrganisation::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
+        $this->user->organisations()->save(\Database\Factories\UserOrganisationFactory::new()->make());
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Super Admin']);
         $role->permissions()
             ->sync([
@@ -43,14 +43,14 @@ class UserTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function register_admin_user()
     {
         Notification::fake();
 
         /** @var User $adminUser */
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $adminUser->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->actingAs($adminUser);
@@ -77,11 +77,11 @@ class UserTest extends TestCase
         );
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_me()
     {
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
         $this->actingAs($this->user)
             ->getJson('/api/users/me')
@@ -91,17 +91,17 @@ class UserTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_user_list()
     {
         // Occurs on CI server
         $this->markTestSkipped('Failed asserting that an array has the key \'first_name\'. ');
 
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Super Admin']);
         $role->permissions()
             ->sync([
@@ -135,17 +135,17 @@ class UserTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_admin_user_list()
     {
         // Occurs on CI server
         $this->markTestSkipped('Failed asserting that an array has the key \'first_name\'. ');
 
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Super Admin']);
         $role->permissions()
             ->sync([
@@ -179,16 +179,16 @@ class UserTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_admin_user_list_can_sort_by_profile_last_name()
     {
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make([
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make([
             'first_name' => 'Able',
             'last_name' => 'Zed',
         ]));
 
-        $duplicateProfile = factory(UserProfile::class)->make([
+        $duplicateProfile = \Database\Factories\UserProfileFactory::new()->make([
             'first_name' => 'Able',
             'last_name' => 'Aardvark',
         ]);
@@ -228,20 +228,20 @@ class UserTest extends TestCase
             ]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function get_user_list_with_pagination()
     {
         // Occurs on CI server
         $this->markTestSkipped('Failed asserting that an array has the key \'first_name\'. ');
 
-        factory(User::class, 29)->create()
+        \Database\Factories\UserFactory::new()->count(29)->create()
             ->each(function (User $u) {
-                $u->userProfile()->save(factory(UserProfile::class)->make());
+                $u->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
                 $u->save();
             });
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Super Admin']);
         $role->permissions()
             ->sync([
@@ -289,14 +289,14 @@ class UserTest extends TestCase
         // Occurs on CI server
         $this->markTestSkipped('Failed asserting that an array has the key \'first_name\'. ');
 
-        $apiUser = factory(User::class)->create();
-        $apiUser->userProfile()->save(factory(UserProfile::class)->make());
+        $apiUser = \Database\Factories\UserFactory::new()->create();
+        $apiUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
         $apiRole = Role::create(['name' => 'Api User']);
         $apiUser->roles()->attach($apiRole->id); // no permissions
 
-        $adminUser = factory(User::class)->create();
-        $adminUser->userProfile()->save(factory(UserProfile::class)->make());
+        $adminUser = \Database\Factories\UserFactory::new()->create();
+        $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $role = Role::create(['name' => 'Super Admin']);
         $role->permissions()
             ->sync([
@@ -320,8 +320,8 @@ class UserTest extends TestCase
 
     public function test_it_updates_user_organisations()
     {
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
         $this->actingAs($this->user)
             ->json('PATCH', '/api/users/'.$this->user->id, ['organisations' => ['NZL','CAN']])
@@ -331,8 +331,8 @@ class UserTest extends TestCase
 
     public function test_it_updates_user_agreement_acceptance()
     {
-        $this->user = factory(User::class)->create();
-        $this->user->userProfile()->save(factory(UserProfile::class)->make());
+        $this->user = \Database\Factories\UserFactory::new()->create();
+        $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
         $this->actingAs($this->user)
             ->json('PATCH', '/api/users/' . $this->user->id, ['accepted_agreement' => true])

@@ -1,11 +1,22 @@
 <?php
 
+namespace Database\Factories;
 
-$factory->define(\App\Models\Terms::class, function (Faker\Generator $faker) {
-    return [
-        'version' => $faker->unique()->randomFloat(2),
-        'content' => $faker->realText(),
-        'created_at' => $faker->dateTimeThisYear,
-        'user_id' => 2
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
+
+class TermsFactory extends Factory
+{
+    protected $model = \App\Models\Terms::class;
+
+    public function definition(): array
+    {
+        $faker = $this->faker;
+        return [
+            'version' => $faker->unique()->randomFloat(2),
+            'content' => $faker->realText(),
+            'created_at' => $faker->dateTimeThisYear,
+            'user_id' => 2
+        ];
+    }
+}
