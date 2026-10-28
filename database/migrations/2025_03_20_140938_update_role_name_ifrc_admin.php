@@ -15,7 +15,7 @@ class UpdateRoleNameIfrcAdmin extends Migration
     public function up()
     {
         DB::table('roles')
-            ->where('id', 3)
+            ->where('name', 'GDPC Admin')
             ->update(['name' => 'IFRC Admin']);
     }
 
@@ -27,7 +27,7 @@ class UpdateRoleNameIfrcAdmin extends Migration
     public function down()
     {
         DB::table('roles')
-            ->where('id', 3)
+            ->where('name', 'IFRC Admin')
             ->update(['name' => 'GDPC Admin']);
     }
 }
