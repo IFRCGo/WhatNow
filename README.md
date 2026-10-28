@@ -1,5 +1,6 @@
 # Laravel-Vue-Bootstrap Project
 
+
 # WhatNow
 
 WhatNow is a web application being migrated to Laravel 13 and Vue.js, designed to provide a disaster preparedness guide. This document includes steps to install and configure the project in your development environment.
