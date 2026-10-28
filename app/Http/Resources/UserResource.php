@@ -2,13 +2,13 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
 
-class UserResource extends Resource
+class UserResource extends JsonResource
 {
 
-    public function toArray($request)
+    public function toArray($request): array
     {
         $user = [
             'id' => $this->id,

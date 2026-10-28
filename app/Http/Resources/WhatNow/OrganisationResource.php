@@ -2,8 +2,8 @@
 
 namespace App\Http\Resources\WhatNow;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class OrganisationResource extends Resource
+class OrganisationResource extends JsonResource
 {
 }

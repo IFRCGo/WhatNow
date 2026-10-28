@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Terms;
 
+use OpenApi\Attributes as OA;
+
 use App\Http\Controllers\ApiController;
 use App\Http\Resources\Terms\TermsResource;
 use App\Models\Terms;
@@ -12,12 +14,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Notification;
 use App\Classes\MailApi\MailApiService;
-/**
- * @OA\Tag(
- *     name="Terms",
- *     description="Operations about Terms"
- * )
- */
+#[OA\Tag(
+    name: 'Terms',
+    description: 'Operations about Terms',
+)]
 final class TermsController extends ApiController
 {
     
@@ -36,52 +36,56 @@ final class TermsController extends ApiController
         $this->mailApiService = $mailApiService;
     }
 
-    /**
-     * @OA\Get(
-     *     path="/terms/latest",
-     *     tags={"Terms"},
-     *     summary="Get the latest terms",
-     *     description="Returns the latest terms and conditions",
-     *     operationId="getLatestTerms",
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(
-     *                 property="data",
-     *                 type="array",
-     *                 @OA\Items(type="object")
-     *             )
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/terms/latest',
+        tags: ['Terms'],
+        summary: 'Get the latest terms',
+        description: 'Returns the latest terms and conditions',
+        operationId: 'getLatestTerms',
+        security: [['bearerAuth' => []]],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function latest()
     {
         return TermsResource::make($this->terms->getLatest())->response();
     }
 
     
-    /**
-     * @OA\Get(
-     *     path="/terms",
-     *     tags={"Terms"},
-     *     summary="List all terms",
-     *     description="Retrieves a paginated list of all terms ordered by the latest version.",
-     *     operationId="listTerms",
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/terms',
+        tags: ['Terms'],
+        summary: 'List all terms',
+        description: 'Retrieves a paginated list of all terms ordered by the latest version.',
+        operationId: 'listTerms',
+        security: [['bearerAuth' => []]],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function list()
     {
         $terms = $this->terms->getOrderedByLatest();
@@ -90,57 +94,74 @@ final class TermsController extends ApiController
     }
 
     
-    /**
-     * @OA\Get(
-     *     path="/terms/all",
-     *     tags={"Terms"},
-     *     summary="List all terms",
-     *     description="Retrieves a list of all terms",
-     *     operationId="listAllTerms",
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/terms/all',
+        tags: ['Terms'],
+        summary: 'List all terms',
+        description: 'Retrieves a list of all terms',
+        operationId: 'listAllTerms',
+        security: [['bearerAuth' => []]],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function listAll()
     {
         return TermsResource::collection($this->terms->getOrderedByLatest()->get());
     }
 
     
-    /**
-     * @OA\Post(
-     *     path="/terms",
-     *     tags={"Terms"},
-     *     summary="Create new terms",
-     *     description="Creates a new version of terms and conditions",
-     *     operationId="createTerms",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(
-     *             type="object",
-     *             required={"version", "content"},
-     *             @OA\Property(property="version", type="number", description="Version number of the terms", example=1.0),
-     *             @OA\Property(property="content", type="string", maxLength=65535, description="Content of the terms")
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/terms',
+        tags: ['Terms'],
+        summary: 'Create new terms',
+        description: 'Creates a new version of terms and conditions',
+        operationId: 'createTerms',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                type: 'object',
+                required: ['version', 'content'],
+                properties: [new OA\Property(
+                    property: 'version',
+                    type: 'number',
+                    description: 'Version number of the terms',
+                    example: 1.0,
+                ), new OA\Property(
+                    property: 'content',
+                    type: 'string',
+                    maxLength: 65535,
+                    description: 'Content of the terms',
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function create(Request $request): JsonResponse
     {
         $this->authorize('update', Terms::class);

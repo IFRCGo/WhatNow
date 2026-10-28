@@ -13,7 +13,7 @@ class ApiController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     
-    public function respondWithBadRequest(\Exception $originalException, string $message = null)
+    public function respondWithBadRequest(\Exception $originalException, ?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.bad_request');
@@ -31,7 +31,7 @@ class ApiController extends BaseController
     }
 
     
-    public function respondWithError(\Exception $originalException, string $message = null)
+    public function respondWithError(\Exception $originalException, ?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.general_error');
@@ -50,7 +50,7 @@ class ApiController extends BaseController
     }
 
     
-    public function respondWithNotFound(\Exception $originalException, string $message = null)
+    public function respondWithNotFound(\Exception $originalException, ?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.not_found');
@@ -69,7 +69,7 @@ class ApiController extends BaseController
 
 
     
-    public function respondWithConflict(\Exception $originalException, string $message = null)
+    public function respondWithConflict(\Exception $originalException, ?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.conflict.general');
@@ -87,7 +87,7 @@ class ApiController extends BaseController
     }
 
     
-    public function respondWithForbidden(\Exception $originalException, string $message = null)
+    public function respondWithForbidden(\Exception $originalException, ?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.forbidden');
@@ -105,7 +105,7 @@ class ApiController extends BaseController
     }
 
     
-    public function respondWithSuccess(string $message = null)
+    public function respondWithSuccess(?string $message = null)
     {
         if ($message === null) {
             $message = trans('rcnapi.success');

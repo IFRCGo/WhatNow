@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use OpenApi\Attributes as OA;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -21,30 +23,39 @@ class ForgotPasswordController extends Controller
         $this->mailApiService = $mailApiService;
     }
 
-    /**
-     * @OA\Post(
-     *     path="/password/email",
-     *     tags={"Auth"},
-     *     summary="Send a password reset link",
-     *     description="Sends a password reset link to the given email address",
-     *     operationId="sendResetLinkEmail",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="email", type="string", description="The user's email address", example="user@example.com")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/password/email',
+        tags: ['Auth'],
+        summary: 'Send a password reset link',
+        description: 'Sends a password reset link to the given email address',
+        operationId: 'sendResetLinkEmail',
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'email',
+                    type: 'string',
+                    description: 'The user\'s email address',
+                    example: 'user@example.com',
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     //sendResetLinkEmail from SendsPasswordResetEmails trait
 
 

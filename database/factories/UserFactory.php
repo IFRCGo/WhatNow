@@ -1,31 +1,40 @@
 <?php
 
-use Faker\Generator as Faker;
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
+class UserFactory extends Factory
+{
+    protected $model = \App\Models\Access\User\User::class;
 
+    public function definition(): array
+    {
+        $faker = $this->faker;
+        static $password;
 
-$factory->define(App\Models\Access\User\User::class, function (Faker $faker) {
-    static $password;
+        return [
+            'email' => $faker->unique()->safeEmail,
+            'password' => $password ?: $password = bcrypt('secret'),
+            'password_updated_at' => new Carbon('now'),
+            'remember_token' => \Illuminate\Support\Str::random(10),
+            'confirmation_code' => \App\Models\Access\User\UserConfirmationToken::generate(),
+            'confirmed' => 1
+        ];
+    }
 
-    return [
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'password_updated_at' => new Carbon('now'),
-        'remember_token' => str_random(10),
-        'confirmation_code' => \App\Models\Access\User\UserConfirmationToken::generate(),
-        'confirmed' => 1
-    ];
-});
+    public function unconfirmed(): static
+    {
+        return $this->state(fn () => [
+            'confirmed' => 0
+        ]);
+    }
 
-$factory->state(App\Models\Access\User\User::class, 'unconfirmed', function (Faker $faker) {
-    return [
-        'confirmed' => 0
-    ];
-});
-
-$factory->state(App\Models\Access\User\User::class, 'no-password', function (Faker $faker) {
-    return [
-        'password_updated_at' => null
-    ];
-});
+    public function noPassword(): static
+    {
+        return $this->state(fn () => [
+            'password_updated_at' => null
+        ]);
+    }
+}

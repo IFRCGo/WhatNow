@@ -3,6 +3,7 @@ import * as types from '../mutation-types'
 import querystring from 'querystring'
 
 let latestFetchUsersRequest = 0
+let activeFetchUsersCancel = null
 
 // state
 export const state = {
@@ -125,6 +126,11 @@ export const actions = {
   },
   async fetchUsers ({ commit }, { page, filters, excludes, admin, orderBy, sort }) {
     const requestId = ++latestFetchUsersRequest
+    if (activeFetchUsersCancel) {
+      activeFetchUsersCancel('Cancelled by a newer users request')
+    }
+    const cancelSource = axios.CancelToken.source()
+    activeFetchUsersCancel = cancelSource.cancel
     const queryOptions = { page }
     if (orderBy !== null) {
       queryOptions.orderBy = orderBy
@@ -141,16 +147,25 @@ export const actions = {
       filterString += search.length >= 3 ? `&filters[search]=${encodeURIComponent(search)}` : ''
 
       const url = admin ? '/api/users/admins' : '/api/users'
-      const { data } = await axios.get(`${url}?${querystring.stringify(queryOptions)}${filterString}`)
+      const { data } = await axios.get(`${url}?${querystring.stringify(queryOptions)}${filterString}`, {
+        cancelToken: cancelSource.token
+      })
       if (requestId !== latestFetchUsersRequest) {
         return
       }
-      commit(types.FETCH_USERS_SUCCESS, { users: data })
+      commit(types.FETCH_USERS_SUCCESS, { users: filterExcludedRole(data, filters.exclude_role) })
     } catch (e) {
+      if (axios.isCancel(e)) {
+        return
+      }
       if (requestId !== latestFetchUsersRequest) {
         return
       }
       commit(types.FETCH_USERS_FAILURE, { error: e })
+    } finally {
+      if (requestId === latestFetchUsersRequest) {
+        activeFetchUsersCancel = null
+      }
     }
   },
   async fetchEditUser ({ commit }, id) {
@@ -187,6 +202,20 @@ export const actions = {
       commit(types.PATCH_USER_FAILURE, { error: e })
       throw e
     }
+  }
+}
+
+const filterExcludedRole = (users, excludedRoleId) => {
+  if (excludedRoleId == null || !users || !Array.isArray(users.data)) {
+    return users
+  }
+
+  const excludedId = Number(excludedRoleId)
+  const data = users.data.filter(user => !user.role || Number(user.role.id) !== excludedId)
+
+  return {
+    ...users,
+    data
   }
 }
 

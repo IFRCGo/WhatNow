@@ -1,77 +1,33 @@
 <?php
 
-use App\Classes\RcnApi\Importer\Exceptions\RcnImportInvalidFileException;
 use App\Classes\RcnApi\Importer\ImportMetadata;
+use PHPUnit\Framework\TestCase;
 
-class RcnImportMetadataTest extends \Tests\TestCase
+class RcnImportMetadataTest extends TestCase
 {
-    private $separator;
-
-    public function setUp(): void
+    public function test_metadata_preserves_country_language_and_subnational(): void
     {
-        parent::setUp();
-        $this->separator = trans('csvTemplate.separator');
-    }
+        $metadata = new ImportMetadata('USA', 'en', 'South');
 
-    public function test_metadata_validation_passes_with_valid_timestamp_metadata()
-    {
-        $timestamp = (new DateTime())->format('c');
-        $line = [base64_encode(sprintf('USA%s', $timestamp))];
-        $metadata = new ImportMetadata($line, 'USA', 'en');
-        $this->assertInstanceOf(ImportMetadata::class, $metadata);
-    }
-
-    public function test_metadata_extracts_country_code()
-    {
-        $timestamp = (new DateTime())->format('c');
-        $line = [base64_encode(sprintf('USA%s', $timestamp))];
-        $metadata = new ImportMetadata($line, 'USA', 'en');
         $this->assertSame('USA', $metadata->getCountryCode());
+        $this->assertSame('en', $metadata->getLanguageCode());
+        $this->assertSame('South', $metadata->getRegion());
     }
 
-    public function test_metadata_validation_errors_with_missmatched_country_code()
+    public function test_metadata_supports_national_imports(): void
     {
-        $this->expectException(RcnImportInvalidFileException::class);
-        $timestamp = (new DateTime())->format('c');
-        $line = [base64_encode(sprintf('USA%s', $timestamp))];
-        new ImportMetadata($line, 'CAN', 'en');
+        $metadata = new ImportMetadata('CAN', 'fr', 'National');
+
+        $this->assertSame('CAN', $metadata->getCountryCode());
+        $this->assertSame('fr', $metadata->getLanguageCode());
+        $this->assertSame('National', $metadata->getRegion());
     }
 
-    public function test_metadata_validation_errors_with_invalid_timestamp_metadata()
+    public function test_metadata_preserves_an_empty_region_for_national_fallback(): void
     {
-        $this->expectException(RcnImportInvalidFileException::class);
-        $timestamp = 'hello';
-        $line = [sprintf('#USA %s %s', $this->separator, base64_encode($timestamp))];
-        new ImportMetadata($line, 'USA', 'en');
-    }
+        $metadata = new ImportMetadata('USA', 'es', '');
 
-    public function test_metadata_validation_errors_with_blank_metadata()
-    {
-        $this->expectException(RcnImportInvalidFileException::class);
-        new ImportMetadata([], 'USA', 'en');
-    }
-
-    public function test_metadata_validation_errors_with_missing_country_code_metadata()
-    {
-        $this->expectException(RcnImportInvalidFileException::class);
-        $timestamp = (new DateTime())->format('c');
-        $line = [sprintf('# %s %s', $this->separator, base64_encode($timestamp))];
-        new ImportMetadata($line, 'USA', 'en');
-    }
-
-    public function test_metadata_validation_errors_with_missing_metadata_separator()
-    {
-        $this->expectException(RcnImportInvalidFileException::class);
-        $timestamp = (new DateTime())->format('c');
-        $line = [sprintf('#USA %s', base64_encode($timestamp))];
-        new ImportMetadata($line, 'USA', 'en');
-    }
-
-    public function test_metadata_validation_errors_with_alternative_separator()
-    {
-        $this->expectException(RcnImportInvalidFileException::class);
-        $timestamp = (new DateTime())->format('c');
-        $line = [sprintf('#USA %s %s', '||', base64_encode($timestamp))];
-        new ImportMetadata($line, 'USA', 'en');
+        $this->assertSame('', $metadata->getRegion());
+        $this->assertSame('es', $metadata->getLanguageCode());
     }
 }

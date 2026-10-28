@@ -18,15 +18,15 @@ class WhatNowTest extends DuskTestCase
         static::closeAll();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function what_now_page_renders()
     {
         $this->markTestSkipped(
             'test needs looking at'
         );
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -39,15 +39,15 @@ class WhatNowTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function editor_cant_publish()
     {
         $this->markTestSkipped(
             'test needs looking at'
         );
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_NS_EDITOR);
 
         $this->browse(function ($browser) use ($user) {

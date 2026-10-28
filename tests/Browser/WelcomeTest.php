@@ -6,7 +6,7 @@ use Tests\DuskTestCase;
 
 class WelcomeTest extends DuskTestCase
 {
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function basic_test()
     {
         $this->browse(function ($browser) {

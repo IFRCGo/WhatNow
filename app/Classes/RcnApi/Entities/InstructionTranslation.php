@@ -141,7 +141,7 @@ class InstructionTranslation implements \JsonSerializable, Arrayable
     }
 
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return [
             'lang' => $this->lang,

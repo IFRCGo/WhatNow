@@ -3,447 +3,225 @@
 use App\Classes\RcnApi\Entities\Instruction;
 use App\Classes\RcnApi\Entities\Organisation;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
-use App\Classes\RcnApi\Importer\Exceptions\RcnImportInvalidFileException;
+use App\Classes\RcnApi\Importer\Exceptions\RcnImportException;
 use App\Classes\RcnApi\Importer\Exceptions\RcnImportWillOverwriteException;
-use App\Classes\RcnApi\Importer\RcnExporter;
 use App\Classes\RcnApi\Importer\RcnImporter;
 use App\Classes\RcnApi\Resources\WhatNowResourceInterface;
+use App\Events\WhatNow\InstructionCreatedViaImport;
+use App\Events\WhatNow\InstructionUpdatedViaImport;
 use Illuminate\Support\Collection;
-use League\Csv\Reader;
-use League\Csv\Writer;
+use Illuminate\Support\Facades\Event;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class RcnImportTest extends \Tests\TestCase
 {
-    private static function createFakeInstruction(string $savedDate = 'now', bool $published = false)
-    {
-        $createdAt = new DateTimeImmutable($savedDate);
+    private $client;
+    private array $files = [];
 
-        return  Mockery::spy(Instruction::createFromResponse([
-            'id' => 1,
-            'countryCode' => 'en',
-            'eventType' => 'Hurricane',
-            'regionName' => 'South',
-            'attribution' => [
-                'countryCode' => 'en',
-                'name' =>'America',
-                'url' => 'https://google.com',
-                'imageUrl' => 'https://google.com',
-                'translations' => null
-            ],
-            'translations' => [
-                'en' => [
-                    'id' => 20,
-                    'lang' => 'en',
-                    'webUrl' => '',
-                    'title' => 'title',
-                    'description' => 'description',
-                    'stages' => [],
-                    'createdAt' => $createdAt->format('Y-m-d H:i:s'),
-                    'published' => $published
-                ]
-            ]
-        ]));
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        Event::fake([InstructionCreatedViaImport::class, InstructionUpdatedViaImport::class]);
+        $this->client = Mockery::mock(WhatNowResourceInterface::class);
+        $organisation = Organisation::createFromArray([
+            'countryCode' => 'USA', 'name' => 'American Red Cross',
+            'url' => 'https://example.test', 'imageUrl' => null, 'translations' => [],
+        ]);
+        $this->client->shouldReceive('getOrganisationByCountryCode')->with('USA')
+            ->andReturn($organisation)->byDefault();
+        $this->client->shouldReceive('getLatestInstructionsByCountryCode')->with('USA')
+            ->andReturn(new Collection())->byDefault();
     }
 
-    /**
-     * @param string $exported
-     * @param bool $blank
-     * @return \League\Csv\AbstractCsv|static
-     */
-    private static function createFakeCsv(string $exported = 'now', $blank = false)
+    protected function tearDown(): void
     {
-        $exportedDate = new DateTimeImmutable($exported);
-        $attribution = ['Key Messages', 'These are Key Messages', 'https://3sidedcube.com'];
-
-        if ($blank === false) {
-            $csv = RcnExporter::buildCsvTemplate('USA', new Collection([
-                [
-                    'Hurricane',
-                    'No',
-                    'South',
-                    'Key Messages for Hurricane Event',
-                    'Take Action',
-                    'https://google.com',
-                    'mitigation',
-                    'seasonalForecast',
-                    'warning',
-                    'watch',
-                    'immediate',
-                    'recover'
-                ]
-            ]), $attribution, $exportedDate);
-        } else {
-            $csv = RcnExporter::buildCsvTemplate('USA', new Collection([]), $attribution, $exportedDate);
+        foreach ($this->files as $file) {
+            unlink($file);
         }
-
-        $reader = Reader::createFromString($csv->getContent());
-        $reader->setHeaderOffset(RcnImporter::INSTRUCTION_HEADERS_OFFSET);
-        return $reader;
+        parent::tearDown();
     }
 
-    public function test_import_warns_of_potential_overwrite_when_warn_flag_is_true()
+    private function workbook(array $rows = [], string $society = 'American Red Cross', string $region = 'South'): string
     {
+        $sheet = new Spreadsheet();
+        $sheet->getActiveSheet()->fromArray(array_merge([
+            ['National Society', 'Subnationals'],
+            [$society, $region],
+            ['Title', 'Description', 'URL', 'Hazard', 'Urgency Level', 'Safety Message', 'Supporting Message'],
+        ], $rows), null, 'A1');
+        $path = tempnam(sys_get_temp_dir(), 'whatnow-import-');
+        unlink($path);
+        $path .= '.xlsx';
+        $this->files[] = $path;
+        (new Xlsx($sheet))->save($path);
+        $sheet->disconnectWorksheets();
+        return $path;
+    }
+
+    private function hazardRow(): array
+    {
+        return ['Hurricane safety', 'Prepare for a hurricane', 'https://example.test/safety',
+            'Hurricane', 'Immediate', 'Stay inside', 'Keep away from windows'];
+    }
+
+    private function existingInstruction(string $language = 'en', string $region = 'South'): Instruction
+    {
+        return Instruction::createFromResponse([
+            'id' => 1, 'countryCode' => 'USA', 'eventType' => 'Hurricane', 'regionName' => $region,
+            'attribution' => ['countryCode' => 'USA', 'name' => 'American Red Cross',
+                'url' => null, 'imageUrl' => null, 'translations' => []],
+            'translations' => [$language => [
+                'id' => 20, 'lang' => $language, 'webUrl' => '', 'title' => 'Previous title',
+                'description' => 'Previous description', 'stages' => [],
+                'createdAt' => '2026-01-01 00:00:00', 'published' => false,
+            ]],
+        ]);
+    }
+
+    private function useExistingInstruction(Instruction $instruction): void
+    {
+        $this->client->shouldReceive('getLatestInstructionsByCountryCode')->with('USA')
+            ->andReturn(new Collection([$instruction]));
+    }
+
+    public function test_import_warns_before_overwriting_an_existing_translation(): void
+    {
+        $this->useExistingInstruction($this->existingInstruction());
+        $this->client->shouldNotReceive('createInstruction');
+        $this->client->shouldNotReceive('updateInstruction');
         $this->expectException(RcnImportWillOverwriteException::class);
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([
-            self::createFakeInstruction('today') // api record has been updated recently
-        ]));
-
-        $csv = self::createFakeCsv('yesterday'); // csv was exported before update happened
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $client->shouldNotHaveReceived('createInstruction');
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        (new RcnImporter($this->client))->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
     }
 
-    public function test_import_does_not_warn_of_potential_overwrite_when_warn_flag_is_false()
+    public function test_import_skips_existing_translation_when_overwriting_is_disabled(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->useExistingInstruction($this->existingInstruction());
+        $this->client->shouldNotReceive('updateInstruction');
+        $importer = new RcnImporter($this->client);
+        $importer->turnWarningsOff();
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([
-            self::createFakeInstruction('today') // api record has been updated recently
-        ]));
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $client->shouldNotReceive('createInstruction');
-        $client->shouldNotReceive('updateInstruction');
-
-        $csv = self::createFakeCsv('yesterday'); // csv was exported before update happened
-
-        $importer = new RcnImporter($client);
-        $importer->turnWarningsOff(); // do not warn that an overwrite will happen
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $report = $importer->getReport();
-        $this->assertEquals("skipped", $report['importSummary'][0]['importAction']);
-
-        Mockery::close();
+        $this->assertSame('skipped', $importer->getReport()['importSummary'][0]['importAction']);
+        Event::assertNotDispatched(InstructionUpdatedViaImport::class);
     }
 
-    public function test_import_overwrites_when_warn_flag_is_false_and_overwrite_is_true()
+    public function test_import_overwrites_when_explicitly_enabled(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->useExistingInstruction($this->existingInstruction());
+        $this->client->shouldReceive('updateInstruction')->once()->with(Mockery::on(function (Instruction $instruction) {
+            return $instruction->getId() === 1
+                && $instruction->getTranslationsByLanguage('en')->getTitle() === 'Hurricane safety';
+        }))->andReturnUsing(fn ($instruction) => $instruction);
+        $importer = new RcnImporter($this->client);
+        $importer->turnWarningsOff();
+        $importer->turnOverwritingOn();
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([
-            self::createFakeInstruction('today') // api record has been updated recently
-        ]));
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $client->shouldReceive('updateInstruction')->once()->andReturn(
-            self::createFakeInstruction('now')
-        );
-
-        $csv = self::createFakeCsv('yesterday'); // csv was exported before update happened
-
-        $importer = new RcnImporter($client);
-        $importer->turnWarningsOff(); // do not warn that an overwrite will happen
-        $importer->turnOverwritingOn(); // force update
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $report = $importer->getReport();
-        $this->assertEquals("updated", $report['importSummary'][0]['importAction']);
-
-        $client->shouldNotHaveReceived('createInstruction');
-
-        Mockery::close();
+        $this->assertSame('updated', $importer->getReport()['importSummary'][0]['importAction']);
+        Event::assertDispatched(InstructionUpdatedViaImport::class);
     }
 
-    public function test_import_with_warnings_on_will_update_when_import_record_is_newer()
+    public function test_import_creates_instruction_with_parsed_stages_and_messages(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->client->shouldReceive('createInstruction')->once()->with(Mockery::on(function (Instruction $instruction) {
+            $translation = $instruction->getTranslationsByLanguage('en');
+            return $instruction->getCountryCode() === 'USA'
+                && $instruction->getEventType() === 'Hurricane'
+                && $instruction->getRegionName() === 'South'
+                && $translation->getWebUrl() === 'https://example.test/safety'
+                && $translation->getStages()->get('immediate') === [[
+                    'title' => 'Stay inside', 'content' => ['Keep away from windows'],
+                ]];
+        }))->andReturnUsing(fn ($instruction) => $instruction);
+        $importer = new RcnImporter($this->client);
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([
-            self::createFakeInstruction('-1 week') // api record was updated long ago
-        ]));
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $client->shouldReceive('updateInstruction')->once();
-
-        $csv = self::createFakeCsv('yesterday');
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $report = $importer->getReport();
-        $this->assertEquals("updated", $report['importSummary'][0]['importAction']);
-
-        $client->shouldNotHaveReceived('createInstruction');
-
-        Mockery::close();
+        $this->assertSame('added', $importer->getReport()['importSummary'][0]['importAction']);
+        Event::assertDispatched(InstructionCreatedViaImport::class);
     }
 
-    public function test_import_creates_new_instruction_when_record_does_not_exist()
+    public function test_import_adds_a_new_language_without_replacing_existing_translation(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->useExistingInstruction($this->existingInstruction());
+        $this->client->shouldReceive('updateInstruction')->once()->with(Mockery::on(function (Instruction $instruction) {
+            return $instruction->getTranslationsByLanguage('en')->getTitle() === 'Previous title'
+                && $instruction->getTranslationsByLanguage('fr')->getTitle() === 'Hurricane safety';
+        }))->andReturnUsing(fn ($instruction) => $instruction);
+        $importer = new RcnImporter($this->client);
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'fr');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andThrow(new RcnApiResourceNotFoundException());
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $client->shouldReceive('createInstruction')->once();
-
-        $csv = self::createFakeCsv('yesterday');
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $report = $importer->getReport();
-        $this->assertEquals("added", $report['importSummary'][0]['importAction']);
-
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        $this->assertSame('updated', $importer->getReport()['importSummary'][0]['importAction']);
     }
 
-    public function test_import_creates_new_translation_for_existing_instruction()
+    public function test_import_does_not_match_an_instruction_in_another_region(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->useExistingInstruction($this->existingInstruction('en', 'North'));
+        $this->client->shouldReceive('createInstruction')->once()->andReturnUsing(fn ($instruction) => $instruction);
+        $this->client->shouldNotReceive('updateInstruction');
+        $importer = new RcnImporter($this->client);
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $instruction = self::createFakeInstruction();
-
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([$instruction]));
-        $client->shouldReceive('updateInstruction')->once();
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $csv = self::createFakeCsv('yesterday');
-
-        $importer = new RcnImporter($client);
-        $importer->turnWarningsOff(); // do not warn that an overwrite will happen
-        $importer->importCsv($csv, 'USA', 'fr');
-
-        $report = $importer->getReport();
-        $this->assertEquals("updated", $report['importSummary'][0]['importAction']);
-
-        $client->shouldNotHaveReceived('createInstruction');
-
-        $instruction->shouldHaveReceived('getTranslationsByLanguage')->once();
-        $instruction->shouldHaveReceived('setTranslation')->once();
-
-        Mockery::close();
+        $this->assertSame('added', $importer->getReport()['importSummary'][0]['importAction']);
     }
 
-    public function test_import_with_no_instructions_does_nothing()
+    public function test_import_with_no_hazards_does_not_write_instructions(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->client->shouldNotReceive('createInstruction');
+        $this->client->shouldNotReceive('updateInstruction');
+        $importer = new RcnImporter($this->client);
+        $importer->importFile($this->workbook(), 'USA', 'en');
 
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $instruction = self::createFakeInstruction();
-
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([$instruction]));
-
-        $client->shouldReceive('getOrganisationByCountryCode')->andReturn(null);
-
-        $csv = self::createFakeCsv('yesterday', true);
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'USA', 'en');
-
-        $report = $importer->getReport();
-        $this->assertCount(0, $report['importSummary']);
-
-        $client->shouldNotHaveReceived('createInstruction');
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        $this->assertSame([], $importer->getReport()['importSummary']);
     }
 
-    public function test_import_with_csv_for_wrong_country_code()
+    public function test_import_rejects_an_unknown_organisation(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->client->shouldReceive('getOrganisationByCountryCode')->with('CAN')->andReturn(null);
+        $this->client->shouldNotReceive('createInstruction');
+        $this->expectException(RcnImportException::class);
+        $this->expectExceptionMessage('No organization found');
 
-        $this->expectException(RcnImportInvalidFileException::class);
-
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $csv = self::createFakeCsv('yesterday', true);
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'CAN', 'en');
-
-        $client->shouldNotHaveReceived('createInstruction');
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        (new RcnImporter($this->client))->importFile($this->workbook(), 'CAN', 'en');
     }
 
-    public function test_import_with_malformed_country_code()
+    public function test_import_rejects_a_workbook_for_another_society(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->client->shouldNotReceive('createInstruction');
+        $this->expectException(RcnImportException::class);
+        $this->expectExceptionMessage('national society does not match');
 
-        $this->expectException(RcnImportInvalidFileException::class);
-
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $csv = self::createFakeCsv('yesterday', true);
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($csv, 'HELLO', 'en');
-
-        $client->shouldNotHaveReceived('createInstruction');
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        (new RcnImporter($this->client))->importFile($this->workbook([], 'Other Society'), 'USA', 'en');
     }
 
-    public function test_import_with_messed_up_columns()
+    public function test_import_rejects_a_missing_society(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->expectException(RcnImportException::class);
+        $this->expectExceptionMessage('National society is missing');
 
-        $this->expectException(RcnImportInvalidFileException::class);
-
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $instruction = self::createFakeInstruction();
-
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([$instruction]));
-
-        $exportedDate = new \DateTimeImmutable('now');
-
-        $csv = Writer::createFromString('');
-
-        $encodedDate = base64_encode($exportedDate->format('c'));
-
-        // https://www.w3.org/TR/tabular-data-model/#embedded-metadata
-        $csv->insertOne([sprintf(
-            '#%s %s %s',
-            'USA',
-            trans('csvTemplate.separator'),
-            $encodedDate
-        )]);
-
-        // Likely scenario: more columns added for the translation.
-        $csv->insertOne(['#'.trans('csvTemplate.help'), null, null, null, null, trans('csvTemplate.stagesInstruction')]);
-        $csv->insertOne([
-            trans('csvTemplate.instruction_columns.eventType'),
-            trans('csvTemplate.instruction_columns.regionName'),
-            trans('csvTemplate.instruction_columns.title'),
-            trans('csvTemplate.instruction_columns.description'),
-            trans('csvTemplate.instruction_columns.webUrl'),
-            'mitigation En',
-            'mitigation Fr',
-            'seasonalForecast En',
-            'seasonalForecast Fr',
-            'warning En',
-            'warning Fr',
-            'watch En',
-            'watch Fr',
-            'immediate En',
-            'immediate Fr',
-            'recover En',
-            'recover Fr'
-        ]);
-        $csv->insertAll(new Collection([[
-            'Hurricane',
-            'South',
-            'Key Messages for Hurricane Event',
-            'Take Action',
-            'https://google.com',
-            'mitigation',
-            'le mitigation',
-            'seasonalForecast',
-            'le seasonalForecast',
-            'warning',
-            'le warning',
-            'watch',
-            'le watch',
-            'immediate',
-            'le immediate',
-            'recover',
-            'le recover'
-        ]]));
-
-        $reader = Reader::createFromString($csv->getContent());
-        $reader->setHeaderOffset(RcnImporter::ATTRIBUTION_HEADERS_OFFSET);
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($reader, 'USA', 'fr');
-
-        $client->shouldNotHaveReceived('createInstruction');
-        $client->shouldNotHaveReceived('updateInstruction');
-
-        Mockery::close();
+        (new RcnImporter($this->client))->importFile($this->workbook([], ''), 'USA', 'en');
     }
 
-    public function test_import_attribution_import_with_valid_data()
+    public function test_import_rejects_a_hazard_without_a_title(): void
     {
-        $adminUser = factory(\App\Models\Access\User\User::class)->create();
-        $adminUser->userProfile()->save(factory(\App\Models\Access\User\UserProfile::class)->make());
-        $role = App\Models\Access\Role\Role::create(['name' => 'Basic Admin']);
-        $role->permissions()
-            ->sync([
-                \App\Models\Access\Permission\Permission::where('name', '=', 'view-backend')->first()->id,
-            ]);
-        $adminUser->roles()->attach($role->id);
+        $row = $this->hazardRow();
+        $row[0] = '';
+        $this->expectException(RcnImportException::class);
+        $this->expectExceptionMessage('Title and/or description are missing');
 
-        $this->actingAs($adminUser);
-
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
-
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $organisation = Organisation::createFromArray([
-            'countryCode' => 'USA',
-            'name' => 'American Red Cross',
-            'url' => 'https://test.com',
-            'translations' => []
-        ]);
-
-        $client->shouldReceive('getOrganisationByCountryCode')->once()->andReturn($organisation);
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([]));
-        $client->shouldReceive('updateOrganisationByCountryCode')->once();
-
-        $exportedDate = new DateTimeImmutable('now');
-        $attribution = ['Key Messages', 'These are Key Messages', 'https://3sidedcube.com'];
-        $csv = RcnExporter::buildCsvTemplate('USA', new Collection([]), $attribution, $exportedDate);
-        $reader = Reader::createFromString($csv->getContent());
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($reader, 'USA', 'en');
-
-        Mockery::close();
+        (new RcnImporter($this->client))->importFile($this->workbook([$row]), 'USA', 'en');
     }
 
-    public function test_import_attribution_import_rejects_bad_url()
+    public function test_import_creates_instruction_when_api_has_no_existing_resource(): void
     {
-        $this->withoutEvents(); // stop history from being written as we don't have a logged in user
+        $this->client->shouldReceive('getLatestInstructionsByCountryCode')->with('USA')
+            ->andThrow(new RcnApiResourceNotFoundException());
+        $this->client->shouldReceive('createInstruction')->once()->andReturnUsing(fn ($instruction) => $instruction);
+        $importer = new RcnImporter($this->client);
+        $importer->importFile($this->workbook([$this->hazardRow()]), 'USA', 'en');
 
-        $this->expectException(RcnImportInvalidFileException::class);
-
-        $client = Mockery::mock(WhatNowResourceInterface::class);
-
-        $organisation = Organisation::createFromArray([
-            'countryCode' => 'USA',
-            'name' => 'American Red Cross',
-            'url' => 'https://test.com',
-            'translations' => []
-        ]);
-
-        $client->shouldReceive('getLatestInstructionsByCountryCode')->andReturn(new Collection([]));
-        $client->shouldReceive('updateOrganisationByCountryCode')->never();
-
-        $exportedDate = new DateTimeImmutable('now');
-        $attribution = ['Key Messages', 'These are Key Messages', 'www.3sidedcube.com'];
-        $csv = RcnExporter::buildCsvTemplate('USA', new Collection([]), $attribution, $exportedDate);
-        $reader = Reader::createFromString($csv->getContent());
-
-        $importer = new RcnImporter($client);
-        $importer->importCsv($reader, 'USA', 'en');
-
-        Mockery::close();
+        $this->assertSame('added', $importer->getReport()['importSummary'][0]['importAction']);
     }
 }

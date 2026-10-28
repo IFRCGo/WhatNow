@@ -8,7 +8,7 @@ class LocaleTest extends TestCase
 {
     use ReadsFrontendTranslations;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function fetch_translations()
     {
         $this->getJson('/api/translations/en')
@@ -16,7 +16,7 @@ class LocaleTest extends TestCase
             ->assertJson(['ok' => $this->trans('ok')]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function set_locale_from_header()
     {
         $this->withHeaders(['Accept-Language' => 'zh-CN'])
@@ -25,7 +25,7 @@ class LocaleTest extends TestCase
         $this->assertEquals('zh-CN', $this->app->getLocale());
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function set_locale_from_header_short()
     {
         $this->withHeaders(['Accept-Language' => 'en-US'])

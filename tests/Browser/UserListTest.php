@@ -18,11 +18,11 @@ class UserListTest extends DuskTestCase
         static::closeAll();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function user_list_page_renders()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make(['accepted_agreement' => true]));
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make(['accepted_agreement' => true]));
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -35,11 +35,11 @@ class UserListTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function user_can_edit()
     {
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make(['accepted_agreement' => true]));
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make(['accepted_agreement' => true]));
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {

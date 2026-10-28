@@ -37,8 +37,8 @@ class OAuthTest extends TestCase
     {
         $this->mockFacebookTokenRequest();
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->oauthProviders()->create([
             'provider' => 'facebook',
             'provider_user_id' => '10155139028074349',
@@ -61,11 +61,11 @@ class OAuthTest extends TestCase
     public function test_it_links_an_existing_conventional_user_with_facebook_account()
     {
         $this->mockFacebookTokenRequest();
-        $user = factory(User::class)->create([
+        $user = \Database\Factories\UserFactory::new()->create([
             // existing user has same email as new social account
             'email' => 'someuser@email.com'
         ]);
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
 
         $this->postJson('/api/login/facebook', [
             'token' => 'FacebookOauthToken'
@@ -102,8 +102,8 @@ class OAuthTest extends TestCase
     {
         $this->mockGoogleTokenRequest();
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->oauthProviders()->create([
             'provider' => 'google',
             'provider_user_id' => '10155139028074349',

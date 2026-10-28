@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use OpenApi\Attributes as OA;
+
 use App\Events\Backend\Auth\UserLoggedIn;
 use App\Models\Access\User\User;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -9,12 +11,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Validation\ValidationException;
-/**
- * @OA\Tag(
- *     name="Auth",
- *     description="Operations about authentication"
- * )
- */
+#[OA\Tag(
+    name: 'Auth',
+    description: 'Operations about authentication',
+)]
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -24,32 +24,41 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    /**
-     * @OA\Post(
-     *     path="/login",
-     *     tags={"Auth"},
-     *     summary="Login to get JWT token",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\MediaType(
-     *             mediaType="application/json",
-     *             @OA\Schema(
-     *                 type="object",
-     *                 required={"email", "password"},
-     *                 @OA\Property(property="email", type="string", example="email@example.com"),
-     *                 @OA\Property(property="password", type="string", example="password123")
-     *             )
-     *         )
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successfully authenticated",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="token", type="string", example="your-jwt-token")
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/login',
+        tags: ['Auth'],
+        summary: 'Login to get JWT token',
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: [new OA\MediaType(
+                mediaType: 'application/json',
+                schema: new OA\Schema(
+                    type: 'object',
+                    required: ['email', 'password'],
+                    properties: [new OA\Property(
+                        property: 'email',
+                        type: 'string',
+                        example: 'email@example.com',
+                    ), new OA\Property(
+                        property: 'password',
+                        type: 'string',
+                        example: 'password123',
+                    )],
+                ),
+            )],
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successfully authenticated',
+            content: new OA\JsonContent(
+                properties: [new OA\Property(
+                    property: 'token',
+                    type: 'string',
+                    example: 'your-jwt-token',
+                )],
+            ),
+        )],
+    )]
     //login from AuthenticatesUsers trait
     
     protected function attemptLogin(Request $request)

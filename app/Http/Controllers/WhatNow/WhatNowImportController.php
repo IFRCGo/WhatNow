@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\WhatNow;
 
+use OpenApi\Attributes as OA;
+
 use App\Classes\RcnApi\Entities\Instruction;
 use App\Classes\RcnApi\Exceptions\RcnApiException;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
@@ -28,12 +30,10 @@ use League\Csv\Reader;
 use Maatwebsite\Excel\Excel;
 use function Maatwebsite\Excel\Facades\Excel;
 
-/**
- * @OA\Tag(
- *     name="WhatNowImport",
- *     description="Operations about bulk upload"
- * )
- */
+#[OA\Tag(
+    name: 'WhatNowImport',
+    description: 'Operations about bulk upload',
+)]
 final class WhatNowImportController extends ApiController
 {
 
@@ -44,53 +44,62 @@ final class WhatNowImportController extends ApiController
         $this->client = $client->whatnow();
     }
 
-    /**
-     * @OA\Post(
-     *     path="/import/{countryCode}/{languageCode}",
-     *     tags={"WhatNowImport"},
-     *     summary="Import a CSV file",
-     *     description="Imports a CSV file for a specific country and language",
-     *     operationId="importCsv",
-     *     @OA\Parameter(
-     *         name="countryCode",
-     *         in="path",
-     *         required=true,
-     *         description="Country code for the import",
-     *         @OA\Schema(type="string", example="USA")
-     *     ),
-     *     @OA\Parameter(
-     *         name="languageCode",
-     *         in="path",
-     *         required=true,
-     *         description="Language code for the import",
-     *         @OA\Schema(type="string", example="en")
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\MediaType(
-     *             mediaType="multipart/form-data",
-     *             @OA\Schema(
-     *                 required={"csv"},
-     *                 @OA\Property(
-     *                     property="csv",
-     *                     type="string",
-     *                     format="binary",
-     *                     description="CSV file to import"
-     *                 )
-     *             )
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/import/{countryCode}/{languageCode}',
+        tags: ['WhatNowImport'],
+        summary: 'Import a CSV file',
+        description: 'Imports a CSV file for a specific country and language',
+        operationId: 'importCsv',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'countryCode',
+            in: 'path',
+            required: true,
+            description: 'Country code for the import',
+            schema: new OA\Schema(
+                type: 'string',
+                example: 'USA',
+            ),
+        ), new OA\Parameter(
+            name: 'languageCode',
+            in: 'path',
+            required: true,
+            description: 'Language code for the import',
+            schema: new OA\Schema(
+                type: 'string',
+                example: 'en',
+            ),
+        )],
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: [new OA\MediaType(
+                mediaType: 'multipart/form-data',
+                schema: new OA\Schema(
+                    required: ['csv'],
+                    properties: [new OA\Property(
+                        property: 'csv',
+                        type: 'string',
+                        format: 'binary',
+                        description: 'CSV file to import',
+                    )],
+                ),
+            )],
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function import(Request $request, string $countryCode, string $languageCode)
     {
         try{
@@ -141,31 +150,38 @@ final class WhatNowImportController extends ApiController
     }
 
 
-    /**
-     * @OA\Get(
-     *     path="/template/{country_code}",
-     *     tags={"WhatNowImport"},
-     *     summary="Export a blank CSV template",
-     *     description="Exports a blank CSV template for a given country",
-     *     operationId="exportBlankCsvTemplate",
-     *     @OA\Parameter(
-     *         name="country_code",
-     *         in="path",
-     *         required=true,
-     *         description="Country code for which the blank template is generated",
-     *         @OA\Schema(type="string", example="USA")
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/template/{country_code}',
+        tags: ['WhatNowImport'],
+        summary: 'Export a blank CSV template',
+        description: 'Exports a blank CSV template for a given country',
+        operationId: 'exportBlankCsvTemplate',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'country_code',
+            in: 'path',
+            required: true,
+            description: 'Country code for which the blank template is generated',
+            schema: new OA\Schema(
+                type: 'string',
+                example: 'USA',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function exportBlank(Request $request,string $countryCode)
     {
         $extension = $request->query('extension', 'csv');
@@ -184,38 +200,47 @@ final class WhatNowImportController extends ApiController
 
 
 
-    /**
-     * @OA\Get(
-     *     path="/template/{country_code}/{language_code}",
-     *     tags={"WhatNowImport"},
-     *     summary="Export a CSV template",
-     *     description="Exports a CSV template for a given country and language",
-     *     operationId="exportCsvTemplate",
-     *     @OA\Parameter(
-     *         name="country_code",
-     *         in="path",
-     *         required=true,
-     *         description="Country code for which the template is generated",
-     *         @OA\Schema(type="string", example="USA")
-     *     ),
-     *     @OA\Parameter(
-     *         name="language_code",
-     *         in="path",
-     *         required=true,
-     *         description="Language code for the template",
-     *         @OA\Schema(type="string", example="en")
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/template/{country_code}/{language_code}',
+        tags: ['WhatNowImport'],
+        summary: 'Export a CSV template',
+        description: 'Exports a CSV template for a given country and language',
+        operationId: 'exportCsvTemplate',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'country_code',
+            in: 'path',
+            required: true,
+            description: 'Country code for which the template is generated',
+            schema: new OA\Schema(
+                type: 'string',
+                example: 'USA',
+            ),
+        ), new OA\Parameter(
+            name: 'language_code',
+            in: 'path',
+            required: true,
+            description: 'Language code for the template',
+            schema: new OA\Schema(
+                type: 'string',
+                example: 'en',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     /**
      * @throws AuthorizationException
      */

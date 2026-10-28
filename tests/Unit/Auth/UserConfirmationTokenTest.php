@@ -23,7 +23,7 @@ class UserConfirmationTokenTest extends TestCase
 
         $token = new UserConfirmationToken($tokenString);
 
-        $this->assertInternalType('string', (string) $token);
+        $this->assertIsString((string) $token);
     }
 
     public function test_it_invalidates_token()

@@ -92,6 +92,7 @@
         <table-loading :loading="fetchingUsers"></table-loading>
         <div class="table-responsive users-list-table-view">
           <b-table hover
+                   :key="usersTableKey"
                    :items="users.data"
                    :fields="fields"
                    :perPage="users.meta.per_page"
@@ -530,6 +531,15 @@ export default {
     },
     fields: function() {
       return this.apiUsers ? Object.assign([], apiUserFields) : Object.assign([], adminFields)
+    },
+    usersTableKey: function() {
+      const ids = this.users && this.users.data ? this.users.data.map(user => user.id).join('-') : ''
+      return [
+        this.apiUsers ? 'api-users' : 'admin-users',
+        this.currentPage,
+        this.searchFilter,
+        ids
+      ].join(':')
     },
     countryList: function() {
       return [{

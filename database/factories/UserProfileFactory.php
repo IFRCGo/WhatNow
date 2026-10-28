@@ -1,14 +1,27 @@
 <?php
 
-$factory->define(App\Models\Access\User\UserProfile::class, function (Faker\Generator $faker) {
-    return [
-        'first_name'        => $faker->firstName,
-        'last_name'         => $faker->lastName
-    ];
-});
+namespace Database\Factories;
 
-$factory->state(App\Models\Access\User\UserProfile::class, 'notifications_off', function (Faker\Generator $faker) {
-    return [
-        'notifications_enabled' => false,
-    ];
-});
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
+
+class UserProfileFactory extends Factory
+{
+    protected $model = \App\Models\Access\User\UserProfile::class;
+
+    public function definition(): array
+    {
+        $faker = $this->faker;
+        return [
+            'first_name'        => $faker->firstName,
+            'last_name'         => $faker->lastName
+        ];
+    }
+
+    public function notificationsOff(): static
+    {
+        return $this->state(fn () => [
+            'notifications_enabled' => false,
+        ]);
+    }
+}

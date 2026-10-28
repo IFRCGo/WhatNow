@@ -32,7 +32,7 @@ class ApplicationResource extends AbstractResource
     }
 
 
-    public function createApplication(string $name, string $description = null, int $estimatedUsers = 0, int $userId)
+    public function createApplication(string $name, ?string $description, int $estimatedUsers, int $userId)
     {
         return $this->handleApiCall(function () use ($name, $description, $estimatedUsers, $userId) {
             $response = $this->http->post('apps', [

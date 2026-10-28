@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\DB;
 
 class AddFulltextIndexesForUserSearch extends Migration
 {
-    
+
     public function up()
     {
-        if (env('DB_CONNECTION') !== 'mysql') {
+        if (DB::connection()->getDriverName() !== 'mysql') {
             return;
         }
 
@@ -20,10 +20,10 @@ class AddFulltextIndexesForUserSearch extends Migration
         DB::statement('ALTER TABLE user_profiles ADD FULLTEXT user_profiles_search_fulltext(first_name, last_name)');
     }
 
-    
+
     public function down()
     {
-        if (env('DB_CONNECTION') !== 'mysql') {
+        if (DB::connection()->getDriverName() !== 'mysql') {
             return;
         }
 
@@ -40,12 +40,6 @@ class AddFulltextIndexesForUserSearch extends Migration
 
     private function indexExists(string $table, string $index): bool
     {
-        return (bool) DB::select(
-            DB::raw(
-                "SHOW KEYS
-                FROM {$table}
-                WHERE Key_name='{$index}'"
-            )
-        );
+        return (bool) DB::select("SHOW KEYS FROM {$table} WHERE Key_name = ?", [$index]);
     }
 }

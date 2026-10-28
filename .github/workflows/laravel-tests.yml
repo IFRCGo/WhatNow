@@ -1,0 +1,55 @@
+name: Laravel 13 checks
+
+on:
+    pull_request:
+    workflow_dispatch:
+    workflow_call:
+
+permissions:
+    contents: read
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        timeout-minutes: 20
+        env:
+            APP_ENV: testing
+            APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+            JWT_SECRET: whatnow-tests-only-secret-with-at-least-32-bytes
+            DB_CONNECTION: sqlite
+            DB_DATABASE: ':memory:'
+            CACHE_STORE: array
+            SESSION_DRIVER: array
+            QUEUE_CONNECTION: sync
+            MAIL_MAILER: array
+            RCN_API_URL: http://127.0.0.1:8001
+            RCN_API_VERSION: v1
+        steps:
+            - uses: actions/checkout@v4
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.4'
+                  extensions: bcmath, curl, gd, mbstring, pdo_sqlite, pdo_mysql, zip
+                  tools: composer:v2
+                  coverage: none
+            - name: Validate committed dependencies
+              run: composer validate --strict --no-check-publish
+            - name: Install dependencies
+              run: composer install --prefer-dist --no-interaction --no-progress
+            - name: Check runtime and security advisories
+              run: |
+                  composer check-platform-reqs
+                  composer audit
+            - name: Verify application boot, configuration and routes
+              run: |
+                  php artisan --version
+                  php artisan config:cache
+                  php artisan config:clear
+                  php artisan route:list --except-vendor
+                  php artisan route:cache
+                  php artisan route:clear
+                  php artisan view:cache
+                  php artisan view:clear
+                  php artisan l5-swagger:generate
+            - name: Run application tests
+              run: composer test

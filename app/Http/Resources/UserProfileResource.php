@@ -4,12 +4,12 @@ namespace App\Http\Resources;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\TransferException;
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class UserProfileResource extends Resource
+class UserProfileResource extends JsonResource
 {
     
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'first_name' => $this->first_name,
