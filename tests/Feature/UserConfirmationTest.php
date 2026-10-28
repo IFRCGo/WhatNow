@@ -5,8 +5,6 @@ namespace Tests\Feature;
 use App\Models\Access\Role\Role;
 use App\Models\Access\User\User;
 use App\Models\Access\User\UserProfile;
-use App\Notifications\Auth\UserNeedsConfirmation;
-use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 class UserConfirmationTest extends TestCase
@@ -17,8 +15,6 @@ class UserConfirmationTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function resend_confirmation_email_for_users()
     {
-        Notification::fake();
-
         /** @var User $user */
         $user = \Database\Factories\UserFactory::new()->unconfirmed()->create();
         $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
@@ -33,10 +29,7 @@ class UserConfirmationTest extends TestCase
         $this->getJson('/api/users/'.$user->id.'/resend')
             ->assertSuccessful();
 
-        Notification::assertSentTo(
-            [$user],
-            UserNeedsConfirmation::class
-        );
+        $this->assertConfirmationMailSentTo($user->email);
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

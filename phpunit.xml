@@ -18,6 +18,8 @@
         <env name="MAIL_MAILER" value="array" force="true"/>
         <env name="DB_CONNECTION" value="sqlite" force="true"/>
         <env name="DB_DATABASE" value=":memory:" force="true"/>
+        <env name="RCN_API_URL" value="http://127.0.0.1:8001" force="true"/>
+        <env name="RCN_API_VERSION" value="v1" force="true"/>
         <env name="DB_URL" value="" force="true"/>
     </php>
 </phpunit>

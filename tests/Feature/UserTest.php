@@ -6,15 +6,17 @@ use App\Models\Access\Permission\Permission;
 use App\Models\Access\Role\Role;
 use App\Models\Access\User\User;
 use App\Models\Access\User\UserProfile;
-use App\Notifications\Auth\AdminUserNeedsConfirmation;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Support\Facades\Notification;
 use App\Models\Access\User\UserOrganisation;
 use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    use DatabaseTransactions;
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->grantRolePermissions(Role::ROLE_GDPC_ADMIN, ['users-create']);
+    }
+
 
     /** @var \App\Models\Access\User\User */
     protected $user;
@@ -46,8 +48,6 @@ class UserTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function register_admin_user()
     {
-        Notification::fake();
-
         /** @var User $adminUser */
         $adminUser = \Database\Factories\UserFactory::new()->create();
         $adminUser->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
@@ -71,10 +71,7 @@ class UserTest extends TestCase
 
         $user = User::where('email', 'test98765@test.app')->first();
 
-        Notification::assertSentTo(
-            [$user],
-            AdminUserNeedsConfirmation::class
-        );
+        $this->assertConfirmationMailSentTo($user->email);
     }
 
     #[\PHPUnit\Framework\Attributes\Test]

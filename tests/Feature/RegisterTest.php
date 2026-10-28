@@ -3,8 +3,6 @@
 namespace Tests\Feature;
 
 use App\Models\Access\User\User;
-use App\Notifications\Auth\UserNeedsConfirmation;
-use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 class RegisterTest extends TestCase
@@ -12,8 +10,6 @@ class RegisterTest extends TestCase
     #[\PHPUnit\Framework\Attributes\Test]
     public function can_register()
     {
-        Notification::fake();
-
         $this->postJson('/api/register', [
             'email' => 'test@test.app',
             'password' => 'secretlongerthan10',
@@ -30,9 +26,6 @@ class RegisterTest extends TestCase
 
         $user = User::orderBy('created_at')->first();
 
-        Notification::assertSentTo(
-            [$user],
-            UserNeedsConfirmation::class
-        );
+        $this->assertConfirmationMailSentTo($user->email);
     }
 }

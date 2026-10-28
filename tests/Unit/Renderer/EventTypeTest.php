@@ -3,13 +3,11 @@
 namespace Tests\Unit\Renderer;
 
 use App\Classes\Renderer\Entities\EventType;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 
 class EventTypeTest extends TestCase
 {
-    use DatabaseTransactions;
 
     public function test_it_returns_correct_event_type_name()
     {

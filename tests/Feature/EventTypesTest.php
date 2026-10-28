@@ -6,14 +6,24 @@ use App\Http\Requests\EventTypeCreateRequest;
 use App\Models\Access\Role\Role;
 use App\Models\Access\User\User;
 use App\Models\EventType;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
+use App\Classes\RcnApi\RcnApiClient;
+use App\Classes\RcnApi\Resources\WhatNowResource;
 use Tests\TestCase;
 
 class EventTypesTest extends TestCase
 {
-    use DatabaseTransactions;
+    private $resource;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        config(['app.bucket_url' => 'https://assets.example.test']);
+        $this->grantRolePermissions(Role::ROLE_GDPC_ADMIN, ['hz-type-create']);
+        $this->resource = \Mockery::mock(WhatNowResource::class);
+        $this->mock(RcnApiClient::class)->shouldReceive('whatnow')->andReturn($this->resource);
+    }
 
     #[\PHPUnit\Framework\Attributes\Test]
     public function get_event_types()
@@ -30,31 +40,31 @@ class EventTypesTest extends TestCase
                     'name' => 'Other',
                     'icon' => 'general@3x.png',
                     'code' => 'other',
-                    'url' => asset('storage/general@3x.png')
+                    'url' => 'https://assets.example.test/general@3x.png'
 
                 ],
                 [
                     'name' => $events[0]->name,
                     'icon' => $events[0]->icon,
                     'code' => $events[0]->code,
-                    'url' => asset('storage/'.$events[0]->icon)
+                    'url' => 'https://assets.example.test/'.$events[0]->icon
 
                 ],
                 [
                     'name' => $events[1]->name,
                     'icon' => $events[1]->icon,
                     'code' => $events[1]->code,
-                    'url' => asset('storage/'.$events[1]->icon)
+                    'url' => 'https://assets.example.test/'.$events[1]->icon
                 ],
             ]
         ]);
     }
 
     #[\PHPUnit\Framework\Attributes\Test]
-    public function create_new_event_type_as_3sc_admin_user()
+    public function create_new_event_type_as_ifrc_support_user()
     {
         $user = \Database\Factories\UserFactory::new()->create();
-        $user->attachRole(Role::where('name', '3SC Admin')->first());
+        $user->attachRole(Role::where('name', 'IFRC Support')->first());
         $this->_create_new_event_type_as_valid_user($user);
     }
 
@@ -98,8 +108,10 @@ class EventTypesTest extends TestCase
         $this->actingAs($user);
 
         $this->assertEquals(1, EventType::all()->count());
-        Storage::fake('public');
-        Storage::disk('public')->assertMissing('event-name.png');
+
+        $this->resource->shouldReceive('uploadFile')->once()->withArgs(function ($path, $name) {
+            return is_file($path) && $name === 'event-name.png';
+        });
 
         $eventName = 'Event Name';
 
@@ -120,10 +132,7 @@ class EventTypesTest extends TestCase
         $this->assertEquals($eventName, $content->data->name);
         $this->assertEquals('event-name.png', $content->data->icon);
         $this->assertEquals('event-name', $content->data->code);
-        $this->assertEquals(asset('storage/event-name.png'), $content->data->url);
-
-        // Assert the file was stored...
-        Storage::disk('public')->assertExists('event-name.png');
+        $this->assertEquals('https://assets.example.test/event-name.png', $content->data->url);
 
         // Assert data was saved properly
         $eventsOnDb = EventType::all();
@@ -144,8 +153,6 @@ class EventTypesTest extends TestCase
         }
 
         $this->assertEquals(1, EventType::all()->count());
-        Storage::fake('public');
-        Storage::disk('public')->assertMissing('event-name.png');
 
         $eventName = 'Event Name';
 
@@ -159,13 +166,11 @@ class EventTypesTest extends TestCase
         // Assert expected response
         $response->assertStatus(403);
 
-        // Assert the file was stored...
-        Storage::disk('public')->assertMissing('event-name.png');
+        $this->resource->shouldNotHaveReceived('uploadFile');
 
         // Assert data was saved properly
         $eventsOnDb = EventType::all();
         $this->assertEquals(1, $eventsOnDb->count());
     }
-
 
 }

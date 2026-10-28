@@ -18,6 +18,7 @@ class SettingsTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
+        $this->grantRolePermissions(Role::ROLE_GDPC_ADMIN, ['users-edit', 'users-delete']);
 
         $this->user = \Database\Factories\UserFactory::new()->create();
         $this->user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());

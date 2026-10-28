@@ -7,16 +7,13 @@ use App\Models\Access\Role\Role;
 use App\Models\Access\User\User;
 use App\Models\Access\User\UserProfile;
 use App\Models\Terms;
-use App\Notifications\Terms\TermsUpdatedNotification;
 use Carbon\Carbon;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 class TermsTest extends TestCase
 {
-    use DatabaseTransactions;
 
     public function setUp(): void
     {
@@ -91,15 +88,10 @@ class TermsTest extends TestCase
             ->assertStatus(201)
             ->assertJsonStructure(['data' => ['version', 'content', 'createdAt']]);
 
-        Notification::assertSentTo(
-            [$user],
-            TermsUpdatedNotification::class
-        );
+        Notification::assertNothingSent();
+        $this->assertSame([], $this->sentMail);
+        $this->assertDatabaseHas('terms', ['version' => '1', 'content' => 'Test']);
 
-        Notification::assertNotSentTo(
-            [$adminUser, $user2],
-            TermsUpdatedNotification::class
-        );
     }
 
     public function test_cannot_duplicate_version()
