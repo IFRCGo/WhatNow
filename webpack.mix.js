@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const mix = require('laravel-mix')
 
 mix.disableNotifications()
+mix.setPublicPath('public')
 
 if (mix.inProduction()) {
   mix.version()
