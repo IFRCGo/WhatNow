@@ -24,7 +24,7 @@ const createStages = (stages) => {
     warning: stages.warning || [],
     anticipated: stages.anticipated || [],
     assess_and_plan: stages.assess_and_plan || [],
-    mitigate_risks: stages.mitigate_risks || [],
+    mitigate_risk: stages.mitigate_risk || [],
     prepare_to_respond: stages.prepare_to_respond || [],
     recover: stages.recover || []
   }

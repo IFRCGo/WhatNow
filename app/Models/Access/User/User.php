@@ -26,6 +26,12 @@ class User extends Authenticatable implements JWTSubject
 
 
     protected $casts = [
+        'deleted_at' => 'datetime',
+        'password_updated_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'last_logged_in_at' => 'datetime',
+
         'activated' => 'boolean',
         'confirmed' => 'boolean',
         'confirmed_role' => 'boolean',
@@ -39,7 +45,7 @@ class User extends Authenticatable implements JWTSubject
     ];
 
 
-    protected $dates = ['deleted_at', 'password_updated_at', 'created_at', 'updated_at', 'last_logged_in_at'];
+
 
 
     protected $hidden = [
@@ -116,5 +122,10 @@ class User extends Authenticatable implements JWTSubject
     {
         $this->last_logged_in_at = new Carbon('now');
         $this->save();
+    }
+
+    protected function serializeDate(\DateTimeInterface $date): string
+    {
+        return $date->format('Y-m-d H:i:s');
     }
 }

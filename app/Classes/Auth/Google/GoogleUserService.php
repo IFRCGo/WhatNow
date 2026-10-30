@@ -10,7 +10,7 @@ use Laravel\Socialite\Two\User;
 class GoogleUserService
 {
     
-    public function getUserFromToken(string $token = null)
+    public function getUserFromToken(?string $token = null)
     {
         $opts = array(
             'http' => array(

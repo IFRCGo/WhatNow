@@ -343,6 +343,8 @@
       "select_country": "国を選択",
       "select_terms": "利用規約のバージョンを選択",
       "select_society": "国内協会を選択",
+      "search": "検索",
+      "search_placeholder": "名前またはメール（3文字以上）",
       "create": "新規ユーザーの作成",
       "download_report": "レポートをダウンロード",
       "empty": "ユーザーが見つかりません",
@@ -441,9 +443,10 @@
     "immediate": "即時",
     "warning": "警告",
     "anticipated": "予測",
-    "assess_and_plan":"評価と計画",
-    "mitigate_risks":"リスク軽減",
-    "prepare_to_respond":"対応準備",
+    "assess_and_plan": "評価と計画",
+    "mitigate_risks": "リスク軽減",
+    "mitigate_risk": "リスク軽減",
+    "prepare_to_respond": "対応準備",
     "recover": "復旧"
   },
   "content": {
@@ -539,6 +542,8 @@
       "anticipated": "予測",
       "assess_and_plan": "評価と計画",
       "mitigate_risks": "リスク軽減",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "建造環境と自然環境をより安全にし、早期警戒システムを確立するための軽減措置を講じます",
       "prepare_to_respond": "対応準備",
       "updated": "更新済",
       "download_icon": "ダウンロードアイコン",
@@ -558,7 +563,8 @@
       "content_edit_title": "コンテンツ編集",
       "content_add_hazard_title": "危険を追加",
       "key_message_label": "主要メッセージのタイトル",
-      "supporting_message_label": "サポートメッセージ"
+      "supporting_message_label": "サポートメッセージ",
+      "mitigate_risk": "リスク軽減"
     },
     "message_editor": {
       "title": "アトリビューション・エディター",
@@ -618,7 +624,7 @@
         "bad_request_error_codes": {
           "30001": "列見出しがテンプレートと一致しません",
           "30002": "組織名、メッセージ、またはURLがありません",
-          "30003": "組織名のURLが無効です。https:\/\/などのプロトコルが存在することを確認してください",
+          "30003": "組織名のURLが無効です。https://などのプロトコルが存在することを確認してください",
           "40001": "不正な国コードが入力されました",
           "40002": "選択した組織は、選択したファイルの組織と一致しません",
           "40003": "選択したファイルがエクスポートされた日付は不正に作成され、インポートが完了していません"

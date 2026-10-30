@@ -21,13 +21,13 @@ class SidebarTest extends DuskTestCase
         static::closeAll();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function login_check_sidebar_gdpc_admin()
     {
         $this->markTestSkipped('Needs to expand sidebar groups to check they are there');
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_GDPC_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -43,13 +43,13 @@ class SidebarTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function login_check_sidebar_NS_admin()
     {
         $this->markTestSkipped('Needs to expand sidebar groups to check they are there');
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_NS_ADMIN);
 
         $this->browse(function ($browser) use ($user) {
@@ -64,13 +64,13 @@ class SidebarTest extends DuskTestCase
         });
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function login_check_sidebar_api_user()
     {
         $this->markTestSkipped('Needs to expand sidebar groups to check they are there');
 
-        $user = factory(User::class)->create();
-        $user->userProfile()->save(factory(UserProfile::class)->make());
+        $user = \Database\Factories\UserFactory::new()->create();
+        $user->userProfile()->save(\Database\Factories\UserProfileFactory::new()->make());
         $user->roles()->attach(Role::ROLE_API_USER);
 
         $this->browse(function ($browser) use ($user) {

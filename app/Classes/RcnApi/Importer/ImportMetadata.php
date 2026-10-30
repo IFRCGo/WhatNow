@@ -21,7 +21,7 @@ class ImportMetadata
 
     protected $languageCode;
 
-    protected $region;
+    protected $subnational;
 
 
     public function __construct(
@@ -63,7 +63,7 @@ class ImportMetadata
 
     private function validateMetadata(array $metadataLine)
     {
-        $header = array_first($metadataLine);
+        $header = \Illuminate\Support\Arr::first($metadataLine);
         $header = ltrim($header, '#');
         $header = base64_decode($header);
 

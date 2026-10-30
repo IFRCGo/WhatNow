@@ -23,3 +23,11 @@ helm-chart-backoffice/privkey.pem
 helm-chart-backoffice/secrets-qa.yml
 helm-chart-backoffice/secrets-prod.yml
 .DS_Store
+
+/.phpunit.cache
+
+# Generated webpack chunks and copied fonts
+/public/js/[0-9]*.js
+/public/js/[0-9]*.js.map
+/public/js/[0-9]*.js.LICENSE.txt
+/public/fonts/Poppins-*.ttf

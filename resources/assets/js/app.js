@@ -42,8 +42,11 @@ Vue.use(VueMoment)
 
 Vue.use(TscGTAG)
 
-Vue.use(GoogleAuth, { client_id: window.config.google.client_id, scopes: 'profile email openid' })
-Vue.googleAuth().load()
+const googleClientId = window.config?.google?.client_id
+if (googleClientId) {
+  Vue.use(GoogleAuth, { client_id: googleClientId, scopes: 'profile email openid' })
+  Vue.googleAuth().load()
+}
 
 Vue.config.productionTip = false
 

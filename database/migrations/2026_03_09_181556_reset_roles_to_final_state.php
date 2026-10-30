@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class ResetRolesToFinalState extends Migration
 {
@@ -30,9 +31,9 @@ class ResetRolesToFinalState extends Migration
             ->update(['role_id' => 1]);
 
         // Truncate roles and permission_role pivot tables, then reinsert
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('roles')->truncate();
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        Schema::withoutForeignKeyConstraints(function () {
+            DB::table('roles')->truncate();
+        });
 
         DB::table('roles')->insert($roles);
     }

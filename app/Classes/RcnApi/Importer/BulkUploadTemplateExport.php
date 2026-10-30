@@ -6,7 +6,6 @@ use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithEvents;
 use Maatwebsite\Excel\Events\AfterSheet;
-use Namshi\JOSE\Base64\Base64Encoder;
 use PhpOffice\PhpSpreadsheet\Cell\DataValidation;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\Style\Fill;
@@ -21,27 +20,33 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
      * Constructor to initialize the export template
      */
     private $nationalSociety;
-    private $region;
+    private $subnational;
     private $headings = [
-        'Title', 'Description', 'URL', 'Hazard', 'Urgency Level', 'Safety Message'
+        'Title',
+        'Description',
+        'URL',
+        'Hazard',
+        'Urgency Level',
+        'Safety Message'
     ];
-    private $urgencyLevels = '"Immediate,Warning,Anticipated,Assess and Plan,Mitigate Risks,Prepare to Respond,Recover"';
+    private $urgencyLevels = '"Immediate,Warning,Anticipated,Assess and Plan,Mitigate Risk,Prepare to Respond,Recover"';
 
     private $eventTypesDropdown = [];
 
     private $data;
 
-    public function __construct(string $nationalSociety, string $region,array $data, int $maxSupportingMessages)
+    public function __construct(string $nationalSociety, string $region, array $data, int $maxSupportingMessages)
     {
         $eventTypes = EventType::whereNotIn('code', ['other'])->get()->toArray();
         $this->nationalSociety = $nationalSociety;
         $this->eventTypesDropdown = '"' . implode(',', array_map(function ($event) {
-                return "{$event['name']}";
-            }, $eventTypes)) . '"';
+            return "{$event['name']}";
+        }, $eventTypes)) . '"';
         $this->subnational = $region;
         $this->data = $data;
-        if($maxSupportingMessages <= 0) $maxSupportingMessages = 3;
-        for($i = 0; $i< $maxSupportingMessages; $i++){
+        if ($maxSupportingMessages <= 0)
+            $maxSupportingMessages = 3;
+        for ($i = 0; $i < $maxSupportingMessages; $i++) {
             $this->headings[] = 'Supporting Message ' . ($i + 1);
         }
 
@@ -186,8 +191,7 @@ class BulkUploadTemplateExport implements FromArray, ShouldAutoSize, WithEvents
                 $sheet->getProtection()->setFormatColumns(false);
                 $sheet->getProtection()->setFormatRows(false);
                 $sheet->getProtection()->setSheet(true);
-                $base = new Base64Encoder();
-                $protection->setPassword($base->encode('fsjsD-1FfJTZvs2X'));
+                $protection->setPassword(base64_encode('fsjsD-1FfJTZvs2X'));
 
                 $hiddenSheet->setSheetState(Worksheet::SHEETSTATE_HIDDEN);
 

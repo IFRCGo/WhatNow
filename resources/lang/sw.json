@@ -343,6 +343,8 @@
       "select_country": "Chagua nchi",
       "select_terms": "Chagua toleo la masharti",
       "select_society": "Chagua jamii ya kitaifa",
+      "search": "Tafuta",
+      "search_placeholder": "Jina au barua pepe (angalau herufi 3)",
       "create": "Unda mtumiaji mpya",
       "download_report": "Kupakua taarifa",
       "empty": "Imeshindwa kupata watumiaji wowote",
@@ -441,9 +443,10 @@
     "immediate": "Mara moja",
     "warning": "Onyo",
     "anticipated": "Inatarajiwa",
-    "assess_and_plan":"Tathmini na Panga",
-    "mitigate_risks":"Punguza Hatari",
-    "prepare_to_respond":"Jitayarishe Kujibu",
+    "assess_and_plan": "Tathmini na Panga",
+    "mitigate_risks": "Punguza Hatari",
+    "mitigate_risk": "Punguza Hatari",
+    "prepare_to_respond": "Jitayarishe Kujibu",
     "recover": "Pona"
   },
   "content": {
@@ -526,7 +529,7 @@
       "seasonalForecast_extra": "Utabiri wa msimu ni taarifa ya utabiri wa tukio lenye hatari. Hatua zilizochukuliwa ni kutathmini uwezekano wa hatari na kupanga shughuli za kupunguza hatari na kulinda kaya.",
       "watch": "Tazama",
       "watch_help": "Jitayarishe kujibu",
-      "watch_extra": "Saa hutolewa wakati hatari ya tukio hatari imeongezeka sana, lakini kutokea kwake, eneo lake, na\/au muda bado haujajulikana. Imekusudiwa kutoa wakati wa kutosha kwa vitendo vya kinga na maandalizi ya kujibu.",
+      "watch_extra": "Saa hutolewa wakati hatari ya tukio hatari imeongezeka sana, lakini kutokea kwake, eneo lake, na/au muda bado haujajulikana. Imekusudiwa kutoa wakati wa kutosha kwa vitendo vya kinga na maandalizi ya kujibu.",
       "warning": "Onyo",
       "warning_help": "Jitayarishe kujibu",
       "warning_extra": "Onyo linatolewa wakati tukio hatari linatokea, linakaribia, au lina uwezekano mkubwa sana wa kutokea. Inamaanisha hali zinaleta tishio kwa maisha au mali. Watu walio katika njia ya hatari hii wanahitaji kuchukua hatua za kinga.",
@@ -539,6 +542,8 @@
       "anticipated": "Inatarajiwa",
       "assess_and_plan": "Tathmini na Panga",
       "mitigate_risks": "Punguza Hatari",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Chukua hatua za kupunguza hatari ili kufanya mazingira yaliyojengwa na ya asili kuwa salama zaidi na kuanzisha mifumo ya tahadhari ya mapema",
       "prepare_to_respond": "Jitayarishe Kujibu",
       "updated": "imesasishwa",
       "download_icon": "Ikoni ya kupakua",
@@ -558,7 +563,8 @@
       "content_edit_title": "Hariri Maudhui",
       "content_add_hazard_title": "Ongeza Hatari",
       "key_message_label": "Kichwa cha ujumbe muhimu",
-      "supporting_message_label": "Ujumbe wa usaidizi"
+      "supporting_message_label": "Ujumbe wa usaidizi",
+      "mitigate_risk": "Punguza Hatari"
     },
     "message_editor": {
       "title": "Mhariri wa Sifa",
@@ -618,7 +624,7 @@
         "bad_request_error_codes": {
           "30001": "Vichwa vya safu wima havilingani na kiolezo",
           "30002": "Jina la sifa, ujumbe au url hazipo",
-          "30003": "Url isiyo halali - tafadhali hakikisha itifaki iko, kwa mfano https: \/\/",
+          "30003": "Url isiyo halali - tafadhali hakikisha itifaki iko, kwa mfano https: //",
           "40001": "Nambari batili ya nchi imetolewa",
           "40002": "Jamii iliyochaguliwa hailingani na jamii kwa faili iliyochaguliwa",
           "40003": "Tarehe ambayo faili iliyochaguliwa ilitolewa imekuwa na hitilafu na uingizaji hauwezi kukamilika"
@@ -689,7 +695,7 @@
   },
   "landing": {
     "strapline": "Huduma ya Hifadhidata ya Ujumbe wa Usalama",
-    "strapline_part_2": "Ujumbe muhimu wa Usalama wa Msalaba Mwekundu \/ Hilali Nyekundu ya Kimataifa",
+    "strapline_part_2": "Ujumbe muhimu wa Usalama wa Msalaba Mwekundu / Hilali Nyekundu ya Kimataifa",
     "head_1": "Usalama wa IFRC",
     "head_2": "Hifadhidata ya Ujumbe",
     "head_text_1": "Ujumbe wa usalama unaotegemea Ufahamu wa Umma wa IFRC na",
@@ -744,7 +750,7 @@
     "fake_alert_heading": "Onyo la Baridi Kali Sana",
     "fake_alert_description": "Lakini hii inahitaji tofauti rahisi na nyepesi. Kwa wakati wa bure, wakati nguvu zetu.",
     "fake_alert_time": "SAA 1 ILIYOPITA",
-    "fake_alert_time_exact": "tarehe 05\/02\/18 saa 05:15 CT",
+    "fake_alert_time_exact": "tarehe 05/02/18 saa 05:15 CT",
     "use_cases": {
       "heading": "Jifunze Zaidi",
       "first_heading": "Jinsi Inavyofanya Kazi",
@@ -785,7 +791,7 @@
     },
     "data_preview": {
       "heading": "Ujumbe wa Usalama",
-      "sub_heading": "Jisajili na uangalie ujumbe muhimu wa hatua kutoka kwa Mashirika ya Kitaiifa ya Msalaba Mwekundu \/ Hilali Nyekundu kote ulimwenguni"
+      "sub_heading": "Jisajili na uangalie ujumbe muhimu wa hatua kutoka kwa Mashirika ya Kitaiifa ya Msalaba Mwekundu / Hilali Nyekundu kote ulimwenguni"
     },
     "footer": {
       "terms_conditions": "Sheria na Masharti",
@@ -841,10 +847,10 @@
     "industries": {
       "media": "Vyombo vya habari",
       "emergency": "Usimamizi wa Dharura",
-      "non_profit": "Lisilo la Faida \/ Shirika Lisilo la Kiserikali",
+      "non_profit": "Lisilo la Faida / Shirika Lisilo la Kiserikali",
       "humanitarian": "Shirika Kibinadamu",
-      "red_cross": "Msalaba Mwekundu \/ Hilali Nyekundu",
-      "education": "Elimu \/ Taaluma",
+      "red_cross": "Msalaba Mwekundu / Hilali Nyekundu",
+      "education": "Elimu / Taaluma",
       "gov": "Wakala wa Serikali",
       "other": "Nyingine"
     },
@@ -859,9 +865,9 @@
       "body": "Sheria za Wilaya ya Columbia zitasimamia haki zote na majukumu chini ya Mkataba huu, bila kutekeleza kanuni zozote za mgongano wa sheria.",
       "heading": "Sheria Inayotumika:"
     },
-    "body": "Una jukumu la kudumisha usiri na usalama wa ufunguo wa usajili uliotolewa na Shirika la Msalaba Mwekundu kwako. Unawajibika kudumisha uwiiano na API, kama inavyosasishwa mara kwa mara, ili kuendelea kupokea Milisho ya Data. Shirika la Msalaba Mwekundu linaweza kutoa toleo zilizosasishwa za API na Milisho ya Data kwa hiari yake. Matoleo mapya yanaweza yasioane na utekelezaji uliopita, na Unakubali kutumia toleo la hivi karibuni la Milisho ya Data wakati wote.\n\nUnakubali kutobadilisha, kusambaza, kutenganisha, au kubadilisha kihandisi sehemu yoyote ya API au programu yoyote ya Shirika la Msalaba Mwekundu.\n\nUsitumie API au Milisho ya Data kwa njia ambayo inazidi kiwango cha ombi kinachofaa au inatumiwa kupindukia au matumizi mabaya, kama ilivyoamuliwa na Shirika la Msalaba Mwekundu kwa hiari yake pekee.\n\nUsitumie API au Milisho ya Data kwa njia isiyo halali, inayopotosha, ya kupuuza, yenye nia mbaya, inayokusudia kusababisha madhara, au inayodhuru Msalaba Mwekundu, watoa huduma wake, watoa huduma wake, au mtu mwingine yeyote, kama ilivyoamuliwa na Shirika la Msalaba Mwekundu kwa hiari yake pekee.\n\nShirila la Msalaba Mwekundu linaweza kufuatilia matumizi yako ya API na Milisho ya Data. Unaweza usitumie njia yoyote ya kiufundi kuingiliana na ufuatiliaji kama huo, na Msalaba Mwekundu inaweza kutumia njia za kiufundi kushinda uingiliaji wowote kama huo.\n\nMatumizi ya utayari, Jibu, na Rudisha Ujumbe itawasilishwa tu kama yalivyo sasa au iliyosasishwa kwa mpangilio wa dharura wa wakati huo wa Tahadhari ya Tukio inayohusiana, na utasasisha binafsi Kutayarisha, Kujibu, na jumbe za kurudi juu ya sasisho lolote la Milisho ya Data na\/au Tahadhari zinazohusiana za Tukio la Msalaba Mwekundu.\n\nUtayari binafsi, Jibu na Ujumbe wa Nafuu Unaotumia utahusishwa tu na eneo la kijiografia ambalo limetolewa. Ikiwa Jumbe za Utayari, Jibu, na Nafuu zinajumuisha marejeleo kwa chanzo kama vile Shirika la Msalaba Mwekundu la Marekani au shirika lingine la kitaifa la Msalaba Mwekundu au Hilali Nyekundu (kila moja likiwa na \"Marejeleo ya Chanzo\"), Utajumuisha Marejeleo ya Chanzo yanayohusishwa na kila Jumbe wa Utayari, Jibu, na Nafuu katika fomu iliyotolewa kwenye Milisho ya Data. Hutatumia tena Marejeleo ya Chanzo chochote.\n\nUnaweza usitafsiri Milisho ya Data, Tahadhari za Tukio, na\/au Jumbe za Utayari, Jibu, na Nafuu zilizorudi katika lugha nyingine yoyote, kufanya matumizi yoyote, uhariri au marekebisho, au kubadilisha maana ya Milisho ya Data, Tahadhari za Tukio na\/au Jumbe za Utayari, Jibu, na Nafuu.\n\nLazima uhakikishe kuwa Malisho ya Takwimu, yanabaki katika milki yako pekee na\/au udhibiti.\n\nUnaweza usiruhusu Tahadhari za Tukio na Andaa, Jibu, na jumbe za kurudi uliowasilishwa kwa Watumiaji wa Mwisho kuingiza matangazo yoyote au udhamini.\n\nUnaweza usifanye kumbukumbu yoyote ya Milisho ya Takwimu nzima au kwa sehemu.",
+    "body": "Una jukumu la kudumisha usiri na usalama wa ufunguo wa usajili uliotolewa na Shirika la Msalaba Mwekundu kwako. Unawajibika kudumisha uwiiano na API, kama inavyosasishwa mara kwa mara, ili kuendelea kupokea Milisho ya Data. Shirika la Msalaba Mwekundu linaweza kutoa toleo zilizosasishwa za API na Milisho ya Data kwa hiari yake. Matoleo mapya yanaweza yasioane na utekelezaji uliopita, na Unakubali kutumia toleo la hivi karibuni la Milisho ya Data wakati wote.\n\nUnakubali kutobadilisha, kusambaza, kutenganisha, au kubadilisha kihandisi sehemu yoyote ya API au programu yoyote ya Shirika la Msalaba Mwekundu.\n\nUsitumie API au Milisho ya Data kwa njia ambayo inazidi kiwango cha ombi kinachofaa au inatumiwa kupindukia au matumizi mabaya, kama ilivyoamuliwa na Shirika la Msalaba Mwekundu kwa hiari yake pekee.\n\nUsitumie API au Milisho ya Data kwa njia isiyo halali, inayopotosha, ya kupuuza, yenye nia mbaya, inayokusudia kusababisha madhara, au inayodhuru Msalaba Mwekundu, watoa huduma wake, watoa huduma wake, au mtu mwingine yeyote, kama ilivyoamuliwa na Shirika la Msalaba Mwekundu kwa hiari yake pekee.\n\nShirila la Msalaba Mwekundu linaweza kufuatilia matumizi yako ya API na Milisho ya Data. Unaweza usitumie njia yoyote ya kiufundi kuingiliana na ufuatiliaji kama huo, na Msalaba Mwekundu inaweza kutumia njia za kiufundi kushinda uingiliaji wowote kama huo.\n\nMatumizi ya utayari, Jibu, na Rudisha Ujumbe itawasilishwa tu kama yalivyo sasa au iliyosasishwa kwa mpangilio wa dharura wa wakati huo wa Tahadhari ya Tukio inayohusiana, na utasasisha binafsi Kutayarisha, Kujibu, na jumbe za kurudi juu ya sasisho lolote la Milisho ya Data na/au Tahadhari zinazohusiana za Tukio la Msalaba Mwekundu.\n\nUtayari binafsi, Jibu na Ujumbe wa Nafuu Unaotumia utahusishwa tu na eneo la kijiografia ambalo limetolewa. Ikiwa Jumbe za Utayari, Jibu, na Nafuu zinajumuisha marejeleo kwa chanzo kama vile Shirika la Msalaba Mwekundu la Marekani au shirika lingine la kitaifa la Msalaba Mwekundu au Hilali Nyekundu (kila moja likiwa na \"Marejeleo ya Chanzo\"), Utajumuisha Marejeleo ya Chanzo yanayohusishwa na kila Jumbe wa Utayari, Jibu, na Nafuu katika fomu iliyotolewa kwenye Milisho ya Data. Hutatumia tena Marejeleo ya Chanzo chochote.\n\nUnaweza usitafsiri Milisho ya Data, Tahadhari za Tukio, na/au Jumbe za Utayari, Jibu, na Nafuu zilizorudi katika lugha nyingine yoyote, kufanya matumizi yoyote, uhariri au marekebisho, au kubadilisha maana ya Milisho ya Data, Tahadhari za Tukio na/au Jumbe za Utayari, Jibu, na Nafuu.\n\nLazima uhakikishe kuwa Malisho ya Takwimu, yanabaki katika milki yako pekee na/au udhibiti.\n\nUnaweza usiruhusu Tahadhari za Tukio na Andaa, Jibu, na jumbe za kurudi uliowasilishwa kwa Watumiaji wa Mwisho kuingiza matangazo yoyote au udhamini.\n\nUnaweza usifanye kumbukumbu yoyote ya Milisho ya Takwimu nzima au kwa sehemu.",
     "contact": "Tafadhali wasiliana na Shirika la Msalaba Mwekundu kwa {0} kwa maswali yoyote kuhusu API.",
-    "disclaimer": "API na Malisho ya Data hutolewa KWA MADHUMUNI YA HABARI NA ELIMU PEKEE, NA kwa msingi wa 'kama ilivyo' na 'kama inapatikana'. Shirika la Msalaba Mwekundu halifanyi uwakilishi au dhamana ya aina yoyote, iliyoelezwa au iliyomaanishwa. Shirika la Msalaba Mwekundu linakataa dhamana zote, zilizoelezwa au kumaanishwa, zikiwemo na lakini haziishii kwa dhamana za kumaanishwa za uuzaji na ubora kwa kusudi fulani. Shirika la Msalaba Mwekundu na wafanyakazi wake, maafisa, magavana na mawakala na watoa leseni hawatawajibika kwa uharibifu wa aina yoyote unaotokana na matumizi ya API, Mlisho wa Data, Tahadhari za Tukio, na\/au jumbe za Utayari, Jibu, na Nafuu ukiwemo lakini usioishia kwa madhara ya moja kwa moja, yasiyo ya moja kwa moja, ya bahati mbaya, ya adhabu na ya matokeo.\n\nShirika la Msalaba Mwekundu halihakiki mfuatano, usahihi, ukweli au ukamilifu wa API, Mlisho ya Data, Tahadhari ya Tukio na\/au Kuandaa, Kujibu, na Jumbe za nafuu na hautawajibika kwa njia yoyote kwako au kwa Watumiaji wako wa mwisho au kwa mtu yeyote, ikiwemo bila kikomo, kwa ucheleweshaji wowote, kukosa usahihi, makosa au upungufu, kwa API husika, Mlisho wa Data, Tahadhari ya Tukio na \/ au Andaa, Jibu, na jumbe za nafuu zilizotolewa hapa chini.",
+    "disclaimer": "API na Malisho ya Data hutolewa KWA MADHUMUNI YA HABARI NA ELIMU PEKEE, NA kwa msingi wa 'kama ilivyo' na 'kama inapatikana'. Shirika la Msalaba Mwekundu halifanyi uwakilishi au dhamana ya aina yoyote, iliyoelezwa au iliyomaanishwa. Shirika la Msalaba Mwekundu linakataa dhamana zote, zilizoelezwa au kumaanishwa, zikiwemo na lakini haziishii kwa dhamana za kumaanishwa za uuzaji na ubora kwa kusudi fulani. Shirika la Msalaba Mwekundu na wafanyakazi wake, maafisa, magavana na mawakala na watoa leseni hawatawajibika kwa uharibifu wa aina yoyote unaotokana na matumizi ya API, Mlisho wa Data, Tahadhari za Tukio, na/au jumbe za Utayari, Jibu, na Nafuu ukiwemo lakini usioishia kwa madhara ya moja kwa moja, yasiyo ya moja kwa moja, ya bahati mbaya, ya adhabu na ya matokeo.\n\nShirika la Msalaba Mwekundu halihakiki mfuatano, usahihi, ukweli au ukamilifu wa API, Mlisho ya Data, Tahadhari ya Tukio na/au Kuandaa, Kujibu, na Jumbe za nafuu na hautawajibika kwa njia yoyote kwako au kwa Watumiaji wako wa mwisho au kwa mtu yeyote, ikiwemo bila kikomo, kwa ucheleweshaji wowote, kukosa usahihi, makosa au upungufu, kwa API husika, Mlisho wa Data, Tahadhari ya Tukio na / au Andaa, Jibu, na jumbe za nafuu zilizotolewa hapa chini.",
     "entire_agreement": {
       "body": "Masharti ya API yanajumuisha makubaliano kamili na ya kipekee kati ya Shirika la Msalaba Mwekundu na Wewe kwa kuzingatia mada hii na inachukua nafasi ya uelewa wa awali wa maongezi au maandishi, mawasiliano, au makubaliano ambayo hayajaingizwa hapa. Shirika la Msalaba Mwekundu lina haki ya kurekebisha au kubatilisha mkataba huu wakati wowote.",
       "heading": "Mkataba Mzima:"
@@ -869,7 +875,7 @@
     "heading": "MKATABA WA UTOAJI LESENI KWA MTUMIAJI WA MWISHO WA API",
     "intro": "KUBALI: KWA KUTUMIA HUDUMA AU KUWEKA ALAMA YA TIKI KWENYE KISANDUKU, MTUMIAJI ANAKUBALI KUFUNGWA NA MKATABA HUU.\n\nAPI ni zana inayokuruhusu (\"Wewe\") kupata na kutumia milisho ya data iliyotolewa na Shirika la Msalaba Mwekundu ikiwemo mlisho wa hali ya hewa ya ulimwengu na onyo la tukio la maafa na arifa za kutazama (\"Tahadhari za Tukio\") na mlisho wa hatua zinazoweza kutekelezwa ujumbe juu ya jinsi ya kujiandaa kwa hatari za mitaa kwa aina ya hatari na dharura (\"Jumbe za Utayari, Jibu, na Nafuu\", na kwa pamoja na Tahadhari za Tukio, \"Milisho ya Data\"). Jumbe za Utayari, Jibu, na Nafuu zimekusudiwa kuandamana na Tahadhari za Tukio au onyo lingine na matangazo ya kutazama yanayohusiana na tukio la hali ya hewa na maafa katika programu yako mwenyewe. Matumizi yako ya Milisho ya Data yanasimamiwa na Masharti ya API.",
     "license_limitations": {
-      "body": "Unaweza kutumia Milisho ya Data tu kwa kushirikiana na programu yako mwenyewe kulingana na Masharti ya API, na kama Unadumisha utangamano na API, kama inavyosasishwa mara kwa mara. Umepewa haki isiyo ya kipekee, iliyo na kikomo na inayoweza kukataliwa ya kupakua, kutumia, kuzalisha na kusambaza kwa watumiaji wa mwisho wa programu yako mwenyewe (\"Watumiaji wa Mwisho\") Tahadhari za Tukio na yaliyomo kumuktadhisha Jumbe za Utayari, Kujibu, na Nafuu kushirikiana na upangaji wa dharura wa Arifa za Tukio za kibinafsi kutoka kwa Milisho ya Data, kulingana na Masharti ya API. Unaweza tu kutumia API kuwezesha matumizi yasiyo ya kibiashara ya Milisho ya Data kulingana na Masharti ya API. Kwa tukio lolote huenda usitumie API kuwezesha matumizi ya kibiashara ya Milisho ya Data, Tahadhari za Tukio na \/ au Jumbe za Utayari, Jibu, na Nafuu, ikiwemo bila kikomo, kuziuza tena, kutoza kuzifikia, kutoza kuzisambaza tena, au kutoza kuunda kazi zinazotokana na msingi wao. Shirika la msalaba mwekundu na watoa leseni zake wanadumisha jina, umiliki, haki na maslahi yote kwa API, Jumbe za Utayari, Jibu, na Nafuu, Tahadhari za Tukio, Mlisho wa Data na Marejeleo ya Chanzo (kama ilivyoelezwa hapa chini) ndani yake. Haki zote ambazo hazijatolewa kwa kuelezwa zimehifadhiwa.",
+      "body": "Unaweza kutumia Milisho ya Data tu kwa kushirikiana na programu yako mwenyewe kulingana na Masharti ya API, na kama Unadumisha utangamano na API, kama inavyosasishwa mara kwa mara. Umepewa haki isiyo ya kipekee, iliyo na kikomo na inayoweza kukataliwa ya kupakua, kutumia, kuzalisha na kusambaza kwa watumiaji wa mwisho wa programu yako mwenyewe (\"Watumiaji wa Mwisho\") Tahadhari za Tukio na yaliyomo kumuktadhisha Jumbe za Utayari, Kujibu, na Nafuu kushirikiana na upangaji wa dharura wa Arifa za Tukio za kibinafsi kutoka kwa Milisho ya Data, kulingana na Masharti ya API. Unaweza tu kutumia API kuwezesha matumizi yasiyo ya kibiashara ya Milisho ya Data kulingana na Masharti ya API. Kwa tukio lolote huenda usitumie API kuwezesha matumizi ya kibiashara ya Milisho ya Data, Tahadhari za Tukio na / au Jumbe za Utayari, Jibu, na Nafuu, ikiwemo bila kikomo, kuziuza tena, kutoza kuzifikia, kutoza kuzisambaza tena, au kutoza kuunda kazi zinazotokana na msingi wao. Shirika la msalaba mwekundu na watoa leseni zake wanadumisha jina, umiliki, haki na maslahi yote kwa API, Jumbe za Utayari, Jibu, na Nafuu, Tahadhari za Tukio, Mlisho wa Data na Marejeleo ya Chanzo (kama ilivyoelezwa hapa chini) ndani yake. Haki zote ambazo hazijatolewa kwa kuelezwa zimehifadhiwa.",
       "heading": "Leseni na Vikwazo:"
     },
     "overview": {
@@ -888,17 +894,17 @@
         "two": "Kukwepa au kurekebisha funguo zozote au njia za usalama zilizotumiwa na Shirika la Msalaba Mwekundu au API, ikiwemo bila kikomo teknolojia zozote za uthibitishaji.",
         "three": "Kuomba, kukusanya, kutafuta au vinginevyo kupata ufikiaji wa majina ya kuingia, nywila au hati zingine za uthibitishaji wa Msalaba Mwekundu isipokuwa ile uliyopewa kwa akaunti yako mwenyewe.",
         "four": "Kusema au kumaanisha ushirika, udhamini au kuidhinishwa na Shirika la Msalaba Mwekundu au asasi au shirika la kitaifa lingine lolote la Msalaba Mwekundu au Hilali Nyekundu.",
-        "five": "Kusema au kumaanisha kuwa Unamiliki au umeunda API, Milisho ya Data, Tahadhari za Tukio na\/au Jumbe za Utayari, Jibu, na Nafuu.",
+        "five": "Kusema au kumaanisha kuwa Unamiliki au umeunda API, Milisho ya Data, Tahadhari za Tukio na/au Jumbe za Utayari, Jibu, na Nafuu.",
         "six": "Kusambaza virusi vyovyote, kasoro ya minyoo, farasi wa Trojan, au vitu vyovyote vya asili ya uharibifu."
       }
     },
-    "reserve_rights": "Shirika la Msalaba Mwekundu lina haki ya kubadilisha na\/au kuacha kutoa API na Milisho ya Data nzima au sehemu, iwe kwa muda au kwa kudumu, wakati wowote bila taarifa ya awali. Kwa kuepusha mashaka, hakuna kitu hapa kinacholazimisha Shirika la Msalaba Mwekundu kufanya API yake au Milisho ya Data ipatikane kwako, na Unakubali na kukiri kuwa ufikiaji wowote upo ndani ya hiari pekee na kamili ya Shirika la Msalaba Mwekundu.",
+    "reserve_rights": "Shirika la Msalaba Mwekundu lina haki ya kubadilisha na/au kuacha kutoa API na Milisho ya Data nzima au sehemu, iwe kwa muda au kwa kudumu, wakati wowote bila taarifa ya awali. Kwa kuepusha mashaka, hakuna kitu hapa kinacholazimisha Shirika la Msalaba Mwekundu kufanya API yake au Milisho ya Data ipatikane kwako, na Unakubali na kukiri kuwa ufikiaji wowote upo ndani ya hiari pekee na kamili ya Shirika la Msalaba Mwekundu.",
     "severability": {
       "body": "Ubatili wa muda wowote au utoaji wa Masharti ya API hautaathiri uhalali wa kifungu kingine chochote.",
       "heading": "Utengamano na Msamaha:"
     },
     "suspension": {
-      "body": "Shirika la Msalaba Mwekundu lina haki ya kusimamisha au kusitisha ufikiaji wako ikiwa litaona, kwa hiari yake pekee, kwamba Unahusika na matumizi yasiyoruhusiwa ya API au Milisho ya Data kama ilivyoainishwa katika Masharti ya API au kwamba unatumia API au Milisho ya Data katika shughuli yoyote inayotishia \/kuhatarisha usalama na\/au usalama wa mtu yeyote au mitandao ya Msalaba Mwekundu.",
+      "body": "Shirika la Msalaba Mwekundu lina haki ya kusimamisha au kusitisha ufikiaji wako ikiwa litaona, kwa hiari yake pekee, kwamba Unahusika na matumizi yasiyoruhusiwa ya API au Milisho ya Data kama ilivyoainishwa katika Masharti ya API au kwamba unatumia API au Milisho ya Data katika shughuli yoyote inayotishia /kuhatarisha usalama na/au usalama wa mtu yeyote au mitandao ya Msalaba Mwekundu.",
       "heading": "Kusimamishwa au Kukomeshwa:"
     }
   },

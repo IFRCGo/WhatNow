@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class TermsSeeder extends Seeder
@@ -7,6 +9,6 @@ class TermsSeeder extends Seeder
     
     public function run()
     {
-        factory(\App\Models\Terms::class, 30)->create();
+        \Database\Factories\TermsFactory::new()->count(30)->create();
     }
 }

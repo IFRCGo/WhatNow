@@ -108,22 +108,40 @@
         <section>
           <h2 class="steps" id="what-now">{{ $t('documentation.steps.eight.heading') }}</h2>
           <p class="u-text-wrap">{{ $t('documentation.steps.eight.body') }}</p>
-          <ul>
-            <li>immediate</li>
-            <li>warning</li>
-            <li>anticipated</li>
-            <li>assess_and_plan</li>
-            <li>mitigate_risks</li>
-            <li>prepare_to_respond</li>
-            <li>recover</li>
-          </ul>
-          <p><strong>{{ $t('documentation.steps.eight.endpoint') }}</strong></p>
-          <b-card class="bg-grey d-inline-block w-auto p-2">
-            <pre>GET org/{country_code}/whatnow?eventType={eventType}&language={language}&subnational={subnational}</pre>
-          </b-card>
+          <p class="u-text-wrap">
+            The public WhatNow content API has two versions. <strong>V2 is the current API</strong> and exposes published WhatNow content as <strong>Prepare Messages</strong> through the <code>preparemessages</code> resource. <strong>V1 is legacy</strong> and remains available for older integrations that still call the <code>whatnow</code> resource.
+          </p>
 
-          <!-- Query Parameters Table -->
-          <p><strong>{{ $t('documentation.steps.eight.query_params') }}</strong></p>
+          <h3>V2 Prepare Messages API</h3>
+          <p class="u-text-wrap">
+            Use V2 for new integrations. V2 returns published preparedness messages grouped by stage. Each populated stage is an array of structured message objects, where <code>title</code> is the key safety message and <code>content</code> is a list of supporting messages.
+          </p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>GET /v2/org/{country_code}</code></td>
+                <td>Returns the organisation metadata for the supplied country code.</td>
+              </tr>
+              <tr>
+                <td><code>GET /v2/org/{country_code}/preparemessages</code></td>
+                <td>Returns the published Prepare Messages feed for an organisation.</td>
+              </tr>
+              <tr>
+                <td><code>GET /v2/preparemessages/{id}</code></td>
+                <td>Returns one published Prepare Messages item by id.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>V2 feed query parameters</strong></p>
           <div class="table-responsive">
             <table class="table">
               <thead>
@@ -135,21 +153,71 @@
               <tbody>
               <tr>
                 <td>eventType</td>
-                <td>Optional event type filter. Multiple event types may be separated using a comma, e.g., <code>?eventType=earthquake,hurricane</code></td>
+                <td>Optional event type filter. Multiple event types may be separated using a comma, e.g., <code>?eventType=earthquake,hurricane</code>.</td>
               </tr>
               <tr>
                 <td>language</td>
-                <td>Optional language filter. Specify the language code, e.g., <code>?language=en</code></td>
+                <td>Optional language filter. Use the ISO language code for the translation to return, e.g., <code>?language=en</code>. If omitted, V2 can also use the <code>Accept-Language</code> header when present.</td>
               </tr>
               <tr>
                 <td>subnational</td>
-                <td>Optional subnational filter. Specify the subnational name, e.g., <code>?subnational=north%20west</code></td>
+                <td>Optional subnational filter. Use the subnational slug configured for the organisation, e.g., <code>?subnational=north-west</code>.</td>
               </tr>
               </tbody>
             </table>
           </div>
 
+          <p><strong>V2 stage keys</strong></p>
+          <ul>
+            <li>immediate</li>
+            <li>warning</li>
+            <li>anticipated</li>
+            <li>assess_and_plan</li>
+            <li>mitigate_risk</li>
+            <li>prepare_to_respond</li>
+            <li>recover</li>
+          </ul>
 
+          <h3>V1 Legacy WhatNow API</h3>
+          <p class="u-text-wrap">
+            V1 is provided for backwards compatibility. Existing clients can continue to call the legacy WhatNow endpoints, but new clients should use V2 Prepare Messages endpoints instead.
+          </p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th>Description</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><code>GET /v1/org/{country_code}</code></td>
+                <td>Returns legacy organisation metadata for the supplied country code.</td>
+              </tr>
+              <tr>
+                <td><code>GET /v1/org/{country_code}/whatnow</code></td>
+                <td>Returns the legacy published WhatNow feed for an organisation. The legacy feed supports <code>eventType</code> filtering.</td>
+              </tr>
+              <tr>
+                <td><code>GET /v1/whatnow/{id}</code></td>
+                <td>Returns one legacy published WhatNow item by id.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>V1 legacy stage keys</strong></p>
+          <ul>
+            <li>mitigation</li>
+            <li>seasonalForecast</li>
+            <li>watch</li>
+            <li>warning</li>
+            <li>immediate</li>
+            <li>recover</li>
+          </ul>
+          <p class="u-text-wrap">
+            V1 stage content is returned in the legacy stored format. V2 should be used when consumers need the current Prepare Messages structure with explicit <code>title</code> and <code>content</code> fields.
+          </p>
 
           <!-- Example Response -->
           <p><strong>{{ $t('documentation.steps.eight.example_response') }}</strong></p>
@@ -279,38 +347,66 @@
               <tbody>
               <tr>
                 <td>warning</td>
-                <td>array of strings</td>
-                <td>Warning preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for warning lead-time actions.</td>
               </tr>
               <tr>
                 <td>immediate</td>
-                <td>array of strings</td>
-                <td>Immediate preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for actions during an active or imminent hazard.</td>
               </tr>
               <tr>
                 <td>recover</td>
-                <td>array of strings</td>
-                <td>Recover preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for recovery actions after a hazard event.</td>
               </tr>
               <tr>
                 <td>anticipated</td>
-                <td>array of strings</td>
-                <td>Anticipated preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for anticipated hazards and early preparedness actions.</td>
               </tr>
               <tr>
                 <td>assess_and_plan</td>
-                <td>array of strings</td>
-                <td>Assess and Plan preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for assessing risk and planning risk-reduction activities.</td>
               </tr>
               <tr>
-                <td>mitigate_risks</td>
-                <td>array of strings</td>
-                <td>Mitigate Risks preparation steps</td>
+                <td>mitigate_risk</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for longer-term mitigation measures that reduce hazard risk.</td>
               </tr>
               <tr>
                 <td>prepare_to_respond</td>
-                <td>array of strings</td>
-                <td>Prepare to Respond preparation steps</td>
+                <td>array&lt;message object&gt; | null</td>
+                <td>Messages for developing response capacity before a hazard event.</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>Structure of a stage message object</strong></p>
+          <p class="u-text-wrap">
+            Each V2 stage value is either <code>null</code> when no messages are published for that stage, or an array of message objects. Each message object contains a priority safety message in <code>title</code> and zero or more supporting messages in <code>content</code>.
+          </p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>{{ $t('documentation.steps.eight.table.structure.property') }}</th>
+                <th>{{ $t('documentation.steps.eight.table.structure.data_type') }}</th>
+                <th>{{ $t('documentation.steps.eight.table.structure.description') }}</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>title</td>
+                <td>string</td>
+                <td>The key safety message or priority action for the stage.</td>
+              </tr>
+              <tr>
+                <td>content</td>
+                <td>array&lt;string&gt;</td>
+                <td>Supporting messages that add detail to the key safety message. This array may be empty.</td>
               </tr>
               </tbody>
             </table>
@@ -434,7 +530,7 @@ export default {
                         "recover": null,
                         "anticipated": null,
                         "assess_and_plan": null,
-                        "mitigate_risks": null,
+                        "mitigate_risk": null,
                         "prepare_to_respond": null
                     }
                 }
@@ -455,7 +551,7 @@ export default {
       if (!this.selectedOrganization) {
         return ''
       }
-      const url = `${this.apiPrepareCenterUrl}/org/${this.selectedOrganization}/whatnow`
+      const url = `${this.apiPrepareCenterUrl}/org/${this.selectedOrganization}/preparemessages`
       const params = new URLSearchParams()
       if (this.selectedEventType) {
         params.append('eventType', this.selectedEventType)
@@ -491,7 +587,7 @@ export default {
       this.dataLoaded = false
       try {
 
-        const orgsResponse = await axios.get(`${this.apiPrepareCenterUrl}/v2/org`, {
+        const orgsResponse = await axios.get(`${this.apiPrepareCenterUrl}/org`, {
           headers: { 'x-api-key': this.apiKey }
         })
         this.organizations = orgsResponse.data.data

@@ -13,9 +13,7 @@ class LanguageTest extends TestCase
         $this->assertEquals('en', $lang->getCode());
     }
 
-    /**
-     * @dataProvider getLanguageCodesWithRtlResult
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('getLanguageCodesWithRtlResult')]
     public function test_it_returns_correct_rtl_status($code, $isRtl)
     {
         $lang = new Language($code);
@@ -27,7 +25,7 @@ class LanguageTest extends TestCase
      *
      * @return array
      */
-    public function getLanguageCodesWithRtlResult()
+    public static function getLanguageCodesWithRtlResult(): array
     {
         $rtl = array_map(function ($code) {
             return [$code, true];

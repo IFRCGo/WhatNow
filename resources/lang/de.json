@@ -40,7 +40,7 @@
   "name": "Name",
   "first_name": "Vorname",
   "last_name": "Nachname",
-  "toggle_navigation": "Navigation ein-\/ausblenden",
+  "toggle_navigation": "Navigation ein-/ausblenden",
   "you_are_logged_in": "Sie sind eingeloggt!",
   "reset_password": "Passwort zurücksetzen",
   "set_password": "Passwort einrichten",
@@ -343,6 +343,8 @@
       "select_country": "Land auswählen",
       "select_terms": "Version der Bedingungen auswählen",
       "select_society": "Nationale Gesellschaft auswählen",
+      "search": "Suchen",
+      "search_placeholder": "Name oder E-Mail (mind. 3 Zeichen)",
       "create": "Neuen Benutzer anlegen",
       "download_report": "Bericht herunterladen",
       "empty": "Es konnten keine Benutzer gefunden werden",
@@ -441,9 +443,10 @@
     "immediate": "Sofort",
     "warning": "Warnung",
     "anticipated": "Erwartet",
-    "assess_and_plan":"Bewerten und planen",
-    "mitigate_risks":"Risiken mindern",
-    "prepare_to_respond":"Auf die Reaktion vorbereiten",
+    "assess_and_plan": "Bewerten und planen",
+    "mitigate_risks": "Risiko mindern",
+    "mitigate_risk": "Risiko mindern",
+    "prepare_to_respond": "Auf die Reaktion vorbereiten",
     "recover": "Wiederherstellen"
   },
   "content": {
@@ -526,7 +529,7 @@
       "seasonalForecast_extra": "Eine saisonale Vorhersage ist eine Aussage über die Vorhersehbarkeit eines gefährlichen Ereignisses. Die ergriffenen Maßnahmen dienen der Bewertung potenzieller Risiken und der Planung von Aktivitäten zur Risikominderung und zum Schutz des Haushalts.",
       "watch": "Ansehen",
       "watch_help": "Bereiten Sie sich vor, zu reagieren",
-      "watch_extra": "Eine Frühwarnung wird ausgegeben, wenn das Risiko eines gefährlichen Ereignisses erheblich gestiegen ist, aber sein Auftreten, sein Ort und\/oder sein Zeitpunkt noch ungewiss sind. Sie soll genügend Zeit für Schutzmaßnahmen und die Vorbereitung auf die Reaktion bieten.",
+      "watch_extra": "Eine Frühwarnung wird ausgegeben, wenn das Risiko eines gefährlichen Ereignisses erheblich gestiegen ist, aber sein Auftreten, sein Ort und/oder sein Zeitpunkt noch ungewiss sind. Sie soll genügend Zeit für Schutzmaßnahmen und die Vorbereitung auf die Reaktion bieten.",
       "warning": "Warnung",
       "warning_help": "Bereiten Sie sich vor, zu reagieren",
       "warning_extra": "Eine Warnung wird ausgegeben, wenn ein gefährliches Ereignis eintritt, unmittelbar bevorsteht oder eine sehr hohe Eintrittswahrscheinlichkeit hat. Es bedeutet, dass die Bedingungen eine Gefahr für Leben oder Eigentum darstellen. Personen, die sich im Wirkungsbereich dieser Gefahr befinden, müssen Schutzmaßnahmen ergreifen.",
@@ -538,7 +541,9 @@
       "recover_extra": "Dies sind Schutzmaßnahmen, die zu ergreifen sind, um das Risiko nach einem gefährlichen Ereignis zu verringern.",
       "anticipated": "Erwartet",
       "assess_and_plan": "Bewerten und planen",
-      "mitigate_risks": "Risiken mindern",
+      "mitigate_risks": "Risiko mindern",
+      "mitigate_risk_subt": "",
+      "mitigate_risk_extra": "Ergreifen Sie Minderungsmaßnahmen, um bebaute und natürliche Umgebungen sicherer zu machen und Frühwarnsysteme einzurichten",
       "prepare_to_respond": "Auf die Reaktion vorbereiten",
       "updated": "aktualisiert",
       "download_icon": "Icon herunterladen",
@@ -558,7 +563,8 @@
       "content_edit_title": "Inhalt bearbeiten",
       "content_add_hazard_title": "Gefahr hinzufügen",
       "key_message_label": "Titel der Hauptnachricht",
-      "supporting_message_label": "Unterstützende Nachricht"
+      "supporting_message_label": "Unterstützende Nachricht",
+      "mitigate_risk": "Risiko mindern"
     },
     "message_editor": {
       "title": "Attribution Editor",
@@ -618,7 +624,7 @@
         "bad_request_error_codes": {
           "30001": "Spaltenüberschriften stimmen nicht mit der Vorlage überein",
           "30002": "Zuordnungsname, Nachricht oder URL fehlen",
-          "30003": "Ungültige Zuordnungs-URL - bitte stellen Sie sicher, dass das Protokoll vorhanden ist, z. B. https:\/\/",
+          "30003": "Ungültige Zuordnungs-URL - bitte stellen Sie sicher, dass das Protokoll vorhanden ist, z. B. https://",
           "40001": "Ungültiger Ländercode angegeben",
           "40002": "Ausgewählte Gesellschaft stimmt nicht mit der Gesellschaft für die ausgewählte Datei überein",
           "40003": "Das Datum, an dem die ausgewählte Datei exportiert wurde, ist fehlerhaft und der Import kann nicht abgeschlossen werden"
@@ -689,7 +695,7 @@
   },
   "landing": {
     "strapline": "Datenbankdienst für Sicherheitsmeldungen",
-    "strapline_part_2": "Die wichtigsten Sicherheitsbotschaften des Globalen Roten Kreuzes \/ Roten Halbmondes",
+    "strapline_part_2": "Die wichtigsten Sicherheitsbotschaften des Globalen Roten Kreuzes / Roten Halbmondes",
     "head_1": "IFRC-Sicherheit",
     "head_2": "Nachrichten-Datenbank",
     "head_text_1": "Sicherheitsbotschaften auf der Grundlage von IFRC Public Awareness and",
@@ -785,7 +791,7 @@
     },
     "data_preview": {
       "heading": "Sicherheitshinweise",
-      "sub_heading": "Melden Sie sich an und sehen Sie sich die wichtigsten Aktionsbotschaften der Nationalen Gesellschaften des Roten Kreuzes \/ Roten Halbmondes in aller Welt an"
+      "sub_heading": "Melden Sie sich an und sehen Sie sich die wichtigsten Aktionsbotschaften der Nationalen Gesellschaften des Roten Kreuzes / Roten Halbmondes in aller Welt an"
     },
     "footer": {
       "terms_conditions": "Geschäftsbedingungen",
@@ -841,10 +847,10 @@
     "industries": {
       "media": "Mediathek",
       "emergency": "Notfallmanagement",
-      "non_profit": "Non-Profit\/NGO",
+      "non_profit": "Non-Profit/NGO",
       "humanitarian": "Humanitäre Organisation",
-      "red_cross": "Rotes Kreuz\/Roter Halbmond",
-      "education": "Bildungswesen\/Wissenschaft",
+      "red_cross": "Rotes Kreuz/Roter Halbmond",
+      "education": "Bildungswesen/Wissenschaft",
       "gov": "Regierungsbehörde",
       "other": "Sonstiges"
     },
@@ -859,9 +865,9 @@
       "body": "Die Gesetze des District of Columbia bestimmen alle Rechte und Pflichten dieser Vereinbarung unter Ausschluss der Grundsätze des Kollisionsrechts.",
       "heading": "Geltendes Recht:"
     },
-    "body": "Sie sind verantwortlich für die Geheimhaltung und Sicherheit des Registrierungsschlüssels, der Ihnen vom Roten Kreuz zur Verfügung gestellt wird. Sie sind dafür verantwortlich, die Kompatibilität mit der von Zeit zu Zeit aktualisierten API aufrechtzuerhalten, um weiterhin die Daten-Feeds zu erhalten. Das Rote Kreuz kann nach eigenem Ermessen aktualisierte Versionen der API und der Daten-Feeds veröffentlichen. Neue Versionen sind möglicherweise nicht mit früheren Implementierungen kompatibel, und Sie erklären sich damit einverstanden, stets die zuletzt aktualisierte Version der Daten-Feeds zu verwenden.\n\nSie erklären sich damit einverstanden, keinen Teil der API oder Software vom Roten Kreuz zu verändern, zu vertreiben, zu entschlüsseln, zu disassemblieren oder zu rekonstruieren.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die ein angemessenes Anfragevolumen überschreitet oder eine exzessive oder missbräuchliche Nutzung darstellt, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die rechtswidrig, irreführend, fahrlässig, böswillig oder in der Absicht, Schaden zu verursachen, ist oder das Rote Kreuz, seinen Dienstanbietern, seinen Inhaltsanbietern oder einer anderen Person schadet, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nDas Rote Kreuz kann Ihre Nutzung der API und Daten-Feeds überwachen. Sie dürfen keine technischen Mittel einsetzen, um diese Überwachung zu stören, und das Rote Kreuz darf technische Mittel einsetzen, um eine solche Störung zu überwinden.\n\nDie Verwendung von Prepare-, Respond- und Recover-Nachrichten darf nur als aktuell oder als aktualisiert auf die damals aktuelle Dringlichkeitseinstellung der damit verbundenen Ereigniswarnung dargestellt werden, und Sie müssen einzelne Prepare-, Respond- und Recover-Nachrichten bei jeder Aktualisierung der Daten-Feeds und\/oder korrelierten Ereigniswarnungen durch das Rote Kreuz aktualisieren.\n\nEinzelne Prepare-, Respond- und Recover-Nachrichten, die Sie verwenden, werden nur mit der geografischen Region in Verbindung gebracht, für die sie freigegeben sind. Wenn eine Prepare-, Respond- und Recover-Nachricht einen Verweis auf eine Quelle wie das Amerikanische Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds (jeweils ein \"Quellenverweis\") enthält, müssen Sie den Quellenverweis, der mit jeder Prepare-, Respond- und Recover-Nachricht verbunden ist, in der in den Daten-Feeds bereitgestellten Form angeben. Sie dürfen die Quellverweise nicht weiter verwenden.\n\nEs ist nicht gestattet, die Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Nachrichten in eine andere Sprache zu übersetzen, zu verwenden, zu bearbeiten oder zu überarbeiten oder die Bedeutung der Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Nachrichten zu verändern.\n\nSie müssen sicherstellen, dass die Daten-Feeds in Ihrem alleinigen Besitz und\/oder unter Ihrer Kontrolle sind.\n\nSie dürfen nicht zulassen, dass Ereigniswarnungen und Prepare-, Respond- und Recover-Nachrichten, die an Endbenutzer gesendet werden, Werbung oder Sponsoring enthalten.\n\nSie dürfen die Daten-Feeds weder ganz noch teilweise archivieren.",
+    "body": "Sie sind verantwortlich für die Geheimhaltung und Sicherheit des Registrierungsschlüssels, der Ihnen vom Roten Kreuz zur Verfügung gestellt wird. Sie sind dafür verantwortlich, die Kompatibilität mit der von Zeit zu Zeit aktualisierten API aufrechtzuerhalten, um weiterhin die Daten-Feeds zu erhalten. Das Rote Kreuz kann nach eigenem Ermessen aktualisierte Versionen der API und der Daten-Feeds veröffentlichen. Neue Versionen sind möglicherweise nicht mit früheren Implementierungen kompatibel, und Sie erklären sich damit einverstanden, stets die zuletzt aktualisierte Version der Daten-Feeds zu verwenden.\n\nSie erklären sich damit einverstanden, keinen Teil der API oder Software vom Roten Kreuz zu verändern, zu vertreiben, zu entschlüsseln, zu disassemblieren oder zu rekonstruieren.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die ein angemessenes Anfragevolumen überschreitet oder eine exzessive oder missbräuchliche Nutzung darstellt, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nSie dürfen die API oder Datenfeeds nicht in einer Weise nutzen, die rechtswidrig, irreführend, fahrlässig, böswillig oder in der Absicht, Schaden zu verursachen, ist oder das Rote Kreuz, seinen Dienstanbietern, seinen Inhaltsanbietern oder einer anderen Person schadet, wie vom Roten Kreuz nach eigenem Ermessen festgelegt.\n\nDas Rote Kreuz kann Ihre Nutzung der API und Daten-Feeds überwachen. Sie dürfen keine technischen Mittel einsetzen, um diese Überwachung zu stören, und das Rote Kreuz darf technische Mittel einsetzen, um eine solche Störung zu überwinden.\n\nDie Verwendung von Prepare-, Respond- und Recover-Nachrichten darf nur als aktuell oder als aktualisiert auf die damals aktuelle Dringlichkeitseinstellung der damit verbundenen Ereigniswarnung dargestellt werden, und Sie müssen einzelne Prepare-, Respond- und Recover-Nachrichten bei jeder Aktualisierung der Daten-Feeds und/oder korrelierten Ereigniswarnungen durch das Rote Kreuz aktualisieren.\n\nEinzelne Prepare-, Respond- und Recover-Nachrichten, die Sie verwenden, werden nur mit der geografischen Region in Verbindung gebracht, für die sie freigegeben sind. Wenn eine Prepare-, Respond- und Recover-Nachricht einen Verweis auf eine Quelle wie das Amerikanische Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds (jeweils ein \"Quellenverweis\") enthält, müssen Sie den Quellenverweis, der mit jeder Prepare-, Respond- und Recover-Nachricht verbunden ist, in der in den Daten-Feeds bereitgestellten Form angeben. Sie dürfen die Quellverweise nicht weiter verwenden.\n\nEs ist nicht gestattet, die Daten-Feeds, Ereigniswarnungen und/oder Prepare-, Respond- und Recover-Nachrichten in eine andere Sprache zu übersetzen, zu verwenden, zu bearbeiten oder zu überarbeiten oder die Bedeutung der Daten-Feeds, Ereigniswarnungen und/oder Prepare-, Respond- und Recover-Nachrichten zu verändern.\n\nSie müssen sicherstellen, dass die Daten-Feeds in Ihrem alleinigen Besitz und/oder unter Ihrer Kontrolle sind.\n\nSie dürfen nicht zulassen, dass Ereigniswarnungen und Prepare-, Respond- und Recover-Nachrichten, die an Endbenutzer gesendet werden, Werbung oder Sponsoring enthalten.\n\nSie dürfen die Daten-Feeds weder ganz noch teilweise archivieren.",
     "contact": "Bitte kontaktieren Sie bei Fragen zur API das Rote Kreuz unter {0}.",
-    "disclaimer": "Die API und die Daten-Feeds werden NUR ZU INFORMATIONS- UND BILDUNGSZWECKEN UND auf einer Basis \"wie vorliegend\" und \"wie verfügbar\" zur Verfügung gestellt. Das Rote Kreuz trifft keinerlei ausdrückliche oder implizite Zusicherungen oder Garantien. Das Rote Kreuz lehnt alle ausdrücklichen oder impliziten Garantien ab, einschließlich, aber nicht beschränkt auf implizite Garantien der Marktgängigkeit und Eignung für einen bestimmten Zweck. Das Rote Kreuz und seine Mitarbeiter, leitenden Angestellten, Geschäftsführer und Vertreter sowie Lizenzgeber haften nicht für Schäden jeglicher Art, die aus der Nutzung der API, der DatenFeeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Nachrichten entstehen, einschließlich, aber nicht beschränkt auf direkte, indirekte, zufällige, strafbare und mittelbare Schäden.\n\nDas Rote Kreuz übernimmt keine Garantie für die Reihenfolge, Genauigkeit, Authentizität oder Vollständigkeit der API, der Daten-Feeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Nachrichten und haftet in keiner Weise gegenüber Ihnen oder Ihren Endnutzern oder Dritten, insbesondere nicht für Verzögerungen, Ungenauigkeiten, Fehler oder Auslassungen in Bezug auf die API, die Datenfeeds, die Ereigniswarnungen und\/oder die Prepare-, Respond- und Recover-Nachrichten, die im Rahmen dieser Vereinbarung bereitgestellt werden.",
+    "disclaimer": "Die API und die Daten-Feeds werden NUR ZU INFORMATIONS- UND BILDUNGSZWECKEN UND auf einer Basis \"wie vorliegend\" und \"wie verfügbar\" zur Verfügung gestellt. Das Rote Kreuz trifft keinerlei ausdrückliche oder implizite Zusicherungen oder Garantien. Das Rote Kreuz lehnt alle ausdrücklichen oder impliziten Garantien ab, einschließlich, aber nicht beschränkt auf implizite Garantien der Marktgängigkeit und Eignung für einen bestimmten Zweck. Das Rote Kreuz und seine Mitarbeiter, leitenden Angestellten, Geschäftsführer und Vertreter sowie Lizenzgeber haften nicht für Schäden jeglicher Art, die aus der Nutzung der API, der DatenFeeds, der Ereigniswarnungen und/oder der Prepare-, Respond- und Recover-Nachrichten entstehen, einschließlich, aber nicht beschränkt auf direkte, indirekte, zufällige, strafbare und mittelbare Schäden.\n\nDas Rote Kreuz übernimmt keine Garantie für die Reihenfolge, Genauigkeit, Authentizität oder Vollständigkeit der API, der Daten-Feeds, der Ereigniswarnungen und/oder der Prepare-, Respond- und Recover-Nachrichten und haftet in keiner Weise gegenüber Ihnen oder Ihren Endnutzern oder Dritten, insbesondere nicht für Verzögerungen, Ungenauigkeiten, Fehler oder Auslassungen in Bezug auf die API, die Datenfeeds, die Ereigniswarnungen und/oder die Prepare-, Respond- und Recover-Nachrichten, die im Rahmen dieser Vereinbarung bereitgestellt werden.",
     "entire_agreement": {
       "body": "Die API-Bedingungen stellen die vollständige und ausschließliche Vereinbarung zwischen dem Roten Kreuz und Ihnen in Bezug auf den Vertragsgegenstand dar und ersetzen alle früheren mündlichen oder schriftlichen Absprachen, Mitteilungen oder Vereinbarungen, die nicht ausdrücklich hierin enthalten sind. Das Rote Kreuz behält sich das Recht vor, diese Vereinbarung jederzeit zu ändern oder zu widerrufen.",
       "heading": "Gesamte Vereinbarung:"
@@ -869,7 +875,7 @@
     "heading": "API ENDBENUTZER-LIZENZVERTRAG",
     "intro": "ZUSTIMMEN: DURCH DIE NUTZUNG DES DIENSTES ODER DAS ANKREUZEN DES VORGESEHENEN KÄSTCHENS STIMMT DER BENUTZER ZU, AN DIESE VEREINBARUNG GEBUNDEN ZU SEIN.\n\nDie API ist ein Tool, das es Ihnen (\"Sie\") ermöglicht, die vom Roten Kreuz zur Verfügung gestellten Daten-Feeds abzurufen und zu nutzen, einschließlich eines Feeds mit globalen Wetter- und Katastrophenwarnungen und -beobachtungen (\"Ereigniswarnungen\") und eines Feeds mit umsetzbaren und kontextualisierten Nachrichten zur Vorbereitung auf lokale Gefahren nach Gefahrentyp und Dringlichkeit (\"Prepare-, Respond- und Recover-Nachrichten\", und zusammen mit den Ereigniswarnungen die \"Daten-Feeds\"). Prepare-, Respond- und Recover-Meldungen dienen dazu, Ereigniswarnungen oder andere Warn- und Beobachtungsmeldungen im Zusammenhang mit Wetter- und Katastrophenereignissen in Ihrer eigenen Anwendung zu begleiten. Ihre Nutzung der Daten-Feeds wird durch die API-Bedingungen geregelt.",
     "license_limitations": {
-      "body": "Sie sind nur berechtigt, die Daten-Feeds in Verbindung mit Ihrer eigenen Anwendung zu nutzen, vorbehaltlich der API-Bedingungen und unter der Voraussetzung, dass Sie die Kompatibilität mit der von Zeit zu Zeit aktualisierten API gewährleisten. Ihnen wird ein nicht-exklusives, beschränktes und widerrufliches Recht eingeräumt, Ereigniswarnungen und relevante kontextualisierte Prepare-, Respond- und Recover-Meldungen in Verbindung mit der Dringlichkeitseinstellung einzelner Ereigniswarnungen aus den Daten-Feeds gemäß den API-Bedingungen herunterzuladen, zu verwenden, zu vervielfältigen und an Endnutzer Ihrer eigenen Anwendung („Endnutzer“) zu verteilen. Sie dürfen die API nur nutzen, um die nicht-kommerzielle Nutzung der Daten-Feeds in Übereinstimmung mit den API-Bedingungen zu ermöglichen. Sie sind keinesfalls berechtigt, die API zu nutzen, um eine kommerzielle Nutzung der Daten-Feeds, Ereigniswarnungen und\/oder Prepare-, Respond- und Recover-Meldungen zu ermöglichen, einschließlich, aber nicht beschränkt auf den Weiterverkauf, die Erhebung von Gebühren für den Zugriff auf die Daten-Feeds, die Weiterverbreitung der Daten-Feeds oder die Erstellung von abgeleiteten Werken auf der Grundlage der Daten-Feeds. Das Rote Kreuz und seine Lizenzgeber besitzen alle Titel, Eigentumsrechte, Rechte und Interessen an der API, den Prepare-, Respond- und Recover-Meldungen, den Ereigniswarnungen, den Daten-Feeds und den Quellenverweisen (wie unten definiert). Alle nicht ausdrücklich gewährten Rechte sind vorbehalten.",
+      "body": "Sie sind nur berechtigt, die Daten-Feeds in Verbindung mit Ihrer eigenen Anwendung zu nutzen, vorbehaltlich der API-Bedingungen und unter der Voraussetzung, dass Sie die Kompatibilität mit der von Zeit zu Zeit aktualisierten API gewährleisten. Ihnen wird ein nicht-exklusives, beschränktes und widerrufliches Recht eingeräumt, Ereigniswarnungen und relevante kontextualisierte Prepare-, Respond- und Recover-Meldungen in Verbindung mit der Dringlichkeitseinstellung einzelner Ereigniswarnungen aus den Daten-Feeds gemäß den API-Bedingungen herunterzuladen, zu verwenden, zu vervielfältigen und an Endnutzer Ihrer eigenen Anwendung („Endnutzer“) zu verteilen. Sie dürfen die API nur nutzen, um die nicht-kommerzielle Nutzung der Daten-Feeds in Übereinstimmung mit den API-Bedingungen zu ermöglichen. Sie sind keinesfalls berechtigt, die API zu nutzen, um eine kommerzielle Nutzung der Daten-Feeds, Ereigniswarnungen und/oder Prepare-, Respond- und Recover-Meldungen zu ermöglichen, einschließlich, aber nicht beschränkt auf den Weiterverkauf, die Erhebung von Gebühren für den Zugriff auf die Daten-Feeds, die Weiterverbreitung der Daten-Feeds oder die Erstellung von abgeleiteten Werken auf der Grundlage der Daten-Feeds. Das Rote Kreuz und seine Lizenzgeber besitzen alle Titel, Eigentumsrechte, Rechte und Interessen an der API, den Prepare-, Respond- und Recover-Meldungen, den Ereigniswarnungen, den Daten-Feeds und den Quellenverweisen (wie unten definiert). Alle nicht ausdrücklich gewährten Rechte sind vorbehalten.",
       "heading": "Lizenz und Beschränkungen:"
     },
     "overview": {
@@ -888,17 +894,17 @@
         "two": "Die Umgehung oder Modifizierung von Schlüsseln oder Sicherheitsmechanismen, die vom Roten Kreuz oder der API verwendet werden, einschließlich und ohne Einschränkung jeglicher Authentifizierungstechnologien.",
         "three": "Die Anforderung, Sammlung, Aufforderung oder anderweitige Erlangung des Zugangs zu Anmeldenamen, Passwörtern oder anderen Authentifizierungsdaten für das Rote Kreuz, die Ihnen nicht für Ihr eigenes Konto zur Verfügung gestellt wurden.",
         "four": "Die Zugehörigkeit, das Sponsoring oder die Befürwortung durch das Rote Kreuz oder eine andere nationale Gesellschaft oder Organisation des Roten Kreuzes oder des Roten Halbmonds anzugeben oder zu implizieren.",
-        "five": "Die Angabe oder Andeutung, dass Sie Eigentümer oder Ersteller der API, der Daten-Feeds, der Ereigniswarnungen und\/oder der Prepare-, Respond- und Recover-Meldungen sind.",
+        "five": "Die Angabe oder Andeutung, dass Sie Eigentümer oder Ersteller der API, der Daten-Feeds, der Ereigniswarnungen und/oder der Prepare-, Respond- und Recover-Meldungen sind.",
         "six": "Die Übertragung von Viren, Würmern, Trojanern oder anderen zerstörerischen Elementen."
       }
     },
-    "reserve_rights": "Das Rote Kreuz behält sich das Recht vor, die API und Daten-Feeds jederzeit ohne vorherige Ankündigung ganz oder teilweise, entweder vorübergehend oder dauerhaft, zu ändern und\/oder nicht mehr zur Verfügung zu stellen. Um Missverständnisse zu vermeiden: Nichts hierin verpflichtet das Rote Kreuz dazu, Ihnen die API oder Daten-Feeds zur Verfügung zu stellen, und Sie stimmen zu und erkennen an, dass jeglicher Zugriff im alleinigen und absoluten Ermessen des Roten Kreuzes liegt.",
+    "reserve_rights": "Das Rote Kreuz behält sich das Recht vor, die API und Daten-Feeds jederzeit ohne vorherige Ankündigung ganz oder teilweise, entweder vorübergehend oder dauerhaft, zu ändern und/oder nicht mehr zur Verfügung zu stellen. Um Missverständnisse zu vermeiden: Nichts hierin verpflichtet das Rote Kreuz dazu, Ihnen die API oder Daten-Feeds zur Verfügung zu stellen, und Sie stimmen zu und erkennen an, dass jeglicher Zugriff im alleinigen und absoluten Ermessen des Roten Kreuzes liegt.",
     "severability": {
       "body": "Die Ungültigkeit einzelner Bestimmungen dieser Nutzungsbedingung hat keine Auswirkungen auf die Gültigkeit der übrigen Bestimmungen.",
       "heading": "Salvatorische Klausel und Verzichtserklärung:"
     },
     "suspension": {
-      "body": "Das Rote Kreuz behält sich das Recht vor, Ihren Zugang zu sperren oder zu beenden, wenn das Rote Kreuz nach eigenem Ermessen feststellt, dass Sie die API oder den Daten-Feed wie in den API-Bedingungen beschrieben unberechtigt nutzen oder dass Sie die API oder den Daten-Feed für Aktivitäten nutzen, die die Sicherheit einer Person oder der Netzwerke des Roten Kreuzes bedrohen\/kompromittieren.",
+      "body": "Das Rote Kreuz behält sich das Recht vor, Ihren Zugang zu sperren oder zu beenden, wenn das Rote Kreuz nach eigenem Ermessen feststellt, dass Sie die API oder den Daten-Feed wie in den API-Bedingungen beschrieben unberechtigt nutzen oder dass Sie die API oder den Daten-Feed für Aktivitäten nutzen, die die Sicherheit einer Person oder der Netzwerke des Roten Kreuzes bedrohen/kompromittieren.",
       "heading": "Aufhebung oder Beendigung:"
     }
   },

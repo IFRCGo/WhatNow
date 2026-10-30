@@ -8,6 +8,8 @@ $app = new Illuminate\Foundation\Application(
 
 
 
+$app->useLangPath($app->resourcePath('lang'));
+
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class

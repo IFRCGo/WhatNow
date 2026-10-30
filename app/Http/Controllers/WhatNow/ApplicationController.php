@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\WhatNow;
 
+use OpenApi\Attributes as OA;
+
 use App\Classes\RcnApi\Exceptions\RcnApiAuthorisationException;
 use App\Classes\RcnApi\Exceptions\RcnApiException;
 use App\Classes\RcnApi\Exceptions\RcnApiResourceNotFoundException;
@@ -14,12 +16,10 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\Log;
 
 
-/**
- * @OA\Tag(
- *     name="Applications",
- *     description="Operations about applications"
- * )
- */
+#[OA\Tag(
+    name: 'Applications',
+    description: 'Operations about applications',
+)]
 final class ApplicationController extends ApiController
 {
 
@@ -31,24 +31,28 @@ final class ApplicationController extends ApiController
         $this->client = $client->application();
     }
 
-    /**
-     * @OA\Get(
-     *     path="/apps",
-     *     tags={"Applications"},
-     *     summary="List all applications",
-     *     description="Retrieves a list of applications available for the authenticated user",
-     *     operationId="listApplications",
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/apps',
+        tags: ['Applications'],
+        summary: 'List all applications',
+        description: 'Retrieves a list of applications available for the authenticated user',
+        operationId: 'listApplications',
+        security: [['bearerAuth' => []]],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function list(Request $request)
     {
         $userId = $request->user()->id;
@@ -65,31 +69,38 @@ final class ApplicationController extends ApiController
     }
 
 
-    /**
-     * @OA\Get(
-     *     path="/apps/{id}",
-     *     tags={"Applications"},
-     *     summary="Get application by ID",
-     *     description="Retrieves a specific application by its ID",
-     *     operationId="getApplication",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="ID of the application to retrieve",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/apps/{id}',
+        tags: ['Applications'],
+        summary: 'Get application by ID',
+        description: 'Retrieves a specific application by its ID',
+        operationId: 'getApplication',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'ID of the application to retrieve',
+            schema: new OA\Schema(
+                type: 'integer',
+                example: 1,
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function get(int $id)
     {
         try {
@@ -103,34 +114,52 @@ final class ApplicationController extends ApiController
         }
     }
 
-    /**
-     * @OA\Post(
-     *     path="/apps",
-     *     tags={"Applications"},
-     *     summary="Create a new application",
-     *     description="Creates a new application with the provided details",
-     *     operationId="createApplication",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(
-     *             type="object",
-     *             required={"name", "estimatedUsers"},
-     *             @OA\Property(property="name", type="string", description="Name of the application", example="MyApp"),
-     *             @OA\Property(property="description", type="string", nullable=true, description="Description of the application", example="This is a sample application."),
-     *             @OA\Property(property="estimatedUsers", type="integer", description="Estimated number of users", example=1000)
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/apps',
+        tags: ['Applications'],
+        summary: 'Create a new application',
+        description: 'Creates a new application with the provided details',
+        operationId: 'createApplication',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                type: 'object',
+                required: ['name', 'estimatedUsers'],
+                properties: [new OA\Property(
+                    property: 'name',
+                    type: 'string',
+                    description: 'Name of the application',
+                    example: 'MyApp',
+                ), new OA\Property(
+                    property: 'description',
+                    type: 'string',
+                    nullable: true,
+                    description: 'Description of the application',
+                    example: 'This is a sample application.',
+                ), new OA\Property(
+                    property: 'estimatedUsers',
+                    type: 'integer',
+                    description: 'Estimated number of users',
+                    example: 1000,
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function create(Request $request)
     {
         $this->validate($request, [
@@ -174,39 +203,51 @@ final class ApplicationController extends ApiController
     }
 
 
-    /**
-     * @OA\Patch(
-     *     path="/apps/{id}",
-     *     tags={"Applications"},
-     *     summary="Update application estimated users",
-     *     description="Updates the estimated number of users for a specific application",
-     *     operationId="updateApplication",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="ID of the application to update",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     @OA\RequestBody(
-     *         required=true,
-     *         @OA\JsonContent(
-     *             type="object",
-     *             required={"estimatedUsers"},
-     *             @OA\Property(property="estimatedUsers", type="integer", description="Updated estimated number of users", example=5000)
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Patch(
+        path: '/apps/{id}',
+        tags: ['Applications'],
+        summary: 'Update application estimated users',
+        description: 'Updates the estimated number of users for a specific application',
+        operationId: 'updateApplication',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'ID of the application to update',
+            schema: new OA\Schema(
+                type: 'integer',
+                example: 1,
+            ),
+        )],
+        requestBody: new OA\RequestBody(
+            required: true,
+            content: new OA\JsonContent(
+                type: 'object',
+                required: ['estimatedUsers'],
+                properties: [new OA\Property(
+                    property: 'estimatedUsers',
+                    type: 'integer',
+                    description: 'Updated estimated number of users',
+                    example: 5000,
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
      public function update(Request $request, int $id)
      {
          $this->validate($request, [
@@ -226,31 +267,38 @@ final class ApplicationController extends ApiController
          }
      }
 
-    /**
-     * @OA\Patch(
-     *     path="/apps/{id}/activate",
-     *     tags={"Applications"},
-     *     summary="Activate an application",
-     *     description="Activates a specific application by its ID",
-     *     operationId="activateApplication",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="ID of the application to activate",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Patch(
+        path: '/apps/{id}/activate',
+        tags: ['Applications'],
+        summary: 'Activate an application',
+        description: 'Activates a specific application by its ID',
+        operationId: 'activateApplication',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'ID of the application to activate',
+            schema: new OA\Schema(
+                type: 'integer',
+                example: 1,
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function activate(Request $request, int $id)
     {
         try {
@@ -264,31 +312,38 @@ final class ApplicationController extends ApiController
         }
     }
 
-    /**
-     * @OA\Patch(
-     *     path="/apps/{id}/deactivate",
-     *     tags={"Applications"},
-     *     summary="Deactivate an application",
-     *     description="Deactivates a specific application by its ID",
-     *     operationId="deactivateApplication",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="ID of the application to deactivate",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Patch(
+        path: '/apps/{id}/deactivate',
+        tags: ['Applications'],
+        summary: 'Deactivate an application',
+        description: 'Deactivates a specific application by its ID',
+        operationId: 'deactivateApplication',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'ID of the application to deactivate',
+            schema: new OA\Schema(
+                type: 'integer',
+                example: 1,
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function deactivate(Request $request, int $id)
     {
         try {
@@ -302,31 +357,38 @@ final class ApplicationController extends ApiController
         }
     }
 
-    /**
-     * @OA\Delete(
-     *     path="/apps/{id}",
-     *     tags={"Applications"},
-     *     summary="Delete an application",
-     *     description="Deletes an application by its ID",
-     *     operationId="deleteApplication",
-     *     @OA\Parameter(
-     *         name="id",
-     *         in="path",
-     *         required=true,
-     *         description="ID of the application to delete",
-     *         @OA\Schema(type="integer", example=1)
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Delete(
+        path: '/apps/{id}',
+        tags: ['Applications'],
+        summary: 'Delete an application',
+        description: 'Deletes an application by its ID',
+        operationId: 'deleteApplication',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'id',
+            in: 'path',
+            required: true,
+            description: 'ID of the application to delete',
+            schema: new OA\Schema(
+                type: 'integer',
+                example: 1,
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function delete(int $id)
     {
         try {

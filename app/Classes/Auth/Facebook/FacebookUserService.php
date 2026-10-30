@@ -27,7 +27,7 @@ class FacebookUserService
     }
 
     
-    public function getUserFromToken(string $token = null)
+    public function getUserFromToken(?string $token = null)
     {
         if (!$token) {
             throw new InvalidArgumentException('Token must be a valid Facebook user token string');

@@ -46,7 +46,7 @@ class RcnExporter
             }
 
 
-            $translation = array_first($matchingTranslations);
+            $translation = \Illuminate\Support\Arr::first($matchingTranslations);
 
             $row = [
                 $instruction->getEventType(),
@@ -115,9 +115,9 @@ class RcnExporter
 
     public static function buildCsvTemplate(
         $countryCode,
-        Collection $instructionRows = null,
+        ?Collection $instructionRows = null,
         array $attributionRow = [],
-        \DateTimeImmutable $exportedDate = null
+        ?\DateTimeImmutable $exportedDate = null
     ): Writer
     {
         if ($exportedDate === null) {

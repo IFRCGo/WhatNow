@@ -2,11 +2,11 @@
 
 namespace App\Http\Resources\WhatNow;
 
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class EventTypeResource extends Resource
+class EventTypeResource extends JsonResource
 {
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'name' => $this->name,

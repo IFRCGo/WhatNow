@@ -8,12 +8,26 @@ on:
             - 'staging'
 
 jobs:
+    validate:
+        if: github.event.pull_request.merged == true
+        uses: ./.github/workflows/laravel-tests.yml
+
     build-and-deploy:
+        needs: validate
         if: github.event.pull_request.merged == true
         runs-on: ubuntu-latest
         steps:
             - name: 'Checkout GitHub Action'
               uses: actions/checkout@main
+
+            - name: Validate Laravel 13 lockfile
+              run: |
+                  python3 - <<'PYTHON'
+                  import json
+                  data = json.load(open('composer.lock'))
+                  framework = next(p for p in data['packages'] if p['name'] == 'laravel/framework')
+                  assert framework['version'].lstrip('v').startswith('13.'), 'Resolve and commit the Laravel 13 composer.lock before deploying'
+                  PYTHON
 
             - name: 'Login via Azure CLI'
               uses: azure/login@v1
@@ -33,9 +47,13 @@ jobs:
                   login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
                   username: ${{ secrets.REGISTRY_USERNAME }}
                   password: ${{ secrets.REGISTRY_PASSWORD }}
-            - run: |
-                  cp swagger.qa .env
-                  docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} -f ./docker/Dockerfile .
+            - name: Build, verify and push image
+              env:
+                  SWAGGER_URL: ${{ vars.SWAGGER_URL_QA }}
+              run: |
+                  : "${SWAGGER_URL:?Set the SWAGGER_URL_QA repository variable}"
+                  docker build --pull --build-arg "SWAGGER_URL=$SWAGGER_URL" -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} -f ./docker/Dockerfile .
+                  bash docker/test-php-runtime.sh ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }}
                   docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:latest
 
                   docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/whatnow-qa:${{ github.sha }}
@@ -50,4 +68,6 @@ jobs:
               run: |
                   helm upgrade --install whatnow-backoffice-qa ./helm-chart-backoffice \
                     --namespace ${{ secrets.AKS_CLUSTER_NAMESPACE_QA }} \
-                    --create-namespace
+                    --create-namespace \
+                    --set-string image.tag=${{ github.sha }} \
+                    --wait --timeout 10m

@@ -14,10 +14,10 @@ class LoginTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = factory(User::class)->create();
+        $this->user = \Database\Factories\UserFactory::new()->create();
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function authenticate()
     {
         $this->postJson('/api/login', [
@@ -29,7 +29,7 @@ class LoginTest extends TestCase
         ->assertJson(['token_type' => 'bearer']);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function fetch_the_current_user()
     {
         $this->actingAs($this->user)
@@ -38,7 +38,7 @@ class LoginTest extends TestCase
             ->assertJsonStructure(['data' => ['id', 'email']]);
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function log_out()
     {
         $token = $this->postJson('/api/login', [

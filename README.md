@@ -1,14 +1,19 @@
 # Laravel-Vue-Bootstrap Project
 
+
 # WhatNow
 
-WhatNow is a web application built with Laravel 5.8 and Vue.js, designed to provide a disaster preparedness guide. This document includes steps to install and configure the project in your development environment.
+WhatNow is a web application being migrated to Laravel 13 and Vue.js, designed to provide a disaster preparedness guide. This document includes steps to install and configure the project in your development environment.
+
+The Laravel 13 dependency lock and runtime validation are still pending. See
+[Laravel 13 migration](docs/LARAVEL-13-UPGRADE.md) for the current status,
+validation commands and release requirements.
 
 ## Prerequisites
 
 Ensure the following tools are installed on your system:
 
-- **PHP** (version 7.4):
+- **PHP** (version 8.4; Laravel requires at least 8.3):
   ```bash
   php -v
   ```
@@ -16,7 +21,7 @@ Ensure the following tools are installed on your system:
   ```bash
   composer --version
   ```
-- **Node.js** (recommended version 12 or higher):
+- **Node.js** (version 22):
   ```bash
   node -v
   ```
@@ -24,7 +29,7 @@ Ensure the following tools are installed on your system:
   ```bash
   npm -v
   ```
-- **MySQL** (version 5.7 or higher):
+- **MySQL** (version 8.0 or higher):
   ```bash
   mysql --version
   ```
@@ -110,7 +115,7 @@ Ensure the following tools are installed on your system:
 
 ## Documentation
 
-- [Laravel 5.8 Documentation](https://laravel.com/docs/5.8)
+- [Laravel 13 Documentation](https://laravel.com/docs/13.x)
 - [Vue.js Documentation](https://vuejs.org/v2/guide/)
 - [Bootstrap 4 Documentation](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
 - [BootstrapVue Docs](https://bootstrap-vue.org/docs)
@@ -126,13 +131,13 @@ The API endpoints documentation can be found at the `/endpoints` route.
 2. **Environment File:** Check that the `.env` file is correctly set up.
 3. **Dependency Conflicts:** If issues arise, run `composer update` and `npm install` to resolve them.
 4. **Database Connection:** Verify that the database credentials in the `.env` file are correct.
-5. **Migrations:** If migrations fail, check the database connection and run `php artisan migrate:refresh`.
+5. **Migrations:** If migrations fail, check the database connection and run `php artisan migrate:status`.
 6. **Frontend Assets:** If assets are not compiling, run `npm run production` or `npm run hot` to recompile them.
 7. **Development Server:** If the server fails to start, check the port and run `php artisan serve` again.
 
 ## Testing
 
-Run tests using `phpunit`. *(Note: Tests may require review and adjustments to function properly.)* 
+Run the PHPUnit 12 suite with PHP 8.4 after resolving the migration lockfile:
 ```bash
-./vendor/bin/phpunit
+composer test
 ```

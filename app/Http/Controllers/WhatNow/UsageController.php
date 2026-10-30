@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\WhatNow;
 
+use OpenApi\Attributes as OA;
+
 use App\Classes\RcnApi\RcnApiClient;
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Response;
-/**
- * @OA\Tag(
- *     name="Usage",
- *     description="Operations about usage of endpoints"
- * )
- */
+#[OA\Tag(
+    name: 'Usage',
+    description: 'Operations about usage of endpoints',
+)]
 final class UsageController extends ApiController
 {
 
@@ -25,53 +25,55 @@ final class UsageController extends ApiController
         $this->client = $client->usage();
     }
 
-    /**
-     * @OA\Get(
-     *     path="/usage/applications",
-     *     tags={"Usage"},
-     *     summary="Obtiene el conteo de solicitudes de aplicaciones",
-     *     description="Retorna una lista de solicitudes de aplicaciones dentro de un rango de fechas específico.",
-     *     operationId="listApplicationRequestCount",
-     *     @OA\Parameter(
-     *         name="fromDate",
-     *         in="query",
-     *         description="Fecha de inicio para el filtro de solicitudes",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string",
-     *             format="date"
-     *         )
-     *     ),
-     *     @OA\Parameter(
-     *         name="toDate",
-     *         in="query",
-     *         description="Fecha de fin para el filtro de solicitudes",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string",
-     *             format="date"
-     *         )
-     *     ),
-     *     @OA\Parameter(
-     *         name="page",
-     *         in="query",
-     *         description="Número de página para la paginación",
-     *         required=false,
-     *         @OA\Schema(
-     *             type="integer"
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/usage/applications',
+        tags: ['Usage'],
+        summary: 'Get application request counts',
+        description: 'Return a list of application requests within the specified date range.',
+        operationId: 'listApplicationRequestCount',
+        security: [['bearerAuth' => []]],
+        parameters: [new OA\Parameter(
+            name: 'fromDate',
+            in: 'query',
+            description: 'Start date for filtering requests',
+            required: true,
+            schema: new OA\Schema(
+                type: 'string',
+                format: 'date',
+            ),
+        ), new OA\Parameter(
+            name: 'toDate',
+            in: 'query',
+            description: 'End date for filtering requests',
+            required: true,
+            schema: new OA\Schema(
+                type: 'string',
+                format: 'date',
+            ),
+        ), new OA\Parameter(
+            name: 'page',
+            in: 'query',
+            description: 'Page number for pagination',
+            required: false,
+            schema: new OA\Schema(
+                type: 'integer',
+            ),
+        )],
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function listApplicationRequestCount(Request $request): JsonResponse
     {
         $this->validate($request, [
@@ -87,34 +89,50 @@ final class UsageController extends ApiController
         return new JsonResponse($response, 200);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/usage/endpoints",
-     *     tags={"Usage"},
-     *     summary="Obtiene el conteo de solicitudes de endpoints",
-     *     description="Retorna una lista de solicitudes de endpoints dentro de un rango de fechas específico.",
-     *     operationId="listEndpointRequestCount",
-     *     @OA\RequestBody(
-     *         required=true,
-     *         description="Datos para filtrar las solicitudes de endpoints",
-     *         @OA\JsonContent(
-     *             required={"fromDate", "toDate"},
-     *             @OA\Property(property="fromDate", type="string", format="date", example="2023-01-01"),
-     *             @OA\Property(property="toDate", type="string", format="date", example="2023-12-31"),
-     *             @OA\Property(property="page", type="integer", example=1)
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/usage/endpoints',
+        tags: ['Usage'],
+        summary: 'Get endpoint request counts',
+        description: 'Return a list of endpoint requests within the specified date range.',
+        operationId: 'listEndpointRequestCount',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            required: true,
+            description: 'Filters for endpoint requests',
+            content: new OA\JsonContent(
+                required: ['fromDate', 'toDate'],
+                properties: [new OA\Property(
+                    property: 'fromDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-01-01',
+                ), new OA\Property(
+                    property: 'toDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-12-31',
+                ), new OA\Property(
+                    property: 'page',
+                    type: 'integer',
+                    example: 1,
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function listEndpointRequestCount(Request $request): JsonResponse
     {
         $this->validate($request, [
@@ -160,32 +178,45 @@ final class UsageController extends ApiController
         return new JsonResponse($rows, 200);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/usage/export/applications",
-     *     tags={"Usage"},
-     *     summary="Exporta el uso de aplicaciones en formato CSV",
-     *     description="Genera y devuelve un archivo CSV con el uso de aplicaciones dentro de un rango de fechas específico.",
-     *     operationId="exportApplicationUsageCsv",
-     *     @OA\RequestBody(
-     *         required=false,
-     *         description="Datos para filtrar la exportación de uso de aplicaciones",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="fromDate", type="string", format="date", example="2023-01-01"),
-     *             @OA\Property(property="toDate", type="string", format="date", example="2023-12-31")
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/usage/export/applications',
+        tags: ['Usage'],
+        summary: 'Exporta el uso de aplicaciones en formato CSV',
+        description: 'Generate and return a CSV file with application usage within the specified date range.',
+        operationId: 'exportApplicationUsageCsv',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            required: false,
+            description: 'Filters for the application usage export',
+            content: new OA\JsonContent(
+                properties: [new OA\Property(
+                    property: 'fromDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-01-01',
+                ), new OA\Property(
+                    property: 'toDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-12-31',
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function exportApplicationUsageCsv(Request $request)
     {
         $this->validate($request, [
@@ -212,32 +243,45 @@ final class UsageController extends ApiController
         return Response::make($csvContents, 200, $headers);
     }
 
-    /**
-     * @OA\Post(
-     *     path="/usage/export/endpoints",
-     *     tags={"Usage"},
-     *     summary="Exporta el uso de endpoints en formato CSV",
-     *     description="Genera y devuelve un archivo CSV con el uso de endpoints dentro de un rango de fechas específico.",
-     *     operationId="exportEndpointUsageCsv",
-     *     @OA\RequestBody(
-     *         required=false,
-     *         description="Datos para filtrar la exportación de uso de endpoints",
-     *         @OA\JsonContent(
-     *             @OA\Property(property="fromDate", type="string", format="date", example="2023-01-01"),
-     *             @OA\Property(property="toDate", type="string", format="date", example="2023-12-31")
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Post(
+        path: '/usage/export/endpoints',
+        tags: ['Usage'],
+        summary: 'Exporta el uso de endpoints en formato CSV',
+        description: 'Generate and return a CSV file with endpoint usage within the specified date range.',
+        operationId: 'exportEndpointUsageCsv',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            required: false,
+            description: 'Filters for the endpoint usage export',
+            content: new OA\JsonContent(
+                properties: [new OA\Property(
+                    property: 'fromDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-01-01',
+                ), new OA\Property(
+                    property: 'toDate',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-12-31',
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function exportEndpointUsageCsv(Request $request)
     {
         $this->validate($request, [
@@ -264,35 +308,56 @@ final class UsageController extends ApiController
         return Response::make($csvContents, 200, $headers);
     }
 
-    /**
-     * @OA\Get(
-     *     path="/usage/totals",
-     *     tags={"Usage"},
-     *     summary="Obtiene los totales de uso",
-     *     description="Endpoint para obtener los totales de uso basados en los filtros proporcionados.",
-     *     operationId="getTotals",
-     *     @OA\RequestBody(
-     *         description="Parámetros opcionales para filtrar los resultados",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="society", type="string", example="Ejemplo Sociedad"),
-     *             @OA\Property(property="subnationals", type="integer", example=1),
-     *             @OA\Property(property="hazard", type="string", example="Ejemplo Peligro"),
-     *             @OA\Property(property="date", type="string", format="date", example="2023-01-01"),
-     *             @OA\Property(property="language", type="string", example="es")
-     *         )
-     *     ),
-     *     security={{"bearerAuth": {}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful response",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(property="data", type="array", @OA\Items(type="object"))
-     *         )
-     *     )
-     * )
-     */
+    #[OA\Get(
+        path: '/usage/totals',
+        tags: ['Usage'],
+        summary: 'Get usage totals',
+        description: 'Get usage totals based on the provided filters.',
+        operationId: 'getTotals',
+        security: [['bearerAuth' => []]],
+        requestBody: new OA\RequestBody(
+            description: 'Optional parameters for filtering results',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'society',
+                    type: 'string',
+                    example: 'Ejemplo Sociedad',
+                ), new OA\Property(
+                    property: 'subnationals',
+                    type: 'integer',
+                    example: 1,
+                ), new OA\Property(
+                    property: 'hazard',
+                    type: 'string',
+                    example: 'Ejemplo Peligro',
+                ), new OA\Property(
+                    property: 'date',
+                    type: 'string',
+                    format: 'date',
+                    example: '2023-01-01',
+                ), new OA\Property(
+                    property: 'language',
+                    type: 'string',
+                    example: 'es',
+                )],
+            ),
+        ),
+        responses: [new OA\Response(
+            response: 200,
+            description: 'Successful response',
+            content: new OA\JsonContent(
+                type: 'object',
+                properties: [new OA\Property(
+                    property: 'data',
+                    type: 'array',
+                    items: new OA\Items(
+                        type: 'object',
+                    ),
+                )],
+            ),
+        )],
+    )]
     public function getTotals(Request $request): JsonResponse
     {
         $this->validate($request, [

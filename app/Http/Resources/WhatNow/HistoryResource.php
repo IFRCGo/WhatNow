@@ -3,12 +3,12 @@
 namespace App\Http\Resources\WhatNow;
 
 use App\Http\Resources\UserResource;
-use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
-class HistoryResource extends Resource
+class HistoryResource extends JsonResource
 {
     
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'id' => $this->id,

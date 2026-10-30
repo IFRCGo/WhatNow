@@ -2,6 +2,9 @@ import axios from 'axios'
 import * as types from '../mutation-types'
 import querystring from 'querystring'
 
+let latestFetchUsersRequest = 0
+let activeFetchUsersCancel = null
+
 // state
 export const state = {
   users: {
@@ -24,6 +27,7 @@ export const state = {
     roleFilter: null,
     countryFilter: null,
     selectedSoc: null,
+    searchFilter: '',
     termsFilter: 'Terms and Conditions'
   }
 }
@@ -104,6 +108,7 @@ export const actions = {
       roleFilter: null,
       countryFilter: null,
       selectedSoc: null,
+      searchFilter: '',
       termsFilter: 'Terms and Conditions'
     })
     commit(types.SET_ORDER_BY, null)
@@ -120,6 +125,12 @@ export const actions = {
     commit(types.SET_SORT_DESC, sortDesc)
   },
   async fetchUsers ({ commit }, { page, filters, excludes, admin, orderBy, sort }) {
+    const requestId = ++latestFetchUsersRequest
+    if (activeFetchUsersCancel) {
+      activeFetchUsersCancel('Cancelled by a newer users request')
+    }
+    const cancelSource = axios.CancelToken.source()
+    activeFetchUsersCancel = cancelSource.cancel
     const queryOptions = { page }
     if (orderBy !== null) {
       queryOptions.orderBy = orderBy
@@ -131,12 +142,30 @@ export const actions = {
       filterString += filters.society !== null ? `&filters[society]=${filters.society}` : ''
       filterString += filters.country_code !== null ? `&filters[country_code]=${filters.country_code}` : ''
       filterString += filters.terms_version !== null ? `&filters[terms_version]=${filters.terms_version}` : ''
+      filterString += filters.exclude_role != null ? `&filters[exclude_role]=${filters.exclude_role}` : ''
+      const search = filters.search ? filters.search.trim() : ''
+      filterString += search.length >= 3 ? `&filters[search]=${encodeURIComponent(search)}` : ''
 
       const url = admin ? '/api/users/admins' : '/api/users'
-      const { data } = await axios.get(`${url}?${querystring.stringify(queryOptions)}${filterString}`)
-      commit(types.FETCH_USERS_SUCCESS, { users: data })
+      const { data } = await axios.get(`${url}?${querystring.stringify(queryOptions)}${filterString}`, {
+        cancelToken: cancelSource.token
+      })
+      if (requestId !== latestFetchUsersRequest) {
+        return
+      }
+      commit(types.FETCH_USERS_SUCCESS, { users: filterExcludedRole(data, filters.exclude_role) })
     } catch (e) {
+      if (axios.isCancel(e)) {
+        return
+      }
+      if (requestId !== latestFetchUsersRequest) {
+        return
+      }
       commit(types.FETCH_USERS_FAILURE, { error: e })
+    } finally {
+      if (requestId === latestFetchUsersRequest) {
+        activeFetchUsersCancel = null
+      }
     }
   },
   async fetchEditUser ({ commit }, id) {
@@ -173,6 +202,20 @@ export const actions = {
       commit(types.PATCH_USER_FAILURE, { error: e })
       throw e
     }
+  }
+}
+
+const filterExcludedRole = (users, excludedRoleId) => {
+  if (excludedRoleId == null || !users || !Array.isArray(users.data)) {
+    return users
+  }
+
+  const excludedId = Number(excludedRoleId)
+  const data = users.data.filter(user => !user.role || Number(user.role.id) !== excludedId)
+
+  return {
+    ...users,
+    data
   }
 }
 
